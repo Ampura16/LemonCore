@@ -1,32 +1,35 @@
-Paper [![Paper Build Status](https://img.shields.io/github/actions/workflow/status/PaperMC/Paper/build.yml?branch=main)](https://github.com/PaperMC/Paper/actions)
+# Paper [![Paper 构建状态](https://img.shields.io/github/actions/workflow/status/PaperMC/Paper/build.yml?branch=main)](https://github.com/PaperMC/Paper/actions)
 [![Discord](https://img.shields.io/discord/289587909051416579.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/papermc)
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/papermc?label=GitHub%20Sponsors)](https://github.com/sponsors/PaperMC)
 [![Open Collective](https://img.shields.io/opencollective/all/papermc?label=OpenCollective%20Sponsors)](https://opencollective.com/papermc)
-===========
 
-The most widely used, high-performance Minecraft server that aims to fix gameplay and mechanics inconsistencies.
+Paper 是目前使用最广泛、性能卓越的 Minecraft 服务端，致力于修复游戏玩法与游戏机制中的不一致问题。
 
+**支持与项目讨论：**
 
-**Support and Project Discussion:**
-- [Our forums](https://forums.papermc.io/) or [Discord](https://discord.gg/papermc)
+- [官方论坛](https://forums.papermc.io/) 或 [Discord](https://discord.gg/papermc)
 
-How To (Server Admins)
-------
-Paperclip is a jar file that you can download and run just like a normal jar file.
+如何使用（服务器管理员）
+----------------------
 
-Download Paper from our [downloads page](https://papermc.io/downloads/paper).
+Paperclip 是一个 JAR 文件，你可以像运行普通 JAR 文件一样下载并运行它。
 
-Run the Paperclip jar directly from your server. Just like old times
+请从我们的[下载页面](https://papermc.io/downloads/paper)下载 Paper。
 
-* Documentation on using Paper: [docs.papermc.io](https://docs.papermc.io)
-* For a sneak peek at upcoming features, [see here](https://github.com/PaperMC/Paper/projects)
+直接在服务器上运行 Paperclip JAR 文件即可，和过去一样简单。
 
-How To (Plugin Developers)
-------
-* See our API [here](paper-api)
-* See upcoming, pending, and recently added API [here](https://github.com/orgs/PaperMC/projects/2/views/4)
-* Paper API javadocs here: [papermc.io/javadocs](https://papermc.io/javadocs/)
-#### Repository (for paper-api)
+- Paper 使用文档：[docs.papermc.io](https://docs.papermc.io)
+- 想提前了解即将推出的功能，请[查看这里](https://github.com/PaperMC/Paper/projects)
+
+如何使用（插件开发者）
+----------------------
+
+- 请查看我们的 [API](paper-api)
+- 请查看即将推出、等待处理以及近期新增的 [API](https://github.com/orgs/PaperMC/projects/2/views/4)
+- Paper API Javadocs：[papermc.io/javadocs](https://papermc.io/javadocs/)
+
+#### `paper-api` 仓库配置
+
 ##### Maven
 
 ```xml
@@ -44,7 +47,9 @@ How To (Plugin Developers)
     <scope>provided</scope>
 </dependency>
 ```
+
 ##### Gradle
+
 ```kotlin
 repositories {
     maven {
@@ -61,40 +66,65 @@ java {
 }
 ```
 
-How To (Compiling Jar From Source)
-------
-To compile Paper, you need JDK 21 and an internet connection.
+如何使用（从源代码编译 JAR）
+----------------------------
 
-Clone this repo, run `./gradlew applyPatches`, then `./gradlew createMojmapBundlerJar` from your terminal. You can find the compiled jar in the `paper-server/build/libs` directory.
+要编译 Paper，你需要安装 JDK 21，并确保网络连接正常。
 
-To get a full list of tasks, run `./gradlew tasks`.
+克隆此仓库后，在终端中运行：
 
-How To (Pull Request)
-------
-See [Contributing](CONTRIBUTING.md)
+```bash
+./gradlew applyPatches
+```
 
-Old Versions (1.21.3 and below)
-------
-For branches of versions 1.8-1.21.3, please see our [archive repository](https://github.com/PaperMC/Paper-archive).
+然后运行：
 
-Support Us
-------
-First of all, thank you for considering helping out, we really appreciate that!
+```bash
+./gradlew createMojmapBundlerJar
+```
 
-PaperMC has various recurring expenses, mostly related to infrastructure. Paper uses [Open Collective](https://opencollective.com/) via the [Open Source Collective fiscal host](https://opencollective.com/opensource) to manage expenses. Open Collective allows us to be extremely transparent, so you can always see how your donations are used. You can read more about financially supporting PaperMC [on our website](https://papermc.io/sponsors).
+编译生成的 JAR 文件位于：
 
-You can find our collective [here](https://opencollective.com/papermc), or you can donate via GitHub Sponsors [here](https://github.com/sponsors/PaperMC), which will also go towards the collective.
+```text
+paper-server/build/libs
+```
 
-Special Thanks To:
--------------
+如需查看完整的任务列表，请运行：
 
-[![YourKit-Logo](https://www.yourkit.com/images/yklogo.png)](https://www.yourkit.com/)
+```bash
+./gradlew tasks
+```
 
-[YourKit](https://www.yourkit.com/), makers of the outstanding java profiler, support open source projects of all kinds with their full featured [Java](https://www.yourkit.com/java/profiler) and [.NET](https://www.yourkit.com/.net/profiler) application profilers. We thank them for granting Paper an OSS license so that we can make our software the best it can be.
+如何提交拉取请求（Pull Request）
+--------------------------------
+
+请参阅[贡献指南](CONTRIBUTING.md)。
+
+旧版本（1.21.3 及更早版本）
+----------------------------
+
+对于 1.8 至 1.21.3 版本的分支，请查看我们的[归档仓库](https://github.com/PaperMC/Paper-archive)。
+
+支持我们
+--------
+
+首先，感谢你考虑为我们提供帮助，我们对此深表感谢！
+
+PaperMC 每年需要承担多项持续性支出，其中大部分与基础设施有关。Paper 通过 [Open Source Collective 财政托管机构](https://opencollective.com/opensource)使用 [Open Collective](https://opencollective.com/) 管理相关支出。Open Collective 让我们的财务状况高度透明，因此你可以随时查看捐款的使用情况。你可以在我们的[网站](https://papermc.io/sponsors)上进一步了解如何从财务方面支持 PaperMC。
+
+你可以通过[这里](https://opencollective.com/papermc)访问我们的集体资金页面，也可以通过 [GitHub Sponsors](https://github.com/sponsors/PaperMC) 捐款，相关资金同样会用于该集体资金项目。
+
+特别鸣谢
+--------
+
+[![YourKit 标志](https://www.yourkit.com/images/yklogo.png)](https://www.yourkit.com/)
+
+[YourKit](https://www.yourkit.com/) 是优秀 Java 分析器的开发商，为各类开源项目提供功能完整的 [Java](https://www.yourkit.com/java/profiler) 和 [.NET](https://www.yourkit.com/.net/profiler) 应用程序分析器。感谢 YourKit 授予 Paper 开源软件许可证，使我们能够持续改进软件品质。
 
 [<img src="https://user-images.githubusercontent.com/21148213/121807008-8ffc6700-cc52-11eb-96a7-2f6f260f8fda.png" alt="" width="150">](https://www.jetbrains.com)
 
-[JetBrains](https://www.jetbrains.com/), creators of the IntelliJ IDEA, supports Paper with one of their [Open Source Licenses](https://www.jetbrains.com/opensource/). IntelliJ IDEA is the recommended IDE for working with Paper, and most of the Paper team uses it.
+[JetBrains](https://www.jetbrains.com/) 是 IntelliJ IDEA 的开发商，并通过其[开源许可证计划](https://www.jetbrains.com/opensource/)为 Paper 提供支持。IntelliJ IDEA 是开发 Paper 时推荐使用的集成开发环境（IDE），Paper 团队的大多数成员也在使用它。
 
-All our sponsors!  
-[![Sponsor Image](https://raw.githubusercontent.com/PaperMC/papermc.io/data/sponsors.png)](https://papermc.io/sponsors)
+感谢所有赞助商！
+
+[![赞助商图片](https://raw.githubusercontent.com/PaperMC/papermc.io/data/sponsors.png)](https://papermc.io/sponsors)
