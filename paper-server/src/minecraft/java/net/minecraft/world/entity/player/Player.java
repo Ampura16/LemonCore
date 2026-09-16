@@ -1017,72 +1017,104 @@ public abstract class Player extends Avatar implements ContainerUser {
             );
     }
 
+    // 战斗机制回退
     public void attack(Entity target) {
         // Paper start - PlayerAttackEntityEvent
-        boolean willAttack = !this.cannotAttack(target); // Vanilla logic
-        io.papermc.paper.event.player.PrePlayerAttackEntityEvent playerAttackEntityEvent = new io.papermc.paper.event.player.PrePlayerAttackEntityEvent(
-            (org.bukkit.entity.Player) this.getBukkitEntity(),
-            target.getBukkitEntity(),
-            willAttack
-        );
+        boolean willAttack = !this.cannotAttack(target);
+        io.papermc.paper.event.player.PrePlayerAttackEntityEvent playerAttackEntityEvent =
+            new io.papermc.paper.event.player.PrePlayerAttackEntityEvent(
+                (org.bukkit.entity.Player) this.getBukkitEntity(),
+                target.getBukkitEntity(),
+                willAttack
+            );
 
-        if (playerAttackEntityEvent.callEvent() && willAttack) { // Logic moved to willAttack local variable.
-        // Paper end - PlayerAttackEntityEvent
-            float f = this.isAutoSpinAttack() ? this.autoSpinAttackDmg : (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE);
-            ItemStack weaponItem = this.getWeaponItem();
-            DamageSource damageSource = this.createAttackSource(weaponItem); final DamageSource dmgSourceFinal = damageSource; // Paper - damage events
-            float attackStrengthScale = this.getAttackStrengthScale(0.5F);
-            float f1 = attackStrengthScale * (this.getEnchantedDamage(target, f, damageSource) - f);
-            f *= this.baseDamageScaleFactor();
-            this.onAttack();
-            final float dmgFinal = f1; // Paper - damage events
-            if (!this.deflectProjectile(target, () -> !org.bukkit.craftbukkit.event.CraftEventFactory.handleNonLivingEntityDamageEvent(target, dmgSourceFinal, dmgFinal, false))) {
-                if (f > 0.0F || f1 > 0.0F) {
-                    boolean flag = attackStrengthScale > 0.9F;
-                    boolean flag1;
-                    if (this.isSprinting() && flag) {
-                        this.playServerSideSound(SoundEvents.PLAYER_ATTACK_KNOCKBACK);
-                        flag1 = true;
-                    } else {
-                        flag1 = false;
-                    }
-
-                    f += weaponItem.getItem().getAttackDamageBonus(target, f, damageSource);
-                    boolean flag2 = flag && this.canCriticalAttack(target);
-                    flag2 = flag2 && !this.level().paperConfig().entities.behavior.disablePlayerCrits; // Paper - Toggleable player crits
-                    if (flag2) {
-                        damageSource = damageSource.critical(); // Paper - critical damage API
-                        f *= 1.5F;
-                    }
-
-                    float f2 = f + f1;
-                    boolean isSweepAttack = this.isSweepAttack(flag, flag2, flag1);
-                    float f3 = 0.0F;
-                    if (target instanceof LivingEntity livingEntity) {
-                        f3 = livingEntity.getHealth();
-                    }
-
-                    Vec3 deltaMovement = target.getDeltaMovement();
-                    boolean flag3 = target.hurtOrSimulate(damageSource, f2);
-                    if (flag3) {
-                        this.causeExtraKnockback(target, this.getKnockback(target, damageSource) + (flag1 ? 0.5F : 0.0F), deltaMovement);
-                        if (isSweepAttack) {
-                            this.doSweepAttack(target, f, damageSource, attackStrengthScale);
-                        }
-
-                        this.attackVisualEffects(target, flag2, isSweepAttack, flag, false, f1);
-                        this.setLastHurtMob(target);
-                        this.itemAttackInteraction(target, weaponItem, damageSource, true);
-                        this.damageStatsAndHearts(target, f3);
-                        this.causeFoodExhaustion(this.level().spigotConfig.combatExhaustion, org.bukkit.event.entity.EntityExhaustionEvent.ExhaustionReason.ATTACK); // CraftBukkit - EntityExhaustionEvent // Spigot - Change to use configurable value
-                    } else {
-                        this.playServerSideSound(SoundEvents.PLAYER_ATTACK_NODAMAGE);
-                    }
-                }
-
-                this.lungeForwardMaybe();
-            }
+        if (!playerAttackEntityEvent.callEvent() || !willAttack) {
+            return;
         }
+        // Paper end - PlayerAttackEntityEvent
+
+        final boolean isAutoSpin = this.isAutoSpinAttack();
+        final boolean isSprinting = this.isSprinting();
+        final ItemStack weaponItem = this.getWeaponItem();
+
+        float baseDamage = isAutoSpin ? this.autoSpinAttackDmg : (float) this.getAttributeValue(Attributes.ATTACK_DAMAGE);
+        DamageSource damageSource = this.createAttackSource(weaponItem);
+        final DamageSource dmgSourceFinal = damageSource;
+
+        float enchantDamage = this.getEnchantedDamage(target, baseDamage, damageSource) - baseDamage;
+        final float dmgFinal = enchantDamage; // lambda 捕获用
+
+        this.onAttack();
+
+        if (this.deflectProjectile(target, () ->
+            !org.bukkit.craftbukkit.event.CraftEventFactory.handleNonLivingEntityDamageEvent(
+                target, dmgSourceFinal, dmgFinal, false))) { // 使用 final 快照变量，不再直接引用可变的 damageSource
+            return;
+        }
+
+        if (baseDamage <= 0.0F && enchantDamage <= 0.0F) {
+            this.lungeForwardMaybe();
+            return;
+        }
+
+        final boolean isSprintKnockback = isSprinting; // flag 永远为 true，因此这里恒定成立
+        if (isSprintKnockback) {
+            this.playServerSideSound(SoundEvents.PLAYER_ATTACK_KNOCKBACK);
+        }
+
+        baseDamage += weaponItem.getItem().getAttackDamageBonus(target, baseDamage, damageSource);
+
+        boolean isCritical = this.canCriticalAttack(target)
+            && !this.level().paperConfig().entities.behavior.disablePlayerCrits;
+
+        if (isCritical) {
+            damageSource = damageSource.critical(); // 仅在此之后使用，不再进入 lambda
+            baseDamage *= 1.5F;
+        }
+
+        final float totalDamage = baseDamage + enchantDamage;
+        final boolean isSweepAttack = this.isSweepAttack(true, isCritical, isSprintKnockback);
+
+        final float targetHealthBefore = (target instanceof LivingEntity livingEntity)
+            ? livingEntity.getHealth()
+            : 0.0F;
+
+        final Vec3 deltaMovement = target.getDeltaMovement();
+        if (target.hurtOrSimulate(damageSource, totalDamage)) {
+            this.applySuccessfulAttackEffects(
+                target, damageSource, baseDamage, enchantDamage,
+                weaponItem, deltaMovement, targetHealthBefore,
+                isCritical, isSweepAttack, isSprintKnockback
+            );
+        } else {
+            this.playServerSideSound(SoundEvents.PLAYER_ATTACK_NODAMAGE);
+        }
+
+        this.lungeForwardMaybe();
+    }
+
+    private void applySuccessfulAttackEffects(
+        Entity target, DamageSource damageSource,
+        float baseDamage, float enchantDamage,
+        ItemStack weaponItem, Vec3 deltaMovement, float targetHealthBefore,
+        boolean isCritical, boolean isSweepAttack, boolean hasSprintKnockback
+    ) {
+        float knockback = this.getKnockback(target, damageSource) + (hasSprintKnockback ? 0.5F : 0.0F);
+        this.causeExtraKnockback(target, knockback, deltaMovement);
+
+        if (isSweepAttack) {
+            this.doSweepAttack(target, baseDamage, damageSource, 1.0F); // 1.0F 替代 attackStrengthScale，1.8 恒满蓄力
+        }
+
+        this.attackVisualEffects(target, isCritical, isSweepAttack, hasSprintKnockback, false, enchantDamage);
+
+        this.setLastHurtMob(target);
+        this.itemAttackInteraction(target, weaponItem, damageSource, true);
+        this.damageStatsAndHearts(target, targetHealthBefore);
+        this.causeFoodExhaustion(
+            this.level().spigotConfig.combatExhaustion,
+            org.bukkit.event.entity.EntityExhaustionEvent.ExhaustionReason.ATTACK
+        );
     }
 
     private void playServerSideSound(SoundEvent sound) {
@@ -1280,9 +1312,13 @@ public abstract class Player extends Avatar implements ContainerUser {
     public void crit(Entity target) {
     }
 
+    // 战斗机制回退
+    // private float baseDamageScaleFactor() {
+    //     float attackStrengthScale = this.getAttackStrengthScale(0.5F);
+    //     return 0.2F + attackStrengthScale * attackStrengthScale * 0.8F;
+    // }
     private float baseDamageScaleFactor() {
-        float attackStrengthScale = this.getAttackStrengthScale(0.5F);
-        return 0.2F + attackStrengthScale * attackStrengthScale * 0.8F;
+        return 1.0F; // 1.8 - 移除蓄力伤害缩放
     }
 
     @Override
@@ -1303,8 +1339,9 @@ public abstract class Player extends Avatar implements ContainerUser {
             DamageSource damageSource = this.createAttackSource(itemBySlot);
             float f = this.getEnchantedDamage(target, damageAmount, damageSource) - damageAmount;
             if (!this.isUsingItem() || this.getUsedItemHand().asEquipmentSlot() != slot) {
-                f *= this.getAttackStrengthScale(0.5F);
-                damageAmount *= this.baseDamageScaleFactor();
+                // 战斗机制回退
+                // f *= this.getAttackStrengthScale(0.5F);
+                // damageAmount *= this.baseDamageScaleFactor();
             }
 
             final float dmgFinal = f; // Paper - damage events
