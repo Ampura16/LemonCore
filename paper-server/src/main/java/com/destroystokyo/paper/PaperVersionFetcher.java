@@ -53,15 +53,15 @@ public class PaperVersionFetcher implements VersionFetcher {
 
     @Override
     public Component getVersionMessage() {
-        final Component updateMessage;
-        if (BUILD_INFO.buildNumber().isEmpty() && BUILD_INFO.gitCommit().isEmpty()) {
-            updateMessage = text("You are running a development version without access to version information", color(0xFF5300));
-        } else {
-            updateMessage = getUpdateStatusMessage();
-        }
-        final @Nullable Component history = this.getHistory();
-
-        return history != null ? Component.textOfChildren(updateMessage, Component.newline(), history) : updateMessage;
+        return Component.textOfChildren(
+            text("ServerCore Introduction >>", NamedTextColor.GREEN),
+            Component.newline(),
+            text("Core: LemonCore", NamedTextColor.YELLOW),
+            Component.newline(),
+            text("Version: 1.21.11-dev", NamedTextColor.DARK_GREEN),
+            Component.newline(),
+            text("BlockLand Realms 基于 PaperMC 修改的服务器核心", NamedTextColor.AQUA)
+        );
     }
 
     public static void getUpdateStatusStartupMessage() {
@@ -69,7 +69,7 @@ public class PaperVersionFetcher implements VersionFetcher {
 
         final OptionalInt buildNumber = BUILD_INFO.buildNumber();
         if (buildNumber.isEmpty() && BUILD_INFO.gitCommit().isEmpty()) {
-            COMPONENT_LOGGER.warn(text("*** You are running a development version without access to version information ***"));
+            COMPONENT_LOGGER.warn(text("*** 你正在运行一个开发版本,无法获取版本信息 ***"));
         } else {
             final Optional<MinecraftVersionFetcher> apiResult = fetchMinecraftVersionList();
             if (buildNumber.isPresent()) {
@@ -83,23 +83,23 @@ public class PaperVersionFetcher implements VersionFetcher {
             }
 
             switch (distance) {
-                case DISTANCE_ERROR -> COMPONENT_LOGGER.error(text("*** Error obtaining version information! Cannot fetch version info ***"));
+                case DISTANCE_ERROR -> COMPONENT_LOGGER.error(text("*** 获取版本信息时出错!无法获取版本信息 ***"));
                 case 0 -> apiResult.ifPresent(result -> {
                     COMPONENT_LOGGER.warn(text("*************************************************************************************"));
-                    COMPONENT_LOGGER.warn(text("You are running the latest build for your Minecraft version (" + BUILD_INFO.minecraftVersionId() + ")"));
-                    COMPONENT_LOGGER.warn(text("However, you are " + result.distance() + " release(s) behind the latest stable release (" + result.latestVersion() + ")!"));
-                    COMPONENT_LOGGER.warn(text("It is recommended that you update as soon as possible"));
+                    COMPONENT_LOGGER.warn(text("你正在运行当前 Minecraft 版本（" + BUILD_INFO.minecraftVersionId() + "）下的最新构建"));
+                    COMPONENT_LOGGER.warn(text("但是你落后最新稳定版本（" + result.latestVersion() + "）" + result.distance() + " 个发行版本!"));
+                    COMPONENT_LOGGER.warn(text("建议你尽快更新"));
                     COMPONENT_LOGGER.warn(text(DOWNLOAD_PAGE));
                     COMPONENT_LOGGER.warn(text("*************************************************************************************"));
                 });
-                case DISTANCE_UNKNOWN -> COMPONENT_LOGGER.warn(text("*** You are running an unknown version! Cannot fetch version info ***"));
+                case DISTANCE_UNKNOWN -> COMPONENT_LOGGER.warn(text("*** 你正在运行一个未知版本!无法获取版本信息 ***"));
                 default -> {
                     if (apiResult.isPresent()) {
-                        COMPONENT_LOGGER.warn(text("*** You are running an outdated version of Minecraft, which is " + apiResult.get().distance() + " release(s) and " + distance + " build(s) behind!"));
-                        COMPONENT_LOGGER.warn(text("*** Please update to the latest stable version on " + DOWNLOAD_PAGE + " ***"));
+                        COMPONENT_LOGGER.warn(text("*** 你正在运行的 Minecraft 版本已过时,落后 " + apiResult.get().distance() + " 个发行版本," + distance + " 个构建版本!"));
+                        COMPONENT_LOGGER.warn(text("*** 请前往 " + DOWNLOAD_PAGE + " 更新到最新稳定版本 ***"));
                     } else {
-                        COMPONENT_LOGGER.info(text("*** Currently you are " + distance + " build(s) behind ***"));
-                        COMPONENT_LOGGER.info(text("*** It is highly recommended to download the latest build from " + DOWNLOAD_PAGE + " ***"));
+                        COMPONENT_LOGGER.info(text("*** 目前你落后 " + distance + " 个构建版本 ***"));
+                        COMPONENT_LOGGER.info(text("*** 强烈建议从 " + DOWNLOAD_PAGE + " 下载最新构建 ***"));
                     }
                 }
             }
@@ -121,14 +121,14 @@ public class PaperVersionFetcher implements VersionFetcher {
         }
 
         return switch (distance) {
-            case DISTANCE_ERROR -> text("Error obtaining version information", NamedTextColor.YELLOW);
-            case 0 -> text("You are running the latest version", NamedTextColor.GREEN);
-            case DISTANCE_UNKNOWN -> text("Unknown version", NamedTextColor.YELLOW);
-            default -> text("You are " + distance + " version(s) behind", NamedTextColor.YELLOW)
+            case DISTANCE_ERROR -> text("获取版本信息时出错", NamedTextColor.YELLOW);
+            case 0 -> text("你正在运行最新版本", NamedTextColor.GREEN);
+            case DISTANCE_UNKNOWN -> text("未知版本", NamedTextColor.YELLOW);
+            default -> text("你落后 " + distance + " 个版本", NamedTextColor.YELLOW)
                 .append(Component.newline())
-                .append(text("Download the new version at: ")
+                .append(text("前往下载新版本:")
                     .append(text(DOWNLOAD_PAGE, NamedTextColor.GOLD)
-                        .hoverEvent(text("Click to open", NamedTextColor.WHITE))
+                        .hoverEvent(text("点击打开", NamedTextColor.WHITE))
                         .clickEvent(ClickEvent.openUrl(DOWNLOAD_PAGE))));
         };
     }
@@ -177,17 +177,17 @@ public class PaperVersionFetcher implements VersionFetcher {
                                 return Optional.of(new MinecraftVersionFetcher(latestVersion, distance));
                             }
                         } catch (final JsonSyntaxException ex) {
-                            LOGGER.error("Error parsing json from Paper's downloads API", ex);
+                            LOGGER.error("解析 Paper 下载 API 的 json 时出错", ex);
                         }
                     } catch (final IOException e) {
-                        LOGGER.error("Error while parsing latest build", e);
+                        LOGGER.error("解析最新构建时出错", e);
                     }
                 }
             } catch (final JsonSyntaxException ex) {
-                LOGGER.error("Error parsing json from Paper's downloads API", ex);
+                LOGGER.error("解析 Paper 下载 API 的 json 时出错", ex);
             }
         } catch (final IOException e) {
-            LOGGER.error("Error while parsing version list", e);
+            LOGGER.error("解析版本列表时出错", e);
         }
         return Optional.empty();
     }
@@ -208,11 +208,11 @@ public class PaperVersionFetcher implements VersionFetcher {
                     .orElseThrow();
                 return Math.max(latest - jenkinsBuild, 0);
             } catch (final JsonSyntaxException ex) {
-                LOGGER.error("Error parsing json from Paper's downloads API", ex);
+                LOGGER.error("解析 Paper 下载 API 的 json 时出错", ex);
                 return DISTANCE_ERROR;
             }
         } catch (final IOException e) {
-            LOGGER.error("Error while parsing version", e);
+            LOGGER.error("解析版本时出错", e);
             return DISTANCE_ERROR;
         }
     }
@@ -225,7 +225,7 @@ public class PaperVersionFetcher implements VersionFetcher {
             connection.setReadTimeout(5000);
             connection.setRequestProperty("User-Agent", PaperVersionFetcher.USER_AGENT);
             connection.connect();
-            if (connection.getResponseCode() == HttpURLConnection.HTTP_NOT_FOUND) return DISTANCE_UNKNOWN; // Unknown commit
+            if (connection.getResponseCode() == HttpURLConnection.HTTP_NOT_FOUND) return DISTANCE_UNKNOWN; // 未知提交
             try (final BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream(), StandardCharsets.UTF_8))) {
                 final JsonObject obj = GSON.fromJson(reader, JsonObject.class);
                 final String status = obj.get("status").getAsString();
@@ -235,11 +235,11 @@ public class PaperVersionFetcher implements VersionFetcher {
                     default -> DISTANCE_ERROR;
                 };
             } catch (final JsonSyntaxException | NumberFormatException e) {
-                LOGGER.error("Error parsing json from GitHub's API", e);
+                LOGGER.error("解析 GitHub API 的 json 时出错", e);
                 return DISTANCE_ERROR;
             }
         } catch (final IOException e) {
-            LOGGER.error("Error while parsing version", e);
+            LOGGER.error("解析版本时出错", e);
             return DISTANCE_ERROR;
         }
     }
@@ -255,6 +255,6 @@ public class PaperVersionFetcher implements VersionFetcher {
             return null;
         }
 
-        return text("Previous version: " + oldVersion, NamedTextColor.GRAY, TextDecoration.ITALIC);
+        return text("上一版本:" + oldVersion, NamedTextColor.GRAY, TextDecoration.ITALIC);
     }
 }

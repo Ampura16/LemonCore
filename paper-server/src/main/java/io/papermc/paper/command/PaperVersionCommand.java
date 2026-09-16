@@ -31,22 +31,22 @@ import org.jspecify.annotations.NullMarked;
 
 @NullMarked
 public class PaperVersionCommand {
-    public static final String DESCRIPTION = "Gets the version of this server including any plugins in use";
+    public static final String DESCRIPTION = "获取此服务器及其所使用插件的版本信息";
 
     private static final Component NOT_RUNNING = Component.text()
-        .append(Component.text("This server is not running any plugin by that name."))
+        .append(Component.text("此服务器未运行该名称的插件."))
         .appendNewline()
-        .append(Component.text("Use /plugins to get a list of plugins.").clickEvent(ClickEvent.suggestCommand("/plugins")))
+        .append(Component.text("使用 /plugins 查看插件列表.").clickEvent(ClickEvent.suggestCommand("/plugins")))
         .build();
     private static final JoinConfiguration PLAYER_JOIN_CONFIGURATION = JoinConfiguration.separators(
-        Component.text(", ", NamedTextColor.WHITE),
-        Component.text(", and ", NamedTextColor.WHITE)
+        Component.text("、", NamedTextColor.WHITE),
+        Component.text("和", NamedTextColor.WHITE)
     );
-    private static final Component FAILED_TO_FETCH = Component.text("Could not fetch version information!", NamedTextColor.RED);
-    private static final Component FETCHING = Component.text("Checking version, please wait...", NamedTextColor.WHITE, TextDecoration.ITALIC);
+    private static final Component FAILED_TO_FETCH = Component.text("无法获取版本信息!", NamedTextColor.RED);
+    private static final Component FETCHING = Component.text("正在检查版本,请稍候...", NamedTextColor.WHITE, TextDecoration.ITALIC);
 
     private final VersionFetcher versionFetcher = CraftMagicNumbers.INSTANCE.getVersionFetcher();
-    private CompletableFuture<ComputedVersion> computedVersion = CompletableFuture.completedFuture(new ComputedVersion(Component.empty(), -1)); // Precompute-- someday move that stuff out of bukkit
+    private CompletableFuture<ComputedVersion> computedVersion = CompletableFuture.completedFuture(new ComputedVersion(Component.empty(), -1)); // 预计算——以后将这些内容移出 Bukkit
 
     public static LiteralCommandNode<CommandSourceStack> create() {
         final PaperVersionCommand command = new PaperVersionCommand();
@@ -97,7 +97,7 @@ public class PaperVersionCommand {
 
         final TextComponent.Builder builder = Component.text()
             .append(Component.text(meta.getName()))
-            .append(Component.text(" version "))
+            .append(Component.text(" 版本 "))
             .append(Component.text(meta.getVersion(), NamedTextColor.GREEN)
                 .hoverEvent(Component.translatable("chat.copy.click"))
                 .clickEvent(ClickEvent.copyToClipboard(meta.getVersion()))
@@ -111,16 +111,16 @@ public class PaperVersionCommand {
 
         if (meta.getWebsite() != null) {
             Component websiteComponent = Component.text(meta.getWebsite(), NamedTextColor.GREEN).clickEvent(ClickEvent.openUrl(meta.getWebsite()));
-            builder.appendNewline().append(Component.text("Website: ").append(websiteComponent));
+            builder.appendNewline().append(Component.text("网站:").append(websiteComponent));
         }
 
         if (!meta.getAuthors().isEmpty()) {
-            String prefix = meta.getAuthors().size() == 1 ? "Author: " : "Authors: ";
+            String prefix = meta.getAuthors().size() == 1 ? "作者:" : "作者列表:";
             builder.appendNewline().append(Component.text(prefix).append(formatNameList(meta.getAuthors())));
         }
 
         if (!meta.getContributors().isEmpty()) {
-            builder.appendNewline().append(Component.text("Contributors: ").append(formatNameList(meta.getContributors())));
+            builder.appendNewline().append(Component.text("贡献者:").append(formatNameList(meta.getContributors())));
         }
         sender.sendMessage(builder.build());
     }
@@ -145,7 +145,7 @@ public class PaperVersionCommand {
                 sender.sendMessage(computedVersion.message);
             } else if (throwable != null) {
                 sender.sendMessage(FAILED_TO_FETCH);
-                MinecraftServer.LOGGER.warn("Could not fetch version information!", throwable);
+                MinecraftServer.LOGGER.warn("无法获取版本信息!", throwable);
             }
         });
     }
@@ -163,19 +163,19 @@ public class PaperVersionCommand {
     }
 
     private CompletableFuture<ComputedVersion> fetchVersionMessage() {
-       return CompletableFuture.supplyAsync(() -> {
-           final Component message = Component.textOfChildren(
-               Component.text(Bukkit.getVersionMessage(), NamedTextColor.WHITE),
-               Component.newline(),
-               this.versionFetcher.getVersionMessage()
-           );
+        return CompletableFuture.supplyAsync(() -> {
+            final Component message = Component.textOfChildren(
+                Component.text(Bukkit.getVersionMessage(), NamedTextColor.WHITE),
+                Component.newline(),
+                this.versionFetcher.getVersionMessage()
+            );
 
-           return new ComputedVersion(
-               message.hoverEvent(Component.translatable("chat.copy.click", NamedTextColor.WHITE))
-                   .clickEvent(ClickEvent.copyToClipboard(PlainTextComponentSerializer.plainText().serialize(message))),
-               System.currentTimeMillis()
-           );
-       });
+            return new ComputedVersion(
+                message.hoverEvent(Component.translatable("chat.copy.click", NamedTextColor.WHITE))
+                    .clickEvent(ClickEvent.copyToClipboard(PlainTextComponentSerializer.plainText().serialize(message))),
+                System.currentTimeMillis()
+            );
+        });
     }
 
     record ComputedVersion(Component message, long computedTime) {

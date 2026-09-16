@@ -42,7 +42,7 @@ public class PluginInitializerManager {
     }
 
     private static PluginInitializerManager parse(@NotNull final OptionSet minecraftOptionSet) throws Exception {
-        // We have to load the bukkit configuration inorder to get the update folder location.
+        // 我们必须加载 bukkit 配置以获取更新文件夹的位置.
         final File configFileLocationBukkit = (File) minecraftOptionSet.valueOf("bukkit-settings");
 
         final Path pluginDirectory = ((File) minecraftOptionSet.valueOf("plugins")).toPath();
@@ -57,9 +57,9 @@ public class PluginInitializerManager {
         final Path resolvedUpdateDirectory = pluginDirectory.resolve(updateDirectoryName);
         if (!Files.isDirectory(resolvedUpdateDirectory)) {
             if (Files.exists(resolvedUpdateDirectory)) {
-                LOGGER.error("Misconfigured update directory!");
-                LOGGER.error("Your configured update directory ({}) in bukkit.yml is pointing to a non-directory path. " +
-                    "Auto updating functionality will not work.", resolvedUpdateDirectory);
+                LOGGER.error("更新目录配置错误!");
+                LOGGER.error("你在 bukkit.yml 中配置的更新目录（{}）指向了一个非目录路径." +
+                    "自动更新功能将无法工作.", resolvedUpdateDirectory);
             }
             return new PluginInitializerManager(pluginDirectory, null);
         }
@@ -68,15 +68,15 @@ public class PluginInitializerManager {
         try {
             isSameFile = Files.isSameFile(resolvedUpdateDirectory, pluginDirectory);
         } catch (final IOException e) {
-            LOGGER.error("Misconfigured update directory!");
-            LOGGER.error("Failed to compare update/plugin directory", e);
+            LOGGER.error("更新目录配置错误!");
+            LOGGER.error("比较更新目录/插件目录时失败", e);
             return new PluginInitializerManager(pluginDirectory, null);
         }
 
         if (isSameFile) {
-            LOGGER.error("Misconfigured update directory!");
-            LOGGER.error(("Your configured update directory (%s) in bukkit.yml is pointing to the same location as the plugin directory (%s). " +
-                "Disabling auto updating functionality.").formatted(resolvedUpdateDirectory, pluginDirectory));
+            LOGGER.error("更新目录配置错误!");
+            LOGGER.error(("你在 bukkit.yml 中配置的更新目录（%s）与插件目录（%s）指向了相同位置." +
+                "已禁用自动更新功能.").formatted(resolvedUpdateDirectory, pluginDirectory));
 
             return new PluginInitializerManager(pluginDirectory, null);
         }
@@ -104,15 +104,15 @@ public class PluginInitializerManager {
     }
 
     public static void load(OptionSet optionSet) throws Exception {
-        LOGGER.info("Initializing plugins...");
-        // We have to load the bukkit configuration inorder to get the update folder location.
+        LOGGER.info("正在初始化插件,请稍候...");
+        // 我们必须加载 bukkit 配置以获取更新文件夹的位置.
         io.papermc.paper.plugin.PluginInitializerManager pluginSystem = io.papermc.paper.plugin.PluginInitializerManager.init(optionSet);
         if (pluginSystem.pluginRemapper != null) pluginSystem.pluginRemapper.loadingPlugins();
 
-        // Register the default plugin directory
+        // 注册默认插件目录
         io.papermc.paper.plugin.util.EntrypointUtil.registerProvidersFromSource(io.papermc.paper.plugin.provider.source.DirectoryProviderSource.INSTANCE, pluginSystem.pluginDirectoryPath());
 
-        // Register plugins from the flag
+        // 从命令行参数注册插件
         @SuppressWarnings("unchecked")
         java.util.List<Path> files = ((java.util.List<File>) optionSet.valuesOf("add-plugin")).stream().map(File::toPath).toList();
         io.papermc.paper.plugin.util.EntrypointUtil.registerProvidersFromSource(io.papermc.paper.plugin.provider.source.PluginFlagProviderSource.INSTANCE, files);
@@ -133,31 +133,31 @@ public class PluginInitializerManager {
             });
         });
         final int total = paperPluginNames.size() + legacyPluginNames.size();
-        LOGGER.info("Initialized {} plugin{}", total, total == 1 ? "" : "s");
+        LOGGER.info("已初始化 {} 个插件", total);
         if (!paperPluginNames.isEmpty()) {
             if (LOGGER.isDebugEnabled()) {
-                LOGGER.info("Paper plugins ({}):\n - {}", paperPluginNames.size(), String.join("\n - ", paperPluginNames));
+                LOGGER.info("Paper 插件（{}）:\n - {}", paperPluginNames.size(), String.join("\n - ", paperPluginNames));
             } else {
-                LOGGER.info("Paper plugins ({}):\n - {}", paperPluginNames.size(), String.join(", ", paperPluginNames));
+                LOGGER.info("Paper 插件（{}）:\n - {}", paperPluginNames.size(), String.join(", ", paperPluginNames));
             }
         }
         if (!legacyPluginNames.isEmpty()) {
             if (LOGGER.isDebugEnabled()) {
-                LOGGER.info("Bukkit plugins ({}):\n - {}", legacyPluginNames.size(), String.join("\n - ", legacyPluginNames));
+                LOGGER.info("Bukkit 插件（{}）:\n - {}", legacyPluginNames.size(), String.join("\n - ", legacyPluginNames));
             } else {
-                LOGGER.info("Bukkit plugins ({}):\n - {}", legacyPluginNames.size(), String.join(", ", legacyPluginNames));
+                LOGGER.info("Bukkit 插件（{}）:\n - {}", legacyPluginNames.size(), String.join(", ", legacyPluginNames));
             }
         }
     }
 
-    // This will be the end of me...
+    // 这大概会是Owen1212055的末日...
     public static void reload(DedicatedServer dedicatedServer) {
-        // Wipe the provider storage
+        // 清空 provider 存储
         LaunchEntryPointHandler.INSTANCE.populateProviderStorage();
         try {
             load(dedicatedServer.options);
         } catch (Exception e) {
-            throw new RuntimeException("Failed to reload!", e);
+            throw new RuntimeException("重载失败!", e);
         }
 
         boolean hasPaperPlugin = false;
@@ -169,9 +169,9 @@ public class PluginInitializerManager {
         }
 
         if (hasPaperPlugin) {
-            LOGGER.warn("======== WARNING ========");
-            LOGGER.warn("You are reloading while having Paper plugins installed on your server.");
-            LOGGER.warn("Paper plugins do NOT support being reloaded. This will cause some unexpected issues.");
+            LOGGER.warn("======== 警告 ========");
+            LOGGER.warn("你正在重载服务器,但服务器上安装了 Paper 插件.");
+            LOGGER.warn("Paper 插件不支持重载.这将导致一些意外问题.");
             LOGGER.warn("=========================");
         }
     }

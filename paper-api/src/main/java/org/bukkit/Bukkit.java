@@ -14,6 +14,7 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.function.Consumer;
 import java.util.logging.Logger;
+import io.papermc.paper.ServerBuildInfo;
 import io.papermc.paper.configuration.ServerConfiguration;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Warning.WarningState;
@@ -116,14 +117,14 @@ public final class Bukkit {
         server.getLogger().info(getVersionMessage());
     }
     /**
-      * Gets message describing the version server is running.
-      *
-      * @return message describing the version server is running
-      */
+     * 获取描述服务器正在运行的版本的消息.
+     *
+     * @return 描述服务器正在运行的版本的消息
+     */
     @NotNull
     public static String getVersionMessage() {
         final io.papermc.paper.ServerBuildInfo version = io.papermc.paper.ServerBuildInfo.buildInfo();
-        return "This server is running " + getName() + " version " + version.asString(io.papermc.paper.ServerBuildInfo.StringRepresentation.VERSION_FULL) + " (Implementing API version " + getBukkitVersion() + ")";
+        return "此服务器正在运行 " + getName() + " 版本 " + version.asString(ServerBuildInfo.StringRepresentation.VERSION_SIMPLE);
         // Paper end
     }
 

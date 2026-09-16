@@ -9,20 +9,20 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
- * Information about the current server build.
+ * 当前服务器构建的相关信息.
  */
 @NullMarked
 @ApiStatus.NonExtendable
 public interface ServerBuildInfo {
     /**
-     * The brand id for Paper.
+     * Paper 的品牌 id.
      */
     Key BRAND_PAPER_ID = Key.key("papermc", "paper");
 
     /**
-     * Gets the {@code ServerBuildInfo}.
+     * 获取 {@code ServerBuildInfo}.
      *
-     * @return the {@code ServerBuildInfo}
+     * @return {@code ServerBuildInfo}
      */
     static ServerBuildInfo buildInfo() {
         //<editor-fold defaultstate="collapsed" desc="Holder">
@@ -34,88 +34,88 @@ public interface ServerBuildInfo {
     }
 
     /**
-     * Gets the brand id of the server.
+     * 获取服务器的品牌 id.
      *
-     * @return the brand id of the server (e.g. "papermc:paper")
+     * @return 服务器的品牌 id（例如 "papermc:paper"）
      */
     Key brandId();
 
     /**
-     * Checks if the current server supports the specified brand.
+     * 检查当前服务器是否兼容指定的品牌.
      *
-     * @param brandId the brand to check (e.g. "papermc:folia")
-     * @return {@code true} if the server supports the specified brand
+     * @param brandId 要检查的品牌（例如 "papermc:folia"）
+     * @return 如果服务器兼容指定品牌则返回 {@code true}
      */
     @ApiStatus.Experimental
     boolean isBrandCompatible(final Key brandId);
 
     /**
-     * Gets the brand name of the server.
+     * 获取服务器的品牌名称.
      *
-     * @return the brand name of the server (e.g. "Paper")
+     * @return 服务器的品牌名称（例如 "Paper"）
      */
     String brandName();
 
     /**
-     * Gets the Minecraft version id.
+     * 获取 Minecraft 版本 id.
      *
-     * @return the Minecraft version id (e.g. "1.20.4", "1.20.2-pre2", "23w31a")
+     * @return Minecraft 版本 id（例如 "1.20.4"、"1.20.2-pre2"、"23w31a"）
      */
     String minecraftVersionId();
 
     /**
-     * Gets the Minecraft version name.
+     * 获取 Minecraft 版本名称.
      *
-     * @return the Minecraft version name (e.g. "1.20.4", "1.20.2 Pre-release 2", "23w31a")
+     * @return Minecraft 版本名称（例如 "1.20.4"、"1.20.2 Pre-release 2"、"23w31a"）
      */
     String minecraftVersionName();
 
     /**
-     * Gets the build number.
+     * 获取构建编号.
      *
-     * @return the build number
+     * @return 构建编号
      */
     OptionalInt buildNumber();
 
     /**
-     * Gets the build time.
+     * 获取构建时间.
      *
-     * @return the build time
+     * @return 构建时间
      */
     Instant buildTime();
 
     /**
-     * Gets the git commit branch.
+     * 获取 git 提交分支.
      *
-     * @return the git commit branch
+     * @return git 提交分支
      */
     Optional<String> gitBranch();
 
     /**
-     * Gets the git commit hash.
+     * 获取 git 提交哈希值.
      *
-     * @return the git commit hash
+     * @return git 提交哈希值
      */
     Optional<String> gitCommit();
 
     /**
-     * Creates a string representation of the server build information.
+     * 创建服务器构建信息的字符串表示形式.
      *
-     * @param representation the type of representation
-     * @return a string
+     * @param representation 表示形式的类型
+     * @return 字符串
      */
     String asString(final StringRepresentation representation);
 
     /**
-     * String representation types.
+     * 字符串表示形式类型.
      */
     enum StringRepresentation {
         /**
-         * A simple version string, in format {@code <minecraftVersionId>-<buildNumber>-<gitCommit>}.
+         * 简单版本字符串,格式为 {@code <minecraftVersionId>-<buildNumber>-<gitCommit>}.
          */
         VERSION_SIMPLE,
         /**
-         * A simple version string, in format {@code <minecraftVersionId>-<buildNumber>-<gitBranch>@<gitCommit> (<buildTime>)}.
+         * 简单版本字符串,格式为 {@code <minecraftVersionId>-<buildNumber>-<gitBranch>@<gitCommit> (<buildTime>)}.
          */
         VERSION_FULL,
     }
