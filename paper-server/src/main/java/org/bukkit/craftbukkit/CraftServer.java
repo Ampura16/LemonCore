@@ -485,6 +485,27 @@ public final class CraftServer implements Server {
         this.potionBrewer = new io.papermc.paper.potion.PaperPotionBrewer(console); // Paper - custom potion mixes
         datapackManager = new io.papermc.paper.datapack.PaperDatapackManager(console.getPackRepository()); // Paper
         this.spark = new io.papermc.paper.SparksFly(this); // Paper - spark
+
+        // LemonCore start - generate lemoncore_notice.yml on first startup, load if already present
+        File lemonCoreNoticeFile = new File("lemoncore_notice.yml");
+        YamlConfiguration lemonCoreNotice = YamlConfiguration.loadConfiguration(lemonCoreNoticeFile);
+        lemonCoreNotice.options().copyDefaults(true);
+        lemonCoreNotice.options().setHeader(java.util.List.of(
+            "您正在使用 BlockLand Realms 团队的 PaperMC 改版服务器核心.",
+            "如您除了同意 MojangAB 和 PaperMC 有关协议外还同意我们的用户协议.",
+            "请将lemoncore.eula设置为true.",
+            "为了保持文件处理器规范性,我们不强制您同意此协议.",
+            "方块维度开发团队感谢您的支持:p",
+            "LemonCore Powered by Ampura16 @BlockLand Realms."
+        ));
+        lemonCoreNotice.addDefault("lemoncore.eula", false);
+        try {
+            lemonCoreNotice.save(lemonCoreNoticeFile);
+        } catch (IOException ex) {
+            Logger.getLogger(CraftServer.class.getName()).log(Level.SEVERE, "Could not save " + lemonCoreNoticeFile, ex);
+        }
+        // LemonCore end
+
     }
 
     public boolean getCommandBlockOverride(String command) {
