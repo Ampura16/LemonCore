@@ -1,0 +1,304 @@
+{
+  "repo_notes": [
+    {
+      "content": ""
+    }
+  ],
+  "pages": [
+    {
+      "title": "概览",
+      "purpose": "LemonCore/Paper 是什么：一个高性能 Minecraft 服务器分支，由 paper-api（Bukkit/Paper API）、paper-server（CraftBukkit 实现与 NMS 补丁）、paper-generator 和 test-plugin 组成。包含指向子页面的链接。",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "仓库布局与模块地图",
+      "purpose": "介绍目录树：paper-api、paper-server（src/main、src/minecraft、patches）、paper-generator、test-plugin、build-data 和 .github。",
+      "parent": "概览",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "服务器启动与引导",
+      "purpose": "介绍从 org.bukkit.craftbukkit.Main 经由 PaperBootstrap、DedicatedServer、选项解析、插件初始化器、看门狗到关闭流程的启动路径。",
+      "parent": "概览",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "构建系统与补丁工作流",
+      "purpose": "概述 Gradle/paperweight 构建流程与基于补丁的开发模型；包含指向子页面的链接。",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Gradle 项目与任务",
+      "purpose": "介绍根目录和 settings 构建脚本、工具链、依赖集合、runServer/createMojmapBundlerJar/paperclip 任务、发布流程及 CI 工作流。",
+      "parent": "构建系统与补丁工作流",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "补丁、映射与访问转换器",
+      "purpose": "介绍 paper-server/patches 的 sources/features/resources 布局与功能、applyPatches/rebuildPatches、paper.at、Tiny 映射补丁，以及反编译后的 src/minecraft 目录树。",
+      "parent": "构建系统与补丁工作流",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "paper-generator 代码生成",
+      "purpose": "介绍 paper-generator 如何将生成的 API 源码（注册表键、标签、枚举）输出到 paper-api/src/generated 和 paper-server/src/generated。",
+      "parent": "构建系统与补丁工作流",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Bukkit/Paper API（paper-api）",
+      "purpose": "概述面向插件开发者的公共 API 表面及其主要包组；包含指向子页面的链接。",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "核心接口：Bukkit、Server、World、Entity",
+      "purpose": "介绍静态 Bukkit 访问入口、Server、World/RegionAccessor、Chunk、实体层级（Entity→LivingEntity→HumanEntity→Player）、OfflinePlayer 和封禁列表。",
+      "parent": "Bukkit/Paper API（paper-api）",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "实体类型 API",
+      "purpose": "按实体族介绍实体接口：生物、可驯服实体、马类、投射物、载具、下落方块、区域效果云和 EntityEffect。",
+      "parent": "Bukkit/Paper API（paper-api）",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "数学与工具类型",
+      "purpose": "介绍 Location、Vector、BlockVector、BoundingBox、BlockIterator、RayTraceResult、ChatColor/Color/DyeColor 以及元数据存储。",
+      "parent": "Bukkit/Paper API（paper-api）",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "注册表、材料与键",
+      "purpose": "介绍 Material/BlockType/ItemType、EntityType、Enchantment、PotionEffectType、Registry/RegistryKey、Tag、NamespacedKey 以及旧版材料数据。",
+      "parent": "Bukkit/Paper API（paper-api）",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "物品、物品栏与配方 API",
+      "purpose": "介绍 ItemStack、ItemMeta 及其组件、ItemFlag、Inventory/PlayerInventory/EntityEquipment、InventoryView/MenuType，以及各种配方类型。",
+      "parent": "Bukkit/Paper API（paper-api）",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "方块与方块状态 API",
+      "purpose": "介绍 Block、BlockData、BlockState 及方块实体状态接口（Furnace、Chest、Sign、Beacon 等）、BlockFace 和 SoundGroup。",
+      "parent": "Bukkit/Paper API（paper-api）",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "事件系统",
+      "purpose": "介绍 Event/HandlerList/EventPriority 的机制，并梳理事件包结构；包含指向子页面的链接。",
+      "parent": "Bukkit/Paper API（paper-api）",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "实体与玩家事件",
+      "purpose": "介绍伤害/死亡、生成/转换、交互、传送门/传送、钓鱼、桶、投射物和登录事件。",
+      "parent": "Bukkit/Paper API（paper-api）",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "方块、物品栏与服务器事件",
+      "purpose": "介绍方块点燃/物理更新/放置/破坏事件，物品栏点击/拖动/熔炼/附魔事件，以及服务器列表 Ping 和 Tab 补全事件。",
+      "parent": "Bukkit/Paper API（paper-api）",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "插件、命令与权限 API",
+      "purpose": "介绍插件生命周期、JavaPlugin/PluginClassLoader、plugin.yml 与 PluginMeta、命令映射、Brigadier Commands API、权限、帮助系统、插件消息、调度器及 YAML 配置。",
+      "parent": "Bukkit/Paper API（paper-api）",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "CraftBukkit 实现（paper-server）",
+      "purpose": "概述 API 如何通过 Craft* 包装类构建在 NMS 之上；包含指向子页面的链接。",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "CraftServer、CraftWorld 与调度",
+      "purpose": "介绍服务器单例连接、世界注册/加载、区域访问器、区块包装器、生成器、CraftScheduler/CraftTask 以及崩溃报告。",
+      "parent": "CraftBukkit 实现（paper-server）",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "实体包装器与 CraftEventFactory",
+      "purpose": "介绍面向玩家、生物、投射物、载具和悬挂实体的 CraftEntity 层级，以及通过 CraftEventFactory 触发事件的流程。",
+      "parent": "CraftBukkit 实现（paper-server）",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "物品、ItemMeta 与数据组件",
+      "purpose": "介绍 CraftItemStack 镜像、CraftItemFactory、CraftMetaItem Applicator 及其所有元数据子类、DataComponent 适配器和 PersistentDataContainer。",
+      "parent": "CraftBukkit 实现（paper-server）",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "方块、方块状态与方块实体",
+      "purpose": "介绍 CraftBlock、CraftBlockData、CraftBlockState/CraftBlockEntityState 子类、CraftBlockStates 工厂以及方块状态列表填充器。",
+      "parent": "CraftBukkit 实现（paper-server）",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "物品栏、容器与商人",
+      "purpose": "介绍 CraftInventory 系列、CraftContainer/CraftInventoryView、菜单类型映射、配方、商人和地图渲染。",
+      "parent": "CraftBukkit 实现（paper-server）",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "注册表桥接、旧版支持与 Adventure",
+      "purpose": "介绍 CraftRegistry/Holderable、CraftEnchantment/CraftSound 等类、Commodore 字节码重写、CraftLegacy/FieldRename 重定向、ApiVersion、PaperAdventure 及聊天消息转换。",
+      "parent": "CraftBukkit 实现（paper-server）",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "命令、计分板与帮助系统",
+      "purpose": "介绍 Brigadier 集成（PaperCommands、VanillaCommandWrapper、参数提供器）、命令发送者、默认权限、/paper 命令、计分板以及 help.yml 映射。",
+      "parent": "CraftBukkit 实现（paper-server）",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "原版服务器补丁（NMS 层）",
+      "purpose": "概述 sources/ 和 features/ 补丁对原版 Minecraft 代码所做的修改；包含指向子页面的链接。",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "网络连接与连接生命周期",
+      "purpose": "介绍握手/登录/配置/游戏数据包监听器、Connection、PlayerList、DisconnectionReason、PlayerConnection 包装器、插件消息和服务器列表 Ping。",
+      "parent": "原版服务器补丁（NMS 层）",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "世界、区块与关卡补丁",
+      "purpose": "介绍 Level/ServerLevel/LevelChunk、ChunkMap/DistanceManager/ServerChunkCache、区块生成器、世界边界、存储系统（PlayerDataStorage、LevelStorageSource）以及红石更新器。",
+      "parent": "原版服务器补丁（NMS 层）",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "实体与生物行为补丁",
+      "purpose": "介绍 Entity/LivingEntity/Mob 补丁、AI 目标与行为、生成系统（NaturalSpawner、PhantomSpawner）、袭击、Boss 战、物品实体和 EntityType。",
+      "parent": "原版服务器补丁（NMS 层）",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    }
+  ]
+}
