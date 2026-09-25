@@ -8,11 +8,16 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.pathfinder.VoxelNodeEvaluator;
 import net.minecraft.world.phys.AABB;
 import org.jspecify.annotations.Nullable;
 
 public class NearestAttackableTargetGoal<T extends LivingEntity> extends TargetGoal {
     private static final int DEFAULT_RANDOM_INTERVAL = 10;
+    /** 体素寻路实体搜索玩家时的随机间隔(原版为 10, 即平均约 10 tick 才搜索一次) */
+    private static final int VOXEL_PLAYER_RANDOM_INTERVAL = 2;
+    /** 体素寻路实体搜索其他实体时的最小随机间隔 */
+    private static final int VOXEL_MIN_RANDOM_INTERVAL = 2;
     protected final Class<T> targetType;
     protected final int randomInterval;
     protected @Nullable LivingEntity target;
@@ -35,9 +40,28 @@ public class NearestAttackableTargetGoal<T extends LivingEntity> extends TargetG
     ) {
         super(mob, mustSee, mustReach);
         this.targetType = targetType;
-        this.randomInterval = reducedTickDelay(interval);
+        // 体素寻路实体: 更快地搜索目标, 并使用增强感知(透明方块/近距离可达目标)
+        boolean voxel = VoxelNodeEvaluator.isUsedBy(mob);
+        this.randomInterval = reducedTickDelay(voxel ? getVoxelRandomInterval(targetType, interval) : interval);
         this.setFlags(EnumSet.of(Goal.Flag.TARGET));
         this.targetConditions = TargetingConditions.forCombat().range(this.getFollowDistance()).selector(selector);
+        if (voxel) {
+            this.targetConditions.useVoxelPerception();
+        }
+    }
+
+    /**
+     * 计算体素寻路实体的搜索间隔: 以玩家为目标时固定为较短间隔; 其他目标减半但不低于下限.
+     * 间隔为 0 表示调用方要求每次都搜索, 保持不变.
+     */
+    private static int getVoxelRandomInterval(Class<?> targetType, int interval) {
+        if (interval <= 0) {
+            return interval;
+        } else if (targetType == Player.class || targetType == ServerPlayer.class) {
+            return Math.min(interval, VOXEL_PLAYER_RANDOM_INTERVAL);
+        } else {
+            return Math.min(interval, Math.max(VOXEL_MIN_RANDOM_INTERVAL, interval / 2));
+        }
     }
 
     @Override

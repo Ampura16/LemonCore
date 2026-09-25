@@ -27,7 +27,7 @@ import net.minecraft.world.level.block.state.BlockState;
  * 移动方式（陆地行走、游泳、飞行、两栖）实现具体的起点计算、
  * 邻居生成以及路径类型判定逻辑.
  *
- * @author DELL
+ * @author Ampura16
  * @date 2026/09/20
  */
 public abstract class NodeEvaluator {

@@ -25,6 +25,7 @@ import net.minecraft.world.level.pathfinder.NodeEvaluator;
 import net.minecraft.world.level.pathfinder.Path;
 import net.minecraft.world.level.pathfinder.PathFinder;
 import net.minecraft.world.level.pathfinder.PathType;
+import net.minecraft.world.level.pathfinder.VoxelNodeEvaluator;
 import net.minecraft.world.level.pathfinder.WalkNodeEvaluator;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
@@ -59,7 +60,12 @@ public abstract class PathNavigation {
     public PathNavigation(Mob mob, Level level) {
         this.mob = mob;
         this.level = level;
-        this.pathFinder = this.createPathFinder(Mth.floor(mob.getAttributeBaseValue(Attributes.FOLLOW_RANGE) * 16.0));
+        int maxVisitedNodes = Mth.floor(mob.getAttributeBaseValue(Attributes.FOLLOW_RANGE) * 16.0);
+        this.pathFinder = this.createPathFinder(maxVisitedNodes);
+        // 体素寻路: 放大节点预算 (nodeEvaluator 在 createPathFinder 中才被赋值, 故在其后应用)
+        if (this.usesVoxelEvaluator()) {
+            this.pathFinder.setMaxVisitedNodes(Mth.floor(maxVisitedNodes * VoxelNodeEvaluator.SEARCH_BUDGET_MULTIPLIER));
+        }
         if (level instanceof ServerLevel serverLevel) {
             ServerDebugSubscribers serverDebugSubscribers = serverLevel.getServer().debugSubscribers();
             this.pathFinder.setCaptureDebug(() -> serverDebugSubscribers.hasAnySubscriberFor(DebugSubscriptions.ENTITY_PATHS));
@@ -67,8 +73,45 @@ public abstract class PathNavigation {
     }
 
     public void updatePathfinderMaxVisitedNodes() {
-        int floor = Mth.floor(this.getMaxPathLength() * 16.0F);
+        int floor = Mth.floor(this.getMaxPathLength() * 16.0F * (this.usesVoxelEvaluator() ? VoxelNodeEvaluator.SEARCH_BUDGET_MULTIPLIER : 1.0F)); // 体素寻路: 放大节点预算
         this.pathFinder.setMaxVisitedNodes(floor);
+    }
+
+    /**
+     * 当前导航是否使用 {@link VoxelNodeEvaluator}.
+     *
+     * @return 是否使用体素寻路
+     */
+    protected boolean usesVoxelEvaluator() {
+        return this.nodeEvaluator instanceof VoxelNodeEvaluator;
+    }
+
+    /**
+     * 无副作用的路径探测: 计算到目标实体的路径, 但不改变当前导航记录的目标点、到达范围与卡住检测状态.
+     * 用于感知(Sensing)判断目标是否"可经由路径到达", 避免因为探测而让方块更新触发的重算指向错误目标.
+     * 注意: 若当前路径尚未走完且终点与目标一致, 会直接返回当前路径.
+     *
+     * @param entity     目标实体
+     * @param reachRange 到达范围
+     * @return 探测得到的路径; 无法寻路时为 null
+     */
+    public @Nullable Path probePath(Entity entity, int reachRange) {
+        BlockPos savedTargetPos = this.targetPos;
+        int savedReachRange = this.reachRange;
+        Vec3i savedTimeoutCachedNode = this.timeoutCachedNode;
+        long savedTimeoutTimer = this.timeoutTimer;
+        double savedTimeoutLimit = this.timeoutLimit;
+        boolean savedIsStuck = this.isStuck;
+        try {
+            return this.createPath(entity, reachRange);
+        } finally {
+            this.targetPos = savedTargetPos;
+            this.reachRange = savedReachRange;
+            this.timeoutCachedNode = savedTimeoutCachedNode;
+            this.timeoutTimer = savedTimeoutTimer;
+            this.timeoutLimit = savedTimeoutLimit;
+            this.isStuck = savedIsStuck;
+        }
     }
 
     public void setRequiredPathLength(float requiredPathLength) {
@@ -184,6 +227,7 @@ public abstract class PathNavigation {
             ProfilerFiller profilerFiller = Profiler.get();
             profilerFiller.push("pathfind");
             BlockPos blockPos = offsetUpward ? this.mob.blockPosition().above() : this.mob.blockPosition();
+            if (this.usesVoxelEvaluator()) followRange *= VoxelNodeEvaluator.SEARCH_RANGE_MULTIPLIER; // 体素寻路: 放宽搜索距离, 允许绕行
             int i = (int)(followRange + regionOffset);
             PathNavigationRegion pathNavigationRegion = new PathNavigationRegion(this.level, blockPos.offset(-i, -i, -i), blockPos.offset(i, i, i));
             Path path = this.pathFinder.findPath(pathNavigationRegion, this.mob, targets, followRange, reachRange, this.maxVisitedNodesMultiplier);
@@ -290,7 +334,7 @@ public abstract class PathNavigation {
 
     protected double getGroundY(Vec3 pos) {
         BlockPos blockPos = BlockPos.containing(pos);
-        return this.level.getBlockState(blockPos.below()).isAir() ? pos.y : WalkNodeEvaluator.getFloorLevel(this.level, blockPos);
+        return this.level.getBlockState(blockPos.below()).isAir() ? pos.y : VoxelNodeEvaluator.getFloorLevel(this.level, blockPos);
     }
 
     protected void followThePath() {

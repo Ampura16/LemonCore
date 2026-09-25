@@ -7,6 +7,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.pathfinder.Path;
+import net.minecraft.world.level.pathfinder.VoxelNodeEvaluator;
 
 public class MeleeAttackGoal extends Goal {
     protected final PathfinderMob mob;
@@ -21,6 +22,8 @@ public class MeleeAttackGoal extends Goal {
     private final int attackInterval = 20;
     private long lastCanUseCheck;
     private static final long COOLDOWN_BETWEEN_CAN_USE_CHECKS = 20L;
+    /** 体素寻路实体的 canUse 检查冷却: 获得目标后尽快开始追击 */
+    private static final long VOXEL_COOLDOWN_BETWEEN_CAN_USE_CHECKS = 5L;
 
     public MeleeAttackGoal(PathfinderMob mob, double speedModifier, boolean followingTargetEvenIfNotSeen) {
         this.mob = mob;
@@ -32,7 +35,8 @@ public class MeleeAttackGoal extends Goal {
     @Override
     public boolean canUse() {
         long gameTime = this.mob.level().getGameTime();
-        if (gameTime - this.lastCanUseCheck < 20L) {
+        long cooldown = VoxelNodeEvaluator.isUsedBy(this.mob) ? VOXEL_COOLDOWN_BETWEEN_CAN_USE_CHECKS : COOLDOWN_BETWEEN_CAN_USE_CHECKS;
+        if (gameTime - this.lastCanUseCheck < cooldown) {
             return false;
         } else {
             this.lastCanUseCheck = gameTime;
@@ -56,7 +60,9 @@ public class MeleeAttackGoal extends Goal {
         } else if (!target.isAlive()) {
             return false;
         } else {
-            return !this.followingTargetEvenIfNotSeen
+            // 体素寻路实体在能感知目标时持续追击, 而不是走完当前(可能是残缺的)路径就放弃
+            boolean voxelPerceived = VoxelNodeEvaluator.isUsedBy(this.mob) && this.mob.getSensing().canPerceive(target);
+            return !this.followingTargetEvenIfNotSeen && !voxelPerceived
                 ? !this.mob.getNavigation().isDone()
                 : this.mob.isWithinHome(target.blockPosition()) && !(target instanceof Player player && (player.isSpectator() || player.isCreative()));
         }
@@ -92,7 +98,7 @@ public class MeleeAttackGoal extends Goal {
         if (target != null) {
             this.mob.getLookControl().setLookAt(target, 30.0F, 30.0F);
             this.ticksUntilNextPathRecalculation = Math.max(this.ticksUntilNextPathRecalculation - 1, 0);
-            if ((this.followingTargetEvenIfNotSeen || this.mob.getSensing().hasLineOfSight(target))
+            if ((this.followingTargetEvenIfNotSeen || this.canTrackTarget(target))
                 && this.ticksUntilNextPathRecalculation <= 0
                 && (
                     this.pathedTargetX == 0.0 && this.pathedTargetY == 0.0 && this.pathedTargetZ == 0.0
@@ -120,6 +126,16 @@ public class MeleeAttackGoal extends Goal {
             this.ticksUntilNextAttack = Math.max(this.ticksUntilNextAttack - 1, 0);
             this.checkAndPerformAttack(target);
         }
+    }
+
+    /**
+     * 是否可以追踪目标(用于重新规划路径): 原版要求视线畅通; 体素寻路实体使用 Sensing#canPerceive 增强感知.
+     *
+     * @param target 目标
+     * @return 是否可追踪
+     */
+    protected boolean canTrackTarget(LivingEntity target) {
+        return VoxelNodeEvaluator.isUsedBy(this.mob) ? this.mob.getSensing().canPerceive(target) : this.mob.getSensing().hasLineOfSight(target);
     }
 
     protected void checkAndPerformAttack(LivingEntity target) {

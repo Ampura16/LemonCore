@@ -13,6 +13,8 @@ public class TargetingConditions {
     private double range = -1.0;
     private boolean checkLineOfSight = true;
     private boolean testInvisible = true;
+    /** 使用 Sensing#canPerceive 替代纯视线检测(体素寻路实体的增强感知) */
+    private boolean voxelPerception;
     private TargetingConditions.@Nullable Selector selector;
 
     private TargetingConditions(boolean isCombat) {
@@ -32,6 +34,7 @@ public class TargetingConditions {
         targetingConditions.range = this.range;
         targetingConditions.checkLineOfSight = this.checkLineOfSight;
         targetingConditions.testInvisible = this.testInvisible;
+        targetingConditions.voxelPerception = this.voxelPerception;
         targetingConditions.selector = this.selector;
         return targetingConditions;
     }
@@ -43,6 +46,17 @@ public class TargetingConditions {
 
     public TargetingConditions ignoreLineOfSight() {
         this.checkLineOfSight = false;
+        return this;
+    }
+
+    /**
+     * 视线检测改为使用 {@link net.minecraft.world.entity.ai.sensing.Sensing#canPerceive(net.minecraft.world.entity.Entity)}:
+     * 对体素寻路实体而言, 玻璃/玻璃板/树叶后的目标以及近距离内可经由路径到达的目标同样视为可见.
+     *
+     * @return this
+     */
+    public TargetingConditions useVoxelPerception() {
+        this.voxelPerception = true;
         return this;
     }
 
@@ -82,7 +96,8 @@ public class TargetingConditions {
                     }
                 }
 
-                if (this.checkLineOfSight && entity instanceof Mob mob && !mob.getSensing().hasLineOfSight(target)) {
+                if (this.checkLineOfSight && entity instanceof Mob mob
+                    && !(this.voxelPerception ? mob.getSensing().canPerceive(target) : mob.getSensing().hasLineOfSight(target))) {
                     return false;
                 }
             }

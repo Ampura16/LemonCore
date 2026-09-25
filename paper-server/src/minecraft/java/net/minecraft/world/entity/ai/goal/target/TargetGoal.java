@@ -7,6 +7,7 @@ import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.level.pathfinder.Node;
 import net.minecraft.world.level.pathfinder.Path;
+import net.minecraft.world.level.pathfinder.VoxelNodeEvaluator;
 import net.minecraft.world.scores.Team;
 import org.jspecify.annotations.Nullable;
 
@@ -55,7 +56,11 @@ public abstract class TargetGoal extends Goal {
                     return false;
                 } else {
                     if (this.mustSee) {
-                        if (this.mob.getSensing().hasLineOfSight(target)) {
+                        // 体素寻路实体使用增强感知: 目标躲到玻璃后或拐角处时不会立即丢失
+                        boolean perceived = VoxelNodeEvaluator.isUsedBy(this.mob)
+                            ? this.mob.getSensing().canPerceive(target)
+                            : this.mob.getSensing().hasLineOfSight(target);
+                        if (perceived) {
                             this.unseenTicks = 0;
                         } else if (++this.unseenTicks > reducedTickDelay(this.unseenMemoryTicks)) {
                             return false;

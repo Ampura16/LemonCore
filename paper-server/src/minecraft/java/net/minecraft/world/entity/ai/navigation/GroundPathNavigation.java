@@ -14,6 +14,7 @@ import net.minecraft.world.level.pathfinder.Node;
 import net.minecraft.world.level.pathfinder.Path;
 import net.minecraft.world.level.pathfinder.PathFinder;
 import net.minecraft.world.level.pathfinder.PathType;
+import net.minecraft.world.level.pathfinder.VoxelNodeEvaluator;
 import net.minecraft.world.level.pathfinder.WalkNodeEvaluator;
 import net.minecraft.world.phys.Vec3;
 
@@ -27,7 +28,8 @@ public class GroundPathNavigation extends PathNavigation {
 
     @Override
     protected PathFinder createPathFinder(int maxVisitedNodes) {
-        this.nodeEvaluator = new WalkNodeEvaluator();
+        // 使用 VoxelNodeEvaluator 替代 WalkNodeEvaluator 支持增强的三维寻路
+        this.nodeEvaluator = new VoxelNodeEvaluator();
         return new PathFinder(this.nodeEvaluator, maxVisitedNodes);
     }
 
