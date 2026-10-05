@@ -10,9 +10,13 @@ import org.jspecify.annotations.NullMarked;
 public interface BuildableDataComponent<C extends BuildableDataComponent<C, B>, B extends DataComponentBuilder<C>> {
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 从此数据组件创建新的构建器。
+     * <p>原文：
      * Creates a new builder from this data component.
      *
-     * @return a new builder
+     * @return 新的构建器
+     * <p>原文：a new builder
      */
     @Contract(value = "-> new", pure = true)
     B toBuilder();

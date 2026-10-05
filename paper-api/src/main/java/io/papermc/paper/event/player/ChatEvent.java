@@ -12,9 +12,13 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当 {@link Player} 向服务器发送聊天消息时触发的事件。
+ * <p>原文：
  * An event fired when a {@link Player} sends a chat message to the server.
  *
- * @deprecated Listening to this event forces chat to wait for the main thread, delaying chat messages.
+ * @deprecated 监听此事件会迫使聊天等待主线程，从而延迟聊天消息。建议尽可能改用 {@link AsyncChatEvent}。
+ * <p>原文：Listening to this event forces chat to wait for the main thread, delaying chat messages.
  * It is recommended to use {@link AsyncChatEvent} instead, wherever possible.
  */
 @Deprecated

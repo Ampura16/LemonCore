@@ -26,18 +26,26 @@ public class BlockPreDispenseEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取将被发射的 {@link ItemStack}。
+     * <p>原文：
      * Gets the {@link ItemStack} to be dispensed.
      *
-     * @return The item to be dispensed
+     * @return 将被发射的物品
+     * <p>原文：The item to be dispensed
      */
     public ItemStack getItemStack() {
         return this.itemStack;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取发射器要从中发射的物品栏槽位。
+     * <p>原文：
      * Gets the inventory slot of the dispenser to dispense from.
      *
-     * @return The inventory slot
+     * @return 物品栏槽位
+     * <p>原文：The inventory slot
      */
     public int getSlot() {
         return this.slot;

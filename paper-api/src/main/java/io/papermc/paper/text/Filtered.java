@@ -6,10 +6,14 @@ import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 表示该类型可由客户端过滤，并可能根据玩家的设置以不同方式显示。
+ * <p>原文：
  * Denotes that this type is filterable by the client, and may be shown differently
  * depending on the player's set configuration.
  *
- * @param <T> type of value
+ * @param <T> 值的类型
+ * <p>原文：type of value
  */
 @ApiStatus.Experimental
 @NullMarked

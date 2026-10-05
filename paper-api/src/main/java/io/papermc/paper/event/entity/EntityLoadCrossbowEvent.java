@@ -10,6 +10,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当 LivingEntity 为弩装填弹射物时调用。
+ * <p>原文：
  * Called when a LivingEntity loads a crossbow with a projectile.
  */
 @NullMarked
@@ -36,32 +39,42 @@ public class EntityLoadCrossbowEvent extends EntityEvent implements Cancellable 
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取正在装填的弩 {@link ItemStack}。
+     * <p>原文：
      * Gets the crossbow {@link ItemStack} being loaded.
      *
-     * @return the crossbow involved in this event
+     * @return 此事件涉及的弩
+     * <p>原文：the crossbow involved in this event
      */
     public ItemStack getCrossbow() {
         return this.crossbow;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取装填弩所用的手。
+     * <p>原文：
      * Gets the hand from which the crossbow was loaded.
      *
-     * @return the hand
+     * @return 手
+     * <p>原文：the hand
      */
     public EquipmentSlot getHand() {
         return this.hand;
     }
 
     /**
-     * @return should the itemstack be consumed
+     * @return 是否应消耗该物品堆
+     * <p>原文：should the itemstack be consumed
      */
     public boolean shouldConsumeItem() {
         return this.consumeItem;
     }
 
     /**
-     * @param consume should the item be consumed
+     * @param consume 是否应消耗该物品
+     * <p>原文：should the item be consumed
      */
     public void setConsumeItem(final boolean consume) {
         this.consumeItem = consume;
@@ -73,6 +86,9 @@ public class EntityLoadCrossbowEvent extends EntityEvent implements Cancellable 
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置是否取消装填弩。如果取消，本应装入弩的弹射物不会被消耗。
+     * <p>原文：
      * Set whether to cancel the crossbow being loaded. If canceled, the
      * projectile that would be loaded into the crossbow will not be consumed.
      */

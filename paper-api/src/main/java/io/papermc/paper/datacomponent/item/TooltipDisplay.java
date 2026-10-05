@@ -13,9 +13,13 @@ import org.jspecify.annotations.NullMarked;
 public interface TooltipDisplay {
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 返回用于创建 TooltipDisplay 的新构建器。
+     * <p>原文：
      * Returns a new builder for creating a TooltipDisplay.
      *
-     * @return a builder
+     * @return 构建器
+     * <p>原文：a builder
      */
     @Contract(value = "-> new", pure = true)
     static Builder tooltipDisplay() {
@@ -27,6 +31,9 @@ public interface TooltipDisplay {
     Set<DataComponentType> hiddenComponents();
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * {@link TooltipDisplay} 的构建器。
+     * <p>原文：
      * Builder for {@link TooltipDisplay}.
      */
     @ApiStatus.Experimental

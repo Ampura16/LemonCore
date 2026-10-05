@@ -9,9 +9,13 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当 {@link Raider} 被钟显形时调用。
+ * <p>原文：
  * Called when a {@link Raider} is revealed by a bell.
  *
- * @deprecated use {@link org.bukkit.event.block.BellResonateEvent}
+ * @deprecated 请使用 {@link org.bukkit.event.block.BellResonateEvent}
+ * <p>原文：use {@link org.bukkit.event.block.BellResonateEvent}
  */
 @Deprecated(since = "1.19.4")
 public class BellRevealRaiderEvent extends BlockEvent implements Cancellable {
@@ -28,9 +32,13 @@ public class BellRevealRaiderEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取被钟显形的袭击者。
+     * <p>原文：
      * Gets the raider that the bell revealed.
      *
-     * @return The raider
+     * @return 袭击者
+     * <p>原文：The raider
      */
     @NotNull
     public Raider getEntity() {

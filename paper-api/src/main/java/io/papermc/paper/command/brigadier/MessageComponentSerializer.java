@@ -8,15 +8,22 @@ import net.kyori.adventure.text.serializer.ComponentSerializer;
 import org.jetbrains.annotations.ApiStatus;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 用于在 {@link Message} 与 {@link Component} 之间转换的组件序列化器。
+ * <p>原文：
  * A component serializer for converting between {@link Message} and {@link Component}.
  */
 @ApiStatus.NonExtendable
 public interface MessageComponentSerializer extends ComponentSerializer<Component, Component, Message> {
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 用于在 {@link Message} 与 {@link Component} 之间转换的组件序列化器。
+     * <p>原文：
      * A component serializer for converting between {@link Message} and {@link Component}.
      *
-     * @return serializer instance
+     * @return 序列化器实例
+     * <p>原文：serializer instance
      */
     static MessageComponentSerializer message() {
         final class Holder {

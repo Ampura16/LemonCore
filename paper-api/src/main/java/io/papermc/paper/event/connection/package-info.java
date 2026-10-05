@@ -1,4 +1,7 @@
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 通用连接事件。
+ * <p>原文：
  * Common connection events.
  */
 @NullMarked

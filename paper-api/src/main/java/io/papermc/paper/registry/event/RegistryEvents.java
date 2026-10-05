@@ -35,6 +35,9 @@ import org.bukkit.entity.ZombieNautilus;
 import static io.papermc.paper.registry.event.RegistryEventProviderImpl.create;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 为每个适用的注册表持有 {@link RegistryEntryAddEvent} 和 {@link RegistryComposeEvent} 处理器的提供器。
+ * <p>原文：
  * Holds providers for {@link RegistryEntryAddEvent} and {@link RegistryComposeEvent}
  * handlers for each applicable registry.
  */

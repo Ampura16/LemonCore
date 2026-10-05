@@ -7,6 +7,11 @@ import org.jetbrains.annotations.Contract;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 以整数表示的位置。
+ * <p>
+ * <b>在移除 Experimental 注解之前可能出现破坏性变更。</b>
+ * <p>原文：
  * A position represented with integers.
  * <p>
  * <b>May see breaking changes until Experimental annotation is removed.</b>
@@ -58,10 +63,15 @@ public interface BlockPosition extends Position {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 返回沿指定方向偏移 1 的方块坐标。
+     * <p>原文：
      * Returns a block position offset by 1 in the direction specified.
      *
-     * @param blockFace the block face to offset towards
-     * @return the offset block position
+     * @param blockFace 要朝其偏移的方块面
+     * <p>原文：the block face to offset towards
+     * @return 偏移后的方块位置
+     * <p>原文：the offset block position
      */
     @Contract(value = "_ -> new", pure = true)
     default BlockPosition offset(final BlockFace blockFace) {
@@ -69,12 +79,18 @@ public interface BlockPosition extends Position {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 返回沿指定方向偏移（方向乘以指定量）的方块坐标。
+     * <p>原文：
      * Returns a block position offset in the direction specified
      * multiplied by the amount.
      *
-     * @param blockFace the block face to offset towards
-     * @param amount the number of times to move in that direction
-     * @return the offset block position
+     * @param blockFace 要朝其偏移的方块面
+     * <p>原文：the block face to offset towards
+     * @param amount 朝该方向移动的次数
+     * <p>原文：the number of times to move in that direction
+     * @return 偏移后的方块位置
+     * <p>原文：the offset block position
      */
     @Contract(pure = true)
     default BlockPosition offset(final BlockFace blockFace, final int amount) {
@@ -82,12 +98,18 @@ public interface BlockPosition extends Position {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 返回沿指定轴偏移指定量的方块坐标。
+     * <p>原文：
      * Returns a block position offset by the amount along
      * the specified axis.
      *
-     * @param axis the axis to offset along
-     * @param amount the amount to offset along that axis
-     * @return the offset block position
+     * @param axis 要沿其偏移的轴
+     * <p>原文：the axis to offset along
+     * @param amount 沿该轴偏移的量
+     * <p>原文：the amount to offset along that axis
+     * @return 偏移后的方块位置
+     * <p>原文：the offset block position
      */
     @Contract(pure = true)
     default BlockPosition offset(final Axis axis, final int amount) {

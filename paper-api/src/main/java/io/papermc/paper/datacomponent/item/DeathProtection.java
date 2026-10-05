@@ -9,6 +9,9 @@ import org.jetbrains.annotations.Unmodifiable;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 设置此物品是否在实体死亡时保护该实体，以及应播放哪些效果。
+ * <p>原文：
  * Sets whether this item should protect the entity upon death, and what effects should be played.
  * @see io.papermc.paper.datacomponent.DataComponentTypes#DEATH_PROTECTION
  */
@@ -31,6 +34,9 @@ public interface DeathProtection {
     @Unmodifiable List<ConsumeEffect> deathEffects();
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * {@link DeathProtection} 的构建器。
+     * <p>原文：
      * Builder for {@link DeathProtection}.
      */
     @ApiStatus.Experimental

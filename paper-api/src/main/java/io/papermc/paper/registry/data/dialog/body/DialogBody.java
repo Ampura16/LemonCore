@@ -8,20 +8,33 @@ import org.jetbrains.annotations.Range;
 import org.jspecify.annotations.Nullable;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 表示对话框的主体。
+ * <p>原文：
  * Represents the body of a dialog.
  */
 public sealed interface DialogBody permits ItemDialogBody, PlainMessageDialogBody {
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 为对话框创建物品主体。
+     * <p>原文：
      * Creates an item body for a dialog.
      *
-     * @param item              the item to display in the dialog
-     * @param description       the description of the body, or null if not set
-     * @param showDecorations   whether to show decorations around the item
-     * @param showTooltip       whether to show a tooltip for the item
-     * @param width             the width of the item body
-     * @param height            the height of the item body
-     * @return a new item body instance
+     * @param item 在对话框中显示的物品
+     * <p>原文：the item to display in the dialog
+     * @param description 主体的描述；如果未设置则为 null
+     * <p>原文：the description of the body, or null if not set
+     * @param showDecorations 是否在物品周围显示装饰
+     * <p>原文：whether to show decorations around the item
+     * @param showTooltip 是否为物品显示工具提示
+     * <p>原文：whether to show a tooltip for the item
+     * @param width 物品主体的宽度
+     * <p>原文：the width of the item body
+     * @param height 物品主体的高度
+     * <p>原文：the height of the item body
+     * @return 新的物品主体实例
+     * <p>原文：a new item body instance
      */
     @Contract(pure = true, value = "_, _, _, _, _, _ -> new")
     static ItemDialogBody item(
@@ -42,10 +55,15 @@ public sealed interface DialogBody permits ItemDialogBody, PlainMessageDialogBod
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 创建新的物品对话框主体构建器。
+     * <p>原文：
      * Creates a new item dialog body builder.
      *
-     * @param item the item to display in the dialog
-     * @return a new item dialog body builder instance
+     * @param item 在对话框中显示的物品
+     * <p>原文：the item to display in the dialog
+     * @return 新的物品对话框主体构建器实例
+     * <p>原文：a new item dialog body builder instance
      */
     @Contract(pure = true, value = "_ -> new")
     static ItemDialogBody.Builder item(final ItemStack item) {
@@ -53,10 +71,15 @@ public sealed interface DialogBody permits ItemDialogBody, PlainMessageDialogBod
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 为对话框创建纯文本消息主体。
+     * <p>原文：
      * Creates a plain message body for a dialog.
      *
-     * @param contents the contents of the message
-     * @return a new plain message body instance
+     * @param contents 消息内容
+     * <p>原文：the contents of the message
+     * @return 新的纯文本消息主体实例
+     * <p>原文：a new plain message body instance
      */
     @Contract(pure = true, value = "_ -> new")
     static PlainMessageDialogBody plainMessage(final Component contents) {
@@ -64,11 +87,17 @@ public sealed interface DialogBody permits ItemDialogBody, PlainMessageDialogBod
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 为对话框创建纯文本消息主体。
+     * <p>原文：
      * Creates a plain message body for a dialog.
      *
-     * @param contents the contents of the message
-     * @param width    the width of the message body
-     * @return a new plain message body instance
+     * @param contents 消息内容
+     * <p>原文：the contents of the message
+     * @param width 消息主体的宽度
+     * <p>原文：the width of the message body
+     * @return 新的纯文本消息主体实例
+     * <p>原文：a new plain message body instance
      */
     @Contract(pure = true, value = "_, _ -> new")
     static PlainMessageDialogBody plainMessage(final Component contents, final @Range(from = 1, to = 1024) int width) {

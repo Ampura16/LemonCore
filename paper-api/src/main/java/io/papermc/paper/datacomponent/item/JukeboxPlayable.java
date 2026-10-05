@@ -7,6 +7,9 @@ import org.jetbrains.annotations.Contract;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 持有物品的唱片机歌曲。
+ * <p>原文：
  * Holds the jukebox song for an item.
  * @see io.papermc.paper.datacomponent.DataComponentTypes#JUKEBOX_PLAYABLE
  */
@@ -24,6 +27,9 @@ public interface JukeboxPlayable  {
     JukeboxSong jukeboxSong();
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * {@link JukeboxPlayable} 的构建器。
+     * <p>原文：
      * Builder for {@link JukeboxPlayable}.
      */
     @ApiStatus.Experimental
@@ -31,10 +37,15 @@ public interface JukeboxPlayable  {
     interface Builder extends DataComponentBuilder<JukeboxPlayable> {
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 设置唱片机歌曲。
+         * <p>原文：
          * Sets the jukebox song.
          *
-         * @param song the song
-         * @return the builder for chaining
+         * @param song 唱片曲目
+         * <p>原文：the song
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #jukeboxSong()
          */
         @Contract(value = "_ -> this", mutates = "this")

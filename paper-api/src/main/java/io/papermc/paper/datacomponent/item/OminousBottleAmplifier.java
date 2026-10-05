@@ -6,6 +6,9 @@ import org.jetbrains.annotations.Contract;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 持有不祥之瓶的倍率。
+ * <p>原文：
  * Holds the ominous bottle amplifier.
  * @see io.papermc.paper.datacomponent.DataComponentTypes#OMINOUS_BOTTLE_AMPLIFIER
  */
@@ -20,9 +23,13 @@ public interface OminousBottleAmplifier {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取瓶子的倍率。
+     * <p>原文：
      * Gets the bottle amplifier.
      *
-     * @return the amplifier
+     * @return 倍率
+     * <p>原文：the amplifier
      */
     @Contract(pure = true)
     @IntRange(from = 0, to = 4) int amplifier();

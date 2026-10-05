@@ -9,6 +9,9 @@ import org.jetbrains.annotations.Unmodifiable;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 持有物品容器的内容。
+ * <p>原文：
  * Holds the contents of an item container.
  * @see io.papermc.paper.datacomponent.DataComponentTypes#CONTAINER
  */
@@ -28,9 +31,13 @@ public interface ItemContainerContents {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取容器的内容。
+     * <p>原文：
      * Gets the contents of the container.
      *
-     * @return the contents
+     * @return 内容
+     * <p>原文：the contents
      */
     @Contract(value = "-> new", pure = true)
     @Unmodifiable List<ItemStack> contents();
@@ -40,20 +47,30 @@ public interface ItemContainerContents {
     interface Builder extends DataComponentBuilder<ItemContainerContents> {
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 向容器添加一个物品堆。
+         * <p>原文：
          * Adds an item stack to the container.
          *
-         * @param stack the item stack
-         * @return the builder for chaining
+         * @param stack 物品堆
+         * <p>原文：the item stack
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #contents()
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder add(ItemStack stack);
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 向容器添加多个物品堆。
+         * <p>原文：
          * Adds item stacks to the container.
          *
-         * @param stacks the item stacks
-         * @return the builder for chaining
+         * @param stacks 物品堆
+         * <p>原文：the item stacks
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #contents()
          */
         @Contract(value = "_ -> this", mutates = "this")

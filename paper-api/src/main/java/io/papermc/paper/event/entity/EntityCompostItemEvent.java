@@ -9,6 +9,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当物品即将被实体投入堆肥时调用。
+ * <p>原文：
  * Called when an item is about to be composted by an entity.
  */
 @NullMarked
@@ -24,9 +27,13 @@ public class EntityCompostItemEvent extends CompostItemEvent implements Cancella
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取与堆肥桶交互的实体。
+     * <p>原文：
      * Gets the entity that interacted with the composter.
      *
-     * @return the entity that composted an item.
+     * @return 将物品投入堆肥的实体。
+     * <p>原文：the entity that composted an item.
      */
     public Entity getEntity() {
         return this.entity;

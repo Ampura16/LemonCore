@@ -33,55 +33,79 @@ public class PlayerLecternPageChangeEvent extends PlayerEvent implements Cancell
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取涉及的讲台。
+     * <p>原文：
      * Gets the lectern involved.
      *
-     * @return the Lectern
+     * @return 讲台
+     * <p>原文：the Lectern
      */
     public Lectern getLectern() {
         return this.lectern;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取讲台上当前的 ItemStack。
+     * <p>原文：
      * Gets the current ItemStack on the lectern.
      *
-     * @return the ItemStack on the Lectern
+     * @return 讲台上的 ItemStack
+     * <p>原文：the ItemStack on the Lectern
      */
     public ItemStack getBook() {
         return this.book;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取翻页方向。本质上返回玩家点击的是哪个按钮：左或右。
+     * <p>原文：
      * Gets the page change direction. This is essentially returns which button the player clicked, left or right.
      *
-     * @return the page change direction
+     * @return 翻页方向
+     * <p>原文：the page change direction
      */
     public PageChangeDirection getPageChangeDirection() {
         return this.pageChangeDirection;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取翻页前的页码。<i>页码从 0 开始。</i>
+     * <p>原文：
      * Gets the page changed from. <i>Pages are 0-indexed.</i>
      *
-     * @return the page changed from
+     * @return 翻页前的页码
+     * <p>原文：the page changed from
      */
     public int getOldPage() {
         return this.oldPage;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取翻页后的页码。<i>页码从 0 开始。</i>
+     * <p>原文：
      * Gets the page changed to. <i>Pages are 0-indexed.</i>
      *
-     * @return the page changed to
+     * @return 翻页后的页码
+     * <p>原文：the page changed to
      */
     public int getNewPage() {
         return this.newPage;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置翻页后的页码。<i>页码从 0 开始。</i> 大于总页数的页码将显示最后一页。
+     * <p>原文：
      * Sets the page changed to. <i>Pages are 0-indexed.</i>
      * Page indices that are greater than the number of pages will show the last page.
      *
-     * @param newPage the new paged changed to
+     * @param newPage 翻页后的新页码
+     * <p>原文：the new paged changed to
      */
     public void setNewPage(final int newPage) {
         this.newPage = newPage;

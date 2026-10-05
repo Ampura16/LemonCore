@@ -9,6 +9,9 @@ import org.jetbrains.annotations.Unmodifiable;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 持有自定义模型数据。
+ * <p>原文：
  * Holds the custom model data.
  *
  * @see io.papermc.paper.datacomponent.DataComponentTypes#CUSTOM_MODEL_DATA
@@ -24,38 +27,57 @@ public interface CustomModelData {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取自定义模型数据的浮点值。
+     * <p>原文：
      * Gets the custom model data float values.
      *
-     * @return the float values
+     * @return 浮点值
+     * <p>原文：the float values
      */
     @Contract(pure = true)
     @Unmodifiable List<Float> floats();
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取自定义模型数据的布尔值。
+     * <p>原文：
      * Gets the custom model data boolean values.
      *
-     * @return the boolean values
+     * @return 布尔值
+     * <p>原文：the boolean values
      */
     @Contract(pure = true)
     @Unmodifiable List<Boolean> flags();
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取自定义模型数据的字符串值。
+     * <p>原文：
      * Gets the custom model data string values.
      *
-     * @return the string values
+     * @return 字符串值
+     * <p>原文：the string values
      */
     @Contract(pure = true)
     @Unmodifiable List<String> strings();
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取自定义模型数据的颜色值。
+     * <p>原文：
      * Gets the custom model data color values.
      *
-     * @return the color values
+     * @return 颜色值
+     * <p>原文：the color values
      */
     @Contract(pure = true)
     @Unmodifiable List<Color> colors();
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * {@link CustomModelData} 的构建器。
+     * <p>原文：
      * Builder for {@link CustomModelData}.
      */
     @ApiStatus.Experimental
@@ -63,80 +85,120 @@ public interface CustomModelData {
     interface Builder extends DataComponentBuilder<CustomModelData> {
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 向此自定义模型数据添加一个浮点数。
+         * <p>原文：
          * Adds a float to this custom model data.
          *
-         * @param f the float
-         * @return the builder for chaining
+         * @param f 浮点数
+         * <p>原文：the float
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #floats()
          */
         @Contract(value = "_ -> this", mutates = "this")
         CustomModelData.Builder addFloat(float f);
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 向此自定义模型数据添加多个浮点数。
+         * <p>原文：
          * Adds multiple floats to this custom model data.
          *
-         * @param floats the floats
-         * @return the builder for chaining
+         * @param floats 浮点数
+         * <p>原文：the floats
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #floats()
          */
         @Contract(value = "_ -> this", mutates = "this")
         CustomModelData.Builder addFloats(List<Float> floats);
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 向此自定义模型数据添加一个标志。
+         * <p>原文：
          * Adds a flag to this custom model data.
          *
-         * @param flag the flag
-         * @return the builder for chaining
+         * @param flag 标志
+         * <p>原文：the flag
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #flags()
          */
         @Contract(value = "_ -> this", mutates = "this")
         CustomModelData.Builder addFlag(boolean flag);
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 向此自定义模型数据添加多个标志。
+         * <p>原文：
          * Adds multiple flags to this custom model data.
          *
-         * @param flags the flags
-         * @return the builder for chaining
+         * @param flags 标志
+         * <p>原文：the flags
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #flags()
          */
         @Contract(value = "_ -> this", mutates = "this")
         CustomModelData.Builder addFlags(List<Boolean> flags);
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 向此自定义模型数据添加一个字符串。
+         * <p>原文：
          * Adds a string to this custom model data.
          *
-         * @param string the string
-         * @return the builder for chaining
+         * @param string 字符串
+         * <p>原文：the string
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #strings()
          */
         @Contract(value = "_ -> this", mutates = "this")
         CustomModelData.Builder addString(String string);
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 向此自定义模型数据添加多个字符串。
+         * <p>原文：
          * Adds multiple strings to this custom model data.
          *
-         * @param strings the strings
-         * @return the builder for chaining
+         * @param strings 字符串
+         * <p>原文：the strings
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #strings()
          */
         @Contract(value = "_ -> this", mutates = "this")
         CustomModelData.Builder addStrings(List<String> strings);
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 向此自定义模型数据添加一个颜色。
+         * <p>原文：
          * Adds a color to this custom model data.
          *
-         * @param color the color
-         * @return the builder for chaining
+         * @param color 颜色
+         * <p>原文：the color
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #colors()
          */
         @Contract(value = "_ -> this", mutates = "this")
         CustomModelData.Builder addColor(Color color);
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 向此自定义模型数据添加多个颜色。
+         * <p>原文：
          * Adds multiple colors to this custom model data.
          *
-         * @param colors the colors
-         * @return the builder for chaining
+         * @param colors 颜色
+         * <p>原文：the colors
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #colors()
          */
         @Contract(value = "_ -> this", mutates = "this")

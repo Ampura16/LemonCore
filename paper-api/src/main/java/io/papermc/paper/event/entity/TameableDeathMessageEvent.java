@@ -9,6 +9,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当 {@link Tameable} 死亡并发送死亡消息时调用。
+ * <p>原文：
  * Called when a {@link Tameable} dies and sends a death message.
  */
 @NullMarked
@@ -26,18 +29,26 @@ public class TameableDeathMessageEvent extends EntityEvent implements Cancellabl
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置显示给可驯服生物主人的死亡消息。
+     * <p>原文：
      * Set the death message that appears to the owner of the tameable.
      *
-     * @param deathMessage Death message to appear
+     * @param deathMessage 要显示的死亡消息
+     * <p>原文：Death message to appear
      */
     public void deathMessage(final Component deathMessage) {
         this.deathMessage = deathMessage;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取显示给可驯服生物主人的死亡消息。
+     * <p>原文：
      * Get the death message that appears to the owner of the tameable.
      *
-     * @return Death message to appear
+     * @return 要显示的死亡消息
+     * <p>原文：Death message to appear
      */
     public Component deathMessage() {
         return this.deathMessage;

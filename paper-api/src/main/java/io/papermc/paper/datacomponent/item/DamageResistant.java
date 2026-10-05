@@ -7,6 +7,9 @@ import org.jetbrains.annotations.Contract;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 持有包含此物品的物品实体对哪些伤害类型免疫。
+ * <p>原文：
  * Holds the contents of damage types that the item entity containing this item is invincible to.
  * @see io.papermc.paper.datacomponent.DataComponentTypes#DAMAGE_RESISTANT
  */
@@ -21,9 +24,13 @@ public interface DamageResistant {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 此伤害类型所免疫的类型。
+     * <p>原文：
      * The types that this damage type is invincible to.
      *
-     * @return the key of the tag holding the respective damage types.
+     * @return 包含相应伤害类型的标签的键。
+     * <p>原文：the key of the tag holding the respective damage types.
      */
     @Contract(value = "-> new", pure = true)
     TagKey<DamageType> types();

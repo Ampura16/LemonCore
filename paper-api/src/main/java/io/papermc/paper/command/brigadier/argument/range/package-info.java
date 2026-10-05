@@ -1,4 +1,7 @@
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 范围提供器。
+ * <p>原文：
  * Range providers.
  */
 @NullMarked

@@ -1,4 +1,7 @@
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 配置阶段连接事件。
+ * <p>原文：
  * Configuration connection events.
  */
 @ApiStatus.Experimental

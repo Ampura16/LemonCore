@@ -5,6 +5,9 @@ import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.ApiStatus;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * ItemStack 的谓词。
+ * <p>原文：
  * A predicate for ItemStack.
  *
  * @see io.papermc.paper.command.brigadier.argument.ArgumentTypes#itemPredicate()

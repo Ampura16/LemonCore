@@ -11,6 +11,9 @@ import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当宝库方块改变状态时调用。
+ * <p>原文：
  * Called when a vault block changes state.
  */
 @NullMarked
@@ -33,27 +36,39 @@ public class VaultChangeStateEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取与此状态变化关联的玩家（如适用）。
+     * <p>原文：
      * Gets the player associated with this state change, if applicable.
      *
-     * @return The associated player, or {@code null} if not known.
+     * @return 关联的玩家；如果未知则为 {@code null}。
+     * <p>原文：The associated player, or {@code null} if not known.
      */
     public @Nullable Player getPlayer() {
         return this.player;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取宝库当前所处的状态。
+     * <p>原文：
      * Gets the state the vault is currently in.
      *
-     * @return The current vault state.
+     * @return 当前的宝库状态。
+     * <p>原文：The current vault state.
      */
     public Vault.State getCurrentState() {
         return this.currentState;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取宝库正尝试转换到的状态。
+     * <p>原文：
      * Gets the state the vault is attempting to transition to.
      *
-     * @return The new vault state.
+     * @return 新的宝库状态。
+     * <p>原文：The new vault state.
      */
     public Vault.State getNewState() {
         return this.newState;

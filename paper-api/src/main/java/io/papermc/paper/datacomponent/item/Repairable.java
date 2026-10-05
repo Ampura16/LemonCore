@@ -7,6 +7,9 @@ import org.jetbrains.annotations.Contract;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 持有此物品是否可修复，以及可以用哪些物品类型修复。
+ * <p>原文：
  * Holds if this item is repairable, and what item types it can be repaired with.
  * @see io.papermc.paper.datacomponent.DataComponentTypes#REPAIRABLE
  */
@@ -21,9 +24,13 @@ public interface Repairable {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 此物品可用于修复的类型。
+     * <p>原文：
      * The types that this item is repairable to.
      *
-     * @return item
+     * @return 物品
+     * <p>原文：item
      */
     @Contract(value = "-> new", pure = true)
     RegistryKeySet<ItemType> types();

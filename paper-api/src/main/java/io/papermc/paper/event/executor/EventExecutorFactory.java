@@ -36,8 +36,10 @@ public final class EventExecutorFactory {
     /**
      * {@return an {@link EventExecutor} implemented by a hidden class calling a method handle}
      *
-     * @param method     the method to be invoked by the created event executor
-     * @param eventClass the class of the event to handle
+     * @param method 创建的事件执行器将调用的方法
+     * <p>原文：the method to be invoked by the created event executor
+     * @param eventClass 要处理的事件的类
+     * <p>原文：the class of the event to handle
      */
     public static EventExecutor create(final Method method, final Class<? extends Event> eventClass) {
         final List<?> classData = List.of(method, eventClass);

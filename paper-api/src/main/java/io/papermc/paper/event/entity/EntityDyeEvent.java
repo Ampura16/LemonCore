@@ -14,6 +14,9 @@ import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当实体被染色时调用。目前在 {@link Sheep} 被染色以及 {@link Wolf}/{@link Cat} 的项圈被染色时调用。
+ * <p>原文：
  * Called when an entity is dyed. Currently, this is called for {@link Sheep}
  * being dyed, and {@link Wolf}/{@link Cat} collars being dyed.
  */
@@ -35,27 +38,39 @@ public class EntityDyeEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取实体被染上的 DyeColor
+     * <p>原文：
      * Gets the DyeColor the entity is being dyed
      *
-     * @return the DyeColor the entity is being dyed
+     * @return 实体被染上的 DyeColor
+     * <p>原文：the DyeColor the entity is being dyed
      */
     public DyeColor getColor() {
         return this.dyeColor;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置实体被染上的 DyeColor
+     * <p>原文：
      * Sets the DyeColor the entity is being dyed
      *
-     * @param dyeColor the DyeColor the entity will be dyed
+     * @param dyeColor 实体将被染成的 DyeColor
+     * <p>原文：the DyeColor the entity will be dyed
      */
     public void setColor(final DyeColor dyeColor) {
         this.dyeColor = dyeColor;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 返回为实体染色的玩家（如果有）。
+     * <p>原文：
      * Returns the player dyeing the entity, if available.
      *
-     * @return player or {@code null}
+     * @return 玩家或 {@code null}
+     * <p>原文：player or {@code null}
      */
     public @Nullable Player getPlayer() {
         return this.player;

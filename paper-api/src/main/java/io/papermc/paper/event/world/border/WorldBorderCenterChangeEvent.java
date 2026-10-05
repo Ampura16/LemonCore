@@ -9,6 +9,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当世界边界的中心改变时调用。
+ * <p>原文：
  * Called when a world border's center is changed.
  */
 @NullMarked
@@ -29,27 +32,39 @@ public class WorldBorderCenterChangeEvent extends WorldBorderEvent implements Ca
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取世界边界原来的中心位置。
+     * <p>原文：
      * Gets the original center location of the world border.
      *
-     * @return the old center
+     * @return 原来的中心
+     * <p>原文：the old center
      */
     public Location getOldCenter() {
         return this.oldCenter.clone();
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取世界边界的新中心位置。
+     * <p>原文：
      * Gets the new center location for the world border.
      *
-     * @return the new center
+     * @return 新的中心
+     * <p>原文：the new center
      */
     public Location getNewCenter() {
         return this.newCenter;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置世界边界的新中心位置。Y 坐标将被忽略。
+     * <p>原文：
      * Sets the new center location for the world border. Y coordinate is ignored.
      *
-     * @param newCenter the new center
+     * @param newCenter 新的中心
+     * <p>原文：the new center
      */
     public void setNewCenter(final Location newCenter) {
         this.newCenter = newCenter.clone();

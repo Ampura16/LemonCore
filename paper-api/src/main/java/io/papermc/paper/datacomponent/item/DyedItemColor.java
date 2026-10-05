@@ -7,6 +7,9 @@ import org.jetbrains.annotations.Contract;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 表示应用于可染色物品的颜色。
+ * <p>原文：
  * Represents a color applied to a dyeable item.
  * @see io.papermc.paper.datacomponent.DataComponentTypes#DYED_COLOR
  */
@@ -26,14 +29,21 @@ public interface DyedItemColor {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 物品的颜色。
+     * <p>原文：
      * Color of the item.
      *
-     * @return color
+     * @return 颜色
+     * <p>原文：color
      */
     @Contract(value = "-> new", pure = true)
     Color color();
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * {@link DyedItemColor} 的构建器。
+     * <p>原文：
      * Builder for {@link DyedItemColor}.
      */
     @ApiStatus.Experimental
@@ -41,10 +51,15 @@ public interface DyedItemColor {
     interface Builder extends DataComponentBuilder<DyedItemColor> {
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 设置此构建器的颜色。
+         * <p>原文：
          * Sets the color of this builder.
          *
-         * @param color color
-         * @return the builder for chaining
+         * @param color 颜色
+         * <p>原文：color
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #color()
          */
         @Contract(value = "_ -> this", mutates = "this")

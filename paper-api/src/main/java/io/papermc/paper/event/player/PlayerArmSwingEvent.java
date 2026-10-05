@@ -19,9 +19,13 @@ public class PlayerArmSwingEvent extends PlayerAnimationEvent {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 返回挥动手臂所用的手。
+     * <p>原文：
      * Returns the hand of the arm swing.
      *
-     * @return the hand
+     * @return 手
+     * <p>原文：the hand
      */
     public EquipmentSlot getHand() {
         return this.equipmentSlot;

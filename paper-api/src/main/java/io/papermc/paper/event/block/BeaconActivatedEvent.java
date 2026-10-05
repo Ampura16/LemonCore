@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 在信标被激活时调用。当信标光束变得可见时即视为激活。
+ * <p>原文：
  * Called when a beacon is activated.
  * Activation occurs when the beacon beam becomes visible.
  */
@@ -22,9 +25,13 @@ public class BeaconActivatedEvent extends BlockEvent {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 返回被激活的信标。
+     * <p>原文：
      * Returns the beacon that was activated.
      *
-     * @return the beacon that was activated.
+     * @return 被激活的信标。
+     * <p>原文：the beacon that was activated.
      */
     public Beacon getBeacon() {
         return (Beacon) this.block.getState();

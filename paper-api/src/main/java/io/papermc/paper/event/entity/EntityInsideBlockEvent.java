@@ -9,6 +9,37 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当实体进入方块的碰撞箱时调用。仅对实体在其内部时会作出反应的方块调用。若取消，实体处于该方块中本应导致的任何行为都不会发生（例如炼药锅熄灭实体身上的火）。
+ * <p>
+ * 当前会调用该事件的方块：
+ * <ul>
+ * <li>大型垂滴叶</li>
+ * <li>气泡柱</li>
+ * <li>按钮</li>
+ * <li>仙人掌</li>
+ * <li>营火</li>
+ * <li>炼药锅</li>
+ * <li>农作物</li>
+ * <li>末地折跃门</li>
+ * <li>末地传送门</li>
+ * <li>眼眸花</li>
+ * <li>火</li>
+ * <li>青蛙卵</li>
+ * <li>蜂蜜块</li>
+ * <li>漏斗</li>
+ * <li>探测铁轨</li>
+ * <li>下界传送门</li>
+ * <li>瓶子草植株</li>
+ * <li>细雪</li>
+ * <li>压力板</li>
+ * <li>甜浆果丛</li>
+ * <li>绊线</li>
+ * <li>睡莲</li>
+ * <li>蜘蛛网</li>
+ * <li>凋零玫瑰</li>
+ * </ul>
+ * <p>原文：
  * Called when an entity enters the hitbox of a block.
  * Only called for blocks that react when an entity is inside.
  * If cancelled, any action that would have resulted from that entity
@@ -57,9 +88,13 @@ public class EntityInsideBlockEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取方块。
+     * <p>原文：
      * Gets the block.
      *
-     * @return the block
+     * @return 方块
+     * <p>原文：the block
      */
     public Block getBlock() {
         return this.block;

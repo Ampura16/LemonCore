@@ -10,6 +10,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当玩家获得物品冷却时触发。
+ * <p>原文：
  * Fired when a player receives an item cooldown.
  *
  * @see PlayerItemCooldownEvent for a more specific event when applied to a specific item.
@@ -32,28 +35,40 @@ public class PlayerItemGroupCooldownEvent extends PlayerEvent implements Cancell
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取物品 {@link org.bukkit.inventory.meta.components.UseCooldownComponent} 所定义的冷却组。
+     * <p>原文：
      * Get the cooldown group as defined by an item's {@link org.bukkit.inventory.meta.components.UseCooldownComponent}.
      *
-     * @return cooldown group
+     * @return 冷却组
+     * <p>原文：cooldown group
      */
     public NamespacedKey getCooldownGroup() {
         return this.cooldownGroup;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取冷却时间（刻）。
+     * <p>原文：
      * Gets the cooldown in ticks.
      *
-     * @return cooldown in ticks
+     * @return 冷却时间（刻）
+     * <p>原文：cooldown in ticks
      */
     public int getCooldown() {
         return this.cooldown;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置该材料的冷却时间（刻）。将冷却设为 0 会移除该材料已有的冷却。
+     * <p>原文：
      * Sets the cooldown of the material in ticks.
      * Setting the cooldown to 0 results in removing an already existing cooldown for the material.
      *
-     * @param cooldown cooldown in ticks, has to be a positive number
+     * @param cooldown 冷却时间（刻），必须为正数
+     * <p>原文：cooldown in ticks, has to be a positive number
      */
     public void setCooldown(final int cooldown) {
         Preconditions.checkArgument(cooldown >= 0, "The cooldown has to be equal to or greater than 0!");

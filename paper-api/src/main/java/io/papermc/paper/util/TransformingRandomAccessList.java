@@ -13,10 +13,15 @@ import org.jspecify.annotations.NullMarked;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * Guava 同名类的修改版本，以支持添加操作。
+ * <p>原文：
  * Modified version of the Guava class with the same name to support add operations.
  *
- * @param <F> backing list element type
- * @param <T> transformed list element type
+ * @param <F> 底层列表元素类型
+ * <p>原文：backing list element type
+ * @param <T> 转换后列表元素类型
+ * <p>原文：transformed list element type
  */
 @NullMarked
 @ApiStatus.Internal
@@ -27,11 +32,17 @@ public final class TransformingRandomAccessList<F, T> extends AbstractList<T> im
     final Function<? super T, ? extends F> fromFunction;
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 创建新的 {@link TransformingRandomAccessList}。
+     * <p>原文：
      * Create a new {@link TransformingRandomAccessList}.
      *
-     * @param fromList backing list
-     * @param toFunction function mapping backing list element type to transformed list element type
-     * @param fromFunction function mapping transformed list element type to backing list element type
+     * @param fromList 底层列表
+     * <p>原文：backing list
+     * @param toFunction 将底层列表元素类型映射为转换后列表元素类型的函数
+     * <p>原文：function mapping backing list element type to transformed list element type
+     * @param fromFunction 将转换后列表元素类型映射为底层列表元素类型的函数
+     * <p>原文：function mapping transformed list element type to backing list element type
      */
     public TransformingRandomAccessList(
         final List<F> fromList,

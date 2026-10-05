@@ -11,6 +11,11 @@ import org.jetbrains.annotations.Range;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当监守者的愤怒值因其他实体而改变时调用。
+ * <p>
+ * 如果事件被取消，监守者的愤怒值将不会改变。
+ * <p>原文：
  * Called when a Warden's anger level has changed due to another entity.
  * <p>
  * If the event is cancelled, the warden's anger level will not change.
@@ -35,18 +40,26 @@ public class WardenAngerChangeEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取触发此次愤怒值更新的实体。
+     * <p>原文：
      * Gets the entity which triggered this anger update.
      *
-     * @return triggering entity
+     * @return 触发的实体
+     * <p>原文：triggering entity
      */
     public Entity getTarget() {
         return this.target;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取原来的愤怒值。
+     * <p>原文：
      * Gets the old anger level.
      *
-     * @return old anger level
+     * @return 原来的愤怒值
+     * <p>原文：old anger level
      * @see Warden#getAnger(Entity)
      */
     public @Range(from = 0, to = 150) int getOldAnger() {
@@ -54,9 +67,13 @@ public class WardenAngerChangeEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取此事件导致的新愤怒值。
+     * <p>原文：
      * Gets the new anger level resulting from this event.
      *
-     * @return new anger level
+     * @return 新的愤怒值
+     * <p>原文：new anger level
      * @see Warden#getAnger(Entity)
      */
     public @Range(from = 0, to = 150) int getNewAnger() {
@@ -64,12 +81,19 @@ public class WardenAngerChangeEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置此事件导致的新愤怒值。
+     * <p>
+     * 监守者的愤怒值上限为 150。
+     * <p>原文：
      * Sets the new anger level resulting from this event.
      * <p>
      * The anger of a warden is capped at 150.
      *
-     * @param newAnger the new anger level, max 150
-     * @throws IllegalArgumentException if newAnger is greater than 150
+     * @param newAnger 新的愤怒值，最大 150
+     * <p>原文：the new anger level, max 150
+     * @throws IllegalArgumentException 如果 newAnger 大于 150
+     * <p>原文：if newAnger is greater than 150
      * @see Warden#setAnger(Entity, int)
      */
     public void setNewAnger(final @Range(from = 0, to = 150) int newAnger) {

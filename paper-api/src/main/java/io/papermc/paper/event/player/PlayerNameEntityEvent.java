@@ -11,6 +11,9 @@ import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当玩家尝试为生物重命名时调用
+ * <p>原文：
  * Called when the player is attempting to rename a mob
  */
 @NullMarked
@@ -33,54 +36,78 @@ public class PlayerNameEntityEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取要赋予实体的名称。
+     * <p>原文：
      * Gets the name to be given to the entity.
      *
-     * @return the name
+     * @return 名称
+     * <p>原文：the name
      */
     public @Nullable Component getName() {
         return this.name;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置要赋予实体的名称。
+     * <p>原文：
      * Sets the name to be given to the entity.
      *
-     * @param name the name
+     * @param name 名称
+     * <p>原文：the name
      */
     public void setName(final @Nullable Component name) {
         this.name = name;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取此事件涉及的实体。
+     * <p>原文：
      * Gets the entity involved in this event.
      *
-     * @return the entity
+     * @return 实体
+     * <p>原文：the entity
      */
     public LivingEntity getEntity() {
         return this.entity;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置此事件涉及的实体。
+     * <p>原文：
      * Sets the entity involved in this event.
      *
-     * @param entity the entity
+     * @param entity 实体
+     * <p>原文：the entity
      */
     public void setEntity(final LivingEntity entity) {
         this.entity = entity;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取这是否会将生物设为持久存在。
+     * <p>原文：
      * Gets whether this will set the mob to be persistent.
      *
-     * @return persistent
+     * @return 是否持久存在
+     * <p>原文：persistent
      */
     public boolean isPersistent() {
         return this.persistent;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置这是否会将生物设为持久存在。
+     * <p>原文：
      * Sets whether this will set the mob to be persistent.
      *
-     * @param persistent persistent
+     * @param persistent 是否持久存在
+     * <p>原文：persistent
      */
     public void setPersistent(final boolean persistent) {
         this.persistent = persistent;

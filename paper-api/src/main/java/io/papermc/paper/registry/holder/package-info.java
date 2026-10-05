@@ -1,4 +1,7 @@
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 注册表持有者。
+ * <p>原文：
  * Registry holders.
  */
 @ApiStatus.Experimental

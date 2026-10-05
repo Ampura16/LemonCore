@@ -24,9 +24,13 @@ import org.jspecify.annotations.Nullable;
 public interface CommandSourceStack {
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取执行此命令的位置。
+     * <p>原文：
      * Gets the location that this command is being executed at.
      *
-     * @return a cloned location instance.
+     * @return 克隆的位置实例。
+     * <p>原文：a cloned location instance.
      */
     Location getLocation();
 
@@ -35,34 +39,49 @@ public interface CommandSourceStack {
      * The sender of a command source stack is the one that initiated/triggered the execution of a command.
      * It differs to {@link #getExecutor()} as the executor can be changed by a command, e.g. {@literal /execute}.
      *
-     * @return the command sender instance
+     * @return 命令发送者实例
+     * <p>原文：the command sender instance
      */
     CommandSender getSender();
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取执行此命令的实体。不一定总是 {@link #getSender()}，因为命令的执行者可以被更改为与触发命令的实体不同的实体。
+     * <p>原文：
      * Gets the entity that executes this command.
      * May not always be {@link #getSender()} as the executor of a command can be changed to a different entity
      * than the one that triggered the command.
      *
-     * @return entity that executes this command
+     * @return 执行此命令的实体
+     * <p>原文：entity that executes this command
      */
     @Nullable Entity getExecutor();
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 创建具有不同位置的新 CommandSourceStack 对象，用于将命令重定向到其他节点。
+     * <p>原文：
      * Creates a new CommandSourceStack object with a different location for redirecting commands to other nodes.
      *
-     * @param location The location to create a new CommandSourceStack object with
-     * @return The newly created CommandSourceStack
+     * @param location 用于创建新 CommandSourceStack 对象的位置
+     * <p>原文：The location to create a new CommandSourceStack object with
+     * @return 新创建的 CommandSourceStack
+     * <p>原文：The newly created CommandSourceStack
      * @see #getLocation()
      * @see com.mojang.brigadier.builder.ArgumentBuilder#fork(CommandNode, RedirectModifier)
      */
     CommandSourceStack withLocation(Location location);
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 创建具有不同执行者的新 CommandSourceStack 对象，用于将命令重定向到其他节点。
+     * <p>原文：
      * Creates a new CommandSourceStack object with a different executor for redirecting commands to other nodes.
      *
-     * @param executor The executing entity to create a new CommandSourceStack object with
-     * @return The newly created CommandSourceStack
+     * @param executor 用于创建新 CommandSourceStack 对象的执行实体
+     * <p>原文：The executing entity to create a new CommandSourceStack object with
+     * @return 新创建的 CommandSourceStack
+     * <p>原文：The newly created CommandSourceStack
      * @see #getExecutor()
      * @see com.mojang.brigadier.builder.ArgumentBuilder#fork(CommandNode, RedirectModifier)
      */

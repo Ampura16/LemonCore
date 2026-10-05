@@ -15,9 +15,13 @@ import org.jspecify.annotations.Nullable;
 public interface KineticWeapon {
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 返回用于创建动能武器的新构建器。
+     * <p>原文：
      * Returns a new builder for creating a Kinetic Weapon.
      *
-     * @return a builder instance
+     * @return 构建器实例
+     * <p>原文：a builder instance
      */
     @Contract(value = "-> new", pure = true)
     static Builder kineticWeapon() {
@@ -25,6 +29,9 @@ public interface KineticWeapon {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 创建 {@link Condition} 对象。
+     * <p>原文：
      * Creates a {@link Condition} object.
      */
     @Contract(value = "_, _, _ -> new", pure = true)
@@ -70,6 +77,9 @@ public interface KineticWeapon {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * {@link KineticWeapon} 的构建器。
+     * <p>原文：
      * Builder for {@link KineticWeapon}.
      */
     @ApiStatus.Experimental

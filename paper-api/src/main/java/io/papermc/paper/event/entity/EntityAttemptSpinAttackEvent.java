@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当 {@link LivingEntity} 尝试对目标实体执行自动旋风攻击时调用。
+ * <p>原文：
  * Called when a {@link LivingEntity} attempts to perform an automatic spin attack
  * against a target entity.
  */
@@ -32,10 +35,14 @@ public class EntityAttemptSpinAttackEvent extends EntityEvent implements Cancell
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 返回旋风攻击中被攻击的实体。
+     * <p>原文：
      * Returns the entity that is being attacked
      * in the spin attack.
      *
-     * @return the entity being attacked
+     * @return 正被攻击的实体
+     * <p>原文：the entity being attacked
      */
     public LivingEntity getTarget() {
         return this.target;

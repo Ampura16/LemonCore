@@ -1,4 +1,7 @@
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 此包包含 Paper API 中与对话框主体相关的类。
+ * <p>原文：
  * This package contains classes related to dialog bodies in the Paper API.
  */
 @NullMarked

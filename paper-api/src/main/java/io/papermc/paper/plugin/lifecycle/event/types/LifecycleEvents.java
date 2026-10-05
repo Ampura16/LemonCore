@@ -12,6 +12,9 @@ import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.ApiStatus;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 持有各类生命周期事件，用于在 {@link LifecycleEventManager} 中创建事件处理器配置。
+ * <p>原文：
  * Holds various types of lifecycle events for
  * use when creating event handler configurations
  * in {@link LifecycleEventManager}.
@@ -19,6 +22,9 @@ import org.jetbrains.annotations.ApiStatus;
 public final class LifecycleEvents {
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 此事件用于向服务器的 Brigadier 命令系统注册命令。可以在 {@link org.bukkit.plugin.java.JavaPlugin#onEnable()} 或 {@link io.papermc.paper.plugin.bootstrap.PluginBootstrap#bootstrap(BootstrapContext)} 中为此事件注册处理器。
+     * <p>原文：
      * This event is for registering commands to the server's brigadier command system. You can register a handler for this event in
      * {@link org.bukkit.plugin.java.JavaPlugin#onEnable()} or {@link io.papermc.paper.plugin.bootstrap.PluginBootstrap#bootstrap(BootstrapContext)}.
      * @see Commands an example of a command being registered
@@ -26,6 +32,9 @@ public final class LifecycleEvents {
     public static final LifecycleEventType.Prioritizable<LifecycleEventOwner, ReloadableRegistrarEvent<Commands>> COMMANDS = prioritized("commands", LifecycleEventOwner.class);
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 这些事件用于向服务器的标签系统注册标签。只能在 {@link io.papermc.paper.plugin.bootstrap.PluginBootstrap#bootstrap(BootstrapContext)} 中为这些事件注册处理器。
+     * <p>原文：
      * These events are for registering tags to the server's tag system. You can register a handler for these events
      * only in {@link io.papermc.paper.plugin.bootstrap.PluginBootstrap#bootstrap(BootstrapContext)}.
      */
@@ -34,6 +43,9 @@ public final class LifecycleEvents {
 
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 此事件用于告知服务器来自其他来源（例如插件 jar 内部）的可用数据包。只能在 {@link io.papermc.paper.plugin.bootstrap.PluginBootstrap#bootstrap(BootstrapContext)} 中为此事件注册处理器。
+     * <p>原文：
      * This event is for informing the server about any available datapacks from other sources such as inside a plugin's jar. You
      * can register a handler for this event only in {@link io.papermc.paper.plugin.bootstrap.PluginBootstrap#bootstrap(BootstrapContext)}.
      * @see DatapackRegistrar an example of a datapack being discovered

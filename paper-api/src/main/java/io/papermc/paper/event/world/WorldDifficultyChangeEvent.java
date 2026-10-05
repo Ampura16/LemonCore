@@ -10,6 +10,11 @@ import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当世界难度被命令或 API 更改时调用。
+ * <p>
+ * 如果世界处于 {@link World#isHardcore() hardcore}，最终难度将始终为 {@link Difficulty#HARD}
+ * <p>原文：
  * Called when a world's difficulty is changed, either by command or by api.
  * <p>
  * If the world is in {@link World#isHardcore() hardcore}
@@ -31,18 +36,26 @@ public class WorldDifficultyChangeEvent extends WorldEvent {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取与此事件关联的命令源。
+     * <p>原文：
      * Gets the command source associated with this event.
      *
-     * @return {@code null} if the difficulty was changed via api, otherwise the {@link CommandSourceStack}.
+     * @return 如果难度是通过 API 更改的则为 {@code null}，否则为 {@link CommandSourceStack}。
+     * <p>原文：{@code null} if the difficulty was changed via api, otherwise the {@link CommandSourceStack}.
      */
     public @Nullable CommandSourceStack getCommandSource() {
         return this.commandSource;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取世界的新难度。
+     * <p>原文：
      * Gets the new difficulty of the world.
      *
-     * @return the new difficulty.
+     * @return 新的难度。
+     * <p>原文：the new difficulty.
      */
     public Difficulty getDifficulty() {
         return this.difficulty;

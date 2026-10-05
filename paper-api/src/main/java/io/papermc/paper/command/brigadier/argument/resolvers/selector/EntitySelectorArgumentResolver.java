@@ -7,6 +7,9 @@ import org.bukkit.entity.Entity;
 import org.jetbrains.annotations.ApiStatus;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 能够使用 {@link CommandSourceStack} 解析实体选择器参数值的 {@link ArgumentResolver}。
+ * <p>原文：
  * An {@link ArgumentResolver} that's capable of resolving
  * an entity selector argument value using a {@link CommandSourceStack}.
  *

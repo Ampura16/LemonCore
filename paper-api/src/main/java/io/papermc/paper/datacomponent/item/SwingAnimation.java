@@ -31,6 +31,9 @@ public interface SwingAnimation {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * {@link SwingAnimation} 的构建器。
+     * <p>原文：
      * Builder for {@link SwingAnimation}.
      */
     @ApiStatus.Experimental
@@ -38,20 +41,29 @@ public interface SwingAnimation {
     interface Builder extends DataComponentBuilder<SwingAnimation> {
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 设置挥动动画类型。
+         * <p>原文：
          * Sets the swing animation type.
          *
-         * @param type animation type
-         * @return the builder for chaining
+         * @param type 动画类型
+         * <p>原文：animation type
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #type()
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder type(Animation type);
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 设置挥动动画的持续时间（刻）。
+         * <p>原文：
          * Sets the swing animation duration in ticks.
          *
          * @param duration duration (>= 0)
-         * @return the builder for chaining
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #duration()
          */
         @Contract(value = "_ -> this", mutates = "this")

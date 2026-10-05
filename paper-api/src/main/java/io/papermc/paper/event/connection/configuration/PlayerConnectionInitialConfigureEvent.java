@@ -7,6 +7,9 @@ import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.ApiStatus;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 表示此玩家是首次被配置，即连接将自动开始配置
+ * <p>原文：
  * Indicates that this player is being configured for the first time, meaning that the connection will start being configured automatically
  */
 public class PlayerConnectionInitialConfigureEvent extends Event {

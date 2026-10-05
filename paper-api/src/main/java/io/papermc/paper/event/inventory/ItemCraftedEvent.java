@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当玩家从合成网格的结果槽取出合成物品时调用。
+ * <p>原文：
  * Called when a player picks up a crafted item from the result slot of a crafting grid.
  */
 @NullMarked
@@ -25,18 +28,26 @@ public class ItemCraftedEvent extends Event {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取通过取出合成物品而触发事件的玩家。
+     * <p>原文：
      * Gets the player who triggered the event by picking up the crafted item.
      *
-     * @return the player
+     * @return 玩家
+     * <p>原文：the player
      */
     public Player getPlayer() {
         return this.player;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取玩家合成并取出的物品。
+     * <p>原文：
      * Gets the item that was crafted and picked up by the player.
      *
-     * @return the crafted item
+     * @return 合成的物品
+     * <p>原文：the crafted item
      */
     public ItemStack getCraftedItem() {
         return this.craftedItem.clone();

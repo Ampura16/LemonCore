@@ -9,6 +9,13 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当 {@link Player} 追踪 {@link Entity} 时调用。
+ * <p>
+ * 如果取消，该实体不会显示给玩家，双向交互也将无法进行。
+ * <p>
+ * 在调用此事件时向世界添加或从中移除实体是完全不受支持的，应当避免。
+ * <p>原文：
  * Is called when a {@link Player} tracks an {@link Entity}.
  * <p>
  * If cancelled entity is not shown to the player and interaction in both directions is not possible.
@@ -31,9 +38,13 @@ public class PlayerTrackEntityEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取将被追踪的实体
+     * <p>原文：
      * Gets the entity that will be tracked
      *
-     * @return the entity tracked
+     * @return 被追踪的实体
+     * <p>原文：the entity tracked
      */
     public Entity getEntity() {
         return this.entity;

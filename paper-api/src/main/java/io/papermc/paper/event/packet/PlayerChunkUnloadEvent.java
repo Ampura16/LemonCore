@@ -8,6 +8,11 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当 {@link Player} 收到区块卸载数据包时调用。
+ * <p>
+ * 只应用于数据包/客户端相关的内容，不应用于修改服务端。
+ * <p>原文：
  * Is called when a {@link Player} receives a chunk unload packet.
  * <p>
  * Should only be used for packet/clientside related stuff.

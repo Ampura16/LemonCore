@@ -16,6 +16,18 @@ import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 在定位一组已配置的结构<b>之前</b>调用。发生在以下情况：
+ * <ul>
+ * <li>使用 /locate 命令。<br></li>
+ * <li>使用末影之眼。</li>
+ * <li>激活探险家地图/藏宝图。</li>
+ * <li>海豚游向宝藏位置。</li>
+ * <li>与村民交易获得地图。</li>
+ * <li>调用 {@link World#locateNearestStructure(Location, StructureType, int, boolean)}。</li>
+ * <li>调用 {@link World#locateNearestStructure(Location, Structure, int, boolean)}。</li>
+ * </ul>
+ * <p>原文：
  * Called <b>before</b> a set of configured structures is located.
  * This happens when:
  * <ul>
@@ -51,21 +63,31 @@ public class StructuresLocateEvent extends WorldEvent implements Cancellable {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取进行搜索的起点 {@link Location}。
+     * <p>原文：
      * Gets the {@link Location} from which the search is to be conducted.
      *
-     * @return {@link Location} where search begins
+     * @return 搜索开始的 {@link Location}
+     * <p>原文：{@link Location} where search begins
      */
     public Location getOrigin() {
         return this.origin.clone();
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取设为结果的 {@link Location} 和 {@link Structure}（如果已定义）。
+     * <p>
+     * 如果未通过 {@link StructuresLocateEvent#setResult(Result)} 设置，则返回 {@code null}。由于该事件在搜索完成<i>之前</i>触发，此时实际结果尚不可知。
+     * <p>原文：
      * Gets the {@link Location} and {@link Structure} set as the result, if it was defined.
      * <p>
      * Returns {@code null} if it has not been set by {@link StructuresLocateEvent#setResult(Result)}.
      * Since this event fires <i>before</i> the search is done, the actual result is unknown at this point.
      *
-     * @return The result location and structure, if it has been set. {@code null} if it has not.
+     * @return 结果位置和结构（如果已设置）；未设置则为 {@code null}。
+     * <p>原文：The result location and structure, if it has been set. {@code null} if it has not.
      * @see World#locateNearestStructure(Location, StructureType, int, boolean)
      */
     public @Nullable Result getResult() {
@@ -73,72 +95,108 @@ public class StructuresLocateEvent extends WorldEvent implements Cancellable {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置结果 {@link Location} 和 {@link Structure}。这会跳过搜索，并将此处传入的结果对象用作结果。
+     * <p>原文：
      * Sets the result {@link Location} and {@link Structure}. This causes the search to be
      * skipped, and the result object passed here to be used as the result.
      *
-     * @param result the {@link Location} and {@link Structure} of the search.
+     * @param result 搜索的 {@link Location} 和 {@link Structure}。
+     * <p>原文：the {@link Location} and {@link Structure} of the search.
      */
     public void setResult(final @Nullable Result result) {
         this.result = result;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取作为搜索有效目标的结构的不可修改列表。
+     * <p>原文：
      * Gets an unmodifiable list of Structures that are valid targets for the search.
      *
-     * @return an unmodifiable list of Structures
+     * @return 结构的不可修改列表
+     * <p>原文：an unmodifiable list of Structures
      */
     public @UnmodifiableView List<Structure> getStructures() {
         return Collections.unmodifiableList(this.structures);
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置作为搜索有效目标的结构列表。
+     * <p>原文：
      * Sets the list of Structures that are valid targets for the search.
      *
-     * @param structures a list of Structures targets
+     * @param structures 结构目标列表
+     * <p>原文：a list of Structures targets
      */
     public void setStructures(final List<Structure> structures) {
         this.structures = structures;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取尝试定位结构的搜索半径。
+     * <p>
+     * 在结构搜索期间不一定总会遵守该半径！
+     * <p>原文：
      * Gets the search radius in which to attempt locating the structure.
      * <p>
      * This radius may not always be obeyed during the structure search!
      *
-     * @return the search radius (in chunks)
+     * @return 搜索半径（以区块计）
+     * <p>原文：the search radius (in chunks)
      */
     public int getRadius() {
         return this.radius;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置尝试定位结构的搜索半径。
+     * <p>
+     * 在结构搜索期间不一定总会遵守该半径！
+     * <p>原文：
      * Sets the search radius in which to attempt locating the structure.
      * <p>
      * This radius may not always be obeyed during the structure search!
      *
-     * @param radius the search radius (in chunks)
+     * @param radius 搜索半径（以区块计）
+     * <p>原文：the search radius (in chunks)
      */
     public void setRadius(final int radius) {
         this.radius = radius;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取是否只搜索未探索的结构。
+     * <p>
+     * 与搜索半径一样，该值不一定总会被遵守。
+     * <p>原文：
      * Gets whether to search exclusively for unexplored structures.
      * <p>
      * As with the search radius, this value is not always obeyed.
      *
-     * @return Whether to search for only unexplored structures.
+     * @return 是否只搜索未探索的结构。
+     * <p>原文：Whether to search for only unexplored structures.
      */
     public boolean shouldFindUnexplored() {
         return this.findUnexplored;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置是否只搜索未探索的结构。
+     * <p>
+     * 与搜索半径一样，该值不一定总会被遵守。
+     * <p>原文：
      * Sets whether to search exclusively for unexplored structures.
      * <p>
      * As with the search radius, this value is not always obeyed.
      *
-     * @param findUnexplored Whether to search for only unexplored structures.
+     * @param findUnexplored 是否只搜索未探索过的结构。
+     * <p>原文：Whether to search for only unexplored structures.
      */
     public void setFindUnexplored(final boolean findUnexplored) {
         this.findUnexplored = findUnexplored;
@@ -164,6 +222,9 @@ public class StructuresLocateEvent extends WorldEvent implements Cancellable {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * {@link StructuresLocateEvent} 的结果。
+     * <p>原文：
      * Result for {@link StructuresLocateEvent}.
      */
     public record Result(Position pos, Structure structure) {

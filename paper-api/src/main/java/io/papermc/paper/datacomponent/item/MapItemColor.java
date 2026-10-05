@@ -7,6 +7,9 @@ import org.jetbrains.annotations.Contract;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 表示已填充地图物品上装饰的色调。
+ * <p>原文：
  * Represents the tint of the decorations on the Filled Map item.
  * @see io.papermc.paper.datacomponent.DataComponentTypes#MAP_COLOR
  */
@@ -21,9 +24,13 @@ public interface MapItemColor {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 要应用的色调。
+     * <p>原文：
      * The tint to apply.
      *
-     * @return color
+     * @return 颜色
+     * <p>原文：color
      */
     Color color();
 
@@ -31,10 +38,15 @@ public interface MapItemColor {
     interface Builder extends DataComponentBuilder<MapItemColor> {
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 设置此地图的色调颜色。
+         * <p>原文：
          * Sets the tint color of this map.
          *
-         * @param color tint color
-         * @return the builder for chaining
+         * @param color 染色颜色
+         * <p>原文：tint color
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #color()
          */
         @Contract(value = "_ -> this", mutates = "this")

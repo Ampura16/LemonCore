@@ -9,6 +9,9 @@ import org.jetbrains.annotations.Unmodifiable;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 持有旗帜上的图案层。
+ * <p>原文：
  * Holds the layers of patterns on a banner.
  * @see io.papermc.paper.datacomponent.DataComponentTypes#BANNER_PATTERNS
  */
@@ -28,14 +31,21 @@ public interface BannerPatternLayers {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取旗帜上的图案。
+     * <p>原文：
      * Gets the patterns on the banner.
      *
-     * @return the patterns
+     * @return 图案
+     * <p>原文：the patterns
      */
     @Contract(pure = true)
     @Unmodifiable List<Pattern> patterns();
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * {@link BannerPatternLayers} 的构建器。
+     * <p>原文：
      * Builder for {@link BannerPatternLayers}.
      */
     @ApiStatus.Experimental
@@ -43,20 +53,30 @@ public interface BannerPatternLayers {
     interface Builder extends DataComponentBuilder<BannerPatternLayers> {
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 向旗帜添加一个图案。
+         * <p>原文：
          * Adds a pattern to the banner.
          *
-         * @param pattern the pattern
-         * @return the builder for chaining
+         * @param pattern 图案
+         * <p>原文：the pattern
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #patterns()
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder add(Pattern pattern);
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 向旗帜添加多个图案。
+         * <p>原文：
          * Adds multiple patterns to the banner.
          *
-         * @param patterns the patterns
-         * @return the builder for chaining
+         * @param patterns 图案
+         * <p>原文：the patterns
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #patterns()
          */
         @Contract(value = "_ -> this", mutates = "this")

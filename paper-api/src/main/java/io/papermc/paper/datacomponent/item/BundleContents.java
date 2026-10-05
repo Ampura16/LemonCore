@@ -9,6 +9,9 @@ import org.jetbrains.annotations.Unmodifiable;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 持有收纳袋中存放的所有物品。
+ * <p>原文：
  * Holds all items stored inside of a Bundle.
  * @see io.papermc.paper.datacomponent.DataComponentTypes#BUNDLE_CONTENTS
  */
@@ -28,14 +31,21 @@ public interface BundleContents {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 列出此组件中当前存储的物品。
+     * <p>原文：
      * Lists the items that are currently stored inside of this component.
      *
-     * @return items
+     * @return 物品
+     * <p>原文：items
      */
     @Contract(pure = true)
     @Unmodifiable List<ItemStack> contents();
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * {@link BundleContents} 的构建器。
+     * <p>原文：
      * Builder for {@link BundleContents}.
      */
     @ApiStatus.Experimental
@@ -43,20 +53,30 @@ public interface BundleContents {
     interface Builder extends DataComponentBuilder<BundleContents> {
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 向此构建器添加一个物品。
+         * <p>原文：
          * Adds an item to this builder.
          *
-         * @param stack item
-         * @return the builder for chaining
+         * @param stack 物品
+         * <p>原文：item
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #contents()
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder add(ItemStack stack);
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 向此构建器添加多个物品。
+         * <p>原文：
          * Adds items to this builder.
          *
-         * @param stacks items
-         * @return the builder for chaining
+         * @param stacks 物品
+         * <p>原文：items
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #contents()
          */
         @Contract(value = "_ -> this", mutates = "this")

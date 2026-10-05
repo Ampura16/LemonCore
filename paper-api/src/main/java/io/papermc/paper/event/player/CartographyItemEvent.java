@@ -10,6 +10,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当物品配方在制图台中完成时调用。
+ * <p>原文：
  * Called when the recipe of an Item is completed inside a cartography table.
  */
 @NullMarked

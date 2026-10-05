@@ -10,6 +10,9 @@ import org.jetbrains.annotations.Unmodifiable;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 持有食用迷之炖菜时将施加的效果。
+ * <p>原文：
  * Holds the effects that will be applied when consuming Suspicious Stew.
  * @see io.papermc.paper.datacomponent.DataComponentTypes#SUSPICIOUS_STEW_EFFECTS
  */
@@ -29,14 +32,21 @@ public interface SuspiciousStewEffects {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 食用迷之炖菜时将施加的效果。
+     * <p>原文：
      * Effects that will be applied when consuming Suspicious Stew.
      *
-     * @return effects
+     * @return 效果
+     * <p>原文：effects
      */
     @Contract(pure = true)
     @Unmodifiable List<SuspiciousEffectEntry> effects();
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * {@link SuspiciousStewEffects} 的构建器。
+     * <p>原文：
      * Builder for {@link SuspiciousStewEffects}.
      */
     @ApiStatus.Experimental
@@ -44,20 +54,30 @@ public interface SuspiciousStewEffects {
     interface Builder extends DataComponentBuilder<SuspiciousStewEffects> {
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 向此构建器添加一个施加的效果。
+         * <p>原文：
          * Adds an effect applied to this builder.
          *
-         * @param entry effect
-         * @return the builder for chaining
+         * @param entry 效果
+         * <p>原文：effect
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #effects()
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder add(SuspiciousEffectEntry entry);
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 向此构建器添加多个施加的效果。
+         * <p>原文：
          * Adds effects applied to this builder.
          *
-         * @param entries effect
-         * @return the builder for chaining
+         * @param entries 效果
+         * <p>原文：effect
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #effects()
          */
         @Contract(value = "_ -> this", mutates = "this")

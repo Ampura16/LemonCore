@@ -13,6 +13,9 @@ import org.jetbrains.annotations.Range;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当世界边界改变其范围时调用，无论是随时间渐变还是立即改变。
+ * <p>原文：
  * Called when a world border changes its bounds, either over time, or instantly.
  */
 @NullMarked
@@ -36,55 +39,79 @@ public class WorldBorderBoundsChangeEvent extends WorldBorderEvent implements Ca
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取此变化是立即变化还是随时间渐变。
+     * <p>原文：
      * Gets if this change is an instant change or over-time change.
      *
-     * @return the change type
+     * @return 变化类型
+     * <p>原文：the change type
      */
     public Type getType() {
         return this.type;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取世界边界原来的大小。
+     * <p>原文：
      * Gets the old size or the world border.
      *
-     * @return the old size
+     * @return 原来的大小
+     * <p>原文：the old size
      */
     public double getOldSize() {
         return this.oldSize;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取世界边界的新大小。
+     * <p>原文：
      * Gets the new size of the world border.
      *
-     * @return the new size
+     * @return 新的大小
+     * <p>原文：the new size
      */
     public double getNewSize() {
         return this.newSize;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置世界边界的新大小。
+     * <p>原文：
      * Sets the new size of the world border.
      *
-     * @param newSize the new size
+     * @param newSize 新的大小
+     * <p>原文：the new size
      */
     public void setNewSize(final double newSize) {
         this.newSize = Math.clamp(newSize, 1.0D, this.worldBorder.getMaxSize());
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取变化所用的时间（刻）。立即变化时为 0。
+     * <p>原文：
      * Gets the time in ticks for the change. Will be 0 if instant.
      *
-     * @return the time in ticks for the change
+     * @return 变化所需时间（刻）
+     * <p>原文：the time in ticks for the change
      */
     public @Range(from = 0, to = Integer.MAX_VALUE) long getDurationTicks() {
         return this.duration;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置变化所用的时间（刻）。将使 {@link #getType()} 返回 {@link Type#STARTED_MOVE}。
+     * <p>原文：
      * Sets the time in ticks for the change. Will change {@link #getType()} to return
      * {@link Type#STARTED_MOVE}.
      *
-     * @param duration the time in ticks for the change
+     * @param duration 变化所需时间（刻）
+     * <p>原文：the time in ticks for the change
      */
     public void setDurationTicks(final @Range(from = 0, to = Integer.MAX_VALUE) long duration) {
         Preconditions.checkArgument(duration >= 0 && duration <= Integer.MAX_VALUE, "duration must be between 0-%s", Integer.MAX_VALUE);
@@ -95,10 +122,15 @@ public class WorldBorderBoundsChangeEvent extends WorldBorderEvent implements Ca
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取变化所用的时间（毫秒）。立即变化时为 0。
+     * <p>原文：
      * Gets the time in milliseconds for the change. Will be 0 if instant.
      *
-     * @return the time in milliseconds for the change
-     * @deprecated in favor of {@link #getDurationTicks()}
+     * @return 变化所需时间（毫秒）
+     * <p>原文：the time in milliseconds for the change
+     * @deprecated 改用 {@link #getDurationTicks()}
+     * <p>原文：in favor of {@link #getDurationTicks()}
      */
     @Deprecated(forRemoval = true, since = "1.21.11")
     public @NonNegative long getDuration() {
@@ -106,11 +138,16 @@ public class WorldBorderBoundsChangeEvent extends WorldBorderEvent implements Ca
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置变化所用的时间（毫秒）。将使 {@link #getType()} 返回 {@link Type#STARTED_MOVE}。
+     * <p>原文：
      * Sets the time in milliseconds for the change. Will change {@link #getType()} to return
      * {@link Type#STARTED_MOVE}.
      *
-     * @param duration the time in milliseconds for the change
-     * @deprecated in favor of {@link #setDurationTicks(long)}
+     * @param duration 变化所需时间（毫秒）
+     * <p>原文：the time in milliseconds for the change
+     * @deprecated 改用 {@link #setDurationTicks(long)}
+     * <p>原文：in favor of {@link #setDurationTicks(long)}
      */
     @Deprecated(forRemoval = true, since = "1.21.11")
     public void setDuration(final @NonNegative long duration) {

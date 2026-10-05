@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当玩家使用物品并获得物品冷却时触发。
+ * <p>原文：
  * Fired when a player receives an item cooldown when using an item.
  *
  * @see PlayerItemGroupCooldownEvent for a more general event when applied to a group of items
@@ -24,9 +27,13 @@ public class PlayerItemCooldownEvent extends PlayerItemGroupCooldownEvent {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取受冷却影响的物品的材料。
+     * <p>原文：
      * Get the material of the item affected by the cooldown.
      *
-     * @return material affected by the cooldown
+     * @return 受冷却影响的材料
+     * <p>原文：material affected by the cooldown
      */
     public Material getType() {
         return this.type;

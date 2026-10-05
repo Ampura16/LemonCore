@@ -16,6 +16,9 @@ import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当喷溅型水瓶“溅开”并以不同方式影响不同实体时调用。
+ * <p>原文：
  * Called when a splash water potion "splashes" and affects
  * different entities in different ways.
  */
@@ -41,12 +44,16 @@ public class WaterBottleSplashEvent extends PotionSplashEvent {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取将因此事件而受到伤害的实体的不可变集合。请使用该类的其他方法修改哪些实体受到伤害。
+     * <p>原文：
      * Gets an immutable collection of entities that
      * will take damage as a result of this event. Use
      * other methods on this class to modify which entities
      * take damage.
      *
-     * @return an immutable collection of entities
+     * @return 实体的不可变集合
+     * <p>原文：an immutable collection of entities
      * @see #doNotDamageAsWaterSensitive(LivingEntity)
      * @see #damageAsWaterSensitive(LivingEntity)
      */
@@ -55,26 +62,39 @@ public class WaterBottleSplashEvent extends PotionSplashEvent {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 将此实体从将受到伤害的群组中移除。
+     * <p>原文：
      * Removes this entity from the group that
      * will be damaged.
      *
-     * @param entity entity to remove
+     * @param entity 要移除的实体
+     * <p>原文：entity to remove
      */
     public void doNotDamageAsWaterSensitive(final LivingEntity entity) {
         this.affectedEntities.remove(entity);
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 将此实体加入将受到伤害的群组
+     * <p>原文：
      * Adds this entity to the group that
      * will be damaged
      *
-     * @param entity entity to add
+     * @param entity 要添加的实体
+     * <p>原文：entity to add
      */
     public void damageAsWaterSensitive(final LivingEntity entity) {
         this.affectedEntities.put(entity, 1.0);
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取将因此被补水的实体的可变集合。
+     * <p>
+     * 截至 1.19.3，其中只会包含美西螈，因为它是唯一可被补水的实体类型，但将来可能会改变。
+     * <p>原文：
      * Get a mutable collection of entities
      * that will be rehydrated by this.
      * <p>
@@ -82,25 +102,32 @@ public class WaterBottleSplashEvent extends PotionSplashEvent {
      * are the only entity type that can be rehydrated, but
      * it may change in the future.
      *
-     * @return the entities
+     * @return 实体
+     * <p>原文：the entities
      */
     public Collection<LivingEntity> getToRehydrate() {
         return this.rehydrate;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取因此事件而被熄灭的实体的可变集合。
+     * <p>原文：
      * Get a mutable collection of entities that will
      * be extinguished as a result of this event.
      *
-     * @return entities to be extinguished
+     * @return 将被熄灭的实体
+     * <p>原文：entities to be extinguished
      */
     public Collection<LivingEntity> getToExtinguish() {
         return this.extinguish;
     }
 
     /**
-     * @return a confusing collection, don't use it
-     * @deprecated Use {@link #getToDamage()}
+     * @return 令人困惑的集合，请勿使用
+     * <p>原文：a confusing collection, don't use it
+     * @deprecated 请使用 {@link #getToDamage()}
+     * <p>原文：Use {@link #getToDamage()}
      */
     @Deprecated(since = "1.19.3")
     @Override
@@ -109,10 +136,15 @@ public class WaterBottleSplashEvent extends PotionSplashEvent {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 对该事件没有意义，因为强度不会变化。
+     * <p>原文：
      * Doesn't make sense for this event as intensity doesn't vary.
      *
-     * @return a confusing value
-     * @deprecated check if {@link #getToDamage()} contains an entity
+     * @return 令人困惑的值
+     * <p>原文：a confusing value
+     * @deprecated 检查 {@link #getToDamage()} 是否包含实体
+     * <p>原文：check if {@link #getToDamage()} contains an entity
      */
     @Deprecated(since = "1.19.3")
     @Override
@@ -121,9 +153,13 @@ public class WaterBottleSplashEvent extends PotionSplashEvent {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 对该事件没有意义，因为强度不会变化。
+     * <p>原文：
      * Doesn't make sense for this event as intensity doesn't vary.
      *
-     * @deprecated use {@link #damageAsWaterSensitive(LivingEntity)}
+     * @deprecated 请使用 {@link #damageAsWaterSensitive(LivingEntity)} 或 {@link #doNotDamageAsWaterSensitive(LivingEntity)} 更改受到伤害的实体
+     * <p>原文：use {@link #damageAsWaterSensitive(LivingEntity)}
      * or {@link #doNotDamageAsWaterSensitive(LivingEntity)} to change which entities are
      * damaged
      */

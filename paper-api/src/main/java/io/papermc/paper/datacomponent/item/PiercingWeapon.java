@@ -14,9 +14,13 @@ import org.jspecify.annotations.Nullable;
 public interface PiercingWeapon {
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 返回用于创建穿刺武器的新构建器。
+     * <p>原文：
      * Returns a new builder for creating a Piercing Weapon.
      *
-     * @return a builder instance
+     * @return 构建器实例
+     * <p>原文：a builder instance
      */
     static Builder piercingWeapon() {
         return ItemComponentTypesBridge.bridge().piercingWeapon();
@@ -31,6 +35,9 @@ public interface PiercingWeapon {
     @Nullable Key hitSound();
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * {@link PiercingWeapon} 的构建器。
+     * <p>原文：
      * Builder for {@link PiercingWeapon}.
      */
     @ApiStatus.Experimental

@@ -5,6 +5,11 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 以 double 表示的位置。
+ * <p>
+ * <b>在移除 Experimental 注解之前可能出现破坏性变更。</b>
+ * <p>原文：
  * A position represented with doubles.
  * <p>
  * <b>May see breaking changes until Experimental annotation is removed.</b>

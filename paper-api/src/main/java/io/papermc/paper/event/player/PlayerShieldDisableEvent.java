@@ -10,6 +10,11 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 每当玩家的盾牌因能够禁用盾牌的其他实体攻击而被禁用时调用。最常见的情况是另一名玩家用斧头攻击。
+ * <p>
+ * 值得注意的是，该事件不同于 {@link PlayerItemCooldownEvent}，会在物品进入冷却之前触发。因此，如果该事件被取消，则不会调用 {@link PlayerItemCooldownEvent}，因为盾牌根本没有被禁用。
+ * <p>原文：
  * Called whenever a players shield is disabled due to an attack from another entity that was capable of disabling the
  * shield. This, most commonly, may be another player attacking with an axe.
  * <p>
@@ -36,33 +41,49 @@ public class PlayerShieldDisableEvent extends PlayerEvent implements Cancellable
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 提供禁用盾牌的攻击者。
+     * <p>原文：
      * Provides the damager that disabled the shield.
      *
-     * @return the entity instance that damaged the player in a way that caused the shield to be disabled.
+     * @return 以导致盾牌被禁用的方式伤害玩家的实体实例。
+     * <p>原文：the entity instance that damaged the player in a way that caused the shield to be disabled.
      */
     public Entity getDamager() {
         return this.damager;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取被禁用的盾牌将被禁用的冷却时长（刻）。
+     * <p>
+     * 值得注意的是，该值并非最终值，之后可能被 {@link PlayerItemCooldownEvent} 更改，因为若此事件未被取消就会调用该事件。
+     * <p>原文：
      * Gets the cooldown the disabled shield will be disabled for in ticks.
      * <p>
      * Notably, this value is not final as it might be changed by a {@link PlayerItemCooldownEvent} down the line,
      * as said event is called if this event is not cancelled.
      *
-     * @return cooldown in ticks
+     * @return 冷却时间（刻）
+     * <p>原文：cooldown in ticks
      */
     public int getCooldown() {
         return this.cooldown;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置盾牌的冷却时间（刻）。
+     * <p>
+     * 值得注意的是，该值并非最终值，之后可能被 {@link PlayerItemCooldownEvent} 更改，因为若此事件未被取消就会调用该事件。
+     * <p>原文：
      * Sets the cooldown of the shield in ticks.
      * <p>
      * Notably, this value is not final as it might be changed by a {@link PlayerItemCooldownEvent} down the line,
      * as said event is called if this event is not cancelled.
      *
-     * @param cooldown cooldown in ticks, has to be a positive number
+     * @param cooldown 冷却时间（刻），必须为正数
+     * <p>原文：cooldown in ticks, has to be a positive number
      */
     public void setCooldown(final int cooldown) {
         Preconditions.checkArgument(cooldown >= 0, "The cooldown has to be equal to or greater than 0!");

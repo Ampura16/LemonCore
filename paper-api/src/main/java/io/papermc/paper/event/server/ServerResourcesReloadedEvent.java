@@ -6,6 +6,11 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当数据包等资源被重载时调用（例如 /minecraft:reload）
+ * <p>
+ * 用于重新注册此类重载中可能丢失的自定义配方、进度等。
+ * <p>原文：
  * Called when resources such as datapacks are reloaded (e.g. /minecraft:reload)
  * <p>
  * Intended for use to re-register custom recipes, advancements that may be lost during a reload like this.
@@ -23,9 +28,13 @@ public class ServerResourcesReloadedEvent extends ServerEvent {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取资源重载的原因。
+     * <p>原文：
      * Gets the cause of the resource reload.
      *
-     * @return the reload cause
+     * @return 重载原因
+     * <p>原文：the reload cause
      */
     public Cause getCause() {
         return this.cause;

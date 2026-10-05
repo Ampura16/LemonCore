@@ -9,6 +9,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 在玩家右键空地图创建已填充地图时调用。
+ * <p>原文：
  * Called when a player creates a filled map by right-clicking an empty map.
  */
 @NullMarked
@@ -26,27 +29,39 @@ public class PlayerMapFilledEvent extends PlayerEvent {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 返回被消耗前的空地图的副本。
+     * <p>原文：
      * Returns a copy of the empty map before it was consumed.
      *
-     * @return cloned original item
+     * @return 原始物品的克隆
+     * <p>原文：cloned original item
      */
     public ItemStack getOriginalItem() {
         return this.originalItem.clone();
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 返回所创建的已填充地图的副本。
+     * <p>原文：
      * Returns a copy of the filled map which was created.
      *
-     * @return cloned created map item
+     * @return 所创建地图物品的克隆
+     * <p>原文：cloned created map item
      */
     public ItemStack getCreatedMap() {
         return this.createdMap.clone();
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置将要创建的已填充地图。
+     * <p>原文：
      * Sets the filled map that will be created.
      *
-     * @param createdMap map item
+     * @param createdMap 地图物品
+     * <p>原文：map item
      */
     public void setCreatedMap(final ItemStack createdMap) {
         this.createdMap = createdMap.clone();

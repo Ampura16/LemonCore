@@ -35,7 +35,8 @@ public class PlayerBedFailEnterEvent extends PlayerEvent implements Cancellable 
     }
 
     /**
-     * @deprecated This enum has been replaced with a system that better
+     * @deprecated 该枚举已被更能体现床工作方式的系统取代。参见 {@link #enterAction}
+     * <p>原文：This enum has been replaced with a system that better
      * represents how beds work. See {@link #enterAction}
      */
     @ApiStatus.Obsolete(since = "1.21.11")
@@ -44,9 +45,13 @@ public class PlayerBedFailEnterEvent extends PlayerEvent implements Cancellable 
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 描述此事件的默认结果。
+     * <p>原文：
      * This describes the default outcome of this event.
      *
-     * @return the action representing the default outcome of this event
+     * @return 表示此事件默认结果的操作
+     * <p>原文：the action representing the default outcome of this event
      */
     @ApiStatus.Experimental
     public BedEnterAction enterAction() {
@@ -99,18 +104,27 @@ public class PlayerBedFailEnterEvent extends PlayerEvent implements Cancellable 
     }
 
     /**
-     * @deprecated Enums no longer represents reliably how beds work and fail. This has been
+     * @deprecated 这些枚举已无法可靠地表示床的工作和失败方式，已被更适合新版床机制的 {@link BedEnterAction} 取代
+     * <p>原文：Enums no longer represents reliably how beds work and fail. This has been
      * replaced with {@link BedEnterAction} that better fits the new beds
      */
     @ApiStatus.Obsolete(since = "1.21.11")
     public enum FailReason {
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 该世界不允许睡觉（例如下界或末地）。上床被阻止，但床不会爆炸。床爆炸时改为使用 {@link #EXPLOSION}。
+         * <p>原文：
          * The world doesn't allow sleeping (ex. Nether or The End). Entering
          * the bed is prevented but the bed doesn't explode. When the bed
          * explodes, {@link #EXPLOSION} is used instead.
          */
         NOT_POSSIBLE_HERE,
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 由于当前既不是夜晚也没有雷暴，阻止上床。
+         * <p>
+         * 如果在白天强制允许该事件，玩家会上床（并设置床的位置），但可能立即被弹出。
+         * <p>原文：
          * Entering the bed is prevented due to it not being night nor
          * thundering currently.
          * <p>
@@ -120,22 +134,37 @@ public class PlayerBedFailEnterEvent extends PlayerEvent implements Cancellable 
          */
         NOT_POSSIBLE_NOW,
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 由于玩家距离太远，阻止上床。
+         * <p>原文：
          * Entering the bed is prevented due to the player being too far away.
          */
         TOO_FAR_AWAY,
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 床被阻挡。
+         * <p>原文：
          * Bed is obstructed.
          */
         OBSTRUCTED,
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 由于存在其他问题，阻止上床。
+         * <p>原文：
          * Entering the bed is prevented due to there being some other problem.
          */
         OTHER_PROBLEM,
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 由于附近有怪物，阻止上床。
+         * <p>原文：
          * Entering the bed is prevented due to there being monsters nearby.
          */
         NOT_SAFE,
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 阻止上床，且床会爆炸。
+         * <p>原文：
          * Entering the bed is prevented and the bed explodes.
          */
         EXPLOSION

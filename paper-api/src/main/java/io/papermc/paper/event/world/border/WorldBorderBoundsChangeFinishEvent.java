@@ -7,6 +7,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 在移动中的世界边界完成移动时调用。
+ * <p>原文：
  * Called when a moving world border has finished its move.
  */
 @NullMarked
@@ -27,29 +30,43 @@ public class WorldBorderBoundsChangeFinishEvent extends WorldBorderEvent {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取世界边界原来的大小。
+     * <p>原文：
      * Gets the old size of the worldborder.
      *
-     * @return the old size
+     * @return 原来的大小
+     * <p>原文：the old size
      */
     public double getOldSize() {
         return this.oldSize;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取世界边界的新大小。
+     * <p>原文：
      * Gets the new size of the worldborder.
      *
-     * @return the new size
+     * @return 新的大小
+     * <p>原文：the new size
      */
     public double getNewSize() {
         return this.newSize;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取此世界边界完成变化所用的时长。
+     * <p>
+     * 如果 {@link WorldBorderCenterChangeEvent} 的处理器将时长设为 0，则可能为 0。
+     * <p>原文：
      * Gets the duration this worldborder took to make the change.
      * <p>
      * Can be 0 if handlers for {@link WorldBorderCenterChangeEvent} set the duration to 0.
      *
-     * @return the duration of the transition
+     * @return 过渡的持续时间
+     * <p>原文：the duration of the transition
      */
     public double getDuration() {
         return this.duration;

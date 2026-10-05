@@ -3,6 +3,9 @@ package io.papermc.paper.datapack;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 数据包的来源。
+ * <p>原文：
  * Source of a datapack.
  */
 @NullMarked

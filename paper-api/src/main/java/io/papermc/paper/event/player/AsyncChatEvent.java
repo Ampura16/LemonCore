@@ -11,6 +11,15 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当 {@link Player} 向服务器发送聊天消息时触发的事件。
+ * <p>
+ * 根据触发方式的不同，该事件有时会同步触发。
+ * <p>
+ * 如果玩家通过传入的数据包直接导致该事件，则事件是异步的；如果插件通过强制玩家聊天来触发该事件，则事件是同步的。
+ * <p>
+ * 应注意检查 {@link #isAsynchronous()} 并据此妥善处理事件。
+ * <p>原文：
  * An event fired when a {@link Player} sends a chat message to the server.
  * <p>
  * This event will sometimes fire synchronously, depending on how it was

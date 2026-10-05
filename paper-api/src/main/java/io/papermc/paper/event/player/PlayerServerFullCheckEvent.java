@@ -32,6 +32,9 @@ import org.jetbrains.annotations.Contract;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 在计算服务器对某个玩家而言当前是否已满时触发。
+ * <p>原文：
  * Fires when computing if a server is currently considered full for a player.
  */
 @NullMarked
@@ -51,7 +54,8 @@ public class PlayerServerFullCheckEvent extends Event {
     }
 
     /**
-     * @return the currently planned message to send to the user if they are unable to join the server
+     * @return 如果用户无法加入服务器，当前计划发送给用户的消息
+     * <p>原文：the currently planned message to send to the user if they are unable to join the server
      */
     @Contract(pure = true)
     public Component kickMessage() {
@@ -59,9 +63,13 @@ public class PlayerServerFullCheckEvent extends Event {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 拒绝玩家加入此服务器。
+     * <p>原文：
      * Denies the player access to join this server.
      *
-     * @param kickMessage The message to send to the player on kick if not able to join.
+     * @param kickMessage 如果无法加入，踢出时发送给玩家的消息。
+     * <p>原文：The message to send to the player on kick if not able to join.
      */
     public void deny(final Component kickMessage) {
         this.kickMessage = kickMessage;
@@ -69,24 +77,33 @@ public class PlayerServerFullCheckEvent extends Event {
     }
 
     /**
-     * @return The profile of the player trying to connect
+     * @return 尝试连接的玩家的档案
+     * <p>原文：The profile of the player trying to connect
      */
     public PlayerProfile getPlayerProfile() {
         return this.profile;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置玩家能否加入此服务器。
+     * <p>原文：
      * Sets whether the player is able to join this server.
-     * @param allow can join the server
+     * @param allow 能否加入服务器
+     * <p>原文：can join the server
      */
     public void allow(final boolean allow) {
         this.allow = allow;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取玩家当前能否加入服务器。
+     * <p>原文：
      * Gets if the player is currently able to join the server.
      *
-     * @return can join the server, or false if the server should be considered full
+     * @return 能否加入服务器；如果服务器应被视为已满则为 false
+     * <p>原文：can join the server, or false if the server should be considered full
      */
     public boolean isAllowed() {
         return this.allow;

@@ -31,6 +31,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * Maven 库解析器用于解析尚未解析、可从远程 Maven 仓库拉取的 jar 库。<p> 插件可以创建并配置 {@link MavenLibraryResolver}：新建一个实例，并注册一个应在运行时解析为库的依赖构件及其所在的仓库。例如引入用于类型安全 SQL 查询的 jooq 库：<pre>{@code
+ * MavenLibraryResolver resolver = new MavenLibraryResolver();
+ * resolver.addDependency(new Dependency(new DefaultArtifact("org.jooq:jooq:3.17.7"), null));
+ * resolver.addRepository(new RemoteRepository.Builder(
+ *     "central", "default", MavenLibraryResolver.MAVEN_CENTRAL_DEFAULT_MIRROR
+ * ).build());
+ * }</pre> <p> 插件可以在配置完成后创建并注册 {@link MavenLibraryResolver}。
+ * <p>原文：
  * The maven library resolver acts as a resolver for yet to be resolved jar libraries that may be pulled from a
  * remote maven repository.
  * <p>
@@ -51,6 +60,12 @@ import org.slf4j.LoggerFactory;
 public class MavenLibraryResolver implements ClassPathLibrary {
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 默认的 Maven 中央仓库镜像，可通过 {@code PAPER_DEFAULT_CENTRAL_REPOSITORY} 环境变量配置。如果你没有自己的镜像，请使用它而不是直接使用 Maven 中央仓库，因为将 Maven 中央仓库用作 CDN 违反 Maven Central 服务条款，还会导致用户触发速率限制。
+     * <p>
+     * 旧版 {@link org.bukkit.plugin.java.LibraryLoader} 也使用此仓库。
+     * </p>
+     * <p>原文：
      * The default Maven Central mirror, configurable through the {@code PAPER_DEFAULT_CENTRAL_REPOSITORY} environment
      * variable. Use this instead of Maven Central directly when you do not have your own mirror, as using
      * Maven Central as a CDN is against the Maven Central Terms of Service, and you will cause users to hit
@@ -73,6 +88,11 @@ public class MavenLibraryResolver implements ClassPathLibrary {
     private final List<Dependency> dependencies = new ArrayList<>();
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 创建新的 Maven 库解析器实例。
+     * <p>
+     * 创建的实例将使用服务器的 {@code libraries} 文件夹缓存获取到的库。值得注意的是，解析器创建时不含任何仓库，甚至不含 Maven 中央仓库。因此，打算使用该 API 的插件必须在将 {@link MavenLibraryResolver} 提交给 {@link io.papermc.paper.plugin.loader.PluginClasspathBuilder} 之前注册所有需要的仓库。
+     * <p>原文：
      * Creates a new maven library resolver instance.
      * <p>
      * The created instance will use the servers {@code libraries} folder to cache fetched libraries in.
@@ -101,10 +121,14 @@ public class MavenLibraryResolver implements ClassPathLibrary {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 将提供的依赖添加到库解析器。将选用第一个匹配该依赖的有效仓库中的构件。
+     * <p>原文：
      * Adds the provided dependency to the library resolver.
      * The artifact from the first valid repository matching the passed dependency will be chosen.
      *
-     * @param dependency the definition of the dependency the maven library resolver should resolve when running
+     * @param dependency maven 库解析器运行时应解析的依赖定义
+     * <p>原文：the definition of the dependency the maven library resolver should resolve when running
      * @see MavenLibraryResolver#addRepository(RemoteRepository)
      */
     public void addDependency(final Dependency dependency) {
@@ -112,11 +136,15 @@ public class MavenLibraryResolver implements ClassPathLibrary {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 将提供的仓库添加到库解析器。添加顺序很重要，依赖解析将从最先添加的仓库开始。
+     * <p>原文：
      * Adds the provided repository to the library resolver.
      * The order in which these are added does matter, as dependency resolving will start at the first added
      * repository.
      *
-     * @param remoteRepository the configuration that defines the maven repository this library resolver should fetch
+     * @param remoteRepository 定义此库解析器应从哪个 maven 仓库获取依赖的配置
+     * <p>原文：the configuration that defines the maven repository this library resolver should fetch
      * dependencies from
      */
     public void addRepository(final RemoteRepository remoteRepository) {
@@ -130,10 +158,15 @@ public class MavenLibraryResolver implements ClassPathLibrary {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 解析所提供的依赖并将其添加到库存储。
+     * <p>原文：
      * Resolves the provided dependencies and adds them to the library store.
      *
-     * @param store the library store the then resolved and downloaded dependencies are registered into
-     * @throws LibraryLoadingException if resolving a dependency failed
+     * @param store 解析并下载后的依赖将被注册到的库存储
+     * <p>原文：the library store the then resolved and downloaded dependencies are registered into
+     * @throws LibraryLoadingException 如果依赖解析失败
+     * <p>原文：if resolving a dependency failed
      */
     @Override
     public void register(final LibraryStore store) throws LibraryLoadingException {

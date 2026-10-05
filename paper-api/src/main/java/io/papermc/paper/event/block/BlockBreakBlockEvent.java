@@ -9,6 +9,11 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当方块迫使另一个方块破坏并掉落物品时调用。
+ * <p>
+ * 目前在活塞和液体流动时调用。
+ * <p>原文：
  * Called when a block forces another block to break and drop items.
  * <p>
  * Currently called for piston's and liquid flows.
@@ -29,18 +34,26 @@ public class BlockBreakBlockEvent extends BlockExpEvent {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取此事件的可变掉落物列表
+     * <p>原文：
      * Gets a mutable list of drops for this event
      *
-     * @return the drops
+     * @return 掉落物
+     * <p>原文：the drops
      */
     public List<ItemStack> getDrops() {
         return this.drops;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取导致此事件的方块（例如活塞或相邻的液体）
+     * <p>原文：
      * Gets the block that cause this (e.g. a piston, or adjacent liquid)
      *
-     * @return the source
+     * @return 来源
+     * <p>原文：the source
      */
     public Block getSource() {
         return this.source;

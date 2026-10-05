@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当方块破坏进度更新时调用。
+ * <p>原文：
  * Called when the progress of a block break is updated.
  */
 @NullMarked
@@ -26,21 +29,31 @@ public class BlockBreakProgressUpdateEvent extends BlockEvent {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 方块破坏的进度
+     * <p>
+     * 进度范围为 0.0 - 1.0，0 表示没有损坏，1.0 表示损坏最严重
+     * <p>原文：
      * The progress of the block break
      * <p>
      * The progress ranges from 0.0 - 1.0, where 0 is no damage and
      * 1.0 is the most damaged
      *
-     * @return The progress of the block break
+     * @return 方块破坏的进度
+     * <p>原文：The progress of the block break
      */
     public float getProgress() {
         return this.progress;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 破坏方块的实体。
+     * <p>原文：
      * The entity breaking the block.
      *
-     * @return The entity breaking the block
+     * @return 破坏方块的实体
+     * <p>原文：The entity breaking the block
      */
     public Entity getEntity() {
         return this.entity;

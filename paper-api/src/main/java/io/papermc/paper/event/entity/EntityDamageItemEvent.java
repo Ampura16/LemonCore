@@ -9,6 +9,11 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当实体身上或所用的物品因被击中/被使用而损失耐久时调用。
+ * <p>
+ * 注意：按原版默认行为，生物捡起的盔甲/工具不会受损（荆棘除外）。
+ * <p>原文：
  * Called when an item on or used by an entity takes durability damage as a result of being hit/used.
  * <p>
  * NOTE: default vanilla behaviour dictates that armor/tools picked up by
@@ -32,27 +37,39 @@ public class EntityDamageItemEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取正在受损的物品。
+     * <p>原文：
      * Gets the item being damaged.
      *
-     * @return the item
+     * @return 物品
+     * <p>原文：the item
      */
     public ItemStack getItem() {
         return this.item;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取此物品将受到的耐久损伤值。
+     * <p>原文：
      * Gets the amount of durability damage this item will be taking.
      *
-     * @return durability change
+     * @return 耐久度变化
+     * <p>原文：durability change
      */
     public int getDamage() {
         return this.damage;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置此物品将受到的耐久损伤值。
+     * <p>原文：
      * Sets the amount of durability damage this item will be taking.
      *
-     * @param damage the damage amount to cause
+     * @param damage 要造成的伤害量
+     * <p>原文：the damage amount to cause
      */
     public void setDamage(final int damage) {
         this.damage = damage;

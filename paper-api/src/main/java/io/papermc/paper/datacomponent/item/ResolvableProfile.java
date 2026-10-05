@@ -18,6 +18,9 @@ import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 持有可解析为 {@link PlayerProfile} 的玩家档案数据。
+ * <p>原文：
  * Holds player profile data that can be resolved to a {@link PlayerProfile}.
  *
  * @see io.papermc.paper.datacomponent.DataComponentTypes#PROFILE
@@ -50,18 +53,32 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
     Collection<ProfileProperty> properties();
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 此可解析档案是否被标记为动态。
+     * <p>
+     * 动态可解析档案必须具有非 null 的 {@link #uuid()} 或 {@link #name()}，并由客户端通过网络调用解析。动态档案也不会包含任何属性。
+     * <p>原文：
      * Whether this resolvable profile was marked as dynamic.
      * <p>
      * A dynamic resolvable profile is required to either have a non-null {@link #uuid()} or {@link #name()}
      * and will be resolved by the client via a network call.
      * A dynamic profile will also not include any properties.
      *
-     * @return {@code true} if this profile is marked as dynamic, {@code false} otherwise.
+     * @return 如果此档案被标记为动态则为 {@code true}，否则为 {@code false}。
+     * <p>原文：{@code true} if this profile is marked as dynamic, {@code false} otherwise.
      */
     @Contract(pure = true)
     boolean dynamic();
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 基于此 {@link ResolvableProfile} 生成更新后的玩家档案，模仿客户端的行为。<ul> <li> 对于 {@link #dynamic()} 档案：<p>会尝试通过填充缺失的属性（名称、唯一 ID、纹理等）生成完整的档案，并将现有属性（例如名称）更新为官方的最新值。该操作不会修改当前档案，而是生成新的已更新 {@link PlayerProfile}。</p> <p>如果不存在具有此档案唯一 ID 或名称的玩家，该操作将产生与当前档案相同的档案，而它可能并不完整。</p> </li> <li> 对于静态（非 {@link #dynamic()}）档案：<p>以一个完全包含 {@link #properties()} 全部内容、且为 null 的 {@link #name()}/{@link #uuid()} 被替换为填充值的档案完成。</p> </li> </ul> 这是异步操作：更新档案可能会在另一个线程中发起外部连接以获取最新的档案属性。更新后的档案可用时，返回的 {@link CompletableFuture} 将完成。为避免阻塞服务器主线程，不应在服务器主线程上等待返回的 CompletableFuture 的结果。如果想在更新后的玩家档案可用时在服务器主线程上对其进行处理，可以这样做：<pre>
+     * profile.resolve().thenAcceptAsync(updatedProfile -> {
+     *     // Do something with the updated profile:
+     *     // ...
+     * }, runnable -> Bukkit.getScheduler().runTask(plugin, runnable));
+     * </pre>
+     * <p>原文：
      * Produces an updated player profile based on this {@link ResolvableProfile}, mirroring client behavior.
      *
      * <ul>
@@ -104,15 +121,22 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
     CompletableFuture<PlayerProfile> resolve();
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取客户端用于渲染的皮肤补丁。会覆盖从档案解析出的任何值。
+     * <p>原文：
      * Gets the skin patch used by the client for rendering. Overrides any values
      * resolved from the profile.
      *
-     * @return the skin patch
+     * @return 皮肤补丁
+     * <p>原文：the skin patch
      */
     @Contract(pure = true)
     SkinPatch skinPatch();
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 覆盖 {@link ResolvableProfile} 的渲染选项。
+     * <p>原文：
      * Override rendering options for a {@link ResolvableProfile}.
      */
     @ApiStatus.Experimental
@@ -120,9 +144,13 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
     interface SkinPatch {
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 返回不覆盖任何内容的空皮肤补丁。
+         * <p>原文：
          * Returns the empty skin patch that does not override anything.
          *
-         * @return the empty skin patch
+         * @return 空皮肤补丁
+         * <p>原文：the empty skin patch
          */
         static SkinPatch empty() {
             final class Holder {
@@ -132,9 +160,13 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
         }
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 创建皮肤补丁的新构建器。
+         * <p>原文：
          * Creates a new builder for a skin patch.
          *
-         * @return new skin patch builder
+         * @return 新的皮肤补丁构建器
+         * <p>原文：new skin patch builder
          */
         @Contract(value = "-> new", pure = true)
         static SkinPatchBuilder skinPatch() {
@@ -142,37 +174,57 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
         }
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 获取身体纹理键。
+         * <p>原文：
          * Gets the body texture key.
          *
-         * @return the body texture key, or {@code null} if not set
+         * @return 身体纹理键；如果未设置则为 {@code null}
+         * <p>原文：the body texture key, or {@code null} if not set
          */
         @Nullable Key body();
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 获取披风纹理键。
+         * <p>原文：
          * Gets the cape texture key.
          *
-         * @return the cape texture key, or {@code null} if not set
+         * @return 披风纹理键；如果未设置则为 {@code null}
+         * <p>原文：the cape texture key, or {@code null} if not set
          */
         @Nullable Key cape();
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 获取鞘翅纹理键。
+         * <p>原文：
          * Gets the elytra texture key.
          *
-         * @return the elytra texture key, or {@code null} if not set
+         * @return 鞘翅纹理键；如果未设置则为 {@code null}
+         * <p>原文：the elytra texture key, or {@code null} if not set
          */
         @Nullable Key elytra();
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 获取皮肤模型。
+         * <p>原文：
          * Gets the skin model.
          *
-         * @return the skin model, or {@code null} if not set
+         * @return 皮肤模型；如果未设置则为 {@code null}
+         * <p>原文：the skin model, or {@code null} if not set
          */
         PlayerTextures.@Nullable SkinModel model();
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 返回此皮肤补丁是否未覆盖任何值。
+         * <p>原文：
          * Returns if this skin patch does not override any values.
          *
-         * @return {@code true} if this skin patch is empty
+         * @return 如果此皮肤补丁为空则为 {@code true}
+         * <p>原文：{@code true} if this skin patch is empty
          */
         default boolean isEmpty() {
             return this.body() == null && this.cape() == null && this.elytra() == null && this.model() == null;
@@ -180,49 +232,75 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * {@link SkinPatch} 的构建器。
+     * <p>原文：
      * Builder for {@link SkinPatch}.
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
     interface SkinPatchBuilder extends DataComponentBuilder<SkinPatch> {
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 设置身体纹理键。
+         * <p>原文：
          * Sets the body texture key.
          *
-         * @param body the body texture key, or {@code null} to unset it
-         * @return the builder for chaining
+         * @param body 身体纹理键，或 {@code null} 以取消设置
+         * <p>原文：the body texture key, or {@code null} to unset it
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          */
         @Contract(value = "_ -> this", mutates = "this")
         SkinPatchBuilder body(@Nullable Key body);
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 设置披风纹理键。
+         * <p>原文：
          * Sets the cape texture key.
          *
-         * @param cape the cape texture key, or {@code null} to unset it
-         * @return the builder for chaining
+         * @param cape 披风纹理键，或 {@code null} 以取消设置
+         * <p>原文：the cape texture key, or {@code null} to unset it
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          */
         @Contract(value = "_ -> this", mutates = "this")
         SkinPatchBuilder cape(@Nullable Key cape);
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 设置鞘翅纹理键。
+         * <p>原文：
          * Sets the elytra texture key.
          *
-         * @param elytra the elytra texture key, or {@code null} to unset it
-         * @return the builder for chaining
+         * @param elytra 鞘翅纹理键，或 {@code null} 以取消设置
+         * <p>原文：the elytra texture key, or {@code null} to unset it
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          */
         @Contract(value = "_ -> this", mutates = "this")
         SkinPatchBuilder elytra(@Nullable Key elytra);
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 设置皮肤模型。
+         * <p>原文：
          * Sets the skin model.
          *
-         * @param model the skin model, or {@code null} to unset it
-         * @return the builder for chaining
+         * @param model 皮肤模型，或 {@code null} 以取消设置
+         * <p>原文：the skin model, or {@code null} to unset it
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          */
         @Contract(value = "_ -> this", mutates = "this")
         SkinPatchBuilder model(PlayerTextures.@Nullable SkinModel model);
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * {@link ResolvableProfile} 的构建器。
+     * <p>原文：
      * Builder for {@link ResolvableProfile}.
      */
     @ApiStatus.Experimental
@@ -230,61 +308,91 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
     interface Builder extends DataComponentBuilder<ResolvableProfile> {
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 设置此档案的名称。长度不得超过 16 个字符，且不得包含无效字符。
+         * <p>原文：
          * Sets the name for this profile. Must be 16-or-less
          * characters and not contain invalid characters.
          *
-         * @param name the name
-         * @return the builder for chaining
+         * @param name 名称
+         * <p>原文：the name
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #name()
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder name(@Pattern("^[!-~]{0,16}$") @Nullable String name);
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 设置此档案的 UUID。
+         * <p>原文：
          * Sets the UUID for this profile.
          *
-         * @param uuid the UUID
-         * @return the builder for chaining
+         * @param uuid UUID
+         * <p>原文：the UUID
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #uuid()
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder uuid(@Nullable UUID uuid);
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 向此档案添加一个属性。
+         * <p>原文：
          * Adds a property to this profile.
          *
-         * @param property the property
-         * @return the builder for chaining
+         * @param property 属性
+         * <p>原文：the property
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #properties()
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addProperty(ProfileProperty property);
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 向此档案添加多个属性。
+         * <p>原文：
          * Adds properties to this profile.
          *
-         * @param properties the properties
-         * @return the builder for chaining
+         * @param properties 属性
+         * <p>原文：the properties
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #properties()
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addProperties(Collection<ProfileProperty> properties);
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 设置此档案的皮肤补丁。
+         * <p>原文：
          * Sets the skin patch for this profile.
          *
-         * @param patch the skin patch
-         * @return the builder for chaining
+         * @param patch 皮肤补丁
+         * <p>原文：the skin patch
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #skinPatch()
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder skinPatch(SkinPatch patch);
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 配置此档案的皮肤补丁。
+         * <p>原文：
          * Configures the skin patch for this profile.
          *
-         * @param configure the configuration consumer
-         * @return the builder for chaining
+         * @param configure 配置消费者
+         * <p>原文：the configuration consumer
+         * @return 构建器，用于链式调用
+         * <p>原文：the builder for chaining
          * @see #skinPatch()
          */
         @Contract(value = "_ -> this", mutates = "this")

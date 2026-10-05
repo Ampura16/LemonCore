@@ -12,9 +12,13 @@ import org.jspecify.annotations.NullMarked;
 public interface AttackRange {
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 返回用于创建攻击范围的新构建器。
+     * <p>原文：
      * Returns a new builder for creating an Attack Range.
      *
-     * @return a builder instance
+     * @return 构建器实例
+     * <p>原文：a builder instance
      */
     @Contract(value = "-> new", pure = true)
     static Builder attackRange() {
@@ -40,6 +44,9 @@ public interface AttackRange {
     @Range(from = 0, to = 2) float mobFactor();
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * {@link AttackRange} 的构建器。
+     * <p>原文：
      * Builder for {@link AttackRange}.
      */
     @ApiStatus.Experimental

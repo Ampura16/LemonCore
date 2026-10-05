@@ -8,9 +8,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 在钟被敲响时调用。
+ * <p>原文：
  * Called when a bell is rung.
  *
- * @deprecated use {@link org.bukkit.event.block.BellRingEvent}
+ * @deprecated 请使用 {@link org.bukkit.event.block.BellRingEvent}
+ * <p>原文：use {@link org.bukkit.event.block.BellRingEvent}
  */
 @Deprecated(since = "1.19.4")
 public class BellRingEvent extends org.bukkit.event.block.BellRingEvent {

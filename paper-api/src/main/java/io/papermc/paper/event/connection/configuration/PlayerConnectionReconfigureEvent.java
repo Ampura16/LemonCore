@@ -7,6 +7,9 @@ import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.ApiStatus;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 表示此玩家正在被重新配置，即除非通过 {@link PlayerConfigurationConnection#completeReconfiguration()} 被踢出，否则此连接将停留在配置阶段
+ * <p>原文：
  * Indicates that this player is being reconfigured, meaning that this connection will be held in the configuration
  * stage unless kicked out through {@link PlayerConfigurationConnection#completeReconfiguration()}
  */

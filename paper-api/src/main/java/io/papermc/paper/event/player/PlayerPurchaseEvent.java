@@ -11,6 +11,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当玩家与独立的商人 GUI 交易时调用。
+ * <p>原文：
  * Called when a player trades with a standalone merchant GUI.
  */
 @NullMarked
@@ -35,27 +38,39 @@ public class PlayerPurchaseEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取玩家正在与之交易的商人
+     * <p>原文：
      * Gets the merchant that the player is trading with
      *
-     * @return the merchant
+     * @return 商人
+     * <p>原文：the merchant
      */
     public Merchant getMerchant() {
         return merchant;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取与此事件关联的交易
+     * <p>原文：
      * Gets the associated trade with this event
      *
-     * @return the trade
+     * @return 交易
+     * <p>原文：the trade
      */
     public MerchantRecipe getTrade() {
         return this.trade;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置交易。随后将用于确定下一次的价格
+     * <p>原文：
      * Sets the trade. This is then used to determine the next prices
      *
-     * @param trade the trade to use
+     * @param trade 要使用的交易
+     * <p>原文：the trade to use
      */
     public void setTrade(final MerchantRecipe trade) {
         Preconditions.checkArgument(trade != null, "Trade cannot be null!");
@@ -63,32 +78,42 @@ public class PlayerPurchaseEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
-     * @return will trade try to reward exp
+     * @return 交易是否会尝试奖励经验
+     * <p>原文：will trade try to reward exp
      */
     public boolean isRewardingExp() {
         return this.rewardExp;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置此次交易是否会尝试奖励经验
+     * <p>原文：
      * Sets whether the trade will try to reward exp
      *
-     * @param rewardExp try to reward exp
+     * @param rewardExp 尝试奖励经验
+     * <p>原文：try to reward exp
      */
     public void setRewardExp(final boolean rewardExp) {
         this.rewardExp = rewardExp;
     }
 
     /**
-     * @return whether the trade will count as a use of the trade
+     * @return 该交易是否计入交易使用次数
+     * <p>原文：whether the trade will count as a use of the trade
      */
     public boolean willIncreaseTradeUses() {
         return this.increaseTradeUses;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置此次交易是否计为一次使用
+     * <p>原文：
      * Sets whether the trade will count as a use
      *
-     * @param increaseTradeUses {@code true} to count, {@code false} otherwise
+     * @param increaseTradeUses {@code true} 表示计入，否则为 {@code false}
+     * <p>原文：{@code true} to count, {@code false} otherwise
      */
     public void setIncreaseTradeUses(final boolean increaseTradeUses) {
         this.increaseTradeUses = increaseTradeUses;

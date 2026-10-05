@@ -15,6 +15,11 @@ import org.jetbrains.annotations.Unmodifiable;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当客户端尝试修改告示牌，但尚未检查应编辑的位置是否真的存在告示牌时调用。
+ * <p>
+ * 取消该事件将阻止对告示牌修改的后续处理，但由于客户端本地世界可能处于不一致状态，插件还需进一步处理。
+ * <p>原文：
  * Called when a client attempts to modify a sign, but the location at which the sign should be edited
  * has not yet been checked for the existence of a real sign.
  * <p>
@@ -49,27 +54,39 @@ public class UncheckedSignChangeEvent extends PlayerEvent implements Cancellable
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取可能被编辑的告示牌所在的位置。
+     * <p>原文：
      * Gets the location at which a potential sign was edited.
      *
-     * @return location where the change happened
+     * @return 发生变化的位置
+     * <p>原文：location where the change happened
      */
     public BlockPosition getEditedBlockPosition() {
         return this.editedBlockPosition;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取告示牌被编辑的是哪一面。
+     * <p>原文：
      * Gets which side of the sign was edited.
      *
-     * @return {@link Side} that was edited
+     * @return 被编辑的 {@link Side}
+     * <p>原文：{@link Side} that was edited
      */
     public Side getSide() {
         return this.side;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取玩家输入的文本行。
+     * <p>原文：
      * Gets the lines that the player has entered.
      *
-     * @return the lines
+     * @return 行
+     * <p>原文：the lines
      */
     public @Unmodifiable List<Component> lines() {
         return Collections.unmodifiableList(this.lines);
