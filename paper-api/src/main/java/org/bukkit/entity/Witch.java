@@ -8,6 +8,9 @@ import org.jetbrains.annotations.Nullable;
 // Paper end
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表女巫.
+ * <p>原文：
  * Represents a Witch
  */
 public interface Witch extends Raider, RangedEntity { // Paper

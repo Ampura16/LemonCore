@@ -13,6 +13,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表头颅.
+ * <p>原文：
  * Represents a captured state of a skull block.
  */
 public interface Skull extends TileState {
@@ -33,43 +36,64 @@ public interface Skull extends TileState {
 
     //<editor-fold desc="Deprecated profile methods" defaultstate="collapsed">
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检测此头颅是否有主人.
+     * <p>原文：
      * Checks to see if the skull has an owner
      *
-     * @return true if the skull has an owner
+     * @return true表示此头颅有主人
+     * <p>原文：true if the skull has an owner
      * @deprecated Use {@link #getProfile()} {@code != null}.
      */
     @Deprecated(since = "1.21.9")
     public boolean hasOwner();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 如果存在，获取这个头颅的主人.
+     * <p>原文：
      * Gets the owner of the skull, if one exists
      *
-     * @return the owner of the skull or null if the skull does not have an owner
-     * @deprecated See {@link #getProfile()}.
+     * @return 头颅主人的名字，如果此头颅没有主人将返回null
+     * <p>原文：the owner of the skull or null if the skull does not have an owner
+     * @deprecated 请查阅 {@link #getOwningPlayer()}.
+     * <p>原文：See {@link #getProfile()}.
      */
     @Deprecated(since = "1.9.4")
     @Nullable
     public String getOwner();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置头颅的主人.
+     * <p>
+     * 根据提供的名称获取配置文件数据时涉及一个可能的阻塞式Web请求.
+     * <p>原文：
      * Sets the owner of the skull
      * <p>
      * Involves a potentially blocking web request to acquire the profile data for
      * the provided name.
      *
-     * @param name the new owner of the skull
-     * @return true if the owner was successfully set
-     * @deprecated see {@link #setProfile(ResolvableProfile)}.
+     * @param name 新的头颅主人的名字
+     * <p>原文：the new owner of the skull
+     * @return true表示成功设置这个头颅的主人
+     * <p>原文：true if the owner was successfully set
+     * @deprecated 请查阅 {@link #setOwningPlayer(org.bukkit.OfflinePlayer)}.
+     * <p>原文：see {@link #setProfile(ResolvableProfile)}.
      */
     @Deprecated(since = "1.9.4")
     @Contract("null -> false")
     public boolean setOwner(@Nullable String name);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取拥有此头颅的玩家. 该头颅可能显示出玩家皮肤的头部, 这取决于头颅的类型.
+     * <p>原文：
      * Get the player which owns the skull. This player may appear as the
      * texture depending on skull type.
      *
-     * @return owning player
+     * @return 头颅所有者
+     * <p>原文：owning player
      * @deprecated see {@link #getProfile()}.
      */
     @Deprecated(since = "1.21.9")
@@ -77,10 +101,14 @@ public interface Skull extends TileState {
     public OfflinePlayer getOwningPlayer();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置拥有此头颅的玩家. 该头颅可能显示出玩家皮肤的头部, 这取决于头颅的类型.
+     * <p>原文：
      * Set the player which owns the skull. This player may appear as the
      * texture depending on skull type.
      *
-     * @param player the owning player
+     * @param player 头颅所有者
+     * <p>原文：the owning player
      * @deprecated see {@link #setProfile(ResolvableProfile)}.
      */
     @Deprecated(since = "1.21.9")
@@ -105,11 +133,14 @@ public interface Skull extends TileState {
     // Paper end
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取拥有此头颅的玩家的资料. 此玩家资料所含的纹理取决于头颅类型.
+     * <p>原文：
      * Gets the profile of the player who owns the skull. This player profile
      * may appear as the texture depending on skull type.
      *
-     * @return the profile of the owning player
-     *
+     * @return 头颅所有者的资料
+     * <p>原文：the profile of the owning player
      * @deprecated Use {@link #getProfile()} instead.
      */
     @Nullable
@@ -117,6 +148,12 @@ public interface Skull extends TileState {
     PlayerProfile getOwnerProfile();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置拥有此头颅的玩家的资料. 此玩家资料所含的纹理取决于头颅类型.
+     * <p>
+     * 此资料必须包含唯一 id 和皮肤纹理. 如果两者都缺, 则资料必须包含玩家名,
+     * 服务器将利用玩家名来尝试查找其唯一 id 和皮肤纹理.
+     * <p>原文：
      * Sets the profile of the player who owns the skull. This player profile
      * may appear as the texture depending on skull type.
      * <p>
@@ -124,10 +161,11 @@ public interface Skull extends TileState {
      * of these is missing, the profile must contain a name by which the server
      * will then attempt to look up the unique id and skin texture.
      *
-     * @param profile the profile of the owning player
-     * @throws IllegalArgumentException if the profile does not contain the
+     * @param profile 头颅所有者的资料
+     * <p>原文：the profile of the owning player
+     * @throws IllegalArgumentException 如果资料没有包含必要信息
+     * <p>原文：if the profile does not contain the
      * necessary information
-     *
      * @deprecated Use {@link #setProfile(ResolvableProfile)} instead.
      */
     @Deprecated // Paper
@@ -135,63 +173,96 @@ public interface Skull extends TileState {
     //</editor-fold>
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取头颅放置在音符盒上时播放的音效.
+     * <br>
+     * <strong>注意:</strong> 这仅对玩家头颅有效. 其他类型的头颅,
+     * 请参阅 {@link org.bukkit.Instrument}.
+     * <p>原文：
      * Gets the sound to play if the skull is placed on a note block.
      * <br>
      * <strong>Note:</strong> This only works for player heads. For other heads,
      * see {@link org.bukkit.Instrument}.
      *
-     * @return the key of the sound, or null
+     * @return 音效的键值, 或null
+     * <p>原文：the key of the sound, or null
      */
     @Nullable
     public NamespacedKey getNoteBlockSound();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置头颅放置在音符盒上时播放的音效.
+     * <br>
+     * <strong>注意:</strong> 这仅对玩家头颅有效. 其他类型的头颅,
+     * 请参阅 {@link org.bukkit.Instrument}.
+     * <p>原文：
      * Sets the sound to play if the skull is placed on a note block.
      * <br>
      * <strong>Note:</strong> This only works for player heads. For other heads,
      * see {@link org.bukkit.Instrument}.
      *
-     * @param noteBlockSound the key of the sound to be played, or null
-     *
+     * @param noteBlockSound 要播放的音效的键值, 或null
+     * <p>原文：the key of the sound to be played, or null
      */
     public void setNoteBlockSound(@Nullable NamespacedKey noteBlockSound);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这个头颅在世界的角度 (或头颅的朝向如果这个头颅被挂在墙上).
+     * <p>原文：
      * Gets the rotation of the skull in the world (or facing direction if this
      * is a wall mounted skull).
      *
-     * @return the rotation of the skull
-     * @deprecated use {@link BlockData}
+     * @return 头颅的角度
+     * <p>原文：the rotation of the skull
+     * @deprecated 请使用 {@link BlockData}
+     * <p>原文：use {@link BlockData}
      */
     @Deprecated(since = "1.13")
     @NotNull
     public BlockFace getRotation();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置这个头颅在世界的角度 (或头颅的朝向如果这个头颅被挂在墙上).
+     * <p>原文：
      * Sets the rotation of the skull in the world (or facing direction if this
      * is a wall mounted skull).
      *
-     * @param rotation the rotation of the skull
-     * @deprecated use {@link BlockData}
+     * @param rotation 头颅的角度
+     * <p>原文：the rotation of the skull
+     * @deprecated 请使用 {@link BlockData}
+     * <p>原文：use {@link BlockData}
      */
     @Deprecated(since = "1.13")
     public void setRotation(@NotNull BlockFace rotation);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取头颅的类型.
+     * <p>原文：
      * Gets the type of skull
      *
-     * @return the type of skull
-     * @deprecated check {@link Material} instead
+     * @return 头颅的类型
+     * <p>原文：the type of skull
+     * @deprecated 请检查 {@link Material} 类型
+     * <p>原文：check {@link Material} instead
      */
     @Deprecated(since = "1.13", forRemoval = true)
     @NotNull
     public SkullType getSkullType();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置头颅的类型.
+     * <p>原文：
      * Sets the type of skull
      *
-     * @param skullType the type of skull
-     * @deprecated check {@link Material} instead
+     * @param skullType 头颅的类型
+     * <p>原文：the type of skull
+     * @deprecated 请检查 {@link Material} 类型
+     * <p>原文：check {@link Material} instead
      */
     @Deprecated(since = "1.13", forRemoval = true)
     @Contract("_ -> fail")

@@ -10,6 +10,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 玩家移动事件.
+ * <p>原文：
  * Holds information for player movement events
  */
 public class PlayerMoveEvent extends PlayerEvent implements Cancellable {
@@ -29,9 +32,13 @@ public class PlayerMoveEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 得到玩家发生移动前的位置.
+     * <p>原文：
      * Gets the location this player moved from
      *
-     * @return Location the player moved from
+     * @return 玩家移动之前的位置
+     * <p>原文：Location the player moved from
      */
     @NotNull
     public Location getFrom() {
@@ -39,9 +46,13 @@ public class PlayerMoveEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置玩家将要移动到此位置之前的位置.
+     * <p>原文：
      * Sets the location to mark as where the player moved from
      *
-     * @param from New location to mark as the players previous location
+     * @param from 记录玩家移动之前的位置
+     * <p>原文：New location to mark as the players previous location
      */
     public void setFrom(@NotNull Location from) {
         this.validateLocation(from);
@@ -49,9 +60,13 @@ public class PlayerMoveEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 得到玩家移动到的位置.
+     * <p>原文：
      * Gets the location this player moved to
      *
-     * @return Location the player moved to
+     * @return 玩家移动到的位置
+     * <p>原文：Location the player moved to
      */
     @NotNull // Paper
     public Location getTo() {
@@ -59,9 +74,13 @@ public class PlayerMoveEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置玩家将要移动的位置.
+     * <p>原文：
      * Sets the location that this player will move to
      *
-     * @param to New Location this player will move to
+     * @param to 玩家将要移动到的位置
+     * <p>原文：New Location this player will move to
      */
     public void setTo(@NotNull Location to) {
         this.validateLocation(to);
@@ -114,11 +133,18 @@ public class PlayerMoveEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此事件的取消状态. 被取消的事件将不会在服务器上执行，但将仍然传递给其他插件.
+     * <p>
+     * 如果一个移动或传送事件被取消,玩家将被移动或传送回getFrom()定义的位置。这不会触发此事件.
+     * <p>原文：
      * {@inheritDoc}
      * <p>
      * If a move or teleport event is cancelled, the player will be moved or
      * teleported back to the Location as defined by getFrom(). This will not
      * fire an event
+     *
+     * @return 是否取消了这个事件
      */
     @Override
     public boolean isCancelled() {
@@ -126,11 +152,18 @@ public class PlayerMoveEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置取消状态的事件。被取消的事件不会在服务器执行,但仍将传递给其他插件执行.
+     * <p>
+     * 如果一个移动或传送事件被取消,玩家将被移动或传送回getFrom()定义的位置。这不会触发此事件.
+     * <p>原文：
      * {@inheritDoc}
      * <p>
      * If a move or teleport event is cancelled, the player will be moved or
      * teleported back to the Location as defined by getFrom(). This will not
      * fire an event
+     *
+     * @param cancel 是否取消这个事件
      */
     @Override
     public void setCancelled(boolean cancel) {

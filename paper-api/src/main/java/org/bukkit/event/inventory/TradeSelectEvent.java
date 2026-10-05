@@ -8,6 +8,11 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 每当玩家在交易侧边栏点击新交易时调用此事件。
+ * <p>
+ * 此事件允许用户获取交易的索引，让他们通过 Merchant 获取 MerchantRecipe。
+ * <p>原文：
  * This event is called whenever a player clicks a new trade on the trades
  * sidebar.
  * <p>
@@ -33,9 +38,14 @@ public class TradeSelectEvent extends InventoryInteractEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取涉及的 Merchant。
+     * <p>原文：
      * Get the Merchant involved.
      *
-     * @return the Merchant
+     * @return Merchant
+     * <p>原文：Get the Merchant involved.
+     * <p>原文：the Merchant
      */
     @NotNull
     public Merchant getMerchant() {
@@ -49,9 +59,14 @@ public class TradeSelectEvent extends InventoryInteractEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 用于获取玩家点击的交易的索引。
+     * <p>原文：
      * Used to get the index of the trade the player clicked on.
      *
-     * @return The index of the trade clicked by the player
+     * @return 玩家点击的交易的索引
+     * <p>原文：Used to get the index of the trade the player clicked on.
+     * <p>原文：The index of the trade clicked by the player
      */
     public int getIndex() {
         return this.index;

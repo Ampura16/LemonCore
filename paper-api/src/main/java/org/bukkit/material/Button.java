@@ -4,9 +4,14 @@ import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表一个按钮。
+ * <p>原文：
  * Represents a button
  *
- * @deprecated all usage of MaterialData is deprecated and subject to removal.
+ * @deprecated 所有 MaterialData 的用法均已弃用并可能被移除。
+ * 请使用 {@link org.bukkit.block.data.BlockData}。
+ * <p>原文：all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
  */
 @Deprecated(forRemoval = true, since = "1.13")
@@ -20,9 +25,15 @@ public class Button extends SimpleAttachableMaterialData implements Redstone {
     }
 
     /**
-     * @param type the type
-     * @param data the raw data value
-     * @deprecated Magic value
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @param type 类型
+     * <p>原文：the type
+     * @param data 原始数据值
+     * <p>原文：the raw data value
+     * @deprecated 魔法值
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.6.2")
     public Button(final Material type, final byte data) {
@@ -30,10 +41,16 @@ public class Button extends SimpleAttachableMaterialData implements Redstone {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此材质的当前状态，指示其是否被激活。
+     * <p>原文：
      * Gets the current state of this Material, indicating if it's powered or
      * unpowered
      *
-     * @return true if powered, otherwise false
+     * @return 如果被激活则返回 true，否则返回 false
+     * <p>
+     * 原文：Gets the current state of this Material, indicating if it's powered or unpowered
+     * <p>原文：true if powered, otherwise false
      */
     @Override
     public boolean isPowered() {
@@ -41,19 +58,30 @@ public class Button extends SimpleAttachableMaterialData implements Redstone {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此按钮的当前状态。
+     * <p>原文：
      * Sets the current state of this button
      *
-     * @param bool
-     *            whether or not the button is powered
+     * @param bool 按钮是否被激活
+     * <p>
+     * 原文：Sets the current state of this button
+     * <p>原文：whether or not the button is powered
      */
     public void setPowered(boolean bool) {
         setData((byte) (bool ? (getData() | 0x8) : (getData() & ~0x8)));
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此方块所附着的面。
+     * <p>原文：
      * Gets the face that this block is attached on
      *
-     * @return BlockFace attached to
+     * @return 附着的 BlockFace
+     * <p>
+     * 原文：Gets the face that this block is attached on
+     * <p>原文：BlockFace attached to
      */
     @Override
     public BlockFace getAttachedFace() {
@@ -83,6 +111,9 @@ public class Button extends SimpleAttachableMaterialData implements Redstone {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此按钮指向的方向。
+     * <p>原文：
      * Sets the direction this button is pointing toward
      */
     @Override

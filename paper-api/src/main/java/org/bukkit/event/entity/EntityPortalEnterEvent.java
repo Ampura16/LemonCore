@@ -9,9 +9,13 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当一个实体与传送门接触时触发本事件.
+ * <p>原文：
  * Called when an entity comes into contact with a portal
  * <p>
  * Cancelling this event prevents any further processing of the portal for that tick.
+ *
  * @see io.papermc.paper.event.entity.EntityInsideBlockEvent
  */
 public class EntityPortalEnterEvent extends EntityEvent implements Cancellable {
@@ -37,9 +41,13 @@ public class EntityPortalEnterEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取实体接触的传送门方块.
+     * <p>原文：
      * Gets the portal block the entity is touching
      *
-     * @return The portal block the entity is touching
+     * @return 实体接触的传送门方块
+     * <p>原文：The portal block the entity is touching
      */
     @NotNull
     public Location getLocation() {

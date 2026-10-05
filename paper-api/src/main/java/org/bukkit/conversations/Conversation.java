@@ -9,6 +9,21 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * Conversation 类负责跟踪对话的当前状态，向用户显示提示，并将用户的响应分派到适当的位置。
+ * Conversation 对象通常不会直接实例化，而是使用 {@link ConversationFactory} 按需构建相同的对话。
+ * <p>
+ * 对话流程由 {@link Prompt} 对象的有向图组成。每次提示从用户获取输入时，它必须返回图中的下一个提示。
+ * 由于每个 Prompt 选择下一个 Prompt，因此可以实现复杂的对话树，其中玩家响应的性质引导对话的流程。
+ * <p>
+ * 每个对话都有一个 {@link ConversationPrefix}，它将对话的所有输出前置到玩家。
+ * ConversationPrefix 可用于在对话演变时显示插件名称或对话状态。
+ * <p>
+ * 每个对话都有一个超时时间，以等待放弃对话前的非活动秒数衡量。
+ * 如果达到非活动超时，对话将被放弃，用户的传入和传出聊天将恢复正常。
+ * <p>
+ * 不应手动构造对话，而应使用 {@link ConversationFactory} 来访问所有可用选项。
+ * <p>原文：
  * The Conversation class is responsible for tracking the current state of a
  * conversation, displaying prompts to the user, and dispatching the user's
  * response to the appropriate place. Conversation objects are not typically
@@ -52,23 +67,36 @@ public class Conversation {
     protected List<ConversationAbandonedListener> abandonedListeners;
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 初始化一个新的 Conversation。
+     * <p>原文：
      * Initializes a new Conversation.
      *
-     * @param plugin The plugin that owns this conversation.
-     * @param forWhom The entity for whom this conversation is mediating.
-     * @param firstPrompt The first prompt in the conversation graph.
+     * @param plugin 拥有此对话的插件。
+     * <p>原文：The plugin that owns this conversation.
+     * @param forWhom 此对话所中介的实体。
+     * <p>原文：The entity for whom this conversation is mediating.
+     * @param firstPrompt 对话图中的第一个提示。
+     * <p>原文：The first prompt in the conversation graph.
      */
     public Conversation(@Nullable Plugin plugin, @NotNull Conversable forWhom, @Nullable Prompt firstPrompt) {
         this(plugin, forWhom, firstPrompt, new HashMap<Object, Object>());
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 初始化一个新的 Conversation。
+     * <p>原文：
      * Initializes a new Conversation.
      *
-     * @param plugin The plugin that owns this conversation.
-     * @param forWhom The entity for whom this conversation is mediating.
-     * @param firstPrompt The first prompt in the conversation graph.
-     * @param initialSessionData Any initial values to put in the conversation
+     * @param plugin 拥有此对话的插件。
+     * <p>原文：The plugin that owns this conversation.
+     * @param forWhom 此对话所中介的实体。
+     * <p>原文：The entity for whom this conversation is mediating.
+     * @param firstPrompt 对话图中的第一个提示。
+     * <p>原文：The first prompt in the conversation graph.
+     * @param initialSessionData 放入对话上下文 sessionData 映射中的任何初始值。
+     * <p>原文：Any initial values to put in the conversation
      *     context sessionData map.
      */
     public Conversation(@Nullable Plugin plugin, @NotNull Conversable forWhom, @Nullable Prompt firstPrompt, @NotNull Map<Object, Object> initialSessionData) {
@@ -82,9 +110,13 @@ public class Conversation {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此对话所中介的实体。
+     * <p>原文：
      * Gets the entity for whom this conversation is mediating.
      *
-     * @return The entity.
+     * @return 实体。
+     * <p>原文：The entity.
      */
     @NotNull
     public Conversable getForWhom() {
@@ -92,54 +124,74 @@ public class Conversation {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此对话的模态性。如果对话是模态的，则在对话期间抑制所有指向玩家的消息。
+     * <p>原文：
      * Gets the modality of this conversation. If a conversation is modal, all
      * messages directed to the player are suppressed for the duration of the
      * conversation.
      *
-     * @return The conversation modality.
+     * @return 对话的模态性。
+     * <p>原文：The conversation modality.
      */
     public boolean isModal() {
         return modal;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此对话的模态性。如果对话是模态的，则在对话期间抑制所有指向玩家的消息。
+     * <p>原文：
      * Sets the modality of this conversation.  If a conversation is modal,
      * all messages directed to the player are suppressed for the duration of
      * the conversation.
      *
-     * @param modal The new conversation modality.
+     * @param modal 新的对话模态性。
+     * <p>原文：The new conversation modality.
      */
     void setModal(boolean modal) {
         this.modal = modal;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此对话的本地回显状态。如果启用了本地回显，则提交到对话的任何文本都会被回显到提交者的聊天窗口中。
+     * <p>原文：
      * Gets the status of local echo for this conversation. If local echo is
      * enabled, any text submitted to a conversation gets echoed back into the
      * submitter's chat window.
      *
-     * @return The status of local echo.
+     * @return 本地回显的状态。
+     * <p>原文：The status of local echo.
      */
     public boolean isLocalEchoEnabled() {
         return localEchoEnabled;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此对话的本地回显状态。如果启用了本地回显，则提交到对话的任何文本都会被回显到提交者的聊天窗口中。
+     * <p>原文：
      * Sets the status of local echo for this conversation. If local echo is
      * enabled, any text submitted to a conversation gets echoed back into the
      * submitter's chat window.
      *
-     * @param localEchoEnabled The status of local echo.
+     * @param localEchoEnabled 本地回显的状态。
+     * <p>原文：The status of local echo.
      */
     public void setLocalEchoEnabled(boolean localEchoEnabled) {
         this.localEchoEnabled = localEchoEnabled;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此前置所有对话输出的 {@link ConversationPrefix}。
+     * <p>原文：
      * Gets the {@link ConversationPrefix} that prepends all output from this
      * conversation.
      *
-     * @return The ConversationPrefix in use.
+     * @return 正在使用的 ConversationPrefix。
+     * <p>原文：The ConversationPrefix in use.
      */
     @NotNull
     public ConversationPrefix getPrefix() {
@@ -147,19 +199,27 @@ public class Conversation {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此前置所有对话输出的 {@link ConversationPrefix}。
+     * <p>原文：
      * Sets the {@link ConversationPrefix} that prepends all output from this
      * conversation.
      *
-     * @param prefix The ConversationPrefix to use.
+     * @param prefix 要使用的 ConversationPrefix。
+     * <p>原文：The ConversationPrefix to use.
      */
     void setPrefix(@NotNull ConversationPrefix prefix) {
         this.prefix = prefix;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将 {@link ConversationCanceller} 添加到取消器集合中。
+     * <p>原文：
      * Adds a {@link ConversationCanceller} to the cancellers collection.
      *
-     * @param canceller The {@link ConversationCanceller} to add.
+     * @param canceller 要添加的 {@link ConversationCanceller}。
+     * <p>原文：The {@link ConversationCanceller} to add.
      */
     void addConversationCanceller(@NotNull ConversationCanceller canceller) {
         canceller.setConversation(this);
@@ -167,9 +227,13 @@ public class Conversation {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取 {@link ConversationCanceller} 的列表。
+     * <p>原文：
      * Gets the list of {@link ConversationCanceller}s
      *
-     * @return The list.
+     * @return 列表。
+     * <p>原文：The list.
      */
     @NotNull
     public List<ConversationCanceller> getCancellers() {
@@ -177,6 +241,9 @@ public class Conversation {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回 Conversation 的 {@link ConversationContext}。
+     * <p>原文：
      * Returns the Conversation's {@link ConversationContext}.
      *
      * @return The ConversationContext.
@@ -187,6 +254,9 @@ public class Conversation {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 显示此对话的第一个提示，并开始重定向用户的聊天响应。
+     * <p>原文：
      * Displays the first prompt of this conversation and begins redirecting
      * the user's chat responses.
      */
@@ -199,7 +269,12 @@ public class Conversation {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回对话的当前状态。
+     * <p>原文：
      * {@return the current state of the conversation}
+     *
+     * @return 对话的当前状态。
      */
     @NotNull
     public ConversationState getState() {
@@ -213,10 +288,14 @@ public class Conversation {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将玩家输入传递到当前提示。然后显示下一个提示（由当前提示确定）给用户。
+     * <p>原文：
      * Passes player input into the current prompt. The next prompt (as
      * determined by the current prompt) is then displayed to the user.
      *
-     * @param input The user's chat text.
+     * @param input 用户的聊天文本。
+     * <p>原文：The user's chat text.
      */
     public void acceptInput(@NotNull String input) {
         if (currentPrompt != null) {
@@ -241,24 +320,35 @@ public class Conversation {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 添加一个 {@link ConversationAbandonedListener}。
+     * <p>原文：
      * Adds a {@link ConversationAbandonedListener}.
      *
-     * @param listener The listener to add.
+     * @param listener 要添加的监听器。
+     * <p>原文：The listener to add.
      */
     public synchronized void addConversationAbandonedListener(@NotNull ConversationAbandonedListener listener) {
         abandonedListeners.add(listener);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 移除一个 {@link ConversationAbandonedListener}。
+     * <p>原文：
      * Removes a {@link ConversationAbandonedListener}.
      *
-     * @param listener The listener to remove.
+     * @param listener 要移除的监听器。
+     * <p>原文：The listener to remove.
      */
     public synchronized void removeConversationAbandonedListener(@NotNull ConversationAbandonedListener listener) {
         abandonedListeners.remove(listener);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 放弃并重置当前对话。恢复用户正常的聊天行为。
+     * <p>原文：
      * Abandons and resets the current conversation. Restores the user's
      * normal chat behavior.
      */
@@ -267,10 +357,14 @@ public class Conversation {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 放弃并重置当前对话。恢复用户正常的聊天行为。
+     * <p>原文：
      * Abandons and resets the current conversation. Restores the user's
      * normal chat behavior.
      *
-     * @param details Details about why the conversation was abandoned
+     * @param details 关于对话被放弃原因的详细信息。
+     * <p>原文：Details about why the conversation was abandoned
      */
     public synchronized void abandon(@NotNull ConversationAbandonedEvent details) {
         if (!abandoned) {
@@ -284,6 +378,9 @@ public class Conversation {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 显示下一个用户提示，如果下一个提示为 null 则放弃对话。
+     * <p>原文：
      * Displays the next user prompt and abandons the conversation if the next
      * prompt is null.
      */

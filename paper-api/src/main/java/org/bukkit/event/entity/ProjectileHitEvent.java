@@ -11,6 +11,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当弹射物命中物体时调用。
+ * <p>原文：
  * Called when a projectile hits an object
  */
 public class ProjectileHitEvent extends EntityEvent implements Cancellable {
@@ -62,9 +65,13 @@ public class ProjectileHitEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取被命中的实体（如果命中实体）。
+     * <p>原文：
      * Gets the entity that was hit, if it was an entity that was hit.
      *
-     * @return hit entity or else {@code null}
+     * @return 被命中的实体，否则返回 null
+     * <p>原文：hit entity or else {@code null}
      */
     @Nullable
     public Entity getHitEntity() {
@@ -72,9 +79,13 @@ public class ProjectileHitEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取被命中的方块（如果命中方块）。
+     * <p>原文：
      * Gets the block that was hit, if it was a block that was hit.
      *
-     * @return hit block or else {@code null}
+     * @return 被命中的方块，否则返回 null
+     * <p>原文：hit block or else {@code null}
      */
     @Nullable
     public Block getHitBlock() {
@@ -82,10 +93,14 @@ public class ProjectileHitEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取被命中的方块面（如果命中方块且事件中提供了该面）。
+     * <p>原文：
      * Gets the block face that was hit, if it was a block that was hit and the
      * face was provided in the event.
      *
-     * @return hit face or else {@code null}
+     * @return 被命中的面，否则返回 null
+     * <p>原文：hit face or else {@code null}
      */
     @Nullable
     public BlockFace getHitBlockFace() {
@@ -98,6 +113,15 @@ public class ProjectileHitEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 是否取消弹射物命中时发生的动作。
+     * <p>
+     * 对于实体，它将不会碰撞（除非是烟花火箭，然后使用 {@link FireworkExplodeEvent}）。
+     * <br>
+     * 对于方块，某些方块（例如标靶、钟）将不会执行相关动作。
+     * <br>
+     * 这不会阻止方块碰撞，除非它们各自的事件被取消，否则爆炸仍会发生。
+     * <p>原文：
      * Whether to cancel the action that occurs when the projectile hits.
      * <p>
      * In the case of an entity, it will not collide (unless it's a firework,
@@ -108,6 +132,8 @@ public class ProjectileHitEvent extends EntityEvent implements Cancellable {
      * <p>
      * This does NOT prevent block collisions, and explosions will still occur
      * unless their respective events are cancelled.
+     *
+     * @param cancel 如果你希望取消此事件则设置为 true
      */
     @Override
     public void setCancelled(boolean cancel) {

@@ -8,6 +8,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当物品放入铁砧内，并且可以合成出物品的时候触发该事件
+ * <p>原文：
  * Called when an item is put in a slot for repair by an anvil.
  */
 public class PrepareAnvilEvent extends com.destroystokyo.paper.event.inventory.PrepareResultEvent {

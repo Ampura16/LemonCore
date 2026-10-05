@@ -4,9 +4,14 @@ import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表一个头颅。
+ * <p>原文：
  * Represents a skull.
  *
- * @deprecated all usage of MaterialData is deprecated and subject to removal.
+ * @deprecated 所有 MaterialData 的用法都已弃用并可能被移除。
+ * 请使用 {@link org.bukkit.block.data.BlockData}。
+ * <p>原文：all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
  */
 @Deprecated(since = "1.13", forRemoval = true)
@@ -16,9 +21,14 @@ public class Skull extends MaterialData implements Directional {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 实例化一个朝向特定方向的头颅。
+     * <p>原文：
      * Instantiate a skull facing in a particular direction.
      *
-     * @param direction the direction the skull's face is facing
+     * @param direction 头颅面部朝向的方向
+     * <p>原文：Instantiate a skull facing in a particular direction.
+     * <p>原文：the direction the skull's face is facing
      */
     public Skull(BlockFace direction) {
         this();
@@ -30,9 +40,16 @@ public class Skull extends MaterialData implements Directional {
     }
 
     /**
-     * @param type the type
-     * @param data the raw data value
-     * @deprecated Magic value
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @param type 物品类型
+     * <p>原文：the type
+     * @param data 原始数据值
+     * <p>原文：the raw data value
+     * @deprecated 魔法值
+     * <p>原文：Magic value
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.6.2")
     public Skull(final Material type, final byte data) {

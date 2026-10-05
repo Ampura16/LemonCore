@@ -1,6 +1,9 @@
 package org.bukkit.plugin.messaging;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 如果插件通道(Plugin Channel)过长则抛出此异常。
+ * <p>原文：
  * Thrown if a Plugin Channel is too long.
  */
 @SuppressWarnings("serial")

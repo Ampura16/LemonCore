@@ -1,6 +1,10 @@
 package org.bukkit.metadata;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当{@link LazyMetadataValue}由于异常而无法求值时, 会抛出此异常.
+ * 原始异常将作为此异常的原因被包含.
+ * <p>原文：
  * A MetadataEvaluationException is thrown any time a {@link
  * LazyMetadataValue} fails to evaluate its value due to an exception. The
  * originating exception will be included as this exception's cause.

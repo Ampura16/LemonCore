@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当村民获得新交易时调用。
+ * <p>原文：
  * Called whenever a villager acquires a new trade.
  */
 public class VillagerAcquireTradeEvent extends EntityEvent implements Cancellable {
@@ -30,9 +33,13 @@ public class VillagerAcquireTradeEvent extends EntityEvent implements Cancellabl
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取将要获得的配方。
+     * <p>原文：
      * Get the recipe to be acquired.
      *
-     * @return the new recipe
+     * @return 新配方
+     * <p>原文：the new recipe
      */
     @NotNull
     public MerchantRecipe getRecipe() {
@@ -40,9 +47,13 @@ public class VillagerAcquireTradeEvent extends EntityEvent implements Cancellabl
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置将要获得的配方。
+     * <p>原文：
      * Set the recipe to be acquired.
      *
-     * @param recipe the new recipe
+     * @param recipe 新配方
+     * <p>原文：the new recipe
      */
     public void setRecipe(@NotNull MerchantRecipe recipe) {
         this.recipe = recipe;

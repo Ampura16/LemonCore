@@ -7,6 +7,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 在实体被解除拴绳之前立即调用。
+ * <p>原文：
  * Called immediately prior to an entity being unleashed.
  * <p>
  * Cancelling this event when either:
@@ -40,9 +43,13 @@ public class EntityUnleashEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回解除拴绳的原因。
+     * <p>原文：
      * Returns the reason for the unleashing.
      *
-     * @return The reason
+     * @return 原因
+     * <p>原文：The reason
      */
     @NotNull
     public UnleashReason getReason() {
@@ -90,15 +97,24 @@ public class EntityUnleashEvent extends EntityEvent implements Cancellable {
 
     public enum UnleashReason {
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 当实体的拴绳持有者已死亡或登出，因此被解除拴绳。
+         * <p>原文：
          * When the entity's leashholder has died or logged out, and so is
          * unleashed
          */
         HOLDER_GONE,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 当实体的拴绳持有者尝试解除其拴绳时。
+         * <p>原文：
          * When the entity's leashholder attempts to unleash it
          */
         PLAYER_UNLEASH,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 当实体的拴绳持有者距离超过 10 个方块时。
+         * <p>原文：
          * When the entity's leashholder is more than 10 blocks away
          */
         DISTANCE,

@@ -5,6 +5,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * {@link #getObjective() 计分项}跟踪的某条{@link #getEntry() 项目}的单条分数记录.
+ * 改变此分数记录不会影响其它的计分项或计分板.
+ * <p>原文：
  * A score entry for an {@link #getEntry() entry} on an {@link
  * #getObjective() objective}. Changing this will not affect any other
  * objective or scoreboard.
@@ -12,63 +16,95 @@ import org.jetbrains.annotations.Nullable;
 public interface Score {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此分数为哪个玩家而记.
+     * <p>原文：
      * Gets the OfflinePlayer being tracked by this Score
      *
-     * @return this Score's tracked player
+     * @return 分数对应的玩家
+     * <p>原文：this Score's tracked player
      * @see #getEntry()
-     * @deprecated Scoreboards can contain entries that aren't players
+     * @deprecated 计分板可包含非玩家项目
+     * <p>原文：Scoreboards can contain entries that aren't players
      */
     @Deprecated(since = "1.7.8")
     @NotNull
     OfflinePlayer getPlayer();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此分数为哪个项目而记.
+     * <p>原文：
      * Gets the entry being tracked by this Score
      *
-     * @return this Score's tracked entry
+     * @return 分数对应的项目
+     * <p>原文：this Score's tracked entry
      */
     @NotNull
     String getEntry();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此分数记录所属的计分项.
+     * <p>原文：
      * Gets the Objective being tracked by this Score
      *
-     * @return this Score's tracked objective
+     * @return 所属计分项
+     * <p>原文：this Score's tracked objective
      */
     @NotNull
     Objective getObjective();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取当前分数.
+     * <p>原文：
      * Gets the current score
      *
-     * @return the current score
-     * @throws IllegalStateException if the associated objective has been
+     * @return 分数
+     * <p>原文：the current score
+     * @throws IllegalStateException 若相关的计分项已被注销
+     * <p>原文：if the associated objective has been
      *     unregistered
      */
     int getScore();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置当前分数.
+     * <p>原文：
      * Sets the current score.
      *
-     * @param score New score
-     * @throws IllegalStateException if the associated objective has been
+     * @param score 分数
+     * <p>原文：New score
+     * @throws IllegalStateException 若相关的计分项已被注销
+     * <p>原文：if the associated objective has been
      *     unregistered
      */
     void setScore(int score);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 判断是否曾设置过分数数据.
+     * <p>原文：
      * Shows if this score has been set at any point in time.
      *
-     * @return if this score has been set before
-     * @throws IllegalStateException if the associated objective has been
+     * @return 是否曾设置过分数数据
+     * <p>原文：if this score has been set before
+     * @throws IllegalStateException 若相关的计分项已被注销
+     * <p>原文：if the associated objective has been
      *     unregistered
      */
     boolean isScoreSet();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取相关计分项所属的计分板.
+     * <p>原文：
      * Gets the scoreboard for the associated objective.
      *
-     * @return the owning objective's scoreboard, or null if it has been
+     * @return 相关计分项所属的计分板, 如果计分项已被{@link Objective#unregister() 注销}则为 null
+     * <p>原文：the owning objective's scoreboard, or null if it has been
      *     {@link Objective#unregister() unregistered}
      */
     @Nullable

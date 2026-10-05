@@ -5,6 +5,9 @@ import org.bukkit.Material;
 import org.bukkit.TreeSpecies;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表一个花盆。
+ * <p>原文：
  * Represents a flower pot.
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
@@ -14,6 +17,9 @@ import org.bukkit.TreeSpecies;
 public class FlowerPot extends MaterialData {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 花盆的默认构造方法。
+     * <p>原文：
      * Default constructor for a flower pot.
      */
     public FlowerPot() {
@@ -35,6 +41,9 @@ public class FlowerPot extends MaterialData {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取花盆中的物品。
+     * <p>原文：
      * Get the material in the flower pot
      *
      * @return material MaterialData for the block currently in the flower pot
@@ -70,6 +79,9 @@ public class FlowerPot extends MaterialData {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置花盆中的物品。
+     * <p>原文：
      * Set the contents of the flower pot
      *
      * @param materialData MaterialData of the block to put in the flower pot.

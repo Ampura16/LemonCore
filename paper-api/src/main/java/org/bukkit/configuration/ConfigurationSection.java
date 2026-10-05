@@ -14,10 +14,30 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * {@link Configuration}的基类.
+ * 所有用于扩展配置文件读取的类都应当实现以下方法.
+ * <p>原文：
  * Represents a section of a {@link Configuration}
  */
 public interface ConfigurationSection {
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此配置文件的键集合.
+     * <p>
+     * 如果为 true, 则返回包括所有的能访问到的键的集合.
+     * 类似于获取硬盘中第一层目录还是遍历全部子目录.
+     * <p>
+     * 例如:
+     * <p>
+     * top1. Second1
+     * <p>
+     * top1. Second2
+     * <p>
+     * top2. Second1
+     * <p>
+     * top2. Second2
+     * <p>原文：
      * Gets a set containing all keys in this section.
      * <p>
      * If deep is set to true, then this will contain all the keys within any
@@ -27,14 +47,24 @@ public interface ConfigurationSection {
      * If deep is set to false, then this will contain only the keys of any
      * direct children, and not their own children.
      *
-     * @param deep Whether or not to get a deep list, as opposed to a shallow
+     * @param deep 获取全部键, 或者仅仅获取表层键.
+     * <p>原文：Whether or not to get a deep list, as opposed to a shallow
      *     list.
-     * @return Set of keys contained within this ConfigurationSection.
+     * @return 将返回一个 set, 装载着符合要求的键.
+     * <p>原文：Set of keys contained within this ConfigurationSection.
      */
     @NotNull
     public Set<String> getKeys(boolean deep);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这个配置文件的键值集合.
+     * <p>
+     * 如果为 true, 则返回包括所有的能访问到的键和值的集合.
+     * 类似于获取硬盘中第一层目录还是遍历全部子目录.
+     * <p>
+     * 如果为 false, 则返回表层的键和值的集合.
+     * <p>原文：
      * Gets a Map containing all keys and their values for this section.
      * <p>
      * If deep is set to true, then this will contain all the keys and values
@@ -44,27 +74,44 @@ public interface ConfigurationSection {
      * If deep is set to false, then this will contain only the keys and
      * values of any direct children, and not their own children.
      *
-     * @param deep Whether or not to get a deep list, as opposed to a shallow
+     * @param deep 获取全部键值集合(true), 或者仅仅获取表层键值集合(false).
+     * <p>原文：Whether or not to get a deep list, as opposed to a shallow
      *     list.
-     * @return Map of keys and values of this section.
+     * @return 返回一个 Map.
+     * <p>原文：Map of keys and values of this section.
      */
     @NotNull
     public Map<String, Object> getValues(boolean deep);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查 {@link ConfigurationSection} 是否包含指定路径.
+     * <p>
+     * 如果这个路径不存在, 但已指定一个缺省值, 也将返回 true.
+     * <p>原文：
      * Checks if this {@link ConfigurationSection} contains the given path.
      * <p>
      * If the value for the requested path does not exist but a default value
      * has been specified, this will return true.
      *
-     * @param path Path to check for existence.
-     * @return True if this section contains the requested path, either via
+     * @param path 要检查的路径
+     * <p>原文：Path to check for existence.
+     * @return 如果此部分包含请求的路径，可以通过默认的或者被设置.
+     * <p>原文：True if this section contains the requested path, either via
      *     default or being set.
-     * @throws IllegalArgumentException Thrown when path is null.
+     * @throws IllegalArgumentException 如果路径是 null 时抛出此异常.
+     * <p>原文：Thrown when path is null.
      */
     public boolean contains(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查此 {@link ConfigurationSection} 是否包含给定路径.
+     * <p>
+     * 如果请求路径的值不存在, 但布尔参数为 true 且该路径存在默认值, 则返回 true.
+     * <p>
+     * 如果布尔参数为 false, 则只有在指定路径存在已设置的值时才返回 true.
+     * <p>原文：
      * Checks if this {@link ConfigurationSection} contains the given path.
      * <p>
      * If the value for the requested path does not exist, the boolean parameter
@@ -74,30 +121,54 @@ public interface ConfigurationSection {
      * If a boolean parameter of false has been specified, true will only be
      * returned if there is a set value for the specified path.
      *
-     * @param path Path to check for existence.
-     * @param ignoreDefault Whether or not to ignore if a default value for the
+     * @param path 要检查是否存在的路径.
+     * <p>原文：Path to check for existence.
+     * @param ignoreDefault 是否忽略指定路径的默认值.
+     * <p>原文：Whether or not to ignore if a default value for the
      * specified path exists.
-     * @return True if this section contains the requested path, or if a default
+     * @return 如果此节包含请求的路径, 或者存在默认值且此方法的布尔参数为 true, 则返回 true.
+     * <p>原文：True if this section contains the requested path, or if a default
      * value exist and the boolean parameter for this method is true.
-     * @throws IllegalArgumentException Thrown when path is null.
+     * @throws IllegalArgumentException 当 path 为 null 时抛出此异常.
+     * <p>原文：Thrown when path is null.
      */
     public boolean contains(@NotNull String path, boolean ignoreDefault);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查指定路径是否是 Set.
+     * <p>
+     * 如果路径存在, 但不是 Set, 则返回 false.
+     * <p>
+     * 如果路径不存在, 则返回 false.
+     * <p>
+     * 如果路径不存在, 但在缺省列表中存在该路径, 则在缺省列表中重复匹配该规则, 直到返回一个适当的值.
+     * <p>原文：
      * Checks if this {@link ConfigurationSection} has a value set for the
      * given path.
      * <p>
      * If the value for the requested path does not exist but a default value
      * has been specified, this will still return false.
      *
-     * @param path Path to check for existence.
+     * @param path 检查路径.
+     * <p>原文：Path to check for existence.
      * @return True if this section contains the requested path, regardless of
      *     having a default.
-     * @throws IllegalArgumentException Thrown when path is null.
+     * @throws IllegalArgumentException 如果路径为 null 则会抛出此异常.
+     * <p>原文：Thrown when path is null.
      */
     public boolean isSet(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 从根 {@link Configuration} 中获取这个 {@link ConfigurationSection} 的路径.
+     * <p>
+     * 如果这个 {@link ConfigurationSection} 已经是根目录, 将返回一个空字符串.
+     * <p>
+     * 如果这个 {@link ConfigurationSection} 不属于任何根目录, 将返回 null.
+     * <p>
+     * 如果要获取这个 {@link ConfigurationSection} 名字,也就是路径中的最后一节, 你应该使用 {@link #getName()} 来获取.
+     * <p>原文：
      * Gets the path of this {@link ConfigurationSection} from its root {@link
      * Configuration}
      * <p>
@@ -110,24 +181,38 @@ public interface ConfigurationSection {
      * To retrieve the single name of this section, that is, the final part of
      * the path returned by this method, you may use {@link #getName()}.
      *
-     * @return Path of this section relative to its root
+     * @return 这个片段相对于其根的路径.
+     * <p>原文：Path of this section relative to its root
      */
     @Nullable
     public String getCurrentPath();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此 {@link ConfigurationSection} 在路径中的单独名称.
+     * <p>
+     * 除非该节已成为孤立节点, 否则这始终是 {@link #getCurrentPath()} 的最后一部分.
+     * <p>原文：
      * Gets the name of this individual {@link ConfigurationSection}, in the
      * path.
      * <p>
      * This will always be the final part of {@link #getCurrentPath()}, unless
      * the section is orphaned.
      *
-     * @return Name of this section
+     * @return 此节的名称.
+     * <p>原文：Name of this section
      */
     @NotNull
     public String getName();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取包含此 {@link ConfigurationSection} 的根 {@link Configuration}.
+     * <p>
+     * 对于任何 {@link Configuration} 自身, 将返回其自身的对象.
+     * <p>
+     * 如果该节因任何原因不再被包含在其根中 (例如被替换为不同的值), 可能返回 null.
+     * <p>原文：
      * Gets the root {@link Configuration} that contains this {@link
      * ConfigurationSection}
      * <p>
@@ -137,12 +222,20 @@ public interface ConfigurationSection {
      * If the section is no longer contained within its root for any reason,
      * such as being replaced with a different value, this may return null.
      *
-     * @return Root configuration containing this section.
+     * @return 包含此节的根配置.
+     * <p>原文：Root configuration containing this section.
      */
     @Nullable
     public Configuration getRoot();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取直接包含此 {@link ConfigurationSection} 的父 {@link ConfigurationSection}.
+     * <p>
+     * 对于任何 {@link Configuration} 自身, 将返回 null.
+     * <p>
+     * 如果该节因任何原因不再被包含在其父节中 (例如被替换为不同的值), 可能返回 null.
+     * <p>原文：
      * Gets the parent {@link ConfigurationSection} that directly contains
      * this {@link ConfigurationSection}.
      * <p>
@@ -151,25 +244,40 @@ public interface ConfigurationSection {
      * If the section is no longer contained within its parent for any reason,
      * such as being replaced with a different value, this may return null.
      *
-     * @return Parent section containing this section.
+     * @return 包含此节的父节.
+     * <p>原文：Parent section containing this section.
      */
     @Nullable
     public ConfigurationSection getParent();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径获取一个 Object 类型的值.
+     * <p>
+     * 如果这个 Object 不存在, 但已指定一个缺省值, 这将返回缺省值.
+     * <p>
+     * 如果这个 Object 不存在, 并且没有指定缺省值, 则返回 null.
+     * <p>原文：
      * Gets the requested Object by path.
      * <p>
      * If the Object does not exist but a default value has been specified,
      * this will return the default value. If the Object does not exist and no
      * default value was specified, this will return null.
      *
-     * @param path Path of the Object to get.
-     * @return Requested Object.
+     * @param path 获取 Object 的路径.
+     * <p>原文：Path of the Object to get.
+     * @return 返回一个 Object.
+     * <p>原文：Requested Object.
      */
     @Nullable
     public Object get(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径上获取一个 Object , 如果无法获取, 则直接返回默认值.
+     * <p>
+     * 如果 Object 无法在 {@link Configuration} 中被获取, 则不会尝试去缺省列表中去寻找, 而是直接返回指定的默认值.
+     * <p>原文：
      * Gets the requested Object by path, returning a default value if not
      * found.
      * <p>
@@ -177,15 +285,25 @@ public interface ConfigurationSection {
      * return regardless of if a default has been identified in the root
      * {@link Configuration}.
      *
-     * @param path Path of the Object to get.
-     * @param def The default value to return if the path is not found.
-     * @return Requested Object.
+     * @param path 获取 Object 的路径.
+     * <p>原文：Path of the Object to get.
+     * @param def 当指定路径上没有值, 返回这个值.
+     * <p>原文：The default value to return if the path is not found.
+     * @return 返回一个Object.
+     * <p>原文：Requested Object.
      */
     @Contract("_, !null -> !null")
     @Nullable
     public Object get(@NotNull String path, @Nullable Object def);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将指定路径设置为给定值.
+     * <p>
+     * 如果值为 null, 则删除该条目. 无论新值是什么, 任何已存在的条目都将被替换.
+     * <p>
+     * 某些实现可能对你能存储的内容有限制. 详见它们各自的 javadoc. 没有实现应该允许你存储 {@link Configuration} 或 {@link ConfigurationSection}, 请使用 {@link #createSection(java.lang.String)} 来创建.
+     * <p>原文：
      * Sets the specified path to the given value.
      * <p>
      * If value is null, the entry will be removed. Any existing entry will be
@@ -196,25 +314,39 @@ public interface ConfigurationSection {
      * you to store {@link Configuration}s or {@link ConfigurationSection}s,
      * please use {@link #createSection(java.lang.String)} for that.
      *
-     * @param path Path of the object to set.
-     * @param value New value to set the path to.
+     * @param path 要设置的对象路径.
+     * <p>原文：Path of the object to set.
+     * @param value 要设置的新值.
+     * <p>原文：New value to set the path to.
      */
     public void set(@NotNull String path, @Nullable Object value);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径创建一个空的 {@link ConfigurationSection}.
+     * <p>
+     * 此路径上之前设置的任何值都将被覆盖. 如果之前的值本身是一个 {@link ConfigurationSection}, 它将成为孤立节点.
+     * <p>原文：
      * Creates an empty {@link ConfigurationSection} at the specified path.
      * <p>
      * Any value that was previously set at this path will be overwritten. If
      * the previous value was itself a {@link ConfigurationSection}, it will
      * be orphaned.
      *
-     * @param path Path to create the section at.
-     * @return Newly created section
+     * @param path 要创建节的路径.
+     * <p>原文：Path to create the section at.
+     * @return 新创建的节.
+     * <p>原文：Newly created section
      */
     @NotNull
     public ConfigurationSection createSection(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径创建一个带有指定值的 {@link ConfigurationSection}.
+     * <p>
+     * 此路径上之前设置的任何值都将被覆盖. 如果之前的值本身是一个 {@link ConfigurationSection}, 它将成为孤立节点.
+     * <p>原文：
      * Creates a {@link ConfigurationSection} at the specified path, with
      * specified values.
      * <p>
@@ -222,28 +354,45 @@ public interface ConfigurationSection {
      * the previous value was itself a {@link ConfigurationSection}, it will
      * be orphaned.
      *
-     * @param path Path to create the section at.
-     * @param map The values to used.
-     * @return Newly created section
+     * @param path 要创建节的路径.
+     * <p>原文：Path to create the section at.
+     * @param map 要使用的值.
+     * <p>原文：The values to used.
+     * @return 新创建的节.
+     * <p>原文：Newly created section
      */
     @NotNull
     public ConfigurationSection createSection(@NotNull String path, @NotNull Map<?, ?> map);
 
     // Primitives
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径获取一个 String 类型的值.
+     * <p>
+     * 如果这个 String 不存在, 但已指定一个缺省值, 这将返回缺省值.
+     * <p>
+     * 如果这个 String 不存在, 并且没有指定缺省值, 则返回 null.
+     * <p>原文：
      * Gets the requested String by path.
      * <p>
      * If the String does not exist but a default value has been specified,
      * this will return the default value. If the String does not exist and no
      * default value was specified, this will return null.
      *
-     * @param path Path of the String to get.
-     * @return Requested String.
+     * @param path 获取 String 的路径.
+     * <p>原文：Path of the String to get.
+     * @return 返回一个 String.
+     * <p>原文：Requested String.
      */
     @Nullable
     public String getString(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径上获取一个 String , 如果无法获取, 则直接返回默认值.
+     * <p>
+     * 如果无法获取到一个 String, 将不会尝试去缺省列表中去获取, 而是直接返回指定的默认值.
+     * <p>原文：
      * Gets the requested String by path, returning a default value if not
      * found.
      * <p>
@@ -251,16 +400,28 @@ public interface ConfigurationSection {
      * return regardless of if a default has been identified in the root
      * {@link Configuration}.
      *
-     * @param path Path of the String to get.
-     * @param def The default value to return if the path is not found or is
+     * @param path 获取 String 的路径.
+     * <p>原文：Path of the String to get.
+     * @param def 当指定路径上没有值, 或者不是 String 类型时, 返回这个值.
+     * <p>原文：The default value to return if the path is not found or is
      *     not a String.
-     * @return Requested String.
+     * @return 返回一个 String.
+     * <p>原文：Requested String.
      */
     @Contract("_, !null -> !null")
     @Nullable
     public String getString(@NotNull String path, @Nullable String def);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查指定路径是否是 String.
+     * <p>
+     * 如果路径存在, 但不是 String, 则返回 false.
+     * <p>
+     * 如果路径不存在, 则返回 false.
+     * <p>
+     * 如果路径不存在, 但在缺省列表中存在该路径, 则在缺省列表中重复匹配该规则, 直到返回一个适当的值.
+     * <p>原文：
      * Checks if the specified path is a String.
      * <p>
      * If the path exists but is not a String, this will return false. If the
@@ -268,38 +429,66 @@ public interface ConfigurationSection {
      * but a default value has been specified, this will check if that default
      * value is a String and return appropriately.
      *
-     * @param path Path of the String to check.
-     * @return Whether or not the specified path is a String.
+     * @param path 检查指定路径是否是 String.
+     * <p>原文：Path of the String to check.
+     * @return 指定路径是否是 String.
+     * <p>原文：Whether or not the specified path is a String.
      */
     public boolean isString(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径获取一个 int 类型的值.
+     * <p>
+     * 如果这个 int 不存在, 但已指定一个缺省值, 这将返回缺省值.
+     * <p>
+     * 如果这个 int 不存在, 并且没有指定缺省值, 则返回 0 .
+     * <p>原文：
      * Gets the requested int by path.
      * <p>
      * If the int does not exist but a default value has been specified, this
      * will return the default value. If the int does not exist and no default
      * value was specified, this will return 0.
      *
-     * @param path Path of the int to get.
-     * @return Requested int.
+     * @param path 获取 int 的路径.
+     * <p>原文：Path of the int to get.
+     * @return 返回一个 int.
+     * <p>原文：Requested int.
      */
     public int getInt(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径上获取一个 int, 如果无法获取, 则直接返回默认值.
+     * <p>
+     * 如果无法获取到一个 int, 将不会尝试去缺省列表中去获取, 而是直接返回指定的默认值.
+     * <p>原文：
      * Gets the requested int by path, returning a default value if not found.
      * <p>
      * If the int does not exist then the specified default value will
      * returned regardless of if a default has been identified in the root
      * {@link Configuration}.
      *
-     * @param path Path of the int to get.
-     * @param def The default value to return if the path is not found or is
+     * @param path 获取 int 的路径.
+     * <p>原文：Path of the int to get.
+     * @param def 当指定路径上没有值, 或者不是 int 类型时, 返回这个值.
+     * <p>原文：The default value to return if the path is not found or is
      *     not an int.
-     * @return Requested int.
+     * @return 返回一个 int.
+     * <p>原文：Requested int.
      */
     public int getInt(@NotNull String path, int def);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查指定路径是否是 int.
+     * <p>
+     * 如果路径存在, 但不是 int, 则返回 false.
+     * <p>
+     * 如果路径不存在, 则返回 false.
+     * <p>
+     * 如果路径不存在, 但在缺省列表中存在该路径, 则在缺省列表中重复匹配该规则, 直到返回一个适当的值.
+     * <p>原文：
      * Checks if the specified path is an int.
      * <p>
      * If the path exists but is not an int, this will return false. If the
@@ -307,24 +496,40 @@ public interface ConfigurationSection {
      * but a default value has been specified, this will check if that default
      * value is an int and return appropriately.
      *
-     * @param path Path of the int to check.
-     * @return Whether or not the specified path is an int.
+     * @param path 检查指定路径是否是 int.
+     * <p>原文：Path of the int to check.
+     * @return 指定路径是否是 int.
+     * <p>原文：Whether or not the specified path is an int.
      */
     public boolean isInt(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径获取一个 boolean 类型的值.
+     * <p>
+     * 如果这个 boolean 不存在, 但已指定一个缺省值, 这将返回缺省值.
+     * <p>
+     * 如果这个 boolean 不存在, 并且没有指定缺省值, 则返回 false.
+     * <p>原文：
      * Gets the requested boolean by path.
      * <p>
      * If the boolean does not exist but a default value has been specified,
      * this will return the default value. If the boolean does not exist and
      * no default value was specified, this will return false.
      *
-     * @param path Path of the boolean to get.
-     * @return Requested boolean.
+     * @param path 获取 boolean 的路径.
+     * <p>原文：Path of the boolean to get.
+     * @return 返回一个 boolean.
+     * <p>原文：Requested boolean.
      */
     public boolean getBoolean(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径上获取一个 boolean, 如果无法获取, 则直接返回默认值.
+     * <p>
+     * 如果无法获取到一个 boolean, 将不会尝试去缺省列表中去获取, 而是直接返回指定的默认值.
+     * <p>原文：
      * Gets the requested boolean by path, returning a default value if not
      * found.
      * <p>
@@ -332,14 +537,26 @@ public interface ConfigurationSection {
      * return regardless of if a default has been identified in the root
      * {@link Configuration}.
      *
-     * @param path Path of the boolean to get.
-     * @param def The default value to return if the path is not found or is
+     * @param path 获取 boolean 的路径.
+     * <p>原文：Path of the boolean to get.
+     * @param def 当指定路径上没有值, 或者不是 boolean 类型时, 返回这个值.
+     * <p>原文：The default value to return if the path is not found or is
      *     not a boolean.
-     * @return Requested boolean.
+     * @return 返回一个 boolean.
+     * <p>原文：Requested boolean.
      */
     public boolean getBoolean(@NotNull String path, boolean def);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查指定路径是否是 boolean.
+     * <p>
+     * 如果路径存在, 但不是 boolean, 则返回 false.
+     * <p>
+     * 如果路径不存在, 则返回 false.
+     * <p>
+     * 如果路径不存在, 但在缺省列表中存在该路径, 则在缺省列表中重复匹配该规则, 直到返回一个适当的值.
+     * <p>原文：
      * Checks if the specified path is a boolean.
      * <p>
      * If the path exists but is not a boolean, this will return false. If the
@@ -347,24 +564,40 @@ public interface ConfigurationSection {
      * but a default value has been specified, this will check if that default
      * value is a boolean and return appropriately.
      *
-     * @param path Path of the boolean to check.
-     * @return Whether or not the specified path is a boolean.
+     * @param path 检查指定路径是否是 boolean.
+     * <p>原文：Path of the boolean to check.
+     * @return 指定路径是否是 boolean.
+     * <p>原文：Whether or not the specified path is a boolean.
      */
     public boolean isBoolean(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径获取一个 double 类型的值.
+     * <p>
+     * 如果这个 double 不存在, 但已指定一个缺省值, 这将返回缺省值.
+     * <p>
+     * 如果这个 double 不存在, 并且没有指定缺省值, 则返回0.
+     * <p>原文：
      * Gets the requested double by path.
      * <p>
      * If the double does not exist but a default value has been specified,
      * this will return the default value. If the double does not exist and no
      * default value was specified, this will return 0.
      *
-     * @param path Path of the double to get.
-     * @return Requested double.
+     * @param path 获取double的路径.
+     * <p>原文：Path of the double to get.
+     * @return 返回一个double.
+     * <p>原文：Requested double.
      */
     public double getDouble(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径上获取一个double, 如果无法获取, 则直接返回默认值.
+     * <p>
+     * 如果无法获取到一个 double, 将不会尝试去缺省列表中去获取, 而是直接返回指定的默认值.
+     * <p>原文：
      * Gets the requested double by path, returning a default value if not
      * found.
      * <p>
@@ -372,14 +605,26 @@ public interface ConfigurationSection {
      * return regardless of if a default has been identified in the root
      * {@link Configuration}.
      *
-     * @param path Path of the double to get.
-     * @param def The default value to return if the path is not found or is
+     * @param path 获取 double 的路径.
+     * <p>原文：Path of the double to get.
+     * @param def 当指定路径上没有值, 或者不是 double 类型时, 返回这个值.
+     * <p>原文：The default value to return if the path is not found or is
      *     not a double.
-     * @return Requested double.
+     * @return 返回一个 double.
+     * <p>原文：Requested double.
      */
     public double getDouble(@NotNull String path, double def);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查指定路径是否是 double.
+     * <p>
+     * 如果路径存在, 但不是 double, 则返回 false.
+     * <p>
+     * 如果路径不存在, 则返回 false.
+     * <p>
+     * 如果路径不存在, 但在缺省列表中存在该路径, 则在缺省列表中重复匹配该规则, 直到返回一个适当的值.
+     * <p>原文：
      * Checks if the specified path is a double.
      * <p>
      * If the path exists but is not a double, this will return false. If the
@@ -387,24 +632,40 @@ public interface ConfigurationSection {
      * but a default value has been specified, this will check if that default
      * value is a double and return appropriately.
      *
-     * @param path Path of the double to check.
-     * @return Whether or not the specified path is a double.
+     * @param path 检查指定路径是否是 double.
+     * <p>原文：Path of the double to check.
+     * @return 指定路径是否是 double.
+     * <p>原文：Whether or not the specified path is a double.
      */
     public boolean isDouble(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径获取一个 long 类型的值.
+     * <p>
+     * 如果这个 long 不存在, 但已指定一个缺省值, 这将返回缺省值.
+     * <p>
+     * 如果这个 long 不存在, 并且没有指定缺省值, 则返回 0.
+     * <p>原文：
      * Gets the requested long by path.
      * <p>
      * If the long does not exist but a default value has been specified, this
      * will return the default value. If the long does not exist and no
      * default value was specified, this will return 0.
      *
-     * @param path Path of the long to get.
-     * @return Requested long.
+     * @param path 获取long的路径.
+     * <p>原文：Path of the long to get.
+     * @return 返回一个long.
+     * <p>原文：Requested long.
      */
     public long getLong(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径上获取一个 long, 如果无法获取, 则直接返回默认值.
+     * <p>
+     * 如果无法获取到一个 long, 将不会尝试去缺省列表中去获取, 而是直接返回指定的默认值.
+     * <p>原文：
      * Gets the requested long by path, returning a default value if not
      * found.
      * <p>
@@ -412,14 +673,26 @@ public interface ConfigurationSection {
      * return regardless of if a default has been identified in the root
      * {@link Configuration}.
      *
-     * @param path Path of the long to get.
-     * @param def The default value to return if the path is not found or is
+     * @param path 获取 long 的路径.
+     * <p>原文：Path of the long to get.
+     * @param def 当指定路径上没有值, 或者不是 long 类型时, 返回这个值.
+     * <p>原文：The default value to return if the path is not found or is
      *     not a long.
-     * @return Requested long.
+     * @return 返回一个 long.
+     * <p>原文：Requested long.
      */
     public long getLong(@NotNull String path, long def);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查指定路径是否是 long.
+     * <p>
+     * 如果路径存在, 但不是 long, 则返回 false.
+     * <p>
+     * 如果路径不存在, 则返回 false.
+     * <p>
+     * 如果路径不存在, 但在缺省列表中存在该路径, 则在缺省列表中重复匹配该规则, 直到返回一个适当的值.
+     * <p>原文：
      * Checks if the specified path is a long.
      * <p>
      * If the path exists but is not a long, this will return false. If the
@@ -427,26 +700,42 @@ public interface ConfigurationSection {
      * but a default value has been specified, this will check if that default
      * value is a long and return appropriately.
      *
-     * @param path Path of the long to check.
-     * @return Whether or not the specified path is a long.
+     * @param path 检查指定路径是否是 long.
+     * <p>原文：Path of the long to check.
+     * @return 指定路径是否是 long.
+     * <p>原文：Whether or not the specified path is a long.
      */
     public boolean isLong(@NotNull String path);
 
     // Java
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径获取一个 List 类型的值.
+     * <p>
+     * 如果这个 List 不存在, 但已指定一个缺省值, 这将返回缺省值.
+     * <p>
+     * 如果这个 List 不存在, 并且没有指定缺省值, 则返回 null.
+     * <p>原文：
      * Gets the requested List by path.
      * <p>
      * If the List does not exist but a default value has been specified, this
      * will return the default value. If the List does not exist and no
      * default value was specified, this will return null.
      *
-     * @param path Path of the List to get.
-     * @return Requested List.
+     * @param path 获取 List 的路径.
+     * <p>原文：Path of the List to get.
+     * @return 返回一个 List.
+     * <p>原文：Requested List.
      */
     @Nullable
     public List<?> getList(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径上获取一个 List, 如果无法获取, 则直接返回默认值.
+     * <p>
+     * 如果无法获取到一个 List, 将不会尝试去缺省列表中去获取, 而是直接返回指定的默认值.
+     * <p>原文：
      * Gets the requested List by path, returning a default value if not
      * found.
      * <p>
@@ -454,16 +743,28 @@ public interface ConfigurationSection {
      * return regardless of if a default has been identified in the root
      * {@link Configuration}.
      *
-     * @param path Path of the List to get.
-     * @param def The default value to return if the path is not found or is
+     * @param path 获取 List 的路径.
+     * <p>原文：Path of the List to get.
+     * @param def 当指定路径上没有值, 或者不是 List 类型时, 返回这个值.
+     * <p>原文：The default value to return if the path is not found or is
      *     not a List.
-     * @return Requested List.
+     * @return 返回一个 List.
+     * <p>原文：Requested List.
      */
     @Contract("_, !null -> !null")
     @Nullable
     public List<?> getList(@NotNull String path, @Nullable List<?> def);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查指定路径是否是 List.
+     * <p>
+     * 如果路径存在, 但不是 List, 则返回 false.
+     * <p>
+     * 如果路径不存在, 则返回 false.
+     * <p>
+     * 如果路径不存在, 但在缺省列表中存在该路径, 则在缺省列表中重复匹配该规则, 直到返回一个适当的值.
+     * <p>原文：
      * Checks if the specified path is a List.
      * <p>
      * If the path exists but is not a List, this will return false. If the
@@ -471,12 +772,23 @@ public interface ConfigurationSection {
      * but a default value has been specified, this will check if that default
      * value is a List and return appropriately.
      *
-     * @param path Path of the List to check.
-     * @return Whether or not the specified path is a List.
+     * @param path 检查指定路径是否是 List.
+     * <p>原文：Path of the List to check.
+     * @return 指定路径是否是 List.
+     * <p>原文：Whether or not the specified path is a List.
      */
     public boolean isList(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径获取一个 List&lt;String&gt;.
+     * <p>
+     * 如果列表不存在，但已指定一个缺省值，这将返回默认值.
+     * <p>
+     * 如果列表不存在，并且没有指定缺省值，这将返回一个空的列表.
+     * <p>
+     * 此方法会尽可能的将 List 中所有的项转化为 String, 但是如果值本身不兼容, 将会发生不可预计的状况.
+     * <p>原文：
      * Gets the requested List of String by path.
      * <p>
      * If the List does not exist but a default value has been specified, this
@@ -486,13 +798,24 @@ public interface ConfigurationSection {
      * This method will attempt to cast any values into a String if possible,
      * but may miss any values out if they are not compatible.
      *
-     * @param path Path of the List to get.
-     * @return Requested List of String.
+     * @param path 要获取 List&lt;String&gt; 的路径.
+     * <p>原文：Path of the List to get.
+     * @return 返回一个 List&lt;String&gt;.
+     * <p>原文：Requested List of String.
      */
     @NotNull
     public List<String> getStringList(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径获取一个 List&lt;Integer&gt;.
+     * <p>
+     * 如果列表不存在，但已指定一个缺省值，这将返回默认值.
+     * <p>
+     * 如果列表不存在，并且没有指定缺省值，这将返回一个空的列表.
+     * <p>
+     * 此方法会尽可能的将 List 中所有的项转化为 Integer, 但是如果值本身不兼容, 将会发生不可预计的状况.
+     * <p>原文：
      * Gets the requested List of Integer by path.
      * <p>
      * If the List does not exist but a default value has been specified, this
@@ -502,13 +825,24 @@ public interface ConfigurationSection {
      * This method will attempt to cast any values into an Integer if possible,
      * but may miss any values out if they are not compatible.
      *
-     * @param path Path of the List to get.
-     * @return Requested List of Integer.
+     * @param path 要获取 List&lt;Integer&gt; 的路径.
+     * <p>原文：Path of the List to get.
+     * @return 返回一个 List&lt;Integer&gt;.
+     * <p>原文：Requested List of Integer.
      */
     @NotNull
     public List<Integer> getIntegerList(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径获取一个 List&lt;Boolean&gt;.
+     * <p>
+     * 如果列表不存在，但已指定一个缺省值，这将返回默认值.
+     * <p>
+     * 如果列表不存在，并且没有指定缺省值，这将返回一个空的列表.
+     * <p>
+     * 此方法会尽可能的将 List 中所有的项转化为 Boolean, 但是如果值本身不兼容, 将会发生不可预计的状况.
+     * <p>原文：
      * Gets the requested List of Boolean by path.
      * <p>
      * If the List does not exist but a default value has been specified, this
@@ -518,13 +852,24 @@ public interface ConfigurationSection {
      * This method will attempt to cast any values into a Boolean if possible,
      * but may miss any values out if they are not compatible.
      *
-     * @param path Path of the List to get.
-     * @return Requested List of Boolean.
+     * @param path 要获取 List&lt;Boolean&gt; 的路径.
+     * <p>原文：Path of the List to get.
+     * @return 返回一个 List&lt;Boolean&gt;.
+     * <p>原文：Requested List of Boolean.
      */
     @NotNull
     public List<Boolean> getBooleanList(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径获取一个 List&lt;Double&gt;.
+     * <p>
+     * 如果列表不存在，但已指定一个缺省值，这将返回默认值.
+     * <p>
+     * 如果列表不存在，并且没有指定缺省值，这将返回一个空的列表.
+     * <p>
+     * 此方法会尽可能的将 List 中所有的项转化为 Double, 但是如果值本身不兼容, 将会发生不可预计的状况.
+     * <p>原文：
      * Gets the requested List of Double by path.
      * <p>
      * If the List does not exist but a default value has been specified, this
@@ -534,13 +879,24 @@ public interface ConfigurationSection {
      * This method will attempt to cast any values into a Double if possible,
      * but may miss any values out if they are not compatible.
      *
-     * @param path Path of the List to get.
-     * @return Requested List of Double.
+     * @param path 要获取 List&lt;Double&gt;的路径.
+     * <p>原文：Path of the List to get.
+     * @return 要获取 List&lt;Double&gt;.
+     * <p>原文：Requested List of Double.
      */
     @NotNull
     public List<Double> getDoubleList(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径获取一个 List&lt;Float&gt;.
+     * <p>
+     * 如果列表不存在，但已指定一个缺省值，这将返回默认值.
+     * <p>
+     * 如果列表不存在，并且没有指定缺省值，这将返回一个空的列表.
+     * <p>
+     * 此方法会尽可能的将 List 中所有的项转化为 Float, 但是如果值本身不兼容, 将会发生不可预计的状况.
+     * <p>原文：
      * Gets the requested List of Float by path.
      * <p>
      * If the List does not exist but a default value has been specified, this
@@ -550,13 +906,24 @@ public interface ConfigurationSection {
      * This method will attempt to cast any values into a Float if possible,
      * but may miss any values out if they are not compatible.
      *
-     * @param path Path of the List to get.
-     * @return Requested List of Float.
+     * @param path 要获取 List&lt;Float&gt;的路径.
+     * <p>原文：Path of the List to get.
+     * @return 返回一个 List&lt;Float&gt;.
+     * <p>原文：Requested List of Float.
      */
     @NotNull
     public List<Float> getFloatList(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径获取一个 List&lt;Long&gt;.
+     * <p>
+     * 如果列表不存在，但已指定一个缺省值，这将返回默认值.
+     * <p>
+     * 如果列表不存在，并且没有指定缺省值，这将返回一个空的列表.
+     * <p>
+     * 此方法会尽可能的将 List 中所有的项转化为Long, 但是如果值本身不兼容, 将会发生不可预计的状况.
+     * <p>原文：
      * Gets the requested List of Long by path.
      * <p>
      * If the List does not exist but a default value has been specified, this
@@ -566,13 +933,24 @@ public interface ConfigurationSection {
      * This method will attempt to cast any values into a Long if possible,
      * but may miss any values out if they are not compatible.
      *
-     * @param path Path of the List to get.
-     * @return Requested List of Long.
+     * @param path 要获取 List&lt;Long&gt;的路径.
+     * <p>原文：Path of the List to get.
+     * @return 返回一个 List&lt;Long&gt;.
+     * <p>原文：Requested List of Long.
      */
     @NotNull
     public List<Long> getLongList(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径获取一个 List&lt;Byte&gt;.
+     * <p>
+     * 如果列表不存在，但已指定一个缺省值，这将返回默认值.
+     * <p>
+     * 如果列表不存在，并且没有指定缺省值，这将返回一个空的列表.
+     * <p>
+     * 此方法会尽可能的将 List 中所有的项转化为 Byte, 但是如果值本身不兼容, 将会发生不可预计的状况.
+     * <p>原文：
      * Gets the requested List of Byte by path.
      * <p>
      * If the List does not exist but a default value has been specified, this
@@ -582,13 +960,24 @@ public interface ConfigurationSection {
      * This method will attempt to cast any values into a Byte if possible,
      * but may miss any values out if they are not compatible.
      *
-     * @param path Path of the List to get.
-     * @return Requested List of Byte.
+     * @param path 要获取 List&lt;Byte&gt;的路径.
+     * <p>原文：Path of the List to get.
+     * @return 返回一个 List&lt;Byte&gt;.
+     * <p>原文：Requested List of Byte.
      */
     @NotNull
     public List<Byte> getByteList(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径获取一个 List&lt;Character&gt;.
+     * <p>
+     * 如果列表不存在，但已指定一个缺省值，这将返回默认值.
+     * <p>
+     * 如果列表不存在，并且没有指定缺省值，这将返回一个空的列表.
+     * <p>
+     * 此方法会尽可能的将 List 中所有的项转化为 Character, 但是如果值本身不兼容, 将会发生不可预计的状况.
+     * <p>原文：
      * Gets the requested List of Character by path.
      * <p>
      * If the List does not exist but a default value has been specified, this
@@ -598,13 +987,24 @@ public interface ConfigurationSection {
      * This method will attempt to cast any values into a Character if
      * possible, but may miss any values out if they are not compatible.
      *
-     * @param path Path of the List to get.
-     * @return Requested List of Character.
+     * @param path 要获取 List&lt;Character&gt;的路径.
+     * <p>原文：Path of the List to get.
+     * @return 返回一个 List&lt;Character&gt;.
+     * <p>原文：Requested List of Character.
      */
     @NotNull
     public List<Character> getCharacterList(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径获取一个 List&lt;Short&gt;.
+     * <p>
+     * 如果列表不存在，但已指定一个缺省值，这将返回默认值.
+     * <p>
+     * 如果列表不存在，并且没有指定缺省值，这将返回一个空的列表.
+     * <p>
+     * 此方法会尽可能的将 List 中所有的项转化为 Short, 但是如果值本身不兼容, 将会发生不可预计的状况.
+     * <p>原文：
      * Gets the requested List of Short by path.
      * <p>
      * If the List does not exist but a default value has been specified, this
@@ -614,13 +1014,24 @@ public interface ConfigurationSection {
      * This method will attempt to cast any values into a Short if possible,
      * but may miss any values out if they are not compatible.
      *
-     * @param path Path of the List to get.
-     * @return Requested List of Short.
+     * @param path 要获取 List&lt;Short&gt;的路径.
+     * <p>原文：Path of the List to get.
+     * @return 返回一个 List&lt;Short&gt;.
+     * <p>原文：Requested List of Short.
      */
     @NotNull
     public List<Short> getShortList(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径获取一个 List&lt;Maps&gt;.
+     * <p>
+     * 如果列表不存在，但已指定一个缺省值，这将返回默认值.
+     * <p>
+     * 如果列表不存在，并且没有指定缺省值，这将返回一个空的列表.
+     * <p>
+     * 此方法会尽可能的将 List 中所有的项转化为 Map, 但是如果值本身不兼容, 将会发生不可预计的状况.
+     * <p>原文：
      * Gets the requested List of Maps by path.
      * <p>
      * If the List does not exist but a default value has been specified, this
@@ -630,14 +1041,23 @@ public interface ConfigurationSection {
      * This method will attempt to cast any values into a Map if possible, but
      * may miss any values out if they are not compatible.
      *
-     * @param path Path of the List to get.
-     * @return Requested List of Maps.
+     * @param path 要获取 List&lt;Maps&gt;的路径.
+     * <p>原文：Path of the List to get.
+     * @return 返回一个 List&lt;Maps&gt;.
+     * <p>原文：Requested List of Maps.
      */
     @NotNull
     public List<Map<?, ?>> getMapList(@NotNull String path);
 
     // Bukkit
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在给定路径获取请求的对象.
+     * <p>
+     * 如果对象不存在, 但已指定默认值, 则返回默认值. 如果对象不存在且未指定默认值, 则返回 null.
+     * <p>
+     * <b>注意:</b> 例如 #getObject(path, String.class) 与 {@link #getString(String) #getString(path)} <b>不</b>等价, 因为 {@link #getString(String) #getString(path)} 会内部将所有对象转换为字符串. 然而, #getObject(path, Boolean.class) 与 {@link #getBoolean(String) #getBoolean(path)} 等价.
+     * <p>原文：
      * Gets the requested object at the given path.
      *
      * If the Object does not exist but a default value has been specified, this
@@ -650,15 +1070,26 @@ public interface ConfigurationSection {
      * Objects to Strings. However, #getObject(path, Boolean.class) is
      * equivalent to {@link #getBoolean(String) #getBoolean(path)} for example.
      *
-     * @param <T> the type of the requested object
-     * @param path the path to the object.
-     * @param clazz the type of the requested object
-     * @return Requested object
+     * @param <T> 请求对象的类型.
+     * <p>原文：the type of the requested object
+     * @param path 对象的路径.
+     * <p>原文：the path to the object.
+     * @param clazz 请求对象的类型.
+     * <p>原文：the type of the requested object
+     * @return 请求的对象.
+     * <p>原文：Requested object
      */
     @Nullable
     public <T extends Object> T getObject(@NotNull String path, @NotNull Class<T> clazz);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在给定路径获取请求的对象, 如果未找到则返回默认值.
+     * <p>
+     * 如果对象不存在, 则返回指定的默认值, 无论根 {@link Configuration} 中是否已识别默认值.
+     * <p>
+     * <b>注意:</b> 例如 #getObject(path, String.class, def) 与 {@link #getString(String, String) #getString(path, def)} <b>不</b>等价, 因为 {@link #getString(String, String) #getString(path, def)} 会内部将所有对象转换为字符串. 然而, #getObject(path, Boolean.class, def) 与 {@link #getBoolean(String, boolean) #getBoolean(path, def)} 等价.
+     * <p>原文：
      * Gets the requested object at the given path, returning a default value if
      * not found
      *
@@ -674,18 +1105,28 @@ public interface ConfigurationSection {
      * Boolean.class, def) is equivalent to {@link #getBoolean(String, boolean) #getBoolean(path,
      * def)} for example.
      *
-     * @param <T> the type of the requested object
-     * @param path the path to the object.
-     * @param clazz the type of the requested object
-     * @param def the default object to return if the object is not present at
+     * @param <T> 请求对象的类型.
+     * <p>原文：the type of the requested object
+     * @param path 对象的路径.
+     * <p>原文：the path to the object.
+     * @param clazz 请求对象的类型.
+     * <p>原文：the type of the requested object
+     * @param def 如果对象不在该路径上时返回的默认对象.
+     * <p>原文：the default object to return if the object is not present at
      * the path
-     * @return Requested object
+     * @return 请求的对象.
+     * <p>原文：Requested object
      */
     @Contract("_, _, !null -> !null")
     @Nullable
     public <T extends Object> T getObject(@NotNull String path, @NotNull Class<T> clazz, @Nullable T def);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在给定路径获取请求的 {@link ConfigurationSerializable} 对象.
+     * <p>
+     * 如果对象不存在, 但已指定默认值, 则返回默认值. 如果对象不存在且未指定默认值, 则返回 null.
+     * <p>原文：
      * Gets the requested {@link ConfigurationSerializable} object at the given
      * path.
      *
@@ -693,15 +1134,24 @@ public interface ConfigurationSection {
      * will return the default value. If the Object does not exist and no
      * default value was specified, this will return null.
      *
-     * @param <T> the type of {@link ConfigurationSerializable}
-     * @param path the path to the object.
-     * @param clazz the type of {@link ConfigurationSerializable}
-     * @return Requested {@link ConfigurationSerializable} object
+     * @param <T> {@link ConfigurationSerializable} 的类型.
+     * <p>原文：the type of {@link ConfigurationSerializable}
+     * @param path 对象的路径.
+     * <p>原文：the path to the object.
+     * @param clazz {@link ConfigurationSerializable} 的类型.
+     * <p>原文：the type of {@link ConfigurationSerializable}
+     * @return 请求的 {@link ConfigurationSerializable} 对象.
+     * <p>原文：Requested {@link ConfigurationSerializable} object
      */
     @Nullable
     public <T extends ConfigurationSerializable> T getSerializable(@NotNull String path, @NotNull Class<T> clazz);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在给定路径获取请求的 {@link ConfigurationSerializable} 对象, 如果未找到则返回默认值.
+     * <p>
+     * 如果对象不存在, 则返回指定的默认值, 无论根 {@link Configuration} 中是否已识别默认值.
+     * <p>原文：
      * Gets the requested {@link ConfigurationSerializable} object at the given
      * path, returning a default value if not found
      *
@@ -709,31 +1159,49 @@ public interface ConfigurationSection {
      * return regardless of if a default has been identified in the root
      * {@link Configuration}.
      *
-     * @param <T> the type of {@link ConfigurationSerializable}
-     * @param path the path to the object.
-     * @param clazz the type of {@link ConfigurationSerializable}
-     * @param def the default object to return if the object is not present at
+     * @param <T> {@link ConfigurationSerializable} 的类型.
+     * <p>原文：the type of {@link ConfigurationSerializable}
+     * @param path 对象的路径.
+     * <p>原文：the path to the object.
+     * @param clazz {@link ConfigurationSerializable} 的类型.
+     * <p>原文：the type of {@link ConfigurationSerializable}
+     * @param def 如果对象不在该路径上时返回的默认对象.
+     * <p>原文：the default object to return if the object is not present at
      * the path
-     * @return Requested {@link ConfigurationSerializable} object
+     * @return 请求的 {@link ConfigurationSerializable} 对象.
+     * <p>原文：Requested {@link ConfigurationSerializable} object
      */
     @Contract("_, _, !null -> !null")
     @Nullable
     public <T extends ConfigurationSerializable> T getSerializable(@NotNull String path, @NotNull Class<T> clazz, @Nullable T def);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径获取一个Vector类型的值.
+     * <p>
+     * 如果这个Vector不存在, 但已指定一个缺省值, 这将返回缺省值. Vector.
+     * 如果这个Vector不存在, 并且没有指定缺省值, 则返回null.
+     * <p>原文：
      * Gets the requested Vector by path.
      * <p>
      * If the Vector does not exist but a default value has been specified,
      * this will return the default value. If the Vector does not exist and no
      * default value was specified, this will return null.
      *
-     * @param path Path of the Vector to get.
-     * @return Requested Vector.
+     * @param path 获取Vector的路径.
+     * <p>原文：Path of the Vector to get.
+     * @return 返回一个Vector.
+     * <p>原文：Requested Vector.
      */
     @Nullable
     public Vector getVector(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径上获取一个{@link Vector}, 如果无法获取, 则直接返回默认值.
+     * <p>
+     * 如果无法获取到一个 {@link Vector}, 将不会尝试去缺省列表中去获取, 而是直接返回指定的默认值.
+     * <p>原文：
      * Gets the requested {@link Vector} by path, returning a default value if
      * not found.
      * <p>
@@ -741,16 +1209,28 @@ public interface ConfigurationSection {
      * return regardless of if a default has been identified in the root
      * {@link Configuration}.
      *
-     * @param path Path of the Vector to get.
-     * @param def The default value to return if the path is not found or is
+     * @param path 获取 {@link Vector} 的路径.
+     * <p>原文：Path of the Vector to get.
+     * @param def 当指定路径上没有值, 或者不是 {@link Vector} 类型时, 返回这个值.
+     * <p>原文：The default value to return if the path is not found or is
      *     not a Vector.
-     * @return Requested Vector.
+     * @return 返回一个 {@link Vector}r.
+     * <p>原文：Requested Vector.
      */
     @Contract("_, !null -> !null")
     @Nullable
     public Vector getVector(@NotNull String path, @Nullable Vector def);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查指定路径是否是 {@link Vector} .
+     * <p>
+     * 如果路径存在, 但不是 {@link Vector} , 则返回 false.
+     * <p>
+     * 如果路径不存在, 则返回 false.
+     * <p>
+     * 如果路径不存在, 但在缺省列表中存在该路径, 则在缺省列表中重复匹配该规则, 直到返回一个适当的值.
+     * <p>原文：
      * Checks if the specified path is a Vector.
      * <p>
      * If the path exists but is not a Vector, this will return false. If the
@@ -758,12 +1238,21 @@ public interface ConfigurationSection {
      * but a default value has been specified, this will check if that default
      * value is a Vector and return appropriately.
      *
-     * @param path Path of the Vector to check.
-     * @return Whether or not the specified path is a Vector.
+     * @param path 检查指定路径是否是 {@link Vector} .
+     * <p>原文：Path of the Vector to check.
+     * @return 指定路径是否是 {@link Vector} .
+     * <p>原文：Whether or not the specified path is a Vector.
      */
     public boolean isVector(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径获取一个 {@link OfflinePlayer} 类型的值.
+     * <p>
+     * 如果这个 {@link OfflinePlayer} 不存在, 但已指定一个缺省值, 这将返回缺省值.
+     * <p>
+     * 如果这个 {@link OfflinePlayer} 不存在, 并且没有指定缺省值, 则返回 null.
+     * <p>原文：
      * Gets the requested OfflinePlayer by path.
      * <p>
      * If the OfflinePlayer does not exist but a default value has been
@@ -771,13 +1260,20 @@ public interface ConfigurationSection {
      * does not exist and no default value was specified, this will return
      * null.
      *
-     * @param path Path of the OfflinePlayer to get.
-     * @return Requested OfflinePlayer.
+     * @param path 获取 {@link OfflinePlayer} 的路径.
+     * <p>原文：Path of the OfflinePlayer to get.
+     * @return 返回一个 {@link OfflinePlayer}.
+     * <p>原文：Requested OfflinePlayer.
      */
     @Nullable
     public OfflinePlayer getOfflinePlayer(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径上获取一个 {@link OfflinePlayer}, 如果无法获取, 则直接返回默认值.
+     * <p>
+     * 如果无法获取到一个 {@link OfflinePlayer}, 将不会尝试去缺省列表中去获取, 而是直接返回指定的默认值.
+     * <p>原文：
      * Gets the requested {@link OfflinePlayer} by path, returning a default
      * value if not found.
      * <p>
@@ -785,16 +1281,28 @@ public interface ConfigurationSection {
      * will return regardless of if a default has been identified in the
      * root {@link Configuration}.
      *
-     * @param path Path of the OfflinePlayer to get.
-     * @param def The default value to return if the path is not found or is
+     * @param path 获取 {@link OfflinePlayer} 的路径.
+     * <p>原文：Path of the OfflinePlayer to get.
+     * @param def 当指定路径上没有值, 或者不是 {@link OfflinePlayer} 类型时, 返回这个值.
+     * <p>原文：The default value to return if the path is not found or is
      *     not an OfflinePlayer.
-     * @return Requested OfflinePlayer.
+     * @return 返回一个 {@link OfflinePlayer}.
+     * <p>原文：Requested OfflinePlayer.
      */
     @Contract("_, !null -> !null")
     @Nullable
     public OfflinePlayer getOfflinePlayer(@NotNull String path, @Nullable OfflinePlayer def);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查指定路径是否是 {@link OfflinePlayer}.
+     * <p>
+     * 如果路径存在, 但不是 {@link OfflinePlayer}, 则返回 false.
+     * <p>
+     * 如果路径不存在, 则返回 false.
+     * <p>
+     * 如果路径不存在, 但在缺省列表中存在该路径, 则在缺省列表中重复匹配该规则, 直到返回一个适当的值.
+     * <p>原文：
      * Checks if the specified path is an OfflinePlayer.
      * <p>
      * If the path exists but is not a OfflinePlayer, this will return false.
@@ -802,25 +1310,41 @@ public interface ConfigurationSection {
      * not exist but a default value has been specified, this will check if
      * that default value is a OfflinePlayer and return appropriately.
      *
-     * @param path Path of the OfflinePlayer to check.
-     * @return Whether or not the specified path is an OfflinePlayer.
+     * @param path 检查指定路径是否是 {@link OfflinePlayer}.
+     * <p>原文：Path of the OfflinePlayer to check.
+     * @return 指定路径是否是 {@link OfflinePlayer}.
+     * <p>原文：Whether or not the specified path is an OfflinePlayer.
      */
     public boolean isOfflinePlayer(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径获取一个 {@link ItemStack} 类型的值.
+     * <p>
+     * 如果这个 {@link ItemStack} 不存在, 但已指定一个缺省值, 这将返回缺省值.
+     * <p>
+     * 如果这个 {@link ItemStack} 不存在, 并且没有指定缺省值, 则返回 null.
+     * <p>原文：
      * Gets the requested ItemStack by path.
      * <p>
      * If the ItemStack does not exist but a default value has been specified,
      * this will return the default value. If the ItemStack does not exist and
      * no default value was specified, this will return null.
      *
-     * @param path Path of the ItemStack to get.
-     * @return Requested ItemStack.
+     * @param path 获取 {@link ItemStack} 的路径.
+     * <p>原文：Path of the ItemStack to get.
+     * @return 返回一个 {@link ItemStack}.
+     * <p>原文：Requested ItemStack.
      */
     @Nullable
     public ItemStack getItemStack(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径上获取一个 {@link ItemStack}, 如果无法获取, 则直接返回默认值.
+     * <p>
+     * 如果无法获取到一个 {@link ItemStack}, 将不会尝试去缺省列表中去获取, 而是直接返回指定的默认值.
+     * <p>原文：
      * Gets the requested {@link ItemStack} by path, returning a default value
      * if not found.
      * <p>
@@ -828,16 +1352,28 @@ public interface ConfigurationSection {
      * return regardless of if a default has been identified in the root
      * {@link Configuration}.
      *
-     * @param path Path of the ItemStack to get.
-     * @param def The default value to return if the path is not found or is
+     * @param path 获取ItemStack的路径.
+     * <p>原文：Path of the ItemStack to get.
+     * @param def 当指定路径上没有值, 或者不是ItemStack类型时, 返回这个值.
+     * <p>原文：The default value to return if the path is not found or is
      *     not an ItemStack.
-     * @return Requested ItemStack.
+     * @return 返回一个ItemStack.
+     * <p>原文：Requested ItemStack.
      */
     @Contract("_, !null -> !null")
     @Nullable
     public ItemStack getItemStack(@NotNull String path, @Nullable ItemStack def);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查指定路径是否是 {@link ItemStack}.
+     * <p>
+     * 如果路径存在, 但不是 {@link ItemStack}, 则返回 false.
+     * <p>
+     * 如果路径不存在, 则返回 false.
+     * <p>
+     * 如果路径不存在, 但在缺省列表中存在该路径, 则在缺省列表中重复匹配该规则, 直到返回一个适当的值.
+     * <p>原文：
      * Checks if the specified path is an ItemStack.
      * <p>
      * If the path exists but is not a ItemStack, this will return false. If
@@ -845,25 +1381,41 @@ public interface ConfigurationSection {
      * exist but a default value has been specified, this will check if that
      * default value is a ItemStack and return appropriately.
      *
-     * @param path Path of the ItemStack to check.
-     * @return Whether or not the specified path is an ItemStack.
+     * @param path 检查指定路径是否是 {@link ItemStack}.
+     * <p>原文：Path of the ItemStack to check.
+     * @return 指定路径是否是 {@link ItemStack}.
+     * <p>原文：Whether or not the specified path is an ItemStack.
      */
     public boolean isItemStack(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径获取一个Color类型的值.
+     * <p>
+     * 如果这个Color不存在, 但已指定一个缺省值, 这将返回缺省值. Color.
+     * <p>
+     * 如果这个Color不存在, 并且没有指定缺省值, 则返回null.
+     * <p>原文：
      * Gets the requested Color by path.
      * <p>
      * If the Color does not exist but a default value has been specified,
      * this will return the default value. If the Color does not exist and no
      * default value was specified, this will return null.
      *
-     * @param path Path of the Color to get.
-     * @return Requested Color.
+     * @param path 获取Color的路径.
+     * <p>原文：Path of the Color to get.
+     * @return 返回一个Color.
+     * <p>原文：Requested Color.
      */
     @Nullable
     public Color getColor(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径上获取一个 {@link Color}, 如果无法获取, 则直接返回指定默认值.
+     * <p>
+     * 如果无法获取到一个 {@link Color}, 将不会尝试去缺省列表中去获取, 而是直接返回指定的默认值.
+     * <p>原文：
      * Gets the requested {@link Color} by path, returning a default value if
      * not found.
      * <p>
@@ -871,16 +1423,28 @@ public interface ConfigurationSection {
      * return regardless of if a default has been identified in the root
      * {@link Configuration}.
      *
-     * @param path Path of the Color to get.
-     * @param def The default value to return if the path is not found or is
+     * @param path 获取 {@link Color} 的路径.
+     * <p>原文：Path of the Color to get.
+     * @param def 当指定路径上没有值, 或者不是 {@link Color} 类型时, 返回这个值.
+     * <p>原文：The default value to return if the path is not found or is
      *     not a Color.
-     * @return Requested Color.
+     * @return 返回一个 {@link Color}.
+     * <p>原文：Requested Color.
      */
     @Contract("_, !null -> !null")
     @Nullable
     public Color getColor(@NotNull String path, @Nullable Color def);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查指定路径是否是 {@link Color}.
+     * <p>
+     * 如果路径存在, 但不是 {@link Color}, 则返回 false.
+     * <p>
+     * 如果路径不存在, 则返回 false.
+     * <p>
+     * 如果路径不存在, 但在缺省列表中存在该路径, 则在缺省列表中重复匹配该规则, 直到返回一个适当的值.
+     * <p>原文：
      * Checks if the specified path is a Color.
      * <p>
      * If the path exists but is not a Color, this will return false. If the
@@ -888,25 +1452,41 @@ public interface ConfigurationSection {
      * but a default value has been specified, this will check if that default
      * value is a Color and return appropriately.
      *
-     * @param path Path of the Color to check.
-     * @return Whether or not the specified path is a Color.
+     * @param path 检查指定路径是否是 {@link Color}.
+     * <p>原文：Path of the Color to check.
+     * @return 指定路径是否是 {@link Color}.
+     * <p>原文：Whether or not the specified path is a Color.
      */
     public boolean isColor(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径获取一个 Location 类型的值.
+     * <p>
+     * 如果这个 Location 不存在, 但已指定一个缺省值, 这将返回缺省值.
+     * <p>
+     * 如果这个 Location 不存在, 并且没有指定缺省值, 则返回 null.
+     * <p>原文：
      * Gets the requested Location by path.
      * <p>
      * If the Location does not exist but a default value has been specified,
      * this will return the default value. If the Location does not exist and no
      * default value was specified, this will return null.
      *
-     * @param path Path of the Location to get.
-     * @return Requested Location.
+     * @param path 获取 Location 的路径.
+     * <p>原文：Path of the Location to get.
+     * @return 请求的 Location.
+     * <p>原文：Requested Location.
      */
     @Nullable
     public Location getLocation(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径获取一个 {@link Location}, 如果未找到则返回默认值.
+     * <p>
+     * 如果 Location 不存在, 则返回指定的默认值, 无论根 {@link Configuration} 中是否已识别默认值.
+     * <p>原文：
      * Gets the requested {@link Location} by path, returning a default value if
      * not found.
      * <p>
@@ -914,16 +1494,24 @@ public interface ConfigurationSection {
      * return regardless of if a default has been identified in the root
      * {@link Configuration}.
      *
-     * @param path Path of the Location to get.
-     * @param def The default value to return if the path is not found or is not
+     * @param path 获取 Location 的路径.
+     * <p>原文：Path of the Location to get.
+     * @param def 如果路径未找到或不是 Location 时返回的默认值.
+     * <p>原文：The default value to return if the path is not found or is not
      * a Location.
-     * @return Requested Location.
+     * @return 请求的 Location.
+     * <p>原文：Requested Location.
      */
     @Contract("_, !null -> !null")
     @Nullable
     public Location getLocation(@NotNull String path, @Nullable Location def);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查指定路径是否是 Location.
+     * <p>
+     * 如果路径存在但不是 Location, 则返回 false. 如果路径不存在, 则返回 false. 如果路径不存在但已指定默认值, 则检查该默认值是否是 Location 并相应返回.
+     * <p>原文：
      * Checks if the specified path is a Location.
      * <p>
      * If the path exists but is not a Location, this will return false. If the
@@ -931,12 +1519,40 @@ public interface ConfigurationSection {
      * but a default value has been specified, this will check if that default
      * value is a Location and return appropriately.
      *
-     * @param path Path of the Location to check.
-     * @return Whether or not the specified path is a Location.
+     * @param path 要检查的 Location 路径.
+     * <p>原文：Path of the Location to check.
+     * @return 指定路径是否是 Location.
+     * <p>原文：Whether or not the specified path is a Location.
      */
     public boolean isLocation(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取一个 {@link ConfigurationSection} ,它是一个以指定路径作为基点的新的配置项,修改会同步.
+     * <p>
+     * 如果这个 {@link ConfigurationSection} 不存在, 但已指定一个缺省值, 这将返回缺省值.
+     * <p>
+     * 如果这个 {@link ConfigurationSection} 不存在, 并且没有指定缺省值, 则返回 null.
+     * <p>
+     * 更人性化的解释: 现在有一个配置文件如下
+     * <pre>
+     * root:
+     *   branch1:
+     *     branch1_1: something
+     *     branch1_2: something
+     *   branch2:
+     *     branch2_1: something
+     *     branch3_2: something
+     * </pre>
+     * 如果调用 {@link ConfigurationSection#getConfigurationSection(java.lang.String) }
+     * 参数为("branch1") ,则会返回
+     * <pre>
+     *   branch1:
+     *     branch1_1: something
+     *     branch1_2: something
+     * </pre>
+     * 并且修改会同步
+     * <p>原文：
      * Gets the requested ConfigurationSection by path.
      * <p>
      * If the ConfigurationSection does not exist but a default value has been
@@ -944,13 +1560,24 @@ public interface ConfigurationSection {
      * ConfigurationSection does not exist and no default value was specified,
      * this will return null.
      *
-     * @param path Path of the ConfigurationSection to get.
-     * @return Requested ConfigurationSection.
+     * @param path 获取 {@link ConfigurationSection} 的路径.
+     * <p>原文：Path of the ConfigurationSection to get.
+     * @return 返回一个 {@link ConfigurationSection}.
+     * <p>原文：Requested ConfigurationSection.
      */
     @Nullable
     public ConfigurationSection getConfigurationSection(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查指定路径是否是 {@link ConfigurationSection}.
+     * <p>
+     * 如果路径存在, 但不是 {@link ConfigurationSection}, 则返回 false.
+     * <p>
+     * 如果路径不存在, 则返回 false.
+     * <p>
+     * 如果路径不存在, 但在缺省列表中存在该路径, 则在缺省列表中重复匹配该规则, 直到返回一个适当的值.
+     * <p>原文：
      * Checks if the specified path is a ConfigurationSection.
      * <p>
      * If the path exists but is not a ConfigurationSection, this will return
@@ -959,12 +1586,19 @@ public interface ConfigurationSection {
      * if that default value is a ConfigurationSection and return
      * appropriately.
      *
-     * @param path Path of the ConfigurationSection to check.
-     * @return Whether or not the specified path is a ConfigurationSection.
+     * @param path 检查指定路径是否是 {@link ConfigurationSection}.
+     * <p>原文：Path of the ConfigurationSection to check.
+     * @return 指定路径是否是 {@link ConfigurationSection}.
+     * <p>原文：Whether or not the specified path is a ConfigurationSection.
      */
     public boolean isConfigurationSection(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 从 {@link #getRoot()} 中定义的默认 {@link Configuration} 获取等效的 {@link ConfigurationSection}.
+     * <p>
+     * 如果根不包含默认值, 或默认值不包含此路径的值, 或此路径的值不是 {@link ConfigurationSection}, 则返回 null.
+     * <p>原文：
      * Gets the equivalent {@link ConfigurationSection} from the default
      * {@link Configuration} defined in {@link #getRoot()}.
      * <p>
@@ -972,12 +1606,22 @@ public interface ConfigurationSection {
      * value for this path, or the value at this path is not a {@link
      * ConfigurationSection} then this will return null.
      *
-     * @return Equivalent section in root configuration
+     * @return 根配置中的等效节.
+     * <p>原文：Equivalent section in root configuration
      */
     @Nullable
     public ConfigurationSection getDefaultSection();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 给指定路径添加一个缺省值.
+     * <p>
+     * 如果缺省值 {@link Configuration} 没有被提供, 则自动创建一个新的.
+     * <p>
+     * 如果值为 null, 表示从缺省值 {@link Configuration} 中删除这个路径上的默认值
+     * <p>
+     * 如果 {@link #getDefaultSection()} 返回的值为 null, 则建立一个新的
+     * <p>原文：
      * Sets the default value in the root at the given path as provided.
      * <p>
      * If no source {@link Configuration} was provided as a default
@@ -991,41 +1635,65 @@ public interface ConfigurationSection {
      * this will create a new section at the path, replacing anything that may
      * have existed there previously.
      *
-     * @param path Path of the value to set.
-     * @param value Value to set the default to.
-     * @throws IllegalArgumentException Thrown if path is null.
+     * @param path 要设置缺省值的路径.
+     * <p>原文：Path of the value to set.
+     * @param value 要设置的值.
+     * <p>原文：Value to set the default to.
+     * @throws IllegalArgumentException 当路径为 null 时抛出此异常.
+     * <p>原文：Thrown if path is null.
      */
     public void addDefault(@NotNull String path, @Nullable Object value);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 按路径获取请求的注释列表.
+     * <p>
+     * 如果不存在注释, 将返回一个空列表. null 条目代表一个空行, 空字符串代表一个空的注释行.
+     * <p>原文：
      * Gets the requested comment list by path.
      * <p>
      * If no comments exist, an empty list will be returned. A null entry
      * represents an empty line and an empty String represents an empty comment
      * line.
      *
-     * @param path Path of the comments to get.
-     * @return An unmodifiable list of the requested comments, every entry
+     * @param path 要获取注释的路径.
+     * <p>原文：Path of the comments to get.
+     * @return 一个不可修改的注释列表, 每个条目代表一行.
+     * <p>原文：An unmodifiable list of the requested comments, every entry
      * represents one line.
      */
     @NotNull
     public List<String> getComments(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 按路径获取请求的行内注释列表.
+     * <p>
+     * 如果不存在注释, 将返回一个空列表. null 条目代表一个空行, 空字符串代表一个空的注释行.
+     * <p>原文：
      * Gets the requested inline comment list by path.
      * <p>
      * If no comments exist, an empty list will be returned. A null entry
      * represents an empty line and an empty String represents an empty comment
      * line.
      *
-     * @param path Path of the comments to get.
-     * @return An unmodifiable list of the requested comments, every entry
+     * @param path 要获取注释的路径.
+     * <p>原文：Path of the comments to get.
+     * @return 一个不可修改的注释列表, 每个条目代表一行.
+     * <p>原文：An unmodifiable list of the requested comments, every entry
      * represents one line.
      */
     @NotNull
     public List<String> getInlineComments(@NotNull String path);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径设置注释列表.
+     * <p>
+     * 如果值为 null, 则删除注释. null 条目代表一个空行, 空字符串条目代表一个空的注释行. 如果路径不存在, 则不设置任何注释. 无论新注释是什么, 所有已有的注释都将被替换.
+     * <p>
+     * 某些实现在持久化方面可能有限制. 详见它们各自的 javadoc.
+     * <p>原文：
      * Sets the comment list at the specified path.
      * <p>
      * If value is null, the comments will be removed. A null entry is an empty
@@ -1036,13 +1704,22 @@ public interface ConfigurationSection {
      * Some implementations may have limitations on what persists. See their
      * individual javadocs for details.
      *
-     * @param path Path of the comments to set.
-     * @param comments New comments to set at the path, every entry represents
+     * @param path 要设置注释的路径.
+     * <p>原文：Path of the comments to set.
+     * @param comments 要在该路径设置的新注释, 每个条目代表一行.
+     * <p>原文：New comments to set at the path, every entry represents
      * one line.
      */
     public void setComments(@NotNull String path, @Nullable List<String> comments);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定路径设置行内注释列表.
+     * <p>
+     * 如果值为 null, 则删除注释. null 条目代表一个空行, 空字符串条目代表一个空的注释行. 如果路径不存在, 则不设置任何注释. 无论新注释是什么, 所有已有的注释都将被替换.
+     * <p>
+     * 某些实现在持久化方面可能有限制. 详见它们各自的 javadoc.
+     * <p>原文：
      * Sets the inline comment list at the specified path.
      * <p>
      * If value is null, the comments will be removed. A null entry is an empty
@@ -1053,8 +1730,10 @@ public interface ConfigurationSection {
      * Some implementations may have limitations on what persists. See their
      * individual javadocs for details.
      *
-     * @param path Path of the comments to set.
-     * @param comments New comments to set at the path, every entry represents
+     * @param path 要设置注释的路径.
+     * <p>原文：Path of the comments to set.
+     * @param comments 要在该路径设置的新注释, 每个条目代表一行.
+     * <p>原文：New comments to set at the path, every entry represents
      * one line.
      */
     public void setInlineComments(@NotNull String path, @Nullable List<String> comments);

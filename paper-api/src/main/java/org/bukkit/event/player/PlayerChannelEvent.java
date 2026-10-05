@@ -5,6 +5,9 @@ import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当玩家注册/注销一个新的插件通道时触发本事件
+ * <p>原文：
  * This event is called after a player registers or unregisters a new plugin
  * channel.
  */

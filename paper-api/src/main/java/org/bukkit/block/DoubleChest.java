@@ -9,6 +9,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表大型箱子.
+ * <p>原文：
  * Represents a double chest.
  */
 public class DoubleChest implements InventoryHolder {

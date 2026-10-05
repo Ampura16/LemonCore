@@ -10,6 +10,9 @@ import org.bukkit.Translatable;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 表示可以在 {@link ArmorTrim} 中使用的图案。
+ * <p>原文：
  * Represents a pattern that may be used in an {@link ArmorTrim}.
  */
 public interface TrimPattern extends Keyed, Translatable {

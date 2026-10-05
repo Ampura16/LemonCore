@@ -8,6 +8,14 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 用于以下情况：
+ * <ul>
+ * <li>熔炉开始熔炼 {@link FurnaceStartSmeltEvent}</li>
+ * <li>酿造台开始酿造 {@link BrewingStartEvent}</li>
+ * <li>营火开始烹饪 {@link CampfireStartEvent}</li>
+ * </ul>
+ * <p>原文：
  * Used when:
  * <ul>
  * <li>A Furnace starts smelting {@link FurnaceStartSmeltEvent}</li>
@@ -28,9 +36,13 @@ public class InventoryBlockStartEvent extends BlockEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此事件的源 ItemStack.
+     * <p>原文：
      * Gets the source ItemStack for this event.
      *
-     * @return the source ItemStack
+     * @return 源 ItemStack
+     * <p>原文：the source ItemStack
      */
     @NotNull
     public ItemStack getSource() {

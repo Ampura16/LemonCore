@@ -9,6 +9,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 玩家离开服务器事件.
+ * <p>原文：
  * Called when a player leaves a server
  */
 public class PlayerQuitEvent extends PlayerEvent {
@@ -64,9 +67,13 @@ public class PlayerQuitEvent extends PlayerEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取某玩家离开游戏后, 发送给全体玩家的离开消息.
+     * <p>原文：
      * Gets the quit message to send to all online players
      *
-     * @return string quit message
+     * @return string 玩家离开消息
+     * <p>原文：string quit message
      * @deprecated in favour of {@link #quitMessage()}
      */
     @Nullable
@@ -76,9 +83,13 @@ public class PlayerQuitEvent extends PlayerEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置某玩家离开游戏后, 发送给全体玩家的离开消息.
+     * <p>原文：
      * Sets the quit message to send to all online players
      *
-     * @param quitMessage quit message
+     * @param quitMessage 玩家离开消息
+     * <p>原文：quit message
      * @deprecated in favour of {@link #quitMessage(Component)}
      */
     @Deprecated

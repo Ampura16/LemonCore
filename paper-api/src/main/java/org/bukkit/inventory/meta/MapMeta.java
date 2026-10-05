@@ -7,36 +7,57 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表可被伸缩的地图.
+ * <p>原文：
  * Represents a map that can be scalable.
  */
 public interface MapMeta extends ItemMeta {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检测此地图是否有编号.
+     * <p>原文：
      * Checks for existence of a map ID number.
      *
-     * @return true if this has a map ID number.
+     * @return 地图是否有编号
+     * <p>原文：true if this has a map ID number.
      * @see #hasMapView()
      */
     boolean hasMapId();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取关联地图的编号. 这用来决定地图是否显示出来.
+     * <p>
+     * 插件应该在调用这个方法之前检测 hasMapId() 是否返回 <code>true</code>.
+     * <p>原文：
      * Gets the map ID that is set. This is used to determine what map is
      * displayed.
      * <p>
      * Plugins should check that hasMapId() returns <code>true</code> before
      * calling this method.
      *
-     * @return the map ID that is set
+     * @return 地图编号
+     * <p>原文：the map ID that is set
      * @see #getMapView()
      */
     int getMapId();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置相关地图的 ID. 这用来决定地图是否显示出来.
+     * <p>原文：
      * Sets the map ID. This is used to determine what map is displayed.
      *
-     * @param id the map id to set
+     * @param id 地图编号
+     * <p>原文：the map id to set
      * @see #setMapView(org.bukkit.map.MapView)
-     * @deprecated These methods are poor API: They rely on the caller to pass
+     * @deprecated 这些方法是设计糟糕的API:它们依赖调用者, 仅传递一个整数属性值,
+     * 并且曾经有着糟糕的实现 - 未判断地图 id 是否合法(是否存在).
+     * 现代的实现 - 例如, 服务器会生成一个不同 id 的新地图.
+     * 开发者应使用 xxxMapView 家族的方法.
+     * <p>原文：These methods are poor API: They rely on the caller to pass
      * in an only an integer property, and have poorly defined implementation
      * behavior if that integer is not a valid map (the current implementation
      * for example will generate a new map with a different ID). The xxxMapView
@@ -46,26 +67,44 @@ public interface MapMeta extends ItemMeta {
     void setMapId(int id);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查此物品是否设置了相关的地图.
+     * <p>原文：
      * Checks for existence of an associated map.
      *
-     * @return true if this item has an associated map
+     * @return 如果设置了相关的地图则返回 true
+     * <p>原文：true if this item has an associated map
      */
     boolean hasMapView();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取与此地图物品相关的地图.
+     *
+     * <p>
+     * 插件应该在调用这个方法之前检测 hasMapView() 是否返回 <code>true</code>.
+     * <p>原文：
      * Gets the map view that is associated with this map item.
      *
      * <p>
      * Plugins should check that hasMapView() returns <code>true</code> before
      * calling this method.
      *
-     * @return the map view, or null if the item hasMapView(), but this map does
+     * @return 地图视图, 如果 hasMapView() 为 true, 但这个地图不存在于服务器上则返回 null
+     * <p>原文：the map view, or null if the item hasMapView(), but this map does
      * not exist on the server
      */
     @Nullable
     MapView getMapView();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置相关的地图. 这用来决定地图是否显示出来.
+     *
+     * <p>
+     * 底层实现<b>可能</b>允许 null 值以清空地图, 但这并不是必须的,
+     * 当玩家首次使用地图物品时, 有可能会生成一个新的(未定义的)地图.
+     * <p>原文：
      * Sets the associated map. This is used to determine what map is displayed.
      *
      * <p>
@@ -73,42 +112,63 @@ public interface MapMeta extends ItemMeta {
      * this is not required and is liable to generate a new (undefined) map when
      * the item is first used.
      *
-     * @param map the map to set
+     * @param map 要设置的地图
+     * <p>原文：the map to set
      */
     void setMapView(@UndefinedNullability("implementation defined") MapView map);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检测这个地图是否有缩放比例.
+     * <p>原文：
      * Checks to see if this map is scaling.
      *
-     * @return true if this map is scaling
+     * @return true表示地图有缩放比例
+     * <p>原文：true if this map is scaling
      */
     boolean isScaling();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置这个地图是否有缩放比例.
+     * <p>原文：
      * Sets if this map is scaling or not.
      *
-     * @param value true to scale
+     * @param value true表示可缩放
+     * <p>原文：true to scale
      */
     void setScaling(boolean value);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查是否有位置名.
+     * <p>原文：
      * Checks for existence of a location name.
      *
-     * @return true if this has a location name
-     * @deprecated This method does not have the expected effect and is
+     * @return 是否有位置名
+     * <p>原文：true if this has a location name
+     * @deprecated 本方法没有预期效果, 这实际上是 {@link ItemMeta#hasLocalizedName()} 的别名
+     * <p>原文：This method does not have the expected effect and is
      * actually an alias for {@link ItemMeta#hasLocalizedName()}.
      */
     @Deprecated(since = "1.19.4")
     boolean hasLocationName();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取位置名.
+     * <p>
+     * 插件应该在调用这个方法之前检测 hasLocationName() 是否返回 <code>true</code>.
+     * <p>原文：
      * Gets the location name that is set.
      * <p>
      * Plugins should check that hasLocationName() returns <code>true</code>
      * before calling this method.
      *
-     * @return the location name that is set
-     * @deprecated This method does not have the expected effect and is
+     * @return 位置名
+     * <p>原文：the location name that is set
+     * @deprecated 本方法没有预期效果, 这实际上是 {@link ItemMeta#getLocalizedName()} 的别名
+     * <p>原文：This method does not have the expected effect and is
      * actually an alias for {@link ItemMeta#getLocalizedName()}.
      */
     @Deprecated(since = "1.19.4")
@@ -116,39 +176,58 @@ public interface MapMeta extends ItemMeta {
     String getLocationName();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置位置名.
+     * <p>原文：
      * Sets the location name.
      *
-     * @param name the name to set
-     * @deprecated This method does not have the expected effect and is
+     * @param name 位置名
+     * <p>原文：the name to set
+     * @deprecated 本方法没有预期效果, 这实际上是 {@link ItemMeta#setLocalizedName(String)} 的别名
+     * <p>原文：This method does not have the expected effect and is
      * actually an alias for {@link ItemMeta#setLocalizedName(String)}.
      */
     @Deprecated(since = "1.19.4")
     void setLocationName(@Nullable String name);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查是否为地图物品设置了自定义的颜色.
+     * <p>原文：
      * Checks for existence of a map color.
      *
-     * @return true if this has a custom map color
+     * @return 是否有自定义的颜色
+     * <p>原文：true if this has a custom map color
      */
     boolean hasColor();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取地图材质的颜色. 此颜色可在物品栏中地图物品的格子内观察到.
+     * <p>
+     * 插件应该在调用这个方法之前检测 hasColor() 是否返回 <code>true</code>.
+     * <p>原文：
      * Gets the map color that is set. A custom map color will alter the display
      * of the map in an inventory slot.
      * <p>
      * Plugins should check that hasColor() returns <code>true</code> before
      * calling this method.
      *
-     * @return the map color that is set
+     * @return 颜色
+     * <p>原文：the map color that is set
      */
     @Nullable
     Color getColor();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置地图材质的颜色. 此颜色可在物品栏中地图物品的格子内观察到.
+     * <p>原文：
      * Sets the map color. A custom map color will alter the display of the map
      * in an inventory slot.
      *
-     * @param color the color to set
+     * @param color 颜色
+     * <p>原文：the color to set
      */
     void setColor(@Nullable Color color);
 

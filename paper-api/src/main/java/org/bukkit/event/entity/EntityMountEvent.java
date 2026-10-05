@@ -7,6 +7,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当实体尝试骑乘另一个实体时调用。
+ * <p>原文：
  * Called when an entity attempts to ride another entity.
  */
 public class EntityMountEvent extends EntityEvent implements Cancellable {
@@ -24,9 +27,13 @@ public class EntityMountEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取将被骑乘的实体。
+     * <p>原文：
      * Gets the entity which will be ridden.
      *
-     * @return mounted entity
+     * @return 被骑乘的实体
+     * <p>原文：mounted entity
      */
     @NotNull
     public Entity getMount() {

@@ -11,6 +11,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当酿造完成时触发这个事件.
+ * <p>原文：
  * Called when the brewing of the contents inside the Brewing Stand is
  * complete.
  */
@@ -33,9 +36,14 @@ public class BrewEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此事件中的酿造台的物品栏.
+     * <b>注意:在酿造过程完成后, 酿造台物品栏内依然会</b>
+     * <p>原文：
      * Gets the contents of the Brewing Stand.
      *
-     * @return the contents
+     * @return 酿造台的物品栏
+     * <p>原文：the contents
      * @apiNote The brewer inventory still holds the items found prior to
      * the finalization of the brewing process, e.g. the plain water bottles.
      */

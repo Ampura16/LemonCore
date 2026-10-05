@@ -9,6 +9,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 玩家进入服务器事件.
+ * <p>原文：
  * Called when a player joins a server and has been placed in loaded chunks.
  *
  * <p>Teleporting the player during this event will result in undefined behavior.
@@ -52,9 +55,13 @@ public class PlayerJoinEvent extends PlayerEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家加入游戏后发送给全体玩家的信息.
+     * <p>原文：
      * Gets the join message to send to all online players
      *
-     * @return string join message. Can be {@code null}
+     * @return 加入信息,可以为null
+     * <p>原文：string join message. Can be {@code null}
      * @deprecated in favour of {@link #joinMessage()}
      */
     @Nullable
@@ -64,9 +71,13 @@ public class PlayerJoinEvent extends PlayerEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置玩家加入游戏后发送给全体玩家的信息.
+     * <p>原文：
      * Sets the join message to send to all online players
      *
-     * @param joinMessage join message. If {@code null}, no message will be sent
+     * @param joinMessage 加入信息, 若为null则不会发送加入信息
+     * <p>原文：join message. If {@code null}, no message will be sent
      * @deprecated in favour of {@link #joinMessage(Component)}
      */
     @Deprecated

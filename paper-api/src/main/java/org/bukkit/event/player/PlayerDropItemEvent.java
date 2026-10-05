@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 玩家丢出物品事件.
+ * <p>原文：
  * Thrown when a player drops an item from their inventory
  */
 public class PlayerDropItemEvent extends PlayerEvent implements Cancellable {
@@ -24,9 +27,13 @@ public class PlayerDropItemEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获得此玩家丢出的物品.
+     * <p>原文：
      * Gets the ItemDrop created by the player
      *
-     * @return ItemDrop created by the player
+     * @return 玩家丢出的物品
+     * <p>原文：ItemDrop created by the player
      */
     @NotNull
     public Item getItemDrop() {

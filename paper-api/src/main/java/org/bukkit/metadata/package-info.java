@@ -1,4 +1,7 @@
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 用于提供在每种Minecraft概念上的插件指定数据的数据层.
+ * <p>原文：
  * Classes dedicated to providing a layer of plugin specified data on various
  * Minecraft concepts.
  *

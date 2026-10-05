@@ -12,6 +12,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当一个有机结构试图生长的时调用此事件(树苗 {@literal ->} 树, 蘑菇 {@literal ->} 巨型蘑菇, 自然生长的或使用骨粉生长的).
+ * <p>原文：
  * Event that is called when an organic structure attempts to grow (Sapling {@literal ->}
  * Tree), (Mushroom {@literal ->} Huge Mushroom), naturally or using bonemeal.
  */
@@ -38,9 +41,13 @@ public class StructureGrowEvent extends WorldEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这个结构的位置.
+     * <p>原文：
      * Gets the location of the structure.
      *
-     * @return Location of the structure
+     * @return 结构的位置
+     * <p>原文：Location of the structure
      */
     @NotNull
     public Location getLocation() {
@@ -48,10 +55,14 @@ public class StructureGrowEvent extends WorldEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取物种类型(白桦、橡树、云杉、红蘑菇和棕蘑菇).
+     * <p>原文：
      * Gets the species type (birch, normal, pine, red mushroom, brown
      * mushroom)
      *
-     * @return Structure species
+     * @return 结构类型
+     * <p>原文：Structure species
      */
     @NotNull
     public TreeType getSpecies() {
@@ -59,18 +70,26 @@ public class StructureGrowEvent extends WorldEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检测此结构的生长是否使用骨粉.
+     * <p>原文：
      * Checks if structure was grown using bonemeal.
      *
-     * @return {@code true} if the structure was grown using bonemeal.
+     * @return 如果此结构是用骨粉催熟的则为true
+     * <p>原文：{@code true} if the structure was grown using bonemeal.
      */
     public boolean isFromBonemeal() {
         return this.bonemeal;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取“种”下这个结构的玩家.
+     * <p>原文：
      * Gets the player that created the structure.
      *
-     * @return Player that created the structure, {@code null} if was not created
+     * @return “种”下这个结构的玩家，如果为null则这个不是手工创建的
+     * <p>原文：Player that created the structure, {@code null} if was not created
      *     manually
      */
     @Nullable
@@ -79,9 +98,13 @@ public class StructureGrowEvent extends WorldEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取与结构有关的所有方块的列表.
+     * <p>原文：
      * Gets a list of all blocks associated with the structure.
      *
-     * @return list of all blocks associated with the structure.
+     * @return 与结构有关的所有方块的列表
+     * <p>原文：list of all blocks associated with the structure.
      */
     @NotNull
     public List<BlockState> getBlocks() {

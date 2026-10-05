@@ -25,6 +25,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 用于在 {@link Configuration} 中存储和检索类的工具类.
+ * <p>原文：
  * Utility class for storing and retrieving classes for {@link Configuration}.
  */
 public class ConfigurationSerialization {
@@ -150,6 +153,13 @@ public class ConfigurationSerialization {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 尝试将给定的参数反序列化为给定类的新实例.
+     * <p>
+     * 该类必须实现 {@link ConfigurationSerializable}, 包括 ConfigurationSerializable javadoc 中指定的额外方法.
+     * <p>
+     * 如果无法创建新实例 (例如类未完全实现接口), 则返回 null.
+     * <p>原文：
      * Attempts to deserialize the given arguments into a new instance of the
      * given class.
      * <p>
@@ -160,9 +170,12 @@ public class ConfigurationSerialization {
      * If a new instance could not be made, an example being the class not
      * fully implementing the interface, null will be returned.
      *
-     * @param args Arguments for deserialization
-     * @param clazz Class to deserialize into
-     * @return New instance of the specified class
+     * @param args 反序列化的参数.
+     * <p>原文：Arguments for deserialization
+     * @param clazz 要反序列化为的类.
+     * <p>原文：Class to deserialize into
+     * @return 指定类的新实例.
+     * <p>原文：New instance of the specified class
      */
     @Nullable
     public static ConfigurationSerializable deserializeObject(@NotNull Map<String, ?> args, @NotNull Class<? extends ConfigurationSerializable> clazz) {
@@ -170,6 +183,13 @@ public class ConfigurationSerialization {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 尝试将给定的参数反序列化为给定类的新实例.
+     * <p>
+     * 该类必须实现 {@link ConfigurationSerializable}, 包括 ConfigurationSerializable javadoc 中指定的额外方法.
+     * <p>
+     * 如果无法创建新实例 (例如类未完全实现接口), 则返回 null.
+     * <p>原文：
      * Attempts to deserialize the given arguments into a new instance of the
      * given class.
      * <p>
@@ -180,8 +200,10 @@ public class ConfigurationSerialization {
      * If a new instance could not be made, an example being the class not
      * fully implementing the interface, null will be returned.
      *
-     * @param args Arguments for deserialization
-     * @return New instance of the specified class
+     * @param args 反序列化的参数.
+     * <p>原文：Arguments for deserialization
+     * @return 指定类的新实例.
+     * <p>原文：New instance of the specified class
      */
     @Nullable
     public static ConfigurationSerializable deserializeObject(@NotNull Map<String, ?> args) {
@@ -210,10 +232,14 @@ public class ConfigurationSerialization {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 按别名注册给定的 {@link ConfigurationSerializable} 类.
+     * <p>原文：
      * Registers the given {@link ConfigurationSerializable} class by its
      * alias
      *
-     * @param clazz Class to register
+     * @param clazz 要注册的类.
+     * <p>原文：Class to register
      */
     public static void registerClass(@NotNull Class<? extends ConfigurationSerializable> clazz) {
         DelegateDeserialization delegate = clazz.getAnnotation(DelegateDeserialization.class);
@@ -225,11 +251,16 @@ public class ConfigurationSerialization {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将给定别名注册到指定的 {@link ConfigurationSerializable} 类.
+     * <p>原文：
      * Registers the given alias to the specified {@link
      * ConfigurationSerializable} class
      *
-     * @param clazz Class to register
-     * @param alias Alias to register as
+     * @param clazz 要注册的类.
+     * <p>原文：Class to register
+     * @param alias 要注册的别名.
+     * <p>原文：Alias to register as
      * @see SerializableAs
      */
     public static void registerClass(@NotNull Class<? extends ConfigurationSerializable> clazz, @NotNull String alias) {
@@ -237,19 +268,27 @@ public class ConfigurationSerialization {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 注销指定的 {@link ConfigurationSerializable} 别名.
+     * <p>原文：
      * Unregisters the specified alias to a {@link ConfigurationSerializable}
      *
-     * @param alias Alias to unregister
+     * @param alias 要注销的别名.
+     * <p>原文：Alias to unregister
      */
     public static void unregisterClass(@NotNull String alias) {
         aliases.remove(alias);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 注销指定 {@link ConfigurationSerializable} 类的所有别名.
+     * <p>原文：
      * Unregisters any aliases for the specified {@link
      * ConfigurationSerializable} class
      *
-     * @param clazz Class to unregister
+     * @param clazz 要注销的类.
+     * <p>原文：Class to unregister
      */
     public static void unregisterClass(@NotNull Class<? extends ConfigurationSerializable> clazz) {
         while (aliases.values().remove(clazz)) {
@@ -258,11 +297,16 @@ public class ConfigurationSerialization {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 尝试通过别名获取已注册的 {@link ConfigurationSerializable} 类.
+     * <p>原文：
      * Attempts to get a registered {@link ConfigurationSerializable} class by
      * its alias
      *
-     * @param alias Alias of the serializable
-     * @return Registered class, or null if not found
+     * @param alias 可序列化对象的别名.
+     * <p>原文：Alias of the serializable
+     * @return 已注册的类, 如果未找到则返回 null.
+     * <p>原文：Registered class, or null if not found
      */
     @Nullable
     public static Class<? extends ConfigurationSerializable> getClassByAlias(@NotNull String alias) {
@@ -270,11 +314,16 @@ public class ConfigurationSerialization {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取给定 {@link ConfigurationSerializable} 类的正确别名.
+     * <p>原文：
      * Gets the correct alias for the given {@link ConfigurationSerializable}
      * class
      *
-     * @param clazz Class to get alias for
-     * @return Alias to use for the class
+     * @param clazz 要获取别名的类.
+     * <p>原文：Class to get alias for
+     * @return 该类使用的别名.
+     * <p>原文：Alias to use for the class
      */
     @NotNull
     public static String getAlias(@NotNull Class<? extends ConfigurationSerializable> clazz) {

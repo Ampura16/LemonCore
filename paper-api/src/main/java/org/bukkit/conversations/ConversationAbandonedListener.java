@@ -12,9 +12,13 @@ import org.jetbrains.annotations.NotNull;
 @Deprecated(forRemoval = true)
 public interface ConversationAbandonedListener extends EventListener {
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 当一个{@link Conversation}被终止时调用此方法.
+     * <p>原文：
      * Called whenever a {@link Conversation} is abandoned.
      *
-     * @param abandonedEvent Contains details about the abandoned
+     * @param abandonedEvent 包含关于会话被终止的细节的事件对象
+     * <p>原文：Contains details about the abandoned
      *     conversation.
      */
     public void conversationAbandoned(@NotNull ConversationAbandonedEvent abandonedEvent);

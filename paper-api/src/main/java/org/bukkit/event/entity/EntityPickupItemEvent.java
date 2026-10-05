@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当实体捡起地面上的掉落物时触发本事件.
+ * <p>原文：
  * Thrown when an entity picks an item up from the ground
  */
 public class EntityPickupItemEvent extends EntityEvent implements Cancellable {
@@ -33,9 +36,13 @@ public class EntityPickupItemEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取实体捡起的掉落物.
+     * <p>原文：
      * Gets the Item picked up by the entity.
      *
-     * @return Item
+     * @return 掉落物
+     * <p>原文：Item
      */
     @NotNull
     public Item getItem() {
@@ -43,9 +50,13 @@ public class EntityPickupItemEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取掉落物剩余未被拾起的堆叠数量, 如果还有的话.
+     * <p>原文：
      * Gets the amount remaining on the ground, if any
      *
-     * @return amount remaining on the ground
+     * @return 掉落物剩余未被拾起的堆叠数量
+     * <p>原文：amount remaining on the ground
      */
     public int getRemaining() {
         return this.remaining;

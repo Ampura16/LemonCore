@@ -4,13 +4,17 @@ import org.bukkit.Material;
 import org.bukkit.TreeSpecies;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表不同类型的树叶方块，这些方块可能是永久存在的，或者在距离原木太远时会腐烂。
+ * <p>原文：
  * Represents the different types of leaf block that may be permanent or can
  * decay when too far from a log.
  *
  * @see Material#LEGACY_LEAVES
  * @see Material#LEGACY_LEAVES_2
- *
- * @deprecated all usage of MaterialData is deprecated and subject to removal.
+ * @deprecated 所有 MaterialData 的使用都已弃用并可能被移除。
+ * 使用 {@link org.bukkit.block.data.BlockData}。
+ * <p>原文：all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
  */
 @Deprecated(since = "1.13", forRemoval = true)
@@ -19,6 +23,9 @@ public class Leaves extends Wood {
     protected static final boolean DEFAULT_DECAYABLE = true;
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 构造一个树叶方块。
+     * <p>原文：
      * Constructs a leaf block.
      */
     public Leaves() {
@@ -26,51 +33,85 @@ public class Leaves extends Wood {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 构造指定树种的树叶方块。
+     * <p>原文：
      * Constructs a leaf block of the given tree species.
      *
-     * @param species the species of the wood block
+     * @param species 木方块的树种
+     * <p>
+     * 原文：Constructs a leaf block of the given tree species.
+     * <p>原文：the species of the wood block
      */
     public Leaves(TreeSpecies species) {
         this(DEFAULT_TYPE, species, DEFAULT_DECAYABLE);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 构造指定树种的树叶方块，并标记该树叶方块在距离原木太远时是否会消失。
+     * <p>原文：
      * Constructs a leaf block of the given tree species and flag for whether
      * this leaf block will disappear when too far from a log.
      *
-     * @param species the species of the wood block
-     * @param isDecayable whether the block is permanent or can disappear
+     * @param species 木方块的树种
+     * <p>原文：the species of the wood block
+     * @param isDecayable 方块是永久存在还是可以消失
+     * <p>
+     * 原文：Constructs a leaf block of the given tree species and flag for whether this leaf block will disappear when too far from a log.
+     * <p>原文：whether the block is permanent or can disappear
      */
     public Leaves(TreeSpecies species, boolean isDecayable) {
         this(DEFAULT_TYPE, species, isDecayable);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 构造指定类型的树叶方块。
+     * <p>原文：
      * Constructs a leaf block of the given type.
      *
-     * @param type the type of leaf block
+     * @param type 树叶方块的类型
+     * <p>
+     * 原文：Constructs a leaf block of the given type.
+     * <p>原文：the type of leaf block
      */
     public Leaves(final Material type) {
         this(type, DEFAULT_SPECIES, DEFAULT_DECAYABLE);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 构造指定类型和树种的树叶方块。
+     * <p>原文：
      * Constructs a leaf block of the given type and tree species.
      *
-     * @param type the type of leaf block
-     * @param species the species of the wood block
+     * @param type 树叶方块的类型
+     * <p>原文：the type of leaf block
+     * @param species 木方块的树种
+     * <p>
+     * 原文：Constructs a leaf block of the given type and tree species.
+     * <p>原文：the species of the wood block
      */
     public Leaves(final Material type, TreeSpecies species) {
         this(type, species, DEFAULT_DECAYABLE);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 构造指定类型和树种的树叶方块，并标记该树叶方块在距离原木太远时是否会消失。
+     * <p>原文：
      * Constructs a leaf block of the given type and tree species and flag for
      * whether this leaf block will disappear when too far from a log.
      *
-     * @param type the type of leaf block
-     * @param species the species of the wood block
-     * @param isDecayable whether the block is permanent or can disappear
+     * @param type 树叶方块的类型
+     * <p>原文：the type of leaf block
+     * @param species 木方块的树种
+     * <p>原文：the species of the wood block
+     * @param isDecayable 方块是永久存在还是可以消失
+     * <p>
+     * 原文：Constructs a leaf block of the given type and tree species and flag for whether this leaf block will disappear when too far from a log.
+     * <p>原文：whether the block is permanent or can disappear
      */
     public Leaves(final Material type, TreeSpecies species, boolean isDecayable) {
         super(type, species);
@@ -78,9 +119,15 @@ public class Leaves extends Wood {
     }
 
     /**
-     * @param type the type
-     * @param data the raw data value
-     * @deprecated Magic value
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @param type 类型
+     * <p>原文：the type
+     * @param data 原始数据值
+     * <p>原文：the raw data value
+     * @deprecated 魔法值
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.6.2")
     public Leaves(final Material type, final byte data) {
@@ -88,18 +135,30 @@ public class Leaves extends Wood {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查此树叶方块是否正在腐烂
+     * <p>原文：
      * Checks if this leaf block is in the process of decaying
      *
-     * @return true if the leaf block is in the process of decaying
+     * @return 如果树叶方块正在腐烂则返回true
+     * <p>
+     * 原文：Checks if this leaf block is in the process of decaying
+     * <p>原文：true if the leaf block is in the process of decaying
      */
     public boolean isDecaying() {
         return (getData() & 0x8) != 0;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此树叶方块是否正在腐烂
+     * <p>原文：
      * Set whether this leaf block is in the process of decaying
      *
-     * @param isDecaying whether the block is decaying or not
+     * @param isDecaying 方块是否正在腐烂
+     * <p>
+     * 原文：Set whether this leaf block is in the process of decaying
+     * <p>原文：whether the block is decaying or not
      */
     public void setDecaying(boolean isDecaying) {
         setData((byte) ((getData() & 0x3) | (isDecaying
@@ -108,10 +167,16 @@ public class Leaves extends Wood {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查此树叶方块是永久存在的还是在距离原木太远时会腐烂
+     * <p>原文：
      * Checks if this leaf block is permanent or can decay when too far from a
      * log
      *
-     * @return true if the leaf block is permanent or can decay when too far
+     * @return 如果树叶方块是永久存在的或在距离原木太远时会腐烂则返回true
+     * <p>
+     * 原文：Checks if this leaf block is permanent or can decay when too far from a log
+     * <p>原文：true if the leaf block is permanent or can decay when too far
      * from a log
      */
     public boolean isDecayable() {
@@ -119,9 +184,15 @@ public class Leaves extends Wood {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此树叶方块在距离原木太远时是否会消失
+     * <p>原文：
      * Set whether this leaf block will disappear when too far from a log
      *
-     * @param isDecayable whether the block is permanent or can disappear
+     * @param isDecayable 方块是永久存在还是可以消失
+     * <p>
+     * 原文：Set whether this leaf block will disappear when too far from a log
+     * <p>原文：whether the block is permanent or can disappear
      */
     public void setDecayable(boolean isDecayable) {
         setData((byte) ((getData() & 0x3) | (isDecayable

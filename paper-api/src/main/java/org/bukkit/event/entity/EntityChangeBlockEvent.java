@@ -29,9 +29,13 @@ public class EntityChangeBlockEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回改变之前的方块(Block)类
+     * <p>原文：
      * Gets the block the entity is changing
      *
-     * @return the block that is changing
+     * @return 改变之前的方块(Block)类
+     * <p>原文：the block that is changing
      */
     @NotNull
     public Block getBlock() {
@@ -39,9 +43,13 @@ public class EntityChangeBlockEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回改变后的材料(Material)类
+     * <p>原文：
      * Gets the Material that the block is changing into
      *
-     * @return the material that the block is changing into
+     * @return 改变后的材料(Material)类
+     * <p>原文：the material that the block is changing into
      */
     @NotNull
     public Material getTo() {
@@ -49,9 +57,13 @@ public class EntityChangeBlockEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回方块改变后的数据.
+     * <p>原文：
      * Gets the data for the block that would be changed into
      *
-     * @return the data for the block that would be changed into
+     * @return 改变后的数据
+     * <p>原文：the data for the block that would be changed into
      */
     @NotNull
     public BlockData getBlockData() {

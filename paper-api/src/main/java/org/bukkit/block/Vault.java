@@ -11,18 +11,30 @@ import java.util.Set;
 import java.util.UUID;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表一个捕获的保险库状态.
+ * <p>原文：
  * Represents a captured state of a vault.
  */
 @NullMarked
 public interface Vault extends TileState {
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家必须进入才能激活此保险库的距离.
+     * <p>原文：
      * Gets the range in blocks at which this vault will become active when a player is near.
      *
-     * @return This vault's activation range.
+     * @return 玩家必须进入才能激活此保险库的距离
+     * 原文:the distance at which a player must enter for this vault
+     * to activate.
+     * <p>原文：This vault's activation range.
      */
     double getActivationRange();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置玩家必须进入才能激活此保险库的距离.
+     * <p>原文：
      * Sets the range in blocks at which the vault will become active when a player is near.
      *
      * @param activationRange The new activation range.
@@ -31,13 +43,22 @@ public interface Vault extends TileState {
     void setActivationRange(double activationRange);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家必须退出才能停用此保险库的距离.
+     * <p>原文：
      * Gets the range in blocks at which this vault will become inactive when a player is not near.
      *
-     * @return This vault's deactivation range.
+     * @return 玩家必须退出才能停用此保险库的距离
+     * 原文:the distance at which a player must exit for the vault
+     * to deactivate.
+     * <p>原文：This vault's deactivation range.
      */
     double getDeactivationRange();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置玩家必须退出才能停用此保险库的距离.
+     * <p>原文：
      * Sets the range in blocks at which this vault will become inactive when a player is not near.
      *
      * @param deactivationRange The new deactivation range
@@ -46,13 +67,21 @@ public interface Vault extends TileState {
     void setDeactivationRange(double deactivationRange);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家必须用来解锁此保险库的{@link ItemStack 物品堆}.
+     * <p>原文：
      * Gets the {@link ItemStack} that players must use to unlock this vault.
      *
-     * @return The item that players must use to unlock this vault.
+     * @return 钥匙物品
+     * 原文:the key item
+     * <p>原文：The item that players must use to unlock this vault.
      */
     ItemStack getKeyItem();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置玩家必须用来解锁此保险库的{@link ItemStack 物品堆}.
+     * <p>原文：
      * Sets the {@link ItemStack} that players must use to unlock this vault.
      *
      * @param key The key item.
@@ -60,13 +89,21 @@ public interface Vault extends TileState {
     void setKeyItem(ItemStack key);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此保险库将从中选择奖励的{@link LootTable 战利品表}.
+     * <p>原文：
      * Gets the {@link LootTable} that this vault will select rewards from.
      *
-     * @return The loot table.
+     * @return 战利品表
+     * 原文:the loot table
+     * <p>原文：The loot table.
      */
     LootTable getLootTable();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此保险库将从中选择奖励的{@link LootTable 战利品表}.
+     * <p>原文：
      * Sets the {@link LootTable} that this vault will select rewards from.
      *
      * @param lootTable The new loot table.

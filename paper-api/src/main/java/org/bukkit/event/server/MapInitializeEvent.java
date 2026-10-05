@@ -6,6 +6,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 地图初始化时调用.
+ * <p>原文：
  * Called when a map is initialized.
  */
 public class MapInitializeEvent extends ServerEvent {
@@ -20,9 +23,13 @@ public class MapInitializeEvent extends ServerEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获得本事件初始化的地图.
+     * <p>原文：
      * Gets the map initialized in this event.
      *
-     * @return Map for this event
+     * @return 地图物品.
+     * <p>原文：Map for this event
      */
     @NotNull
     public MapView getMap() {

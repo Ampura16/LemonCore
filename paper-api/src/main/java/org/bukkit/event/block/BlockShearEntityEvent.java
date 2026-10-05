@@ -12,6 +12,11 @@ import java.util.Collections;
 import java.util.List;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当发射器剪掉附近的羊的羊毛时触发本事件 (发射器内含剪刀时有机会触发本事件).
+ * <p>
+ * 译注:不仅是羊会有这种行为, 修剪哞菇/雪傀儡时也可触发本事件. 详见 Minecraft Wiki 中对发射器和剪刀行为的描述.
+ * <p>原文：
  * Event fired when a dispenser shears a nearby entity.
  */
 public class BlockShearEntityEvent extends BlockEvent implements Cancellable {
@@ -33,9 +38,13 @@ public class BlockShearEntityEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取被剪的实体.
+     * <p>原文：
      * Gets the entity that was sheared.
      *
-     * @return the entity that was sheared.
+     * @return 被剪的实体
+     * <p>原文：the entity that was sheared.
      */
     @NotNull
     public Entity getEntity() {
@@ -43,9 +52,13 @@ public class BlockShearEntityEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取剪这只羊(实体)的工具.
+     * <p>原文：
      * Gets the item used to shear this entity.
      *
-     * @return the item used to shear this entity.
+     * @return 剪这只羊(实体)的工具
+     * <p>原文：the item used to shear this entity.
      */
     @NotNull
     public ItemStack getTool() {

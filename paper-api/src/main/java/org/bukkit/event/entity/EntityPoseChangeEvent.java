@@ -7,6 +7,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当实体改变它的姿态时触发本事件.
+ * <p>原文：
  * Called when an entity changes its pose.
  *
  * @see Entity#getPose()
@@ -24,9 +27,13 @@ public class EntityPoseChangeEvent extends EntityEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取实体的新姿态.
+     * <p>原文：
      * Gets the entity's new pose.
      *
-     * @return the new pose
+     * @return 新姿态
+     * <p>原文：the new pose
      */
     @NotNull
     public Pose getPose() {

@@ -9,6 +9,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当实体进入求爱模式时触发本事件.
+ * <br>
+ * 本事件可被取消, 但喂给实体的食物仍会被消耗.
+ * <p>原文：
  * Called when an entity enters love mode.
  * <br>
  * This can be cancelled but the item will still be consumed that was used to
@@ -31,9 +36,13 @@ public class EntityEnterLoveModeEvent extends EntityEvent implements Cancellable
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取正进入求爱模式的动物.
+     * <p>原文：
      * Gets the animal that is entering love mode.
      *
-     * @return The animal that is entering love mode
+     * @return 正进入求爱模式的动物
+     * <p>原文：The animal that is entering love mode
      */
     @NotNull
     @Override
@@ -42,9 +51,13 @@ public class EntityEnterLoveModeEvent extends EntityEvent implements Cancellable
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取导致动物进入求爱模式的人类实体.
+     * <p>原文：
      * Gets the Human Entity that caused the animal to enter love mode.
      *
-     * @return The Human entity that caused the animal to enter love mode, or
+     * @return 人类实体, 如果不因人类而发情则为 null
+     * <p>原文：The Human entity that caused the animal to enter love mode, or
      * {@code null} if there wasn't one.
      */
     @Nullable
@@ -53,18 +66,26 @@ public class EntityEnterLoveModeEvent extends EntityEvent implements Cancellable
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取动物爱意的持续时长 (单位为tick).
+     * <p>原文：
      * Gets the amount of ticks that the animal will fall in love for.
      *
-     * @return The amount of ticks that the animal will fall in love for
+     * @return 动物爱意的持续时长 (单位为tick)
+     * <p>原文：The amount of ticks that the animal will fall in love for
      */
     public int getTicksInLove() {
         return this.ticksInLove;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置动物爱意的持续时长 (单位为tick).
+     * <p>原文：
      * Sets the amount of ticks that the animal will fall in love for.
      *
-     * @param ticksInLove The amount of ticks that the animal will fall in love
+     * @param ticksInLove 动物爱意的持续时长 (单位为tick)
+     * <p>原文：The amount of ticks that the animal will fall in love
      * for
      */
     public void setTicksInLove(int ticksInLove) {

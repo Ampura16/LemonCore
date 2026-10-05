@@ -7,6 +7,13 @@ import org.bukkit.Registry;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 表示 {@link Structure} 的结构类型。
+ *
+ * 列出的结构类型存在于默认服务器中。根据服务器的不同，
+ * 可能会有额外的结构类型存在（例如由数据包添加的结构类型），
+ * 可以通过 {@link Registry#STRUCTURE_TYPE} 获取。
+ * <p>原文：
  * Represent a StructureType of a {@link Structure}.
  * <p>
  * Listed structure types are present in the default server. Depending on the

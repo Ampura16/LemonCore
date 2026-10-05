@@ -9,6 +9,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 用于控制 {@link FileConfiguration} 输入和输出的各种设置.
+ * <p>原文：
  * Various settings for controlling the input and output of a {@link
  * FileConfiguration}
  */
@@ -45,6 +48,13 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取将应用于保存输出顶部的头部注释.
+     * <p>
+     * 此头部注释将以注释形式直接应用在 {@link FileConfiguration} 生成的输出的顶部. 无需在头部末尾包含换行符, 因为它会自动添加, 但如果需要额外的间距可以包含一个.
+     * <p>
+     * 如果不存在注释, 将返回一个空列表. null 条目代表一个空行, 空字符串代表一个空的注释行.
+     * <p>原文：
      * Gets the header that will be applied to the top of the saved output.
      * <p>
      * This header will be commented out and applied directly at the top of
@@ -57,7 +67,8 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
      * represents an empty line and an empty String represents an empty comment
      * line.
      *
-     * @return Unmodifiable header, every entry represents one line.
+     * @return 不可修改的头部注释, 每个条目代表一行.
+     * <p>原文：Unmodifiable header, every entry represents one line.
      */
     @NotNull
     public List<String> getHeader() {
@@ -65,9 +76,13 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
     }
 
     /**
-     * @return The string header.
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
      *
-     * @deprecated use getHeader() instead.
+     *
+     * @return 字符串形式的头部注释.
+     * <p>原文：The string header.
+     * @deprecated 请改用getHeader().
+     * <p>原文：use getHeader() instead.
      */
     @NotNull
     @Deprecated(since = "1.18.1")
@@ -80,6 +95,13 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置将应用于保存输出顶部的头部注释.
+     * <p>
+     * 此头部注释将以注释形式直接应用在 {@link FileConfiguration} 生成的输出的顶部. 无需在头部末尾包含换行符, 因为它会自动添加, 但如果需要额外的间距可以包含一个.
+     * <p>
+     * 如果不存在注释, 将返回一个空列表. null 条目代表一个空行, 空字符串代表一个空的注释行.
+     * <p>原文：
      * Sets the header that will be applied to the top of the saved output.
      * <p>
      * This header will be commented out and applied directly at the top of
@@ -92,8 +114,10 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
      * represents an empty line and an empty String represents an empty comment
      * line.
      *
-     * @param value New header, every entry represents one line.
-     * @return This object, for chaining
+     * @param value 新的头部注释, 每个条目代表一行.
+     * <p>原文：New header, every entry represents one line.
+     * @return 此对象, 用于链式调用.
+     * <p>原文：This object, for chaining
      */
     @NotNull
     public FileConfigurationOptions setHeader(@Nullable List<String> value) {
@@ -102,10 +126,15 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
     }
 
     /**
-     * @param value The string header.
-     * @return This object, for chaining.
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
      *
-     * @deprecated use setHeader() instead
+     *
+     * @param value 字符串形式的头部注释.
+     * <p>原文：The string header.
+     * @return 此对象, 用于链式调用.
+     * <p>原文：This object, for chaining.
+     * @deprecated 请改用setHeader()
+     * <p>原文：use setHeader() instead
      */
     @NotNull
     @Deprecated(since = "1.18.1")
@@ -115,6 +144,13 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取将应用于保存输出底部的尾部注释.
+     * <p>
+     * 此尾部注释将以注释形式直接应用在 {@link FileConfiguration} 生成的输出的底部. 无需在尾部开头包含换行符, 因为它会自动添加, 但如果需要额外的间距可以包含一个.
+     * <p>
+     * 如果不存在注释, 将返回一个空列表. null 条目代表一个空行, 空字符串代表一个空的注释行.
+     * <p>原文：
      * Gets the footer that will be applied to the bottom of the saved output.
      * <p>
      * This footer will be commented out and applied directly at the bottom of
@@ -127,7 +163,8 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
      * represents an empty line and an empty String represents an empty comment
      * line.
      *
-     * @return Unmodifiable footer, every entry represents one line.
+     * @return 不可修改的尾部注释, 每个条目代表一行.
+     * <p>原文：Unmodifiable footer, every entry represents one line.
      */
     @NotNull
     public List<String> getFooter() {
@@ -135,6 +172,13 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置将应用于保存输出底部的尾部注释.
+     * <p>
+     * 此尾部注释将以注释形式直接应用在 {@link FileConfiguration} 生成的输出的底部. 无需在尾部开头包含换行符, 因为它会自动添加, 但如果需要额外的间距可以包含一个.
+     * <p>
+     * 如果不存在注释, 将返回一个空列表. null 条目代表一个空行, 空字符串代表一个空的注释行.
+     * <p>原文：
      * Sets the footer that will be applied to the bottom of the saved output.
      * <p>
      * This footer will be commented out and applied directly at the bottom of
@@ -147,8 +191,10 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
      * represents an empty line and an empty String represents an empty comment
      * line.
      *
-     * @param value New footer, every entry represents one line.
-     * @return This object, for chaining
+     * @param value 新的尾部注释, 每个条目代表一行.
+     * <p>原文：New footer, every entry represents one line.
+     * @return 此对象, 用于链式调用.
+     * <p>原文：This object, for chaining
      */
     @NotNull
     public FileConfigurationOptions setFooter(@Nullable List<String> value) {
@@ -157,23 +203,36 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取是否应该加载和保存注释.
+     * <p>
+     * 默认为 true.
+     * <p>原文：
      * Gets whether or not comments should be loaded and saved.
      * <p>
      * Defaults to true.
      *
-     * @return Whether or not comments are parsed.
+     * @return 是否解析注释.
+     * <p>原文：Whether or not comments are parsed.
      */
     public boolean parseComments() {
         return parseComments;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置是否应该加载和保存注释.
+     * <p>
+     * 默认为 true.
+     * <p>原文：
      * Sets whether or not comments should be loaded and saved.
      * <p>
      * Defaults to true.
      *
-     * @param value Whether or not comments are parsed.
-     * @return This object, for chaining
+     * @param value 是否解析注释.
+     * <p>原文：Whether or not comments are parsed.
+     * @return 此对象, 用于链式调用.
+     * <p>原文：This object, for chaining
      */
     @NotNull
     public MemoryConfigurationOptions parseComments(boolean value) {
@@ -182,9 +241,13 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
     }
 
     /**
-     * @return Whether or not comments are parsed.
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
      *
-     * @deprecated Call {@link #parseComments()} instead.
+     *
+     * @return 是否解析注释.
+     * <p>原文：Whether or not comments are parsed.
+     * @deprecated 请改用{@link #parseComments()}.
+     * <p>原文：Call {@link #parseComments()} instead.
      */
     @Deprecated(since = "1.18.1")
     public boolean copyHeader() {

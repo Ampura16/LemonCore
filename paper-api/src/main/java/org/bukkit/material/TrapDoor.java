@@ -4,9 +4,14 @@ import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表一个活板门。
+ * <p>原文：
  * Represents a trap door
  *
- * @deprecated all usage of MaterialData is deprecated and subject to removal.
+ * @deprecated 所有 MaterialData 的用法都已弃用并可能被移除。
+ * 请使用 {@link org.bukkit.block.data.BlockData}。
+ * <p>原文：all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
  */
 @Deprecated(since = "1.13", forRemoval = true)
@@ -20,9 +25,16 @@ public class TrapDoor extends SimpleAttachableMaterialData implements Openable {
     }
 
     /**
-     * @param type the type
-     * @param data the raw data value
-     * @deprecated Magic value
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @param type 物品类型
+     * <p>原文：the type
+     * @param data 原始数据值
+     * <p>原文：the raw data value
+     * @deprecated 魔法值
+     * <p>原文：Magic value
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.6.2")
     public TrapDoor(final Material type, final byte data) {
@@ -48,18 +60,28 @@ public class TrapDoor extends SimpleAttachableMaterialData implements Openable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 测试活板门是否倒置。
+     * <p>原文：
      * Test if trapdoor is inverted
      *
-     * @return true if inverted (top half), false if normal (bottom half)
+     * @return 如果倒置（上半部分）则返回 true，如果正常（下半部分）则返回 false
+     * <p>原文：Test if trapdoor is inverted
+     * <p>原文：true if inverted (top half), false if normal (bottom half)
      */
     public boolean isInverted() {
         return ((getData() & 0x8) != 0);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置活板门的倒置状态。
+     * <p>原文：
      * Set trapdoor inverted state
      *
-     * @param inv - true if inverted (top half), false if normal (bottom half)
+     * @param inv - 如果倒置（上半部分）则为 true，如果正常（下半部分）则为 false
+     * <p>原文：Set trapdoor inverted state
+     * <p>原文：- true if inverted (top half), false if normal (bottom half)
      */
     public void setInverted(boolean inv) {
         int dat = getData() & 0x7;

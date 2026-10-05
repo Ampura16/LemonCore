@@ -6,6 +6,9 @@ import org.bukkit.inventory.meta.trim.TrimPattern;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表一个锻造装饰配方。
+ * <p>原文：
  * Represents a smithing trim recipe.
  */
 public class SmithingTrimRecipe extends SmithingRecipe implements ComplexRecipe {
@@ -45,13 +48,22 @@ public class SmithingTrimRecipe extends SmithingRecipe implements ComplexRecipe 
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 创建一个锻造配方以产生指定的结果物品。
+     * <p>原文：
      * Create a smithing recipe to produce the specified result ItemStack.
      *
-     * @param key The unique recipe key
-     * @param template The template item ({@link RecipeChoice#empty()} can be used)
-     * @param base The base ingredient ({@link RecipeChoice#empty()} can be used)
-     * @param addition The addition ingredient ({@link RecipeChoice#empty()} can be used)
-     * @deprecated use {@link #SmithingTrimRecipe(NamespacedKey, RecipeChoice, RecipeChoice, RecipeChoice, TrimPattern)} instead
+     * @param key 配方的唯一键。
+     * <p>原文：The unique recipe key
+     * @param template 模板物品。
+     * <p>原文：The template item ({@link RecipeChoice#empty()} can be used)
+     * @param base 基础成分。
+     * <p>原文：The base ingredient ({@link RecipeChoice#empty()} can be used)
+     * @param addition 附加成分。
+     * <p>原文：The addition ingredient ({@link RecipeChoice#empty()} can be used)
+     * @deprecated 必须指定 trimPattern。
+     * <p>原文：Create a smithing recipe to produce the specified result ItemStack.
+     * <p>原文：use {@link #SmithingTrimRecipe(NamespacedKey, RecipeChoice, RecipeChoice, RecipeChoice, TrimPattern)} instead
      */
     @Deprecated(since = "1.21.5", forRemoval = true)
     public SmithingTrimRecipe(@NotNull NamespacedKey key, @NotNull RecipeChoice template, @NotNull RecipeChoice base, @NotNull RecipeChoice addition) {
@@ -74,9 +86,14 @@ public class SmithingTrimRecipe extends SmithingRecipe implements ComplexRecipe 
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取模板配方物品。
+     * <p>原文：
      * Get the template recipe item.
      *
-     * @return template choice
+     * @return 模板选择。
+     * <p>原文：Get the template recipe item.
+     * <p>原文：template choice
      */
     @NotNull
     public RecipeChoice getTemplate() {

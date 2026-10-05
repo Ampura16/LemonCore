@@ -19,14 +19,23 @@ public enum Particle implements Keyed {
     SMOKE("smoke"),
     LARGE_SMOKE("large_smoke"),
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用 {@link Spell} 作为数据类型。
+     * <p>原文：
      * Uses {@link Spell} as DataType
      */
     EFFECT("effect", Spell.class),
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用 {@link Spell} 作为数据类型。
+     * <p>原文：
      * Uses {@link Spell} as DataType
      */
     INSTANT_EFFECT("instant_effect", Spell.class),
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用 {@link Color} 作为数据类型。
+     * <p>原文：
      * Uses {@link Color} as DataType (with alpha support)
      */
     ENTITY_EFFECT("entity_effect", Color.class),
@@ -43,6 +52,9 @@ public enum Particle implements Keyed {
     LAVA("lava"),
     CLOUD("cloud"),
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用 {@link Particle.DustOptions} 作为数据类型。
+     * <p>原文：
      * Uses {@link DustOptions} as DataType
      */
     DUST("dust", DustOptions.class),
@@ -50,16 +62,25 @@ public enum Particle implements Keyed {
     ITEM_SLIME("item_slime"),
     HEART("heart"),
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用 {@link ItemStack} 作为数据类型。
+     * <p>原文：
      * Uses {@link ItemStack} as DataType
      */
     ITEM("item", ItemStack.class),
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用 {@link BlockData} 作为数据类型。
+     * <p>原文：
      * Uses {@link BlockData} as DataType
      */
     BLOCK("block", BlockData.class),
     RAIN("rain"),
     ELDER_GUARDIAN("elder_guardian"),
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用 {@link Float} 作为数据类型。
+     * <p>原文：
      * Uses {@link Float} as DataType, for the power of the breath
      */
     DRAGON_BREATH("dragon_breath", Float.class),
@@ -67,6 +88,9 @@ public enum Particle implements Keyed {
     DAMAGE_INDICATOR("damage_indicator"),
     SWEEP_ATTACK("sweep_attack"),
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用 {@link BlockData} 作为数据类型。
+     * <p>原文：
      * Uses {@link BlockData} as DataType
      */
     FALLING_DUST("falling_dust", BlockData.class),
@@ -83,6 +107,9 @@ public enum Particle implements Keyed {
     CAMPFIRE_SIGNAL_SMOKE("campfire_signal_smoke"),
     COMPOSTER("composter"),
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用 {@link Color} 作为数据类型。
+     * <p>原文：
      * Uses {@link Color} as DataType
      */
     FLASH("flash", Color.class),
@@ -104,10 +131,16 @@ public enum Particle implements Keyed {
     REVERSE_PORTAL("reverse_portal"),
     WHITE_ASH("white_ash"),
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用 {@link DustTransition} 作为数据类型。
+     * <p>原文：
      * Uses {@link DustTransition} as DataType
      */
     DUST_COLOR_TRANSITION("dust_color_transition", DustTransition.class),
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用 {@link Vibration} 作为数据类型。
+     * <p>原文：
      * Uses {@link Vibration} as DataType
      */
     VIBRATION("vibration", Vibration.class),
@@ -128,17 +161,26 @@ public enum Particle implements Keyed {
     SONIC_BOOM("sonic_boom"),
     SCULK_SOUL("sculk_soul"),
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用 {@link Float} 作为数据类型。
+     * <p>原文：
      * Uses {@link Float} as DataType, the angle in radians
      */
     SCULK_CHARGE("sculk_charge", Float.class),
     SCULK_CHARGE_POP("sculk_charge_pop"),
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用 {@link Integer} 作为数据类型。
+     * <p>原文：
      * Uses {@link Integer} as DataType
      */
     SHRIEK("shriek", Integer.class),
     CHERRY_LEAVES("cherry_leaves"),
     PALE_OAK_LEAVES("pale_oak_leaves"),
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用 {@link Color} 作为数据类型。
+     * <p>原文：
      * Uses {@link Color} as DataType
      */
     TINTED_LEAVES("tinted_leaves", Color.class),
@@ -155,15 +197,24 @@ public enum Particle implements Keyed {
     INFESTED("infested"),
     ITEM_COBWEB("item_cobweb"),
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用 {@link BlockData} 作为数据类型。
+     * <p>原文：
      * Uses {@link BlockData} as DataType
      */
     DUST_PILLAR("dust_pillar", BlockData.class),
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用 {@link BlockData} 作为数据类型。
+     * <p>原文：
      * Uses {@link BlockData} as DataType
      */
     BLOCK_CRUMBLE("block_crumble", BlockData.class),
     FIREFLY("firefly"),
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用 {@link Trail} 作为数据类型。
+     * <p>原文：
      * Uses {@link Trail} as DataType
      */
     TRAIL("trail", Trail.class),
@@ -171,6 +222,9 @@ public enum Particle implements Keyed {
     RAID_OMEN("raid_omen"),
     TRIAL_OMEN("trial_omen"),
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用 {@link BlockData} 作为数据类型。
+     * <p>原文：
      * Uses {@link BlockData} as DataType
      */
     BLOCK_MARKER("block_marker", BlockData.class),
@@ -199,8 +253,16 @@ public enum Particle implements Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回粒子所需的数据类型。
+     * <p>原文：
      * Returns the required data type for the particle
-     * @return the required data type
+     *
+     * @return 所需的数据类型。
+     *
+     * 原文：
+     * Returns the required data type for the particle
+     * <p>原文：the required data type
      */
     @NotNull
     public Class<?> getDataType() {
@@ -230,6 +292,9 @@ public enum Particle implements Keyed {
     // Paper end
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 可以应用于红石粉粒子的选项 - 粒子颜色和大小。
+     * <p>原文：
      * Options which can be applied to dust particles - a particle
      * color and size.
      */
@@ -245,9 +310,16 @@ public enum Particle implements Keyed {
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 要显示的粒子的颜色。
+         * <p>原文：
          * The color of the particles to be displayed.
          *
-         * @return particle color
+         * @return 粒子颜色。
+         *
+         * 原文：
+         * The color of the particles to be displayed.
+         * <p>原文：particle color
          */
         @NotNull
         public Color getColor() {
@@ -255,9 +327,16 @@ public enum Particle implements Keyed {
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 粒子的相对大小。
+         * <p>原文：
          * Relative size of the particle.
          *
-         * @return relative particle size
+         * @return 粒子的相对大小。
+         *
+         * 原文：
+         * Relative size of the particle.
+         * <p>原文：relative particle size
          */
         public float getSize() {
             return size;
@@ -265,6 +344,9 @@ public enum Particle implements Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 可以应用于颜色渐变粒子的选项。
+     * <p>原文：
      * Options which can be applied to a color transitioning dust particles.
      */
     public static class DustTransition extends DustOptions {
@@ -279,9 +361,16 @@ public enum Particle implements Keyed {
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 要显示的粒子的最终颜色。
+         * <p>原文：
          * The final of the particles to be displayed.
          *
-         * @return final particle color
+         * @return 粒子的最终颜色。
+         *
+         * 原文：
+         * The final of the particles to be displayed.
+         * <p>原文：final particle color
          */
         @NotNull
         public Color getToColor() {
@@ -290,6 +379,9 @@ public enum Particle implements Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 可以应用于轨迹粒子的选项 - 位置、颜色和持续时间。
+     * <p>原文：
      * Options which can be applied to trail particles - a location, color and duration.
      */
     public static class Trail {
@@ -305,9 +397,16 @@ public enum Particle implements Keyed {
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 要显示的粒子的目标。
+         * <p>原文：
          * The target of the particles to be displayed.
          *
-         * @return particle target
+         * @return 粒子目标。
+         *
+         * 原文：
+         * The target of the particles to be displayed.
+         * <p>原文：particle target
          */
         @NotNull
         public Location getTarget() {
@@ -315,9 +414,16 @@ public enum Particle implements Keyed {
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 要显示的粒子的颜色。
+         * <p>原文：
          * The color of the particles to be displayed.
          *
-         * @return particle color
+         * @return 粒子颜色。
+         *
+         * 原文：
+         * The color of the particles to be displayed.
+         * <p>原文：particle color
          */
         @NotNull
         public Color getColor() {
@@ -325,15 +431,26 @@ public enum Particle implements Keyed {
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 要显示的轨迹的持续时间。
+         * <p>原文：
          * The duration of the trail to be displayed.
          *
-         * @return trail duration
+         * @return 轨迹持续时间。
+         *
+         * 原文：
+         * The duration of the trail to be displayed.
+         * <p>原文：trail duration
          */
         public int getDuration() {
             return duration;
         }
     }
 
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 可以应用于法术效果粒子的选项 - 颜色和强度。
+     */
     public static class Spell {
 
         private final Color color;
@@ -345,18 +462,32 @@ public enum Particle implements Keyed {
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 要显示的粒子的颜色。
+         * <p>原文：
          * The color of the particles to be displayed.
          *
-         * @return particle color
+         * @return 粒子颜色。
+         *
+         * 原文：
+         * The color of the particles to be displayed.
+         * <p>原文：particle color
          */
         public @NotNull Color getColor() {
             return color;
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 要显示的效果的强度。
+         * <p>原文：
          * The power of the particles to be displayed.
          *
-         * @return particle power
+         * @return 强度。
+         *
+         * 原文：
+         * The power of the effect to be displayed.
+         * <p>原文：particle power
          */
         public float getPower() {
             return power;

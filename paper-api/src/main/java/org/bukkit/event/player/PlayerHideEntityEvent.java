@@ -7,6 +7,13 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当对玩家隐藏可见实体时触发.
+ * <br>
+ * 此事件仅在实体的可见性状态实际改变时触发.
+ * <br>
+ * 无论实体是否在追踪范围内，此事件都会触发.
+ * <p>原文：
  * Called when a visible entity is hidden from a player.
  * <br>
  * This event is only called when the entity's visibility status is actually
@@ -29,9 +36,13 @@ public class PlayerHideEntityEvent extends PlayerEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取已对玩家隐藏的实体.
+     * <p>原文：
      * Gets the entity which has been hidden from the player.
      *
-     * @return the hidden entity
+     * @return 被隐藏的实体
+     * <p>原文：the hidden entity
      */
     @NotNull
     public Entity getEntity() {

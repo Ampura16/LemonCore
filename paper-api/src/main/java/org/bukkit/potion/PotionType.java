@@ -11,6 +11,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 药水种类枚举, 反应并匹配创造模式物品栏中可获取的每种药水的状态.
+ * <p>原文：
  * This enum reflects and matches each potion state that can be obtained from
  * the Creative mode inventory
  */
@@ -73,8 +76,13 @@ public enum PotionType implements Keyed, io.papermc.paper.world.flag.FeatureDepe
     }
 
     /**
-     * @return the potion effect type of this potion type
-     * @deprecated Potions can have multiple effects use {@link #getPotionEffects()}
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @return 此药水类型的状态效果类型
+     * <p>原文：the potion effect type of this potion type
+     * @deprecated 药水可以有多种效果, 请使用 {@link #getPotionEffects()}
+     * <p>原文：Potions can have multiple effects use {@link #getPotionEffects()}
      */
     @Nullable
     @Deprecated(since = "1.20.2")
@@ -83,7 +91,11 @@ public enum PotionType implements Keyed, io.papermc.paper.world.flag.FeatureDepe
     }
 
     /**
-     * @return a list of all effects this potion type has
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @return 此药水类型拥有的所有效果列表
+     * <p>原文：a list of all effects this potion type has
      */
     @NotNull
     public List<PotionEffect> getPotionEffects() {
@@ -91,8 +103,14 @@ public enum PotionType implements Keyed, io.papermc.paper.world.flag.FeatureDepe
     }
 
     /**
-     * @return if this potion type is instant
-     * @deprecated PotionType can have multiple effects, some of which can be instant and others not.
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @return 此药水类型是否为瞬间效果
+     * <p>原文：if this potion type is instant
+     * @deprecated PotionType 可以有多种效果, 其中一些可能是瞬间效果, 其他则不是.
+     * 请结合使用 {@link PotionEffectType#isInstant()}、{@link #getPotionEffects()} 和 {@link PotionEffect#getType()}
+     * <p>原文：PotionType can have multiple effects, some of which can be instant and others not.
      * Use {@link PotionEffectType#isInstant()} in combination with {@link #getPotionEffects()} and {@link PotionEffect#getType()}
      */
     @Deprecated(since = "1.20.2")
@@ -101,34 +119,55 @@ public enum PotionType implements Keyed, io.papermc.paper.world.flag.FeatureDepe
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检测此类药水是否可升级.
+     * 意思是药水是否有二阶增强版本, 比如再生药水 II.
+     * <p>原文：
      * Checks if the potion type has an upgraded state.
      * This refers to whether or not the potion type can be Tier 2,
      * such as Potion of Fire Resistance II.
      *
-     * @return true if the potion type can be upgraded;
+     * @return 此类药水是否可升级
+     * <p>原文：true if the potion type can be upgraded;
      */
     public boolean isUpgradeable() {
         return internalPotionDataSupplier.get().isUpgradeable();
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检测此类药水是否有时长延长状态 (指时长延长版药水).
+     * <p>原文：
      * Checks if the potion type has an extended state.
      * This refers to the extended duration potions
      *
-     * @return true if the potion type can be extended
+     * @return 是否有时长延长版
+     * <p>原文：true if the potion type can be extended
      */
     public boolean isExtendable() {
         return internalPotionDataSupplier.get().isExtendable();
     }
 
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获得此药水类型的最大等级.
+     *
+     * @return 最大等级
+     */
     public int getMaxLevel() {
         return internalPotionDataSupplier.get().getMaxLevel();
     }
 
     /**
-     * @param effectType the effect to get by
-     * @return the matching potion type
-     * @deprecated Misleading
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @param effectType 根据何种状态效果获取对应药水类型
+     * <p>原文：the effect to get by
+     * @return 匹配的药水类型
+     * <p>原文：the matching potion type
+     * @deprecated 有误导性
+     * <p>原文：Misleading
      */
     @Deprecated(since = "1.9")
     @Nullable
@@ -149,7 +188,11 @@ public enum PotionType implements Keyed, io.papermc.paper.world.flag.FeatureDepe
     }
 
     /**
-     * @deprecated Do not use, interface will get removed, and the plugin won't run
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @deprecated 请勿使用, 该接口将被移除, 插件将无法运作
+     * <p>原文：Do not use, interface will get removed, and the plugin won't run
      */
     @Deprecated(since = "1.20.2", forRemoval = true)
     @ApiStatus.Internal

@@ -7,6 +7,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * BooleanPrompt是那些需要用户判断操作是与否的提示的基类.
+ * <p>原文：
  * BooleanPrompt is the base class for any prompt that requires a boolean
  * response from the user.
  *
@@ -38,12 +41,18 @@ public abstract class BooleanPrompt extends ValidatingPrompt {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 您可以重写这个方法，根据用户对提示的响应来执行对应的操作.
+     * <p>原文：
      * Override this method to perform some action with the user's boolean
      * response.
      *
-     * @param context Context information about the conversation.
-     * @param input The user's boolean response.
-     * @return The next {@link Prompt} in the prompt graph.
+     * @param context 关于这个会话的Context 信息
+     * <p>原文：Context information about the conversation.
+     * @param input 用户响应的布尔值(true/false)
+     * <p>原文：The user's boolean response.
+     * @return 对话流程中的下一个 {@link Prompt}
+     * <p>原文：The next {@link Prompt} in the prompt graph.
      */
     @Nullable
     protected abstract Prompt acceptValidatedInput(@NotNull ConversationContext context, boolean input);

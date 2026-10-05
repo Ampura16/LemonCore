@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当实体创建物品掉落时触发。
+ * <p>原文：
  * Thrown when an entity creates an item drop.
  */
 public class EntityDropItemEvent extends EntityEvent implements Cancellable {
@@ -24,9 +27,13 @@ public class EntityDropItemEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取实体创建的物品。
+     * <p>原文：
      * Gets the Item created by the entity
      *
-     * @return Item created by the entity
+     * @return 实体创建的物品
+     * <p>原文：Item created by the entity
      */
     @NotNull
     public Item getItemDrop() {

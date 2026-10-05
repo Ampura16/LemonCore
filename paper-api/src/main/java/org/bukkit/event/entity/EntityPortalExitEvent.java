@@ -8,6 +8,11 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 在实体退出传送门前触发本事件.
+ * <p>
+ * 本事件允许你修改实体退出传送门之后的速度.
+ * <p>原文：
  * Called before an entity exits a portal.
  * <p>
  * This event allows you to modify the velocity of the entity after they have
@@ -31,10 +36,14 @@ public class EntityPortalExitEvent extends EntityTeleportEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取实体进入传送门前的速度的副本.
+     * <p>原文：
      * Gets a copy of the velocity that the entity has before entering the
      * portal.
      *
-     * @return velocity of entity before entering the portal
+     * @return 实体进入传送门前的速度的副本
+     * <p>原文：velocity of entity before entering the portal
      */
     @NotNull
     public Vector getBefore() {
@@ -42,10 +51,14 @@ public class EntityPortalExitEvent extends EntityTeleportEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取实体退出传送门后的速度的副本.
+     * <p>原文：
      * Gets a copy of the velocity that the entity will have after exiting the
      * portal.
      *
-     * @return velocity of entity after exiting the portal
+     * @return 实体退出传送门后的速度的副本
+     * <p>原文：velocity of entity after exiting the portal
      */
     @NotNull
     public Vector getAfter() {
@@ -53,9 +66,13 @@ public class EntityPortalExitEvent extends EntityTeleportEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置实体退出传送门后的速度.
+     * <p>原文：
      * Sets the velocity that the entity will have after exiting the portal.
      *
-     * @param after the velocity after exiting the portal
+     * @param after 实体退出传送门后的速度
+     * <p>原文：the velocity after exiting the portal
      */
     public void setAfter(@NotNull Vector after) {
         this.after = after.clone();

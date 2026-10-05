@@ -7,6 +7,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当一个世界被卸载时调用.
+ * <p>原文：
  * Called when a World is unloaded
  */
 public class WorldUnloadEvent extends WorldEvent implements Cancellable {

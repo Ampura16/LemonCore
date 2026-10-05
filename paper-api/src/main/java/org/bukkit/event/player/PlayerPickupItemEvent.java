@@ -10,7 +10,11 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 玩家捡起掉落物品事件.
+ * <p>原文：
  * Thrown when a player picks an item up from the ground
+ *
  * @deprecated {@link EntityPickupItemEvent}
  */
 @Deprecated(since = "1.12")
@@ -33,9 +37,13 @@ public class PlayerPickupItemEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获得此玩家在地面捡起的物品.
+     * <p>原文：
      * Gets the Item picked up by the player.
      *
-     * @return Item
+     * @return 此掉落物品
+     * <p>原文：Item
      */
     @NotNull
     public Item getItem() {
@@ -43,9 +51,13 @@ public class PlayerPickupItemEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获得地面剩余掉落物品数量(如果有的话).
+     * <p>原文：
      * Gets the amount remaining on the ground, if any
      *
-     * @return amount remaining on the ground
+     * @return 剩余掉落物品数量
+     * <p>原文：amount remaining on the ground
      */
     public int getRemaining() {
         return this.remaining;

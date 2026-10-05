@@ -4,6 +4,9 @@ import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 包含了关于{@link Plugin}注册的插件通道的信息.
+ * <p>原文：
  * Contains information about a {@link Plugin}s registration to a plugin
  * channel.
  */
@@ -34,9 +37,13 @@ public final class PluginMessageListenerRegistration {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取插件注册的插件通道.
+     * <p>原文：
      * Gets the plugin channel that this registration is about.
      *
-     * @return Plugin channel.
+     * @return 插件通道
+     * <p>原文：Plugin channel.
      */
     @NotNull
     public String getChannel() {
@@ -44,9 +51,13 @@ public final class PluginMessageListenerRegistration {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这个注册所描述的监听器.
+     * <p>原文：
      * Gets the registered listener described by this registration.
      *
-     * @return Registered listener.
+     * @return 注册的监听器
+     * <p>原文：Registered listener.
      */
     @NotNull
     public PluginMessageListener getListener() {
@@ -54,9 +65,13 @@ public final class PluginMessageListenerRegistration {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这个注册的相关的插件.
+     * <p>原文：
      * Gets the plugin that this registration is for.
      *
-     * @return Registered plugin.
+     * @return 注册的插件
+     * <p>原文：Registered plugin.
      */
     @NotNull
     public Plugin getPlugin() {
@@ -64,9 +79,13 @@ public final class PluginMessageListenerRegistration {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检测这个注册是否仍然有效.
+     * <p>原文：
      * Checks if this registration is still valid.
      *
-     * @return True if this registration is still valid, otherwise false.
+     * @return 如果这个注册还有效则为true，false反之
+     * <p>原文：True if this registration is still valid, otherwise false.
      */
     public boolean isValid() {
         return messenger.isRegistrationValid(this);

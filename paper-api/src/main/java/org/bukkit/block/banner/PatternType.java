@@ -126,23 +126,33 @@ public interface PatternType extends OldEnum<PatternType>, Keyed {
     public NamespacedKey getKey();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回用于表示这种图案类型的标识符.
+     * <p>原文：
      * Returns the identifier used to represent
      * this pattern type
      *
-     * @return the pattern's identifier
+     * @return 图案的标识符
+     * <p>原文：the pattern's identifier
      * @see #getKey
-     * @deprecated magic value
+     * @deprecated 魔法值
+     * <p>原文：magic value
      */
     @NotNull
     @Deprecated(since = "1.20.4", forRemoval = true)
     public String getIdentifier();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回与标识符匹配的图案, 如果找不到匹配的图案类型, 将返回 null.
+     * <p>原文：
      * Returns the pattern type which matches the passed
      * identifier or null if no matches are found
      *
-     * @param identifier the identifier
-     * @return the matched pattern type or null
+     * @param identifier 标识符
+     * <p>原文：the identifier
+     * @return 匹配的图案类型或 null
+     * <p>原文：the matched pattern type or null
      * @deprecated magic value, use {@link Registry#get(NamespacedKey)} instead with {@link io.papermc.paper.registry.RegistryAccess#getRegistry(io.papermc.paper.registry.RegistryKey)} and {@link io.papermc.paper.registry.RegistryKey#BANNER_PATTERN}
      */
     @Contract("null -> null")
@@ -168,9 +178,15 @@ public interface PatternType extends OldEnum<PatternType>, Keyed {
     }
 
     /**
-     * @param name of the pattern type.
-     * @return the pattern type with the given name.
-     * @deprecated only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @param name 图案类型的名称.
+     * <p>原文：of the pattern type.
+     * @return 具有给定名称的图案类型.
+     * <p>原文：the pattern type with the given name.
+     * @deprecated 仅用于向后兼容，请使用 {@link Registry#get(NamespacedKey)} 代替.
+     * <p>原文：only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
      */
     @NotNull
     @Deprecated(since = "1.21", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils
@@ -182,8 +198,13 @@ public interface PatternType extends OldEnum<PatternType>, Keyed {
     }
 
     /**
-     * @return an array of all known pattern types.
-     * @deprecated use {@link Registry#stream()}.
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @return 所有已知图案类型的数组.
+     * <p>原文：an array of all known pattern types.
+     * @deprecated 请使用 {@link Registry#iterator()}.
+     * <p>原文：use {@link Registry#stream()}.
      */
     @NotNull
     @Deprecated(since = "1.21", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils

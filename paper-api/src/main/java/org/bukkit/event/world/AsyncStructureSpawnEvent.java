@@ -9,6 +9,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当 {@link Structure} 在世界中自然生成时触发。
+ * <p>原文：
  * Called when a {@link Structure} is naturally generated in the world.
  */
 public class AsyncStructureSpawnEvent extends WorldEvent implements Cancellable {
@@ -32,9 +35,14 @@ public class AsyncStructureSpawnEvent extends WorldEvent implements Cancellable 
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取生成的结构引用。
+     * <p>原文：
      * Get the structure reference that is generated.
      *
-     * @return the structure
+     * @return 结构
+     * <p>原文：Get the structure reference that is generated.
+     * <p>原文：the structure
      */
     @NotNull
     public Structure getStructure() {
@@ -42,9 +50,14 @@ public class AsyncStructureSpawnEvent extends WorldEvent implements Cancellable 
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取结构的边界框。
+     * <p>原文：
      * Get the bounding box of the structure.
      *
-     * @return the bounding box
+     * @return 边界框
+     * <p>原文：Get the bounding box of the structure.
+     * <p>原文：the bounding box
      */
     @NotNull
     public BoundingBox getBoundingBox() {
@@ -52,24 +65,38 @@ public class AsyncStructureSpawnEvent extends WorldEvent implements Cancellable 
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取结构起始区块的 x 坐标。
+     *
+     * <b>注意，尝试检索或与此区块交互是不安全的。此事件仅供参考！</b>
+     * <p>原文：
      * Get the x coordinate of the origin chunk of the structure.
      * <p>
      * <b>Note, it is not safe to attempt to retrieve or interact with this
      * chunk. This event is informative only!</b>
      *
-     * @return the chunk x coordinate
+     * @return 区块的 x 坐标
+     * <p>原文：Get the x coordinate of the origin chunk of the structure.
+     * <p>原文：the chunk x coordinate
      */
     public int getChunkX() {
         return this.chunkX;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取结构起始区块的 z 坐标。
+     *
+     * <b>注意，尝试检索或与此区块交互是不安全的。此事件仅供参考！</b>
+     * <p>原文：
      * Get the z coordinate of the origin chunk of the structure.
      * <p>
      * <b>Note, it is not safe to attempt to retrieve or interact with this
      * chunk. This event is informative only!</b>
      *
-     * @return the chunk z coordinate
+     * @return 区块的 z 坐标
+     * <p>原文：Get the z coordinate of the origin chunk of the structure.
+     * <p>原文：the chunk z coordinate
      */
     public int getChunkZ() {
         return this.chunkZ;

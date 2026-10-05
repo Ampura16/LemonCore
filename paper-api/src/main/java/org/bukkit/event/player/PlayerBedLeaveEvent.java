@@ -9,6 +9,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 玩家离开床时触发此事件.
+ * <p>原文：
  * This event is fired when the player is leaving a bed.
  */
 public class PlayerBedLeaveEvent extends PlayerEvent implements Cancellable {
@@ -27,9 +30,13 @@ public class PlayerBedLeaveEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回此事件涉及的床.
+     * <p>原文：
      * Returns the bed block involved in this event.
      *
-     * @return the bed block involved in this event
+     * @return 床
+     * <p>原文：the bed block involved in this event
      */
     @NotNull
     public Block getBed() {

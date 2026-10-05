@@ -10,6 +10,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 玩家准备躺到床上时触发此事件.
+ * <p>原文：
  * This event is fired when the player is almost about to enter the bed.
  */
 public class PlayerBedEnterEvent extends PlayerEvent implements Cancellable {
@@ -30,9 +33,13 @@ public class PlayerBedEnterEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回此事件涉及的床.
+     * <p>原文：
      * Returns the bed block involved in this event.
      *
-     * @return the bed block involved in this event
+     * @return 床
+     * <p>原文：the bed block involved in this event
      */
     @NotNull
     public Block getBed() {
@@ -40,9 +47,13 @@ public class PlayerBedEnterEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 描述此事件的默认结果.
+     * <p>原文：
      * This describes the default outcome of this event.
      *
-     * @return the bed enter result representing the default outcome of this event
+     * @return 表示此事件默认结果的床进入结果
+     * <p>原文：the bed enter result representing the default outcome of this event
      * @deprecated This enum has been replaced with a system that better
      * represents how beds work. See {@link #enterAction}
      */
@@ -63,12 +74,16 @@ public class PlayerBedEnterEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 控制对点击的床采取的操作.
+     * <p>原文：
      * This controls the action to take with the bed that was clicked on.
      * <p>
      * In case of {@link Result#DEFAULT}, the default outcome is described by
      * {@link #enterAction()}.
      *
-     * @return the action to take with the interacted bed
+     * @return 对交互的床采取的操作
+     * <p>原文：the action to take with the interacted bed
      * @see #setUseBed(Result)
      */
     @NotNull
@@ -77,6 +92,9 @@ public class PlayerBedEnterEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置对交互的床采取的操作.
+     * <p>原文：
      * Sets the action to take with the interacted bed.
      * <p>
      * {@link Result#ALLOW} will result in the player sleeping, regardless of
@@ -88,7 +106,8 @@ public class PlayerBedEnterEvent extends PlayerEvent implements Cancellable {
      * {@link Result#DEFAULT} will result in the outcome described by
      * {@link #enterAction()}.
      *
-     * @param useBed the action to take with the interacted bed
+     * @param useBed 对交互的床采取的操作
+     * <p>原文：the action to take with the interacted bed
      * @see #useBed()
      */
     public void setUseBed(@NotNull Result useBed) {
@@ -96,6 +115,9 @@ public class PlayerBedEnterEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此事件的取消状态。设置为 true 以阻止玩家睡觉.
+     * <p>原文：
      * Gets the cancellation state of this event. Set to {@code true} if you want to
      * prevent the player from sleeping.
      * <p>
@@ -106,7 +128,8 @@ public class PlayerBedEnterEvent extends PlayerEvent implements Cancellable {
      * {@link #useBed()} is {@link Result#DEFAULT} and the
      * {@link #enterAction() default action} is to prevent bed entering.
      *
-     * @return boolean cancellation state
+     * @return 布尔值取消状态
+     * <p>原文：boolean cancellation state
      */
     @Override
     public boolean isCancelled() {
@@ -114,9 +137,14 @@ public class PlayerBedEnterEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此事件的取消状态。取消的事件不会在服务器中执行，但仍会传递给其他插件.
+     * <p>原文：
      * {@inheritDoc}
      * <p>
      * Canceling this event will prevent use of the bed.
+     *
+     * @param cancel 如果希望取消此事件则为 true
      */
     @Override
     public void setCancelled(boolean cancel) {
@@ -135,6 +163,9 @@ public class PlayerBedEnterEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 表示此事件的默认可能结果.
+     * <p>原文：
      * Represents the default possible outcomes of this event.
      *
      * @deprecated Enums no longer represents reliably how beds work and fail. This has been
@@ -143,6 +174,9 @@ public class PlayerBedEnterEvent extends PlayerEvent implements Cancellable {
     @ApiStatus.Obsolete(since = "1.21.11")
     public enum BedEnterResult {
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 玩家将进入床.
+         * <p>原文：
          * The player will enter the bed.
          */
         OK,
@@ -156,6 +190,11 @@ public class PlayerBedEnterEvent extends PlayerEvent implements Cancellable {
          */
         NOT_POSSIBLE_HERE,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 由于当前不是夜晚也不是雷暴天气，进入床被阻止.
+         * <p>
+         * 如果在白天强制允许此事件，玩家将进入床（并设置其床位置），但可能会立即被弹出.
+         * <p>原文：
          * Entering the bed is prevented due to it not being night nor
          * thundering currently.
          * <p>
@@ -165,6 +204,9 @@ public class PlayerBedEnterEvent extends PlayerEvent implements Cancellable {
          */
         NOT_POSSIBLE_NOW,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 由于玩家距离太远，进入床被阻止.
+         * <p>原文：
          * Entering the bed is prevented due to the player being too far away.
          */
         TOO_FAR_AWAY,
@@ -173,10 +215,16 @@ public class PlayerBedEnterEvent extends PlayerEvent implements Cancellable {
          */
         OBSTRUCTED,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 由于附近有怪物，进入床被阻止.
+         * <p>原文：
          * Entering the bed is prevented due to there being monsters nearby.
          */
         NOT_SAFE,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 由于存在其他问题，进入床被阻止.
+         * <p>原文：
          * Entering the bed is prevented due to there being some other problem.
          */
         OTHER_PROBLEM,

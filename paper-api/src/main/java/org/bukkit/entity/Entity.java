@@ -32,6 +32,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 表示世界中的基本实体.
+ * <p>
+ * 当 {@link #isInWorld()} 返回 false 时, 不保证所有方法都可用/或者有副作用.
+ * <p>原文：
  * Represents a base entity in the world
  * <p>
  * Not all methods are guaranteed to work/may have side effects when
@@ -40,98 +45,152 @@ import org.jetbrains.annotations.Nullable;
 public interface Entity extends Metadatable, CommandSender, Nameable, PersistentDataHolder, net.kyori.adventure.text.event.HoverEventSource<net.kyori.adventure.text.event.HoverEvent.ShowEntity>, net.kyori.adventure.sound.Sound.Emitter, DataComponentView { // Paper
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取实体当前位置
+     * <p>原文：
      * Gets the entity's current position
      *
-     * @return a new copy of Location containing the position of this entity
+     * @return 一个新的 Location, 包含此实体的位置
+     * <p>原文：a new copy of Location containing the position of this entity
      */
     @NotNull
     public Location getLocation();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将实体的当前位置存储到提供的Location中.
+     * <br>
+     * 如果提供的Location为null，则此方法不会执行任何操作并返回null.
+     * <p>原文：
      * Stores the entity's current position in the provided Location object.
      * <p>
      * If the provided Location is null this method does nothing and returns
      * null.
      *
-     * @param loc the location to copy into
-     * @return The Location object provided or null
+     * @param loc 要复制到的Location实例
+     * <p>原文：the location to copy into
+     * @return 提供的Location或null
+     * <p>原文：The Location object provided or null
      */
     @Contract("null -> null; !null -> !null")
     @Nullable
     public Location getLocation(@Nullable Location loc);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此实体的速度 (单位: 米每tick).
+     * <p>原文：
      * Sets this entity's velocity in meters per tick
      *
-     * @param velocity New velocity to travel with
+     * @param velocity 新的行进速度(向量)
+     * <p>原文：New velocity to travel with
      */
     public void setVelocity(@NotNull Vector velocity);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此实体的速度.
+     * <p>原文：
      * Gets this entity's current velocity
      *
-     * @return Current traveling velocity of this entity
+     * @return 实体当前行进速度(向量)
+     * <p>原文：Current traveling velocity of this entity
      */
     @NotNull
     public Vector getVelocity();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取实体高度
+     * <p>原文：
      * Gets the entity's height
      *
-     * @return height of entity
+     * @return 实体高度
+     * <p>原文：height of entity
      */
     public double getHeight();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取实体宽度
+     * <p>原文：
      * Gets the entity's width
      *
-     * @return width of entity
+     * @return 实体宽度
+     * <p>原文：width of entity
      */
     public double getWidth();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取实体当前的边界框.
+     * <p>
+     * 返回的边界框反映了实体的当前位置和大小.
+     * <p>原文：
      * Gets the entity's current bounding box.
      * <p>
      * The returned bounding box reflects the entity's current location and
      * size.
      *
-     * @return the entity's current bounding box
+     * @return 实体当前的边界框
+     * <p>原文：the entity's current bounding box
      */
     @NotNull
     public BoundingBox getBoundingBox();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回实体是否站在地面上.
+     * <br>
+     * 此值状态由服务器更新, 除非实体移动，否则不会重新计算.
+     * <p>原文：
      * Returns true if the entity is supported by a block. This value is a
      * state updated by the server and is not recalculated unless the entity
      * moves.
      *
-     * @return True if entity is on ground.
+     * @return 实体是否站在地上
+     * <p>原文：True if entity is on ground.
      * @see Player#isOnGround()
      */
     public boolean isOnGround();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回实体是否在水中.
+     * <p>原文：
      * Returns true if the entity is in water.
      *
-     * @return <code>true</code> if the entity is in water.
+     * @return 实体是否在水中
+     * <p>原文：<code>true</code> if the entity is in water.
      */
     public boolean isInWater();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取实体当前所在的世界
+     * <p>原文：
      * Gets the current world this entity resides in
      *
-     * @return World
+     * @return 世界
+     * <p>原文：World
      */
     @NotNull
     public World getWorld();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置实体的旋转角度.
+     * <p>
+     * 注意: 如果实体受 AI 影响, AI 可能会覆盖此旋转.
+     * <p>原文：
      * Sets the entity's rotation.
      * <p>
      * Note that if the entity is affected by AI, it may override this rotation.
      *
-     * @param yaw the yaw
-     * @param pitch the pitch
+     * @param yaw 偏航角
+     * <p>原文：the yaw
+     * @param pitch 俯仰角
+     * <p>原文：the pitch
      */
     public void setRotation(float yaw, float pitch);
 
@@ -189,6 +248,11 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
     // Paper end - Teleport API
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将此实体传送到给定位置.
+     * <br>
+     * 如果该实体乘坐载具, 则在传送之前卸下载具.
+     * <p>原文：
      * Teleports this entity to the given location.
      * <p>
      * Note: This uses default in game behavior for teleportation, especially in regard to handling
@@ -196,12 +260,19 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * with passengers across dimensions is not supported and will cause this to return false. This behavior may
      * change in future versions.
      *
-     * @param location New location to teleport this entity to
-     * @return <code>true</code> if the teleport was successful
+     * @param location 此实体要传送到的新位置
+     * <p>原文：New location to teleport this entity to
+     * @return 是否传送成功
+     * <p>原文：<code>true</code> if the teleport was successful
      */
     public boolean teleport(@NotNull Location location);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将此实体传送到给定位置.
+     * <br>
+     * 如果该实体乘坐载具, 则在传送之前卸下载具.
+     * <p>原文：
      * Teleports this entity to the given location.
      * <p>
      * Note: This uses default in game behavior for teleportation, especially in regard to handling
@@ -209,13 +280,21 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * with passengers across dimensions is not supported and will cause this to return false. This behavior may
      * change in future versions.
      *
-     * @param location New location to teleport this entity to
-     * @param cause The cause of this teleportation
-     * @return <code>true</code> if the teleport was successful
+     * @param location 此实体要传送到的新位置
+     * <p>原文：New location to teleport this entity to
+     * @param cause 传送原因
+     * <p>原文：The cause of this teleportation
+     * @return 是否传送成功
+     * <p>原文：<code>true</code> if the teleport was successful
      */
     public boolean teleport(@NotNull Location location, @NotNull TeleportCause cause);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将此实体传送到目标实体.
+     * <br>
+     * 如果该实体乘坐载具, 则在传送之前离开载具.
+     * <p>原文：
      * Teleports this entity to the target Entity.
      * <p>
      * Note: This uses default in game behavior for teleportation, especially in regard to handling
@@ -223,12 +302,19 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * with passengers across dimensions is not supported and will cause this to return false. This behavior may
      * change in future versions.
      *
-     * @param destination Entity to teleport this entity to
-     * @return <code>true</code> if the teleport was successful
+     * @param destination 目标实体
+     * <p>原文：Entity to teleport this entity to
+     * @return 是否传送成功
+     * <p>原文：<code>true</code> if the teleport was successful
      */
     public boolean teleport(@NotNull Entity destination);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将此实体传送到目标实体.
+     * <br>
+     * 如果该实体乘坐载具, 则在传送之前离开载具.
+     * <p>原文：
      * Teleports this entity to the target Entity.
      * <p>
      * Note: This uses default in game behavior for teleportation, especially in regard to handling
@@ -236,9 +322,12 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * with passengers across dimensions is not supported and will cause this to return false. This behavior may
      * change in future versions.
      *
-     * @param destination Entity to teleport this entity to
-     * @param cause The cause of this teleportation
-     * @return <code>true</code> if the teleport was successful
+     * @param destination 目标实体
+     * <p>原文：Entity to teleport this entity to
+     * @param cause 传送原因
+     * <p>原文：The cause of this teleportation
+     * @return 是否传送成功
+     * <p>原文：<code>true</code> if the teleport was successful
      */
     public boolean teleport(@NotNull Entity destination, @NotNull TeleportCause cause);
 
@@ -311,57 +400,84 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
     // Paper end
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回以此实体为中心的边界框内的所有实体.
+     * <p>原文：
      * Returns a list of entities within a bounding box centered around this
      * entity
      *
-     * @param x 1/2 the size of the box along x axis
-     * @param y 1/2 the size of the box along y axis
-     * @param z 1/2 the size of the box along z axis
-     * @return {@code List<Entity>} List of entities nearby
+     * @param x 边界框X轴半径
+     * <p>原文：1/2 the size of the box along x axis
+     * @param y 边界框Y轴半径
+     * <p>原文：1/2 the size of the box along y axis
+     * @param z 边界框Z轴半径
+     * <p>原文：1/2 the size of the box along z axis
+     * @return {@code List<Entity>} 附近的实体列表
+     * <p>原文：{@code List<Entity>} List of entities nearby
      */
     @NotNull
     public List<org.bukkit.entity.Entity> getNearbyEntities(double x, double y, double z);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回此实体的唯一ID
+     * <p>原文：
      * Returns the network protocol ID for this entity. This is
      * not to be used as an identifier for the entity except in
      * network-related operations. Use {@link #getUniqueId()} as
      * an entity identifier instead.
      *
-     * @return the network protocol ID
+     * @return 实体ID
+     * <p>原文：the network protocol ID
      * @see #getUniqueId()
      */
     public int getEntityId();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回实体当前着火的tick (还有多久停止着火)
+     * <p>原文：
      * Returns the entity's current fire ticks (ticks before the entity stops
      * being on fire).
      *
-     * @return int fireTicks
+     * @return 着火刻的数值
+     * <p>原文：int fireTicks
      */
     public int getFireTicks();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回实体的最大着火刻
+     * <p>原文：
      * Returns the entity's maximum fire ticks.
      *
-     * @return int maxFireTicks
+     * @return 最大着火刻的数值
+     * <p>原文：int maxFireTicks
      */
     public int getMaxFireTicks();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置实体当前着火的tick (还有多久停止着火)
+     * <p>原文：
      * Sets the entity's current fire ticks (ticks before the entity stops
      * being on fire).
      *
-     * @param ticks Current ticks remaining
+     * @param ticks 剩余的刻数
+     * <p>原文：Current ticks remaining
      */
     public void setFireTicks(int ticks);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置实体是否有视觉上的火焰效果 (实体将始终显示为着火状态).
+     * <p>原文：
      * Sets if the entity has visual fire (it will always appear to be on fire).
      *
      * @deprecated This method doesn't allow visually extinguishing a burning entity,
      * use {@link #setVisualFire(TriState)} instead
-     * @param fire whether visual fire is enabled
+     * @param fire 是否启用视觉火焰
+     * <p>原文：whether visual fire is enabled
      */
     @Deprecated
     void setVisualFire(boolean fire);
@@ -379,11 +495,15 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
     void setVisualFire(@NotNull TriState fire);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取实体是否有视觉上的火焰效果 (实体将始终显示为着火状态).
+     * <p>原文：
      * Gets if the entity has visual fire (it will always appear to be on fire).
      *
      * @deprecated This method can't properly reflect the three possible states of visual fire,
      * use {@link #getVisualFire()} instead
-     * @return whether visual fire is enabled
+     * @return 是否启用了视觉火焰
+     * <p>原文：whether visual fire is enabled
      */
     @Deprecated
     boolean isVisualFire();
@@ -397,34 +517,50 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
     TriState getVisualFire();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回实体当前的冰冻刻 (实体处于细雪中的刻数).
+     * <p>原文：
      * Returns the entity's current freeze ticks (amount of ticks the entity has
      * been in powdered snow).
      *
-     * @return int freeze ticks
+     * @return 冰冻刻数值
+     * <p>原文：int freeze ticks
      */
     int getFreezeTicks();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回实体的最大冰冻刻 (完全冰冻所需的刻数).
+     * <p>原文：
      * Returns the entity's maximum freeze ticks (amount of ticks before it will
      * be fully frozen)
      *
-     * @return int max freeze ticks
+     * @return 最大冰冻刻数值
+     * <p>原文：int max freeze ticks
      */
     int getMaxFreezeTicks();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置实体当前的冰冻刻 (实体处于细雪中的刻数).
+     * <p>原文：
      * Sets the entity's current freeze ticks (amount of ticks the entity has
      * been in powdered snow).
      *
-     * @param ticks Current ticks
+     * @param ticks 当前刻数
+     * <p>原文：Current ticks
      */
     void setFreezeTicks(int ticks);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取实体是否已完全冰冻 (在细雪中待满了最大冰冻刻).
+     * <p>原文：
      * Gets if the entity is fully frozen (it has been in powdered snow for max
      * freeze ticks).
      *
-     * @return freeze status
+     * @return 冰冻状态
+     * <p>原文：freeze status
      */
     boolean isFrozen();
 
@@ -479,37 +615,62 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
     void lockFreezeTicks(boolean locked);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将实体标记为删除.
+     * <p>原文：
      * Mark the entity's removal.
      *
-     * @throws UnsupportedOperationException if you try to remove a {@link Player} use {@link Player#kick(net.kyori.adventure.text.Component)} in this case instead
+     * @throws UnsupportedOperationException 如果你试图移除一名 {@link Player 玩家}. 对于此场景请使用 {@link Player#kickPlayer(String)}
+     * <p>原文：if you try to remove a {@link Player} use {@link Player#kick(net.kyori.adventure.text.Component)} in this case instead
      */
     public void remove();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回此实体是否已被标记为删除.
+     * <p>原文：
      * Returns true if this entity has been marked for removal.
      *
-     * @return True if it is dead.
+     * @return 实体是否死亡
+     * <p>原文：True if it is dead.
      */
     public boolean isDead();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 如果此实体已经死亡、因为其他原因被抹去或尚未添加到世界, 则返回false.
+     * <p>原文：
      * Returns false if the entity has died, been despawned for some other
      * reason, or has not been added to the world.
      *
-     * @return True if valid.
+     * @return 实体是否有效.
+     * <p>原文：True if valid.
      */
     public boolean isValid();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回包含此实体的服务器
+     * <p>原文：
      * Gets the {@link Server} that contains this Entity
      *
-     * @return Server instance running this Entity
+     * @return 运行此实体的服务器
+     * <p>原文：Server instance running this Entity
      */
     @Override
     @NotNull
     public Server getServer();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回实体是否会被持久化.
+     * <p>
+     * 默认情况下所有实体都是持久化的. 如果实体骑乘的载具不是持久化的, 则该实体也不会被持久化.
+     * <p>
+     * 玩家的持久化标志控制在玩家退出时是否保存其玩家数据文件. 如果玩家直接或间接骑乘非持久化实体, 则根级载具及其所有乘客都不会被持久化.
+     * <p>
+     * <b>注意: 不要与 {@link LivingEntity#setRemoveWhenFarAway(boolean)} 混淆, 后者控制生物实体的消失.</b>
+     * <p>原文：
      * Returns true if the entity gets persisted.
      * <p>
      * By default all entities are persistent. An entity will also not get
@@ -524,24 +685,37 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * {@link LivingEntity#setRemoveWhenFarAway(boolean)} which controls
      * despawning of living entities. </b>
      *
-     * @return true if this entity is persistent
+     * @return 实体是否持久化
+     * <p>原文：true if this entity is persistent
      */
     public boolean isPersistent();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置实体是否会被持久化.
+     * <p>原文：
      * Sets whether or not the entity gets persisted.
      *
-     * @param persistent the persistence status
+     * @param persistent 持久化状态
+     * <p>原文：the persistence status
      * @see #isPersistent()
      */
     public void setPersistent(boolean persistent);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取乘坐载具的主要乘客.
+     * <br>
+     * 可能会有多个乘客, 这个方法只返回主要乘客.
+     * <p>原文：
      * Gets the primary passenger of a vehicle. For vehicles that could have
      * multiple passengers, this will only return the primary passenger.
      *
-     * @return an entity
-     * @deprecated entities may have multiple passengers, use
+     * @return 一个实体
+     * <p>原文：an entity
+     * @deprecated 实体可能有多名乘客. 请使用
+     * {@link #getPassengers()}
+     * <p>原文：entities may have multiple passengers, use
      * {@link #getPassengers()}
      */
     @Deprecated(since = "1.11.2")
@@ -549,54 +723,85 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
     public Entity getPassenger();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置乘坐载具的主要乘客.
+     * <p>原文：
      * Set the passenger of a vehicle.
      *
-     * @param passenger The new passenger.
-     * @return false if it could not be done for whatever reason
-     * @deprecated entities may have multiple passengers, use
+     * @param passenger 新乘客
+     * <p>原文：The new passenger.
+     * @return 如果因为某种原因不能设置, 则返回false
+     * <p>原文：false if it could not be done for whatever reason
+     * @deprecated 实体可能有多名乘客. 请使用
+     * {@link #addPassenger(org.bukkit.entity.Entity)}
+     * <p>原文：entities may have multiple passengers, use
      * {@link #addPassenger(org.bukkit.entity.Entity)}
      */
     @Deprecated(since = "1.11.2")
     public boolean setPassenger(@NotNull Entity passenger);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取载具的乘客列表.
+     * <br>
+     * 对返回列表的操作不会反映到实体的当前乘客列表上, 也不保证返回列表的可变性.
+     * <p>原文：
      * Gets a list of passengers of this vehicle.
      * <p>
      * The returned list will not be directly linked to the entity's current
      * passengers, and no guarantees are made as to its mutability.
      *
-     * @return list of entities corresponding to current passengers.
+     * @return 与当前乘客相对应的实体列表.
+     * <p>原文：list of entities corresponding to current passengers.
      */
     @NotNull
     public List<Entity> getPassengers();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 添加一名乘客.
+     * <p>原文：
      * Add a passenger to the vehicle.
      *
-     * @param passenger The passenger to add
-     * @return false if it could not be done for whatever reason
+     * @param passenger 要添加的乘客
+     * <p>原文：The passenger to add
+     * @return 如果因为某种原因不能添加, 则返回false
+     * <p>原文：false if it could not be done for whatever reason
      */
     public boolean addPassenger(@NotNull Entity passenger);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 移除一名乘客.
+     * <p>原文：
      * Remove a passenger from the vehicle.
      *
-     * @param passenger The passenger to remove
-     * @return false if it could not be done for whatever reason
+     * @param passenger 要移除的乘客
+     * <p>原文：The passenger to remove
+     * @return 如果因为某种原因不能删除, 则返回false
+     * <p>原文：false if it could not be done for whatever reason
      */
     public boolean removePassenger(@NotNull Entity passenger);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查是否有乘客.
+     * <p>原文：
      * Check if a vehicle has passengers.
      *
-     * @return True if the vehicle has no passengers.
+     * @return 载具是否为空.
+     * <p>原文：True if the vehicle has no passengers.
      */
     public boolean isEmpty();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 弹出所有乘客.
+     * <p>原文：
      * Eject any passenger.
      *
-     * @return True if there was a passenger.
+     * @return 是否有乘客被弹出.
+     * <p>原文：True if there was a passenger.
      */
     public boolean eject();
 
@@ -610,40 +815,60 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
     ItemStack getPickItemStack();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回此实体已下落的距离.
+     * <p>原文：
      * Returns the distance this entity has fallen
      *
-     * @return The distance.
+     * @return 距离.
+     * <p>原文：The distance.
      */
     public float getFallDistance();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此实体已下落的距离.
+     * <p>原文：
      * Sets the fall distance for this entity
      *
-     * @param distance The new distance.
+     * @param distance 新距离.
+     * <p>原文：The new distance.
      */
     public void setFallDistance(float distance);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 记录此实体上的最后一个{@link EntityDamageEvent}.
+     * <p>原文：
      * Record the last {@link EntityDamageEvent} inflicted on this entity
      *
-     * @param event a {@link EntityDamageEvent}
-     * @deprecated method is for internal use only and will be removed
+     * @param event 一个 {@link EntityDamageEvent}
+     * <p>原文：a {@link EntityDamageEvent}
+     * @deprecated 此方法仅供内部使用, 将被移除
+     * <p>原文：method is for internal use only and will be removed
      */
     @ApiStatus.Internal
     @Deprecated(since = "1.20.4", forRemoval = true)
     public void setLastDamageCause(@Nullable EntityDamageEvent event);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此实体上的最后一个{@link EntityDamageEvent}.
+     * <p>原文：
      * Retrieve the last {@link EntityDamageEvent} inflicted on this entity.
      * This event may have been cancelled.
      *
-     * @return the last known {@link EntityDamageEvent} or null if hitherto
+     * @return 最后一个已知的{@link EntityDamageEvent}, 如果迄今为止没有受到伤害, 则为null
+     * <p>原文：the last known {@link EntityDamageEvent} or null if hitherto
      *     unharmed
      */
     @Nullable
     public EntityDamageEvent getLastDamageCause();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回实体的UUID (唯一且持久的id)
+     * <p>原文：
      * Returns a unique and persistent id for this entity
      *
      * @return unique id
@@ -652,25 +877,44 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
     public UUID getUniqueId();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此实体生存时间刻.
+     * <br>
+     * 这相当于实体的"年龄".
+     * <p>原文：
      * Gets the amount of ticks this entity has lived for.
      * <p>
      * This is the equivalent to "age" in entities.
      *
-     * @return Age of entity
+     * @return 实体年龄
+     * <p>原文：Age of entity
      */
     public int getTicksLived();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此实体生存时间刻.
+     * <br>
+     * 这相当于实体中的"年龄". 不得少于一个tick.
+     * <p>原文：
      * Sets the amount of ticks this entity has lived for.
      * <p>
      * This is the equivalent to "age" in entities. May not be less than one
      * tick.
      *
-     * @param value Age of entity
+     * @param value 实体年龄
+     * <p>原文：Age of entity
      */
     public void setTicksLived(int value);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 为此实体执行指定的{@link EntityEffect}.
+     * <br>
+     * 这将对实体附近的所有玩家都是可见的.
+     * <br>
+     * 如果效果不适用于此类实体，则不会播放.
+     * <p>原文：
      * Performs the specified {@link EntityEffect} for this entity.
      * <p>
      * This will be viewable to all players near the entity.
@@ -682,108 +926,169 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
     public void playEffect(@NotNull EntityEffect effect);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取实体类型
+     * <p>原文：
      * Get the type of the entity.
      *
-     * @return The entity type.
+     * @return 实体类型.
+     * <p>原文：The entity type.
      */
     @NotNull
     public EntityType getType();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此实体游泳时发出的 {@link Sound}.
+     * <p>原文：
      * Get the {@link Sound} this entity makes while swimming.
      *
-     * @return the swimming sound
+     * @return 游泳声音
+     * <p>原文：the swimming sound
      */
     @NotNull
     public Sound getSwimSound();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此实体溅入水中时发出的 {@link Sound}. 对于大多数实体, 这只是 {@link Sound#ENTITY_GENERIC_SPLASH}.
+     * <p>原文：
      * Get the {@link Sound} this entity makes when splashing in water. For most
      * entities, this is just {@link Sound#ENTITY_GENERIC_SPLASH}.
      *
-     * @return the splash sound
+     * @return 溅水声
+     * <p>原文：the splash sound
      */
     @NotNull
     public Sound getSwimSplashSound();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此实体高速溅入水中时发出的 {@link Sound}. 对于大多数实体, 这只是 {@link Sound#ENTITY_GENERIC_SPLASH}.
+     * <p>原文：
      * Get the {@link Sound} this entity makes when splashing in water at high
      * speeds. For most entities, this is just {@link Sound#ENTITY_GENERIC_SPLASH}.
      *
-     * @return the splash sound
+     * @return 溅水声
+     * <p>原文：the splash sound
      */
     @NotNull
     public Sound getSwimHighSpeedSplashSound();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回此实体是否在载具内.
+     * <p>原文：
      * Returns whether this entity is inside a vehicle.
      *
-     * @return True if the entity is in a vehicle.
+     * @return 此实体是否在载具内.
+     * <p>原文：True if the entity is in a vehicle.
      */
     public boolean isInsideVehicle();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 离开当前的载具. 如果实体当前在载具中(并从中移除), 则返回true, 否则将返回false.
+     * <p>原文：
      * Leave the current vehicle. If the entity is currently in a vehicle (and
      * is removed from it), true will be returned, otherwise false will be
      * returned.
      *
-     * @return True if the entity was in a vehicle.
+     * @return 是否成功离开.
+     * <p>原文：True if the entity was in a vehicle.
      */
     public boolean leaveVehicle();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取实体所在的载具, 若没有则返回null.
+     * <p>原文：
      * Get the vehicle that this entity is inside. If there is no vehicle,
      * null will be returned.
      *
-     * @return The current vehicle.
+     * @return 当前载具
+     * <p>原文：The current vehicle.
      */
     @Nullable
     public Entity getVehicle();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置是否在客户端上显示实体的自定义名称. 名称将会像玩家一样显示在实体上方.
+     * <br>
+     * 这个值对玩家无效, 玩家会一直显示.
+     * <p>原文：
      * Sets whether or not to display the mob's custom name client side. The
      * name will be displayed above the mob similarly to a player.
      * <p>
      * This value has no effect on players, they will always display their
      * name.
      *
-     * @param flag custom name or not
+     * @param flag 是否显示自定义名称
+     * <p>原文：custom name or not
      */
     public void setCustomNameVisible(boolean flag);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取是否在客户端上显示实体的自定义名称. 名称将会像玩家一样显示在实体上方.
+     * <br>
+     * 这个值对玩家无效, 玩家会一直显示.
+     * <p>原文：
      * Gets whether or not the mob's custom name is displayed client side.
      * <p>
      * This value has no effect on players, they will always display their
      * name.
      *
-     * @return if the custom name is displayed
+     * @return 是否显示自定义名称
+     * <p>原文：if the custom name is displayed
      */
     public boolean isCustomNameVisible();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此实体是否默认可见.
+     * <p>
+     * 如果此实体默认不可见, 则需要调用
+     * {@link Player#showEntity(org.bukkit.plugin.Plugin, org.bukkit.entity.Entity)}
+     * 才能使指定玩家看到该实体.
+     * <p>原文：
      * Sets whether or not this entity is visible by default.
      *
      * If this entity is not visible by default, then
      * {@link Player#showEntity(org.bukkit.plugin.Plugin, org.bukkit.entity.Entity)}
      * will need to be called before the entity is visible to a given player.
      *
-     * @param visible default visibility status
+     * @param visible 默认可见性状态
+     * <p>原文：default visibility status
      */
     public void setVisibleByDefault(boolean visible);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此实体是否默认可见.
+     * <p>
+     * 如果此实体默认不可见, 则需要调用
+     * {@link Player#showEntity(org.bukkit.plugin.Plugin, org.bukkit.entity.Entity)}
+     * 才能使指定玩家看到该实体.
+     * <p>原文：
      * Gets whether or not this entity is visible by default.
      *
      * If this entity is not visible by default, then
      * {@link Player#showEntity(org.bukkit.plugin.Plugin, org.bukkit.entity.Entity)}
      * will need to be called before the entity is visible to a given player.
      *
-     * @return default visibility status
+     * @return 默认可见性状态
+     * <p>原文：default visibility status
      */
     public boolean isVisibleByDefault();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取当前正在追踪此实体的所有玩家.
+     * <p>
+     * "追踪"意味着此实体已被发送给玩家, 且玩家正在接收其状态更新. 注意: 客户端的 {@code '实体距离'} 设置不会影响实体被追踪的范围.
+     * <p>原文：
      * Get all players that are currently tracking this entity.
      * <p>
      * 'Tracking' means that this entity has been sent to the player and that
@@ -791,7 +1096,8 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * 'Entity Distance'} setting does not affect the range at which entities
      * are tracked.
      *
-     * @return the players tracking this entity, or an empty set if none
+     * @return 正在追踪此实体的玩家集合, 若无则为空集合
+     * <p>原文：the players tracking this entity, or an empty set if none
      */
     @NotNull
     Set<Player> getTrackedBy();
@@ -806,73 +1112,114 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
     boolean isTrackedBy(@NotNull Player player);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置实体是否有团队颜色(默认白色)的发光.
+     * <b>注意:本方法用到了实体的'Glowing'属性, 不是给实体应用发光药水效果.</b>
+     * <p>原文：
      * Sets whether the entity has a team colored (default: white) glow.
      *
      * <b>nb: this refers to the 'Glowing' entity property, not whether a
      * glowing potion effect is applied</b>
      *
-     * @param flag if the entity is glowing
+     * @param flag 是否发光
+     * <p>原文：if the entity is glowing
      */
     void setGlowing(boolean flag);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取实体是否发光.
+     * <b>注意:本方法用到了实体的'Glowing'属性, 不是给实体应用发光药水效果.</b>
+     * <p>原文：
      * Gets whether the entity is glowing or not.
      *
      * <b>nb: this refers to the 'Glowing' entity property, not whether a
      * glowing potion effect is applied</b>
      *
-     * @return whether the entity is glowing
+     * @return 是否发光
+     * <p>原文：whether the entity is glowing
      */
     boolean isGlowing();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置实体是否无敌.
+     * <br>
+     * 当一个实体无敌时, 它只能被创造性模式中的玩家攻击.
+     * <p>原文：
      * Sets whether the entity is invulnerable or not.
      * <p>
      * When an entity is invulnerable it can only be damaged by players in
      * creative mode.
      *
-     * @param flag if the entity is invulnerable
+     * @param flag 是否无敌
+     * <p>原文：if the entity is invulnerable
      */
     public void setInvulnerable(boolean flag);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取实体是否无敌.
+     * <p>原文：
      * Gets whether the entity is invulnerable or not.
      *
-     * @return whether the entity is
+     * @return 是否无敌
+     * <p>原文：whether the entity is
      */
     public boolean isInvulnerable();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取实体是否保持安静.
+     * <p>原文：
      * Gets whether the entity is silent or not.
      *
-     * @return whether the entity is silent.
+     * @return 实体是否保持安静
+     * <p>原文：whether the entity is silent.
      */
     public boolean isSilent();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取实体是否保持安静.
+     * <br>
+     * 当实体静默时, 它不会发出任何声音.
+     * <p>原文：
      * Sets whether the entity is silent or not.
      * <p>
      * When an entity is silent it will not produce any sound.
      *
-     * @param flag if the entity is silent
+     * @param flag 实体是否保持安静
+     * <p>原文：if the entity is silent
      */
     public void setSilent(boolean flag);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回重力是否适用于此实体.
+     * <p>原文：
      * Returns whether gravity applies to this entity.
      *
-     * @return whether gravity applies
+     * @return 重力是否适用于此实体
+     * <p>原文：whether gravity applies
      */
     boolean hasGravity();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置重力是否适用于此实体.
+     * <p>原文：
      * Sets whether gravity applies to this entity.
      *
-     * @param gravity whether gravity should apply
+     * @param gravity 重力是否适用于此实体
+     * <p>原文：whether gravity should apply
      */
     void setGravity(boolean gravity);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此实体能再次使用传送门前需要等待的时间 (以刻为单位).
+     * <p>原文：
      * Gets the period of time (in ticks) before this entity can use a portal.
      *
      * @return portal cooldown ticks
@@ -880,49 +1227,84 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
     int getPortalCooldown();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此实体使用传送门前需要等待的时间 (以刻为单位).
+     * <p>原文：
      * Sets the period of time (in ticks) before this entity can use a portal.
      *
-     * @param cooldown portal cooldown ticks
+     * @param cooldown 传送门冷却刻数
+     * <p>原文：portal cooldown ticks
      */
     void setPortalCooldown(int cooldown);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回实体标签集合.
+     * <br>
+     * 实体的标签数不得超过1024个.
+     * <p>原文：
      * Returns a set of tags for this entity.
      * <br>
      * Entities can have no more than 1024 tags.
      *
-     * @return a set of tags for this entity
+     * @return 此实体的标签集合
+     * <p>原文：a set of tags for this entity
      */
     @NotNull
     Set<String> getScoreboardTags();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 为此实体添加一个标签.
+     * <br>
+     * 实体的标签数不得超过1024个.
+     * <p>原文：
      * Add a tag to this entity.
      * <br>
      * Entities can have no more than 1024 tags.
      *
-     * @param tag the tag to add
-     * @return true if the tag was successfully added
+     * @param tag 要添加的标签
+     * <p>原文：the tag to add
+     * @return 是否成功添加
+     * <p>原文：true if the tag was successfully added
      */
     boolean addScoreboardTag(@NotNull String tag);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 删除此实体的一个标签.
+     * <br>
+     * 实体的标签数不得超过1024个.
+     * <p>原文：
      * Removes a given tag from this entity.
      *
-     * @param tag the tag to remove
-     * @return true if the tag was successfully removed
+     * @param tag 要删除的标签
+     * <p>原文：the tag to remove
+     * @return 是否成功删除
+     * <p>原文：true if the tag was successfully removed
      */
     boolean removeScoreboardTag(@NotNull String tag);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回实体被活塞移动时的反应.
+     * <p>原文：
      * Returns the reaction of the entity when moved by a piston.
      *
-     * @return reaction
+     * @return 反应
+     * <p>原文：reaction
      */
     @NotNull
     PistonMoveReaction getPistonMoveReaction();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取实体当前朝向的最接近的基本 {@link BlockFace} 方向.
+     * <br>
+     * 不会返回任何非基本方向, 如 {@link BlockFace#UP} 或 {@link BlockFace#DOWN}.
+     * <br>
+     * {@link Hanging} 实体会覆盖此调用, 因此其行为可能不同.
+     * <p>原文：
      * Get the closest cardinal {@link BlockFace} direction an entity is
      * currently facing.
      * <br>
@@ -932,7 +1314,8 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * {@link Hanging} entities will override this call and thus their behavior
      * may be different.
      *
-     * @return the entity's current cardinal facing.
+     * @return 实体当前的基本朝向
+     * <p>原文：the entity's current cardinal facing.
      * @see Hanging
      * @see Directional#getFacing()
      */
@@ -940,13 +1323,19 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
     BlockFace getFacing();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取实体当前的姿势.
+     * <p>
+     * <b>注意: 姿势仅在 tick 结束时更新, 因此可能与其他方法不一致. 例如 {@link Player#isSneaking()} 返回 true 并不意味着当前姿势为 {@link Pose#SNEAKING}.</b>
+     * <p>原文：
      * Gets the entity's current pose.
      *
      * <b>Note that the pose is only updated at the end of a tick, so may be
      * inconsistent with other methods. eg {@link Player#isSneaking()} being
      * true does not imply the current pose will be {@link Pose#SNEAKING}</b>
      *
-     * @return current pose
+     * @return 当前姿势
+     * <p>原文：current pose
      */
     @NotNull
     Pose getPose();
@@ -1007,58 +1396,92 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
     // Paper end
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此实体所属的生成类别.
+     * <p>原文：
      * Get the category of spawn to which this entity belongs.
      *
-     * @return the entity´s category spawn
+     * @return 实体的生成类别
+     * <p>原文：the entity´s category spawn
      */
     @NotNull
     SpawnCategory getSpawnCategory();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查此实体是否已生成在世界中.
+     * <br>
+     * 未在世界中生成的实体不会被 tick 更新, 不会发送给玩家, 也不会保存到服务器文件中.
+     * <p>原文：
      * Checks if this entity has been spawned in a world. <br>
      * Entities not spawned in a world will not tick, be sent to players, or be
      * saved to the server files.
      *
-     * @return whether the entity has been spawned in a world
+     * @return 实体是否已生成在世界中
+     * <p>原文：whether the entity has been spawned in a world
      */
     boolean isInWorld();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此实体的 NBT 字符串.
+     * <p>
+     * 不应将此字符串作为可序列化的值使用.
+     * <p>原文：
      * Get this entity as an NBT string.
      * <p>
      * This string should not be relied upon as a serializable value.
      *
-     * @return the NBT string or null if one cannot be made
+     * @return NBT 字符串, 若无法生成则返回 null
+     * <p>原文：the NBT string or null if one cannot be made
      */
     @Nullable
     @ApiStatus.Experimental
     String getAsString();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 创建一个表示此实体当前状态的 {@link EntitySnapshot}.
+     * <p>原文：
      * Crates an {@link EntitySnapshot} representing the current state of this entity.
      *
-     * @return a snapshot representing this entity or null if one cannot be made
+     * @return 表示此实体的快照, 若无法创建则返回 null
+     * <p>原文：a snapshot representing this entity or null if one cannot be made
      */
     @Nullable
     @ApiStatus.Experimental
     EntitySnapshot createSnapshot();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 创建此实体及其所有数据的副本. 不会在世界中生成该副本.
+     * <br>
+     * <b>注意:</b> 玩家无法被复制.
+     * <p>原文：
      * Creates a copy of this entity and all its data. Does not spawn the copy in
      * the world. <br>
      * <b>Note:</b> Players cannot be copied.
      *
-     * @return a copy of this entity.
+     * @return 此实体的副本
+     * <p>原文：a copy of this entity.
      */
     @NotNull
     @ApiStatus.Experimental
     Entity copy();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 创建此实体及其所有数据的副本. 在给定位置生成该副本.
+     * <br>
+     * <b>注意:</b> 玩家无法被复制.
+     * <p>原文：
      * Creates a copy of this entity and all its data. Spawns the copy at the given location. <br>
      * <b>Note:</b> Players cannot be copied.
-     * @param to the location to copy to
-     * @return a copy of this entity.
+     *
+     * @param to 要复制到的位置
+     * <p>原文：the location to copy to
+     * @return 此实体的副本
+     * <p>原文：a copy of this entity.
      */
     @NotNull
     @ApiStatus.Experimental

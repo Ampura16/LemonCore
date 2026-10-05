@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 雷击事件
+ * <p>原文：
  * Stores data for lightning striking
  */
 public class LightningStrikeEvent extends WeatherEvent implements Cancellable {
@@ -33,9 +36,13 @@ public class LightningStrikeEvent extends WeatherEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取从天空中打下的雷电.
+     * <p>原文：
      * Gets the bolt which is striking the earth.
      *
-     * @return lightning entity
+     * @return 雷电的实体
+     * <p>原文：lightning entity
      */
     @NotNull
     public LightningStrike getLightning() {
@@ -43,9 +50,13 @@ public class LightningStrikeEvent extends WeatherEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取发生此次雷击的原因.
+     * <p>原文：
      * Gets the cause of this lightning strike.
      *
-     * @return strike cause
+     * @return 雷击发生原因
+     * <p>原文：strike cause
      */
     @NotNull
     public Cause getCause() {
@@ -75,34 +86,58 @@ public class LightningStrikeEvent extends WeatherEvent implements Cancellable {
 
     public enum Cause {
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 由"/summon"命令触发.
+         * <p>原文：
          * Triggered by the /summon command.
          */
         COMMAND,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 由插件触发.
+         * <p>原文：
          * Triggered by a Plugin.
          */
         CUSTOM,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 由刷怪笼触发.
+         * <p>原文：
          * Triggered by a Spawner.
          */
         SPAWNER,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 由附魔的三叉戟触发.
+         * <p>原文：
          * Triggered by an enchanted trident.
          */
         TRIDENT,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 由骷髅马陷阱触发.
+         * <p>原文：
          * Triggered by a skeleton horse trap.
          */
         TRAP,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 在雷暴天气中产生.
+         * <p>原文：
          * Triggered by weather.
          */
         WEATHER,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 由附魔触发（非三叉戟）.
+         * <p>原文：
          * Triggered by an enchantment but not a trident.
          */
         ENCHANTMENT,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 未知触发原因.
+         * <p>原文：
          * Unknown trigger.
          */
         UNKNOWN

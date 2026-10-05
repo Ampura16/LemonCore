@@ -9,6 +9,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当玩家与装甲架交互并且进行交换, 取回或放置物品时触发本事件.
+ * <p>原文：
  * Called when a player interacts with an armor stand and will either swap, retrieve or
  * place an item.
  */
@@ -34,6 +37,16 @@ public class PlayerArmorStandManipulateEvent extends PlayerInteractEntityEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回玩家手持的物品.
+     * <ul>
+     * <li>如果玩家手持的物品为空时, 并且盔甲架的物品也为空时, 那么则玩家和盔甲架之间将不会有物品交换.</li>
+     * <li>如果玩家手持的物品为空时，但是盔甲架的物品不为空时，那么玩家将获得盔甲架的物品.</li>
+     * <li>如果玩家手持的物品不为空时，但盔甲架的物品为空时，则玩家物品将被放在盔甲架上.</li>
+     * <li>如果玩家手持的物品不为空时，盔甲架的物品也不为空时，则玩家物品将和盔甲架的物品将进行交换.</li>
+     * <li>如果该事件被取消, 那么交换将不会进行, 即物品不会进行交换.</li>
+     * </ul>
+     * <p>原文：
      * Returns the item held by the player.
      * <p>
      * If this item is empty and the armor stand item is also empty, there will be no
@@ -42,7 +55,9 @@ public class PlayerArmorStandManipulateEvent extends PlayerInteractEntityEvent {
      * stand. If both items are not empty, the items will be swapped.
      * <p>
      * In the case that this event is cancelled, the original items will remain the same.
-     * @return the item held by the player.
+     *
+     * @return 玩家手持的物品 {@link ItemStack}
+     * <p>原文：the item held by the player.
      */
     @NotNull
     public ItemStack getPlayerItem() {
@@ -50,6 +65,16 @@ public class PlayerArmorStandManipulateEvent extends PlayerInteractEntityEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回盔甲架的物品.
+     * <ul>
+     * <li>如果玩家手持的物品为空时, 并且盔甲架的物品也为空时, 那么则玩家和盔甲架之间将不会有物品交换.</li>
+     * <li>如果玩家手持的物品为空时，但是盔甲架的物品不为空时，那么玩家将获得盔甲架的物品.</li>
+     * <li>如果玩家手持的物品不为空时，但盔甲架的物品为空时，则玩家物品将被放在盔甲架上.</li>
+     * <li>如果玩家手持的物品不为空时，盔甲架的物品也不为空时，则玩家物品将和盔甲架的物品将进行交换.</li>
+     * <li>如果该事件被取消, 那么交换将不会进行, 即物品不会进行交换.</li>
+     * </ul>
+     * <p>原文：
      * Returns the item held by the armor stand.
      * <p>
      * If this item is empty and the player's item is also empty, there will be no
@@ -60,7 +85,9 @@ public class PlayerArmorStandManipulateEvent extends PlayerInteractEntityEvent {
      * the items will be swapped.
      * <p>
      * In the case that the event is cancelled the original items will remain the same.
-     * @return the item held by the armor stand.
+     *
+     * @return 盔甲架的的物品 {@link ItemStack}
+     * <p>原文：the item held by the armor stand.
      */
     @NotNull
     public ItemStack getArmorStandItem() {
@@ -68,9 +95,13 @@ public class PlayerArmorStandManipulateEvent extends PlayerInteractEntityEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回在此事件中盔甲架的装备槽.
+     * <p>原文：
      * Returns the raw item slot of the armor stand in this event.
      *
-     * @return the index of the item obtained or placed of the armor stand.
+     * @return 获得或放置盔甲架的物品的下标. {@link EquipmentSlot}
+     * <p>原文：the index of the item obtained or placed of the armor stand.
      */
     @NotNull
     public EquipmentSlot getSlot() {

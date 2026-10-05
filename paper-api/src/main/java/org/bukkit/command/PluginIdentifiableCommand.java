@@ -4,6 +4,9 @@ import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 这个接口可以用于帮助系统分类命令至基于{@link Plugin}的子索引的一部分.自定义的命令实现这个接口来拥有由插件自动生成的子索引.
+ * <p>原文：
  * This interface is used by the help system to group commands into
  * sub-indexes based on the {@link Plugin} they are a part of. Custom command
  * implementations will need to implement this interface to have a sub-index
@@ -12,9 +15,13 @@ import org.jetbrains.annotations.NotNull;
 public interface PluginIdentifiableCommand {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取拥有这个PluginIdentifiableCommand的插件.
+     * <p>原文：
      * Gets the owner of this PluginIdentifiableCommand.
      *
-     * @return Plugin that owns this PluginIdentifiableCommand.
+     * @return 拥有这个PluginIdentifiableCommand的插件
+     * <p>原文：Plugin that owns this PluginIdentifiableCommand.
      */
     @NotNull
     public Plugin getPlugin();

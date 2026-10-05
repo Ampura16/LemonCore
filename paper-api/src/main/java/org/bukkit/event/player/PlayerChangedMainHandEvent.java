@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当玩家在客户端设置改变主手时触发本事件.
+ * <p>原文：
  * Called when a player changes their main hand in the client settings.
  *
  * @apiNote Obsolete and replaced by {@link PlayerClientOptionsChangeEvent}.
@@ -26,10 +29,14 @@ public class PlayerChangedMainHandEvent extends PlayerEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家的新主手.旧的主手依然可以在此期间通过 {@link Player#getMainHand()} 获取到.
+     * <p>原文：
      * Gets the new main hand of the player. The old hand is still momentarily
      * available via {@link Player#getMainHand()}.
      *
-     * @return the new {@link MainHand} of the player
+     * @return 玩家的新{@link MainHand}
+     * <p>原文：the new {@link MainHand} of the player
      * @deprecated has never been functional since its implementation and simply returns the old main hand.
      * The method is left in this broken state to not break compatibility with plugins that relied on this fact.
      * Use {@link #getNewMainHand()} instead or migrate to {@link PlayerClientOptionsChangeEvent#getMainHand()}.

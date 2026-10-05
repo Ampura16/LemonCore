@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当玩家在配方书中解锁新配方(合成公式)时触发本事件.
+ * <p>原文：
  * Called when a player discovers a new recipe in the recipe book.
  */
 @NullMarked
@@ -27,9 +30,13 @@ public class PlayerRecipeDiscoverEvent extends PlayerEvent implements Cancellabl
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取本次解锁的配方的 NamespacedKey.
+     * <p>原文：
      * Get the namespaced key of the discovered recipe.
      *
-     * @return the discovered recipe
+     * @return 解锁的配方名
+     * <p>原文：the discovered recipe
      */
     public NamespacedKey getRecipe() {
         return this.recipe;

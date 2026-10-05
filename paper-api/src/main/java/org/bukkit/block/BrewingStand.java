@@ -4,21 +4,32 @@ import org.bukkit.inventory.BrewerInventory;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表酿造台.
+ * <p>原文：
  * Represents a captured state of a brewing stand.
  */
 public interface BrewingStand extends Container {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回酿造还需多长时间.
+     * <p>原文：
      * How much time is left in the brewing cycle.
      *
-     * @return Brew Time
+     * @return 酿造时间
+     * <p>原文：Brew Time
      */
     int getBrewingTime();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置酿造还需多长时间完成.
+     * <p>原文：
      * Set the time left before brewing completes.
      *
-     * @param brewTime Brewing time
+     * @param brewTime 酿造时间
+     * <p>原文：Brewing time
      */
     void setBrewingTime(int brewTime);
 
@@ -46,16 +57,24 @@ public interface BrewingStand extends Container {
     // Paper end - Add recipeBrewTime
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取酿造台当前剩余的燃料.
+     * <p>原文：
      * Get the level of current fuel for brewing.
      *
-     * @return The fuel level
+     * @return 酿造台当前剩余的燃料
+     * <p>原文：The fuel level
      */
     int getFuelLevel();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置酿造台当前剩余的燃料.
+     * <p>原文：
      * Set the level of current fuel for brewing.
      *
-     * @param level fuel level
+     * @param level 酿造台当前剩余的燃料
+     * <p>原文：fuel level
      */
     void setFuelLevel(int level);
 

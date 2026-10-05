@@ -4,9 +4,14 @@ import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表南瓜.
+ * <p>原文：
  * Represents a pumpkin.
  *
- * @deprecated all usage of MaterialData is deprecated and subject to removal.
+ * @deprecated MaterialData 的所有用法均已弃用且将被移除.
+ * 请使用 {@link org.bukkit.block.data.BlockData}.
+ * <p>原文：all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
  */
 @Deprecated(since = "1.13", forRemoval = true)
@@ -17,9 +22,13 @@ public class Pumpkin extends MaterialData implements Directional {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 以指定朝向实例化一个南瓜.
+     * <p>原文：
      * Instantiate a pumpkin facing in a particular direction.
      *
-     * @param direction the direction the pumpkin's face is facing
+     * @param direction 南瓜脸部的朝向
+     * <p>原文：the direction the pumpkin's face is facing
      */
     public Pumpkin(BlockFace direction) {
         this();
@@ -31,9 +40,13 @@ public class Pumpkin extends MaterialData implements Directional {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
      * @param type the type
      * @param data the raw data value
-     * @deprecated Magic value
+     * @deprecated 不安全的参数
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.6.2")
     public Pumpkin(final Material type, final byte data) {

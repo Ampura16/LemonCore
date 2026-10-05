@@ -8,6 +8,11 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当实体生成于世界内时触发本事件.
+ * <p>
+ * 如果本事件被取消, 那么实体将不会生成.
+ * <p>原文：
  * Called when an entity is spawned into a world.
  * <p>
  * If this event is cancelled, the entity will not spawn.
@@ -24,9 +29,13 @@ public class EntitySpawnEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取实体出生的位置.
+     * <p>原文：
      * Gets the location at which the entity is spawning.
      *
-     * @return The location at which the entity is spawning
+     * @return 实体出生的位置
+     * <p>原文：The location at which the entity is spawning
      */
     @NotNull
     public Location getLocation() {

@@ -5,6 +5,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当一个实体造成另外一个实体燃烧时触发该事件.
+ * <p>原文：
  * Called when an entity causes another entity to combust.
  */
 public class EntityCombustByEntityEvent extends EntityCombustEvent {
@@ -24,9 +27,13 @@ public class EntityCombustByEntityEvent extends EntityCombustEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回造成燃烧的实体.
+     * <p>原文：
      * Get the entity that caused the combustion event.
      *
-     * @return the Entity that set the combustee alight.
+     * @return 造成燃烧的实体
+     * <p>原文：the Entity that set the combustee alight.
      */
     @NotNull
     public Entity getCombuster() {

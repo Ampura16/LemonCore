@@ -7,6 +7,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 载具撞击方块的事件
+ * <p>原文：
  * Raised when a vehicle collides with a block.
  */
 public class VehicleBlockCollisionEvent extends VehicleCollisionEvent {
@@ -28,9 +31,13 @@ public class VehicleBlockCollisionEvent extends VehicleCollisionEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取载具撞到的方块.
+     * <p>原文：
      * Gets the block the vehicle collided with
      *
-     * @return the block the vehicle collided with
+     * @return 载具撞到的方块
+     * <p>原文：the block the vehicle collided with
      */
     @NotNull
     public Block getBlock() {

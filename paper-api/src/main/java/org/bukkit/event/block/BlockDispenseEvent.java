@@ -9,6 +9,11 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 物品被方块(比如发射器,投掷器等)射出的事件.
+ * <p>
+ * 取消该事件, 物品就不会被射出.
+ * <p>原文：
  * Called when an item is dispensed from a block.
  * <p>
  * If this event is cancelled, the block will not dispense the
@@ -31,11 +36,17 @@ public class BlockDispenseEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取被射出的物品.
+     * <p>
+     * 注意:修改返回的item对象没用, 必须用 {@link #setItem(org.bukkit.inventory.ItemStack)} 代替.
+     * <p>原文：
      * Gets the item that is being dispensed. Modifying the returned item will
      * have no effect, you must use {@link
      * #setItem(ItemStack)} instead.
      *
-     * @return An ItemStack for the item being dispensed
+     * @return 被射出的物品
+     * <p>原文：An ItemStack for the item being dispensed
      */
     @NotNull
     public ItemStack getItem() {
@@ -43,21 +54,32 @@ public class BlockDispenseEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置被射出的物品.
+     * <p>原文：
      * Sets the item being dispensed.
      *
-     * @param item the item being dispensed
+     * @param item 被射出的物品
+     * <p>原文：the item being dispensed
      */
     public void setItem(@NotNull ItemStack item) {
         this.item = item;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取物品射出的速度、角度 (单位: 米每tick).
+     * <p>
+     * 注意: 修改返回的对象并不会修改速度, 必须
+     * 用{@link #setVelocity(org.bukkit.util.Vector)}.
+     * <p>原文：
      * Gets the velocity in meters per tick.
      * <p>
      * Note: Modifying the returned Vector will not change the velocity, you
      * must use {@link #setVelocity(Vector)} instead.
      *
-     * @return A Vector for the dispensed item's velocity
+     * @return 射出物品的速度的Vector(向量)
+     * <p>原文：A Vector for the dispensed item's velocity
      */
     @NotNull
     public Vector getVelocity() {
@@ -65,6 +87,9 @@ public class BlockDispenseEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置物品射出的速度速度、角度 (单位: 米每tick).
+     * <p>原文：
      * Sets the velocity of the item being dispensed in meters per tick.
      *
      * @param velocity the velocity of the item being dispensed

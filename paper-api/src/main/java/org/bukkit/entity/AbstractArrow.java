@@ -8,54 +8,81 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.Unmodifiable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表一支箭.
+ * <p>原文：
  * Represents an arrow.
  */
 public interface AbstractArrow extends Projectile {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获得此箭的击退强度, 由射出此箭的弓箭 {@link org.bukkit.enchantments.Enchantment#KNOCKBACK KnockBack} 等级定义.
+     * <p>原文：
      * Gets the knockback strength for an arrow, which is the
      * {@link org.bukkit.enchantments.Enchantment#KNOCKBACK KnockBack} level
      * of the bow that shot it.
      *
-     * @return the knockback strength value
+     * @return 击退强度值
+     * <p>原文：the knockback strength value
      * @see #getWeapon()
-     * @deprecated moved to being a function of the firing weapon, always returns 0 here
+     * @deprecated 发射武器的功能
+     * <p>原文：moved to being a function of the firing weapon, always returns 0 here
      */
     @Deprecated(since = "1.21", forRemoval = true)
     public int getKnockbackStrength();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设定箭的击退强度.
+     * <p>原文：
      * Sets the knockback strength for an arrow.
      *
-     * @param knockbackStrength the knockback strength value
+     * @param knockbackStrength 击退强度值
+     * <p>原文：the knockback strength value
      * @see #setWeapon(org.bukkit.inventory.ItemStack)
-     * @deprecated moved to being a function of the firing weapon, does nothing here
+     * @deprecated 发射武器的功能
+     * <p>原文：moved to being a function of the firing weapon, does nothing here
      */
     @Deprecated(since = "1.21", forRemoval = true)
     public void setKnockbackStrength(int knockbackStrength);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获得此箭将造成的基本伤害值.
+     *
+     * 普通箭默认为2.0, 附魔弓加成额外的伤害<code>0.5 * (1 + 力量附魔等级 )</code>
+     * <p>原文：
      * Gets the base amount of damage this arrow will do.
      *
      * Defaults to 2.0 for a normal arrow with
      * <code>0.5 * (1 + power level)</code> added for arrows fired from
      * enchanted bows.
      *
-     * @return base damage amount
+     * @return 基本伤害值
+     * <p>原文：base damage amount
      */
     public double getDamage();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此箭将造成的基本伤害值.
+     * <p>原文：
      * Sets the base amount of damage this arrow will do.
      *
-     * @param damage new damage amount
+     * @param damage 新的伤害值
+     * <p>原文：new damage amount
      */
     public void setDamage(double damage);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获得此箭能够穿透实体的次数.
+     * <p>原文：
      * Gets the number of times this arrow can pierce through an entity.
      *
-     * @return pierce level
+     * @return 穿透等级
+     * <p>原文：pierce level
      */
     public int getPierceLevel();
 
@@ -133,26 +160,39 @@ public interface AbstractArrow extends Projectile {
     public void setPickupStatus(@NotNull PickupStatus status);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获得此箭是否由弩射出.
+     * <p>原文：
      * Gets if this arrow was shot from a crossbow.
      *
-     * @return if shot from a crossbow
+     * @return 如果由弩射出则返回true
+     * <p>原文：if shot from a crossbow
      */
     public boolean isShotFromCrossbow();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此箭是否由弩射出.
+     * <p>原文：
      * Sets if this arrow was shot from a crossbow.
      *
-     * @param shotFromCrossbow if shot from a crossbow
+     * @param shotFromCrossbow 是否由弩射出
+     * <p>原文：if shot from a crossbow
      * @see #setWeapon(org.bukkit.inventory.ItemStack)
-     * @deprecated a function of the firing weapon instead, this method does nothing
+     * @deprecated 改用发射武器的功能
+     * <p>原文：a function of the firing weapon instead, this method does nothing
      */
     @Deprecated(since = "1.21", forRemoval = true)
     public void setShotFromCrossbow(boolean shotFromCrossbow);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此箭被拾起时将获得的 ItemStack.
+     * <p>原文：
      * Gets the ItemStack which will be picked up from this arrow.
      *
-     * @return The picked up ItemStack
+     * @return 被拾起的 ItemStack
+     * <p>原文：The picked up ItemStack
      * @deprecated use {@link #getItemStack()}
      */
     @NotNull
@@ -160,42 +200,66 @@ public interface AbstractArrow extends Projectile {
     public ItemStack getItem();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此箭被拾起时将获得的 ItemStack.
+     * <p>原文：
      * Sets the ItemStack which will be picked up from this arrow.
      *
-     * @param item ItemStack set to be picked up
+     * @param item 被拾起时的 ItemStack
+     * <p>原文：ItemStack set to be picked up
      * @deprecated use {@link #setItemStack(ItemStack)}
      */
     @Deprecated(forRemoval = true, since = "1.20.4") // Paper
     public void setItem(@NotNull ItemStack item);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取发射此箭的 ItemStack.
+     * <p>原文：
      * Gets the ItemStack which fired this arrow.
      *
-     * @return The firing ItemStack
+     * @return 发射此箭的 ItemStack
+     * <p>原文：The firing ItemStack
      */
     @Nullable // Paper
     public ItemStack getWeapon();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置发射此箭的 ItemStack.
+     * <p>原文：
      * Sets the ItemStack which fired this arrow.
      *
-     * @param item The firing ItemStack
+     * @param item 发射此箭的 ItemStack
+     * <p>原文：The firing ItemStack
      */
     public void setWeapon(@NotNull ItemStack item);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 代表拾起状态.
+     * <p>原文：
      * Represents the pickup status of this arrow.
      */
     public enum PickupStatus {
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 不允许被拾起.
+         * <p>原文：
          * The arrow cannot be picked up.
          */
         DISALLOWED,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 允许被拾起.
+         * <p>原文：
          * The arrow can be picked up.
          */
         ALLOWED,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 只能被创造模式的玩家拾起.
+         * <p>原文：
          * The arrow can only be picked up by players in creative mode.
          */
         CREATIVE_ONLY

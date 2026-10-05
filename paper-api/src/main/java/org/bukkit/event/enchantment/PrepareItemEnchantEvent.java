@@ -13,6 +13,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 物品塞入附魔台的事件 - 可被多次调用。
+ * <p>原文：
  * Called when an ItemStack is inserted in an enchantment table - can be
  * called multiple times
  */
@@ -45,9 +48,13 @@ public class PrepareItemEnchantEvent extends InventoryEvent implements Cancellab
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取正在为物品附魔的玩家.
+     * <p>原文：
      * Gets the player enchanting the item
      *
-     * @return enchanting player
+     * @return 正在为物品附魔的玩家
+     * <p>原文：enchanting player
      */
     @NotNull
     public Player getEnchanter() {
@@ -55,9 +62,13 @@ public class PrepareItemEnchantEvent extends InventoryEvent implements Cancellab
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取附魔台方块.
+     * <p>原文：
      * Gets the block being used to enchant the item
      *
-     * @return the block used for enchanting
+     * @return 附魔台方块
+     * <p>原文：the block used for enchanting
      */
     @NotNull
     public Block getEnchantBlock() {
@@ -65,9 +76,13 @@ public class PrepareItemEnchantEvent extends InventoryEvent implements Cancellab
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取准备附魔的物品(可改动).
+     * <p>原文：
      * Gets the item to be enchanted.
      *
-     * @return ItemStack of item
+     * @return 附魔的物品ItemStack对象
+     * <p>原文：ItemStack of item
      */
     @NotNull
     public ItemStack getItem() {
@@ -75,10 +90,15 @@ public class PrepareItemEnchantEvent extends InventoryEvent implements Cancellab
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取附魔所需要的等级的列表.
+     * <p>原文：
      * Get a list of offered experience level costs of the enchantment.
      *
-     * @return experience level costs offered
-     * @deprecated Use {@link #getOffers()} instead of this method
+     * @return 附魔所需要的等级的列表
+     * <p>原文：experience level costs offered
+     * @deprecated 请换用 {@link #getOffers()} 方法
+     * <p>原文：Use {@link #getOffers()} instead of this method
      */
     @NotNull
     @Deprecated(since = "1.20.5")
@@ -91,21 +111,31 @@ public class PrepareItemEnchantEvent extends InventoryEvent implements Cancellab
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取对玩家可用的的附魔选项列表. 你可以修改这些值以干预对玩家可用的附魔.
+     * 如果附魔台中某个特定的格子没有附魔选项, 则这个附魔选项可能为null.
+     * 附魔台中有3个附魔选项格可供编辑.
+     * <p>原文：
      * Get a list of available {@link EnchantmentOffer} for the player. You can
      * modify the values to change the available offers for the player. An offer
      * may be null, if there isn't an enchantment offer at a specific slot. There
      * are 3 slots in the enchantment table available to modify.
      *
-     * @return list of available enchantment offers
+     * @return 可用的的附魔选项列表
+     * <p>原文：list of available enchantment offers
      */
     public @Nullable EnchantmentOffer @NotNull[] getOffers() {
         return this.offers;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取生效的附魔等级加成 - 对应书架的数量.
+     * <p>原文：
      * Get enchantment bonus in effect - corresponds to number of bookshelves
      *
-     * @return enchantment bonus
+     * @return 附魔等级加成
+     * <p>原文：enchantment bonus
      */
     public int getEnchantmentBonus() {
         return this.bonus;

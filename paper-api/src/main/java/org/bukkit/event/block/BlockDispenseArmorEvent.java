@@ -8,6 +8,11 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当一个可装备物品从某个方块发射出来并装备到附近的实体上时触发本事件.
+ * <p>
+ * 如果本事件被取消, 那么装备将不会装备到目标实体上.
+ * <p>原文：
  * Called when an equippable item is dispensed from a block and equipped on a
  * nearby entity.
  * <p>
@@ -25,9 +30,13 @@ public class BlockDispenseArmorEvent extends BlockDispenseEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取盔甲装备给的目标生物.
+     * <p>原文：
      * Get the living entity on which the armor was dispensed.
      *
-     * @return the target entity
+     * @return 目标实体
+     * <p>原文：the target entity
      */
     @NotNull
     public LivingEntity getTargetEntity() {

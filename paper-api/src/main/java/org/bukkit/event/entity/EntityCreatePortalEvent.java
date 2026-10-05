@@ -11,9 +11,13 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当一个{@link LivingEntity}在世界中创建传送门时触发该事件.
+ * <p>原文：
  * Thrown when a Living Entity creates a portal in a world.
  *
- * @deprecated Use {@link PortalCreateEvent}
+ * @deprecated 请使用 {@link PortalCreateEvent}
+ * <p>原文：Use {@link PortalCreateEvent}
  */
 @Deprecated(since = "1.14.1")
 public class EntityCreatePortalEvent extends EntityEvent implements Cancellable {
@@ -40,9 +44,13 @@ public class EntityCreatePortalEvent extends EntityEvent implements Cancellable 
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回与这个传送门有关的所有方块.
+     * <p>原文：
      * Gets a list of all blocks associated with the portal.
      *
-     * @return List of blocks that will be changed.
+     * @return 将被改变的方块列表.
+     * <p>原文：List of blocks that will be changed.
      */
     @NotNull
     public List<BlockState> getBlocks() {
@@ -50,9 +58,13 @@ public class EntityCreatePortalEvent extends EntityEvent implements Cancellable 
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回正在尝试创建的传送门类型.
+     * <p>原文：
      * Gets the type of portal that is trying to be created.
      *
-     * @return Type of portal.
+     * @return 传送门类型
+     * <p>原文：Type of portal.
      */
     @NotNull
     public PortalType getPortalType() {

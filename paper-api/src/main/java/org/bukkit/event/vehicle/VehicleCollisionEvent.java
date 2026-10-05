@@ -5,6 +5,9 @@ import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 两个载具碰撞的事件
+ * <p>原文：
  * Raised when a vehicle collides.
  */
 public abstract class VehicleCollisionEvent extends VehicleEvent {

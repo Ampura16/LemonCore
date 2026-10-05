@@ -5,6 +5,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * FixedMetadataValue是一种特殊情况的元数据项, 在初始化后永远包含相同的值.
+ * 使FixedMetadataValue无效没有任何效果.
+ * <p>
+ * 此类出于历史原因继承LazyMetadataValue, 即使它覆盖了所有实现方法.
+ * 未来继承层次结构可能会改变.
+ * <p>原文：
  * A FixedMetadataValue is a special case metadata item that contains the same
  * value forever after initialization. Invalidating a FixedMetadataValue has
  * no effect.
@@ -22,15 +29,23 @@ import org.jetbrains.annotations.Nullable;
 public class FixedMetadataValue extends LazyMetadataValue {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 存储由此固定值表示的内部值.
+     * <p>原文：
      * Store the internal value that is represented by this fixed value.
      */
     private final Object internalValue;
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用Object初始化FixedMetadataValue.
+     * <p>原文：
      * Initializes a FixedMetadataValue with an Object
      *
-     * @param owningPlugin the {@link Plugin} that created this metadata value
-     * @param value the value assigned to this metadata value
+     * @param owningPlugin 创建此元数据值的{@link Plugin}
+     * <p>原文：the {@link Plugin} that created this metadata value
+     * @param value 分配给此元数据值的值
+     * <p>原文：the value assigned to this metadata value
      */
     public FixedMetadataValue(@NotNull Plugin owningPlugin, @Nullable final Object value) {
         super(owningPlugin);

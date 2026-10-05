@@ -1,6 +1,9 @@
 package org.bukkit.util.noise;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 所有噪音产生器的基类。
+ * <p>原文：
  * Base class for all noise generators
  */
 public abstract class NoiseGenerator {
@@ -10,10 +13,15 @@ public abstract class NoiseGenerator {
     protected double offsetZ;
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 更快速的向下取整算法，比(int)Math.floor(x)快。
+     * <p>原文：
      * Speedy floor, faster than (int)Math.floor(x)
      *
-     * @param x Value to floor
-     * @return Floored value
+     * @param x 要向下取整的值
+     * <p>原文：Value to floor
+     * @return 向下取整的结果
+     * <p>原文：Floored value
      */
     public static int floor(double x) {
         return x >= 0 ? (int) x : (int) x - 1;
@@ -35,124 +43,199 @@ public abstract class NoiseGenerator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 计算并返回给定坐标在一维空间中的一维噪音。
+     * <p>原文：
      * Computes and returns the 1D noise for the given coordinate in 1D space
      *
-     * @param x X coordinate
-     * @return Noise at given location, from range -1 to 1
+     * @param x X坐标
+     * <p>原文：X coordinate
+     * @return 给定位置的噪音, 取值范围 -1 到 1
+     * <p>原文：Noise at given location, from range -1 to 1
      */
     public double noise(double x) {
         return noise(x, 0, 0);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 计算并返回给定坐标在二维空间中的二维噪音。
+     * <p>原文：
      * Computes and returns the 2D noise for the given coordinates in 2D space
      *
-     * @param x X coordinate
-     * @param y Y coordinate
-     * @return Noise at given location, from range -1 to 1
+     * @param x X坐标
+     * <p>原文：X coordinate
+     * @param y Y坐标
+     * <p>原文：Y coordinate
+     * @return 给定位置的噪音, 取值范围 -1 到 1
+     * <p>原文：Noise at given location, from range -1 to 1
      */
     public double noise(double x, double y) {
         return noise(x, y, 0);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 计算并返回给定坐标在三维空间中的三维噪音。
+     * <p>原文：
      * Computes and returns the 3D noise for the given coordinates in 3D space
      *
-     * @param x X coordinate
-     * @param y Y coordinate
-     * @param z Z coordinate
-     * @return Noise at given location, from range -1 to 1
+     * @param x X坐标
+     * <p>原文：X coordinate
+     * @param y Y坐标
+     * <p>原文：Y coordinate
+     * @param z Z坐标
+     * <p>原文：Z coordinate
+     * @return 给定位置的噪音, 取值范围 -1 到 1
+     * <p>原文：Noise at given location, from range -1 to 1
      */
     public abstract double noise(double x, double y, double z);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用特殊的数个倍频和参数产生一个一维坐标的噪音。
+     * <p>原文：
      * Generates noise for the 1D coordinates using the specified number of
      * octaves and parameters
      *
-     * @param x X-coordinate
-     * @param octaves Number of octaves to use
-     * @param frequency How much to alter the frequency by each octave
-     * @param amplitude How much to alter the amplitude by each octave
-     * @return Resulting noise
+     * @param x X坐标
+     * <p>原文：X-coordinate
+     * @param octaves 使用的倍频值
+     * <p>原文：Number of octaves to use
+     * @param frequency 每一个倍频改变多少频率
+     * <p>原文：How much to alter the frequency by each octave
+     * @param amplitude 每一个倍频改变多少振幅
+     * <p>原文：How much to alter the amplitude by each octave
+     * @return 噪音结果
+     * <p>原文：Resulting noise
      */
     public double noise(double x, int octaves, double frequency, double amplitude) {
         return noise(x, 0, 0, octaves, frequency, amplitude);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用特殊的数个倍频和参数产生一个一维坐标的噪音。
+     * <p>原文：
      * Generates noise for the 1D coordinates using the specified number of
      * octaves and parameters
      *
-     * @param x X-coordinate
-     * @param octaves Number of octaves to use
-     * @param frequency How much to alter the frequency by each octave
-     * @param amplitude How much to alter the amplitude by each octave
-     * @param normalized If true, normalize the value to [-1, 1]
-     * @return Resulting noise
+     * @param x X坐标
+     * <p>原文：X-coordinate
+     * @param octaves 使用的倍频值
+     * <p>原文：Number of octaves to use
+     * @param frequency 每一个倍频改变多少频率
+     * <p>原文：How much to alter the frequency by each octave
+     * @param amplitude 每一个倍频改变多少振幅
+     * <p>原文：How much to alter the amplitude by each octave
+     * @param normalized 如果为true，规范这个值为[-1, 1]
+     * <p>原文：If true, normalize the value to [-1, 1]
+     * @return 噪音结果
+     * <p>原文：Resulting noise
      */
     public double noise(double x, int octaves, double frequency, double amplitude, boolean normalized) {
         return noise(x, 0, 0, octaves, frequency, amplitude, normalized);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用特殊的数个倍频和参数产生一个二维坐标的噪音。
+     * <p>原文：
      * Generates noise for the 2D coordinates using the specified number of
      * octaves and parameters
      *
-     * @param x X-coordinate
-     * @param y Y-coordinate
-     * @param octaves Number of octaves to use
-     * @param frequency How much to alter the frequency by each octave
-     * @param amplitude How much to alter the amplitude by each octave
-     * @return Resulting noise
+     * @param x X坐标
+     * <p>原文：X-coordinate
+     * @param y Y坐标
+     * <p>原文：Y-coordinate
+     * @param octaves 使用的倍频值
+     * <p>原文：Number of octaves to use
+     * @param frequency 每一个倍频改变多少频率
+     * <p>原文：How much to alter the frequency by each octave
+     * @param amplitude 每一个倍频改变多少振幅
+     * <p>原文：How much to alter the amplitude by each octave
+     * @return 噪音结果
+     * <p>原文：Resulting noise
      */
     public double noise(double x, double y, int octaves, double frequency, double amplitude) {
         return noise(x, y, 0, octaves, frequency, amplitude);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用特殊的数个倍频和参数产生一个二维坐标的噪音。
+     * <p>原文：
      * Generates noise for the 2D coordinates using the specified number of
      * octaves and parameters
      *
-     * @param x X-coordinate
-     * @param y Y-coordinate
-     * @param octaves Number of octaves to use
-     * @param frequency How much to alter the frequency by each octave
-     * @param amplitude How much to alter the amplitude by each octave
-     * @param normalized If true, normalize the value to [-1, 1]
-     * @return Resulting noise
+     * @param x X坐标
+     * <p>原文：X-coordinate
+     * @param y Y坐标
+     * <p>原文：Y-coordinate
+     * @param octaves 使用的倍频值
+     * <p>原文：Number of octaves to use
+     * @param frequency 每一个倍频改变多少频率
+     * <p>原文：How much to alter the frequency by each octave
+     * @param amplitude 每一个倍频改变多少振幅
+     * <p>原文：How much to alter the amplitude by each octave
+     * @param normalized 如果为true，规范这个值为[-1, 1]
+     * <p>原文：If true, normalize the value to [-1, 1]
+     * @return 噪音结果
+     * <p>原文：Resulting noise
      */
     public double noise(double x, double y, int octaves, double frequency, double amplitude, boolean normalized) {
         return noise(x, y, 0, octaves, frequency, amplitude, normalized);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用特殊的数个倍频和参数产生一个三维坐标的噪音。
+     * <p>原文：
      * Generates noise for the 3D coordinates using the specified number of
      * octaves and parameters
      *
-     * @param x X-coordinate
-     * @param y Y-coordinate
-     * @param z Z-coordinate
-     * @param octaves Number of octaves to use
-     * @param frequency How much to alter the frequency by each octave
-     * @param amplitude How much to alter the amplitude by each octave
-     * @return Resulting noise
+     * @param x X坐标
+     * <p>原文：X-coordinate
+     * @param y Y坐标
+     * <p>原文：Y-coordinate
+     * @param z Z坐标
+     * <p>原文：Z-coordinate
+     * @param octaves 使用的倍频值
+     * <p>原文：Number of octaves to use
+     * @param frequency 每一个倍频改变多少频率
+     * <p>原文：How much to alter the frequency by each octave
+     * @param amplitude 每一个倍频改变多少振幅
+     * <p>原文：How much to alter the amplitude by each octave
+     * @return 噪音结果
+     * <p>原文：Resulting noise
      */
     public double noise(double x, double y, double z, int octaves, double frequency, double amplitude) {
         return noise(x, y, z, octaves, frequency, amplitude, false);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用特殊的数个倍频和参数产生一个三维坐标的噪音。
+     * <p>原文：
      * Generates noise for the 3D coordinates using the specified number of
      * octaves and parameters
      *
-     * @param x X-coordinate
-     * @param y Y-coordinate
-     * @param z Z-coordinate
-     * @param octaves Number of octaves to use
-     * @param frequency How much to alter the frequency by each octave
-     * @param amplitude How much to alter the amplitude by each octave
-     * @param normalized If true, normalize the value to [-1, 1]
-     * @return Resulting noise
+     * @param x X坐标
+     * <p>原文：X-coordinate
+     * @param y Y坐标
+     * <p>原文：Y-coordinate
+     * @param z Z坐标
+     * <p>原文：Z-coordinate
+     * @param octaves 使用的倍频值
+     * <p>原文：Number of octaves to use
+     * @param frequency 每一个倍频改变多少频率
+     * <p>原文：How much to alter the frequency by each octave
+     * @param amplitude 每一个倍频改变多少振幅
+     * <p>原文：How much to alter the amplitude by each octave
+     * @param normalized 如果为true，规范这个值为[-1, 1]
+     * <p>原文：If true, normalize the value to [-1, 1]
+     * @return 噪音结果
+     * <p>原文：Resulting noise
      */
     public double noise(double x, double y, double z, int octaves, double frequency, double amplitude, boolean normalized) {
         double result = 0;

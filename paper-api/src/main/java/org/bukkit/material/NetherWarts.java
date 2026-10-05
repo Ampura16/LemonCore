@@ -4,9 +4,14 @@ import org.bukkit.Material;
 import org.bukkit.NetherWartsState;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表地狱疣
+ * <p>原文：
  * Represents nether wart
  *
- * @deprecated all usage of MaterialData is deprecated and subject to removal.
+ * @deprecated 所有 MaterialData 的使用都已弃用并可能被移除。
+ * 使用 {@link org.bukkit.block.data.BlockData}。
+ * <p>原文：all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
  */
 @Deprecated(since = "1.13", forRemoval = true)
@@ -25,9 +30,15 @@ public class NetherWarts extends MaterialData {
     }
 
     /**
-     * @param type the type
-     * @param data the raw data value
-     * @deprecated Magic value
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @param type 类型
+     * <p>原文：the type
+     * @param data 原始数据值
+     * <p>原文：the raw data value
+     * @deprecated 魔法值
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.6.2")
     public NetherWarts(final Material type, final byte data) {
@@ -35,9 +46,15 @@ public class NetherWarts extends MaterialData {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此地狱疣的当前生长状态
+     * <p>原文：
      * Gets the current growth state of this nether wart
      *
-     * @return NetherWartsState of this nether wart
+     * @return 此地狱疣的NetherWartsState
+     * <p>
+     * 原文：Gets the current growth state of this nether wart
+     * <p>原文：NetherWartsState of this nether wart
      */
     public NetherWartsState getState() {
         switch (getData()) {
@@ -53,9 +70,15 @@ public class NetherWarts extends MaterialData {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此地狱疣的生长状态
+     * <p>原文：
      * Sets the growth state of this nether wart
      *
-     * @param state New growth state of this nether wart
+     * @param state 此地狱疣的新生长状态
+     * <p>
+     * 原文：Sets the growth state of this nether wart
+     * <p>原文：New growth state of this nether wart
      */
     public void setState(NetherWartsState state) {
         switch (state) {

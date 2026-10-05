@@ -19,6 +19,11 @@ import org.joml.Vector3i;
 import org.joml.Vector3ic;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * Vector代表一个可变向量.
+ * 这个组件是可变的,长期存储这些向量可能导致问题,因为之后的代码可能对其进行修改.
+ * 如果你想要长期存储一个向量,最好使用 <code>clone()</code> 获得一个拷贝.
+ * <p>原文：
  * Represents a mutable vector. Because the components of Vectors are mutable,
  * storing Vectors long term may be dangerous if passing code modifies the
  * Vector later. If you want to keep around a Vector, it may be wise to call
@@ -31,6 +36,9 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     private static Random random = new Random();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 近似相等的阈值,用于equals().
+     * <p>原文：
      * Threshold for fuzzy equals().
      */
     private static final double epsilon = 0.000001;
@@ -40,6 +48,9 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     protected double z;
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 用坐标原点来构造一个向量.
+     * <p>原文：
      * Construct the vector with all components as 0.
      */
     public Vector() {
@@ -49,11 +60,17 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 用给定整数坐标来构造一个向量.
+     * <p>原文：
      * Construct the vector with provided integer components.
      *
-     * @param x X component
-     * @param y Y component
-     * @param z Z component
+     * @param x X坐标
+     * <p>原文：X component
+     * @param y Y坐标
+     * <p>原文：Y component
+     * @param z Z坐标
+     * <p>原文：Z component
      */
     public Vector(int x, int y, int z) {
         this.x = x;
@@ -62,11 +79,17 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 用给定双精度浮点数坐标来构造一个向量.
+     * <p>原文：
      * Construct the vector with provided double components.
      *
-     * @param x X component
-     * @param y Y component
-     * @param z Z component
+     * @param x X坐标
+     * <p>原文：X component
+     * @param y Y坐标
+     * <p>原文：Y component
+     * @param z Z坐标
+     * <p>原文：Z component
      */
     public Vector(double x, double y, double z) {
         this.x = x;
@@ -75,11 +98,17 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 用给定单精度浮点数坐标来构造一个向量.
+     * <p>原文：
      * Construct the vector with provided float components.
      *
-     * @param x X component
-     * @param y Y component
-     * @param z Z component
+     * @param x X坐标
+     * <p>原文：X component
+     * @param y Y坐标
+     * <p>原文：Y component
+     * @param z Z坐标
+     * <p>原文：Z component
      */
     public Vector(float x, float y, float z) {
         this.x = x;
@@ -88,10 +117,15 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将本向量的坐标加上另一个向量的坐标.
+     * <p>原文：
      * Adds a vector to this one
      *
-     * @param vec The other vector
-     * @return the same vector
+     * @param vec 另一个向量
+     * <p>原文：The other vector
+     * @return 返回自身作为结果向量
+     * <p>原文：the same vector
      */
     @NotNull
     public Vector add(@NotNull Vector vec) {
@@ -102,10 +136,15 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 从本向量的坐标中减去另一个向量的坐标.
+     * <p>原文：
      * Subtracts a vector from this one.
      *
-     * @param vec The other vector
-     * @return the same vector
+     * @param vec 另一个向量
+     * <p>原文：The other vector
+     * @return 返回自身作为结果向量
+     * <p>原文：the same vector
      */
     @NotNull
     public Vector subtract(@NotNull Vector vec) {
@@ -116,10 +155,17 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将本向量的坐标乘上另一个向量的坐标.
+     * <p>
+     * 译注:这不是叉积也不是点积,只是单纯的乘法.
+     * <p>原文：
      * Multiplies the vector by another.
      *
-     * @param vec The other vector
-     * @return the same vector
+     * @param vec 另一个向量
+     * <p>原文：The other vector
+     * @return 返回自身作为结果向量
+     * <p>原文：the same vector
      */
     @NotNull
     public Vector multiply(@NotNull Vector vec) {
@@ -130,10 +176,15 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将本向量的坐标除以另一个向量的坐标.
+     * <p>原文：
      * Divides the vector by another.
      *
-     * @param vec The other vector
-     * @return the same vector
+     * @param vec 另一个向量
+     * <p>原文：The other vector
+     * @return 返回自身作为结果向量
+     * <p>原文：the same vector
      */
     @NotNull
     public Vector divide(@NotNull Vector vec) {
@@ -144,10 +195,15 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将本向量的坐标全部设为另一个向量的坐标.
+     * <p>原文：
      * Copies another vector
      *
-     * @param vec The other vector
-     * @return the same vector
+     * @param vec 另一个向量
+     * <p>原文：The other vector
+     * @return 返回自身作为结果向量
+     * <p>原文：the same vector
      */
     @NotNull
     public Vector copy(@NotNull Vector vec) {
@@ -158,56 +214,85 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取向量的模值,定义为 sqrt(x^2+y^2+z^2).
+     * 这个方法的返回值没有被缓存,且使用了开销较大的平方以及开根函数,
+     * 所以不要反复调用这个方法来获取向量的模值.
+     * 当向量的模过大时,开根函数有可能发生溢出,并会返回{@link java.lang.Double#NaN}.
+     * <p>原文：
      * Gets the magnitude of the vector, defined as sqrt(x^2+y^2+z^2). The
      * value of this method is not cached and uses a costly square-root
      * function, so do not repeatedly call this method to get the vector's
      * magnitude. NaN will be returned if the inner result of the sqrt()
      * function overflows, which will be caused if the length is too long.
      *
-     * @return the magnitude
+     * @return 模
+     * <p>原文：the magnitude
      */
     public double length() {
         return Math.sqrt(NumberConversions.square(x) + NumberConversions.square(y) + NumberConversions.square(z));
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取向量的模的平方.
+     * <p>原文：
      * Gets the magnitude of the vector squared.
      *
-     * @return the magnitude
+     * @return 模的平方
+     * <p>原文：the magnitude
      */
     public double lengthSquared() {
         return NumberConversions.square(x) + NumberConversions.square(y) + NumberConversions.square(z);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取本向量与与另一个向量之间的距离.
+     * 这个方法的返回值没有被缓存,且使用了开销较大的平方以及开根函数,
+     * 所以不要反复调用这个方法来获取向量的模值.
+     * 当向量的模过大时,开根函数有可能发生溢出,并会返回{@link java.lang.Double#NaN}.
+     * <p>原文：
      * Get the distance between this vector and another. The value of this
      * method is not cached and uses a costly square-root function, so do not
      * repeatedly call this method to get the vector's magnitude. NaN will be
      * returned if the inner result of the sqrt() function overflows, which
      * will be caused if the distance is too long.
      *
-     * @param o The other vector
-     * @return the distance
+     * @param o 给定向量
+     * <p>原文：The other vector
+     * @return 距离
+     * <p>原文：the distance
      */
     public double distance(@NotNull Vector o) {
         return Math.sqrt(NumberConversions.square(x - o.x) + NumberConversions.square(y - o.y) + NumberConversions.square(z - o.z));
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取本向量与与另一个向量之间的距离的平方.
+     * <p>原文：
      * Get the squared distance between this vector and another.
      *
-     * @param o The other vector
-     * @return the distance
+     * @param o 给定向量
+     * <p>原文：The other vector
+     * @return 距离的平方
+     * <p>原文：the distance
      */
     public double distanceSquared(@NotNull Vector o) {
         return NumberConversions.square(x - o.x) + NumberConversions.square(y - o.y) + NumberConversions.square(z - o.z);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取本向量与另一个向量的夹角,用弧度表示.
+     * <p>原文：
      * Gets the angle between this vector and another in radians.
      *
-     * @param other The other vector
-     * @return angle in radians
+     * @param other 给定向量
+     * <p>原文：The other vector
+     * @return 弧度表示的夹角
+     * <p>原文：angle in radians
      */
     public float angle(@NotNull Vector other) {
         double dot = Doubles.constrainToRange(dot(other) / (length() * other.length()), -1.0, 1.0);
@@ -216,10 +301,15 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置本向量的坐标为两个向量连线的中点.
+     * <p>原文：
      * Sets this vector to the midpoint between this vector and another.
      *
-     * @param other The other vector
-     * @return this same vector (now a midpoint)
+     * @param other 给定向量
+     * <p>原文：The other vector
+     * @return 返回自身作为结果向量(此时已经是中点向量)
+     * <p>原文：this same vector (now a midpoint)
      */
     @NotNull
     public Vector midpoint(@NotNull Vector other) {
@@ -230,10 +320,15 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取一个新的向量,它的值为本向量和另一个向量间的连线的中点.
+     * <p>原文：
      * Gets a new midpoint vector between this vector and another.
      *
-     * @param other The other vector
-     * @return a new midpoint vector
+     * @param other 给定向量
+     * <p>原文：The other vector
+     * @return 一个新的中点向量
+     * <p>原文：a new midpoint vector
      */
     @NotNull
     public Vector getMidpoint(@NotNull Vector other) {
@@ -244,11 +339,16 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 向量的数乘,将向量在所有轴上扩展某个倍数.
+     * <p>原文：
      * Performs scalar multiplication, multiplying all components with a
      * scalar.
      *
-     * @param m The factor
-     * @return the same vector
+     * @param m 因数,即数乘的倍数,整数
+     * <p>原文：The factor
+     * @return 返回自身作为结果向量
+     * <p>原文：the same vector
      */
     @NotNull
     public Vector multiply(int m) {
@@ -259,11 +359,16 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 向量的数乘,将向量在所有轴上扩展某个倍数.
+     * <p>原文：
      * Performs scalar multiplication, multiplying all components with a
      * scalar.
      *
-     * @param m The factor
-     * @return the same vector
+     * @param m 因数,即数乘的倍数,双精度浮点数
+     * <p>原文：The factor
+     * @return 返回自身作为结果向量
+     * <p>原文：the same vector
      */
     @NotNull
     public Vector multiply(double m) {
@@ -274,11 +379,16 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 向量的数乘,将向量在所有轴上扩展某个倍数.
+     * <p>原文：
      * Performs scalar multiplication, multiplying all components with a
      * scalar.
      *
-     * @param m The factor
-     * @return the same vector
+     * @param m 因数,即数乘的倍数,单精度浮点数
+     * <p>原文：The factor
+     * @return 返回自身作为结果向量
+     * <p>原文：the same vector
      */
     @NotNull
     public Vector multiply(float m) {
@@ -289,17 +399,34 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 计算本向量与另一个向量的点积,定义为x1*x2+y1*y2+z1*z2. 此函数的返回值是个标量.
+     * <p>原文：
      * Calculates the dot product of this vector with another. The dot product
      * is defined as x1*x2+y1*y2+z1*z2. The returned value is a scalar.
      *
-     * @param other The other vector
-     * @return dot product
+     * @param other 给定向量
+     * <p>原文：The other vector
+     * @return 点积
+     * <p>原文：dot product
      */
     public double dot(@NotNull Vector other) {
         return x * other.x + y * other.y + z * other.z;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将本向量的坐标设为两个向量的叉积.
+     * <p>
+     * 其计算过程如下:
+     * <ul>
+     * <li>x = y1 * z2 - y2 * z1
+     * <li>y = z1 * x2 - z2 * x1
+     * <li>z = x1 * y2 - x2 * y1
+     * </ul>
+     * <p>
+     * 译注:叉积是a向量和b向量的垂直向量的积的模,方向使用右手定则判断.
+     * <p>原文：
      * Calculates the cross product of this vector with another. The cross
      * product is defined as:
      * <ul>
@@ -308,8 +435,10 @@ public class Vector implements Cloneable, ConfigurationSerializable {
      * <li>z = x1 * y2 - x2 * y1
      * </ul>
      *
-     * @param o The other vector
-     * @return the same vector
+     * @param o 给定向量
+     * <p>原文：The other vector
+     * @return 返回自身作为结果向量
+     * <p>原文：the same vector
      */
     @NotNull
     public Vector crossProduct(@NotNull Vector o) {
@@ -324,6 +453,17 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回一个新的向量,其坐标为本向量与另一个向量的叉积.
+     * 其计算过程如下:
+     * <ul>
+     * <li>x = y1 * z2 - y2 * z1
+     * <li>y = z1 * x2 - z2 * x1
+     * <li>z = x1 * y2 - x2 * y1
+     * </ul>
+     * <p>
+     * 译注:叉积是a向量和b向量的垂直向量的积的模,方向使用右手定则判断.
+     * <p>原文：
      * Calculates the cross product of this vector with another without mutating
      * the original. The cross product is defined as:
      * <ul>
@@ -332,8 +472,10 @@ public class Vector implements Cloneable, ConfigurationSerializable {
      * <li>z = x1 * y2 - x2 * y1
      * </ul>
      *
-     * @param o The other vector
-     * @return a new vector
+     * @param o 给定向量
+     * <p>原文：The other vector
+     * @return 新向量表示叉积的结果
+     * <p>原文：a new vector
      */
     @NotNull
     public Vector getCrossProduct(@NotNull Vector o) {
@@ -344,9 +486,13 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将本向量转化为单位向量(模为1的向量).
+     * <p>原文：
      * Converts this vector to a unit vector (a vector with length of 1).
      *
-     * @return the same vector
+     * @return 返回自身作为结果向量
+     * <p>原文：the same vector
      */
     @NotNull
     public Vector normalize() {
@@ -360,9 +506,13 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将本向量设为原点向量.
+     * <p>原文：
      * Zero this vector's components.
      *
-     * @return the same vector
+     * @return 返回自身作为结果向量
+     * <p>原文：the same vector
      */
     @NotNull
     public Vector zero() {
@@ -373,18 +523,26 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查本向量的每个坐标是否都等于0.
+     * <p>原文：
      * Check whether or not each component of this vector is equal to 0.
      *
-     * @return true if equal to zero, false if at least one component is non-zero
+     * @return 如果等于零则返回true,如果至少有一个坐标不为零则返回false
+     * <p>原文：true if equal to zero, false if at least one component is non-zero
      */
     public boolean isZero() {
         return x == 0 && y == 0 && z == 0;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将此向量的值为 <code>-0.0</code> 的每个部分转化为 <code>0.0</code>.
+     * <p>原文：
      * Converts each component of value <code>-0.0</code> to <code>0.0</code>.
      *
-     * @return This vector.
+     * @return 返回自身作为结果向量
+     * <p>原文：This vector.
      */
     @NotNull
     Vector normalizeZeros() {
@@ -395,40 +553,65 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 判断本向量是否在一个AABB包围盒中.
+     * <p>
+     * 参数 min 和 max 必须真的是最小坐标和最大坐标,也就是说必须是能构成长方体的对角点.
+     * <p>原文：
      * Returns whether this vector is in an axis-aligned bounding box.
      * <p>
      * The minimum and maximum vectors given must be truly the minimum and
      * maximum X, Y and Z components.
      *
-     * @param min Minimum vector
-     * @param max Maximum vector
-     * @return whether this vector is in the AABB
+     * @param min 最小向量
+     * <p>原文：Minimum vector
+     * @param max 最大向量
+     * <p>原文：Maximum vector
+     * @return 这个向量是否在这个AABB包围盒中
+     * <p>原文：whether this vector is in the AABB
      */
     public boolean isInAABB(@NotNull Vector min, @NotNull Vector max) {
         return x >= min.x && x <= max.x && y >= min.y && y <= max.y && z >= min.z && z <= max.z;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 判断本向量是否在一个球形空间中.
+     * <p>原文：
      * Returns whether this vector is within a sphere.
      *
-     * @param origin Sphere origin.
-     * @param radius Sphere radius
-     * @return whether this vector is in the sphere
+     * @param origin 球心
+     * <p>原文：Sphere origin.
+     * @param radius 半径
+     * <p>原文：Sphere radius
+     * @return 此向量是否在球形空间中
+     * <p>原文：whether this vector is in the sphere
      */
     public boolean isInSphere(@NotNull Vector origin, double radius) {
         return (NumberConversions.square(origin.x - x) + NumberConversions.square(origin.y - y) + NumberConversions.square(origin.z - z)) <= NumberConversions.square(radius);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 判断一个向量是否为单位向量.
+     * <p>原文：
      * Returns if a vector is normalized
      *
-     * @return whether the vector is normalised
+     * @return 这个向量是否是单位向量
+     * <p>原文：whether the vector is normalised
      */
     public boolean isNormalized() {
         return Math.abs(this.lengthSquared() - 1) < getEpsilon();
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将向量绕X轴旋转.
+     * <p>
+     * 这个算法基于三维空间中向量的标准旋转矩阵.这个矩阵可以在这里找到:
+     * <a href="https://en.wikipedia.org/wiki/Rotation_matrix#Basic_rotations">Rotation
+     * Matrix</a>.
+     * <p>原文：
      * Rotates the vector around the x axis.
      * <p>
      * This piece of math is based on the standard rotation matrix for vectors
@@ -436,9 +619,11 @@ public class Vector implements Cloneable, ConfigurationSerializable {
      * <a href="https://en.wikipedia.org/wiki/Rotation_matrix#Basic_rotations">Rotation
      * Matrix</a>.
      *
-     * @param angle the angle to rotate the vector about. This angle is passed
+     * @param angle 旋转的角度,以弧度为单位
+     * <p>原文：the angle to rotate the vector about. This angle is passed
      * in radians
-     * @return the same vector
+     * @return 返回自身作为结果向量
+     * <p>原文：the same vector
      */
     @NotNull
     public Vector rotateAroundX(double angle) {
@@ -451,6 +636,13 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将向量绕Y轴旋转.
+     * <p>
+     * 这个算法基于三维空间中向量的标准旋转矩阵.这个矩阵可以在这里找到:
+     * <a href="https://en.wikipedia.org/wiki/Rotation_matrix#Basic_rotations">Rotation
+     * Matrix</a>.
+     * <p>原文：
      * Rotates the vector around the y axis.
      * <p>
      * This piece of math is based on the standard rotation matrix for vectors
@@ -458,9 +650,11 @@ public class Vector implements Cloneable, ConfigurationSerializable {
      * <a href="https://en.wikipedia.org/wiki/Rotation_matrix#Basic_rotations">Rotation
      * Matrix</a>.
      *
-     * @param angle the angle to rotate the vector about. This angle is passed
+     * @param angle 旋转的角度,以弧度为单位
+     * <p>原文：the angle to rotate the vector about. This angle is passed
      * in radians
-     * @return the same vector
+     * @return 返回自身作为结果向量
+     * <p>原文：the same vector
      */
     @NotNull
     public Vector rotateAroundY(double angle) {
@@ -473,6 +667,13 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将向量绕Z轴旋转.
+     * <p>
+     * 这个算法基于三维空间中向量的标准旋转矩阵.这个矩阵可以在这里找到:
+     * <a href="https://en.wikipedia.org/wiki/Rotation_matrix#Basic_rotations">Rotation
+     * Matrix</a>.
+     * <p>原文：
      * Rotates the vector around the z axis
      * <p>
      * This piece of math is based on the standard rotation matrix for vectors
@@ -480,9 +681,11 @@ public class Vector implements Cloneable, ConfigurationSerializable {
      * <a href="https://en.wikipedia.org/wiki/Rotation_matrix#Basic_rotations">Rotation
      * Matrix</a>.
      *
-     * @param angle the angle to rotate the vector about. This angle is passed
+     * @param angle 旋转的角度,以弧度为单位
+     * <p>原文：the angle to rotate the vector about. This angle is passed
      * in radians
-     * @return the same vector
+     * @return 返回自身作为结果向量
+     * <p>原文：the same vector
      */
     @NotNull
     public Vector rotateAroundZ(double angle) {
@@ -495,6 +698,15 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将向量绕给定的任意轴在三维空间中旋转.
+     * <p>
+     * 旋转遵循一般的右手定则,这意味着当轴指向观察者时,旋转方向为逆时针.
+     * <p>
+     * 这个方法会确保提供的轴是单位向量,以免在旋转时改变向量的长度.
+     * 如果你熟悉非单位轴向量的缩放,可以使用
+     * {@link Vector#rotateAroundNonUnitAxis(Vector, double)}.
+     * <p>原文：
      * Rotates the vector around a given arbitrary axis in 3 dimensional space.
      *
      * <p>
@@ -506,13 +718,18 @@ public class Vector implements Cloneable, ConfigurationSerializable {
      * with the scaling of a non-unit axis vector, you can use
      * {@link Vector#rotateAroundNonUnitAxis(Vector, double)}.
      *
-     * @param axis the axis to rotate the vector around. If the passed vector is
+     * @param axis 旋转轴.如果传入的向量长度不是1,它会被复制并归一化后再用于旋转.
+     *             请在传入此方法之前对实例使用 {@link Vector#normalize()}
+     * <p>原文：the axis to rotate the vector around. If the passed vector is
      * not of length 1, it gets copied and normalized before using it for the
      * rotation. Please use {@link Vector#normalize()} on the instance before
      * passing it to this method
-     * @param angle the angle to rotate the vector around the axis
-     * @return the same vector
-     * @throws IllegalArgumentException if the provided axis vector instance is
+     * @param angle 绕轴旋转的角度
+     * <p>原文：the angle to rotate the vector around the axis
+     * @return 返回自身作为结果向量
+     * <p>原文：the same vector
+     * @throws IllegalArgumentException 如果提供的轴向量实例为null
+     * <p>原文：if the provided axis vector instance is
      * null
      */
     @NotNull
@@ -523,6 +740,16 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将向量绕给定的任意轴在三维空间中旋转.
+     * <p>
+     * 旋转遵循一般的右手定则,这意味着当轴指向观察者时,旋转方向为逆时针.
+     * <p>
+     * 注意向量的长度会相应地根据轴向量的长度而改变.如果提供的轴不是单位向量,
+     * 旋转后的向量将不会保持原来的长度.结果向量的缩放长度将与轴向量相关.
+     * 如果你不确定向量的缩放情况,请使用
+     * {@link Vector#rotateAroundAxis(Vector, double)}
+     * <p>原文：
      * Rotates the vector around a given arbitrary axis in 3 dimensional space.
      *
      * <p>
@@ -536,10 +763,14 @@ public class Vector implements Cloneable, ConfigurationSerializable {
      * about the scaling of the vector, use
      * {@link Vector#rotateAroundAxis(Vector, double)}
      *
-     * @param axis the axis to rotate the vector around.
-     * @param angle the angle to rotate the vector around the axis
-     * @return the same vector
-     * @throws IllegalArgumentException if the provided axis vector instance is
+     * @param axis 旋转轴
+     * <p>原文：the axis to rotate the vector around.
+     * @param angle 绕轴旋转的角度
+     * <p>原文：the angle to rotate the vector around the axis
+     * @return 返回自身作为结果向量
+     * <p>原文：the same vector
+     * @throws IllegalArgumentException 如果提供的轴向量实例为null
+     * <p>原文：if the provided axis vector instance is
      * null
      */
     @NotNull
@@ -567,67 +798,96 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取X坐标.
+     * <p>原文：
      * Gets the X component.
      *
-     * @return The X component.
+     * @return X坐标
+     * <p>原文：The X component.
      */
     public double getX() {
         return x;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取向下取整的X坐标,这等同于获取包含这个向量的方块的X坐标.
+     * <p>原文：
      * Gets the floored value of the X component, indicating the block that
      * this vector is contained with.
      *
-     * @return block X
+     * @return 方块的X坐标
+     * <p>原文：block X
      */
     public int getBlockX() {
         return NumberConversions.floor(x);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取Y坐标.
+     * <p>原文：
      * Gets the Y component.
      *
-     * @return The Y component.
+     * @return Y坐标
+     * <p>原文：The Y component.
      */
     public double getY() {
         return y;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取向下取整的Y坐标,这等同于获取包含这个向量的方块的Y坐标.
+     * <p>原文：
      * Gets the floored value of the Y component, indicating the block that
      * this vector is contained with.
      *
-     * @return block y
+     * @return 方块的Y坐标
+     * <p>原文：block y
      */
     public int getBlockY() {
         return NumberConversions.floor(y);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取Z坐标.
+     * <p>原文：
      * Gets the Z component.
      *
-     * @return The Z component.
+     * @return Z坐标
+     * <p>原文：The Z component.
      */
     public double getZ() {
         return z;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取向下取整的Z坐标,这等同于获取包含这个向量的方块的Z坐标.
+     * <p>原文：
      * Gets the floored value of the Z component, indicating the block that
      * this vector is contained with.
      *
-     * @return block z
+     * @return 方块的Z坐标
+     * <p>原文：block z
      */
     public int getBlockZ() {
         return NumberConversions.floor(z);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置X坐标.
+     * <p>原文：
      * Set the X component.
      *
-     * @param x The new X component.
-     * @return This vector.
+     * @param x 新的X坐标
+     * <p>原文：The new X component.
+     * @return 自身向量
+     * <p>原文：This vector.
      */
     @NotNull
     public Vector setX(int x) {
@@ -636,10 +896,15 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置X坐标.
+     * <p>原文：
      * Set the X component.
      *
-     * @param x The new X component.
-     * @return This vector.
+     * @param x 新的X坐标
+     * <p>原文：The new X component.
+     * @return 自身向量
+     * <p>原文：This vector.
      */
     @NotNull
     public Vector setX(double x) {
@@ -648,10 +913,15 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置X坐标.
+     * <p>原文：
      * Set the X component.
      *
-     * @param x The new X component.
-     * @return This vector.
+     * @param x 新的X坐标
+     * <p>原文：The new X component.
+     * @return 自身向量
+     * <p>原文：This vector.
      */
     @NotNull
     public Vector setX(float x) {
@@ -660,10 +930,15 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置Y坐标.
+     * <p>原文：
      * Set the Y component.
      *
-     * @param y The new Y component.
-     * @return This vector.
+     * @param y 新的Y坐标
+     * <p>原文：The new Y component.
+     * @return 自身向量
+     * <p>原文：This vector.
      */
     @NotNull
     public Vector setY(int y) {
@@ -672,10 +947,15 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置Y坐标.
+     * <p>原文：
      * Set the Y component.
      *
-     * @param y The new Y component.
-     * @return This vector.
+     * @param y 新的Y坐标
+     * <p>原文：The new Y component.
+     * @return 自身向量
+     * <p>原文：This vector.
      */
     @NotNull
     public Vector setY(double y) {
@@ -684,10 +964,15 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置Y坐标.
+     * <p>原文：
      * Set the Y component.
      *
-     * @param y The new Y component.
-     * @return This vector.
+     * @param y 新的Y坐标
+     * <p>原文：The new Y component.
+     * @return 自身向量
+     * <p>原文：This vector.
      */
     @NotNull
     public Vector setY(float y) {
@@ -696,10 +981,15 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置Z坐标.
+     * <p>原文：
      * Set the Z component.
      *
-     * @param z The new Z component.
-     * @return This vector.
+     * @param z 新的Z坐标
+     * <p>原文：The new Z component.
+     * @return 自身向量
+     * <p>原文：This vector.
      */
     @NotNull
     public Vector setZ(int z) {
@@ -708,10 +998,15 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置Z坐标.
+     * <p>原文：
      * Set the Z component.
      *
-     * @param z The new Z component.
-     * @return This vector.
+     * @param z 新的Z坐标
+     * <p>原文：The new Z component.
+     * @return 自身向量
+     * <p>原文：This vector.
      */
     @NotNull
     public Vector setZ(double z) {
@@ -720,10 +1015,15 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置Z坐标.
+     * <p>原文：
      * Set the Z component.
      *
-     * @param z The new Z component.
-     * @return This vector.
+     * @param z 新的Z坐标
+     * <p>原文：The new Z component.
+     * @return 自身向量
+     * <p>原文：This vector.
      */
     @NotNull
     public Vector setZ(float z) {
@@ -732,6 +1032,12 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查两个对象是否相同.
+     * <p>
+     * 只要两个向量的所有坐标均相同则返回true.这个方法使用模糊匹配来回避浮点错误.
+     * 这个误差量(epsilon)可以通过自身恢复,即不会影响向量本身.
+     * <p>原文：
      * Checks to see if two objects are equal.
      * <p>
      * Only two Vectors can ever return true. This method uses a fuzzy match
@@ -750,9 +1056,13 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回这个向量的哈希码.
+     * <p>原文：
      * Returns a hash code for this vector
      *
-     * @return hash code
+     * @return 哈希码
+     * <p>原文：hash code
      */
     @Override
     public int hashCode() {
@@ -765,9 +1075,13 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 克隆此向量.
+     * <p>原文：
      * Get a new vector.
      *
-     * @return vector
+     * @return 新向量
+     * <p>原文：vector
      */
     @NotNull
     @Override
@@ -780,6 +1094,9 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回这个向量的坐标表示 x,y,z.
+     * <p>原文：
      * Returns this vector's components as x,y,z.
      */
     @Override
@@ -788,10 +1105,16 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将向量转换为 Location,
+     * 其自转角(也叫偏航角,Yaw)、旋进角(也叫进动角、俯仰角,Pitch)为0.
+     * <p>原文：
      * Gets a Location version of this vector with yaw and pitch being 0.
      *
-     * @param world The world to link the location to.
-     * @return the location
+     * @param world 连接这个Location的World.
+     * <p>原文：The world to link the location to.
+     * @return 这个Location实例
+     * <p>原文：the location
      */
     @NotNull
     public Location toLocation(@NotNull World world) {
@@ -799,12 +1122,19 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将向量转换为 Location.
+     * <p>原文：
      * Gets a Location version of this vector.
      *
-     * @param world The world to link the location to.
-     * @param yaw The desired yaw.
-     * @param pitch The desired pitch.
-     * @return the location
+     * @param world 连接这个Location的World.
+     * <p>原文：The world to link the location to.
+     * @param yaw 期望的自转角(也叫偏航角,Yaw).
+     * <p>原文：The desired yaw.
+     * @param pitch 期望的旋进角(也叫进动角、俯仰角,Pitch).
+     * <p>原文：The desired pitch.
+     * @return 这个Location实例
+     * <p>原文：the location
      */
     @NotNull
     public Location toLocation(@NotNull World world, float yaw, float pitch) {
@@ -812,9 +1142,13 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这个向量所在的方块的向量.
+     * <p>原文：
      * Get the block vector of this vector.
      *
-     * @return A block vector.
+     * @return 一个方块向量.
+     * <p>原文：A block vector.
      */
     @NotNull
     public BlockVector toBlockVector() {
@@ -822,9 +1156,13 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将此向量转换为 JOML {@link Vector3f}.
+     * <p>原文：
      * Get this vector as a JOML {@link Vector3f}.
      *
-     * @return the JOML vector
+     * @return JOML向量
+     * <p>原文：the JOML vector
      */
     @NotNull
     public Vector3f toVector3f() {
@@ -832,9 +1170,13 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将此向量转换为 JOML {@link Vector3d}.
+     * <p>原文：
      * Get this vector as a JOML {@link Vector3d}.
      *
-     * @return the JOML vector
+     * @return JOML向量
+     * <p>原文：the JOML vector
      */
     @NotNull
     public Vector3d toVector3d() {
@@ -842,10 +1184,15 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将此向量转换为 JOML {@link Vector3i}.
+     * <p>原文：
      * Get this vector as a JOML {@link Vector3i}.
      *
-     * @param roundingMode the {@link RoundingMode} to use for this vector's components
-     * @return the JOML vector
+     * @param roundingMode 用于此向量坐标的 {@link RoundingMode}
+     * <p>原文：the {@link RoundingMode} to use for this vector's components
+     * @return JOML向量
+     * <p>原文：the JOML vector
      */
     @NotNull
     public Vector3i toVector3i(int roundingMode) {
@@ -853,9 +1200,13 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将此向量转换为 JOML {@link Vector3i},其坐标向下取整.
+     * <p>原文：
      * Get this vector as a JOML {@link Vector3i} with its components floored.
      *
-     * @return the JOML vector
+     * @return JOML向量
+     * <p>原文：the JOML vector
      * @see #toVector3i(int)
      */
     @NotNull
@@ -864,9 +1215,13 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查向量的坐标数值是否均合法.
+     * <p>原文：
      * Check if each component of this Vector is finite.
      *
-     * @throws IllegalArgumentException if any component is not finite
+     * @throws IllegalArgumentException 如果任何一维的坐标不合法则抛出
+     * <p>原文：if any component is not finite
      */
     public void checkFinite() throws IllegalArgumentException {
         NumberConversions.checkFinite(x, "x not finite");
@@ -875,20 +1230,32 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取近似相等的阈值,用于equals().
+     * <p>原文：
      * Get the threshold used for equals().
      *
-     * @return The epsilon.
+     * @return 误差量
+     * <p>原文：The epsilon.
      */
     public static double getEpsilon() {
         return epsilon;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取两个向量坐标中更小的那些坐标组成的新向量.
+     * <p>
+     * 译注:即逐个比对两个向量的坐标,均取最小的那个组成一个新的向量.
+     * <p>原文：
      * Gets the minimum components of two vectors.
      *
-     * @param v1 The first vector.
-     * @param v2 The second vector.
-     * @return minimum
+     * @param v1 第一个向量
+     * <p>原文：The first vector.
+     * @param v2 第二个向量
+     * <p>原文：The second vector.
+     * @return 最小向量
+     * <p>原文：minimum
      */
     @NotNull
     public static Vector getMinimum(@NotNull Vector v1, @NotNull Vector v2) {
@@ -896,11 +1263,19 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取两个向量坐标中更大的那些坐标组成的新向量.
+     * <p>
+     * 译注:即逐个比对两个向量的坐标,均取更大的那个组成一个新的向量.
+     * <p>原文：
      * Gets the maximum components of two vectors.
      *
-     * @param v1 The first vector.
-     * @param v2 The second vector.
-     * @return maximum
+     * @param v1 第一个向量
+     * <p>原文：The first vector.
+     * @param v2 第二个向量
+     * <p>原文：The second vector.
+     * @return 最大向量
+     * <p>原文：maximum
      */
     @NotNull
     public static Vector getMaximum(@NotNull Vector v1, @NotNull Vector v2) {
@@ -908,10 +1283,14 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取一个随机向量,其坐标值均为0到1之间(不含1).
+     * <p>原文：
      * Gets a random vector with components having a random value between 0
      * and 1.
      *
-     * @return A random vector.
+     * @return 一个随机向量
+     * <p>原文：A random vector.
      */
     @NotNull
     public static Vector getRandom() {
@@ -919,10 +1298,15 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取一个坐标与提供的 JOML {@link Vector3f} 匹配的向量.
+     * <p>原文：
      * Gets a vector with components that match the provided JOML {@link Vector3f}.
      *
-     * @param vector the vector to match
-     * @return the new vector
+     * @param vector 要匹配的向量
+     * <p>原文：the vector to match
+     * @return 新向量
+     * <p>原文：the new vector
      */
     @NotNull
     public static Vector fromJOML(@NotNull Vector3f vector) {
@@ -930,10 +1314,15 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取一个坐标与提供的 JOML {@link Vector3d} 匹配的向量.
+     * <p>原文：
      * Gets a vector with components that match the provided JOML {@link Vector3d}.
      *
-     * @param vector the vector to match
-     * @return the new vector
+     * @param vector 要匹配的向量
+     * <p>原文：the vector to match
+     * @return 新向量
+     * <p>原文：the new vector
      */
     @NotNull
     public static Vector fromJOML(@NotNull Vector3d vector) {
@@ -941,10 +1330,15 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取一个坐标与提供的 JOML {@link Vector3i} 匹配的向量.
+     * <p>原文：
      * Gets a vector with components that match the provided JOML {@link Vector3i}.
      *
-     * @param vector the vector to match
-     * @return the new vector
+     * @param vector 要匹配的向量
+     * <p>原文：the vector to match
+     * @return 新向量
+     * <p>原文：the new vector
      */
     @NotNull
     public static Vector fromJOML(@NotNull Vector3i vector) {
@@ -952,10 +1346,15 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取一个坐标与提供的 JOML {@link Vector3fc} 匹配的向量.
+     * <p>原文：
      * Gets a vector with components that match the provided JOML {@link Vector3fc}.
      *
-     * @param vector the vector to match
-     * @return the new vector
+     * @param vector 要匹配的向量
+     * <p>原文：the vector to match
+     * @return 新向量
+     * <p>原文：the new vector
      */
     @NotNull
     public static Vector fromJOML(@NotNull Vector3fc vector) {
@@ -963,10 +1362,15 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取一个坐标与提供的 JOML {@link Vector3dc} 匹配的向量.
+     * <p>原文：
      * Gets a vector with components that match the provided JOML {@link Vector3dc}.
      *
-     * @param vector the vector to match
-     * @return the new vector
+     * @param vector 要匹配的向量
+     * <p>原文：the vector to match
+     * @return 新向量
+     * <p>原文：the new vector
      */
     @NotNull
     public static Vector fromJOML(@NotNull Vector3dc vector) {
@@ -974,10 +1378,15 @@ public class Vector implements Cloneable, ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取一个坐标与提供的 JOML {@link Vector3ic} 匹配的向量.
+     * <p>原文：
      * Gets a vector with components that match the provided JOML {@link Vector3ic}.
      *
-     * @param vector the vector to match
-     * @return the new vector
+     * @param vector 要匹配的向量
+     * <p>原文：the vector to match
+     * @return 新向量
+     * <p>原文：the new vector
      */
     @NotNull
     public static Vector fromJOML(@NotNull Vector3ic vector) {

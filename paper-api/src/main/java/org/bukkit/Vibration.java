@@ -5,6 +5,9 @@ import org.bukkit.entity.Entity;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 表示来自幽匿感测体的振动。
+ * <p>原文：
  * Represents a vibration from a Skulk sensor.
  */
 public class Vibration {
@@ -27,10 +30,16 @@ public class Vibration {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取振动的起源位置。
+     * <p>原文：
      * Get the origin of the vibration.
      *
      * @deprecated unused as of 1.19
-     * @return origin
+     * @return 起源位置
+     * <p>
+     * 原文：Get the origin of the vibration.
+     * <p>原文：origin
      */
     @NotNull
     @Deprecated(forRemoval = true) // Paper
@@ -39,9 +48,15 @@ public class Vibration {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取振动的目的地。
+     * <p>原文：
      * Get the vibration destination.
      *
-     * @return destination
+     * @return 目的地
+     * <p>
+     * 原文：Get the vibration destination.
+     * <p>原文：destination
      */
     @NotNull
     public Destination getDestination() {
@@ -49,9 +64,15 @@ public class Vibration {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取振动到达时间（以刻为单位）。
+     * <p>原文：
      * Get the vibration arrival time in ticks.
      *
-     * @return arrival time
+     * @return 到达时间
+     * <p>
+     * 原文：Get the vibration arrival time in ticks.
+     * <p>原文：arrival time
      */
     public int getArrivalTime() {
         return arrivalTime;

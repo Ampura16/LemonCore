@@ -3,6 +3,9 @@ package org.bukkit.configuration;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 用于控制 {@link MemoryConfiguration} 输入输出的各种设置。
+ * <p>原文：
  * Various settings for controlling the input and output of a {@link
  * MemoryConfiguration}
  */

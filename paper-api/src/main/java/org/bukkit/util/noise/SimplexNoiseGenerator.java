@@ -6,6 +6,9 @@ import org.bukkit.World;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 使用单纯形噪声发生器产生噪音.
+ * <p>原文：
  * Generates simplex-based noise.
  * <p>
  * This is a modified version of the freely published version in the paper by
@@ -51,27 +54,39 @@ public class SimplexNoiseGenerator extends PerlinNoiseGenerator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用给定的World创建一个已设种子的SimplexNoiseGenerator.
+     * <p>原文：
      * Creates a seeded simplex noise generator for the given world
      *
-     * @param world World to construct this generator for
+     * @param world 创建这个Generator的World实例
+     * <p>原文：World to construct this generator for
      */
     public SimplexNoiseGenerator(@NotNull World world) {
         this(new Random(world.getSeed()));
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用给定的种子创建一个已设种子的SimplexNoiseGenerator.
+     * <p>原文：
      * Creates a seeded simplex noise generator for the given seed
      *
-     * @param seed Seed to construct this generator for
+     * @param seed 创建这个Generator的long型种子
+     * <p>原文：Seed to construct this generator for
      */
     public SimplexNoiseGenerator(long seed) {
         this(new Random(seed));
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用给定的Random创建一个已设种子的SimplexNoiseGenerator.
+     * <p>原文：
      * Creates a seeded simplex noise generator with the given Random
      *
-     * @param rand Random to construct with
+     * @param rand 创建这个Generator的Random
+     * <p>原文：Random to construct with
      */
     public SimplexNoiseGenerator(@NotNull Random rand) {
         super(rand);
@@ -91,50 +106,76 @@ public class SimplexNoiseGenerator extends PerlinNoiseGenerator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 给定一维空间坐标计算并返回一维的未设种子的单纯形噪声.
+     * <p>原文：
      * Computes and returns the 1D unseeded simplex noise for the given
      * coordinates in 1D space
      *
-     * @param xin X coordinate
-     * @return Noise at given location, from range -1 to 1
+     * @param xin X坐标
+     * <p>原文：X coordinate
+     * @return 给定坐标的噪音,取值范围 -1 到 1
+     * <p>原文：Noise at given location, from range -1 to 1
      */
     public static double getNoise(double xin) {
         return instance.noise(xin);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 给定二维空间坐标计算并返回二维的未设种子的单纯形噪声.
+     * <p>原文：
      * Computes and returns the 2D unseeded simplex noise for the given
      * coordinates in 2D space
      *
-     * @param xin X coordinate
-     * @param yin Y coordinate
-     * @return Noise at given location, from range -1 to 1
+     * @param xin X坐标
+     * <p>原文：X coordinate
+     * @param yin Y坐标
+     * <p>原文：Y coordinate
+     * @return 给定坐标的噪音,取值范围 -1 到 1
+     * <p>原文：Noise at given location, from range -1 to 1
      */
     public static double getNoise(double xin, double yin) {
         return instance.noise(xin, yin);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 给定三维空间坐标计算并返回三维的未设种子的单纯形噪声.
+     * <p>原文：
      * Computes and returns the 3D unseeded simplex noise for the given
      * coordinates in 3D space
      *
-     * @param xin X coordinate
-     * @param yin Y coordinate
-     * @param zin Z coordinate
-     * @return Noise at given location, from range -1 to 1
+     * @param xin X坐标
+     * <p>原文：X coordinate
+     * @param yin Y坐标
+     * <p>原文：Y coordinate
+     * @param zin Z坐标
+     * <p>原文：Z coordinate
+     * @return 给定坐标的噪音,取值范围 -1 到 1
+     * <p>原文：Noise at given location, from range -1 to 1
      */
     public static double getNoise(double xin, double yin, double zin) {
         return instance.noise(xin, yin, zin);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 给定四维空间坐标计算并返回四维的单纯形噪声.
+     * <p>原文：
      * Computes and returns the 4D simplex noise for the given coordinates in
      * 4D space
      *
-     * @param x X coordinate
-     * @param y Y coordinate
-     * @param z Z coordinate
-     * @param w W coordinate
-     * @return Noise at given location, from range -1 to 1
+     * @param x X坐标
+     * <p>原文：X coordinate
+     * @param y Y坐标
+     * <p>原文：Y coordinate
+     * @param z Z坐标
+     * <p>原文：Z coordinate
+     * @param w W坐标
+     * <p>原文：W coordinate
+     * @return 给定坐标的噪音,取值范围 -1 到 1
+     * <p>原文：Noise at given location, from range -1 to 1
      */
     public static double getNoise(double x, double y, double z, double w) {
         return instance.noise(x, y, z, w);
@@ -356,14 +397,22 @@ public class SimplexNoiseGenerator extends PerlinNoiseGenerator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 计算并返回四维的单纯形噪声对于给定的四维空间坐标.
+     * <p>原文：
      * Computes and returns the 4D simplex noise for the given coordinates in
      * 4D space
      *
-     * @param x X coordinate
-     * @param y Y coordinate
-     * @param z Z coordinate
-     * @param w W coordinate
-     * @return Noise at given location, from range -1 to 1
+     * @param x X坐标
+     * <p>原文：X coordinate
+     * @param y Y坐标
+     * <p>原文：Y coordinate
+     * @param z Z坐标
+     * <p>原文：Z coordinate
+     * @param w W坐标
+     * <p>原文：W coordinate
+     * @return 给定坐标的噪音,取值范围 -1 到 1
+     * <p>原文：Noise at given location, from range -1 to 1
      */
     public double noise(double x, double y, double z, double w) {
         x += offsetX;
@@ -512,9 +561,13 @@ public class SimplexNoiseGenerator extends PerlinNoiseGenerator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取单独的未设种子的此类Generator的实例.
+     * <p>原文：
      * Gets the singleton unseeded instance of this generator
      *
-     * @return Singleton
+     * @return 单独的实例
+     * <p>原文：Singleton
      */
     @NotNull
     public static SimplexNoiseGenerator getInstance() {

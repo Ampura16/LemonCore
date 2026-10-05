@@ -15,6 +15,9 @@ import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * {@link Messenger}的标准实现.
+ * <p>原文：
  * Standard implementation to {@link Messenger}
  */
 public class StandardMessenger implements Messenger {
@@ -493,10 +496,15 @@ public class StandardMessenger implements Messenger {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 验证插件通道名称。
+     * <p>原文：
      * Validates a Plugin Channel name.
      *
-     * @param channel Channel name to validate.
-     * @deprecated not an API method
+     * @param channel 要验证的通道名称。
+     * <p>原文：Channel name to validate.
+     * @deprecated 不是一个 API 方法
+     * <p>原文：not an API method
      */
     @Deprecated(since = "1.13")
     public static void validateChannel(@NotNull String channel) {
@@ -504,11 +512,17 @@ public class StandardMessenger implements Messenger {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 验证并修正插件通道名称。该方法不是可重入的/幂等的。
+     * <p>原文：
      * Validates and corrects a Plugin Channel name. Method is not reentrant / idempotent.
      *
-     * @param channel Channel name to validate.
-     * @return corrected channel name
-     * @deprecated not an API method
+     * @param channel 要验证的通道名称。
+     * <p>原文：Channel name to validate.
+     * @return 修正后的通道名称
+     * <p>原文：corrected channel name
+     * @deprecated 不是一个 API 方法
+     * <p>原文：not an API method
      */
     @Deprecated(since = "1.13")
     @NotNull
@@ -547,21 +561,33 @@ public class StandardMessenger implements Messenger {
     // Paper end - improve error message
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 验证插件消息的输入，确保所有参数有效。
+     * <p>原文：
      * Validates the input of a Plugin Message, ensuring the arguments are all
      * valid.
      *
-     * @param messenger Messenger to use for validation.
-     * @param source Source plugin of the Message.
-     * @param channel Plugin Channel to send the message by.
-     * @param message Raw message payload to send.
-     * @throws IllegalArgumentException Thrown if the source plugin is
+     * @param messenger 用于验证的 Messenger。
+     * <p>原文：Messenger to use for validation.
+     * @param source 消息的源插件。
+     * <p>原文：Source plugin of the Message.
+     * @param channel 发送消息的插件通道。
+     * <p>原文：Plugin Channel to send the message by.
+     * @param message 要发送的原始消息负载。
+     * <p>原文：Raw message payload to send.
+     * @throws IllegalArgumentException 如果源插件被禁用则抛出。
+     * <p>原文：Thrown if the source plugin is
      *     disabled.
-     * @throws IllegalArgumentException Thrown if source, channel or message
+     * @throws IllegalArgumentException 如果源插件被禁用则抛出。
+     * <p>原文：Thrown if source, channel or message
      *     is null.
-     * @throws MessageTooLargeException Thrown if the message is too big.
-     * @throws ChannelNameTooLongException Thrown if the channel name is too
+     * @throws MessageTooLargeException 如果消息过大则抛出。
+     * <p>原文：Thrown if the message is too big.
+     * @throws ChannelNameTooLongException 如果通道名称过长则抛出。
+     * <p>原文：Thrown if the channel name is too
      *     long.
-     * @throws ChannelNotRegisteredException Thrown if the channel is not
+     * @throws ChannelNotRegisteredException 如果该插件未注册该通道则抛出。
+     * <p>原文：Thrown if the channel is not
      *     registered for this plugin.
      */
     public static void validatePluginMessage(@NotNull Messenger messenger, @NotNull Plugin source, @NotNull String channel, byte @NotNull [] message) {

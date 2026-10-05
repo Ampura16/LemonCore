@@ -13,6 +13,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当一个悬挂实体被放置时触发本事件。
+ * <p>原文：
  * Triggered when a hanging entity is created in the world
  */
 public class HangingPlaceEvent extends HangingEvent implements Cancellable {
@@ -44,9 +47,13 @@ public class HangingPlaceEvent extends HangingEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回放置这个悬挂实体的玩家.
+     * <p>原文：
      * Returns the player placing the hanging entity
      *
-     * @return the player placing the hanging entity
+     * @return 放置这个悬挂实体的玩家
+     * <p>原文：the player placing the hanging entity
      */
     @Nullable
     public Player getPlayer() {
@@ -54,9 +61,13 @@ public class HangingPlaceEvent extends HangingEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回这个悬挂实体被放置在哪个方块上.
+     * <p>原文：
      * Returns the block that the hanging entity was placed on
      *
-     * @return the block that the hanging entity was placed on
+     * @return 这个悬挂实体被放置在哪个方块上
+     * <p>原文：the block that the hanging entity was placed on
      */
     @NotNull
     public Block getBlock() {
@@ -64,9 +75,13 @@ public class HangingPlaceEvent extends HangingEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回这个悬挂实体被放置在的方块的朝向.
+     * <p>原文：
      * Returns the face of the block that the hanging entity was placed on
      *
-     * @return the face of the block that the hanging entity was placed on
+     * @return 这个方块的朝向
+     * <p>原文：the face of the block that the hanging entity was placed on
      */
     @NotNull
     public BlockFace getBlockFace() {
@@ -74,10 +89,14 @@ public class HangingPlaceEvent extends HangingEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回用于放置此悬挂实体的手, 如果不是玩家放置的则返回 null.
+     * <p>原文：
      * Returns the hand that was used to place the hanging entity, or {@code null}
      * if a player did not place the hanging entity.
      *
-     * @return the hand
+     * @return 使用的手
+     * <p>原文：the hand
      */
     @Nullable
     public EquipmentSlot getHand() {
@@ -85,9 +104,13 @@ public class HangingPlaceEvent extends HangingEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此悬挂实体的起源物品 (即用什么物品放置的).
+     * <p>原文：
      * Gets the item from which the hanging entity originated
      *
-     * @return the item from which the hanging entity originated
+     * @return 此悬挂实体的起源物品
+     * <p>原文：the item from which the hanging entity originated
      */
     @Nullable
     public ItemStack getItemStack() {

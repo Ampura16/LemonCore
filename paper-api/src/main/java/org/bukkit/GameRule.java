@@ -30,6 +30,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> ANNOUNCE_ADVANCEMENTS = GameRules.SHOW_ADVANCEMENT_MESSAGES;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 命令方块执行命令时是否在聊天框中向管理员显示.
+     * <p>原文：
      * Whether command blocks should notify admins when they perform commands.
      *
      * @deprecated renamed to {@link GameRules#COMMAND_BLOCK_OUTPUT}
@@ -81,6 +84,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> DO_LIMITED_CRAFTING = GameRules.LIMITED_CRAFTING;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 投射物是否可以破坏方块.
+     * <p>原文：
      * Whether projectiles can break blocks.
      *
      * @deprecated renamed to {@link GameRules#PROJECTILES_CAN_BREAK_BLOCKS}
@@ -116,6 +122,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> DO_WEATHER_CYCLE = GameRules.ADVANCE_WEATHER;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 玩家死亡后是否保留物品栏物品 (死亡时物品不掉落).
+     * <p>原文：
      * Whether the player should keep items in their inventory after death.
      *
      * @deprecated renamed to {@link GameRules#KEEP_INVENTORY}
@@ -123,6 +132,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> KEEP_INVENTORY = GameRules.KEEP_INVENTORY;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 是否在服务器日志中记录管理员使用过的命令.
+     * <p>原文：
      * Whether to log admin commands to server log.
      *
      * @deprecated renamed to {@link GameRules#LOG_ADMIN_COMMANDS}
@@ -130,6 +142,11 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> LOG_ADMIN_COMMANDS = GameRules.LOG_ADMIN_COMMANDS;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 生物能否捡起物品, 修改以及破坏方块.
+     * <p>
+     * 译注:Mob包括的实体详见{@link org.bukkit.entity.Mob Mob接口文档}.
+     * <p>原文：
      * Whether mobs can pick up items or change blocks.
      *
      * @deprecated renamed to {@link GameRules#MOB_GRIEFING}
@@ -144,6 +161,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> NATURAL_REGENERATION = GameRules.NATURAL_HEALTH_REGENERATION;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 调式屏幕是否显示简化的信息而非详细信息.
+     * <p>原文：
      * Whether the debug screen shows all or reduced information.
      *
      * @deprecated renamed to {@link GameRules#REDUCED_DEBUG_INFO}
@@ -151,6 +171,10 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> REDUCED_DEBUG_INFO = GameRules.REDUCED_DEBUG_INFO;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 玩家执行命令的返回信息是否在聊天框中显示.
+     * 同时影响命令方块是否保存命令输出文本.
+     * <p>原文：
      * Whether the feedback from commands executed by a player should show up in
      * chat. Also affects the default behavior of whether command blocks store
      * their output text.
@@ -160,6 +184,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> SEND_COMMAND_FEEDBACK = GameRules.SEND_COMMAND_FEEDBACK;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 是否在聊天框中显示玩家以及驯养宠物的死亡信息.
+     * <p>原文：
      * Whether a message appears in chat when a player dies.
      *
      * @deprecated renamed to {@link GameRules#SHOW_DEATH_MESSAGES}
@@ -167,6 +194,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> SHOW_DEATH_MESSAGES = GameRules.SHOW_DEATH_MESSAGES;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 是否允许旁观模式的玩家生成区块.
+     * <p>原文：
      * Whether players in spectator mode can generate chunks.
      *
      * @deprecated renamed to {@link GameRules#SPECTATORS_GENERATE_CHUNKS}
@@ -195,6 +225,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> DO_IMMEDIATE_RESPAWN = GameRules.IMMEDIATE_RESPAWN;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 玩家是否承受窒息伤害.
+     * <p>原文：
      * Whether drowning damage is enabled or not.
      *
      * @deprecated renamed to {@link GameRules#DROWNING_DAMAGE}
@@ -202,6 +235,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> DROWNING_DAMAGE = GameRules.DROWNING_DAMAGE;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 玩家是否承受跌落伤害.
+     * <p>原文：
      * Whether fall damage is enabled or not.
      *
      * @deprecated renamed to {@link GameRules#FALL_DAMAGE}
@@ -209,6 +245,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> FALL_DAMAGE = GameRules.FALL_DAMAGE;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 玩家是否承受火焰伤害.
+     * <p>原文：
      * Whether fire damage is enabled or not.
      *
      * @deprecated renamed to {@link GameRules#FIRE_DAMAGE}
@@ -216,6 +255,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> FIRE_DAMAGE = GameRules.FIRE_DAMAGE;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 玩家是否承受冰冻伤害.
+     * <p>原文：
      * Whether freeze damage is enabled or not.
      *
      * @deprecated renamed to {@link GameRules#FREEZE_DAMAGE}
@@ -244,6 +286,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> DO_WARDEN_SPAWNING = GameRules.SPAWN_WARDENS;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 当被激怒的中立生物的目标玩家死亡时, 此生物是否恢复中立状态.
+     * <p>原文：
      * Whether mobs should cease being angry at a player once they die.
      *
      * @deprecated renamed to {@link GameRules#FORGIVE_DEAD_PLAYERS}
@@ -251,6 +296,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> FORGIVE_DEAD_PLAYERS = GameRules.FORGIVE_DEAD_PLAYERS;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 当中立生物被激怒时, 是否攻击附近所有玩家 (而不仅仅是激怒此生物的玩家).
+     * <p>原文：
      * Whether mobs will target all player entities once angered.
      *
      * @deprecated renamed to {@link GameRules#UNIVERSAL_ANGER}
@@ -258,6 +306,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> UNIVERSAL_ANGER = GameRules.UNIVERSAL_ANGER;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 方块爆炸是否摧毁掉落物.
+     * <p>原文：
      * Whether block explosions will destroy dropped items.
      *
      * @deprecated renamed to {@link GameRules#BLOCK_EXPLOSION_DROP_DECAY}
@@ -265,6 +316,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> BLOCK_EXPLOSION_DROP_DECAY = GameRules.BLOCK_EXPLOSION_DROP_DECAY;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 生物爆炸是否摧毁掉落物.
+     * <p>原文：
      * * Whether mob explosions will destroy dropped items.
      *
      * @deprecated renamed to {@link GameRules#MOB_EXPLOSION_DROP_DECAY}
@@ -272,6 +326,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> MOB_EXPLOSION_DROP_DECAY = GameRules.MOB_EXPLOSION_DROP_DECAY;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * TNT爆炸是否摧毁掉落物.
+     * <p>原文：
      * Whether tnt explosions will destroy dropped items.
      *
      * @deprecated renamed to {@link GameRules#TNT_EXPLOSION_DROP_DECAY}
@@ -279,6 +336,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> TNT_EXPLOSION_DROP_DECAY = GameRules.TNT_EXPLOSION_DROP_DECAY;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 水方块是否可以转化为水源方块.
+     * <p>原文：
      * Whether water blocks can convert into water source blocks.
      *
      * @deprecated renamed to {@link GameRules#WATER_SOURCE_CONVERSION}
@@ -286,6 +346,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> WATER_SOURCE_CONVERSION = GameRules.WATER_SOURCE_CONVERSION;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 岩浆方块是否可以转化为岩浆源方块.
+     * <p>原文：
      * Whether lava blocks can convert into lava source blocks.
      *
      * @deprecated renamed to {@link GameRules#LAVA_SOURCE_CONVERSION}
@@ -293,6 +356,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> LAVA_SOURCE_CONVERSION = GameRules.LAVA_SOURCE_CONVERSION;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 全局世界事件（如末影龙、凋灵和已完成的末地传送门特效）是否传播到整个服务器.
+     * <p>原文：
      * Whether global level events such as ender dragon, wither, and completed
      * end portal effects will propagate across the entire server.
      *
@@ -308,6 +374,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> DO_VINES_SPREAD = GameRules.SPREAD_VINES;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 末影珍珠是否在玩家死亡时消失.
+     * <p>原文：
      * Whether ender pearls will vanish on player death.
      *
      * @deprecated renamed to {@link GameRules#ENDER_PEARLS_VANISH_ON_DEATH}
@@ -322,6 +391,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> ALLOW_FIRE_TICKS_AWAY_FROM_PLAYER = InternalAPIBridge.get().legacyGameRuleBridge(GameRules.FIRE_SPREAD_RADIUS_AROUND_PLAYER, (value) -> value ? -1 : 128, (value) -> value == -1, Boolean.class);
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * TNT是否爆炸.
+     * <p>原文：
      * Whether primed tnt explodes.
      *
      * @deprecated renamed to {@link GameRules#TNT_EXPLODES}
@@ -329,6 +401,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> TNT_EXPLODES = GameRules.TNT_EXPLODES;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 定位器栏是否启用.
+     * <p>原文：
      * Configures if the world uses the locator bar.
      *
      * @deprecated renamed to {@link GameRules#LOCATOR_BAR}
@@ -336,6 +411,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> LOCATOR_BAR = GameRules.LOCATOR_BAR;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * PvP是否启用.
+     * <p>原文：
      * Whether player versus player combat is allowed.
      *
      * @deprecated renamed to {@link GameRules#PVP}
@@ -343,6 +421,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> PVP = GameRules.PVP;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 怪物是否生成.
+     * <p>原文：
      * Whether monsters should naturally spawn.
      *
      * @deprecated renamed to {@link GameRules#SPAWN_MONSTERS}
@@ -350,6 +431,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Boolean> SPAWN_MONSTERS = GameRules.SPAWN_MONSTERS;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 下界传送门是否可用于进入下界.
+     * <p>原文：
      * Whether players can enter the Nether using portals.
      *
      * @deprecated renamed to {@link GameRules#ALLOW_ENTERING_NETHER_USING_PORTALS}
@@ -373,6 +457,10 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
 
     // Numerical rules
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 每游戏刻每区块中随机的方块刻发生的频率 (例如植物生长，树叶腐烂等).
+     * 为0时禁用随机刻, 较高的数字将增大随机刻频率.
+     * <p>原文：
      * How often a random block tick occurs (such as plant growth, leaf decay,
      * etc.) per chunk section per game tick. 0 will disable random ticks,
      * higher numbers will increase random ticks.
@@ -391,6 +479,11 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Integer> SPAWN_RADIUS = GameRules.RESPAWN_RADIUS;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 玩家或生物能同时推动其它可推动实体的数量, 超过此数量时将承受窒息伤害.
+     * <br>
+     * 设置成0可以停用这个规则.
+     * <p>原文：
      * The maximum number of other pushable entities a mob or player can push,
      * before taking suffocation damage.
      * <br>
@@ -427,6 +520,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Integer> COMMAND_MODIFICATION_BLOCK_LIMIT = GameRules.MAX_BLOCK_MODIFICATIONS;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 服务器跳过夜晚所需的入睡玩家的占比.
+     * <p>原文：
      * The percentage of online players which must be sleeping for the night to
      * advance.
      *
@@ -440,6 +536,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Integer> SNOW_ACCUMULATION_HEIGHT = GameRules.MAX_SNOW_ACCUMULATION_HEIGHT;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 玩家在下界传送门中需要停留的时间（以游戏刻为单位），之后传送门才会激活.
+     * <p>原文：
      * The amount of time a player must stand in a nether portal before the
      * portal activates.
      *
@@ -448,6 +547,9 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     @Deprecated(forRemoval = true, since = "1.21.11")
     public static final GameRule<Integer> PLAYERS_NETHER_PORTAL_DEFAULT_DELAY = GameRules.PLAYERS_NETHER_PORTAL_DEFAULT_DELAY;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 创造模式玩家在下界传送门中需要停留的时间（以游戏刻为单位），之后传送门才会激活.
+     * <p>原文：
      * The amount of time a player in creative mode must stand in a nether
      * portal before the portal activates.
      *
@@ -471,24 +573,36 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此游戏规则的名称.
+     * <p>原文：
      * Get the name of this GameRule.
      *
-     * @return the name of this GameRule
-     * @deprecated Game rule is now a registry, use {@link #getKey()} instead
+     * @return 游戏规则名
+     * <p>原文：the name of this GameRule
+     * @deprecated 请使用 {@link #getKey()}
+     * <p>原文：Game rule is now a registry, use {@link #getKey()} instead
      */
     @NotNull
     @Deprecated(since = "1.21.11", forRemoval = true)
     public abstract String getName();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此游戏规则的数据类型.
+     * <p>原文：
      * Get the type of this rule.
      *
-     * @return the rule type; Integer or Boolean
+     * @return 游戏规则的数据类型;Integer 或 Boolean
+     * <p>原文：the rule type; Integer or Boolean
      */
     @NotNull
     public abstract Class<T> getType();
 
     /**
+     * <!-- Chinese_BukkitAPI CC BY-NC 4.0 -->
+     * 按名称获取{@link GameRule 游戏规则}.
+     * <p>原文：
      * Get a {@link GameRule} by its name.
      *
      * @param rule the name of the GameRule
@@ -509,10 +623,15 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取 {@link GameRule} 数组.
+     * <p>原文：
      * Get an immutable collection of {@link GameRule}s.
      *
-     * @return an immutable collection containing all registered GameRules.
-     * @deprecated Game rule is now a registry, fetch elements from it
+     * @return 包含所有已注册游戏规则的不可变集合
+     * <p>原文：an immutable collection containing all registered GameRules.
+     * @deprecated 请使用 {@link Registry#iterator()}.
+     * <p>原文：Game rule is now a registry, fetch elements from it
      */
     @NotNull
     @Deprecated(since = "1.21.11", forRemoval = true)

@@ -23,11 +23,16 @@ public class Pattern implements ConfigurationSerializable {
     private final PatternType pattern;
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 从指定的颜色和图案类型创建一个新的图案.
+     * <p>原文：
      * Creates a new pattern from the specified color and
      * pattern type
      *
-     * @param color   the pattern color
-     * @param pattern the pattern type
+     * @param color   图案的颜色
+     * <p>原文：the pattern color
+     * @param pattern 图案的类型
+     * <p>原文：the pattern type
      */
     public Pattern(@NotNull DyeColor color, @NotNull PatternType pattern) {
         this.color = color;
@@ -35,9 +40,13 @@ public class Pattern implements ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 反序列化构造函数.
+     * <p>原文：
      * Constructor for deserialization.
      *
-     * @param map the map to deserialize from
+     * @param map 从 Map 中反序列化
+     * <p>原文：the map to deserialize from
      */
     public Pattern(@NotNull Map<String, Object> map) {
         color = DyeColor.legacyValueOf(getString(map, COLOR));
@@ -72,9 +81,13 @@ public class Pattern implements ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回图案的颜色.
+     * <p>原文：
      * Returns the color of the pattern
      *
-     * @return the color of the pattern
+     * @return 图案的颜色
+     * <p>原文：the color of the pattern
      */
     @NotNull
     public DyeColor getColor() {
@@ -82,9 +95,13 @@ public class Pattern implements ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回图案的类型.
+     * <p>原文：
      * Returns the type of pattern
      *
-     * @return the pattern type
+     * @return 图案的类型
+     * <p>原文：the pattern type
      */
     @NotNull
     public PatternType getPattern() {

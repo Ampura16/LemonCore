@@ -9,40 +9,61 @@ import org.bukkit.Keyed;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表狼.
+ * <p>原文：
  * Represents a Wolf
  */
 public interface Wolf extends Tameable, Sittable, io.papermc.paper.entity.CollarColorable { // Paper - CollarColorable
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检测狼是否愤怒.
+     * <p>原文：
      * Checks if this wolf is angry
      *
-     * @return Anger true if angry
+     * @return 如果愤怒则为true
+     * <p>原文：Anger true if angry
      */
     public boolean isAngry();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置这只狼的愤怒状态.
+     * <p>
+     * 愤怒的狼不能喂食或驯服.
+     * <p>原文：
      * Sets the anger of this wolf.
      * <p>
      * An angry wolf can not be fed or tamed.
      *
-     * @param angry true if angry
+     * @param angry 如果愤怒则为true
+     * <p>原文：true if angry
      * @see #setTarget(org.bukkit.entity.LivingEntity)
      */
     public void setAngry(boolean angry);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这只狼的项圈颜色.
+     * <p>原文：
      * Get the collar color of this wolf
      *
-     * @return the color of the collar
+     * @return 项圈的颜色
+     * <p>原文：the color of the collar
      */
     @NotNull
     @Override // Paper
     public DyeColor getCollarColor();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置这只狼的项圈颜色.
+     * <p>原文：
      * Set the collar color of this wolf
      *
-     * @param color the color to apply
+     * @param color 颜色
+     * <p>原文：the color to apply
      */
     @Override // Paper
     public void setCollarColor(@NotNull DyeColor color);

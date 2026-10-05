@@ -21,6 +21,11 @@ import org.jetbrains.annotations.Contract;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表配方中的一个潜在物品匹配项。配方中的所有选择条件都必须满足才能进行合成。选择不能为空或空气。
+ *
+ * <b>此类不允许插件实现！</b>
+ * <p>原文：
  * Represents a potential item match within a recipe. All choices within a
  * recipe must be satisfied for it to be craftable. Choices must never be
  * null or air.
@@ -71,10 +76,16 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此物品栈选择的单个代表性物品栈。
+     * <p>原文：
      * Gets a single item stack representative of this stack choice.
      *
-     * @return a single representative item
-     * @deprecated for compatibility only
+     * @return 单个代表性物品。
+     * <p>原文：a single representative item
+     * @deprecated 仅为兼容性保留。
+     * <p>原文：Gets a single item stack representative of this stack choice.
+     * <p>原文：for compatibility only
      */
     @Deprecated(since = "1.13.1")
     ItemStack getItemStack();
@@ -92,7 +103,11 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
     // Paper end - check valid ingredients
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 代表多个匹配材料的选择。
+     * <p>原文：
      * Represents a choice of multiple matching Materials.
+     *
      * @apiNote recommended to use {@link ItemTypeChoice}
      */
     @ApiStatus.Obsolete(since = "1.21.11")
@@ -112,10 +127,15 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 使用指定标签的当前值构造一个 MaterialChoice。
+         * <p>原文：
          * Constructs a MaterialChoice with the current values of the specified
          * tag.
          *
-         * @param choices the tag
+         * @param choices 标签。
+         * <p>原文：Constructs a MaterialChoice with the current values of the specified tag.
+         * <p>原文：the tag
          */
         public MaterialChoice(Tag<Material> choices) {
             this(new ArrayList<>(java.util.Objects.requireNonNull(choices, "Cannot create a material choice with null tag").getValues())); // Paper - delegate to list ctor to make sure all checks are called
@@ -221,6 +241,11 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 代表一种选择，仅当其中一个物品栈完全匹配（除了栈大小）时才有效。
+     * <br>
+     * <b>仅对有序配方有效</b>
+     * <p>原文：
      * Represents a choice that will be valid only if one of the stacks is
      * exactly matched (aside from stack size).
      */

@@ -13,10 +13,16 @@ public enum EquipmentSlot {
     CHEST(() -> EquipmentSlotGroup.CHEST),
     HEAD(() -> EquipmentSlotGroup.HEAD),
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 仅适用于某些实体, 如马和狼.
+     * <p>原文：
      * Only for certain entities such as horses, wolves, happy ghasts and nautiluses.
      */
     BODY(() -> EquipmentSlotGroup.BODY),
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 仅适用于某些实体, 如马和猪.
+     * <p>原文：
      * Only for certain entities such as pigs, horses, striders, copper golems and nautiluses.
      */
     SADDLE(() -> EquipmentSlotGroup.SADDLE);
@@ -28,9 +34,13 @@ public enum EquipmentSlot {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此槽位对应的 {@link EquipmentSlotGroup}.
+     * <p>原文：
      * Gets the {@link EquipmentSlotGroup} corresponding to this slot.
      *
-     * @return corresponding {@link EquipmentSlotGroup}
+     * @return 对应的 {@link EquipmentSlotGroup}
+     * <p>原文：corresponding {@link EquipmentSlotGroup}
      */
     @NotNull
     @ApiStatus.Internal

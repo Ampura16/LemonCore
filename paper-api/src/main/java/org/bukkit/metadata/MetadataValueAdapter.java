@@ -8,6 +8,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 用于简化MetadataValue实现的可选基类.
+ * <p>
+ * 此类为MetadataValue提供所有转换函数, 使得编写MetadataValue实现只需实现value()和invalidate()即可.
+ * <p>原文：
  * Optional base class for facilitating MetadataValue implementations.
  * <p>
  * This provides all the conversion functions for MetadataValue so that

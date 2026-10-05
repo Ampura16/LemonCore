@@ -11,6 +11,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当玩家用桶捕获实体时触发此事件.
+ * <p>原文：
  * This event is called whenever a player captures an entity in a bucket.
  */
 public class PlayerBucketEntityEvent extends PlayerEvent implements Cancellable {
@@ -34,9 +37,13 @@ public class PlayerBucketEntityEvent extends PlayerEvent implements Cancellable 
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取被放入桶中的 {@link Entity}.
+     * <p>原文：
      * Gets the {@link Entity} being put into the bucket.
      *
-     * @return The {@link Entity} being put into the bucket
+     * @return 被放入桶中的 {@link Entity}
+     * <p>原文：The {@link Entity} being put into the bucket
      */
     @NotNull
     public Entity getEntity() {
@@ -44,11 +51,15 @@ public class PlayerBucketEntityEvent extends PlayerEvent implements Cancellable 
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取用于捕获 {@link Entity} 的桶.
+     * <p>原文：
      * Gets the bucket used to capture the {@link Entity}.
      * <br>
      * This refers to the bucket clicked with, eg {@link Material#WATER_BUCKET}.
      *
-     * @return The used bucket
+     * @return 使用的桶
+     * <p>原文：The used bucket
      */
     @NotNull
     public ItemStack getOriginalBucket() {
@@ -56,12 +67,16 @@ public class PlayerBucketEntityEvent extends PlayerEvent implements Cancellable 
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取 {@link Entity} 将被放入的桶.
+     * <p>原文：
      * Gets the bucket that the {@link Entity} will be put into.
      * <br>
      * This refers to the bucket with the entity, eg
      * {@link Material#PUFFERFISH_BUCKET}.
      *
-     * @return The bucket that the {@link Entity} will be put into
+     * @return {@link Entity} 将被放入的桶
+     * <p>原文：The bucket that the {@link Entity} will be put into
      */
     @NotNull
     public ItemStack getEntityBucket() {
@@ -69,9 +84,13 @@ public class PlayerBucketEntityEvent extends PlayerEvent implements Cancellable 
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取用于捕获实体的手.
+     * <p>原文：
      * Get the hand that was used to bucket the entity.
      *
-     * @return the hand
+     * @return 使用的手
+     * <p>原文：the hand
      */
     @NotNull
     public EquipmentSlot getHand() {

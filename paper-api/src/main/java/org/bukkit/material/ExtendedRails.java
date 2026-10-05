@@ -4,10 +4,15 @@ import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 这是 {@link DetectorRail} 和 {@link PoweredRail} 类的父类。
+ * <p>原文：
  * This is the superclass for the {@link DetectorRail} and {@link PoweredRail}
  * classes
  *
- * @deprecated all usage of MaterialData is deprecated and subject to removal.
+ * @deprecated 所有 MaterialData 的用法均已弃用并可能被移除。
+ * 请使用 {@link org.bukkit.block.data.BlockData}。
+ * <p>原文：all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
  */
 @Deprecated(since = "1.13", forRemoval = true)
@@ -18,9 +23,15 @@ public class ExtendedRails extends Rails {
     }
 
     /**
-     * @param type the type
-     * @param data the raw data value
-     * @deprecated Magic value
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @param type 材料类型
+     * <p>原文：the type
+     * @param data 原始数据值
+     * <p>原文：the raw data value
+     * @deprecated 魔法值
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.6.2")
     public ExtendedRails(final Material type, final byte data) {
@@ -33,9 +44,11 @@ public class ExtendedRails extends Rails {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
      * {@inheritDoc}
      *
-     * @deprecated Magic value
+     * @deprecated 魔法值
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.6.2")
     @Override

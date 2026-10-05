@@ -9,6 +9,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当一个非玩家的实体被传送门传送时触发本事件
+ * <p>
+ * 对于玩家请看 {@link org.bukkit.event.player.PlayerPortalEvent}
+ * <p>原文：
  * Called when a non-player entity is about to teleport because it is in
  * contact with a portal.
  * <p>

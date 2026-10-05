@@ -8,6 +8,9 @@ import org.bukkit.NamespacedKey;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表一个切石配方。
+ * <p>原文：
  * Represents a Stonecutting recipe.
  */
 public class StonecuttingRecipe implements Recipe, Keyed {
@@ -17,22 +20,36 @@ public class StonecuttingRecipe implements Recipe, Keyed {
     private String group = "";
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 创建一个切石配方以合成指定的物品。
+     * <p>原文：
      * Create a Stonecutting recipe to craft the specified ItemStack.
      *
-     * @param key The unique recipe key
-     * @param result The item you want the recipe to create.
-     * @param source The input material.
+     * @param key 配方的唯一键。
+     * <p>原文：The unique recipe key
+     * @param result 你希望配方创建的物品。
+     * <p>原文：The item you want the recipe to create.
+     * @param source 输入材料。
+     * <p>原文：Create a Stonecutting recipe to craft the specified ItemStack.
+     * <p>原文：The input material.
      */
     public StonecuttingRecipe(@NotNull NamespacedKey key, @NotNull ItemStack result, @NotNull Material source) {
         this(key, result, new RecipeChoice.MaterialChoice(Collections.singletonList(source)));
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 创建一个烹饪配方以合成指定的物品。
+     * <p>原文：
      * Create a Stonecutting recipe to craft the specified ItemStack.
      *
-     * @param key The unique recipe key
-     * @param result The item you want the recipe to create.
-     * @param input The input choices.
+     * @param key 配方的唯一键。
+     * <p>原文：The unique recipe key
+     * @param result 你希望配方创建的物品。
+     * <p>原文：The item you want the recipe to create.
+     * @param input 输入选择。
+     * <p>原文：Create a cooking recipe to craft the specified ItemStack.
+     * <p>原文：The input choices.
      */
     public StonecuttingRecipe(@NotNull NamespacedKey key, @NotNull ItemStack result, @NotNull RecipeChoice input) {
         Preconditions.checkArgument(!result.isEmpty(), "Recipe cannot have an empty result."); // Paper
@@ -42,10 +59,16 @@ public class StonecuttingRecipe implements Recipe, Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此烹饪配方的输入。
+     * <p>原文：
      * Sets the input of this Stonecutting recipe.
      *
-     * @param input The input material.
-     * @return The changed recipe, so you can chain calls.
+     * @param input 输入材料。
+     * <p>原文：The input material.
+     * @return 修改后的配方，以便链式调用。
+     * <p>原文：Sets the input of this cooking recipe.
+     * <p>原文：The changed recipe, so you can chain calls.
      */
     @NotNull
     public StonecuttingRecipe setInput(@NotNull Material input) {
@@ -54,9 +77,14 @@ public class StonecuttingRecipe implements Recipe, Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取输入材料。
+     * <p>原文：
      * Get the input material.
      *
-     * @return The input material.
+     * @return 输入材料。
+     * <p>原文：Get the input material.
+     * <p>原文：The input material.
      * @deprecated Use {@link #getInputChoice()} instead for more complete data.
      */
     @Deprecated // Paper
@@ -66,10 +94,16 @@ public class StonecuttingRecipe implements Recipe, Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此烹饪配方的输入。
+     * <p>原文：
      * Sets the input of this Stonecutting recipe.
      *
-     * @param input The input choice.
-     * @return The changed recipe, so you can chain calls.
+     * @param input 输入选择。
+     * <p>原文：The input choice.
+     * @return 修改后的配方，以便链式调用。
+     * <p>原文：Sets the input of this cooking recipe.
+     * <p>原文：The changed recipe, so you can chain calls.
      */
     @NotNull
     public StonecuttingRecipe setInputChoice(@NotNull RecipeChoice input) {
@@ -78,9 +112,14 @@ public class StonecuttingRecipe implements Recipe, Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取输入选择。
+     * <p>原文：
      * Get the input choice.
      *
-     * @return The input choice.
+     * @return 输入选择。
+     * <p>原文：Get the input choice.
+     * <p>原文：The input choice.
      */
     @NotNull
     public RecipeChoice getInputChoice() {
@@ -88,9 +127,14 @@ public class StonecuttingRecipe implements Recipe, Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此配方的结果。
+     * <p>原文：
      * Get the result of this recipe.
      *
-     * @return The resulting stack.
+     * @return 结果物品栈。
+     * <p>原文：Get the result of this recipe.
+     * <p>原文：The resulting stack.
      */
     @NotNull
     @Override
@@ -105,10 +149,16 @@ public class StonecuttingRecipe implements Recipe, Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此配方的分组。相同分组的配方在客户端显示时可能会被分组在一起。
+     * <p>原文：
      * Get the group of this recipe. Recipes with the same group may be grouped
      * together when displayed in the client.
      *
-     * @return recipe group. An empty string denotes no group. May not be null.
+     * @return 配方分组。空字符串表示无分组。不能为 null。
+     * <p>原文：Get the group of this recipe. Recipes with the same group may be grouped
+     * together when displayed in the client.
+     * <p>原文：recipe group. An empty string denotes no group. May not be null.
      */
     @NotNull
     public String getGroup() {
@@ -116,10 +166,16 @@ public class StonecuttingRecipe implements Recipe, Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此配方的分组。相同分组的配方在客户端显示时可能会被分组在一起。
+     * <p>原文：
      * Set the group of this recipe. Recipes with the same group may be grouped
      * together when displayed in the client.
      *
-     * @param group recipe group. An empty string denotes no group. May not be
+     * @param group 配方分组。空字符串表示无分组。不能为 null。
+     * <p>原文：Set the group of this recipe. Recipes with the same group may be grouped
+     * together when displayed in the client.
+     * <p>原文：recipe group. An empty string denotes no group. May not be
      * null.
      */
     public void setGroup(@NotNull String group) {

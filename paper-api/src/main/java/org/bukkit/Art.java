@@ -130,23 +130,35 @@ public interface Art extends OldEnum<Art>, Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 得到这幅画的宽度,单位：块
+     * <p>原文：
      * Gets the width of the painting, in blocks
      *
-     * @return The width of the painting, in blocks
+     * @return 这幅画的宽度，以块为单位.
+     * <p>原文：The width of the painting, in blocks
      */
     int getBlockWidth();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 得到这幅画的高度,单位：块
+     * <p>原文：
      * Gets the height of the painting, in blocks
      *
-     * @return The height of the painting, in blocks
+     * @return 这幅画的高度，以块为单位.
+     * <p>原文：The height of the painting, in blocks
      */
     int getBlockHeight();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 得到这幅画的ID.
+     * <p>原文：
      * Get the ID of this painting.
      *
-     * @return The ID of this painting
+     * @return 这幅画的ID
+     * <p>原文：The ID of this painting
      * @deprecated Magic value that is based on inconsistent, data-driven registry
      */
     @Deprecated(since = "1.6.2", forRemoval = true)
@@ -196,10 +208,15 @@ public interface Art extends OldEnum<Art>, Keyed {
     // Paper end - name and author components, assetId key
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 通过ID获得一幅画.
+     * <p>原文：
      * Get a painting by its numeric ID
      *
-     * @param id The ID
-     * @return The painting
+     * @param id 画的ID
+     * <p>原文：The ID
+     * @return 画
+     * <p>原文：The painting
      * @deprecated Magic value that is based on inconsistent, data-driven registry
      */
     @Deprecated(since = "1.6.2", forRemoval = true)
@@ -215,13 +232,19 @@ public interface Art extends OldEnum<Art>, Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 通过一幅画的唯一名称来获取这幅画,忽略大小写。
+     * <p>原文：
      * Get a painting by its unique name
      * <p>
      * This ignores capitalization
      *
-     * @param name The name
-     * @return The painting
-     * @deprecated only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
+     * @param name 画的唯一名称
+     * <p>原文：The name
+     * @return 画
+     * <p>原文：The painting
+     * @deprecated 仅用于向后兼容，请使用{@link Registry#get(NamespacedKey)}代替。
+     * <p>原文：only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
      */
     @Deprecated(since = "1.21.3")
     @Nullable
@@ -236,9 +259,15 @@ public interface Art extends OldEnum<Art>, Keyed {
     }
 
     /**
-     * @param name of the art.
-     * @return the art with the given name.
-     * @deprecated only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 通过给定名称获取画.
+     *
+     * @param name 画的名称.
+     * <p>原文：of the art.
+     * @return 具有给定名称的画.
+     * <p>原文：the art with the given name.
+     * @deprecated 仅用于向后兼容,请使用 {@link Registry#get(NamespacedKey)} 代替.
+     * <p>原文：only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
      */
     @NotNull
     @Deprecated(since = "1.21.3", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils
@@ -250,8 +279,13 @@ public interface Art extends OldEnum<Art>, Keyed {
     }
 
     /**
-     * @return an array of all known arts.
-     * @deprecated use {@link Registry#stream()}.
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取所有已知画的数组.
+     *
+     * @return 所有已知画的数组.
+     * <p>原文：an array of all known arts.
+     * @deprecated 请使用 {@link Registry#iterator()} 代替.
+     * <p>原文：use {@link Registry#stream()}.
      */
     @NotNull
     @Deprecated(since = "1.21.3", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils

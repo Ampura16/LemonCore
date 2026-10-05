@@ -5,6 +5,9 @@ import org.bukkit.event.server.ServerListPingEvent;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 这表示一个缓存版的服务器图标。这只是内部表示，还未实现。
+ * <p>原文：
  * This is a cached version of a server-icon. Its internal representation
  * and implementation is undefined.
  *

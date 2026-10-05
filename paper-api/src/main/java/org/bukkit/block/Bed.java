@@ -3,6 +3,9 @@ package org.bukkit.block;
 import org.bukkit.material.Colorable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表床.
+ * <p>原文：
  * Represents a captured state of a bed.
  */
 // Paper start

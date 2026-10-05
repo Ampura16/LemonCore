@@ -3,6 +3,44 @@ package org.bukkit.persistence;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 此类表示一个具有泛型内容类型的枚举。它定义了自定义标签可以具有的类型。
+ * <p>
+ * 此接口可用于创建您自己的具有不同复杂类型的自定义 {@link PersistentDataType}。这对于 UUIDTagType 等可能很有用：
+ * <pre>
+ * {@code
+ * public class UUIDTagType implements PersistentDataType<byte[], UUID> {
+ *
+ *         @Override
+ *         public Class<byte[]> getPrimitiveType() {
+ *             return byte[].class;
+ *         }
+ *
+ *         @Override
+ *         public Class<UUID> getComplexType() {
+ *             return UUID.class;
+ *         }
+ *
+ *         @Override
+ *         public byte[] toPrimitive(UUID complex, PersistentDataAdapterContext context) {
+ *             ByteBuffer bb = ByteBuffer.wrap(new byte[16]);
+ *             bb.putLong(complex.getMostSignificantBits());
+ *             bb.putLong(complex.getLeastSignificantBits());
+ *             return bb.array();
+ *         }
+ *
+ *         @Override
+ *         public UUID fromPrimitive(byte[] primitive, PersistentDataAdapterContext context) {
+ *             ByteBuffer bb = ByteBuffer.wrap(primitive);
+ *             long firstLong = bb.getLong();
+ *             long secondLong = bb.getLong();
+ *             return new UUID(firstLong, secondLong);
+ *         }
+ *     }
+ * }</pre>
+ *
+ * 任何插件拥有的此接口的实现都需要定义此接口中找到的现有原始类型之一。特别是 {@link #BOOLEAN} 不是原始类型，而是便捷类型。
+ * <p>原文：
  * This class represents an enum with a generic content type. It defines the
  * types a custom tag can have.
  * <p>
@@ -39,14 +77,16 @@ import org.jetbrains.annotations.NotNull;
  *             return new UUID(firstLong, secondLong);
  *         }
  *     }
- *}</pre>
+ * }</pre>
  *
  * Any plugin owned implementation of this interface is required to define one
  * of the existing primitive types found in this interface. Notably
  * {@link #BOOLEAN} is not a primitive type but a convenience type.
  *
- * @param <P> the primary object type that is stored in the given tag
- * @param <C> the retrieved object type when applying this tag type
+ * @param <P> 存储在给定标签中的主要对象类型
+ * <p>原文：the primary object type that is stored in the given tag
+ * @param <C> 应用此标签类型时检索到的对象类型
+ * <p>原文：the retrieved object type when applying this tag type
  */
 public interface PersistentDataType<P, C> {
 
@@ -64,6 +104,10 @@ public interface PersistentDataType<P, C> {
         Boolean.
      */
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 一个便捷实现，用于在 Byte 和 Boolean 之间转换，因为布尔值没有原生实现。<br>
+     * 任何不等于 0 的字节值都被视为 true。
+     * <p>原文：
      * A convenience implementation to convert between Byte and Boolean as there is
      * no native implementation for booleans. <br>
      * Any byte value not equal to 0 is considered to be true.
@@ -86,7 +130,11 @@ public interface PersistentDataType<P, C> {
         Complex Arrays.
      */
     /**
-     * @deprecated Use {@link #LIST}'s {@link ListPersistentDataTypeProvider#dataContainers()} instead as
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @deprecated 使用 {@link #LIST} 的 {@link ListPersistentDataTypeProvider#dataContainers()} 代替，因为 {@link ListPersistentDataType} 提供对原始类型的完整支持，例如 {@link PersistentDataContainer}。
+     * <p>原文：Use {@link #LIST}'s {@link ListPersistentDataTypeProvider#dataContainers()} instead as
      * {@link ListPersistentDataType}s offer full support for primitive types, such as the
      * {@link PersistentDataContainer}.
      */
@@ -99,6 +147,13 @@ public interface PersistentDataType<P, C> {
     PersistentDataType<PersistentDataContainer, PersistentDataContainer> TAG_CONTAINER = new PrimitivePersistentDataType<>(PersistentDataContainer.class);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 一个数据类型提供者类型，其本身不能用作 {@link PersistentDataType}。
+     *
+     * {@link ListPersistentDataTypeProvider} 暴露了共享的持久数据类型，用于存储其他数据类型的列表。
+     * <p>
+     * 它在 {@link PersistentDataType} 接口中的存在不允许 {@link java.util.List} 作为原始类型与普通的 {@link PersistentDataType} 结合使用。{@link java.util.List} 只有在通过 {@link ListPersistentDataType} 使用时才是有效的原始类型。
+     * <p>原文：
      * A data type provider type that itself cannot be used as a
      * {@link PersistentDataType}.
      *
@@ -115,50 +170,76 @@ public interface PersistentDataType<P, C> {
     ListPersistentDataTypeProvider LIST = new ListPersistentDataTypeProvider();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回此标签的原始数据类型。
+     * <p>原文：
      * Returns the primitive data type of this tag.
      *
-     * @return the class
+     * @return 类
+     * <p>原文：the class
      */
     @NotNull
     Class<P> getPrimitiveType();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回原始值所代表的复杂对象类型。
+     * <p>原文：
      * Returns the complex object type the primitive value resembles.
      *
-     * @return the class type
+     * @return 类类型
+     * <p>原文：the class type
      */
     @NotNull
     Class<C> getComplexType();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回与此方法传递的复杂对象相似的原始数据。
+     * <p>原文：
      * Returns the primitive data that resembles the complex object passed to
      * this method.
      *
-     * @param complex the complex object instance
-     * @param context the context this operation is running in
-     * @return the primitive value
+     * @param complex 复杂对象实例
+     * <p>原文：the complex object instance
+     * @param context 此操作运行的上下文
+     * <p>原文：the context this operation is running in
+     * @return 原始值
+     * <p>原文：the primitive value
      */
     @NotNull
     P toPrimitive(@NotNull C complex, @NotNull PersistentDataAdapterContext context);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 基于传递的原始值创建复杂对象。
+     * <p>原文：
      * Creates a complex object based of the passed primitive value
      *
-     * @param primitive the primitive value
-     * @param context the context this operation is running in
-     * @return the complex object instance
+     * @param primitive 原始值
+     * <p>原文：the primitive value
+     * @param context 此操作运行的上下文
+     * <p>原文：the context this operation is running in
+     * @return 复杂对象实例
+     * <p>原文：the complex object instance
      */
     @NotNull
     C fromPrimitive(@NotNull P primitive, @NotNull PersistentDataAdapterContext context);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 一个默认实现，仅用于将检索或插入的值传递到下一层。
+     * <p>
+     * 此实现不添加任何逻辑，而是用于为原始类型提供默认实现。
+     * <p>原文：
      * A default implementation that simply exists to pass on the retrieved or
      * inserted value to the next layer.
      * <p>
      * This implementation does not add any kind of logic, but is used to
      * provide default implementations for the primitive types.
      *
-     * @param <P> the generic type of the primitive objects
+     * @param <P> 原始对象的泛型类型
+     * <p>原文：the generic type of the primitive objects
      */
     class PrimitivePersistentDataType<P> implements PersistentDataType<P, P> {
 
@@ -194,6 +275,10 @@ public interface PersistentDataType<P, C> {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 一个便捷实现，用于在 Byte 和 Boolean 之间转换，因为布尔值没有原生实现。<br>
+     * 任何不等于 0 的字节值都被视为 true。
+     * <p>原文：
      * A convenience implementation to convert between Byte and Boolean as there is
      * no native implementation for booleans. <br>
      * Any byte value not equal to 0 is considered to be true.

@@ -10,6 +10,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当Sculk Sensor接收到游戏事件并因此可能激活时调用.
+ *
+ * 如果方块的默认行为是忽略事件, 则将调用取消.
+ * <p>原文：
  * Called when a Sculk sensor receives a game event and hence might activate.
  * <br>
  * Will be called cancelled if the block's default behavior is to ignore the
@@ -32,9 +37,13 @@ public class BlockReceiveGameEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取底层事件.
+     * <p>原文：
      * Get the underlying event.
      *
-     * @return the event
+     * @return 事件
+     * <p>原文：the event
      */
     @NotNull
     public GameEvent getEvent() {
@@ -42,9 +51,13 @@ public class BlockReceiveGameEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取触发此事件的实体(如果存在).
+     * <p>原文：
      * Get the entity which triggered this event, if present.
      *
-     * @return triggering entity or {@code null}
+     * @return 触发实体或null
+     * <p>原文：triggering entity or {@code null}
      */
     @Nullable
     public Entity getEntity() {

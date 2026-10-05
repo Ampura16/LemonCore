@@ -10,6 +10,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当物品堆在方块内成功烹饪时触发本事件 (原版中这个方块一般是营火).
+ * <p>
+ * 译注:在熔炉内的烧炼不属于烹饪范畴, 因此不会触发本事件. 如果您想监听熔炉相关事件, 可以参考 inventory 事件包中的相关事件.
+ * <p>原文：
  * Called when an ItemStack is successfully cooked in a block.
  */
 public class BlockCookEvent extends BlockEvent implements Cancellable {
@@ -37,9 +42,13 @@ public class BlockCookEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取被烹饪的物品堆 (比如生的食物).
+     * <p>原文：
      * Gets the smelted ItemStack for this event
      *
-     * @return smelting source ItemStack
+     * @return 被烹饪的原物品堆
+     * <p>原文：smelting source ItemStack
      */
     @NotNull
     public ItemStack getSource() {
@@ -47,9 +56,13 @@ public class BlockCookEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取烹饪后得到的物品堆 (比如熟食).
+     * <p>原文：
      * Gets the resultant ItemStack for this event
      *
-     * @return smelting result ItemStack
+     * @return 烹饪后得到的物品堆
+     * <p>原文：smelting result ItemStack
      */
     @NotNull
     public ItemStack getResult() {
@@ -57,9 +70,13 @@ public class BlockCookEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置烹饪后得到的物品堆.
+     * <p>原文：
      * Sets the resultant ItemStack for this event
      *
-     * @param result new result ItemStack
+     * @param result 烹饪后得到的物品堆
+     * <p>原文：new result ItemStack
      */
     public void setResult(@NotNull ItemStack result) {
         this.result = result;

@@ -11,6 +11,11 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 方块被玩家损坏的事件.
+ * <p>
+ * 若本事件被取消，方块将不会损坏.
+ * <p>原文：
  * Called when a block is damaged by a player.
  * <p>
  * If this event is cancelled, the block will not be damaged.
@@ -44,9 +49,13 @@ public class BlockDamageEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取试图损坏这个方块的玩家.
+     * <p>原文：
      * Gets the player damaging the block involved in this event.
      *
-     * @return The player damaging the block involved in this event
+     * @return 损坏这个方块的玩家
+     * <p>原文：The player damaging the block involved in this event
      */
     @NotNull
     public Player getPlayer() {
@@ -54,9 +63,13 @@ public class BlockDamageEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回方块是否立即被玩家损坏(比如创造模式).
+     * <p>原文：
      * Gets if the block is set to instantly break when damaged by the player.
      *
-     * @return {@code true} if the block should instantly break when damaged by the
+     * @return 如果方块在被玩家损坏时是被立即破坏的，返回true，反之false
+     * <p>原文：{@code true} if the block should instantly break when damaged by the
      *     player
      */
     public boolean getInstaBreak() {
@@ -64,6 +77,9 @@ public class BlockDamageEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置方块是否立即被玩家损坏(比如创造模式).
+     * <p>原文：
      * Sets if the block should instantly break when damaged by the player.
      *
      * @param instaBreak {@code true} if you want the block to instantly break when damaged
@@ -74,9 +90,13 @@ public class BlockDamageEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取当前玩家手上的物品.
+     * <p>原文：
      * Gets the ItemStack for the item currently in the player's hand.
      *
-     * @return The ItemStack for the item currently in the player's hand
+     * @return 当前玩家手上的物品
+     * <p>原文：The ItemStack for the item currently in the player's hand
      */
     @NotNull
     public ItemStack getItemInHand() {

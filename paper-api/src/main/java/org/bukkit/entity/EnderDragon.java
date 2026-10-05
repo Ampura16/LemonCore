@@ -6,43 +6,71 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表末影龙.
+ * <p>原文：
  * Represents an Ender Dragon
  */
 public interface EnderDragon extends ComplexLivingEntity, Boss, Mob, Enemy {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 表示末影龙可以执行的阶段或动作.
+     * <p>原文：
      * Represents a phase or action that an Ender Dragon can perform.
      */
     enum Phase {
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 如果有末影水晶，末影龙会在柱子环外盘旋，否则会在柱子环内盘旋.
+         * <p>原文：
          * The dragon will circle outside the ring of pillars if ender
          * crystals remain or inside the ring if not.
          */
         CIRCLING,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 末影龙会飞向目标玩家并在 64 格内发射火球.
+         * <p>原文：
          * The dragon will fly towards a targeted player and shoot a
          * fireball when within 64 blocks.
          */
         STRAFING,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 末影龙将飞向空传送门 (从另一边接近，如果适用).
+         * <p>原文：
          * The dragon will fly towards the empty portal (approaching
          * from the other side, if applicable).
          */
         FLY_TO_PORTAL,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 末影龙将降落在传送门上。如果末影龙不在传送门附近，它马上飞向传送门.
+         * <p>原文：
          * The dragon will land on the portal. If the dragon is not near
          * the portal, it will fly to it before mounting.
          */
         LAND_ON_PORTAL,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 末影龙将要离开传送门.
+         * <p>原文：
          * The dragon will leave the portal.
          */
         LEAVE_PORTAL,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 末影龙会在当前位置使用龙息攻击.
+         * <p>原文：
          * The dragon will attack with dragon breath at its current location.
          */
         BREATH_ATTACK,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 末影龙将会会寻找玩家用龙息攻击。
+         * 如果 5 秒内没有玩家足够靠近末影龙，末影龙将冲向 150 格内的玩家，如果没有找到玩家，末影龙将起飞并开始盘旋.
+         * <p>原文：
          * The dragon will search for a player to attack with dragon breath.
          * If no player is close enough to the dragon for 5 seconds, the
          * dragon will charge at a player within 150 blocks or will take off
@@ -50,39 +78,68 @@ public interface EnderDragon extends ComplexLivingEntity, Boss, Mob, Enemy {
          */
         SEARCH_FOR_BREATH_ATTACK_TARGET,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 末影龙将会在进行吐息攻击前咆哮.
+         * <p>原文：
          * The dragon will roar before performing a breath attack.
          */
         ROAR_BEFORE_ATTACK,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 末影龙将会向玩家冲刺.
+         * <p>原文：
          * The dragon will charge a player.
          */
         CHARGE_PLAYER,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 末影龙将会飞到传送门附近并且死去.
+         * <p>原文：
          * The dragon will fly to the vicinity of the portal and die.
          */
         DYING,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 末影龙将悬停在当前位置，不执行任何操作.
+         * <p>原文：
          * The dragon will hover at its current location, not performing any actions.
          */
         HOVER
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取末影龙正在执行的阶段.
+     * <p>原文：
      * Gets the current phase that the dragon is performing.
      *
-     * @return the current phase
+     * @return 当前阶段
+     * <p>原文：the current phase
      */
     @NotNull
     Phase getPhase();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置末影龙的下一个阶段.
+     * <p>原文：
      * Sets the next phase for the dragon to perform.
      *
-     * @param phase the next phase
+     * @param phase 下一阶段
+     * <p>原文：the next phase
      */
     void setPhase(@NotNull Phase phase);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取与此末影龙关联的{@link DragonBattle}。
+     * <br>
+     * 以下情况将返回null：
+     * <ul>
+     *     <li>末影龙不在末地维度</li>
+     *     <li>末影龙是通过命令/API召唤的</li>
+     * </ul>
+     * <p>原文：
      * Get the {@link DragonBattle} associated with this EnderDragon.
      * <br>
      * This will return null for the following reasons:
@@ -91,21 +148,27 @@ public interface EnderDragon extends ComplexLivingEntity, Boss, Mob, Enemy {
      *     <li>The EnderDragon was summoned by command/API</li>
      * </ul>
      *
-     * @return the dragon battle
-     *
+     * @return 龙战
+     * <p>原文：the dragon battle
      * @see World#getEnderDragonBattle()
      */
     @Nullable
     DragonBattle getDragonBattle();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这条末影龙的死亡动画开始的到当前时间（以 tick 为单位）.
+     *
+     * 如果这条末影龙还活着，则返回 0。这个值永远不会超过 200（动画的长度）.
+     * <p>原文：
      * Get the current time in ticks relative to the start of this dragon's
      * death animation.
      *
      * If this dragon is alive, 0 will be returned. This value will never exceed
      * 200 (the length of the animation).
      *
-     * @return this dragon's death animation ticks
+     * @return 当前末影龙的死亡动画tick
+     * <p>原文：this dragon's death animation ticks
      */
     int getDeathAnimationTicks();
 

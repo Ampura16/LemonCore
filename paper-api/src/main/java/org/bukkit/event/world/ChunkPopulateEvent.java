@@ -7,6 +7,11 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当一个新生成的区块填充完毕时调用.
+ * <p>
+ * <b>注意:</b>请不要利用此事件在新生成的区块中生成方块, 应该使用 {@link BlockPopulator}.
+ * <p>原文：
  * Thrown when a newly generated chunk has finished being populated.
  * <p>
  * <b>Note:</b> Do not use this to generated blocks in a newly generated chunk.

@@ -12,6 +12,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当一个实体受到来自方块的伤害时触发该事件
+ * <p>原文：
  * Called when an entity is damaged by a block
  * <p>
  * For explosions, the Block returned by {@link #getDamager()} has
@@ -50,9 +53,13 @@ public class EntityDamageByBlockEvent extends EntityDamageEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回使玩家受到伤害的方块.
+     * <p>原文：
      * Returns the block that damaged the player.
      *
-     * @return Block that damaged the player
+     * @return 使玩家受到伤害的方块
+     * <p>原文：Block that damaged the player
      */
     @Nullable
     public Block getDamager() {
@@ -60,12 +67,16 @@ public class EntityDamageByBlockEvent extends EntityDamageEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回使玩家受到伤害的方块的已捕获 BlockState.
+     * <p>原文：
      * Returns the captured BlockState of the block that damaged the player.
      * <p>
      * This block state is not placed so {@link BlockState#isPlaced()}
      * will be {@code false}.
      *
-     * @return the block state
+     * @return 方块状态
+     * <p>原文：the block state
      */
     @Nullable
     public BlockState getDamagerBlockState() {

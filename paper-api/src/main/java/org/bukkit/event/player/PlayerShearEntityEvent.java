@@ -13,6 +13,18 @@ import org.jetbrains.annotations.Unmodifiable;
 import java.util.List;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 玩家对某实体使用剪刀采集物品时调用此事件.
+ * <p>
+ * 译注:截止 Minecraft 1.15版本, 本事件发生的场景如下:
+ * <ul>
+ * <li>对羊使用, 采集羊毛.</li>
+ * <li>对哞菇使用, 采集蘑菇, 并使哞菇变成牛.</li>
+ * <li>对雪傀儡使用, 摘掉雪傀儡戴着的南瓜头, 但不会掉落南瓜物品.</li>
+ * </ul>
+ * <br>
+ * 注意:如果玩家与实体交互被拒, 将不会触发本事件(譬如{@link PlayerInteractEntityEvent}被取消).
+ * <p>原文：
  * Called when a player shears an entity
  */
 public class PlayerShearEntityEvent extends PlayerEvent implements Cancellable {
@@ -42,9 +54,13 @@ public class PlayerShearEntityEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家正在剪切的实体.
+     * <p>原文：
      * Gets the entity the player is shearing
      *
-     * @return the entity the player is shearing
+     * @return 被剪实体
+     * <p>原文：the entity the player is shearing
      */
     @NotNull
     public Entity getEntity() {
@@ -52,9 +68,13 @@ public class PlayerShearEntityEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取用于剪切实体的物品.
+     * <p>原文：
      * Gets the item used to shear the entity.
      *
-     * @return the shears
+     * @return 剪刀
+     * <p>原文：the shears
      */
     @NotNull
     public ItemStack getItem() {
@@ -62,9 +82,13 @@ public class PlayerShearEntityEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取用于剪切实体的手.
+     * <p>原文：
      * Gets the hand used to shear the entity.
      *
-     * @return the hand
+     * @return 手
+     * <p>原文：the hand
      */
     @NotNull
     public EquipmentSlot getHand() {

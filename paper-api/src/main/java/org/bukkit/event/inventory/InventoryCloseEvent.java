@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当玩家关闭背包时触发本事件
+ * <p>原文：
  * This event is called when a player closes an inventory.
  * <p>
  * Because InventoryCloseEvent occurs within a modification of the Inventory,
@@ -45,9 +48,13 @@ public class InventoryCloseEvent extends InventoryEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取涉及此事件的玩家
+     * <p>原文：
      * Returns the player involved in this event
      *
-     * @return Player who is involved in this event
+     * @return 涉及此事件的玩家
+     * <p>原文：Player who is involved in this event
      */
     @NotNull
     public final HumanEntity getPlayer() {

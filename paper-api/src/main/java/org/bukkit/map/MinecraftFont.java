@@ -3,6 +3,9 @@ package org.bukkit.map;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 表示内置的Minecraft字体。
+ * <p>原文：
  * Represents the built-in Minecraft font.
  */
 public class MinecraftFont extends MapFont {
@@ -282,12 +285,18 @@ public class MinecraftFont extends MapFont {
     // CHECKSTYLE:ON
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 一个静态的不可修改的MinecraftFont实例。
+     * <p>原文：
      * A static non-malleable MinecraftFont.
      */
     @NotNull
     public static final MinecraftFont Font = new MinecraftFont(false);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 初始化一个新的MinecraftFont。
+     * <p>原文：
      * Initialize a new MinecraftFont.
      */
     public MinecraftFont() {

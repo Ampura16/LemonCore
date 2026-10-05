@@ -3,6 +3,9 @@ package org.bukkit.conversations;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * ExactMatchConversationCanceller 会在用户输入精确匹配的字符串时取消对话。
+ * <p>原文：
  * An ExactMatchConversationCanceller cancels a conversation if the user
  * enters an exact input string
  *
@@ -16,9 +19,13 @@ public class ExactMatchConversationCanceller implements ConversationCanceller {
     private String escapeSequence;
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 构建一个 ExactMatchConversationCanceller。
+     * <p>原文：
      * Builds an ExactMatchConversationCanceller.
      *
-     * @param escapeSequence The string that, if entered by the user, will
+     * @param escapeSequence 如果用户输入将取消对话的字符串。
+     * <p>原文：The string that, if entered by the user, will
      *     cancel the conversation.
      */
     public ExactMatchConversationCanceller(@NotNull String escapeSequence) {

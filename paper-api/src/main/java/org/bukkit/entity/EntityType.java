@@ -51,7 +51,15 @@ public enum EntityType implements Keyed, Translatable, net.kyori.adventure.trans
     ALLAY("allay", Allay.class, -1),
     AREA_EFFECT_CLOUD("area_effect_cloud", AreaEffectCloud.class, 3),
     ARMADILLO("armadillo", Armadillo.class, -1),
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 用于放置武器/盔甲的机械实体, 带有物品栏.
+     */
     ARMOR_STAND("armor_stand", ArmorStand.class, 30),
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 箭矢投射物, 可能会插在地面上.
+     */
     ARROW("arrow", Arrow.class, 10),
     AXOLOTL("axolotl", Axolotl.class, -1),
     BAMBOO_CHEST_RAFT("bamboo_chest_raft", BambooChestRaft.class, -1),
@@ -83,23 +91,63 @@ public enum EntityType implements Keyed, Translatable, net.kyori.adventure.trans
     DARK_OAK_CHEST_BOAT("dark_oak_chest_boat", DarkOakChestBoat.class, -1),
     DOLPHIN("dolphin", Dolphin.class, -1),
     DONKEY("donkey", Donkey.class, 31),
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 类似 {@link #FIREBALL}, 但附带额外效果.
+     */
     DRAGON_FIREBALL("dragon_fireball", DragonFireball.class, 26),
     DROWNED("drowned", Drowned.class, -1),
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 飞行中的鸡蛋.
+     */
     EGG("egg", Egg.class, 7),
     ELDER_GUARDIAN("elder_guardian", ElderGuardian.class, 4),
     END_CRYSTAL("end_crystal", EnderCrystal.class, 200),
     ENDER_DRAGON("ender_dragon", EnderDragon.class, 63),
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 飞行中的末影珍珠.
+     */
     ENDER_PEARL("ender_pearl", EnderPearl.class, 14),
     ENDERMAN("enderman", Enderman.class, 58),
     ENDERMITE("endermite", Endermite.class, 67),
     EVOKER("evoker", Evoker.class, 34),
     EVOKER_FANGS("evoker_fangs", EvokerFangs.class, 33),
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 飞行中的经验瓶.
+     */
     EXPERIENCE_BOTTLE("experience_bottle", ThrownExpBottle.class, 17),
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 经验球.
+     */
     EXPERIENCE_ORB("experience_orb", ExperienceOrb.class, 2),
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 末影之眼信号.
+     */
     EYE_OF_ENDER("eye_of_ender", EnderSignal.class, 15),
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 正在下落或即将下落的方块.
+     */
     FALLING_BLOCK("falling_block", FallingBlock.class, 21),
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 飞行中的大火球, 例如由恶魂投掷.
+     */
     FIREBALL("fireball", Fireball.class, 12),
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 烟花火箭发射后的内部表示.
+     */
     FIREWORK_ROCKET("firework_rocket", Firework.class, 22),
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 钓鱼线和浮漂.
+     */
     FISHING_BOBBER("fishing_bobber", FishHook.class, -1, false),
     FOX("fox", Fox.class, -1),
     FROG("frog", Frog.class, -1),
@@ -118,13 +166,38 @@ public enum EntityType implements Keyed, Translatable, net.kyori.adventure.trans
     ILLUSIONER("illusioner", Illusioner.class, 37),
     INTERACTION("interaction", Interaction.class, -1),
     IRON_GOLEM("iron_golem", IronGolem.class, 99),
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 掉落在地面上的物品.
+     * <p>
+     * 使用 {@link World#dropItem(Location, ItemStack)} 或 {@link
+     * World#dropItemNaturally(Location, ItemStack)} 生成.
+     */
     ITEM("item", Item.class, 1),
     ITEM_DISPLAY("item_display", ItemDisplay.class, -1),
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 墙上的物品展示框.
+     */
     ITEM_FRAME("item_frame", ItemFrame.class, 18),
     JUNGLE_BOAT("jungle_boat", JungleBoat.class, -1),
     JUNGLE_CHEST_BOAT("jungle_chest_boat", JungleChestBoat.class, -1),
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 拴在栅栏柱上的拴绳.
+     */
     LEASH_KNOT("leash_knot", LeashHitch.class, 8),
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 闪电.
+     * <p>
+     * 使用 {@link World#strikeLightning(Location)} 生成.
+     */
     LIGHTNING_BOLT("lightning_bolt", LightningStrike.class, -1),
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 飞行中的滞留药水.
+     */
     LINGERING_POTION("lingering_potion", LingeringPotion.class, -1),
     LLAMA("llama", Llama.class, 103),
     LLAMA_SPIT("llama_spit", LlamaSpit.class, 104),
@@ -141,6 +214,10 @@ public enum EntityType implements Keyed, Translatable, net.kyori.adventure.trans
     OAK_CHEST_BOAT("oak_chest_boat", OakChestBoat.class, -1),
     OCELOT("ocelot", Ocelot.class, 98),
     OMINOUS_ITEM_SPAWNER("ominous_item_spawner", OminousItemSpawner.class, -1),
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 墙上的画.
+     */
     PAINTING("painting", Painting.class, 9),
     PALE_OAK_BOAT("pale_oak_boat", PaleOakBoat.class, -1),
     PALE_OAK_CHEST_BOAT("pale_oak_chest_boat", PaleOakChestBoat.class, -1),
@@ -160,18 +237,38 @@ public enum EntityType implements Keyed, Translatable, net.kyori.adventure.trans
     SALMON("salmon", Salmon.class, -1),
     SHEEP("sheep", Sheep.class, 91),
     SHULKER("shulker", Shulker.class, 69),
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 由 {@link #SHULKER} 发射的子弹.
+     */
     SHULKER_BULLET("shulker_bullet", ShulkerBullet.class, 25),
     SILVERFISH("silverfish", Silverfish.class, 60),
     SKELETON("skeleton", Skeleton.class, 51),
     SKELETON_HORSE("skeleton_horse", SkeletonHorse.class, 28),
     SLIME("slime", Slime.class, 55),
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 飞行中的小火球, 例如由烈焰人或玩家投掷.
+     */
     SMALL_FIREBALL("small_fireball", SmallFireball.class, 13),
     SNIFFER("sniffer", Sniffer.class, -1),
     SNOW_GOLEM("snow_golem", Snowman.class, 97),
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 飞行中的雪球.
+     */
     SNOWBALL("snowball", Snowball.class, 11),
     SPAWNER_MINECART("spawner_minecart", SpawnerMinecart.class, 47),
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 类似 {@link #ARROW}, 但会对所有队友施加 {@link PotionEffectType#GLOWING} 效果.
+     */
     SPECTRAL_ARROW("spectral_arrow", SpectralArrow.class, 24),
     SPIDER("spider", Spider.class, 52),
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 飞行中的喷溅药水.
+     */
     SPLASH_POTION("splash_potion", SplashPotion.class, 16),
     SPRUCE_BOAT("spruce_boat", SpruceBoat.class, -1),
     SPRUCE_CHEST_BOAT("spruce_chest_boat", SpruceChestBoat.class, -1),
@@ -180,6 +277,10 @@ public enum EntityType implements Keyed, Translatable, net.kyori.adventure.trans
     STRIDER("strider", Strider.class, -1),
     TADPOLE("tadpole", Tadpole.class, -1),
     TEXT_DISPLAY("text_display", TextDisplay.class, -1),
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 即将爆炸的已点燃TNT.
+     */
     TNT("tnt", TNTPrimed.class, 20),
     TNT_MINECART("tnt_minecart", ExplosiveMinecart.class, 45),
     TRADER_LLAMA("trader_llama", TraderLlama.class, -1),
@@ -195,6 +296,10 @@ public enum EntityType implements Keyed, Translatable, net.kyori.adventure.trans
     WITCH("witch", Witch.class, 66),
     WITHER("wither", Wither.class, 64),
     WITHER_SKELETON("wither_skeleton", WitherSkeleton.class, 5),
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 飞行中的凋灵骷髅头颅投射物.
+     */
     WITHER_SKULL("wither_skull", WitherSkull.class, 19),
     WOLF("wolf", Wolf.class, 95),
     ZOGLIN("zoglin", Zoglin.class, -1),
@@ -205,6 +310,9 @@ public enum EntityType implements Keyed, Translatable, net.kyori.adventure.trans
     ZOMBIFIED_PIGLIN("zombified_piglin", PigZombie.class, 57),
     // End generate - EntityType
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 没有实体类的未知实体.
+     * <p>原文：
      * An unknown entity without an Entity Class
      */
     UNKNOWN(null, null, -1, false);
@@ -243,10 +351,14 @@ public enum EntityType implements Keyed, Translatable, net.kyori.adventure.trans
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取实体种类名.
+     * <p>原文：
      * Gets the entity type name.
      *
      * @return the entity type's name
-     * @deprecated Magic value
+     * @deprecated 不安全的参数
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.6.2")
     @Nullable
@@ -268,10 +380,15 @@ public enum EntityType implements Keyed, Translatable, net.kyori.adventure.trans
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取实体种类id.
+     * <p>原文：
      * Gets the entity type id.
      *
-     * @return the raw type id
-     * @deprecated Magic value
+     * @return 种类id
+     * <p>原文：the raw type id
+     * @deprecated 不安全的参数
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.6.2", forRemoval = true)
     public short getTypeId() {
@@ -279,10 +396,15 @@ public enum EntityType implements Keyed, Translatable, net.kyori.adventure.trans
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 以给定名称获取对应实体种类.
+     * <p>原文：
      * Gets an entity type from its name.
      *
-     * @param name the entity type's name
-     * @return the matching entity type or null
+     * @param name 实体种类名
+     * <p>原文：the entity type's name
+     * @return 匹配的实体种类, 找不到为null
+     * <p>原文：the matching entity type or null
      * @apiNote Internal Use Only
      */
     @org.jetbrains.annotations.ApiStatus.Internal // Paper
@@ -296,11 +418,17 @@ public enum EntityType implements Keyed, Translatable, net.kyori.adventure.trans
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 以给定id获取实体种类.
+     * <p>原文：
      * Gets an entity from its id.
      *
-     * @param id the raw type id
-     * @return the matching entity type or null
-     * @deprecated Magic value
+     * @param id 实体种类id
+     * <p>原文：the raw type id
+     * @return 匹配的实体种类或null
+     * <p>原文：the matching entity type or null
+     * @deprecated 不安全的参数
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.6.2", forRemoval = true)
     @Nullable
@@ -312,12 +440,17 @@ public enum EntityType implements Keyed, Translatable, net.kyori.adventure.trans
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 某些实体无法使用 {@link World#spawnEntity(Location, EntityType)} 或 {@link
+     * World#spawn(Location, Class)} 生成, 通常是因为它们需要额外信息才能生成.
+     * <p>原文：
      * Some entities cannot be spawned using {@link
      * World#spawnEntity(Location, EntityType)} or {@link
      * World#spawn(Location, Class)}, usually because they require additional
      * information in order to spawn.
      *
-     * @return False if the entity type cannot be spawned
+     * @return 如果该实体种类无法生成则返回 false
+     * <p>原文：False if the entity type cannot be spawned
      */
     public boolean isSpawnable() {
         return independent;

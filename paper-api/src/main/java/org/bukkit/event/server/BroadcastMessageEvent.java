@@ -72,9 +72,13 @@ public class BroadcastMessageEvent extends ServerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取将广播的消息.
+     * <p>原文：
      * Get the message to broadcast.
      *
-     * @return Message to broadcast
+     * @return 广播的消息
+     * <p>原文：Message to broadcast
      * @deprecated in favour of {@link #message()}
      */
     @NotNull
@@ -84,9 +88,13 @@ public class BroadcastMessageEvent extends ServerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置将广播的消息.
+     * <p>原文：
      * Set the message to broadcast.
      *
-     * @param message New message to broadcast
+     * @param message 广播的消息
+     * <p>原文：New message to broadcast
      * @deprecated in favour of {@link #message(Component)}
      */
     @Deprecated // Paper
@@ -95,6 +103,15 @@ public class BroadcastMessageEvent extends ServerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取一个将显示这条消息的接收者的集合.
+     * <p>
+     * 本方法返回的集合不保证可以改变和访问时可能自动填充.
+     * 任何访问这个集合的监听器都应注意对于一个 lazy set 的实现可能会降低性能.
+     * <p>
+     * 监听器应注意到如果事件传唤者提供了一个不可修改的Set集合的话修改这个列表可能会抛出{@link
+     * UnsupportedOperationException}异常.
+     * <p>原文：
      * Gets a set of recipients that this chat message will be displayed to.
      * <p>
      * The set returned is not guaranteed to be mutable and may auto-populate
@@ -105,7 +122,8 @@ public class BroadcastMessageEvent extends ServerEvent implements Cancellable {
      * UnsupportedOperationException} if the event caller provides an
      * unmodifiable set.
      *
-     * @return All CommandSenders who will see this chat message
+     * @return 所有会看到这条消息的接收者
+     * <p>原文：All CommandSenders who will see this chat message
      */
     @NotNull
     public Set<CommandSender> getRecipients() {

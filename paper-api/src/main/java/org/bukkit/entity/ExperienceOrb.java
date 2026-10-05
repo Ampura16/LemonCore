@@ -4,21 +4,32 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable; // Paper
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表一个经验球.
+ * <p>原文：
  * Represents an Experience Orb.
  */
 public interface ExperienceOrb extends Entity {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此经验球中所包含的经验
+     * <p>原文：
      * Gets how much experience is contained within this orb
      *
-     * @return Amount of experience
+     * @return 经验的数量
+     * <p>原文：Amount of experience
      */
     public int getExperience();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此经验球中所包含的经验
+     * <p>原文：
      * Sets how much experience is contained within this orb
      *
-     * @param value Amount of experience
+     * @param value 经验的数量
+     * <p>原文：Amount of experience
      */
     public void setExperience(int value);
 

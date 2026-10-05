@@ -14,6 +14,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当玩家使用桶时触发本事件.
+ * <p>原文：
  * Called when a player interacts with a Bucket
  */
 public abstract class PlayerBucketEvent extends PlayerEvent implements Cancellable {
@@ -55,9 +58,13 @@ public abstract class PlayerBucketEvent extends PlayerEvent implements Cancellab
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取本事件所涉及的方块 (岩浆/水方块等).
+     * <p>原文：
      * Gets the block involved in this event.
      *
-     * @return The Block which block is involved in this event
+     * @return 方块
+     * <p>原文：The Block which block is involved in this event
      */
     @NotNull
     public final Block getBlock() {
@@ -65,9 +72,13 @@ public abstract class PlayerBucketEvent extends PlayerEvent implements Cancellab
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 玩家正在对着哪个方块使用桶,返回那个方块.
+     * <p>原文：
      * Return the block clicked
      *
-     * @return the clicked block
+     * @return 方块
+     * <p>原文：the clicked block
      */
     @NotNull
     public Block getBlockClicked() {
@@ -75,6 +86,11 @@ public abstract class PlayerBucketEvent extends PlayerEvent implements Cancellab
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取方块被点击的面.
+     * <p>
+     * 每个方块有6个面,玩家究竟是点击的哪个呢.
+     * <p>原文：
      * Get the face on the clicked block
      *
      * @return the clicked face
@@ -85,9 +101,15 @@ public abstract class PlayerBucketEvent extends PlayerEvent implements Cancellab
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回玩家手里的桶的类型.
+     * <p>
+     * 假设玩家使用空桶装水,则会返回空桶的类型
+     * <p>原文：
      * Returns the bucket used in this event
      *
-     * @return the used bucket
+     * @return 使用中的桶
+     * <p>原文：the used bucket
      */
     @NotNull
     public Material getBucket() {
@@ -95,9 +117,13 @@ public abstract class PlayerBucketEvent extends PlayerEvent implements Cancellab
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取在此事件中使用的手.
+     * <p>原文：
      * Get the hand that was used in this event.
      *
-     * @return the hand
+     * @return 使用的手
+     * <p>原文：the hand
      */
     @NotNull
     public EquipmentSlot getHand() {
@@ -105,9 +131,15 @@ public abstract class PlayerBucketEvent extends PlayerEvent implements Cancellab
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 得到使用桶之后会得到的物品堆叠.
+     * <p>
+     * 假设玩家使用空桶装水,则会返回一个装满水的桶
+     * <p>原文：
      * Get the resulting item in hand after the bucket event
      *
-     * @return ItemStack hold in hand after the event.
+     * @return 返回事件结果
+     * <p>原文：ItemStack hold in hand after the event.
      */
     @Nullable
     public ItemStack getItemStack() {
@@ -115,9 +147,15 @@ public abstract class PlayerBucketEvent extends PlayerEvent implements Cancellab
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置使用桶之后得到的物品.
+     * <p>
+     * 假设玩家使用空桶装水,原来玩家会一个装满水的桶,你可以使用这个方法改变这个结果. 例如改成岩浆桶.
+     * <p>原文：
      * Set the item in hand after the event
      *
-     * @param itemStack the new held ItemStack after the bucket event.
+     * @param itemStack 新的事件结果
+     * <p>原文：the new held ItemStack after the bucket event.
      */
     public void setItemStack(@Nullable ItemStack itemStack) {
         this.itemStack = itemStack;

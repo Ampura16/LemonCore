@@ -7,11 +7,17 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 用于储存一个指定的音符。
+ * <p>原文：
  * A note class to store a specific note.
  */
 public class Note {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 一个包含音调的枚举。
+     * <p>原文：
      * An enum holding tones.
      */
     public enum Tone {
@@ -27,7 +33,12 @@ public class Note {
         private final byte id;
 
         private static final Map<Byte, Note.Tone> BY_DATA = Maps.newHashMap();
-        /** The number of tones including sharped tones. */
+        /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 音调的数量。
+         * <p>原文：
+         * The number of tones including sharped tones.
+         */
         public static final byte TONES_COUNT = 12;
 
         private Tone(int id, boolean sharpable) {
@@ -36,9 +47,13 @@ public class Note {
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 返回这个音调未升高的ID。
+         * <p>原文：
          * Returns the not sharped id of this tone.
          *
-         * @return the not sharped id of this tone.
+         * @return 这个音调未升高的ID
+         * <p>原文：the not sharped id of this tone.
          * @apiNote Internal Use Only
          */
         @org.jetbrains.annotations.ApiStatus.Internal // Paper
@@ -47,12 +62,17 @@ public class Note {
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 返回音调ID。这些方法能够返回这个音调升高的ID。如果音调不能升高则会返回这个音调未升高的ID。
+         * <p>原文：
          * Returns the id of this tone. These method allows to return the
          * sharped id of the tone. If the tone couldn't be sharped it always
          * return the not sharped id of this tone.
          *
-         * @param sharped Set to true to return the sharped id.
-         * @return the id of this tone.
+         * @param sharped 设为true则返回升高的ID
+         * <p>原文：Set to true to return the sharped id.
+         * @return 这个音调的ID
+         * <p>原文：the id of this tone.
          * @apiNote Internal Use Only
          */
         @org.jetbrains.annotations.ApiStatus.Internal // Paper
@@ -63,20 +83,30 @@ public class Note {
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 返回音调是否能被升高。
+         * <p>原文：
          * Returns if this tone could be sharped.
          *
-         * @return if this tone could be sharped.
+         * @return 音调是否能被升高
+         * <p>原文：if this tone could be sharped.
          */
         public boolean isSharpable() {
             return sharpable;
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 返回这个音调的ID是否为升高音调的ID。
+         * <p>原文：
          * Returns if this tone id is the sharped id of the tone.
          *
-         * @param id the id of the tone.
-         * @return if the tone id is the sharped id of the tone.
-         * @throws IllegalArgumentException if neither the tone nor the
+         * @param id 音调ID
+         * <p>原文：the id of the tone.
+         * @return 这个音调的ID是否为升高音调的ID
+         * <p>原文：if the tone id is the sharped id of the tone.
+         * @throws IllegalArgumentException 如果音调和半音都没有ID则抛出错误
+         * <p>原文：if neither the tone nor the
          *     semitone have the id.
          * @apiNote Internal Use Only
          */
@@ -93,10 +123,15 @@ public class Note {
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 返回音调对应的ID，同时返回半音。
+         * <p>原文：
          * Returns the tone to id. Also returning the semitones.
          *
-         * @param id the id of the tone.
-         * @return the tone to id.
+         * @param id 音调的ID
+         * <p>原文：the id of the tone.
+         * @return 音调对应的ID
+         * <p>原文：the tone to id.
          * @apiNote Internal Use Only
          */
         @org.jetbrains.annotations.ApiStatus.Internal // Paper
@@ -129,9 +164,13 @@ public class Note {
     private final byte note;
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 构造一个新的note类。
+     * <p>原文：
      * Creates a new note.
      *
-     * @param note Internal note id. {@link #getId()} always return this
+     * @param note 内部音符ID。{@link #getId()}会返回这个数值。这个数值必须在区间[0;&nbsp;24]中
+     * <p>原文：Internal note id. {@link #getId()} always return this
      *     value. The value has to be in the interval [0;&nbsp;24].
      */
     public Note(int note) {
@@ -141,12 +180,18 @@ public class Note {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 构造一个新的note类。
+     * <p>原文：
      * Creates a new note.
      *
-     * @param octave The octave where the note is in. Has to be 0 - 2.
-     * @param tone The tone within the octave. If the octave is 2 the note has
+     * @param octave 音符处于的八度音阶。必须在0-2间
+     * <p>原文：The octave where the note is in. Has to be 0 - 2.
+     * @param tone 在这个八度音阶中的音调。如果八度音阶为2则音调必须为F#
+     * <p>原文：The tone within the octave. If the octave is 2 the note has
      *     to be F#.
-     * @param sharped Set if the tone is sharped (e.g. for F#).
+     * @param sharped 设置音调是否升高 (例如F#)
+     * <p>原文：Set if the tone is sharped (e.g. for F#).
      */
     public Note(int octave, @NotNull Tone tone, boolean sharped) {
         if (sharped && !tone.isSharpable()) {
@@ -161,11 +206,17 @@ public class Note {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 为一个大调创建一个新的note类，例如A大调。
+     * <p>原文：
      * Creates a new note for a flat tone, such as A-flat.
      *
-     * @param octave The octave where the note is in. Has to be 0 - 1.
-     * @param tone The tone within the octave.
-     * @return The new note.
+     * @param octave 音符处于的八度音阶。必须为0或1
+     * <p>原文：The octave where the note is in. Has to be 0 - 1.
+     * @param tone 在这个八度音阶中的音调
+     * <p>原文：The tone within the octave.
+     * @return 新的note类对象
+     * <p>原文：The new note.
      */
     @NotNull
     public static Note flat(int octave, @NotNull Tone tone) {
@@ -175,12 +226,18 @@ public class Note {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 为一个升调创建一个note类，例如A升调。
+     * <p>原文：
      * Creates a new note for a sharp tone, such as A-sharp.
      *
-     * @param octave The octave where the note is in. Has to be 0 - 2.
-     * @param tone The tone within the octave. If the octave is 2 the note has
+     * @param octave 音符处于的八度音阶。必须在0-2间
+     * <p>原文：The octave where the note is in. Has to be 0 - 2.
+     * @param tone 在这个八度音阶中的音调。如果八度音阶为2则音调必须为F#
+     * <p>原文：The tone within the octave. If the octave is 2 the note has
      *     to be F#.
-     * @return The new note.
+     * @return 新的note类对象
+     * <p>原文：The new note.
      */
     @NotNull
     public static Note sharp(int octave, @NotNull Tone tone) {
@@ -188,11 +245,17 @@ public class Note {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 为一个自然调创建一个note类，例如自然A调。
+     * <p>原文：
      * Creates a new note for a natural tone, such as A-natural.
      *
-     * @param octave The octave where the note is in. Has to be 0 - 1.
-     * @param tone The tone within the octave.
-     * @return The new note.
+     * @param octave 音符处于的八度音阶。必须为0或1
+     * <p>原文：The octave where the note is in. Has to be 0 - 1.
+     * @param tone 在这个八度音阶中的音调
+     * <p>原文：The tone within the octave.
+     * @return 新的note类对象
+     * <p>原文：The new note.
      */
     @NotNull
     public static Note natural(int octave, @NotNull Tone tone) {
@@ -201,7 +264,11 @@ public class Note {
     }
 
     /**
-     * @return The note a semitone above this one.
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @return 在这个音符之上的半音
+     * <p>原文：The note a semitone above this one.
      */
     @NotNull
     public Note sharped() {
@@ -210,7 +277,11 @@ public class Note {
     }
 
     /**
-     * @return The note a semitone below this one.
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @return 在这个音符之下的半音
+     * <p>原文：The note a semitone below this one.
      */
     @NotNull
     public Note flattened() {
@@ -219,9 +290,13 @@ public class Note {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回这个音符的内部ID。
+     * <p>原文：
      * Returns the internal id of this note.
      *
-     * @return the internal id of this note.
+     * @return 这个音符的内部ID
+     * <p>原文：the internal id of this note.
      * @apiNote Internal Use Only
      */
     @org.jetbrains.annotations.ApiStatus.Internal // Paper
@@ -230,9 +305,13 @@ public class Note {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回这个音符的八度音阶。
+     * <p>原文：
      * Returns the octave of this note.
      *
-     * @return the octave of this note.
+     * @return 这个音符的八度音阶
+     * <p>原文：the octave of this note.
      */
     public int getOctave() {
         return note / Tone.TONES_COUNT;
@@ -243,9 +322,13 @@ public class Note {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回这个音符的音调。
+     * <p>原文：
      * Returns the tone of this note.
      *
-     * @return the tone of this note.
+     * @return 这个音符的音调
+     * <p>原文：the tone of this note.
      */
     @NotNull
     public Tone getTone() {
@@ -253,9 +336,13 @@ public class Note {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回音符是否升高。
+     * <p>原文：
      * Returns if this note is sharped.
      *
-     * @return if this note is sharped.
+     * @return 音符是否升高
+     * <p>原文：if this note is sharped.
      */
     public boolean isSharped() {
         byte note = getToneByte();

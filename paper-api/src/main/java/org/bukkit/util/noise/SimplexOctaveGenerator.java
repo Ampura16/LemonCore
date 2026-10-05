@@ -5,36 +5,54 @@ import org.bukkit.World;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 使用倍频创建单纯形噪声.
+ * <p>原文：
  * Creates simplex noise through unbiased octaves
  */
 public class SimplexOctaveGenerator extends OctaveGenerator {
     private double wScale = 1;
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用给定的World创建一个SimplexOctaveGenerator.
+     * <p>原文：
      * Creates a simplex octave generator for the given world
      *
-     * @param world World to construct this generator for
-     * @param octaves Amount of octaves to create
+     * @param world 创建这个Generator的World实例
+     * <p>原文：World to construct this generator for
+     * @param octaves 创建的倍频值
+     * <p>原文：Amount of octaves to create
      */
     public SimplexOctaveGenerator(@NotNull World world, int octaves) {
         this(new Random(world.getSeed()), octaves);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用给定的种子创建一个SimplexOctaveGenerator.
+     * <p>原文：
      * Creates a simplex octave generator for the given world
      *
-     * @param seed Seed to construct this generator for
-     * @param octaves Amount of octaves to create
+     * @param seed 创建这个Generator的long型种子
+     * <p>原文：Seed to construct this generator for
+     * @param octaves 创建的倍频值
+     * <p>原文：Amount of octaves to create
      */
     public SimplexOctaveGenerator(long seed, int octaves) {
         this(new Random(seed), octaves);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用给定的{@link Random}创建一个SimplexOctaveGenerator.
+     * <p>原文：
      * Creates a simplex octave generator for the given {@link Random}
      *
-     * @param rand Random object to construct this generator for
-     * @param octaves Amount of octaves to create
+     * @param rand 创建这个Generator的Random
+     * <p>原文：Random object to construct this generator for
+     * @param octaves 创建的倍频值
+     * <p>原文：Amount of octaves to create
      */
     public SimplexOctaveGenerator(@NotNull Random rand, int octaves) {
         super(createOctaves(rand, octaves));
@@ -47,51 +65,80 @@ public class SimplexOctaveGenerator extends OctaveGenerator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取每个W坐标通过的区间大小.
+     * <p>原文：
      * Gets the scale used for each W-coordinates passed
      *
-     * @return W scale
+     * @return W区间大小
+     * <p>原文：W scale
      */
     public double getWScale() {
         return wScale;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置每个W坐标通过的区间大小.
+     * <p>原文：
      * Sets the scale used for each W-coordinates passed
      *
-     * @param scale New W scale
+     * @param scale 新W区间大小
+     * <p>原文：New W scale
      */
     public void setWScale(double scale) {
         wScale = scale;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用特殊的数个音阶和参数产生一个三维坐标的噪音.
+     * <p>原文：
      * Generates noise for the 3D coordinates using the specified number of
      * octaves and parameters
      *
-     * @param x X-coordinate
-     * @param y Y-coordinate
-     * @param z Z-coordinate
-     * @param w W-coordinate
-     * @param frequency How much to alter the frequency by each octave
-     * @param amplitude How much to alter the amplitude by each octave
-     * @return Resulting noise
+     * @param x X坐标
+     * <p>原文：X-coordinate
+     * @param y Y坐标
+     * <p>原文：Y-coordinate
+     * @param z Z坐标
+     * <p>原文：Z-coordinate
+     * @param w W坐标
+     * <p>原文：W-coordinate
+     * @param frequency 每一个音阶改变多少频率
+     * <p>原文：How much to alter the frequency by each octave
+     * @param amplitude 每一个音阶改变多少振幅
+     * <p>原文：How much to alter the amplitude by each octave
+     * @return 噪音结果
+     * <p>原文：Resulting noise
      */
     public double noise(double x, double y, double z, double w, double frequency, double amplitude) {
         return noise(x, y, z, w, frequency, amplitude, false);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用特殊的数个音阶和参数产生一个三维坐标的噪音.
+     * <p>原文：
      * Generates noise for the 3D coordinates using the specified number of
      * octaves and parameters
      *
-     * @param x X-coordinate
-     * @param y Y-coordinate
-     * @param z Z-coordinate
-     * @param w W-coordinate
-     * @param frequency How much to alter the frequency by each octave
-     * @param amplitude How much to alter the amplitude by each octave
-     * @param normalized If true, normalize the value to [-1, 1]
-     * @return Resulting noise
+     * @param x X坐标
+     * <p>原文：X-coordinate
+     * @param y Y坐标
+     * <p>原文：Y-coordinate
+     * @param z Z坐标
+     * <p>原文：Z-coordinate
+     * @param w W坐标
+     * <p>原文：W-coordinate
+     * @param frequency 每一个音阶改变多少频率
+     * <p>原文：How much to alter the frequency by each octave
+     * @param amplitude 每一个音阶改变多少振幅
+     * <p>原文：How much to alter the amplitude by each octave
+     * @param normalized 如果为true,规范这个值为[-1, 1]
+     * <p>原文：If true, normalize the value to [-1, 1]
+     * @return 噪音结果
+     * <p>原文：Resulting noise
      */
     public double noise(double x, double y, double z, double w, double frequency, double amplitude, boolean normalized) {
         double result = 0;

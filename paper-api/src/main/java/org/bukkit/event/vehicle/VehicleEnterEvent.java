@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 实体进入载具的事件
+ * <p>原文：
  * Raised when an entity enters a vehicle.
  */
 public class VehicleEnterEvent extends VehicleEvent implements Cancellable {
@@ -24,9 +27,13 @@ public class VehicleEnterEvent extends VehicleEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取进入到载具中的实体.
+     * <p>原文：
      * Gets the Entity that entered the vehicle.
      *
-     * @return the Entity that entered the vehicle
+     * @return 进入到载具中的实体
+     * <p>原文：the Entity that entered the vehicle
      */
     @NotNull
     public Entity getEntered() {

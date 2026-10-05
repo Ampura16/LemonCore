@@ -8,103 +8,159 @@ import org.jetbrains.annotations.Nullable;
 public interface BossBar {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 用于获取该Boss血量条的标题.
+     * <p>原文：
      * Returns the title of this boss bar
      *
-     * @return the title of the bar
+     * @return 当前的Boss血条的标题
+     * <p>原文：the title of the bar
      */
     @NotNull
     String getTitle();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置当前boss血条的标题.
+     * <p>原文：
      * Sets the title of this boss bar
      *
-     * @param title the title of the bar
+     * @param title 要设置的boss血条的标题.
+     * <p>原文：the title of the bar
      */
     void setTitle(@Nullable String title);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这个boss血条的颜色.
+     * <p>原文：
      * Returns the color of this boss bar
      *
-     * @return the color of the bar
+     * @return 返回一个BarColor的实例
+     * <p>原文：the color of the bar
      */
     @NotNull
     BarColor getColor();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置这个Boss血条的颜色.
+     * <p>原文：
      * Sets the color of this boss bar.
      *
-     * @param color the color of the bar
+     * @param color 要设置的血条颜色
+     * <p>原文：the color of the bar
      */
     void setColor(@NotNull BarColor color);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取该Boss血条的样式.
+     * <p>原文：
      * Returns the style of this boss bar
      *
-     * @return the style of the bar
+     * @return 这个boss血条的样式
+     * <p>原文：the style of the bar
      */
     @NotNull
     BarStyle getStyle();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置这个boss血条的样式.
+     * <p>原文：
      * Sets the bar style of this boss bar
      *
-     * @param style the style of the bar
+     * @param style 要设置的boss血条的样式
+     * <p>原文：the style of the bar
      */
     void setStyle(@NotNull BarStyle style);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 从该boss血条内移除一个指定的属性.
+     * <p>原文：
      * Remove an existing flag on this boss bar
      *
-     * @param flag the existing flag to remove
+     * @param flag 一个已有的指定boss血条内属性,参见BarFlag类
+     * <p>原文：the existing flag to remove
      */
     void removeFlag(@NotNull BarFlag flag);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 向该血条添加一个血条属性.
+     * <p>原文：
      * Add an optional flag to this boss bar
      *
-     * @param flag an optional flag to set on the boss bar
+     * @param flag 要添加的属性
+     * <p>原文：an optional flag to set on the boss bar
      */
     void addFlag(@NotNull BarFlag flag);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取某个boss血条属性是否在该血条上存在.
+     * <p>原文：
      * Returns whether this boss bar as the passed flag set
      *
-     * @param flag the flag to check
-     * @return whether it has the flag
+     * @param flag 要检查是否存在的属性
+     * <p>原文：the flag to check
+     * @return 是否拥有该属性
+     * <p>原文：whether it has the flag
      */
     boolean hasFlag(@NotNull BarFlag flag);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置该血条的进度.请记住,这个参数必须是1.0（最大值）到0.0（血条空）这两个数字之间的.
+     * <p>原文：
      * Sets the progress of the bar. Values should be between 0.0 (empty) and
      * 1.0 (full)
      *
-     * @param progress the progress of the bar
+     * @param progress 要设置该血条的进度
+     * <p>原文：the progress of the bar
      */
     void setProgress(double progress);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回该血条的进度（只会返回1.00到0.00之间的数字）.
+     * <p>原文：
      * Returns the progress of the bar between 0.0 and 1.0
      *
-     * @return the progress of the bar
+     * @return 这个血条的进度 (血条剩下的血量占总血量的比值)
+     * <p>原文：the progress of the bar
      */
     double getProgress();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 向该boss血条内添加一个玩家（也就是使该玩家能看见这个血条）.
+     * <p>原文：
      * Adds the player to this boss bar causing it to display on their screen.
      *
-     * @param player the player to add
+     * @param player 要添加的玩家
+     * <p>原文：the player to add
      */
     void addPlayer(@NotNull Player player);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 从一个boss血条内移除某个玩家（就是使指定玩家看不见该BOSS血条）.
+     * <p>原文：
      * Removes the player from this boss bar causing it to be removed from their
      * screen.
      *
-     * @param player the player to remove
+     * @param player 要移除的玩家
+     * <p>原文：the player to remove
      */
     void removePlayer(@NotNull Player player);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 从该boss血条内移除所有玩家.
+     * <p>原文：
      * Removes all players from this boss bar
      *
      * @see #removePlayer(Player)
@@ -112,37 +168,59 @@ public interface BossBar {
     void removeAll();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回所有能看到这个boss血条的玩家.
+     * <p>原文：
      * Returns all players viewing this boss bar
      *
-     * @return a immutable list of players
+     * @return 一个包含所有能看到这个血条的玩家的List
+     * <p>原文：a immutable list of players
      */
     @NotNull
     List<Player> getPlayers();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置这个boss血条是否可见.
+     * <p>原文：
      * Set if the boss bar is displayed to attached players.
      *
-     * @param visible visible status
+     * @param visible 该血条的可见状态
+     * <p>原文：visible status
      */
     void setVisible(boolean visible);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取该血条是否可见.
+     * <p>原文：
      * Return if the boss bar is displayed to attached players.
      *
-     * @return visible status
+     * @return 可见状态
+     * <p>原文：visible status
      */
     boolean isVisible();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将该boss血条设置为可见状态.
+     * <p>原文：
      * Shows the previously hidden boss bar to all attached players
-     * @deprecated {@link #setVisible(boolean)}
+     *
+     * @deprecated 请使用{@link #setVisible(boolean)}
+     * <p>原文：{@link #setVisible(boolean)}
      */
     @Deprecated(since = "1.9")
     void show();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 从所有能看见的玩家屏幕上隐藏该血条.
+     * <p>原文：
      * Hides this boss bar from all attached players
-     * @deprecated {@link #setVisible(boolean)}
+     *
+     * @deprecated 请使用{@link #setVisible(boolean)}
+     * <p>原文：{@link #setVisible(boolean)}
      */
     @Deprecated(since = "1.9")
     void hide();

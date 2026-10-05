@@ -6,6 +6,9 @@ import org.bukkit.inventory.meta.ArmorMeta;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表可应用于物品的装甲装饰。
+ * <p>原文：
  * Represents an armor trim that may be applied to an item.
  *
  * @see ArmorMeta#setTrim(ArmorTrim)
@@ -16,11 +19,16 @@ public class ArmorTrim {
     private final TrimPattern pattern;
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 根据指定的 {@link TrimMaterial} 和 {@link TrimPattern} 创建一个新的 {@link ArmorTrim}。
+     * <p>原文：
      * Create a new {@link ArmorTrim} given a {@link TrimMaterial} and
      * {@link TrimPattern}.
      *
-     * @param material the material
-     * @param pattern the pattern
+     * @param material 材质
+     * <p>原文：the material
+     * @param pattern 图案
+     * <p>原文：the pattern
      */
     public ArmorTrim(@NotNull TrimMaterial material, @NotNull TrimPattern pattern) {
         Preconditions.checkArgument(material != null, "material must not be null");
@@ -31,9 +39,13 @@ public class ArmorTrim {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此盔甲纹饰的 {@link TrimMaterial}。
+     * <p>原文：
      * Get the {@link TrimMaterial} for this armor trim.
      *
-     * @return the material
+     * @return 材质
+     * <p>原文：the material
      */
     @NotNull
     public TrimMaterial getMaterial() {
@@ -41,9 +53,13 @@ public class ArmorTrim {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此盔甲纹饰的 {@link TrimPattern}。
+     * <p>原文：
      * Get the {@link TrimPattern} for this armor trim.
      *
-     * @return the pattern
+     * @return 图案
+     * <p>原文：the pattern
      */
     @NotNull
     public TrimPattern getPattern() {

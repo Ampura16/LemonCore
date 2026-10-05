@@ -7,6 +7,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当 {@link Spellcaster} 施放法术时调用。
+ * <p>原文：
  * Called when a {@link Spellcaster} casts a spell.
  */
 public class EntitySpellCastEvent extends EntityEvent implements Cancellable {
@@ -30,12 +33,18 @@ public class EntitySpellCastEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此事件中将施放的法术。
+     * <p>
+     * 这是一个便捷方法，等同于 {@link Spellcaster#getSpell()}。
+     * <p>原文：
      * Get the spell to be cast in this event.
      * <br>
      * This is a convenience method equivalent to
      * {@link Spellcaster#getSpell()}.
      *
-     * @return the spell to cast
+     * @return 要施放的法术
+     * <p>原文：the spell to cast
      */
     @NotNull
     public Spellcaster.Spell getSpell() {

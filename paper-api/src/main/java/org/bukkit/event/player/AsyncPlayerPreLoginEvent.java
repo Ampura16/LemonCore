@@ -12,6 +12,11 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 存储尝试登录的玩家的详细信息，玩家尝试登录服务器的事件.
+ * <p>
+ * 这个事件是异步的，不在主线程上执行.
+ * <p>原文：
  * Stores details for players attempting to log in.
  * <p>
  * This event is asynchronous, and not run using main thread.
@@ -82,9 +87,13 @@ public class AsyncPlayerPreLoginEvent extends Event {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取登录的状态.
+     * <p>原文：
      * Gets the current result of the login, as an enum
      *
-     * @return Current Result of the login
+     * @return 登录的状态
+     * <p>原文：Current Result of the login
      */
     @NotNull
     public Result getLoginResult() {
@@ -92,11 +101,16 @@ public class AsyncPlayerPreLoginEvent extends Event {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取登录的状态.
+     * <p>原文：
      * Gets the current result of the login, as an enum
      *
-     * @return Current Result of the login
+     * @return 登录的状态
+     * <p>原文：Current Result of the login
      * @see #getLoginResult()
-     * @deprecated This method uses a deprecated enum from {@link
+     * @deprecated 这个方法使用了来自 {@link PlayerPreLoginEvent} 的已弃用的枚举
+     * <p>原文：This method uses a deprecated enum from {@link
      *     PlayerPreLoginEvent}
      */
     @Deprecated(since = "1.3.2")
@@ -106,20 +120,29 @@ public class AsyncPlayerPreLoginEvent extends Event {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置登录的状态.
+     * <p>原文：
      * Sets the new result of the login, as an enum
      *
-     * @param result New result to set
+     * @param result 状态
+     * <p>原文：New result to set
      */
     public void setLoginResult(@NotNull final Result result) {
         this.result = result;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置登录的状态.
+     * <p>原文：
      * Sets the new result of the login, as an enum
      *
-     * @param result New result to set
+     * @param result 状态
+     * <p>原文：New result to set
      * @see #setLoginResult(Result)
-     * @deprecated This method uses a deprecated enum from {@link
+     * @deprecated 这个方法使用了来自 {@link PlayerPreLoginEvent} 的已弃用的枚举
+     * <p>原文：This method uses a deprecated enum from {@link
      *     PlayerPreLoginEvent}
      */
     @Deprecated(since = "1.3.2")
@@ -173,9 +196,13 @@ public class AsyncPlayerPreLoginEvent extends Event {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取将要使用的踢出消息，如果getResult() != Result.ALLOWED.
+     * <p>原文：
      * Gets the current kick message that will be used when the outcome is not allowed
      *
-     * @return Current kick message
+     * @return 踢出消息
+     * <p>原文：Current kick message
      * @deprecated in favour of {@link #kickMessage()}
      */
     @NotNull
@@ -185,9 +212,13 @@ public class AsyncPlayerPreLoginEvent extends Event {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置要显示的踢出消息，如果getResult() != Result.ALLOWED.
+     * <p>原文：
      * Sets the kick message to display when the outcome is not allowed
      *
-     * @param message New kick message
+     * @param message 踢出消息
+     * <p>原文：New kick message
      * @deprecated in favour of {@link #kickMessage(Component)}
      */
     @Deprecated
@@ -196,6 +227,9 @@ public class AsyncPlayerPreLoginEvent extends Event {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 允许玩家登录.
+     * <p>原文：
      * Allows the player to log in
      */
     public void allow() {
@@ -204,10 +238,15 @@ public class AsyncPlayerPreLoginEvent extends Event {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 以给定的理由不允许玩家登录.
+     * <p>原文：
      * Disallows the player from logging in, with the given reason
      *
-     * @param result New result for disallowing the player
-     * @param message Kick message to display to the user
+     * @param result 不允许玩家登录的理由
+     * <p>原文：New result for disallowing the player
+     * @param message 给用户显示的踢出消息
+     * <p>原文：Kick message to display to the user
      * @deprecated in favour of {@link #disallow(org.bukkit.event.player.AsyncPlayerPreLoginEvent.Result, Component)}
      */
     @Deprecated
@@ -217,12 +256,18 @@ public class AsyncPlayerPreLoginEvent extends Event {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 以给定的理由不允许玩家登录.
+     * <p>原文：
      * Disallows the player from logging in, with the given reason
      *
-     * @param result New result for disallowing the player
-     * @param message Kick message to display to the user
+     * @param result 不允许玩家登录的理由
+     * <p>原文：New result for disallowing the player
+     * @param message 给用户显示的踢出消息
+     * <p>原文：Kick message to display to the user
      * @see #disallow(Result, String)
-     * @deprecated This method uses a deprecated enum from {@link
+     * @deprecated 这个方法使用了来自 {@link PlayerPreLoginEvent} 的已弃用的枚举
+     * <p>原文：This method uses a deprecated enum from {@link
      *     PlayerPreLoginEvent}
      */
     @Deprecated(since = "1.3.2")
@@ -232,9 +277,13 @@ public class AsyncPlayerPreLoginEvent extends Event {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家的名字.
+     * <p>原文：
      * Gets the player's name.
      *
-     * @return the player's name
+     * @return 玩家名
+     * <p>原文：the player's name
      */
     @NotNull
     public String getName() {
@@ -242,9 +291,13 @@ public class AsyncPlayerPreLoginEvent extends Event {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家的IP地址.
+     * <p>原文：
      * Gets the player IP address.
      *
-     * @return The IP address
+     * @return IP地址
+     * <p>原文：The IP address
      */
     @NotNull
     public InetAddress getAddress() {
@@ -252,6 +305,9 @@ public class AsyncPlayerPreLoginEvent extends Event {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家的唯一标识.
+     * <p>原文：
      * Gets the player's unique ID.
      *
      * @return The unique ID
@@ -299,9 +355,13 @@ public class AsyncPlayerPreLoginEvent extends Event {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此连接是否从另一个服务器转移而来.
+     * <p>原文：
      * Gets if this connection has been transferred from another server.
      *
-     * @return {@code true} if the connection has been transferred
+     * @return 如果连接已被转移则返回 true
+     * <p>原文：{@code true} if the connection has been transferred
      */
     public boolean isTransferred() {
         return this.transferred;
@@ -329,28 +389,46 @@ public class AsyncPlayerPreLoginEvent extends Event {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 基本的踢出理由，为了插件间的通信
+     * <p>原文：
      * Basic kick reasons for communicating to plugins
      */
     public enum Result {
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 玩家被允许登录
+         * <p>原文：
          * The player is allowed to log in
          */
         ALLOWED,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 由于服务器已满而不允许登录
+         * <p>原文：
          * The player is not allowed to log in, due to the server being full
          */
         KICK_FULL,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 由于该玩家被封禁而不允许登录
+         * <p>原文：
          * The player is not allowed to log in, due to them being banned
          */
         KICK_BANNED,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 由于玩家不在白名单上而不允许登录
+         * <p>原文：
          * The player is not allowed to log in, due to them not being on the
          * white list
          */
         KICK_WHITELIST,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 由于未定义的理由而不允许登录
+         * <p>原文：
          * The player is not allowed to log in, for reasons undefined
          */
         KICK_OTHER;

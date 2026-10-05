@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 玩家移动速度变化事件.
+ * <p>原文：
  * Called when the velocity of a player changes.
  */
 public class PlayerVelocityEvent extends PlayerEvent implements Cancellable {
@@ -24,9 +27,13 @@ public class PlayerVelocityEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 得到玩家目前的移动速度.
+     * <p>原文：
      * Gets the velocity vector that will be sent to the player
      *
-     * @return Vector the player will get
+     * @return 玩家移动速度
+     * <p>原文：Vector the player will get
      */
     @NotNull
     public Vector getVelocity() {
@@ -34,9 +41,13 @@ public class PlayerVelocityEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置玩家移动速度 (单位: 米每tick).
+     * <p>原文：
      * Sets the velocity vector in meters per tick that will be sent to the player
      *
-     * @param velocity The velocity vector that will be sent to the player
+     * @param velocity 玩家速度
+     * <p>原文：The velocity vector that will be sent to the player
      */
     public void setVelocity(@NotNull Vector velocity) {
         this.velocity = velocity.clone();

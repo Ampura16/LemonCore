@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当实体决定爆炸时调用。
+ * <p>原文：
  * Called when an entity has made a decision to explode.
  */
 public class ExplosionPrimeEvent extends EntityEvent implements Cancellable {
@@ -32,36 +35,52 @@ public class ExplosionPrimeEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取爆炸半径。
+     * <p>原文：
      * Gets the radius of the explosion
      *
-     * @return returns the radius of the explosion
+     * @return 返回爆炸半径
+     * <p>原文：returns the radius of the explosion
      */
     public float getRadius() {
         return this.radius;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置爆炸半径。
+     * <p>原文：
      * Sets the radius of the explosion
      *
-     * @param radius the radius of the explosion
+     * @param radius 爆炸半径
+     * <p>原文：the radius of the explosion
      */
     public void setRadius(float radius) {
         this.radius = radius;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此爆炸是否会创造火。
+     * <p>原文：
      * Gets whether this explosion will create fire or not
      *
-     * @return {@code true} if this explosion will create fire
+     * @return 如果此爆炸会创造火则返回 true
+     * <p>原文：{@code true} if this explosion will create fire
      */
     public boolean getFire() {
         return this.fire;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此爆炸是否会创造火。
+     * <p>原文：
      * Sets whether this explosion will create fire or not
      *
-     * @param fire {@code true} if you want this explosion to create fire
+     * @param fire 如果你希望此爆炸创造火则设置为 true
+     * <p>原文：{@code true} if you want this explosion to create fire
      */
     public void setFire(boolean fire) {
         this.fire = fire;

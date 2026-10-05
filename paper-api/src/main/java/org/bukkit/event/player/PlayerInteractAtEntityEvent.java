@@ -9,6 +9,12 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当玩家在实体上点击某实体上的某位置时触发此事件.
+ * <br>
+ * Note that the client may sometimes spuriously send this packet in addition to {@link PlayerInteractEntityEvent}.
+ * Users are advised to listen to this (parent) class unless specifically required.
+ * <p>原文：
  * Represents an event that is called when a player right clicks an entity that
  * also contains the location where the entity was clicked.
  * <br>

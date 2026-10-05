@@ -8,16 +8,25 @@ import java.nio.channels.FileChannel;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 文件工具类。
+ * <p>原文：
  * Class containing file utilities
  */
 public class FileUtil {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 复制一个文件至另一个位置.
+     * <p>原文：
      * This method copies one file to another location
      *
-     * @param inFile the source filename
-     * @param outFile the target filename
-     * @return true on success
+     * @param inFile 源文件名
+     * <p>原文：the source filename
+     * @param outFile 目标文件名
+     * <p>原文：the target filename
+     * @return true表成功
+     * <p>原文：true on success
      */
     public static boolean copy(@NotNull File inFile, @NotNull File outFile) {
         if (!inFile.exists()) {

@@ -6,6 +6,9 @@ import java.util.List;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 列表持久数据类型的提供者，表示 {@link PersistentDataType} 暴露的已知原始类型。
+ * <p>原文：
  * A provider for list persistent data types that represent the known primitive
  * types exposed by {@link PersistentDataType}.
  */
@@ -30,10 +33,14 @@ public final class ListPersistentDataTypeProvider {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 提供一个共享的 {@link ListPersistentDataType}，能够存储字节列表。
+     * <p>原文：
      * Provides a shared {@link ListPersistentDataType} that is capable of
      * storing lists of bytes.
      *
-     * @return the persistent data type.
+     * @return 持久数据类型。
+     * <p>原文：the persistent data type.
      */
     @NotNull
     public ListPersistentDataType<Byte, Byte> bytes() {
@@ -41,10 +48,14 @@ public final class ListPersistentDataTypeProvider {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 提供一个共享的 {@link ListPersistentDataType}，能够存储短整型列表。
+     * <p>原文：
      * Provides a shared {@link ListPersistentDataType} that is capable of
      * storing lists of shorts.
      *
-     * @return the persistent data type.
+     * @return 持久数据类型。
+     * <p>原文：the persistent data type.
      */
     @NotNull
     public ListPersistentDataType<Short, Short> shorts() {
@@ -52,10 +63,14 @@ public final class ListPersistentDataTypeProvider {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 提供一个共享的 {@link ListPersistentDataType}，能够存储整数列表。
+     * <p>原文：
      * Provides a shared {@link ListPersistentDataType} that is capable of
      * storing lists of integers.
      *
-     * @return the persistent data type.
+     * @return 持久数据类型。
+     * <p>原文：the persistent data type.
      */
     @NotNull
     public ListPersistentDataType<Integer, Integer> integers() {
@@ -63,10 +78,14 @@ public final class ListPersistentDataTypeProvider {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 提供一个共享的 {@link ListPersistentDataType}，能够存储长整型列表。
+     * <p>原文：
      * Provides a shared {@link ListPersistentDataType} that is capable of
      * storing lists of longs.
      *
-     * @return the persistent data type.
+     * @return 持久数据类型。
+     * <p>原文：the persistent data type.
      */
     @NotNull
     public ListPersistentDataType<Long, Long> longs() {
@@ -74,10 +93,14 @@ public final class ListPersistentDataTypeProvider {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 提供一个共享的 {@link ListPersistentDataType}，能够存储浮点数列表。
+     * <p>原文：
      * Provides a shared {@link ListPersistentDataType} that is capable of
      * storing lists of floats.
      *
-     * @return the persistent data type.
+     * @return 持久数据类型。
+     * <p>原文：the persistent data type.
      */
     @NotNull
     public ListPersistentDataType<Float, Float> floats() {
@@ -85,10 +108,14 @@ public final class ListPersistentDataTypeProvider {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 提供一个共享的 {@link ListPersistentDataType}，能够存储双精度浮点数列表。
+     * <p>原文：
      * Provides a shared {@link ListPersistentDataType} that is capable of
      * storing lists of doubles.
      *
-     * @return the persistent data type.
+     * @return 持久数据类型。
+     * <p>原文：the persistent data type.
      */
     @NotNull
     public ListPersistentDataType<Double, Double> doubles() {
@@ -96,10 +123,14 @@ public final class ListPersistentDataTypeProvider {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 提供一个共享的 {@link ListPersistentDataType}，能够存储布尔值列表。
+     * <p>原文：
      * Provides a shared {@link ListPersistentDataType} that is capable of
      * storing lists of booleans.
      *
-     * @return the persistent data type.
+     * @return 持久数据类型。
+     * <p>原文：the persistent data type.
      */
     @NotNull
     public ListPersistentDataType<Byte, Boolean> booleans() {
@@ -107,10 +138,14 @@ public final class ListPersistentDataTypeProvider {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 提供一个共享的 {@link ListPersistentDataType}，能够存储字符串列表。
+     * <p>原文：
      * Provides a shared {@link ListPersistentDataType} that is capable of
      * storing lists of strings.
      *
-     * @return the persistent data type.
+     * @return 持久数据类型。
+     * <p>原文：the persistent data type.
      */
     @NotNull
     public ListPersistentDataType<String, String> strings() {
@@ -118,10 +153,14 @@ public final class ListPersistentDataTypeProvider {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 提供一个共享的 {@link ListPersistentDataType}，能够存储字节数组列表。
+     * <p>原文：
      * Provides a shared {@link ListPersistentDataType} that is capable of
      * storing lists of byte arrays.
      *
-     * @return the persistent data type.
+     * @return 持久数据类型。
+     * <p>原文：the persistent data type.
      */
     @NotNull
     public ListPersistentDataType<byte[], byte[]> byteArrays() {
@@ -129,10 +168,14 @@ public final class ListPersistentDataTypeProvider {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 提供一个共享的 {@link ListPersistentDataType}，能够存储整数数组列表。
+     * <p>原文：
      * Provides a shared {@link ListPersistentDataType} that is capable of
      * storing lists of int arrays.
      *
-     * @return the persistent data type.
+     * @return 持久数据类型。
+     * <p>原文：the persistent data type.
      */
     @NotNull
     public ListPersistentDataType<int[], int[]> integerArrays() {
@@ -140,10 +183,14 @@ public final class ListPersistentDataTypeProvider {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 提供一个共享的 {@link ListPersistentDataType}，能够存储长整型数组列表。
+     * <p>原文：
      * Provides a shared {@link ListPersistentDataType} that is capable of
      * storing lists of long arrays.
      *
-     * @return the persistent data type.
+     * @return 持久数据类型。
+     * <p>原文：the persistent data type.
      */
     @NotNull
     public ListPersistentDataType<long[], long[]> longArrays() {
@@ -151,10 +198,14 @@ public final class ListPersistentDataTypeProvider {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 提供一个共享的 {@link ListPersistentDataType}，能够存储持久数据容器。
+     * <p>原文：
      * Provides a shared {@link ListPersistentDataType} that is capable of
      * persistent data containers.
      *
-     * @return the persistent data type.
+     * @return 持久数据类型。
+     * <p>原文：the persistent data type.
      */
     @NotNull
     public ListPersistentDataType<PersistentDataContainer, PersistentDataContainer> dataContainers() {
@@ -162,15 +213,22 @@ public final class ListPersistentDataTypeProvider {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 给定任何用于其元素的持久数据类型，构造一个新的列表持久数据类型。
+     * <p>原文：
      * Constructs a new list persistent data type given any persistent data type
      * for its elements.
      *
-     * @param elementType the persistent data type that is capable of
+     * @param elementType 能够写入/读取列表元素的持久数据类型。
+     * <p>原文：the persistent data type that is capable of
      * writing/reading the elements of the list.
-     * @param <P> the generic type of the primitives stored in the list.
-     * @param <C> the generic type of the complex values yielded back by the
+     * @param <P> 存储在列表中的原始类型的通用类型。
+     * <p>原文：the generic type of the primitives stored in the list.
+     * @param <C> 持久数据类型产生的复杂值的通用类型。
+     * <p>原文：the generic type of the complex values yielded back by the
      * persistent data types.
-     * @return the created list persistent data type.
+     * @return 创建的列表持久数据类型。
+     * <p>原文：the created list persistent data type.
      */
     @NotNull
     public <P, C> ListPersistentDataType<P, C> listTypeFrom(@NotNull final PersistentDataType<P, C> elementType) {
@@ -178,11 +236,16 @@ public final class ListPersistentDataTypeProvider {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * {@link ListPersistentDataType} 的私有实现，使用 {@link Collections2} 进行原始列表的转换。
+     * <p>原文：
      * A private implementation of the {@link ListPersistentDataType} that uses
      * {@link Collections2} for conversion from/to the primitive list.
      *
-     * @param <P> the generic type of the primitives stored in the list.
-     * @param <C> the generic type of the complex values yielded back by the
+     * @param <P> 存储在列表中的原始类型的通用类型。
+     * <p>原文：the generic type of the primitives stored in the list.
+     * @param <C> 持久数据类型产生的复杂值的通用类型。
+     * <p>原文：the generic type of the complex values yielded back by the
      * persistent data types.
      */
     private static final class ListPersistentDataTypeImpl<P, C> implements ListPersistentDataType<P, C> {

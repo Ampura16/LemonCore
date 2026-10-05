@@ -3,35 +3,54 @@ package org.bukkit.block.data.type;
 import org.bukkit.block.data.Hatchable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 'eggs' 值为该方块中出现的海龟蛋的数量.
+ * <p>原文：
  * 'eggs' is the number of eggs which appear in this block.
  */
 public interface TurtleEgg extends Hatchable {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取 'eggs' 属性的值.
+     * <p>原文：
      * Gets the value of the 'eggs' property.
      *
-     * @return the 'eggs' value
+     * @return 属性 'eggs' 的值
+     * <p>原文：the 'eggs' value
      */
     int getEggs();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置 'eggs' 属性的值.
+     * <p>原文：
      * Sets the value of the 'eggs' property.
      *
-     * @param eggs the new 'eggs' value
+     * @param eggs 新的 'eggs' 属性值
+     * <p>原文：the new 'eggs' value
      */
     void setEggs(int eggs);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取 'eggs' 属性所能允许的最小值.
+     * <p>原文：
      * Gets the minimum allowed value of the 'eggs' property.
      *
-     * @return the minimum 'eggs' value
+     * @return 最小 'eggs' 属性值
+     * <p>原文：the minimum 'eggs' value
      */
     int getMinimumEggs();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取 'eggs' 属性所能允许的最大值.
+     * <p>原文：
      * Gets the maximum allowed value of the 'eggs' property.
      *
-     * @return the maximum 'eggs' value
+     * @return 最大 'eggs' 属性值
+     * <p>原文：the maximum 'eggs' value
      */
     int getMaximumEggs();
 }

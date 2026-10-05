@@ -11,6 +11,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 定义了事件调用插件的类的接口。
+ * <p>原文：
  * Interface which defines the class for event call backs to plugins
  */
 public interface EventExecutor {

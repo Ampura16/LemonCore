@@ -10,6 +10,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 在玩家将生物拴绳之前立即调用。
+ * <p>原文：
  * Called immediately prior to a creature being leashed by a player.
  */
 public class PlayerLeashEntityEvent extends Event implements Cancellable {
@@ -38,9 +41,13 @@ public class PlayerLeashEntityEvent extends Event implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回持有拴绳的实体。
+     * <p>原文：
      * Returns the entity that is holding the leash.
      *
-     * @return The leash holder
+     * @return 拴绳持有者
+     * <p>原文：The leash holder
      */
     @NotNull
     public Entity getLeashHolder() {
@@ -48,9 +55,13 @@ public class PlayerLeashEntityEvent extends Event implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回被拴绳的实体。
+     * <p>原文：
      * Returns the entity being leashed.
      *
-     * @return The entity
+     * @return 实体
+     * <p>原文：The entity
      */
     @NotNull
     public Entity getEntity() {
@@ -58,9 +69,13 @@ public class PlayerLeashEntityEvent extends Event implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回参与此事件的玩家。
+     * <p>原文：
      * Returns the player involved in this event
      *
-     * @return Player who is involved in this event
+     * @return 参与此事件的玩家
+     * <p>原文：Player who is involved in this event
      */
     @NotNull
     public final Player getPlayer() {
@@ -68,9 +83,13 @@ public class PlayerLeashEntityEvent extends Event implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回玩家用于拴绳实体的手。
+     * <p>原文：
      * Returns the hand used by the player to leash the entity.
      *
-     * @return the hand
+     * @return 手
+     * <p>原文：the hand
      */
     @NotNull
     public EquipmentSlot getHand() {

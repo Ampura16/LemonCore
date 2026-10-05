@@ -1,6 +1,18 @@
 package org.bukkit.block.data;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 'level' 值代表该方块中液体的高度, 其液体要么单独存在要么在炼药锅内.
+ * <br>
+ * 对于水和熔岩方块而言, 'level' 有着特殊的含义:
+ * 'level' 为 0 时相当于源方块, 1-7 是常规的液体高度, 8-15 适用于流下的液体.
+ * 所有流下的液体都有着相同的行为, 但 'level' 值与其上方的方块相对应,
+ * 上方的液体方块的 'level' 等于 <code>this.level - 8</code>.
+ * <b>Note that counterintuitively, an adjusted level of 1 is the highest level,
+ * whilst 7 is the lowest.</b>
+ * <br>
+ * 值不可大于 {@link #getMaximumLevel()}.
+ * <p>原文：
  * 'level' represents the amount of fluid contained within this block, either by
  * itself or inside a cauldron.
  * <br>
@@ -17,23 +29,35 @@ package org.bukkit.block.data;
 public interface Levelled extends BlockData {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取 'level' 属性的值.
+     * <p>原文：
      * Gets the value of the 'level' property.
      *
-     * @return the 'level' value
+     * @return 属性 'level' 的值
+     * <p>原文：the 'level' value
      */
     int getLevel();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置 'level' 属性的值.
+     * <p>原文：
      * Sets the value of the 'level' property.
      *
-     * @param level the new 'level' value
+     * @param level 新的 'level' 属性值
+     * <p>原文：the new 'level' value
      */
     void setLevel(int level);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取 'level' 属性所能允许的最大值.
+     * <p>原文：
      * Gets the maximum allowed value of the 'level' property.
      *
-     * @return the maximum 'level' value
+     * @return 'level' 属性的最大值
+     * <p>原文：the maximum 'level' value
      */
     int getMaximumLevel();
 

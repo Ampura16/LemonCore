@@ -3,6 +3,10 @@ package org.bukkit.conversations;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * ManuallyAbandonedConversationCanceller 仅用作 {@link ConversationAbandonedEvent} 的一部分，
+ * 以指示对话是通过编程方式调用其 abandon() 方法手动放弃的。
+ * <p>原文：
  * The ManuallyAbandonedConversationCanceller is only used as part of a {@link
  * ConversationAbandonedEvent} to indicate that the conversation was manually
  * abandoned by programmatically calling the abandon() method on it.

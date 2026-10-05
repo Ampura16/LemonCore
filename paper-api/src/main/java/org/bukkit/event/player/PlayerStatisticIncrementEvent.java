@@ -13,6 +13,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当玩家统计信息增长时触发本事件.
+ * <p>
+ * 这个事件不会因一些高频率统计项(如玩家走动)的数值更变而触发.
+ * <p>原文：
  * Called when a player statistic is incremented.
  * <p>
  * This event is not called for some high frequency statistics, e.g. movement
@@ -71,9 +76,13 @@ public class PlayerStatisticIncrementEvent extends PlayerEvent implements Cancel
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取正在增长的统计数据.
+     * <p>原文：
      * Gets the statistic that is being incremented.
      *
-     * @return the incremented statistic
+     * @return 统计数据
+     * <p>原文：the incremented statistic
      */
     @NotNull
     public Statistic getStatistic() {
@@ -81,28 +90,40 @@ public class PlayerStatisticIncrementEvent extends PlayerEvent implements Cancel
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这个统计信息之前的数据值.
+     * <p>原文：
      * Gets the previous value of the statistic.
      *
-     * @return the previous value of the statistic
+     * @return 这个统计信息之前的数据值
+     * <p>原文：the previous value of the statistic
      */
     public int getPreviousValue() {
         return this.initialValue;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这个统计数据的新数据值.
+     * <p>原文：
      * Gets the new value of the statistic.
      *
-     * @return the new value of the statistic
+     * @return 这个统计数据的新数据值
+     * <p>原文：the new value of the statistic
      */
     public int getNewValue() {
         return this.newValue;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 如果{@link #getStatistic() getStatistic()}是关于实体的统计信息，获取该统计数据的实体种类，否则返回null.
+     * <p>原文：
      * Gets the EntityType if {@link #getStatistic()} is an
      * entity statistic otherwise returns {@code null}.
      *
-     * @return the EntityType of the statistic
+     * @return 这个统计数据的实体种类
+     * <p>原文：the EntityType of the statistic
      */
     @Nullable
     public EntityType getEntityType() {
@@ -110,10 +131,14 @@ public class PlayerStatisticIncrementEvent extends PlayerEvent implements Cancel
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 如果{@link #getStatistic() getStatistic()}是关于方块或物品的统计信息，获取该统计数据的物品种类，否则返回null.
+     * <p>原文：
      * Gets the Material if {@link #getStatistic()} is a block
      * or item statistic otherwise returns {@code null}.
      *
-     * @return the Material of the statistic
+     * @return 这个统计数据的物品种类
+     * <p>原文：the Material of the statistic
      */
     @Nullable
     public Material getMaterial() {

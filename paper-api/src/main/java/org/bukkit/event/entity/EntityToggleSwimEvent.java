@@ -7,6 +7,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当实体游泳状态改变时触发本事件.
+ * <p>原文：
  * Sent when an entity's swimming status is toggled.
  */
 public class EntityToggleSwimEvent extends EntityEvent implements Cancellable {
@@ -23,10 +26,14 @@ public class EntityToggleSwimEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 实体是否在游泳, false 表示实体停止游泳.
+     * <p>原文：
      * Returns {@code true} if the entity is now swims or
      * {@code false} if the entity stops swimming.
      *
-     * @return new swimming state
+     * @return 游泳状态
+     * <p>原文：new swimming state
      */
     public boolean isSwimming() {
         return this.isSwimming;

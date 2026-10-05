@@ -9,6 +9,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当试炼密室中的宝库即将显示物品时触发.
+ * <p>原文：
  * Called when a vault in a trial chamber is about to display an item.
  */
 public class VaultDisplayItemEvent extends BlockEvent implements Cancellable {
@@ -25,9 +28,13 @@ public class VaultDisplayItemEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取将在宝库内显示的物品.
+     * <p>原文：
      * Gets the item that will be displayed inside the vault.
      *
-     * @return the item to be displayed
+     * @return 要显示的物品
+     * <p>原文：the item to be displayed
      */
     @Nullable
     public ItemStack getDisplayItem() {
@@ -35,9 +42,13 @@ public class VaultDisplayItemEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置将在宝库内显示的物品.
+     * <p>原文：
      * Sets the item that will be displayed inside the vault.
      *
-     * @param displayItem the item to be displayed
+     * @param displayItem 要显示的物品
+     * <p>原文：the item to be displayed
      */
     public void setDisplayItem(@Nullable ItemStack displayItem) {
         this.displayItem = displayItem;

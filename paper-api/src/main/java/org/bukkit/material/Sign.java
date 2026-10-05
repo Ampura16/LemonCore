@@ -4,9 +4,14 @@ import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 告示牌的 MaterialData。
+ * <p>原文：
  * MaterialData for signs
  *
- * @deprecated all usage of MaterialData is deprecated and subject to removal.
+ * @deprecated 所有 MaterialData 的用法都已弃用并可能被移除。
+ * 请使用 {@link org.bukkit.block.data.BlockData}。
+ * <p>原文：all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
  */
 @Deprecated(since = "1.13", forRemoval = true)
@@ -20,9 +25,16 @@ public class Sign extends MaterialData implements Attachable {
     }
 
     /**
-     * @param type the raw type id
-     * @param data the raw data value
-     * @deprecated Magic value
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @param type 原始类型 ID
+     * <p>原文：the raw type id
+     * @param data 原始数据值
+     * <p>原文：the raw data value
+     * @deprecated 魔法值
+     * <p>原文：Magic value
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.6.2")
     public Sign(final Material type, final byte data) {
@@ -30,9 +42,14 @@ public class Sign extends MaterialData implements Attachable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查此告示牌是否附着在墙上。
+     * <p>原文：
      * Check if this sign is attached to a wall
      *
-     * @return true if this sign is attached to a wall, false if set on top of
+     * @return 如果此告示牌附着在墙上则返回 true，如果放置在方块顶部则返回 false
+     * <p>原文：Check if this sign is attached to a wall
+     * <p>原文：true if this sign is attached to a wall, false if set on top of
      *     a block
      */
     public boolean isWallSign() {
@@ -40,9 +57,14 @@ public class Sign extends MaterialData implements Attachable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此方块所附着的面。
+     * <p>原文：
      * Gets the face that this block is attached on
      *
-     * @return BlockFace attached to
+     * @return 附着的 BlockFace
+     * <p>原文：Gets the face that this block is attached on
+     * <p>原文：BlockFace attached to
      */
     @Override
     public BlockFace getAttachedFace() {
@@ -70,9 +92,14 @@ public class Sign extends MaterialData implements Attachable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此告示牌当前朝向的方向。
+     * <p>原文：
      * Gets the direction that this sign is currently facing
      *
-     * @return BlockFace indicating where this sign is facing
+     * @return 指示此告示牌朝向的 BlockFace
+     * <p>原文：Gets the direction that this sign is currently facing
+     * <p>原文：BlockFace indicating where this sign is facing
      */
     @Override
     public BlockFace getFacing() {

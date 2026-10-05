@@ -10,6 +10,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 表示可能用于创建一个世界的各种类型的设置。
+ * <p>原文：
  * Represents various types of options that may be used to create a world.
  */
 public class WorldCreator {
@@ -26,9 +29,13 @@ public class WorldCreator {
     private boolean bonusChest = false;
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 为指定世界的名称创建一个空的WorldCreationOptions类型。
+     * <p>原文：
      * Creates an empty WorldCreationOptions for the given world name
      *
-     * @param name Name of the world that will be created
+     * @param name 将被创建的世界的名称
+     * <p>原文：Name of the world that will be created
      */
     public WorldCreator(@NotNull String name) {
         // Paper start
@@ -107,10 +114,15 @@ public class WorldCreator {
     // Paper end
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 从指定的世界复制设置。
+     * <p>原文：
      * Copies the options from the specified world
      *
-     * @param world World to copy options from
-     * @return This object, for chaining
+     * @param world 用于复制设置的世界来源
+     * <p>原文：World to copy options from
+     * @return 用于连接的对象
+     * <p>原文：This object, for chaining
      */
     @NotNull
     public WorldCreator copy(@NotNull World world) {
@@ -129,10 +141,15 @@ public class WorldCreator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 从指定的{@link WorldCreator}复制设置。
+     * <p>原文：
      * Copies the options from the specified {@link WorldCreator}
      *
-     * @param creator World creator to copy options from
-     * @return This object, for chaining
+     * @param creator 用于复制设置的世界来源
+     * <p>原文：World creator to copy options from
+     * @return 用于连接的对象
+     * <p>原文：This object, for chaining
      */
     @NotNull
     public WorldCreator copy(@NotNull WorldCreator creator) {
@@ -152,9 +169,13 @@ public class WorldCreator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取被加载或创建的世界的名称。
+     * <p>原文：
      * Gets the name of the world that is to be loaded or created.
      *
-     * @return World name
+     * @return 世界名称
+     * <p>原文：World name
      */
     @NotNull
     public String name() {
@@ -162,19 +183,28 @@ public class WorldCreator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取用于创建这个世界的种子。
+     * <p>原文：
      * Gets the seed that will be used to create this world
      *
-     * @return World seed
+     * @return 世界种子
+     * <p>原文：World seed
      */
     public long seed() {
         return seed;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置用于创建这个世界的种子。
+     * <p>原文：
      * Sets the seed that will be used to create this world
      *
-     * @param seed World seed
-     * @return This object, for chaining
+     * @param seed 世界种子
+     * <p>原文：World seed
+     * @return 用于连接的对象
+     * <p>原文：This object, for chaining
      */
     @NotNull
     public WorldCreator seed(long seed) {
@@ -184,9 +214,13 @@ public class WorldCreator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取用于创建或加载世界的环境。
+     * <p>原文：
      * Gets the environment that will be used to create or load the world
      *
-     * @return World environment
+     * @return 世界的环境
+     * <p>原文：World environment
      */
     @NotNull
     public World.Environment environment() {
@@ -194,10 +228,15 @@ public class WorldCreator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置用于创建或加载世界的环境。
+     * <p>原文：
      * Sets the environment that will be used to create or load the world
      *
-     * @param env World environment
-     * @return This object, for chaining
+     * @param env 世界的环境
+     * <p>原文：World environment
+     * @return 用于连接的对象
+     * <p>原文：This object, for chaining
      */
     @NotNull
     public WorldCreator environment(@NotNull World.Environment env) {
@@ -207,9 +246,13 @@ public class WorldCreator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取将被创建或加载的世界的类型。
+     * <p>原文：
      * Gets the type of the world that will be created or loaded
      *
-     * @return World type
+     * @return 世界的类型
+     * <p>原文：World type
      */
     @NotNull
     public WorldType type() {
@@ -217,10 +260,15 @@ public class WorldCreator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置将被创建或加载的世界的类型。
+     * <p>原文：
      * Sets the type of the world that will be created or loaded
      *
-     * @param type World type
-     * @return This object, for chaining
+     * @param type 世界的类型
+     * <p>原文：World type
+     * @return 用于连接的对象
+     * <p>原文：This object, for chaining
      */
     @NotNull
     public WorldCreator type(@NotNull WorldType type) {
@@ -230,12 +278,18 @@ public class WorldCreator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取用于创建或加载世界的生成器。
+     * <p>
+     * 可能为null值，在这种情况下会使用这个环境的"natural"型生成器。
+     * <p>原文：
      * Gets the generator that will be used to create or load the world.
      * <p>
      * This may be null, in which case the "natural" generator for this
      * environment will be used.
      *
-     * @return Chunk generator
+     * @return 区块生成器
+     * <p>原文：Chunk generator
      */
     @Nullable
     public ChunkGenerator generator() {
@@ -243,13 +297,20 @@ public class WorldCreator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置将被用于创建或加载世界的生成器。
+     * <p>
+     * 可能为null值，在这种情况下会使用这个环境的"natural"型生成器。
+     * <p>原文：
      * Sets the generator that will be used to create or load the world.
      * <p>
      * This may be null, in which case the "natural" generator for this
      * environment will be used.
      *
-     * @param generator Chunk generator
-     * @return This object, for chaining
+     * @param generator 区块生成器
+     * <p>原文：Chunk generator
+     * @return 用于连接的对象
+     * <p>原文：This object, for chaining
      */
     @NotNull
     public WorldCreator generator(@Nullable ChunkGenerator generator) {
@@ -259,6 +320,13 @@ public class WorldCreator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置将被用于创建或加载世界的生成器。
+     * <p>
+     * 可能为null值，在这种情况下会使用这个环境的"natural"型生成器。
+     * <p>
+     * 如果找不到指定名字的生成器，就会使用自然环境生成器以代替并且会在控制台上输出一个警告。
+     * <p>原文：
      * Sets the generator that will be used to create or load the world.
      * <p>
      * This may be null, in which case the "natural" generator for this
@@ -268,8 +336,10 @@ public class WorldCreator {
      * environment generator will be used instead and a warning will be
      * printed to the console.
      *
-     * @param generator Name of the generator to use, in "plugin:id" notation
-     * @return This object, for chaining
+     * @param generator 使用的生成器的名字，形式为"plugin:id"
+     * <p>原文：Name of the generator to use, in "plugin:id" notation
+     * @return 用于连接的对象
+     * <p>原文：This object, for chaining
      */
     @NotNull
     public WorldCreator generator(@Nullable String generator) {
@@ -279,6 +349,13 @@ public class WorldCreator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置将用于创建或加载的生成器。
+     * <p>
+     * 可能为null值，在这种情况下会使用这个环境的"natural"型生成器。
+     * <p>
+     * 如果找不到指定名字的生成器，就会使用自然环境生成器以代替并且会在控制台上输出一个警告。
+     * <p>原文：
      * Sets the generator that will be used to create or load the world.
      * <p>
      * This may be null, in which case the "natural" generator for this
@@ -288,10 +365,13 @@ public class WorldCreator {
      * environment generator will be used instead and a warning will be
      * printed to the specified output
      *
-     * @param generator Name of the generator to use, in "plugin:id" notation
-     * @param output {@link CommandSender} that will receive any error
+     * @param generator 使用的生成器的名字，形式为"plugin:id"
+     * <p>原文：Name of the generator to use, in "plugin:id" notation
+     * @param output 将用于接受任何错误信息的{@link CommandSender}
+     * <p>原文：{@link CommandSender} that will receive any error
      *     messages
-     * @return This object, for chaining
+     * @return 用于连接的对象
+     * <p>原文：This object, for chaining
      */
     @NotNull
     public WorldCreator generator(@Nullable String generator, @Nullable CommandSender output) {
@@ -301,13 +381,20 @@ public class WorldCreator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取将被用于创建或加载世界的生物群系提供器。
+     * <p>
+     * 可能为null值，在这种情况下会使用{@link ChunkGenerator}的生物群系提供器。
+     * 如果没有指定{@link ChunkGenerator}，则会使用此环境的"natural"型生物群系提供器。
+     * <p>原文：
      * Gets the biome provider that will be used to create or load the world.
      * <p>
      * This may be null, in which case the biome provider from the {@link ChunkGenerator}
      * will be used. If no {@link ChunkGenerator} is specific the "natural" biome provider
      * for this environment will be used.
      *
-     * @return Biome provider
+     * @return 生物群系提供器
+     * <p>原文：Biome provider
      */
     @Nullable
     public BiomeProvider biomeProvider() {
@@ -315,14 +402,22 @@ public class WorldCreator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置将被用于创建或加载世界的生物群系提供器。
+     * <p>
+     * 可能为null值，在这种情况下会使用{@link ChunkGenerator}的生物群系提供器。
+     * 如果没有指定{@link ChunkGenerator}，则会使用此环境的"natural"型生物群系提供器。
+     * <p>原文：
      * Sets the biome provider that will be used to create or load the world.
      * <p>
      * This may be null, in which case the biome provider from the
      * {@link ChunkGenerator} will be used. If no {@link ChunkGenerator} is
      * specific the "natural" biome provider for this environment will be used.
      *
-     * @param biomeProvider Biome provider
-     * @return This object, for chaining
+     * @param biomeProvider 生物群系提供器
+     * <p>原文：Biome provider
+     * @return 用于连接的对象
+     * <p>原文：This object, for chaining
      */
     @NotNull
     public WorldCreator biomeProvider(@Nullable BiomeProvider biomeProvider) {
@@ -332,6 +427,14 @@ public class WorldCreator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置将被用于创建或加载世界的生物群系提供器。
+     * <p>
+     * 可能为null值，在这种情况下会使用{@link ChunkGenerator}的生物群系提供器。
+     * 如果没有指定{@link ChunkGenerator}，则会使用此环境的"natural"型生物群系提供器。
+     * <p>
+     * 如果找不到指定名字的生物群系提供器且没有指定{@link ChunkGenerator}，则会使用自然环境的生物群系提供器以代替并且会向指定的输出处输出一条警告。
+     * <p>原文：
      * Sets the biome provider that will be used to create or load the world.
      * <p>
      * This may be null, in which case the biome provider from the
@@ -343,9 +446,11 @@ public class WorldCreator {
      * provider will be used instead and a warning will be printed to the
      * specified output
      *
-     * @param biomeProvider Name of the biome provider to use, in "plugin:id"
+     * @param biomeProvider 使用的生物群系提供器的名字，形式为"plugin:id"
+     * <p>原文：Name of the biome provider to use, in "plugin:id"
      * notation
-     * @return This object, for chaining
+     * @return 用于连接的对象
+     * <p>原文：This object, for chaining
      */
     @NotNull
     public WorldCreator biomeProvider(@Nullable String biomeProvider) {
@@ -355,6 +460,14 @@ public class WorldCreator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置将被用于创建或加载世界的生物群系提供器。
+     * <p>
+     * 可能为null值，在这种情况下会使用{@link ChunkGenerator}的生物群系提供器。
+     * 如果没有指定{@link ChunkGenerator}，则会使用此环境的"natural"型生物群系提供器。
+     * <p>
+     * 如果找不到指定名字的生物群系提供器且没有指定{@link ChunkGenerator}，则会使用自然环境的生物群系提供器以代替并且会向指定的输出处输出一条警告。
+     * <p>原文：
      * Sets the biome provider that will be used to create or load the world.
      * <p>
      * This may be null, in which case the biome provider from the
@@ -366,10 +479,13 @@ public class WorldCreator {
      * provider will be used instead and a warning will be printed to the
      * specified output
      *
-     * @param biomeProvider Name of the biome provider to use, in "plugin:id"
+     * @param biomeProvider 使用的生物群系提供器的名字，形式为"plugin:id"
+     * <p>原文：Name of the biome provider to use, in "plugin:id"
      * notation
-     * @param output {@link CommandSender} that will receive any error messages
-     * @return This object, for chaining
+     * @param output 将用于接收任何错误信息的{@link CommandSender}
+     * <p>原文：{@link CommandSender} that will receive any error messages
+     * @return 用于连接的对象
+     * <p>原文：This object, for chaining
      */
     @NotNull
     public WorldCreator biomeProvider(@Nullable String biomeProvider, @Nullable CommandSender output) {
@@ -379,6 +495,12 @@ public class WorldCreator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置将被创建或加载的世界的生成器配置。
+     * <p>
+     * 目前只有{@link WorldType#FLAT}使用这些配置，并且期望它们是JSON格式且定义了有效的生物群系（1.18.2及以上版本）。一个有效的配置示例如下：
+     * <code>{"layers": [{"block": "stone", "height": 1}, {"block": "grass_block", "height": 1}], "biome":"plains"}</code>
+     * <p>原文：
      * Sets the generator settings of the world that will be created or loaded.
      * <p>
      * Currently only {@link WorldType#FLAT} uses these settings, and expects
@@ -386,9 +508,11 @@ public class WorldCreator {
      * above) defined. An example valid configuration is as follows:
      * <code>{"layers": [{"block": "stone", "height": 1}, {"block": "grass_block", "height": 1}], "biome":"plains"}</code>
      *
-     * @param generatorSettings The settings that should be used by the
+     * @param generatorSettings 生成器应使用的配置
+     * <p>原文：The settings that should be used by the
      * generator
-     * @return This object, for chaining
+     * @return 用于连接的对象
+     * <p>原文：This object, for chaining
      * @see <a href="https://minecraft.wiki/w/Custom_dimension">Custom
      * dimension</a> (scroll to "When the generator ID type is
      * <code>minecraft:flat</code>)"
@@ -401,9 +525,13 @@ public class WorldCreator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取将被创建或加载的世界的生成器的配置。
+     * <p>原文：
      * Gets the generator settings of the world that will be created or loaded.
      *
-     * @return The settings that should be used by the generator
+     * @return 将被使用的生成器的配置
+     * <p>原文：The settings that should be used by the generator
      * @see #generatorSettings(java.lang.String)
      */
     @NotNull
@@ -412,11 +540,16 @@ public class WorldCreator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置被这个生成器创建或加载的世界是否会拥有建筑。
+     * <p>原文：
      * Sets whether or not worlds created or loaded with this creator will
      * have structures.
      *
-     * @param generate Whether to generate structures
-     * @return This object, for chaining
+     * @param generate 是否生成建筑
+     * <p>原文：Whether to generate structures
+     * @return 用于连接的对象
+     * <p>原文：This object, for chaining
      */
     @NotNull
     public WorldCreator generateStructures(boolean generate) {
@@ -426,21 +559,32 @@ public class WorldCreator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取世界是否生成建筑。
+     * <p>原文：
      * Gets whether or not structures will be generated in the world.
      *
-     * @return True if structures will be generated
+     * @return True 如果生成建筑则返回true
+     * <p>原文：True if structures will be generated
      */
     public boolean generateStructures() {
         return generateStructures;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置世界是否为极限模式。
+     * <p>
+     * 在极限模式世界中，难度将被锁定为困难。
+     * <p>原文：
      * Sets whether the world will be hardcore or not.
      *
      * In a hardcore world the difficulty will be locked to hard.
      *
-     * @param hardcore Whether the world will be hardcore
-     * @return This object, for chaining
+     * @param hardcore 世界是否为极限模式
+     * <p>原文：Whether the world will be hardcore
+     * @return 用于连接的对象
+     * <p>原文：This object, for chaining
      */
     @NotNull
     public WorldCreator hardcore(boolean hardcore) {
@@ -450,11 +594,17 @@ public class WorldCreator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取世界是否为极限模式。
+     * <p>
+     * 在极限模式世界中，难度将被锁定为困难。
+     * <p>原文：
      * Gets whether the world will be hardcore or not.
      * <p>
      * In a hardcore world the difficulty will be locked to hard.
      *
-     * @return hardcore status
+     * @return 极限模式状态
+     * <p>原文：hardcore status
      */
     public boolean hardcore() {
         return hardcore;
@@ -482,12 +632,18 @@ public class WorldCreator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用指定的设置创建一个世界。
+     * <p>
+     * 如果世界存在，它就会从磁盘被加载，一些设置可能被忽略。
+     * <p>原文：
      * Creates a world with the specified options.
      * <p>
      * If the world already exists, it will be loaded from disk and some
      * options may be ignored.
      *
-     * @return Newly created or loaded world
+     * @return 最近创建或加载的世界
+     * <p>原文：Newly created or loaded world
      */
     @Nullable
     public World createWorld() {
@@ -495,10 +651,15 @@ public class WorldCreator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 为指定的世界名创建一个新的{@link WorldCreator}。
+     * <p>原文：
      * Creates a new {@link WorldCreator} for the given world name
      *
-     * @param name Name of the world to load or create
-     * @return Resulting WorldCreator
+     * @param name 加载或创建的世界名
+     * <p>原文：Name of the world to load or create
+     * @return 创建的世界生成器
+     * <p>原文：Resulting WorldCreator
      */
     @NotNull
     public static WorldCreator name(@NotNull String name) {
@@ -506,6 +667,13 @@ public class WorldCreator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 试图使用指定的名称获取{@link ChunkGenerator}。
+     * <p>
+     * 如果生成器找不到，则会返回null并会向指定的{@link CommandSender}输出一条信息来解释原因。
+     * <p>
+     * 名称的形式必须为"plugin:id"或"plugin"形式，请求的插件的"plugin"为一个插件的安全名称并且"id"是生成器的可选的唯一的标识符。
+     * <p>原文：
      * Attempts to get the {@link ChunkGenerator} with the given name.
      * <p>
      * If the generator is not found, null will be returned and a message will
@@ -516,10 +684,14 @@ public class WorldCreator {
      * optional unique identifier for the generator you wish to request from
      * the plugin.
      *
-     * @param world Name of the world this will be used for
-     * @param name Name of the generator to retrieve
-     * @param output Where to output if errors are present
-     * @return Resulting generator, or null
+     * @param world 将被使用的世界名
+     * <p>原文：Name of the world this will be used for
+     * @param name 检索的生成器的名字
+     * <p>原文：Name of the generator to retrieve
+     * @param output 错误发生时的输出处
+     * <p>原文：Where to output if errors are present
+     * @return 若存在则返回获取的生成器，否则返回null
+     * <p>原文：Resulting generator, or null
      */
     @Nullable
     public static ChunkGenerator getGeneratorForName(@NotNull String world, @Nullable String name, @Nullable CommandSender output) {
@@ -548,6 +720,13 @@ public class WorldCreator {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 试图使用指定的名称获取{@link BiomeProvider}。
+     * <p>
+     * 如果生物群系提供器找不到，则会返回null并会向指定的{@link CommandSender}输出一条信息来解释原因。
+     * <p>
+     * 名称的形式必须为"plugin:id"或"plugin"形式，请求的插件的"plugin"为一个插件的安全名称并且"id"是生物群系提供器的可选的唯一的标识符。
+     * <p>原文：
      * Attempts to get the {@link BiomeProvider} with the given name.
      * <p>
      * If the biome provider is not found, null will be returned and a message
@@ -558,10 +737,14 @@ public class WorldCreator {
      * optional unique identifier for the biome provider you wish to request
      * from the plugin.
      *
-     * @param world Name of the world this will be used for
-     * @param name Name of the biome provider to retrieve
-     * @param output Where to output if errors are present
-     * @return Resulting biome provider, or null
+     * @param world 将被使用的世界名
+     * <p>原文：Name of the world this will be used for
+     * @param name 检索的生物群系提供器的名字
+     * <p>原文：Name of the biome provider to retrieve
+     * @param output 错误发生时的输出处
+     * <p>原文：Where to output if errors are present
+     * @return 若存在则返回获取的生物群系提供器，否则返回null
+     * <p>原文：Resulting biome provider, or null
      */
     @Nullable
     public static BiomeProvider getBiomeProviderForName(@NotNull String world, @Nullable String name, @Nullable CommandSender output) {

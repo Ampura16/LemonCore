@@ -8,6 +8,11 @@ import org.intellij.lang.annotations.Subst;
 import org.jetbrains.annotations.ApiStatus;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 表示世界的功能标志。
+ * <br>
+ * 在当前版本中不可用的标志将为 null 和/或被移除。
+ * <p>原文：
  * This represents a Feature Flag for a {@link io.papermc.paper.world.flag.FeatureFlagSetHolder}.
  */
 public interface FeatureFlag extends Keyed {

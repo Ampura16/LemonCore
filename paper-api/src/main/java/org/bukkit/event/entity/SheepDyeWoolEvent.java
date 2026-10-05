@@ -9,6 +9,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当羊身上的毛被染色时触发本事件.
+ * <p>原文：
  * Called when a sheep's wool is dyed
  */
 public class SheepDyeWoolEvent extends EntityDyeEvent {

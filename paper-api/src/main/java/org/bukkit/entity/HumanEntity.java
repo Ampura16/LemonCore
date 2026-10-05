@@ -26,6 +26,9 @@ import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表人类实体, 比如一个NPC或一名玩家
+ * <p>原文：
  * Represents a human entity, such as an NPC or a player
  */
 @NullMarked
@@ -37,97 +40,146 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
     // Paper end
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回该玩家的玩家名.
+     * <p>原文：
      * Returns the name of this player
      *
-     * @return Player name
+     * @return 玩家名
+     * <p>原文：Player name
      */
     @Override
     public String getName();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家的物品栏(俗称背包).
+     * <p>原文：
      * Get the player's inventory.
      *
-     * @return The inventory of the player, this also contains the armor
+     * @return 玩家物品栏, 包含盔甲槽
+     * <p>原文：The inventory of the player, this also contains the armor
      *     slots.
      */
     @Override
     public PlayerInventory getInventory();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家的末影箱物品栏.
+     * <p>原文：
      * Get the player's EnderChest inventory
      *
-     * @return The EnderChest of the player
+     * @return 玩家的末影箱
+     * <p>原文：The EnderChest of the player
      */
     public Inventory getEnderChest();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家设置的主手.
+     * <p>原文：
      * Gets the player's selected main hand
      *
-     * @return the players main hand
+     * @return 玩家主手
+     * <p>原文：the players main hand
      */
     public MainHand getMainHand();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 若玩家当前打开了一个物品栏窗口, 此方法将设置窗口的属性, 比如酿造台的酿造进度.
+     * <p>原文：
      * If the player currently has an inventory window open, this method will
      * set a property of that window, such as the state of a progress bar.
      *
-     * @param prop The property.
-     * @param value The value to set the property to.
-     * @return True if the property was successfully set.
-     * @deprecated use {@link InventoryView} and its children.
+     * @param prop 窗口属性
+     * <p>原文：The property.
+     * @param value 要设置的属性值
+     * <p>原文：The value to set the property to.
+     * @return 若属性成功设置返回true
+     * <p>原文：True if the property was successfully set.
+     * @deprecated 请使用 {@link InventoryView} 及其子类
+     * <p>原文：use {@link InventoryView} and its children.
      */
     @Deprecated(forRemoval = true, since = "1.21")
     public boolean setWindowProperty(InventoryView.Property prop, int value);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家当前的附魔种子。
+     * <p>原文：
      * Gets the player's current enchantment seed.
      *
      * The Seed is used to generate enchantment options in the enchanting table
      * for the player.
      *
-     * @return the player's enchantment seed
+     * @return 玩家的附魔种子
+     * <p>原文：the player's enchantment seed
      */
     public int getEnchantmentSeed();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置玩家的附魔种子。
+     * <p>原文：
      * Sets the player's enchantment seed.
      *
      * The Seed is used to generate enchantment options in the enchanting table
      * for the player.
      *
-     * @param seed the player's new enchantment seed
+     * @param seed 玩家的新附魔种子
+     * <p>原文：the player's new enchantment seed
      */
     public void setEnchantmentSeed(int seed);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家正在查看的物品栏. 如果他们没有打开任何物品栏窗口, 将返回他们的内部合成视图(玩家背包的那四个格子?).
+     * <p>原文：
      * Gets the inventory view the player is currently viewing. If they do not
      * have an inventory window open, it returns their internal crafting view.
      *
-     * @return The inventory view.
+     * @return 物品栏视图
+     * <p>原文：The inventory view.
      */
     public InventoryView getOpenInventory();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 打开一个物品栏, 窗口顶部为你指定的物品栏, 底部为玩家物品栏(背包).
+     * <p>原文：
      * Opens an inventory window with the specified inventory on the top and
      * the player's inventory on the bottom.
      *
-     * @param inventory The inventory to open
-     * @return The newly opened inventory view
+     * @param inventory 要打开的物品栏
+     * <p>原文：The inventory to open
+     * @return 新打开的物品栏的视图
+     * <p>原文：The newly opened inventory view
      */
     @Nullable
     public InventoryView openInventory(Inventory inventory);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 打开一个空白工作台物品栏界面, 玩家物品栏(背包)在底部.
+     * <p>原文：
      * Opens an empty workbench inventory window with the player's inventory
      * on the bottom.
      *
-     * @param location The location to attach it to. If null, the player's
+     * @param location 工作台位置. 若为null, 将使用玩家所处位置
+     * <p>原文：The location to attach it to. If null, the player's
      *     location is used.
-     * @param force If false, and there is no workbench block at the location,
+     * @param force 若为false, 同时指定位置不是工作台方块, 将不会打开工作台物品栏, 并返回null(true就是不管怎样都向
+     * 玩家展示工作台界面)
+     * <p>原文：If false, and there is no workbench block at the location,
      *     no inventory will be opened and null will be returned.
-     * @return The newly opened inventory view, or null if it could not be
+     * @return 新打开的物品栏的视图, 如果不能打开返回null
+     * <p>原文：The newly opened inventory view, or null if it could not be
      *     opened.
-     * @deprecated This method should be replaced by {@link MenuType#CRAFTING}
+     * @deprecated 此方法应由 {@link MenuType#CRAFTING} 代替,
+     * 参见 {@link MenuType.Typed#builder()} 及其选项.
+     * <p>原文：This method should be replaced by {@link MenuType#CRAFTING}
      * see {@link MenuType.Typed#builder()} and its options for more information.
      */
     @Deprecated(since = "1.21.4")
@@ -135,16 +187,25 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
     public InventoryView openWorkbench(@Nullable Location location, boolean force);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 打开一个空白附魔台物品栏界面, 玩家物品栏(背包)在底部.
+     * <p>原文：
      * Opens an empty enchanting inventory window with the player's inventory
      * on the bottom.
      *
-     * @param location The location to attach it to. If null, the player's
+     * @param location 附魔台位置. 若为null, 将使用玩家所处位置
+     * <p>原文：The location to attach it to. If null, the player's
      *     location is used.
-     * @param force If false, and there is no enchanting table at the
+     * @param force 若为false, 同时指定位置不是附魔台方块, 将不会打开工作台物品栏, 并返回null(true就是不管怎样都向
+     * 玩家展示附魔台界面)
+     * <p>原文：If false, and there is no enchanting table at the
      *     location, no inventory will be opened and null will be returned.
-     * @return The newly opened inventory view, or null if it could not be
+     * @return 新打开的物品栏的视图, 如果不能打开返回null
+     * <p>原文：The newly opened inventory view, or null if it could not be
      *     opened.
-     * @deprecated This method should be replaced by {@link MenuType#ENCHANTMENT}
+     * @deprecated T此方法应由 {@link MenuType#ENCHANTMENT} 代替,
+     * 参见 {@link MenuType.Typed#builder()} 及其选项.
+     * <p>原文：This method should be replaced by {@link MenuType#ENCHANTMENT}
      * see {@link MenuType.Typed#builder()} and its options for more information.
      */
     @Deprecated(since = "1.21.4")
@@ -152,6 +213,13 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
     public InventoryView openEnchanting(@Nullable Location location, boolean force);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 打开指定的物品栏.
+     * <p>
+     * InventoryView 关联的玩家必须与此 HumanEntity 实例相同.
+     * <p>
+     * InventoryView 关联的玩家可通过 {@link InventoryView#getPlayer()} 获取.
+     * <p>原文：
      * Opens an inventory window to the specified inventory view.
      * <p>
      * The player associated with the InventoryView must be the same as this
@@ -160,20 +228,30 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
      * The player of the InventoryView can be checked using
      * {@link InventoryView#getPlayer()}.
      *
-     * @param inventory The view to open
+     * @param inventory 要打开的物品栏视图
+     * <p>原文：The view to open
      */
     public void openInventory(InventoryView inventory);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 与某村民开始交易.
+     *
+     * 注意: 同一时间内只有一名玩家可以与此村民进行交易. 欲使多名玩家能同时与此村民进行交易, 请将“force”参数设为true.
+     * <p>原文：
      * Starts a trade between the player and the villager.
      *
      * Note that only one player may trade with a villager at once. You must use
      * the force parameter for this.
      *
-     * @param trader The merchant to trade with. Cannot be null.
-     * @param force whether to force the trade even if another player is trading
-     * @return The newly opened inventory view, or null if it could not be
-     * @deprecated This method can be replaced by using {@link MenuType#MERCHANT}
+     * @param trader 与哪位村民交易. 不能为null
+     * <p>原文：The merchant to trade with. Cannot be null.
+     * @param force 是否强制开始交易, 即使另一名玩家正在与此村民交易
+     * <p>原文：whether to force the trade even if another player is trading
+     * @return 新打开的物品栏的视图, 如果不能打开返回null
+     * <p>原文：The newly opened inventory view, or null if it could not be
+     * @deprecated 此方法可由 {@link MenuType#MERCHANT} 代替, 并使用 {@link #openInventory(InventoryView)}
+     * <p>原文：This method can be replaced by using {@link MenuType#MERCHANT}
      * in conjunction with {@link #openInventory(InventoryView)}.
      */
     @Deprecated(since = "1.21.4")
@@ -183,15 +261,24 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 与某商人开始交易.
+     *
+     * 注意: 同一时间内只有一名玩家可以与此商人进行交易. 欲使多名玩家能同时与此商人进行交易, 请将“force”参数设为true.
+     * <p>原文：
      * Starts a trade between the player and the merchant.
      *
      * Note that only one player may trade with a merchant at once. You must use
      * the force parameter for this.
      *
-     * @param merchant The merchant to trade with. Cannot be null.
-     * @param force whether to force the trade even if another player is trading
-     * @return The newly opened inventory view, or null if it could not be
-     * @deprecated This method can be replaced by using {@link MenuType#MERCHANT}
+     * @param merchant 与哪个商人交易. 不能为null
+     * <p>原文：The merchant to trade with. Cannot be null.
+     * @param force 是否强制开始交易, 即使另一名玩家正在与此商人交易
+     * <p>原文：whether to force the trade even if another player is trading
+     * @return 新打开的物品栏的视图, 如果不能打开返回null
+     * <p>原文：The newly opened inventory view, or null if it could not be
+     * @deprecated 此方法可由 {@link MenuType#MERCHANT} 代替, 并使用 {@link #openInventory(InventoryView)}
+     * <p>原文：This method can be replaced by using {@link MenuType#MERCHANT}
      * in conjunction with {@link #openInventory(InventoryView)}.
      */
     @Deprecated(since = "1.21.4")
@@ -303,6 +390,9 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
     // Paper end
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 强制关闭玩家当前打开的物品栏视图.
+     * <p>原文：
      * Force-closes the currently open inventory view for this player, if any.
      */
     default void closeInventory() {
@@ -317,62 +407,101 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
     void closeInventory(org.bukkit.event.inventory.InventoryCloseEvent.Reason reason);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回你手握的物品, 可能为空.
+     * <p>原文：
      * Returns the ItemStack currently in your hand, can be empty.
      *
-     * @return The ItemStack of the item you are currently holding.
-     * @deprecated Humans may now dual wield in their off hand, use explicit
+     * @return 你正在握持的物品的ItemStack(物品堆)对象
+     * <p>原文：The ItemStack of the item you are currently holding.
+     * @deprecated 人类现能双持, 请使用 {@link PlayerInventory} 中更明确的方法
+     * <p>原文：Humans may now dual wield in their off hand, use explicit
      * methods in {@link PlayerInventory}.
      */
     @Deprecated(since = "1.9")
     public ItemStack getItemInHand();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置你手握的物品, 将替换你所持的任何物品.
+     * <p>原文：
      * Sets the item to the given ItemStack, this will replace whatever the
      * user was holding.
      *
-     * @param item The ItemStack which will end up in the hand
-     * @deprecated Humans may now dual wield in their off hand, use explicit
+     * @param item 要设置的物品堆
+     * <p>原文：The ItemStack which will end up in the hand
+     * @deprecated 人类现能双持, 请使用 {@link PlayerInventory} 中更明确的方法
+     * <p>原文：Humans may now dual wield in their off hand, use explicit
      * methods in {@link PlayerInventory}.
      */
     @Deprecated(since = "1.9")
     public void setItemInHand(@Nullable ItemStack item);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回你的鼠标正在拖动的物品, 可能为空. 如果玩家没有打开任何窗口, 将永远为空(AIR).
+     * <p>
+     * 译注:这个方法是适用于物品拖动场景的, 只有鼠标指针在物品上而没有拖动它是获取不到的(AIR).
+     * <p>原文：
      * Returns the ItemStack currently on your cursor, can be empty. Will
      * always be empty if the player currently has no open window.
      *
-     * @return The ItemStack of the item you are currently moving around.
+     * @return 你正在拖动的物品的ItemStack对象
+     * <p>原文：The ItemStack of the item you are currently moving around.
      */
     public ItemStack getItemOnCursor();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置你正在拖动的物品, 将替换你所拖动的任何物品. 如果玩家没有打开任何窗口, 将永远为空(AIR).
+     * <p>原文：
      * Sets the item to the given ItemStack, this will replace whatever the
      * user was moving. Will always be empty if the player currently has no
      * open window.
      *
-     * @param item The ItemStack which will end up in the hand
+     * @param item 要设置的物品堆
+     * <p>原文：The ItemStack which will end up in the hand
      */
     public void setItemOnCursor(@Nullable ItemStack item);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查指定物品是否处于冷却状态.
+     * <p>原文：
      * Check whether a cooldown is active on the specified material.
      *
-     * @param material the material to check
-     * @return if a cooldown is active on the material
-     * @throws IllegalArgumentException if the material is not an item
+     * @param material 要检查的物品种类
+     * <p>原文：the material to check
+     * @return 该物品是否进入了冷却
+     * <p>原文：if a cooldown is active on the material
+     * @throws IllegalArgumentException 如果 material 不是物品
+     * <p>原文：if the material is not an item
      */
     public boolean hasCooldown(Material material);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取指定物品的冷却时长 (以tick为单位).
+     * <p>原文：
      * Get the cooldown time in ticks remaining for the specified material.
      *
-     * @param material the material to check
-     * @return the remaining cooldown time in ticks
-     * @throws IllegalArgumentException if the material is not an item
+     * @param material 要检查的物品种类
+     * <p>原文：the material to check
+     * @return 剩余冷却时长 (以tick为单位)
+     * <p>原文：the remaining cooldown time in ticks
+     * @throws IllegalArgumentException 如果 material 不是物品
+     * <p>原文：if the material is not an item
      */
     public int getCooldown(Material material);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置指定物品的冷却时长. 设为0 tick将导致移除此物品的冷却.
+     * <p>
+     * 冷却被服务器用来针对某些物品比如末影珍珠、盾牌等以防止它们被经常重复使用.
+     * <p>
+     * 请注意: 冷却时间自身不会阻止某个物品被用来使用或攻击.
+     * <p>原文：
      * Set a cooldown on the specified material for a certain amount of ticks.
      * 0 ticks will result in the removal of the cooldown.
      * <p>
@@ -382,9 +511,12 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
      * Note that cooldowns will not by themselves stop an item from being used
      * for attacking.
      *
-     * @param material the material to set the cooldown for
-     * @param ticks the amount of ticks to set or 0 to remove
-     * @throws IllegalArgumentException if the material is not an item
+     * @param material 为哪个物品设置冷却
+     * <p>原文：the material to set the cooldown for
+     * @param ticks 冷却时长(以tick为单位)或设为0来移除它
+     * <p>原文：the amount of ticks to set or 0 to remove
+     * @throws IllegalArgumentException 如果 material 不是物品
+     * <p>原文：if the material is not an item
      */
     default void setCooldown(Material material, int ticks) {
         this.setCooldown(ItemStack.of(material), ticks);
@@ -406,22 +538,35 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
     public boolean isDeeplySleeping();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查指定物品是否处于冷却状态。
+     * <p>原文：
      * Check whether a cooldown is active on the specified item.
      *
-     * @param item the item to check
-     * @return if a cooldown is active on the item
+     * @param item 要检查的物品
+     * <p>原文：the item to check
+     * @return 该物品是否处于冷却状态
+     * <p>原文：if a cooldown is active on the item
      */
     public boolean hasCooldown(ItemStack item);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取指定物品的剩余冷却时间（以tick为单位）。
+     * <p>原文：
      * Get the cooldown time in ticks remaining for the specified item.
      *
-     * @param item the item to check
-     * @return the remaining cooldown time in ticks
+     * @param item 要检查的物品
+     * <p>原文：the item to check
+     * @return 剩余冷却时间（以tick为单位）
+     * <p>原文：the remaining cooldown time in ticks
      */
     public int getCooldown(ItemStack item);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 为指定物品设置一定tick数的冷却时间。设置为0 tick将移除冷却。
+     * <p>原文：
      * Set a cooldown on the specified item for a certain amount of ticks.
      * 0 ticks will result in the removal of the cooldown.
      * <p>
@@ -431,8 +576,10 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
      * Note that cooldowns will not by themselves stop an item from being used
      * for attacking.
      *
-     * @param item the item to set the cooldown for
-     * @param ticks the amount of ticks to set or 0 to remove
+     * @param item 要设置冷却的物品
+     * <p>原文：the item to set the cooldown for
+     * @param ticks 要设置的tick数，设为0则移除冷却
+     * <p>原文：the amount of ticks to set or 0 to remove
      */
     public void setCooldown(ItemStack item, int ticks);
 
@@ -462,9 +609,13 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
     public void setCooldown(Key key, int ticks);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家的睡眠时间 (以tick为单位), 该值可能有上限.
+     * <p>原文：
      * Get the sleep ticks of the player. This value may be capped.
      *
-     * @return slumber ticks
+     * @return 玩家睡了多久
+     * <p>原文：slumber ticks
      */
     public int getSleepTicks();
 
@@ -504,80 +655,123 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
     FishHook getFishHook();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 尝试使实体在指定位置睡觉。
+     * <p>原文：
      * Attempts to make the entity sleep at the given location.
      * <br>
      * The location must be in the current world and have a bed placed at the
      * location. The game may also enforce other requirements such as proximity
      * to bed, monsters, and dimension type if force is not set.
      *
-     * @param location the location of the bed
-     * @param force whether to try and sleep at the location even if not
+     * @param location 床的位置
+     * <p>原文：the location of the bed
+     * @param force 是否尝试在该位置睡觉，即使通常情况下不可能
+     * <p>原文：whether to try and sleep at the location even if not
      * normally possible
-     * @return whether the sleep was successful
+     * @return 睡觉是否成功
+     * <p>原文：whether the sleep was successful
      */
     public boolean sleep(Location location, boolean force);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使玩家醒来（如果他们正在睡觉）。
+     * <p>原文：
      * Causes the player to wakeup if they are currently sleeping.
      *
-     * @param setSpawnLocation whether to set their spawn location to the bed
+     * @param setSpawnLocation 是否将重生点设置为他们当前睡觉的床
+     * <p>原文：whether to set their spawn location to the bed
      * they are currently sleeping in
-     * @throws IllegalStateException if not sleeping
+     * @throws IllegalStateException 如果玩家没有在睡觉
+     * <p>原文：if not sleeping
      */
     public void wakeup(boolean setSpawnLocation);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使玩家开始激流旋转攻击。
+     * <p>原文：
      * Make the player start a riptide spin attack.
      *
-     * @param duration spin attack duration in ticks.
-     * @param attackStrength damage value inflicted upon entities hit by spin attack.
-     * @param attackItem item used to attack.
+     * @param duration 旋转攻击持续时间（以tick为单位）
+     * <p>原文：spin attack duration in ticks.
+     * @param attackStrength 旋转攻击命中实体时造成的伤害值
+     * <p>原文：damage value inflicted upon entities hit by spin attack.
+     * @param attackItem 用于攻击的物品
+     * <p>原文：item used to attack.
      */
     public void startRiptideAttack(int duration, float attackStrength, @Nullable ItemStack attackItem);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家当前正在睡觉的床的位置。
+     * <p>原文：
      * Gets the location of the bed the player is currently sleeping in
      *
-     * @return location
-     * @throws IllegalStateException if not sleeping
+     * @return 床的位置
+     * <p>原文：location
+     * @throws IllegalStateException 如果玩家没有在睡觉
+     * <p>原文：if not sleeping
      */
     public Location getBedLocation();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此人类当前的{@link GameMode 游戏模式}.
+     * <p>原文：
      * Gets this human's current {@link GameMode}
      *
-     * @return Current game mode
+     * @return 游戏模式
+     * <p>原文：Current game mode
      */
     public GameMode getGameMode();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此人类的{@link GameMode 游戏模式}.
+     * <p>原文：
      * Sets this human's current {@link GameMode}
      *
-     * @param mode New game mode
+     * @param mode 新游戏模式
+     * <p>原文：New game mode
      */
     public void setGameMode(GameMode mode);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查玩家是否正在格挡 (换言之, 就是他们使用盾牌, 进入了格挡状态).
+     * <p>原文：
      * Check if the player is currently blocking (ie with a shield).
      *
-     * @return Whether they are blocking.
+     * @return 玩家是否正在格挡
+     * <p>原文：Whether they are blocking.
      */
     public boolean isBlocking();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查玩家是否举起了他们的手 (换言之, 就是他们刚使用盾牌(这时isBlocking返回false),
+     * 数百毫秒后将进入格挡状态(这时isBlocking返回true)).
+     * <p>原文：
      * Check if the player currently has their hand raised (ie about to begin
      * blocking).
      *
-     * @return Whether their hand is raised
+     * @return 玩家是否举起了他们的手
+     * <p>原文：Whether their hand is raised
      * @see LivingEntity#hasActiveItem()
      */
     @org.jetbrains.annotations.ApiStatus.Obsolete(since = "1.20.4") // Paper - active item API
     public boolean isHandRaised();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家升级所需经验总额.
+     * <p>原文：
      * Get the total amount of experience required for the player to level
      *
-     * @return Experience required to level up
+     * @return 升级所需经验
+     * <p>原文：Experience required to level up
      */
     public int getExpToLevel();
 
@@ -602,50 +796,66 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
     // Paper end
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家攻击的当前冷却时间。
+     * <p>原文：
      * Gets the current cooldown for a player's attack.
      *
      * This is used to calculate damage, with 1.0 representing a fully charged
      * attack and 0.0 representing a non-charged attack
      *
-     * @return A float between 0.0-1.0 representing the progress of the charge
+     * @return 一个0.0-1.0之间的浮点数，表示充能进度
+     * <p>原文：A float between 0.0-1.0 representing the progress of the charge
      */
     public float getAttackCooldown();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 为玩家发现一个尚未发现的配方。此方法将把该配方添加到玩家的配方书中。
+     * <p>原文：
      * Discover a recipe for this player such that it has not already been
      * discovered. This method will add the key's associated recipe to the
      * player's recipe book.
      *
-     * @param recipe the key of the recipe to discover
-     *
-     * @return whether or not the recipe was newly discovered
+     * @param recipe 要发现的配方的key
+     * <p>原文：the key of the recipe to discover
+     * @return 该配方是否是新发现的
+     * <p>原文：whether or not the recipe was newly discovered
      */
     default boolean discoverRecipe(NamespacedKey recipe) {
         return this.discoverRecipes(Arrays.asList(recipe)) != 0;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 为玩家发现一组尚未发现的配方。此方法将把相关配方添加到玩家的配方书中。如果集合中某个配方已被发现，它将被静默忽略。
+     * <p>原文：
      * Discover a collection of recipes for this player such that they have not
      * already been discovered. This method will add the keys' associated
      * recipes to the player's recipe book. If a recipe in the provided
      * collection has already been discovered, it will be silently ignored.
      *
-     * @param recipes the keys of the recipes to discover
-     *
-     * @return the amount of newly discovered recipes where 0 indicates that
+     * @param recipes 要发现的配方的key集合
+     * <p>原文：the keys of the recipes to discover
+     * @return 新发现的配方数量，0表示没有新发现的配方，等于 {@code recipes.size()} 的数字表示所有配方都是新发现的
+     * <p>原文：the amount of newly discovered recipes where 0 indicates that
      * none were newly discovered and a number equal to {@code recipes.size()}
      * indicates that all were new
      */
     public int discoverRecipes(Collection<NamespacedKey> recipes);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 取消玩家对一个已发现配方的发现状态。此方法将从玩家的配方书中移除该配方。
+     * <p>原文：
      * Undiscover a recipe for this player such that it has already been
      * discovered. This method will remove the key's associated recipe from the
      * player's recipe book.
      *
-     * @param recipe the key of the recipe to undiscover
-     *
-     * @return whether or not the recipe was successfully undiscovered (i.e. it
+     * @param recipe 要取消发现的配方的key
+     * <p>原文：the key of the recipe to undiscover
+     * @return 配方是否被成功取消发现（即它之前已被发现）
+     * <p>原文：whether or not the recipe was successfully undiscovered (i.e. it
      * was previously discovered)
      */
     default boolean undiscoverRecipe(NamespacedKey recipe) {
@@ -653,44 +863,63 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 取消玩家对一组已发现配方的发现状态。此方法将从玩家的配方书中移除这些配方。如果集合中某个配方尚未被发现，它将被静默忽略。
+     * <p>原文：
      * Undiscover a collection of recipes for this player such that they have
      * already been discovered. This method will remove the keys' associated
      * recipes from the player's recipe book. If a recipe in the provided
      * collection has not yet been discovered, it will be silently ignored.
      *
-     * @param recipes the keys of the recipes to undiscover
-     *
-     * @return the amount of undiscovered recipes where 0 indicates that none
+     * @param recipes 要取消发现的配方的key集合
+     * <p>原文：the keys of the recipes to undiscover
+     * @return 被取消发现的配方数量，0表示没有被取消发现的配方，等于 {@code recipes.size()} 的数字表示所有配方都被取消发现
+     * <p>原文：the amount of undiscovered recipes where 0 indicates that none
      * were undiscovered and a number equal to {@code recipes.size()} indicates
      * that all were undiscovered
      */
     public int undiscoverRecipes(Collection<NamespacedKey> recipes);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查此实体是否已发现指定配方。
+     * <p>原文：
      * Check whether or not this entity has discovered the specified recipe.
      *
-     * @param recipe the key of the recipe to check
-     *
-     * @return true if discovered, false otherwise
+     * @param recipe 要检查的配方的key
+     * <p>原文：the key of the recipe to check
+     * @return 如果已发现则返回true，否则返回false
+     * <p>原文：true if discovered, false otherwise
      */
     public boolean hasDiscoveredRecipe(NamespacedKey recipe);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此实体已发现的配方的不可变集合。
+     * <p>原文：
      * Get an immutable set of recipes this entity has discovered.
      *
-     * @return all discovered recipes
+     * @return 所有已发现的配方
+     * <p>原文：all discovered recipes
      */
     public Set<NamespacedKey> getDiscoveredRecipes();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取栖息在玩家左肩上的实体 (通常情况下这是鹦鹉的行为, 目前客户端没有为其他实体定义这一行为), 若没有则返回null.
+     * <p>
+     * 返回的实体不会在世界内生成, 因此除非这个实体是首次生成的, 大部分对该实体的操作是无效的.
+     * <p>原文：
      * Gets the entity currently perched on the left shoulder or null if no
      * entity.
      * <br>
      * The returned entity will not be spawned within the world, so most
      * operations are invalid unless the entity is first spawned in.
      *
-     * @return left shoulder entity
-     * @deprecated There are currently no well defined semantics regarding
+     * @return 坐在玩家左肩的实体
+     * <p>原文：left shoulder entity
+     * @deprecated Bukkit中目前还没有关于序列化实体的语义(格式)的良好定义. 请谨慎使用.
+     * <p>原文：There are currently no well defined semantics regarding
      * serialized entities in Bukkit. Use with care.
      */
     @Deprecated(since = "1.12")
@@ -698,6 +927,13 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
     public Entity getShoulderEntityLeft();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置栖息在玩家左肩上的实体(设为null则移除). 该方法将从世界中删除该实体.
+     * <p>
+     * 请注意: 只有实体的副本将被设置为显示在肩膀上的实体.
+     * <p>
+     * 也请注意游戏客户端目前只会渲染{@link Parrot 鹦鹉}的坐在肩膀上的行为.
+     * <p>原文：
      * Sets the entity currently perched on the left shoulder, or null to
      * remove. This method will remove the entity from the world.
      * <br>
@@ -707,22 +943,31 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
      * Also note that the client will currently only render {@link Parrot}
      * entities.
      *
-     * @param entity left shoulder entity
-     * @deprecated There are currently no well defined semantics regarding
+     * @param entity 坐在玩家左肩的实体
+     * <p>原文：left shoulder entity
+     * @deprecated Bukkit中目前还没有关于序列化实体的语义(格式)的良好定义. 请谨慎使用.
+     * <p>原文：There are currently no well defined semantics regarding
      * serialized entities in Bukkit. Use with care.
      */
     @Deprecated(since = "1.12")
     public void setShoulderEntityLeft(@Nullable Entity entity);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取栖息在玩家右肩上的实体, 若没有则返回null.
+     * <p>
+     * 返回的实体不会在世界内生成, 因此除非这个实体是首次生成的, 大部分对该实体的操作是无效的.
+     * <p>原文：
      * Gets the entity currently perched on the right shoulder or null if no
      * entity.
      * <br>
      * The returned entity will not be spawned within the world, so most
      * operations are invalid unless the entity is first spawned in.
      *
-     * @return right shoulder entity
-     * @deprecated There are currently no well defined semantics regarding
+     * @return 坐在玩家右肩的实体
+     * <p>原文：right shoulder entity
+     * @deprecated Bukkit中目前还没有关于序列化实体的语义(格式)的良好定义. 请谨慎使用.
+     * <p>原文：There are currently no well defined semantics regarding
      * serialized entities in Bukkit. Use with care.
      */
     @Deprecated(since = "1.12")
@@ -730,6 +975,13 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
     public Entity getShoulderEntityRight();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置栖息在玩家右肩上的实体(设为null则移除). 该方法将从世界中删除该实体.
+     * <p>
+     * 请注意: 只有实体的副本将被设置为显示在肩膀上的实体.
+     * <p>
+     * 也请注意游戏客户端目前只会渲染{@link Parrot 鹦鹉}的坐在肩膀上的行为.
+     * <p>原文：
      * Sets the entity currently perched on the right shoulder, or null to
      * remove. This method will remove the entity from the world.
      * <br>
@@ -739,8 +991,10 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
      * Also note that the client will currently only render {@link Parrot}
      * entities.
      *
-     * @param entity right shoulder entity
-     * @deprecated There are currently no well defined semantics regarding
+     * @param entity 坐在玩家右肩的实体
+     * <p>原文：right shoulder entity
+     * @deprecated Bukkit中目前还没有关于序列化实体的语义(格式)的良好定义. 请谨慎使用.
+     * <p>原文：There are currently no well defined semantics regarding
      * serialized entities in Bukkit. Use with care.
      */
     @Deprecated(since = "1.12")
@@ -767,13 +1021,18 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
     // Paper end
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使实体丢弃手中的物品。
+     * <p>原文：
      * Make the entity drop the item in their hand.
      * <br>
      * This will force the entity to drop the item they are holding with
      * an option to drop the entire {@link ItemStack} or just 1 of the items.
      *
-     * @param dropAll True to drop entire stack, false to drop 1 of the stack
-     * @return True if item was dropped successfully
+     * @param dropAll 设为true丢弃整个物品堆，设为false只丢弃1个物品
+     * <p>原文：True to drop entire stack, false to drop 1 of the stack
+     * @return 如果物品成功丢弃则返回true
+     * <p>原文：True if item was dropped successfully
      * @apiNote You should instead use {@link #dropItem(EquipmentSlot, int)} or {@link #dropItem(EquipmentSlot)} with a {@link EquipmentSlot#HAND} parameter.
      */
     @ApiStatus.Obsolete(since = "1.21.4")
@@ -885,127 +1144,197 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
     Item dropItem(final ItemStack itemStack, boolean throwRandomly, @Nullable Consumer<Item> entityOperation);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家的疲劳度.
+     * <p>
+     * 疲劳度控制者玩家的饥饿消耗. 当玩家达到一定的疲劳度时, 你的饱食度就会下降, 并且疲劳度归零.
+     * <p>
+     * 译注:如果饱食度为0, 那么就扣饥饿度.
+     * <p>
+     * 译注2:运动会产生疲劳度.
+     * <p>原文：
      * Gets the players current exhaustion level.
      * <p>
      * Exhaustion controls how fast the food level drops. While you have a
      * certain amount of exhaustion, your saturation will drop to zero, and
      * then your food will drop to zero.
      *
-     * @return Exhaustion level
+     * @return 疲劳度
+     * <p>原文：Exhaustion level
      */
     public float getExhaustion();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置玩家的疲劳度.
+     * <p>原文：
      * Sets the players current exhaustion level
      *
-     * @param value Exhaustion level
+     * @param value 疲劳度
+     * <p>原文：Exhaustion level
      */
     public void setExhaustion(float value);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家的饱食度(不是饥饿度).
+     * <p>
+     * 饱食度是一个饥饿度的缓存. 当你的饱食度 {@literal  >} 0的时候,饥饿度是不会下降的.
+     * <p>
+     * 译注:就是说, 吃东西的时候, 你的饥饿度被填满了, 而多出来的部分就是隐藏的饱食度. 当你的疲劳值(见{@link #getExhaustion() })
+     * 达到一定程度时, 如果饱食度不为0, 那么先扣饱食度. 只有当没饱食度时, 才会扣饥饿度. 其实饱食度就是饥饿度, 只不过是隐藏的.
+     * <p>原文：
      * Gets the players current saturation level.
      * <p>
      * Saturation is a buffer for food level. Your food level will not drop if
      * you are saturated {@literal >} 0.
      *
-     * @return Saturation level
+     * @return 饱食度
+     * <p>原文：Saturation level
      */
     public float getSaturation();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置玩家的饱食度(不是饥饿度).
+     * <p>原文：
      * Sets the players current saturation level
      *
-     * @param value Saturation level
+     * @param value 饱食度
+     * <p>原文：Saturation level
      */
     public void setSaturation(float value);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家的饥饿度(不是饱食度).
+     * <p>原文：
      * Gets the players current food level
      *
-     * @return Food level
+     * @return 饥饿度
+     * <p>原文：Food level
      */
     public int getFoodLevel();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置玩家的饥饿度(不是饱食度).
+     * <p>原文：
      * Sets the players current food level
      *
-     * @param value New food level
+     * @param value 饥饿度
+     * <p>原文：New food level
      */
     public void setFoodLevel(int value);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家在有饱食度且食物等级 {@literal >=} 20 时的再生速率（每x tick恢复1点生命值）。默认为10。
+     * <p>原文：
      * Get the regeneration rate (1 health per x ticks) of
      * the HumanEntity when they have saturation and
      * their food level is {@literal >=} 20. Default is 10.
      *
-     * @return the regeneration rate
+     * @return 再生速率
+     * <p>原文：the regeneration rate
      */
     public int getSaturatedRegenRate();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置玩家在有饱食度且食物等级 {@literal >=} 20 时的再生速率（每x tick恢复1点生命值）。默认为10。
+     * <p>原文：
      * Set the regeneration rate (1 health per x ticks) of
      * the HumanEntity when they have saturation and
      * their food level is {@literal >=} 20. Default is 10.
      * Not affected if the world's difficulty is peaceful.
      *
-     * @param ticks the amount of ticks to gain 1 health.
+     * @param ticks 恢复1点生命值所需的tick数
+     * <p>原文：the amount of ticks to gain 1 health.
      */
     public void setSaturatedRegenRate(int ticks);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家在没有饱食度且食物等级 {@literal >=} 18 时的再生速率（每x tick恢复1点生命值）。默认为80。
+     * <p>原文：
      * Get the regeneration rate (1 health per x ticks) of
      * the HumanEntity when they have no saturation and
      * their food level is {@literal >=} 18. Default is 80.
      *
-     * @return the regeneration rate
+     * @return 再生速率
+     * <p>原文：the regeneration rate
      */
     public int getUnsaturatedRegenRate();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置玩家在没有饱食度且食物等级 {@literal >=} 18 时的再生速率（每x tick恢复1点生命值）。默认为80。
+     * <p>原文：
      * Get the regeneration rate (1 health per x ticks) of
      * the HumanEntity when they have no saturation and
      * their food level is {@literal >=} 18. Default is 80.
      * Not affected if the world's difficulty is peaceful.
      *
-     * @param ticks the amount of ticks to gain 1 health.
+     * @param ticks 恢复1点生命值所需的tick数
+     * <p>原文：the amount of ticks to gain 1 health.
      */
     public void setUnsaturatedRegenRate(int ticks);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家的饥饿速率（每x tick失去1点生命值）。默认为80。
+     * <p>原文：
      * Get the starvation rate (1 health per x ticks) of
      * the HumanEntity. Default is 80.
      *
-     * @return the starvation rate
+     * @return 饥饿速率
+     * <p>原文：the starvation rate
      */
     public int getStarvationRate();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置玩家的饥饿速率（每x tick失去1点生命值）。默认为80。
+     * <p>原文：
      * Get the starvation rate (1 health per x ticks) of
      * the HumanEntity. Default is 80.
      *
-     * @param ticks the amount of ticks to lose 1 health
+     * @param ticks 失去1点生命值所需的tick数
+     * <p>原文：the amount of ticks to lose 1 health
      */
     public void setStarvationRate(int ticks);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家上次死亡的位置。
+     * <p>原文：
      * Gets the player's last death location.
      *
-     * @return the last death location if it exists, otherwise null.
+     * @return 上次死亡的位置，如果不存在则返回null
+     * <p>原文：the last death location if it exists, otherwise null.
      */
     @Nullable
     public Location getLastDeathLocation();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置玩家上次死亡的位置。
+     * <p>原文：
      * Sets the player's last death location.
      * <br>
      * <b>Note:</b> This data is updated in the player's client only when the
      * player respawns.
      *
-     * @param location where to set the last death player location
+     * @param location 要设置的上次死亡位置
+     * <p>原文：where to set the last death player location
      */
     public void setLastDeathLocation(@Nullable Location location);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 执行烟花火箭加速。
+     * <p>原文：
      * Perform a firework boost.
      * <p>
      * This method will only work such that {@link #isGliding()} is true and
@@ -1013,10 +1342,13 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
      * {@code fireworkItemStack} must be a firework rocket. The power of the boost
      * will directly correlate to {@link FireworkMeta#getPower()}.
      *
-     * @param fireworkItemStack the firework item stack to use to glide
-     * @return the attached {@link Firework}, or null if the entity could not
+     * @param fireworkItemStack 用于滑翔的烟花火箭物品堆
+     * <p>原文：the firework item stack to use to glide
+     * @return 附加的 {@link Firework}，如果实体无法被加速则返回null
+     * <p>原文：the attached {@link Firework}, or null if the entity could not
      * be boosted
-     * @throws IllegalArgumentException if the fireworkItemStack is not a firework
+     * @throws IllegalArgumentException 如果fireworkItemStack不是烟花火箭
+     * <p>原文：if the fireworkItemStack is not a firework
      */
     @Nullable
     public Firework fireworkBoost(ItemStack fireworkItemStack);

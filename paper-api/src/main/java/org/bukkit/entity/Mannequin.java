@@ -10,6 +10,10 @@ import org.bukkit.inventory.MainHand;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
+/**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表一个假人模型。
+ */
 @NullMarked
 public interface Mannequin extends LivingEntity {
 
@@ -69,6 +73,9 @@ public interface Mannequin extends LivingEntity {
     void setSkinParts(SkinParts parts);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此假人是否可以被移动/推动。
+     * <p>原文：
      * Checks if this mannequin is immovable.
      *
      * @return whether this mannequin is immovable
@@ -76,6 +83,9 @@ public interface Mannequin extends LivingEntity {
     boolean isImmovable();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此假人是否可以被移动/推动。
+     * <p>原文：
      * Sets whether this mannequin is immovable.
      *
      * @param immovable new immovable state
@@ -98,6 +108,9 @@ public interface Mannequin extends LivingEntity {
     void setDescription(@Nullable Component description);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取假人的主手。
+     * <p>原文：
      * Gets the main hand of this mannequin.
      *
      * @return the main hand
@@ -105,6 +118,9 @@ public interface Mannequin extends LivingEntity {
     MainHand getMainHand();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置假人的主手。
+     * <p>原文：
      * Sets the main hand of this mannequin.
      *
      * @param hand the new main hand

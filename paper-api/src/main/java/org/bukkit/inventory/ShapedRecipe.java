@@ -10,6 +10,9 @@ import org.bukkit.material.MaterialData;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表一个有序（即普通的）合成配方。
+ * <p>原文：
  * Represents a shaped (ie normal) crafting recipe.
  */
 public class ShapedRecipe extends CraftingRecipe {
@@ -17,15 +20,23 @@ public class ShapedRecipe extends CraftingRecipe {
     private Map<Character, RecipeChoice> ingredients = new HashMap<>();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 创建一个合成指定物品的配方。构造函数仅决定结果和类型；要设置实际配方，你需要调用适当的方法。
+     * <p>原文：
      * Create a shaped recipe to craft the specified ItemStack. The
      * constructor merely determines the result and type; to set the actual
      * recipe, you'll need to call the appropriate methods.
      *
-     * @param result The item you want the recipe to create.
+     * @param result 你希望配方创建的物品。
+     * <p>原文：The item you want the recipe to create.
      * @see ShapedRecipe#shape(String...)
      * @see ShapedRecipe#setIngredient(char, Material)
      * @see ShapedRecipe#setIngredient(char, RecipeChoice)
-     * @deprecated Recipes must have keys. Use {@link #ShapedRecipe(NamespacedKey, ItemStack)}
+     * @deprecated 配方必须有键。请改用 {@link #ShapedRecipe(NamespacedKey, ItemStack)}。
+     * <p>原文：Create a shaped recipe to craft the specified ItemStack. The
+     * constructor merely determines the result and type; to set the actual
+     * recipe, you'll need to call the appropriate methods.
+     * <p>原文：Recipes must have keys. Use {@link #ShapedRecipe(NamespacedKey, ItemStack)}
      * instead.
      */
     @Deprecated(since = "1.12")
@@ -35,13 +46,19 @@ public class ShapedRecipe extends CraftingRecipe {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 创建一个合成指定物品的配方。构造函数仅决定结果和类型；要设置实际配方，你需要调用适当的方法。
+     * <p>原文：
      * Create a shaped recipe to craft the specified ItemStack. The
      * constructor merely determines the result and type; to set the actual
      * recipe, you'll need to call the appropriate methods.
      *
-     * @param key the unique recipe key
-     * @param result The item you want the recipe to create.
-     * @exception IllegalArgumentException if the {@code result} is an empty item (AIR)
+     * @param key 配方的唯一键。
+     * <p>原文：the unique recipe key
+     * @param result 你希望配方创建的物品。
+     * <p>原文：The item you want the recipe to create.
+     * @exception IllegalArgumentException 如果 {@code result} 是空物品（AIR）。
+     * <p>原文：if the {@code result} is an empty item (AIR)
      * @see ShapedRecipe#shape(String...)
      * @see ShapedRecipe#setIngredient(char, Material)
      * @see ShapedRecipe#setIngredient(char, RecipeChoice)
@@ -51,6 +68,9 @@ public class ShapedRecipe extends CraftingRecipe {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此配方的形状为指定的行。每个字符代表不同的成分；空格字符必须为空，每个字符代表什么需要单独设置。第一行对应工作台最上方的部分，例如如果提供三行，第一行代表工作台最上面一行。
+     * <p>原文：
      * Set the shape of this recipe to the specified rows. Each character
      * represents a different ingredient; excluding space characters, which
      * must be empty, exactly what each character represents is set separately.
@@ -58,8 +78,16 @@ public class ShapedRecipe extends CraftingRecipe {
      * on the workbench e.g. if all three rows are supplies the first string
      * represents the top row on the workbench.
      *
-     * @param shape The rows of the recipe (up to 3 rows).
-     * @return The changed recipe, so you can chain calls.
+     * @param shape 配方的行（最多3行）。
+     * <p>原文：The rows of the recipe (up to 3 rows).
+     * @return 修改后的配方，以便链式调用。
+     * <p>原文：Set the shape of this recipe to the specified rows. Each character
+     * represents a different ingredient; excluding space characters, which
+     * must be empty, exactly what each character represents is set separately.
+     * The first row supplied corresponds with the upper most part of the recipe
+     * on the workbench e.g. if all three rows are supplies the first string
+     * represents the top row on the workbench.
+     * <p>原文：The changed recipe, so you can chain calls.
      */
     @NotNull
     public ShapedRecipe shape(@NotNull final String... shape) {
@@ -97,16 +125,24 @@ public class ShapedRecipe extends CraftingRecipe {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置配方形状中某个字符引用的 {@link RecipeChoice}。注意，在设置成分之前，必须先使用 {@link #shape(String...)} 定义配方的形状。
+     * <p>原文：
      * Sets the material that a character in the recipe shape refers to.
      * <p>
      * Note that before an ingredient can be set, the recipe's shape must be defined
      * with {@link #shape(String...)}.
      *
-     * @param key The character that represents the ingredient in the shape.
-     * @param ingredient The ingredient.
-     * @return The changed recipe, so you can chain calls.
-     * @throws IllegalArgumentException if the {@code key} is a space character
-     * @throws IllegalArgumentException if the {@code key} does not appear in the shape.
+     * @param key 形状中代表成分的字符。
+     * <p>原文：The character that represents the ingredient in the shape.
+     * @param ingredient 成分。
+     * <p>原文：The ingredient.
+     * @return 修改后的配方，以便链式调用。
+     * <p>原文：The changed recipe, so you can chain calls.
+     * @throws IllegalArgumentException 如果 {@code key} 是空格字符。
+     * <p>原文：if the {@code key} is a space character
+     * @throws IllegalArgumentException 如果 {@code key} 是空格字符。
+     * <p>原文：if the {@code key} does not appear in the shape.
      * @deprecated use {@link #setIngredient(char, RecipeChoice)}
      */
     @NotNull
@@ -116,16 +152,24 @@ public class ShapedRecipe extends CraftingRecipe {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置配方形状中某个字符代表的材料。注意，在设置成分之前，必须先使用 {@link #shape(String...)} 定义配方的形状。
+     * <p>原文：
      * Sets the material that a character in the recipe shape refers to.
      * <p>
      * Note that before an ingredient can be set, the recipe's shape must be defined
      * with {@link #shape(String...)}.
      *
-     * @param key The character that represents the ingredient in the shape.
-     * @param ingredient The ingredient.
-     * @return The changed recipe, so you can chain calls.
-     * @throws IllegalArgumentException if the {@code key} is a space character
-     * @throws IllegalArgumentException if the {@code key} does not appear in the shape.
+     * @param key 形状中代表成分的字符。
+     * <p>原文：The character that represents the ingredient in the shape.
+     * @param ingredient 成分。
+     * <p>原文：The ingredient.
+     * @return 修改后的配方，以便链式调用。
+     * <p>原文：The changed recipe, so you can chain calls.
+     * @throws IllegalArgumentException 如果 {@code key} 是空格字符。
+     * <p>原文：if the {@code key} is a space character
+     * @throws IllegalArgumentException 如果 {@code key} 是空格字符。
+     * <p>原文：if the {@code key} does not appear in the shape.
      */
     @NotNull
     public ShapedRecipe setIngredient(char key, @NotNull Material ingredient) {
@@ -133,18 +177,32 @@ public class ShapedRecipe extends CraftingRecipe {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置配方形状中某个字符代表的材料。注意，在设置成分之前，必须先使用 {@link #shape(String...)} 定义配方的形状。
+     * <p>原文：
      * Sets the material that a character in the recipe shape refers to.
      * <p>
      * Note that before an ingredient can be set, the recipe's shape must be defined
      * with {@link #shape(String...)}.
      *
-     * @param key The character that represents the ingredient in the shape.
-     * @param ingredient The ingredient.
-     * @param raw The raw material data as an integer.
-     * @return The changed recipe, so you can chain calls.
-     * @throws IllegalArgumentException if the {@code key} is a space character
-     * @throws IllegalArgumentException if the {@code key} does not appear in the shape.
-     * @deprecated Magic value
+     * @param key 形状中代表成分的字符。
+     * <p>原文：The character that represents the ingredient in the shape.
+     * @param ingredient 成分。
+     * <p>原文：The ingredient.
+     * @param raw 原始材料数据的整数值。
+     * <p>原文：The raw material data as an integer.
+     * @return 修改后的配方，以便链式调用。
+     * <p>原文：The changed recipe, so you can chain calls.
+     * @throws IllegalArgumentException 如果 {@code key} 是空格字符。
+     * <p>原文：if the {@code key} is a space character
+     * @throws IllegalArgumentException 如果 {@code key} 是空格字符。
+     * <p>原文：if the {@code key} does not appear in the shape.
+     * @deprecated 魔法值。
+     * <p>原文：Sets the material that a character in the recipe shape refers to.
+     * <p>
+     * Note that before an ingredient can be set, the recipe's shape must be defined
+     * with {@link #shape(String...)}.
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.6.2")
     @NotNull
@@ -162,16 +220,24 @@ public class ShapedRecipe extends CraftingRecipe {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置配方形状中某个字符代表的材料。注意，在设置成分之前，必须先使用 {@link #shape(String...)} 定义配方的形状。
+     * <p>原文：
      * Sets the {@link RecipeChoice} that a character in the recipe shape refers to.
      * <p>
      * Note that before an ingredient can be set, the recipe's shape must be defined
      * with {@link #shape(String...)}.
      *
-     * @param key The character that represents the ingredient in the shape.
-     * @param ingredient The ingredient.
-     * @return The changed recipe, so you can chain calls.
-     * @throws IllegalArgumentException if the {@code key} is a space character
-     * @throws IllegalArgumentException if the {@code key} does not appear in the shape.
+     * @param key 形状中代表成分的字符。
+     * <p>原文：The character that represents the ingredient in the shape.
+     * @param ingredient 成分。
+     * <p>原文：The ingredient.
+     * @return 修改后的配方，以便链式调用。
+     * <p>原文：The changed recipe, so you can chain calls.
+     * @throws IllegalArgumentException 如果 {@code key} 是空格字符。
+     * <p>原文：if the {@code key} is a space character
+     * @throws IllegalArgumentException 如果 {@code key} 是空格字符。
+     * <p>原文：if the {@code key} does not appear in the shape.
      */
     @NotNull
     public ShapedRecipe setIngredient(char key, @NotNull RecipeChoice ingredient) {
@@ -191,9 +257,14 @@ public class ShapedRecipe extends CraftingRecipe {
     // Paper end
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取成分映射的副本。
+     * <p>原文：
      * Get a copy of the ingredients map.
      *
-     * @return The mapping of character to ingredients.
+     * @return 字符到成分的映射。
+     * <p>原文：Get a copy of the ingredients map.
+     * <p>原文：The mapping of character to ingredients.
      * @deprecated Use {@link #getChoiceMap()} instead for more complete data.
      */
     @Deprecated // Paper
@@ -211,9 +282,14 @@ public class ShapedRecipe extends CraftingRecipe {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取选择映射的副本。
+     * <p>原文：
      * Get a copy of the choice map.
      *
-     * @return The mapping of character to ingredients.
+     * @return 字符到成分的映射。
+     * <p>原文：Get a copy of the choice map.
+     * <p>原文：The mapping of character to ingredients.
      */
     @NotNull
     public Map<Character, RecipeChoice> getChoiceMap() {
@@ -229,10 +305,16 @@ public class ShapedRecipe extends CraftingRecipe {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取形状。
+     * <p>原文：
      * Get the shape.
      *
-     * @return The recipe's shape.
-     * @throws NullPointerException when not set yet
+     * @return 配方的形状。
+     * <p>原文：The recipe's shape.
+     * @throws NullPointerException 尚未设置时抛出。
+     * <p>原文：Get the shape.
+     * <p>原文：when not set yet
      */
     public @NotNull String @NotNull [] getShape() {
         return rows.clone();

@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当生物实体被驯服时触发本事件.
+ * <p>原文：
  * Thrown when a LivingEntity is tamed
  */
 public class EntityTameEvent extends EntityEvent implements Cancellable {
@@ -30,9 +33,13 @@ public class EntityTameEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取驯服此实体的玩家.
+     * <p>原文：
      * Gets the owning AnimalTamer
      *
-     * @return the owning AnimalTamer
+     * @return 驯服此实体的玩家
+     * <p>原文：the owning AnimalTamer
      */
     @NotNull
     public AnimalTamer getOwner() {

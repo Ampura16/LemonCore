@@ -34,6 +34,10 @@ import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表一个 Java 插件及其主类. 其包含了插件正常加载并工作所需的基础方法和字段.
+ * 这是一个 {@link org.bukkit.plugin.Plugin} 的间接实现.
+ * <p>原文：
  * Represents a Java plugin and its main class. It contains fundamental methods
  * and fields for a plugin to be loaded and work properly. This is an indirect
  * implementation of {@link org.bukkit.plugin.Plugin}.
@@ -75,10 +79,15 @@ public abstract class JavaPlugin extends PluginBase {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回存放插件文件数据的文件夹.
+     * 文件夹可能不存在.
+     * <p>原文：
      * Returns the folder that the plugin data files are located in. The
      * folder may not yet exist.
      *
-     * @return The folder.
+     * @return 文件夹
+     * <p>原文：The folder.
      */
     @Override
     public final File getDataFolder() {
@@ -86,9 +95,13 @@ public abstract class JavaPlugin extends PluginBase {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这个插件关联的PluginLoader.
+     * <p>原文：
      * Gets the associated PluginLoader responsible for this plugin
      *
-     * @return PluginLoader that controls this plugin
+     * @return PluginLoader控制的插件.
+     * <p>原文：PluginLoader that controls this plugin
      * @deprecated Plugin loading now occurs at a point which makes it impossible to expose this
      * behavior. This instance will only throw unsupported operation exceptions.
      */
@@ -99,9 +112,13 @@ public abstract class JavaPlugin extends PluginBase {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回正在运行此插件的服务器对象.
+     * <p>原文：
      * Returns the Server instance currently running this plugin
      *
-     * @return Server running this plugin
+     * @return 服务器正在运行的插件
+     * <p>原文：Server running this plugin
      */
     @Override
     public final Server getServer() {
@@ -109,9 +126,13 @@ public abstract class JavaPlugin extends PluginBase {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回插件是否已正常启用.
+     * <p>原文：
      * Returns a value indicating whether this plugin is currently enabled
      *
-     * @return true if this plugin is enabled, otherwise false
+     * @return 插件是否启用
+     * <p>原文：true if this plugin is enabled, otherwise false
      */
     @Override
     public final boolean isEnabled() {
@@ -119,18 +140,26 @@ public abstract class JavaPlugin extends PluginBase {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回这个插件的文件.
+     * <p>原文：
      * Returns the file which contains this plugin
      *
-     * @return File containing this plugin
+     * @return 插件的核心文件
+     * <p>原文：File containing this plugin
      */
     protected File getFile() {
         return file;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回插件的plugin.yml的内容的描述信息.
+     * <p>原文：
      * Returns the plugin.yml file containing the details for this plugin
      *
-     * @return Contents of the plugin.yml file
+     * @return plugin.yml的内容描述信息
+     * <p>原文：Contents of the plugin.yml file
      * @deprecated No longer applicable to all types of plugins
      */
     @Override
@@ -152,13 +181,21 @@ public abstract class JavaPlugin extends PluginBase {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 提供jar中文本文件的读取器.
+     * <p>
+     * 返回的 reader 将以 UTF-8 编码读取文本.
+     * <p>原文：
      * Provides a reader for a text file located inside the jar.
      * <p>
      * The returned reader will read text with the UTF-8 charset.
      *
-     * @param file the filename of the resource to load
-     * @return null if {@link #getResource(String)} returns null
-     * @throws IllegalArgumentException if file is null
+     * @param file 需要加载的文本资源文件名
+     * <p>原文：the filename of the resource to load
+     * @return null 如果 {@link #getResource(String)} 返回 null
+     * <p>原文：null if {@link #getResource(String)} returns null
+     * @throws IllegalArgumentException 如果文件为 null
+     * <p>原文：if file is null
      * @see ClassLoader#getResourceAsStream(String)
      */
     protected final @Nullable Reader getTextResource(String file) {
@@ -255,18 +292,26 @@ public abstract class JavaPlugin extends PluginBase {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回这个插件的ClassLoader.
+     * <p>原文：
      * Returns the ClassLoader which holds this plugin
      *
-     * @return ClassLoader holding this plugin
+     * @return ClassLoader控制的这个插件
+     * <p>原文：ClassLoader holding this plugin
      */
     protected final ClassLoader getClassLoader() {
         return classLoader;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置插件开启的状态.
+     * <p>原文：
      * Sets the enabled state of this plugin
      *
-     * @param enabled true if enabled, otherwise false
+     * @param enabled true表示设置插件为开启, false就是设置插件为关闭
+     * <p>原文：true if enabled, otherwise false
      */
     @org.jetbrains.annotations.ApiStatus.Internal
     public final void setEnabled(final boolean enabled) {
@@ -324,12 +369,19 @@ public abstract class JavaPlugin extends PluginBase {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这个插件在plugin.yml里注册的命令
+     * 命令需要在{@link PluginDescriptionFile#getCommands()
+     * PluginDescriptionFile}里已被注册
+     * <p>原文：
      * Gets the command with the given name, specific to this plugin. Commands
      * need to be registered in the {@link PluginDescriptionFile#getCommands()
      * PluginDescriptionFile} to exist at runtime.
      *
-     * @param name name or alias of the command
-     * @return the plugin command if found, otherwise null
+     * @param name 一个属于这个插件注册了的命令
+     * <p>原文：name or alias of the command
+     * @return 如果有返回值表示命令存在, 否则返回null
+     * <p>原文：the plugin command if found, otherwise null
      * @throws UnsupportedOperationException if this plugin is a paper plugin and the method is called in {@link #onEnable()}
      * @see #registerCommand(String, String, Collection, BasicCommand)
      */
@@ -475,6 +527,17 @@ public abstract class JavaPlugin extends PluginBase {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 本方法可快速访问某个插件主类(或其子类)对应的插件实例.
+     * <p>
+     * 例外:如果插件jar中的插件类不继承JavaPlugin类, 将可能是不同的jar/类加载器.
+     * <p>
+     * 译注:这个怎么用呢? 比如我们知道某个插件主类叫 BukkitPluginMain,
+     * 如果要获取其实例, 就可以这样做:
+     * <pre>
+     * BukkitPluginMain plugin = JavaPlugin.getPlugin(BukkitPluginMain.class);
+     * </pre>
+     * <p>原文：
      * This method provides fast access to the plugin that has {@link
      * #getProvidingPlugin(Class) provided} the given plugin class, which is
      * usually the plugin that implemented it.
@@ -483,18 +546,30 @@ public abstract class JavaPlugin extends PluginBase {
      * does not extend the class, where the intended plugin would have
      * resided in a different jar / classloader.
      *
-     * @param <T> a class that extends JavaPlugin
-     * @param clazz the class desired
-     * @return the plugin that provides and implements said class
-     * @throws IllegalArgumentException if clazz is null
-     * @throws IllegalArgumentException if clazz does not extend {@link
+     * @param <T> 任何一个继承了JavaPlugin的类
+     * <p>原文：a class that extends JavaPlugin
+     * @param clazz 所需的类
+     * <p>原文：the class desired
+     * @return 提供并实现了给定类的插件的实例
+     * <p>原文：the plugin that provides and implements said class
+     * @throws IllegalArgumentException 如果参数 clazz 为 nul
+     * <p>原文：if clazz is null
+     * @throws IllegalArgumentException 如果参数 clazz 为 nul
+     * <p>原文：if clazz does not extend {@link
      *     JavaPlugin}
-     * @throws IllegalStateException if clazz was not provided by a plugin,
+     * @throws IllegalStateException 如果这个类不是插件提供的,抛出无效的状态(IllegalStateException)错误.
+     *     比如, 如果调用
+     *     <code>JavaPlugin.getPlugin(JavaPlugin.class)</code>
+     * <p>原文：if clazz was not provided by a plugin,
      *     for example, if called with
      *     <code>JavaPlugin.getPlugin(JavaPlugin.class)</code>
-     * @throws IllegalStateException if called from the static initializer for
+     * @throws IllegalStateException 如果这个类不是插件提供的,抛出无效的状态(IllegalStateException)错误.
+     *     比如, 如果调用
+     *     <code>JavaPlugin.getPlugin(JavaPlugin.class)</code>
+     * <p>原文：if called from the static initializer for
      *     given JavaPlugin
-     * @throws ClassCastException if plugin that provided the class does not
+     * @throws ClassCastException 如果插件提供的类没有继承类, 抛出(ClassCastException)错误
+     * <p>原文：if plugin that provided the class does not
      *     extend the class
      */
     public static <T extends JavaPlugin> T getPlugin(Class<T> clazz) {
@@ -514,15 +589,23 @@ public abstract class JavaPlugin extends PluginBase {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取提供给定类的插件.
+     * <p>原文：
      * This method provides fast access to the plugin that has provided the
      * given class.
      *
-     * @param clazz a class belonging to a plugin
-     * @return the plugin that provided the class
-     * @throws IllegalArgumentException if the class is not provided by a
+     * @param clazz 属于某个插件的类
+     * <p>原文：a class belonging to a plugin
+     * @return 提供此类的插件
+     * <p>原文：the plugin that provided the class
+     * @throws IllegalArgumentException 如果这个类不属于某个JavaPlugin
+     * <p>原文：if the class is not provided by a
      *     JavaPlugin
-     * @throws IllegalArgumentException if class is null
-     * @throws IllegalStateException if called from the static initializer for
+     * @throws IllegalArgumentException 如果这个类不属于某个JavaPlugin
+     * <p>原文：if class is null
+     * @throws IllegalStateException 如果从静态初始化代码块调用
+     * <p>原文：if called from the static initializer for
      *     given JavaPlugin
      */
     public static JavaPlugin getProvidingPlugin(Class<?> clazz) {

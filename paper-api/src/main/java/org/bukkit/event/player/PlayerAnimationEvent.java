@@ -7,6 +7,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 玩家动作事件.
+ * <p>原文：
  * Represents a player animation event
  * <br>Use {@link io.papermc.paper.event.player.PlayerArmSwingEvent} for determining which arm was swung.
  */
@@ -23,6 +26,13 @@ public class PlayerAnimationEvent extends PlayerEvent implements Cancellable {
         this(player, PlayerAnimationType.ARM_SWING);
     }
 
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 构造一个新的PlayerAnimation事件.
+     *
+     * @param player 玩家实例
+     * @param playerAnimationType 动作类型
+     */
     @ApiStatus.Internal
     public PlayerAnimationEvent(@NotNull final Player player, @NotNull final PlayerAnimationType playerAnimationType) {
         super(player);
@@ -30,9 +40,13 @@ public class PlayerAnimationEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获得此事件中玩家的动作类型.
+     * <p>原文：
      * Get the type of this animation event
      *
-     * @return the animation type
+     * @return 动作类型
+     * <p>原文：the animation type
      */
     @NotNull
     public PlayerAnimationType getAnimationType() {

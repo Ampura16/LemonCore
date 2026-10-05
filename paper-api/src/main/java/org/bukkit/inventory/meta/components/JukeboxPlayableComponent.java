@@ -9,38 +9,57 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 表示一个可以插入唱片机的组件。
+ * <p>原文：
  * Represents a component which can be inserted into a jukebox.
  */
 @ApiStatus.Experimental
 public interface JukeboxPlayableComponent extends ConfigurationSerializable {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取分配给此组件的歌曲。
+     * <p>原文：
      * Gets the song assigned to this component.
      *
-     * @return song, or null if the song does not exist on the server
+     * @return 歌曲，如果服务器上不存在该歌曲则返回null
+     * <p>原文：song, or null if the song does not exist on the server
      */
     @Nullable
     JukeboxSong getSong();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取分配给此组件的歌曲的键。
+     * <p>原文：
      * Gets the key of the song assigned to this component.
      *
-     * @return the song key
+     * @return 歌曲键
+     * <p>原文：the song key
      */
     @NotNull
     NamespacedKey getSongKey();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置分配给此组件的歌曲。
+     * <p>原文：
      * Sets the song assigned to this component.
      *
-     * @param song the song
+     * @param song 歌曲
+     * <p>原文：the song
      */
     void setSong(@NotNull JukeboxSong song);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置分配给此组件的歌曲的键。
+     * <p>原文：
      * Sets the key of the song assigned to this component.
      *
-     * @param song the song key
+     * @param song 歌曲键
+     * <p>原文：the song key
      */
     void setSongKey(@NotNull NamespacedKey song);
 

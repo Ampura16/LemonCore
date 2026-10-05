@@ -11,6 +11,9 @@ import org.jetbrains.annotations.Unmodifiable;
 import java.util.Set;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 玩家重生事件.
+ * <p>原文：
  * Called when a player respawns.
  * <p>
  * If changing player state, see {@link com.destroystokyo.paper.event.player.PlayerPostRespawnEvent}
@@ -38,9 +41,13 @@ public class PlayerRespawnEvent extends AbstractRespawnEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置一个新的重生位置.
+     * <p>原文：
      * Sets the new respawn location.
      *
-     * @param respawnLocation new location for the respawn
+     * @param respawnLocation 新的重生位置
+     * <p>原文：new location for the respawn
      */
     public void setRespawnLocation(@NotNull Location respawnLocation) {
         Preconditions.checkArgument(respawnLocation != null, "Respawn location can not be null");
@@ -61,19 +68,31 @@ public class PlayerRespawnEvent extends AbstractRespawnEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 用于指定重生事件被触发原因的枚举.
+     * <p>原文：
      * An enum to specify the reason a respawn event was called.
      */
     public enum RespawnReason {
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 当玩家死亡并按下重生按钮时.
+         * <p>原文：
          * When the player dies and presses the respawn button.
          */
         DEATH,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 当玩家通过末地传送门离开末地时.
+         * <p>原文：
          * When the player exits the end through the end portal.
          */
         END_PORTAL,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 当插件使玩家重生时.
+         * <p>原文：
          * When a plugin respawns the player.
          */
         PLUGIN

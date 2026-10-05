@@ -7,6 +7,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当马跳起时调用此事件.
+ * <p>原文：
  * Called when a horse jumps.
  */
 public class HorseJumpEvent extends EntityEvent implements Cancellable {
@@ -74,7 +77,11 @@ public class HorseJumpEvent extends EntityEvent implements Cancellable {
     }
 
     /**
-     * @deprecated horse jumping was moved client side.
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @deprecated 马的跳跃行为被移动到了客户端
+     * <p>原文：horse jumping was moved client side.
      */
     @Override
     @Deprecated(since = "1.9")

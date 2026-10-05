@@ -11,6 +11,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 玩家用完一只桶后触发此事件.
+ * <p>原文：
  * Called when a player empties a bucket
  */
 public class PlayerBucketEmptyEvent extends PlayerBucketEvent {

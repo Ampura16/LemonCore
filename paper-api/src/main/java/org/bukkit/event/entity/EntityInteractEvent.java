@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当一个实体与其他物体互交时触发本事件
+ * <p>原文：
  * Called when an entity interacts with an object
  */
 public class EntityInteractEvent extends EntityEvent implements Cancellable {
@@ -25,9 +28,13 @@ public class EntityInteractEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回实体交互的方块
+     * <p>原文：
      * Returns the involved block
      *
-     * @return the block clicked with this item.
+     * @return 被点击的方块
+     * <p>原文：the block clicked with this item.
      */
     @NotNull
     public Block getBlock() {

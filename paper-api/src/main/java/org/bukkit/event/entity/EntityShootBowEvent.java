@@ -12,6 +12,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当生物实体射出箭矢时调用。
+ * <p>原文：
  * Called when a LivingEntity shoots a bow firing an arrow
  */
 public class EntityShootBowEvent extends EntityEvent implements Cancellable {
@@ -57,9 +60,13 @@ public class EntityShootBowEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取用于发射箭矢的弓 ItemStack。
+     * <p>原文：
      * Gets the bow ItemStack used to fire the arrow.
      *
-     * @return the bow involved in this event
+     * @return 此事件中涉及的弓
+     * <p>原文：the bow involved in this event
      */
     @Nullable
     public ItemStack getBow() {
@@ -67,12 +74,18 @@ public class EntityShootBowEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此事件中将被消耗的 ItemStack（如果有）。
+     * <p>
+     * 例如，弓会消耗玩家背包中的箭矢 ItemStack。
+     * <p>原文：
      * Get the ItemStack to be consumed in this event (if any).
      * <br>
      * For instance, bows will consume an arrow ItemStack in a player's
      * inventory.
      *
-     * @return the consumable item
+     * @return 消耗品物品
+     * <p>原文：the consumable item
      */
     @Nullable
     public ItemStack getConsumable() {
@@ -80,9 +93,13 @@ public class EntityShootBowEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此事件将发射的弹射物。
+     * <p>原文：
      * Gets the projectile which will be launched by this event
      *
-     * @return the launched projectile
+     * @return 发射的弹射物
+     * <p>原文：the launched projectile
      */
     @NotNull
     public Entity getProjectile() {
@@ -90,18 +107,26 @@ public class EntityShootBowEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 替换将被发射的弹射物。
+     * <p>原文：
      * Replaces the projectile which will be launched
      *
-     * @param projectile the new projectile
+     * @param projectile 新的弹射物
+     * <p>原文：the new projectile
      */
     public void setProjectile(@NotNull Entity projectile) {
         this.projectile = projectile;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取射出弓的手。
+     * <p>原文：
      * Get the hand from which the bow was shot.
      *
-     * @return the hand
+     * @return 手
+     * <p>原文：the hand
      */
     @NotNull
     public EquipmentSlot getHand() {
@@ -109,15 +134,26 @@ public class EntityShootBowEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取箭矢发射的力度。
+     * <p>原文：
      * Gets the force the arrow was launched with
      *
-     * @return bow shooting force, up to 1.0
+     * @return 弓的射击力度，最大为 1.0
+     * <p>原文：bow shooting force, up to 1.0
      */
     public float getForce() {
         return this.force;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此事件中是否应消耗消耗品物品。
+     * <p>
+     * 如果设置为 false，建议调用 {@link Player#updateInventory()}，因为客户端可能不同意服务器不消耗消耗品物品的决定。
+     * <p>
+     * 对于不需要物品的实体（骷髅、掠夺者等）或使用弩时（因为没有物品被消耗），此值将被忽略。
+     * <p>原文：
      * Set whether the consumable item should be consumed in this event.
      * <p>
      * If set to {@code false}, it is recommended that a call to
@@ -128,8 +164,10 @@ public class EntityShootBowEvent extends EntityEvent implements Cancellable {
      * (skeletons, pillagers, etc.) or with crossbows (as no item is being
      * consumed).
      *
-     * @param consumeItem whether to consume the item
-     * @deprecated not currently functional
+     * @param consumeItem 是否消耗物品
+     * <p>原文：whether to consume the item
+     * @deprecated 目前不起作用
+     * <p>原文：not currently functional
      */
     @Deprecated(since = "1.20.5")
     public void setConsumeItem(boolean consumeItem) {
@@ -137,9 +175,13 @@ public class EntityShootBowEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此事件中是否应消耗消耗品物品。
+     * <p>原文：
      * Get whether the consumable item should be consumed in this event.
      *
-     * @return {@code true} if consumed, {@code false} otherwise
+     * @return 如果消耗则返回 true，否则返回 false
+     * <p>原文：{@code true} if consumed, {@code false} otherwise
      */
     public boolean shouldConsumeItem() {
         return this.consumeItem;

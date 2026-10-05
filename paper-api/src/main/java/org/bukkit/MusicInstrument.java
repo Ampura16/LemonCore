@@ -51,11 +51,20 @@ public abstract class MusicInstrument implements Keyed, net.kyori.adventure.tran
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 通过 {@link NamespacedKey} 返回一个 {@link MusicInstrument}。
+     * <p>原文：
      * Returns a {@link MusicInstrument} by a {@link NamespacedKey}.
      *
-     * @param namespacedKey the key
-     * @return the event or null
-     * @deprecated use {@link Registry#get(NamespacedKey)} instead
+     * @param namespacedKey 键。
+     * <p>原文：the key
+     * @return 事件或 null。
+     * <p>原文：the event or null
+     * @deprecated 请改用 {@link Registry#get(NamespacedKey)}。
+     *
+     * 原文：
+     * Returns a {@link MusicInstrument} by a {@link NamespacedKey}.
+     * <p>原文：use {@link Registry#get(NamespacedKey)} instead
      */
     @Nullable
     @Deprecated(since = "1.20.1")
@@ -64,10 +73,18 @@ public abstract class MusicInstrument implements Keyed, net.kyori.adventure.tran
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回所有已知的 MusicInstrument。
+     * <p>原文：
      * Returns all known music instruments.
      *
-     * @return the music instruments
-     * @deprecated use {@link Registry#iterator()}
+     * @return 内存键。
+     * <p>原文：the music instruments
+     * @deprecated 请使用 {@link Registry#iterator()}。
+     *
+     * 原文：
+     * Returns all known MusicInstruments.
+     * <p>原文：use {@link Registry#iterator()}
      */
     @Deprecated(since = "1.20.1")
     public static Collection<MusicInstrument> values() {
@@ -75,16 +92,30 @@ public abstract class MusicInstrument implements Keyed, net.kyori.adventure.tran
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取乐器的使用持续时间。
+     * <p>原文：
      * Gets the use duration of this music instrument.
      *
-     * @return the duration expressed in seconds
+     * @return 持续时间。
+     *
+     * 原文：
+     * Gets how long the use duration is for the instrument.
+     * <p>原文：the duration expressed in seconds
      */
     public abstract float getDuration();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取声音的范围。
+     * <p>原文：
      * Gets the range of the sound.
      *
-     * @return the range of the sound
+     * @return 声音的范围。
+     *
+     * 原文：
+     * Gets the range of the sound.
+     * <p>原文：the range of the sound
      */
     public abstract float getRange();
 

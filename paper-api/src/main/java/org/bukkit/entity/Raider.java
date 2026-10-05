@@ -9,78 +9,124 @@ import org.jetbrains.annotations.Nullable;
 public interface Raider extends Monster {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此袭击者正在参与的 {@link Raid}。
+     * <p>原文：
      * Set the {@link Raid} that this raider is participating in.
      *
-     * @param raid the raid to set
+     * @param raid 要设置的袭击
+     * <p>原文：the raid to set
      */
     void setRaid(@Nullable Raid raid);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此袭击者正在参与的 {@link Raid}（如果有的话）。
+     * <p>原文：
      * Get the {@link Raid} that this raider is participating in, if any.
      *
-     * @return the raid, or null if not participating in a raid
+     * @return 袭击事件，若未参与则为null
+     * <p>原文：the raid, or null if not participating in a raid
      */
     @Nullable
     Raid getRaid();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此袭击者生成时所属的袭击波次。
+     * <p>原文：
      * Get the raid wave that this raider spawned as part of.
      *
-     * @return the raid wave, or 0 if not participating in a raid
+     * @return 袭击波次，若未参与袭击则为0
+     * <p>原文：the raid wave, or 0 if not participating in a raid
      */
     int getWave();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此袭击者生成时所属的袭击波次。
+     * <p>原文：
      * Set the raid wave that this raider was spawned as part of.
      *
-     * @param wave the raid wave to set. Must be >= 0
+     * @param wave 要设置的袭击波次，必须 >= 0
+     * <p>原文：the raid wave to set. Must be >= 0
      */
     void setWave(int wave);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取袭击者要巡逻的目标方块.
+     * <p>原文：
      * Gets the block the raider is targeting to patrol.
      *
-     * @return target block or null
+     * @return 目标方块或null
+     * <p>原文：target block or null
      */
     @Nullable
     Block getPatrolTarget();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置袭击者要巡逻的目标方块.
+     * <p>原文：
      * Sets the block the raider is targeting to patrol.
      *
-     * @param block target block or null. Must be in same world as the entity
+     * @param block 目标方块或null, 此方块所处位置必须与此生物位于同一世界
+     * <p>原文：target block or null. Must be in same world as the entity
      */
     void setPatrolTarget(@Nullable Block block);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 判断此实体是否为灾厄巡逻队队长(袭击队长).
+     * <p>原文：
      * Gets whether this entity is a patrol leader.
      *
-     * @return patrol leader status
+     * @return 此实体是否为袭击队长
+     * <p>原文：patrol leader status
      */
     boolean isPatrolLeader();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此实体是否为袭击队长.
+     * <p>原文：
      * Sets whether this entity is a patrol leader.
      *
-     * @param leader patrol leader status
+     * @param leader 是否为袭击队长
+     * <p>原文：patrol leader status
      */
     void setPatrolLeader(boolean leader);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此生物能否参与一个活跃的袭击.
+     * <p>原文：
      * Gets whether this mob can join an active raid.
      *
-     * @return CanJoinRaid status
+     * @return 能否参与一个活跃的袭击
+     * <p>原文：CanJoinRaid status
      */
     boolean isCanJoinRaid();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此生物能否参与一个活跃的袭击.
+     * <p>原文：
      * Sets whether this mob can join an active raid.
      *
-     * @param join CanJoinRaid status
+     * @param join 能否参与一个活跃的袭击
+     * <p>原文：CanJoinRaid status
      */
     void setCanJoinRaid(boolean join);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此生物作为袭击参与者离开村庄边界的时间（以tick为单位）。
+     * <p>
+     * 此值仅在生物无动作达到2400 tick时才会增加（根据 {@link #getNoActionTicks()}）。
+     * 当无动作tick达到该值且离开袭击的时间超过30 tick时，该生物将被驱逐出袭击。
+     * <p>原文：
      * Get the amount of ticks that this mob has exited the bounds of a village
      * as a raid participant.
      * <p>
@@ -89,11 +135,18 @@ public interface Raider extends Monster {
      * reached that value and the ticks outside a raid exceeds 30, the mob will be
      * expelled from the raid.
      *
-     * @return the ticks outside of a raid
+     * @return 离开袭击的时间（以tick为单位）
+     * <p>原文：the ticks outside of a raid
      */
     int getTicksOutsideRaid();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此生物作为袭击参与者离开村庄边界的时间（以tick为单位）。
+     * <p>
+     * 此值仅在生物无动作达到2400 tick时才会被考虑（根据 {@link #getNoActionTicks()}）。
+     * 当无动作tick达到该值且离开袭击的时间超过30 tick时，该生物将被驱逐出袭击。
+     * <p>原文：
      * Set the amount of ticks that this mob has exited the bounds of a village
      * as a raid participant.
      * <p>
@@ -102,28 +155,41 @@ public interface Raider extends Monster {
      * reached that value and the ticks outside a raid exceeds 30, the mob will be
      * expelled from the raid.
      *
-     * @param ticks the ticks outside of a raid
+     * @param ticks 离开袭击的时间（以tick为单位）
+     * <p>原文：the ticks outside of a raid
      */
     void setTicksOutsideRaid(int ticks);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查此袭击者是否正在庆祝袭击胜利。
+     * <p>原文：
      * Check whether or not this raider is celebrating a raid victory.
      *
-     * @return true if celebrating, false otherwise
+     * @return 如果正在庆祝则为true，否则为false
+     * <p>原文：true if celebrating, false otherwise
      */
     boolean isCelebrating();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此生物是否正在庆祝袭击胜利。
+     * <p>原文：
      * Set whether or not this mob is celebrating a raid victory.
      *
-     * @param celebrating whether or not to celebrate
+     * @param celebrating 是否庆祝
+     * <p>原文：whether or not to celebrate
      */
     void setCelebrating(boolean celebrating);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此实体庆祝时播放的 {@link Sound}。
+     * <p>原文：
      * Get the {@link Sound} this entity will play when celebrating.
      *
-     * @return the celebration sound
+     * @return 庆祝音效
+     * <p>原文：the celebration sound
      */
     @NotNull
     Sound getCelebrationSound();

@@ -3707,9 +3707,17 @@ public interface Sound extends OldEnum<Sound>, Keyed, net.kyori.adventure.sound.
     }
 
     /**
-     * @param name of the sound.
-     * @return the sound with the given name.
-     * @deprecated only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @param name 声音的名称.
+     * <p>原文：of the sound.
+     * @return 具有给定名称的声音.
+     * <p>原文：the sound with the given name.
+     * @deprecated 仅为向后兼容而保留, 请改用 {@link Registry#get(NamespacedKey)}.
+     * <p>
+     * 原文：@param name of the sound.
+     * <p>原文：only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
      */
     @NotNull
     @Deprecated(since = "1.21.3", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils
@@ -3747,8 +3755,15 @@ public interface Sound extends OldEnum<Sound>, Keyed, net.kyori.adventure.sound.
     // Paper end - deprecate getKey
 
     /**
-     * @return an array of all known sounds.
-     * @deprecated use {@link Registry#stream()}.
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @return 所有已知声音的数组.
+     * <p>原文：an array of all known sounds.
+     * @deprecated 请改用 {@link Registry#iterator()}.
+     * <p>
+     * 原文：@return an array of all known sounds.
+     * <p>原文：use {@link Registry#stream()}.
      */
     @NotNull
     @Deprecated(since = "1.21.3", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils

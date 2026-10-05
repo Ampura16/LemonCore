@@ -11,6 +11,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Unmodifiable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 活塞臂推出事件.
+ * <p>原文：
  * Called when a piston extends
  */
 public class BlockPistonExtendEvent extends BlockPistonEvent {
@@ -37,10 +40,17 @@ public class BlockPistonExtendEvent extends BlockPistonEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取被活塞移动的方块数.
+     * <p>原文：
      * Get the amount of blocks which will be moved while extending.
      *
-     * @return the amount of moving blocks
-     * @deprecated slime blocks make the value of this method
+     * @return 被活塞移动的方块数.
+     * <p>原文：the amount of moving blocks
+     * @deprecated 由于史莱姆方块的特性,
+     * 这个方法是不准确的因为它不包含史莱姆方块粘走的方块,
+     * 如MC版本低于1.8请无视此句.
+     * <p>原文：slime blocks make the value of this method
      *          inaccurate due to blocks being pushed at the side
      */
     @Deprecated(since = "1.8")
@@ -49,10 +59,14 @@ public class BlockPistonExtendEvent extends BlockPistonEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取被活塞移动的不可改变的方块列表.
+     * <p>原文：
      * Get an immutable list of the blocks which will be moved by the
      * extending.
      *
-     * @return Immutable list of the moved blocks.
+     * @return 被活塞移动的方块列表.
+     * <p>原文：Immutable list of the moved blocks.
      */
     @NotNull
     @Unmodifiable

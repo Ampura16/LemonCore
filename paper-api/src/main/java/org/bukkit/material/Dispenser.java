@@ -4,6 +4,9 @@ import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表一个发射器。
+ * <p>原文：
  * Represents a dispenser.
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
@@ -26,9 +29,17 @@ public class Dispenser extends FurnaceAndDispenser {
     }
 
     /**
-     * @param type the type
-     * @param data the raw data value
-     * @deprecated Magic value
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @param type 类型
+     * <p>原文：the type
+     * @param data 原始数据值
+     * <p>原文：the raw data value
+     * @deprecated 魔法值
+     * <p>
+     * 原文：Magic value
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.6.2")
     public Dispenser(final Material type, final byte data) {

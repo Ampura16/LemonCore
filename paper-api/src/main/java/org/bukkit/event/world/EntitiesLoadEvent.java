@@ -9,6 +9,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Unmodifiable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当实体将被加载时调用.
+ *
+ * 事件提供的区块可能尚未加载.
+ * <p>原文：
  * Called when entities are loaded.
  * <br>
  * The provided chunk may or may not be loaded.
@@ -26,9 +31,13 @@ public class EntitiesLoadEvent extends ChunkEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取被加载的实体.
+     * <p>原文：
      * Get the entities which are being loaded.
      *
-     * @return unmodifiable list of loaded entities.
+     * @return 被加载的实体的不可变列表
+     * <p>原文：unmodifiable list of loaded entities.
      */
     @NotNull
     public @Unmodifiable List<Entity> getEntities() {

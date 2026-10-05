@@ -9,6 +9,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当一个人类实体的饥饿值发生变化时触发本事件
+ * <p>原文：
  * Called when a human entity's food level changes
  */
 public class FoodLevelChangeEvent extends EntityEvent implements Cancellable {
@@ -40,9 +43,13 @@ public class FoodLevelChangeEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 若存在的话, 返回触发本事件的物品.
+     * <p>原文：
      * Gets the item that triggered this event, if any.
      *
-     * @return an ItemStack for the item being consumed
+     * @return 被吃的食物
+     * <p>原文：an ItemStack for the item being consumed
      */
     @Nullable
     public ItemStack getItem() {
@@ -50,22 +57,32 @@ public class FoodLevelChangeEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取本事件涉及的实体将被设置的饥饿值
+     * <p>
+     * 20为饱和状态，0为饥饿状态.
+     * <p>原文：
      * Gets the resultant food level that the entity involved in this event
      * should be set to.
      * <p>
      * Where 20 is a full food bar and 0 is an empty one.
      *
-     * @return The resultant food level
+     * @return 饥饿值
+     * <p>原文：The resultant food level
      */
     public int getFoodLevel() {
         return this.level;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置实体将被设置的饥饿值
+     * <p>原文：
      * Sets the resultant food level that the entity involved in this event
      * should be set to
      *
-     * @param level the resultant food level that the entity involved in this
+     * @param level 饥饿值
+     * <p>原文：the resultant food level that the entity involved in this
      *     event should be set to
      */
     public void setFoodLevel(int level) {

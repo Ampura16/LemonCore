@@ -9,6 +9,20 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 方块物理事件(例如是沙子掉落、流水).
+ * <br>
+ * 这是一个高频率事件, 在一个繁忙的服务器上, 一秒内本事件可能会触发上千次.
+ * 建议插件小心监听此事件, 当使用本事件时仅执行一些轻量级的检查.
+ * <br>
+ * 另外, 取消此事件可能会使事件陷入一个不合常理的状态(看起来就像世界末日).
+ * 例如, 如果你使用此事件在当该方块需要附着到某个东西上时其使悬浮在半空中, 那么无法保证在服务器重启后或地图更新后
+ * 此悬浮的方块能保持不变 (就是当方块发生物理变化时尝试改变它们会出现一些未知后果的意思, 具体自己测一下啦).
+ * <br>
+ * 插件也应当注意, 在可能的情况下, 该事件可能只会因"根源"方块的物理(状态)更新而被调用以限制事件的频繁调用.
+ * 导致其它方块状态改变的物理更新可能不会引起其它方块(通常是相邻的方块)的事件.
+ * 如果你担忧监听这些改变(可能会产生较大开销), 那么你应该自己检查相邻的方块.
+ * <p>原文：
  * Thrown when a block physics check is called.
  * <p>
  * This event is a high frequency event, it may be called thousands of times per
@@ -55,9 +69,14 @@ public class BlockPhysicsEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取触发本事件的源方块.
+     * 注意:
+     * <p>原文：
      * Gets the source block that triggered this event.
      *
-     * @return The source block
+     * @return 源方块
+     * <p>原文：The source block
      * @apiNote This will default to block if not set.
      */
     @NotNull
@@ -66,10 +85,14 @@ public class BlockPhysicsEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取事件中被改变的方块.
+     * <p>原文：
      * Gets the type of block that changed, causing this event.
      * This is the type of {@link #getBlock()} at the time of the event.
      *
-     * @return Changed block's type
+     * @return 事件中被改变的方块的种类
+     * <p>原文：Changed block's type
      */
     @NotNull
     public Material getChangedType() {

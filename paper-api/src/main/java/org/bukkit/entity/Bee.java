@@ -5,93 +5,148 @@ import org.checkerframework.checker.index.qual.NonNegative;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表蜜蜂.
+ * <p>原文：
  * Represents a Bee.
  */
 public interface Bee extends Animals {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取蜜蜂的家(蜂巢)的位置.
+     * <p>原文：
      * Get the bee's hive location.
      *
-     * @return hive location or null
+     * @return 蜂巢位置或null
+     * <p>原文：hive location or null
      */
     @Nullable
     Location getHive();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置蜜蜂所住蜂巢的位置.
+     * <p>原文：
      * Set the bee's hive location.
      *
-     * @param location or null
+     * @param location 蜂巢位置或null
+     * <p>原文：or null
      */
     void setHive(@Nullable Location location);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取蜜蜂盘旋的花的位置.
+     * <p>原文：
      * Get the bee's flower location.
      *
-     * @return flower location or null
+     * @return 蜜蜂盘旋的花的位置或null
+     * <p>原文：flower location or null
      */
     @Nullable
     Location getFlower();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置蜜蜂盘旋的花的位置.
+     * <p>原文：
      * Set the bee's flower location.
      *
-     * @param location or null
+     * @param location 蜜蜂盘旋的花的位置或null
+     * <p>原文：or null
      */
     void setFlower(@Nullable Location location);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 蜜蜂是否携带花粉.
+     * <p>原文：
      * Get if the bee has nectar.
      *
-     * @return nectar
+     * @return 蜜蜂是否携带花粉.
+     * <p>原文：nectar
      */
     boolean hasNectar();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置蜜蜂是否携带花粉.
+     * <p>原文：
      * Set if the bee has nectar.
      *
-     * @param nectar whether the entity has nectar
+     * @param nectar 蜜蜂是否携带花粉
+     * <p>原文：whether the entity has nectar
      */
     void setHasNectar(boolean nectar);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取蜜蜂是否蜇过玩家或其它生物.
+     * <p>原文：
      * Get if the bee has stung.
      *
-     * @return has stung
+     * @return 蜜蜂是否蜇过玩家或其它生物
+     * <p>原文：has stung
      */
     boolean hasStung();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置蜜蜂是否蜇过玩家或其它生物.
+     * <p>原文：
      * Set if the bee has stung.
      *
-     * @param stung has stung
+     * @param stung 蜜蜂是否蜇过玩家或其它生物
+     * <p>原文：has stung
      */
     void setHasStung(boolean stung);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取蜜蜂的激怒等级.
+     * <p>
+     * 译注:此数值代表蜜蜂平息怒气所需时间, 为0时蜜蜂不再愤怒.
+     * <p>原文：
      * Get the bee's anger level.
      *
-     * @return anger level
+     * @return 激怒等级
+     * <p>原文：anger level
      */
     int getAnger();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置蜜蜂的激怒等级.
+     * <p>
+     * 译注:此数值代表蜜蜂平息怒气所需时间, 为0时蜜蜂不再愤怒.
+     * <p>原文：
      * Set the bee's new anger level.
      *
-     * @param anger new anger
+     * @param anger 激怒等级
+     * <p>原文：new anger
      */
     void setAnger(int anger);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取蜜蜂离其能再次进入蜂巢的剩余时间(以tick计数).
+     * <p>原文：
      * Get the amount of ticks the bee cannot enter the hive for.
      *
-     * @return Ticks the bee cannot enter a hive for
+     * @return 蜜蜂离其能再次进入蜂巢的剩余时间(以tick计数)
+     * <p>原文：Ticks the bee cannot enter a hive for
      */
     int getCannotEnterHiveTicks();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置蜜蜂离其能再次进入蜂巢的剩余时间(以tick计数).
+     * <p>原文：
      * Set the amount of ticks the bee cannot enter a hive for.
      *
-     * @param ticks Ticks the bee cannot enter a hive for
+     * @param ticks 蜜蜂离其能再次进入蜂巢的剩余时间(以tick计数)
+     * <p>原文：Ticks the bee cannot enter a hive for
      */
     void setCannotEnterHiveTicks(int ticks);
 

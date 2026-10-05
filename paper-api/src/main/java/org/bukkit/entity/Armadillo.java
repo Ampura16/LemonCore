@@ -3,6 +3,9 @@ package org.bukkit.entity;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表一只犰狳.
+ * <p>原文：
  * Represents an Armadillo.
  */
 @NullMarked

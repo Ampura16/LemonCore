@@ -21,6 +21,16 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 世界中的三维位置,包含x,y,z.
+ * <br>
+ * 除了角度制只能是以度数为单位的限制外, 不对任何角度值施加任何约束.
+ * 这意味着负的角度值或大于360°的角度值也是有效的, 但可以将它们转化为其它任何等效的表示.
+ * <br>
+ * 译注:yaw和pitch分别代表自转角(又称偏航角)、旋进角(又称进动角、俯仰角).
+ * 两个值一起表示位置的朝向(与向量的概念重合, 本类有很多方法就是与{@link org.bukkit.util.Vector}重合的).
+ * 这里的翻译分别取偏航角、俯仰角. 另请参见util包下的Vector(向量)、EulerAngle(欧拉角).
+ * <p>原文：
  * Represents a 3-dimensional position in a world.
  * <br>
  * No constraints are placed on any angular values other than that they be
@@ -37,26 +47,42 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
     private float yaw;
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 以给定的坐标构造一个Location对象.
+     * <p>原文：
      * Constructs a new Location with the given coordinates
      *
-     * @param world The world in which this location resides
-     * @param x The x-coordinate of this new location
-     * @param y The y-coordinate of this new location
-     * @param z The z-coordinate of this new location
+     * @param world 位置所在世界
+     * <p>原文：The world in which this location resides
+     * @param x 位置x轴坐标
+     * <p>原文：The x-coordinate of this new location
+     * @param y 位置y轴坐标
+     * <p>原文：The y-coordinate of this new location
+     * @param z 位置z轴坐标
+     * <p>原文：The z-coordinate of this new location
      */
     public Location(@UndefinedNullability final World world, final double x, final double y, final double z) {
         this(world, x, y, z, 0, 0);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 以给定的坐标和朝向构造一个Location对象.
+     * <p>原文：
      * Constructs a new Location with the given coordinates and direction
      *
-     * @param world The world in which this location resides
-     * @param x The x-coordinate of this new location
-     * @param y The y-coordinate of this new location
-     * @param z The z-coordinate of this new location
-     * @param yaw The absolute rotation on the x-plane, in degrees
-     * @param pitch The absolute rotation on the y-plane, in degrees
+     * @param world 位置所在世界
+     * <p>原文：The world in which this location resides
+     * @param x 位置x轴坐标
+     * <p>原文：The x-coordinate of this new location
+     * @param y 位置y轴坐标
+     * <p>原文：The y-coordinate of this new location
+     * @param z 位置z轴坐标
+     * <p>原文：The z-coordinate of this new location
+     * @param yaw x轴平面上的绝对的旋转角度, 以度为单位
+     * <p>原文：The absolute rotation on the x-plane, in degrees
+     * @param pitch y轴平面上的绝对的旋转角度, 以度为单位
+     * <p>原文：The absolute rotation on the y-plane, in degrees
      */
     public Location(@UndefinedNullability final World world, final double x, final double y, final double z, final float yaw, final float pitch) {
         if (world != null) {
@@ -71,18 +97,26 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置本位置所在的世界.
+     * <p>原文：
      * Sets the world that this location resides in
      *
-     * @param world New world that this location resides in
+     * @param world 位置所在的新世界
+     * <p>原文：New world that this location resides in
      */
     public void setWorld(@Nullable World world) {
         this.world = (world == null) ? null : new WeakReference<>(world);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查该位置所处世界是否存在并已加载.
+     * <p>原文：
      * Checks if world in this location is present and loaded.
      *
-     * @return true if is loaded, otherwise false
+     * @return true表示已加载
+     * <p>原文：true if is loaded, otherwise false
      */
     public boolean isWorldLoaded() {
         if (this.world == null) {
@@ -94,10 +128,15 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取本位置所在的世界.
+     * <p>原文：
      * Gets the world that this location resides in
      *
-     * @return World that contains this location, or {@code null} if it is not set
-     * @throws IllegalArgumentException when world is unloaded
+     * @return 世界, 若未设置返回null
+     * <p>原文：World that contains this location, or {@code null} if it is not set
+     * @throws IllegalArgumentException 当世界未加载时
+     * <p>原文：when world is unloaded
      * @see #isWorldLoaded()
      */
     @UndefinedNullability
@@ -112,9 +151,13 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此位置位于哪一区块.
+     * <p>原文：
      * Gets the chunk at the represented location
      *
-     * @return Chunk at the represented location
+     * @return 本位置所在区块
+     * <p>原文：Chunk at the represented location
      */
     @NotNull
     public Chunk getChunk() {
@@ -122,9 +165,13 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取本位置对应的方块.
+     * <p>原文：
      * Gets the block at the represented location
      *
-     * @return Block at the represented location
+     * @return 所在位置对应的方块
+     * <p>原文：Block at the represented location
      */
     @NotNull
     public Block getBlock() {
@@ -132,90 +179,137 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置本位置的x轴坐标.
+     * <p>原文：
      * Sets the x-coordinate of this location
      *
-     * @param x X-coordinate
+     * @param x x轴坐标
+     * <p>原文：X-coordinate
      */
     public void setX(double x) {
         this.x = x;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取本位置的x轴坐标.
+     * <p>原文：
      * Gets the x-coordinate of this location
      *
-     * @return x-coordinate
+     * @return x轴坐标
+     * <p>原文：x-coordinate
      */
     public double getX() {
         return x;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取向下取整的x轴坐标, 表示本位置包含的方块.
+     * <p>原文：
      * Gets the floored value of the X component, indicating the block that
      * this location is contained with.
      *
-     * @return block X
+     * @return 方块x轴坐标
+     * <p>原文：block X
      */
     public int getBlockX() {
         return locToBlock(x);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置本位置的y轴坐标.
+     * <p>原文：
      * Sets the y-coordinate of this location
      *
-     * @param y y-coordinate
+     * @param y y轴坐标
+     * <p>原文：y-coordinate
      */
     public void setY(double y) {
         this.y = y;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取本位置的y轴坐标.
+     * <p>原文：
      * Gets the y-coordinate of this location
      *
-     * @return y-coordinate
+     * @return y轴坐标
+     * <p>原文：y-coordinate
      */
     public double getY() {
         return y;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取向下取整的y轴坐标, 表示本位置包含的方块.
+     * <p>原文：
      * Gets the floored value of the Y component, indicating the block that
      * this location is contained with.
      *
-     * @return block y
+     * @return 方块y轴坐标
+     * <p>原文：block y
      */
     public int getBlockY() {
         return locToBlock(y);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置本位置的z坐标轴.
+     * <p>原文：
      * Sets the z-coordinate of this location
      *
-     * @param z z-coordinate
+     * @param z z坐标轴
+     * <p>原文：z-coordinate
      */
     public void setZ(double z) {
         this.z = z;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取本位置的z坐标轴.
+     * <p>原文：
      * Gets the z-coordinate of this location
      *
-     * @return z-coordinate
+     * @return z坐标轴
+     * <p>原文：z-coordinate
      */
     public double getZ() {
         return z;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取向下取整的z轴坐标, 表示本位置包含的方块.
+     * <p>原文：
      * Gets the floored value of the Z component, indicating the block that
      * this location is contained with.
      *
-     * @return block z
+     * @return 方块z轴坐标
+     * <p>原文：block z
      */
     public int getBlockZ() {
         return locToBlock(z);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置本位置的偏航角(yaw), 以度为单位.
+     * <ul>
+     * <li>偏航角为0或360°时表示z轴正方向.
+     * <li>偏航角为180°时表示z轴负方向.
+     * <li>偏航角为90°时表示x轴负方向.
+     * <li>偏航角为270°时表示x轴正方向.
+     * </ul>
+     * 增加偏航角值相当于使你转向右侧,
+     * 增加偏向下一个坐标轴的比例并减少偏向前一个轴的比例.
+     * <p>原文：
      * Sets the yaw of this location, measured in degrees.
      * <ul>
      * <li>A yaw of 0 or 360 represents the positive z direction.
@@ -227,13 +321,25 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * right-facing, increasing the scale of the next respective axis, and
      * decreasing the scale of the previous axis.
      *
-     * @param yaw new rotation's yaw
+     * @param yaw 自转角(偏航角)
+     * <p>原文：new rotation's yaw
      */
     public void setYaw(float yaw) {
         this.yaw = yaw;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取本位置的偏航角(yaw), 以度为单位.
+     * <ul>
+     * <li>偏航角为0或360°时表示z轴正方向.
+     * <li>偏航角为180°时表示z轴负方向.
+     * <li>偏航角为90°时表示x轴负方向.
+     * <li>偏航角为270°时表示x轴正方向.
+     * </ul>
+     * 增加偏航角值相当于使你转向右侧,
+     * 增加偏向下一个坐标轴的比例并减少偏向前一个轴的比例.
+     * <p>原文：
      * Gets the yaw of this location, measured in degrees.
      * <ul>
      * <li>A yaw of 0 or 360 represents the positive z direction.
@@ -245,13 +351,23 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * right-facing, increasing the scale of the next respective axis, and
      * decreasing the scale of the previous axis.
      *
-     * @return the rotation's yaw
+     * @return 自转角(偏航角)
+     * <p>原文：the rotation's yaw
      */
     public float getYaw() {
         return yaw;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置本位置的俯仰角(pitch), 以度为单位.
+     * <ul>
+     * <li>俯仰角为0时表示水平朝向.
+     * <li>俯仰角为90°时表示向下的朝向,或y轴的负方向
+     * <li>俯仰角为-90°时表示向上的朝向,或y轴的正方向
+     * </ul>
+     * 增加俯仰角值相当于俯视的效果.
+     * <p>原文：
      * Sets the pitch of this location, measured in degrees.
      * <ul>
      * <li>A pitch of 0 represents level forward facing.
@@ -261,13 +377,23 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * </ul>
      * Increasing pitch values the equivalent of looking down.
      *
-     * @param pitch new incline's pitch
+     * @param pitch 倾斜角(俯仰角)
+     * <p>原文：new incline's pitch
      */
     public void setPitch(float pitch) {
         this.pitch = pitch;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取本位置的俯仰角(pitch), 以度为单位.
+     * <ul>
+     * <li>俯仰角为0时表示水平朝向.
+     * <li>俯仰角为90°时表示向下的朝向,或y轴的负方向
+     * <li>俯仰角为-90°时表示向上的朝向,或y轴的正方向
+     * </ul>
+     * 增加俯仰角值相当于俯视的效果.
+     * <p>原文：
      * Gets the pitch of this location, measured in degrees.
      * <ul>
      * <li>A pitch of 0 represents level forward facing.
@@ -277,17 +403,23 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * </ul>
      * Increasing pitch values the equivalent of looking down.
      *
-     * @return the incline's pitch
+     * @return 倾斜角(俯仰角)
+     * <p>原文：the incline's pitch
      */
     public float getPitch() {
         return pitch;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取本位置所面向的方向的单位向量.
+     * <p>原文：
      * Gets a unit-vector pointing in the direction that this Location is
      * facing.
      *
-     * @return a vector pointing the direction of this location's {@link
+     * @return 指向此位置的{@link
+     *     #getYaw() 偏航角}和{@link #getPitch() 俯仰角}的向量
+     * <p>原文：a vector pointing the direction of this location's {@link
      *     #getPitch() pitch} and {@link #getYaw() yaw}
      */
     @NotNull
@@ -308,11 +440,16 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将{@link #getYaw() 偏航角}和{@link #getPitch() 俯仰角}设为指向某一向量的方向.
+     * <p>原文：
      * Sets the {@link #getYaw() yaw} and {@link #getPitch() pitch} to point
      * in the direction of the vector.
      *
-     * @param vector the direction vector
-     * @return the same location
+     * @param vector 方向向量
+     * <p>原文：the direction vector
+     * @return 相同的位置对象(不是位置相同,但位置对象相同)
+     * <p>原文：the same location
      */
     @NotNull
     public Location setDirection(@NotNull Vector vector) {
@@ -345,11 +482,17 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将本位置的坐标加上另一个位置的坐标.
+     * <p>原文：
      * Adds the location by another.
      *
-     * @param vec The other location
-     * @return the same location
-     * @throws IllegalArgumentException for differing worlds
+     * @param vec 另一个位置
+     * <p>原文：The other location
+     * @return 相同的位置对象(不是位置相同,但位置对象相同)
+     * <p>原文：the same location
+     * @throws IllegalArgumentException 若两个位置所处世界各不相同
+     * <p>原文：for differing worlds
      * @see Vector
      */
     @NotNull
@@ -365,10 +508,15 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将本位置的坐标加上一个向量的坐标.
+     * <p>原文：
      * Adds the location by a vector.
      *
-     * @param vec Vector to use
-     * @return the same location
+     * @param vec 向量
+     * <p>原文：Vector to use
+     * @return 相同的位置对象(不是位置相同,但位置对象相同)
+     * <p>原文：the same location
      * @see Vector
      */
     @NotNull
@@ -380,12 +528,19 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将本位置的坐标加上另一个位置的坐标. 与位置所处世界无关.
+     * <p>原文：
      * Adds the location by another. Not world-aware.
      *
-     * @param x X coordinate
-     * @param y Y coordinate
-     * @param z Z coordinate
-     * @return the same location
+     * @param x X坐标
+     * <p>原文：X coordinate
+     * @param y Y坐标
+     * <p>原文：Y coordinate
+     * @param z Z坐标
+     * <p>原文：Z coordinate
+     * @return 相同的位置对象(不是位置相同,但位置对象相同)
+     * <p>原文：the same location
      * @see Vector
      */
     @NotNull
@@ -437,11 +592,17 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将本位置的坐标减去另一个位置的坐标.
+     * <p>原文：
      * Subtracts the location by another.
      *
-     * @param vec The other location
-     * @return the same location
-     * @throws IllegalArgumentException for differing worlds
+     * @param vec 另一个位置
+     * <p>原文：The other location
+     * @return 相同的位置对象(不是位置相同,但位置对象相同)
+     * <p>原文：the same location
+     * @throws IllegalArgumentException 若两个位置所处世界各不相同
+     * <p>原文：for differing worlds
      * @see Vector
      */
     @NotNull
@@ -457,10 +618,15 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 从本位置的坐标中减去向量的坐标.
+     * <p>原文：
      * Subtracts the location by a vector.
      *
-     * @param vec The vector to use
-     * @return the same location
+     * @param vec 向量
+     * <p>原文：The vector to use
+     * @return 相同的位置对象(不是位置相同,但位置对象相同)
+     * <p>原文：the same location
      * @see Vector
      */
     @NotNull
@@ -472,13 +638,21 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 从本位置的坐标中减去另一个位置的坐标.
+     * 与位置所处世界无关且其方向角独立不参与运算.
+     * <p>原文：
      * Subtracts the location by another. Not world-aware and
      * orientation independent.
      *
-     * @param x X coordinate
-     * @param y Y coordinate
-     * @param z Z coordinate
-     * @return the same location
+     * @param x X坐标
+     * <p>原文：X coordinate
+     * @param y Y坐标
+     * <p>原文：Y coordinate
+     * @param z Z坐标
+     * <p>原文：Z coordinate
+     * @return 相同的位置对象(不是位置相同,但位置对象相同)
+     * <p>原文：the same location
      * @see Vector
      */
     @NotNull
@@ -519,6 +693,13 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取位置的模值,定义为 sqrt(x^2+y^2+z^2).
+     * 这个方法的返回值没有被缓存,且使用了开销较大的平方以及开根函数,
+     * 所以不要反复调用这个方法来获取向量的模值.
+     * 当向量的模过大时,开根函数有可能发生溢出,并会返回{@link Double#NaN}.
+     * 与位置所处世界无关且其方向角独立不参与运算.
+     * <p>原文：
      * Gets the magnitude of the location, defined as sqrt(x^2+y^2+z^2). The
      * value of this method is not cached and uses a costly square-root
      * function, so do not repeatedly call this method to get the location's
@@ -526,7 +707,8 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * function overflows, which will be caused if the length is too long. Not
      * world-aware and orientation independent.
      *
-     * @return the magnitude
+     * @return 模
+     * <p>原文：the magnitude
      * @see Vector
      */
     public double length() {
@@ -534,10 +716,15 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取位置长度(又称模)的平方 (三个坐标分别平方然后加起来).
+     * 与位置所处世界无关且其方向角独立不参与运算.
+     * <p>原文：
      * Gets the magnitude of the location squared. Not world-aware and
      * orientation independent.
      *
-     * @return the magnitude
+     * @return 模的平方
+     * <p>原文：the magnitude
      * @see Vector
      */
     public double lengthSquared() {
@@ -545,15 +732,24 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取本位置与与另一个位置之间的距离.
+     * 这个方法的返回值没有被缓存,且使用了开销较大的平方以及开根函数,
+     * 所以不要反复调用这个方法来获取位置的模值.
+     * 当位置的距离过大时,开根函数有可能发生溢出,并会返回{@link Double#NaN}.
+     * <p>原文：
      * Get the distance between this location and another. The value of this
      * method is not cached and uses a costly square-root function, so do not
      * repeatedly call this method to get the location's magnitude. NaN will
      * be returned if the inner result of the sqrt() function overflows, which
      * will be caused if the distance is too long.
      *
-     * @param o The other location
-     * @return the distance
-     * @throws IllegalArgumentException for differing worlds
+     * @param o 另一个位置
+     * <p>原文：The other location
+     * @return 距离
+     * <p>原文：the distance
+     * @throws IllegalArgumentException 若两个位置所处世界各不相同
+     * <p>原文：for differing worlds
      * @see Vector
      */
     public double distance(@NotNull Location o) {
@@ -561,11 +757,17 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取本位置与与另一个位置之间的距离的平方.
+     * <p>原文：
      * Get the squared distance between this location and another.
      *
-     * @param o The other location
-     * @return the distance
-     * @throws IllegalArgumentException for differing worlds
+     * @param o 另一个位置
+     * <p>原文：The other location
+     * @return 距离的平方
+     * <p>原文：the distance
+     * @throws IllegalArgumentException 若两个位置所处世界各不相同
+     * <p>原文：for differing worlds
      * @see Vector
      */
     public double distanceSquared(@NotNull Location o) {
@@ -581,11 +783,16 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 坐标数乘, 将所有坐标轴上扩展某个倍数.
+     * <p>原文：
      * Performs scalar multiplication, multiplying all components with a
      * scalar. Not world-aware.
      *
-     * @param m The factor
-     * @return the same location
+     * @param m 因数,即数乘的倍数,整数
+     * <p>原文：The factor
+     * @return 相同的位置对象(不是位置相同,但位置对象相同)
+     * <p>原文：the same location
      * @see Vector
      */
     @NotNull
@@ -597,9 +804,13 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 清零此位置的xyz坐标数值. 与位置所处世界无关.
+     * <p>原文：
      * Zero this location's components. Not world-aware.
      *
-     * @return the same location
+     * @return 相同的位置对象(不是位置相同,但位置对象相同)
+     * <p>原文：the same location
      * @see Vector
      */
     @NotNull
@@ -1138,9 +1349,13 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 基于此位置构造一个新的{@link Vector 向量}.
+     * <p>原文：
      * Constructs a new {@link Vector} based on this Location
      *
-     * @return New Vector containing the coordinates represented by this
+     * @return 包含该位置坐标的向量表示
+     * <p>原文：New Vector containing the coordinates represented by this
      *     Location
      */
     @NotNull
@@ -1159,9 +1374,14 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检测该Location的xyz坐标和偏航角、俯仰角是否合法
+     * (限制的最大值为Double.MAX_VALUE).
+     * <p>原文：
      * Check if each component of this Location is finite.
      *
-     * @throws IllegalArgumentException if any component is not finite
+     * @throws IllegalArgumentException 若有任意一个坐标/角度值不合法时抛出
+     * <p>原文：if any component is not finite
      */
     public void checkFinite() throws IllegalArgumentException {
         NumberConversions.checkFinite(x, "x not finite");
@@ -1172,11 +1392,16 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 把double类型数值(位置坐标)安全地转换为int类型数值(方块坐标).
+     * <p>原文：
      * Safely converts a double (location coordinate) to an int (block
      * coordinate)
      *
-     * @param loc Precise coordinate
-     * @return Block coordinate
+     * @param loc 精确坐标
+     * <p>原文：Precise coordinate
+     * @return 方块坐标
+     * <p>原文：Block coordinate
      */
     public static int locToBlock(double loc) {
         return NumberConversions.floor(loc);
@@ -1203,11 +1428,17 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 实现配置序列化与反序列化所需方法.
+     * <p>原文：
      * Required method for deserialization
      *
-     * @param args map to deserialize
-     * @return deserialized location
-     * @throws IllegalArgumentException if the world don't exists
+     * @param args 需要反序列化的map
+     * <p>原文：map to deserialize
+     * @return 反序列化后的位置
+     * <p>原文：deserialized location
+     * @throws IllegalArgumentException 如果位置所处世界不存在
+     * <p>原文：if the world don't exists
      * @see ConfigurationSerializable
      */
     @NotNull
@@ -1224,11 +1455,18 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将给定的偏航角归一化至<code>+/-180</code>范围内.
+     * <p>
+     * 译注:比如角度值的绝对值大于180, 用此方法可使角度的绝对值在0-180以内.
+     * <p>原文：
      * Normalizes the given yaw angle to a value between <code>+/-180</code>
      * degrees.
      *
-     * @param yaw the yaw in degrees
-     * @return the normalized yaw in degrees
+     * @param yaw 偏航角, 使用角度制
+     * <p>原文：the yaw in degrees
+     * @return 标准化的偏航角, 使用角度制
+     * <p>原文：the normalized yaw in degrees
      * @see Location#getYaw()
      */
     public static float normalizeYaw(float yaw) {
@@ -1242,11 +1480,18 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将给定的俯仰角归一化至<code>+/-180</code>范围内.
+     * <p>
+     * 译注:比如角度值的绝对值大于180, 用此方法可使角度的绝对值在0-180以内.
+     * <p>原文：
      * Normalizes the given pitch angle to a value between <code>+/-90</code>
      * degrees.
      *
-     * @param pitch the pitch in degrees
-     * @return the normalized pitch in degrees
+     * @param pitch 俯仰角, 使用角度制
+     * <p>原文：the pitch in degrees
+     * @return 标准化的俯仰角, 使用角度制
+     * <p>原文：the normalized pitch in degrees
      * @see Location#getPitch()
      */
     public static float normalizePitch(float pitch) {

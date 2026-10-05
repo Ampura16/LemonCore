@@ -9,6 +9,11 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当 {@link Villager} 即将补充其交易之一时调用。
+ * <p>
+ * 如果此事件通过，村民将把受影响的 {@link #getRecipe() MerchantRecipe} 的 {@link MerchantRecipe#getUses() uses} 重置为 <code>0</code>。
+ * <p>原文：
  * Called when a {@link Villager} is about to restock one of its trades.
  * <p>
  * If this event passes, the villager will reset the
@@ -35,9 +40,13 @@ public class VillagerReplenishTradeEvent extends EntityEvent implements Cancella
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取要补充的配方。
+     * <p>原文：
      * Get the recipe to replenish.
      *
-     * @return the replenished recipe
+     * @return 补充的配方
+     * <p>原文：the replenished recipe
      */
     @NotNull
     public MerchantRecipe getRecipe() {
@@ -45,19 +54,28 @@ public class VillagerReplenishTradeEvent extends EntityEvent implements Cancella
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置要补充的配方。
+     * <p>原文：
      * Set the recipe to replenish.
      *
-     * @param recipe the replenished recipe
+     * @param recipe 补充的配方
+     * <p>原文：the replenished recipe
      */
     public void setRecipe(@NotNull MerchantRecipe recipe) {
         this.recipe = recipe;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取添加的额外使用次数。
+     * <p>原文：
      * Get the bonus uses added.
      *
-     * @return the extra uses added
-     * @deprecated MC 1.14 has changed how villagers restock their trades. Use
+     * @return 添加的额外使用次数
+     * <p>原文：the extra uses added
+     * @deprecated MC 1.14 改变了村民补充交易的方式。使用 {@link MerchantRecipe#getUses()}。
+     * <p>原文：MC 1.14 has changed how villagers restock their trades. Use
      * {@link MerchantRecipe#getUses()}.
      */
     @Deprecated(since = "1.18.1")
@@ -66,10 +84,15 @@ public class VillagerReplenishTradeEvent extends EntityEvent implements Cancella
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置添加的额外使用次数。
+     * <p>原文：
      * Set the bonus uses added.
      *
-     * @param bonus the extra uses added
-     * @deprecated MC 1.14 has changed how villagers restock their trades. This
+     * @param bonus 添加的额外使用次数
+     * <p>原文：the extra uses added
+     * @deprecated MC 1.14 改变了村民补充交易的方式。这不再有效。
+     * <p>原文：MC 1.14 has changed how villagers restock their trades. This
      * has no effect anymore.
      */
     @Deprecated(since = "1.18.1")

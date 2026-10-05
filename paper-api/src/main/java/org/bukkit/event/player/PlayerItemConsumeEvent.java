@@ -11,6 +11,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当玩家消耗完物品时, 此事件将触发 例如:(食物, 药水, 牛奶桶).
+ * <br>
+ * 如果修改了ItemStack，服务器将使用新ItemStack的效果，而不是从玩家的背包中删除原始ItemStack。
+ * <br>
+ * 如果事件被取消，则不会应用效果，并且不会从玩家的背包中删除该ItemStack。
+ * <p>原文：
  * This event will fire when a player is finishing consuming an item (food,
  * potion, milk bucket).
  * <br>
@@ -30,6 +37,14 @@ public class PlayerItemConsumeEvent extends PlayerEvent implements Cancellable {
 
     private boolean cancelled;
 
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @param player 正在消耗物品的玩家
+     * @param item   将要被消耗掉的物品
+     * @param hand   使用的手
+     */
     @ApiStatus.Internal
     public PlayerItemConsumeEvent(@NotNull final Player player, @NotNull final ItemStack item, @NotNull final EquipmentSlot hand) {
         super(player);
@@ -38,6 +53,14 @@ public class PlayerItemConsumeEvent extends PlayerEvent implements Cancellable {
         this.hand = hand;
     }
 
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @param player 正在消耗物品的玩家
+     * @param item   将要被消耗掉的物品
+     * @deprecated 请使用 {@link #PlayerItemConsumeEvent(Player, ItemStack, EquipmentSlot)}
+     */
     @ApiStatus.Internal
     @Deprecated(since = "1.19.2", forRemoval = true)
     public PlayerItemConsumeEvent(@NotNull final Player player, @NotNull final ItemStack item) {
@@ -45,11 +68,16 @@ public class PlayerItemConsumeEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取正在被消耗掉的ItemStack.
+     * 修改本方法返回的ItemStack将无效，你必须使用 {@link #setItem(org.bukkit.inventory.ItemStack)} 方法来取代.
+     * <p>原文：
      * Gets the item that is being consumed. Modifying the returned item will
      * have no effect, you must use {@link
      * #setItem(org.bukkit.inventory.ItemStack)} instead.
      *
-     * @return an ItemStack for the item being consumed
+     * @return 正在被消耗掉的 {@link ItemStack} .
+     * <p>原文：an ItemStack for the item being consumed
      */
     @NotNull
     public ItemStack getItem() {
@@ -57,9 +85,13 @@ public class PlayerItemConsumeEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置正在被消耗掉的ItemStack
+     * <p>原文：
      * Set the item being consumed
      *
-     * @param item the item being consumed
+     * @param item 正在被消耗掉的ItemStack
+     * <p>原文：the item being consumed
      */
     public void setItem(@Nullable ItemStack item) {
         if (item == null) {
@@ -70,9 +102,13 @@ public class PlayerItemConsumeEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取用于消耗物品的手.
+     * <p>原文：
      * Get the hand used to consume the item.
      *
-     * @return the hand
+     * @return 使用的手
+     * <p>原文：the hand
      */
     @NotNull
     public EquipmentSlot getHand() {

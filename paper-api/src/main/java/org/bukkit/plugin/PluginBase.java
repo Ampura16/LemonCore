@@ -4,6 +4,11 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Locale;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 表示一个基础的 {@link Plugin}.
+ * <p>
+ * 如果你的插件不是 {@link org.bukkit.plugin.java.JavaPlugin}，请扩展此类。
+ * <p>原文：
  * Represents a base {@link Plugin}
  * <p>
  * Extend this class if your plugin is not a {@link

@@ -9,6 +9,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当链接列表发送给玩家时触发.
+ * <p>原文：
  * This event is called when the list of links is sent to the player.
  */
 @ApiStatus.Experimental
@@ -35,9 +38,13 @@ public class PlayerLinksSendEvent extends Event {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取要发送的链接以进行修改.
+     * <p>原文：
      * Gets the links to be sent, for modification.
      *
-     * @return the links
+     * @return 链接
+     * <p>原文：the links
      */
     @NotNull
     public ServerLinks getLinks() {

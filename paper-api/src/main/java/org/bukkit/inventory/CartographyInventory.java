@@ -1,6 +1,9 @@
 package org.bukkit.inventory;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 制图台的物品栏接口.
+ * <p>原文：
  * Interface to the inventory of a Cartography table.
  */
 public interface CartographyInventory extends Inventory {

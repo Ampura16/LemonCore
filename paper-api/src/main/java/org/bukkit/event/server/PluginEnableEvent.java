@@ -6,6 +6,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当一个插件被启用时调用.
+ * <p>原文：
  * Called when a plugin is enabled.
  */
 public class PluginEnableEvent extends PluginEvent {

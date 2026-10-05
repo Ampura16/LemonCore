@@ -3,6 +3,10 @@ package org.bukkit.entity;
 import org.bukkit.Location;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 这是海豚~
+ */
 public interface Dolphin extends Ageable, WaterMob {
 
     /**

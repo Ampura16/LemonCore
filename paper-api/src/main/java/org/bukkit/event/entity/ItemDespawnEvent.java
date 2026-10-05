@@ -8,6 +8,12 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当{@link org.bukkit.entity.Item 掉落物}存在时间超过5分钟后被移除时触发本事件
+ * (注:掉落物存在时间因服务器配置和安装的插件而异).
+ * <p>
+ * 取消本事件将使掉落物可继续存留5分钟. 服务器不对这一表现(规律)作担保, 未来的版本或存变数.
+ * <p>原文：
  * This event is called when a {@link org.bukkit.entity.Item} is removed from
  * the world because it has existed for 5 minutes.
  * <p>
@@ -28,6 +34,12 @@ public class ItemDespawnEvent extends EntityEvent implements Cancellable {
         this.location = location;
     }
 
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回这个事件所涉及的实体.
+     *
+     * @return 参与此事件的实体
+     */
     @NotNull
     @Override
     public Item getEntity() {
@@ -35,9 +47,13 @@ public class ItemDespawnEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取物品消失的位置.
+     * <p>原文：
      * Gets the location at which the item is despawning.
      *
-     * @return The location at which the item is despawning
+     * @return 将消失的掉落物的位置
+     * <p>原文：The location at which the item is despawning
      */
     @NotNull
     public Location getLocation() {

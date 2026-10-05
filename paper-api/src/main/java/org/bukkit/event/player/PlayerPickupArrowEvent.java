@@ -7,6 +7,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当玩家从地上捡起箭时触发本事件.
+ * <p>原文：
  * Thrown when a player picks up an arrow from the ground.
  */
 public class PlayerPickupArrowEvent extends PlayerPickupItemEvent {
@@ -20,9 +23,13 @@ public class PlayerPickupArrowEvent extends PlayerPickupItemEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家捡起的箭.
+     * <p>原文：
      * Get the arrow being picked up by the player
      *
-     * @return The arrow being picked up
+     * @return 被捡起的箭
+     * <p>原文：The arrow being picked up
      */
     @NotNull
     public AbstractArrow getArrow() {

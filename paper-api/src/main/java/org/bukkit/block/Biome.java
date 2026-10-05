@@ -158,9 +158,13 @@ public interface Biome extends OldEnum<Biome>, Keyed, net.kyori.adventure.transl
     // End generate - Biome
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 自定义生物群系
+     * <p>原文：
      * Represents a custom Biome
      *
-     * @deprecated Biome is no longer an enum, custom biomes will have their own biome instance.
+     * @deprecated Biome不再是枚举, 自定义生物群系将拥有自己的biome实例.
+     * <p>原文：Biome is no longer an enum, custom biomes will have their own biome instance.
      */
     @Deprecated(since = "1.21.3", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils
     Biome CUSTOM = InternalAPIBridge.get().constructLegacyCustomBiome();
@@ -171,9 +175,15 @@ public interface Biome extends OldEnum<Biome>, Keyed, net.kyori.adventure.transl
     }
 
     /**
-     * @param name of the biome.
-     * @return the biome with the given name.
-     * @deprecated only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @param name 生物群系的名称.
+     * <p>原文：of the biome.
+     * @return 具有给定名称的生物群系.
+     * <p>原文：the biome with the given name.
+     * @deprecated 仅为向后兼容, 请改用{@link Registry#get(NamespacedKey)}.
+     * <p>原文：only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
      */
     @NotNull
     @Deprecated(since = "1.21.3", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils
@@ -189,8 +199,13 @@ public interface Biome extends OldEnum<Biome>, Keyed, net.kyori.adventure.transl
     }
 
     /**
-     * @return an array of all known biomes.
-     * @deprecated use {@link Registry#stream()}.
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @return 所有已知生物群系的数组.
+     * <p>原文：an array of all known biomes.
+     * @deprecated 请改用{@link Registry#iterator()}.
+     * <p>原文：use {@link Registry#stream()}.
      */
     @NotNull
     @Deprecated(since = "1.21.3", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils

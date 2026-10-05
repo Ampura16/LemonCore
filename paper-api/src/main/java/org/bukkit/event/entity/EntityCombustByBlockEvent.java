@@ -7,6 +7,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当方块造成实体燃烧时触发该事件.
+ * <p>原文：
  * Called when a block causes an entity to combust.
  */
 public class EntityCombustByBlockEvent extends EntityCombustEvent {
@@ -26,11 +29,21 @@ public class EntityCombustByBlockEvent extends EntityCombustEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 造成燃烧的可以是岩浆或者一个着火的方块.
+     * <p>
+     * 警告: 这个方块可能为null.
+     * <p>原文：
      * The combuster can be lava or a block that is on fire.
      * <p>
      * WARNING: block may be {@code null}.
      *
-     * @return the Block that set the combustee alight.
+     * @return 使实体燃烧的方块
+     * 原文:
+     * The combuster can be lava or a block that is on fire.
+     * <p>
+     * WARNING: block may be null.
+     * <p>原文：the Block that set the combustee alight.
      */
     @Nullable
     public Block getCombuster() {

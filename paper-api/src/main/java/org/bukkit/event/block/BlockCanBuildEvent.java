@@ -10,6 +10,15 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当我们尝试建造一个方块的时候，可以检测我们是否可以在此建造它。
+ * <p>
+ * 注意:
+ * <ul>
+ * <li>getBlock()返回的方块是我们正试图放置在其上面的方块,不是我们试图放置的方块。
+ * <li>如果你想知道玩家放置的是什么方块, 用 {@link #getMaterial()}  来代替.
+ * </ul>
+ * <p>原文：
  * Called when we try to place a block, to see if we can build it here or not.
  * <p>
  * Note:
@@ -35,6 +44,15 @@ public class BlockCanBuildEvent extends BlockEvent {
         this(block, null, type, canBuild, org.bukkit.inventory.EquipmentSlot.HAND); // Paper - expose hand
     }
 
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @param block 这个事件涉及的方块
+     * @param player 正放置此方块的玩家
+     * @param type 要放置的方块的类型
+     * @param canBuild 是否可以建造
+     */
     @Deprecated(forRemoval = true)
     @ApiStatus.Internal
     public BlockCanBuildEvent(@NotNull final Block block, @Nullable final Player player, @NotNull final BlockData type, final boolean canBuild) {
@@ -51,11 +69,17 @@ public class BlockCanBuildEvent extends BlockEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获得放置这个方块的玩家.
+     * <br>
+     * 旧版本中这可能为null.
+     * <p>原文：
      * Gets the player who placed the block involved in this event.
      * <br>
      * May be {@code null} for legacy calls of the event.
      *
-     * @return The Player who placed the block involved in this event
+     * @return 放置这个方块的玩家
+     * <p>原文：The Player who placed the block involved in this event
      */
     @Nullable
     public Player getPlayer() {
@@ -63,9 +87,13 @@ public class BlockCanBuildEvent extends BlockEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取我们试图放置的方块的种类.
+     * <p>原文：
      * Gets the Material that we are trying to place.
      *
-     * @return The Material that we are trying to place
+     * @return 我们试图放置的方块的种类
+     * <p>原文：The Material that we are trying to place
      */
     @NotNull
     public Material getMaterial() {
@@ -73,9 +101,13 @@ public class BlockCanBuildEvent extends BlockEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取我们想要放置的方块的BlockData数据.
+     * <p>原文：
      * Gets the BlockData that we are trying to place.
      *
-     * @return The BlockData that we are trying to place
+     * @return 尝试放置的方块的BlockData数据
+     * <p>原文：The BlockData that we are trying to place
      */
     @NotNull
     public BlockData getBlockData() {
@@ -93,21 +125,31 @@ public class BlockCanBuildEvent extends BlockEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取是否可以在此建造此方块.
+     * <p>
+     * 默认情况下, 是否可以在此建造返回的是 Minecraft 的值.
+     * <p>原文：
      * Gets whether the block can be built here.
      * <p>
      * By default, returns Minecraft's answer on whether the block can be
      * built here or not.
      *
-     * @return boolean whether the block can be built
+     * @return boolean 此方块是否可以在此建造
+     * <p>原文：boolean whether the block can be built
      */
     public boolean isBuildable() {
         return this.buildable;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此方块是否可以在此建造.
+     * <p>原文：
      * Sets whether the block can be built here or not.
      *
-     * @param cancel {@code true} if you want to allow the block to be built here
+     * @param cancel 允许建造则为true, 无论 Minecraft 的默认行为是什么
+     * <p>原文：{@code true} if you want to allow the block to be built here
      *     despite Minecraft's default behaviour
      */
     public void setBuildable(boolean cancel) {

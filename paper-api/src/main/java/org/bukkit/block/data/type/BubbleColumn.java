@@ -3,22 +3,33 @@ package org.bukkit.block.data.type;
 import org.bukkit.block.data.BlockData;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 'drag' 值表示是否存在应用到实体上的力将其移向该方块.
+ * <p>原文：
  * 'drag' indicates whether a force will be applied on entities moving through
  * this block.
  */
 public interface BubbleColumn extends BlockData {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取 'drag' 属性的值.
+     * <p>原文：
      * Gets the value of the 'drag' property.
      *
-     * @return the 'drag' value
+     * @return 属性 'drag' 的值
+     * <p>原文：the 'drag' value
      */
     boolean isDrag();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置 'drag' 属性的值.
+     * <p>原文：
      * Sets the value of the 'drag' property.
      *
-     * @param drag the new 'drag' value
+     * @param drag 新的 'drag' 属性值
+     * <p>原文：the new 'drag' value
      */
     void setDrag(boolean drag);
 

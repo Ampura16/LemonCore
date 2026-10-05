@@ -10,6 +10,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当玩家游戏模式发生变化时调用此事件.
+ * <p>原文：
  * Called when the GameMode of the player is changed.
  * <p>
  * <b>NOTE:</b> When {@link #getCause()} is {@link Cause#DEFAULT_GAMEMODE},
@@ -42,9 +45,13 @@ public class PlayerGameModeChangeEvent extends PlayerEvent implements Cancellabl
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家切换后的游戏模式.
+     * <p>原文：
      * Gets the GameMode the player is switched to.
      *
-     * @return  player's new GameMode
+     * @return 新游戏模式
+     * <p>原文：player's new GameMode
      */
     @NotNull
     public GameMode getNewGameMode() {

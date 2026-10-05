@@ -7,6 +7,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 雷暴天气切换事件.
+ * <p>原文：
  * Stores data for thunder state changing in a world
  */
 public class ThunderChangeEvent extends WeatherEvent implements Cancellable {
@@ -32,9 +35,13 @@ public class ThunderChangeEvent extends WeatherEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取世界是否正切换至雷暴天气.
+     * <p>原文：
      * Gets the state of thunder that the world is being set to
      *
-     * @return {@code true} if the weather is being set to thundering, {@code false} otherwise
+     * @return true 代表世界将切换至雷暴天气, false 反之
+     * <p>原文：{@code true} if the weather is being set to thundering, {@code false} otherwise
      */
     public boolean toThunderState() {
         return this.newThunderState;

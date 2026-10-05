@@ -11,6 +11,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当一个实体死亡时触发本事件
+ * <p>原文：
  * Thrown whenever a LivingEntity dies
  */
 public class EntityDeathEvent extends EntityEvent implements Cancellable {
@@ -50,9 +53,13 @@ public class EntityDeathEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取造成此实体死亡的伤害来源.
+     * <p>原文：
      * Gets the source of damage which caused the death.
      *
-     * @return a DamageSource detailing the source of the damage for the death.
+     * @return 造成此实体死亡的伤害来源
+     * <p>原文：a DamageSource detailing the source of the damage for the death.
      */
     @NotNull
     public DamageSource getDamageSource() {
@@ -60,33 +67,49 @@ public class EntityDeathEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回这个死亡的实体掉落的经验数量.
+     * <p>
+     * 这不表明这个实体有多少经验值,而是它死亡时应该被创建多少掉落的经验值.
+     * <p>原文：
      * Gets how much EXP should be dropped from this death.
      * <p>
      * This does not indicate how much EXP should be taken from the entity in
      * question, merely how much should be created after its death.
      *
-     * @return Amount of EXP to drop.
+     * @return 返回掉落的经验值数量
+     * <p>原文：Amount of EXP to drop.
      */
     public int getDroppedExp() {
         return this.dropExp;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置这个实体死亡所掉落的经验值数量.
+     * <p>
+     * 这不表明这个实体有多少经验值,而是它死亡时应该被创建多少掉落的经验值.
+     * <p>原文：
      * Sets how much EXP should be dropped from this death.
      * <p>
      * This does not indicate how much EXP should be taken from the entity in
      * question, merely how much should be created after its death.
      *
-     * @param exp Amount of EXP to drop.
+     * @param exp 掉落的经验值的数量
+     * <p>原文：Amount of EXP to drop.
      */
     public void setDroppedExp(int exp) {
         this.dropExp = exp;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回这实体死亡掉落物品的集合.
+     * <p>原文：
      * Gets all the items which will drop when the entity dies
      *
-     * @return Items to drop when the entity dies
+     * @return 死亡时所掉落的所有物品
+     * <p>原文：Items to drop when the entity dies
      */
     @NotNull
     public List<ItemStack> getDrops() {

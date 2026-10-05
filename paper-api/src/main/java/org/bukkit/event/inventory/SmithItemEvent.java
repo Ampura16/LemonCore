@@ -6,6 +6,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当物品的配方在锻造台内完成时调用。
+ * <p>原文：
  * Called when the recipe of an Item is completed inside a smithing table.
  */
 public class SmithItemEvent extends InventoryClickEvent {

@@ -7,6 +7,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 天气改变事件
+ * <p>原文：
  * Stores data for weather changing in a world
  */
 public class WeatherChangeEvent extends WeatherEvent implements Cancellable {
@@ -32,9 +35,13 @@ public class WeatherChangeEvent extends WeatherEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取世界是否将要下雨/雪.
+     * <p>原文：
      * Gets the state of weather that the world is being set to
      *
-     * @return {@code true} if the weather is being set to raining, {@code false} otherwise
+     * @return true 代表世界将下雨/雪，false 反之
+     * <p>原文：{@code true} if the weather is being set to raining, {@code false} otherwise
      */
     public boolean toWeatherState() {
         return this.newWeatherState;

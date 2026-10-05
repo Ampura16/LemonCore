@@ -15,6 +15,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 成功附魔物品的事件 (在附魔台里面附魔的)
+ * <p>原文：
  * Called when an ItemStack is successfully enchanted (currently at
  * enchantment table)
  */
@@ -47,9 +50,13 @@ public class EnchantItemEvent extends InventoryEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取附魔这个物品的玩家。
+     * <p>原文：
      * Gets the player enchanting the item
      *
-     * @return enchanting player
+     * @return 附魔这个物品的玩家
+     * <p>原文：enchanting player
      */
     @NotNull
     public Player getEnchanter() {
@@ -57,9 +64,13 @@ public class EnchantItemEvent extends InventoryEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取附魔这个物品的方块。
+     * <p>原文：
      * Gets the block being used to enchant the item
      *
-     * @return the block used for enchanting
+     * @return 附魔这个物品的方块
+     * <p>原文：the block used for enchanting
      */
     @NotNull
     public Block getEnchantBlock() {
@@ -67,9 +78,13 @@ public class EnchantItemEvent extends InventoryEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取被附魔的物品(可改动).
+     * <p>原文：
      * Gets the item to be enchanted (can be modified)
      *
-     * @return ItemStack of item
+     * @return 被附魔的物品
+     * <p>原文：ItemStack of item
      */
     @NotNull
     public ItemStack getItem() {
@@ -84,20 +99,28 @@ public class EnchantItemEvent extends InventoryEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取花费的经验等级(最低), 这个等级以数字形式显示在附魔台界面中附魔选项的右侧.
+     * <p>原文：
      * Gets the cost (minimum level) which is displayed as a number on the right
      * hand side of the enchantment offer.
      *
-     * @return experience level cost
+     * @return 花费的经验等级
+     * <p>原文：experience level cost
      */
     public int getExpLevelCost() {
         return this.level;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置花费的经验等级(最低), 这个等级以数字形式显示在附魔台界面中附魔选项的右侧.
+     * <p>原文：
      * Sets the cost (minimum level) which is displayed as a number on the right
      * hand side of the enchantment offer.
      *
-     * @param level cost in levels
+     * @param level - 花费的经验等级
+     * <p>原文：cost in levels
      */
     public void setExpLevelCost(int level) {
         Preconditions.checkArgument(level > 0, "The cost must be greater than 0!");
@@ -106,11 +129,16 @@ public class EnchantItemEvent extends InventoryEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取被加到物品中的附魔的Map (等级, 附魔种类)（若要修改请直接修改Map） . 注意: 不能被添加
+     * 到物品中的附魔会被忽略哦。
+     * <p>原文：
      * Get map of enchantment (levels, keyed by type) to be added to item
      * (modify map returned to change values). Note: Any enchantments not
      * allowed for the item will be ignored
      *
-     * @return map of enchantment levels, keyed by enchantment
+     * @return 被加到物品中的附魔的Map (等级, 附魔种类)
+     * <p>原文：map of enchantment levels, keyed by enchantment
      */
     @NotNull
     public Map<Enchantment, Integer> getEnchantsToAdd() {
@@ -118,10 +146,14 @@ public class EnchantItemEvent extends InventoryEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取在选中的附魔选项中作为提示显示给玩家的 {@link Enchantment}.
+     * <p>原文：
      * Get the {@link Enchantment} that was displayed as a hint to the player
      * on the selected enchantment offer.
      *
-     * @return the hinted enchantment
+     * @return 提示的附魔
+     * <p>原文：the hinted enchantment
      */
     @NotNull
     public Enchantment getEnchantmentHint() {
@@ -129,19 +161,27 @@ public class EnchantItemEvent extends InventoryEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取在选中的附魔选项中作为提示显示给玩家的附魔等级.
+     * <p>原文：
      * Get the level of the enchantment that was displayed as a hint to the
      * player on the selected enchantment offer.
      *
-     * @return the level of the hinted enchantment
+     * @return 提示的附魔等级
+     * <p>原文：the level of the hinted enchantment
      */
     public int getLevelHint() {
         return this.levelHint;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家点击的附魔的按钮。
+     * <p>原文：
      * Which button was pressed to initiate the enchanting.
      *
-     * @return The button index (0, 1, or 2).
+     * @return 按钮的序号 (0, 1, 2).
+     * <p>原文：The button index (0, 1, or 2).
      */
     public int whichButton() {
         return this.button;

@@ -11,6 +11,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Unmodifiable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当{@link Raid 袭击}以一个清晰的结果结束时触发本事件.
+ * <p>原文：
  * This event is called when a {@link Raid} was complete with a clear result.
  */
 public class RaidFinishEvent extends RaidEvent {
@@ -26,12 +29,18 @@ public class RaidFinishEvent extends RaidEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回包含了所有赢家的不可变列表.
+     * <br>
+     * 注意:被认定为英雄的玩家最终不在线的话将不会包括在此列表内.
+     * <p>原文：
      * Returns an immutable list contains all winners.
      * <br>
      * <b>Note: Players who are considered as heroes but were not online at the
      * end would not be included in this list.</b>
      *
-     * @return the winners
+     * @return 所有赢家
+     * <p>原文：the winners
      */
     @NotNull
     public @Unmodifiable List<Player> getWinners() {

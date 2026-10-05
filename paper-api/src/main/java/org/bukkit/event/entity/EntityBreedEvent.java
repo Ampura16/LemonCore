@@ -10,6 +10,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当一个实体与另一个实体交配繁殖时触发本事件.
+ * <p>原文：
  * Called when one Entity breeds with another Entity.
  */
 public class EntityBreedEvent extends EntityEvent implements Cancellable {
@@ -42,9 +45,13 @@ public class EntityBreedEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取繁殖此实体的母实体.
+     * <p>原文：
      * Gets the parent creating this entity.
      *
-     * @return The "birth" parent
+     * @return 母实体
+     * <p>原文：The "birth" parent
      */
     @NotNull
     public LivingEntity getMother() {
@@ -52,9 +59,13 @@ public class EntityBreedEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此新生实体的父实体.
+     * <p>原文：
      * Gets the other parent of the newly born entity.
      *
-     * @return the other parent
+     * @return 父实体
+     * <p>原文：the other parent
      */
     @NotNull
     public LivingEntity getFather() {
@@ -62,10 +73,14 @@ public class EntityBreedEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取引起此次繁殖事件的实体. 如果繁殖是因自然或自发受精而起则为 null.
+     * <p>原文：
      * Gets the Entity responsible for breeding. Breeder is {@code null} for spontaneous
      * conception.
      *
-     * @return The Entity who initiated breeding.
+     * @return 引起此次繁殖的实体
+     * <p>原文：The Entity who initiated breeding.
      */
     @Nullable
     public LivingEntity getBreeder() {
@@ -73,9 +88,13 @@ public class EntityBreedEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取用于引起此次繁殖的物品 (若存在).
+     * <p>原文：
      * The ItemStack that was used to initiate breeding, if present.
      *
-     * @return ItemStack used to initiate breeding.
+     * @return 用于引起此次繁殖的物品
+     * <p>原文：ItemStack used to initiate breeding.
      */
     @Nullable
     public ItemStack getBredWith() {
@@ -83,18 +102,26 @@ public class EntityBreedEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此次繁殖授予玩家的经验数量.
+     * <p>原文：
      * Get the amount of experience granted by breeding.
      *
-     * @return experience amount
+     * @return 经验
+     * <p>原文：experience amount
      */
     public int getExperience() {
         return this.experience;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此次繁殖授予玩家的经验数量.
+     * <p>原文：
      * Set the amount of experience granted by breeding.
      *
-     * @param experience experience amount
+     * @param experience 经验
+     * <p>原文：experience amount
      */
     public void setExperience(int experience) {
         Preconditions.checkArgument(experience >= 0, "Experience cannot be negative");

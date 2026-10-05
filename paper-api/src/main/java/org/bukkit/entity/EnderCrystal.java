@@ -4,6 +4,9 @@ import org.bukkit.Location;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 一个末影水晶，能治疗附近的末影龙
+ * <p>原文：
  * A crystal that heals nearby EnderDragons
  */
 public interface EnderCrystal extends Entity {

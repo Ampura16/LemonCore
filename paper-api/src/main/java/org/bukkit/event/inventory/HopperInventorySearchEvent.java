@@ -9,6 +9,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 每次漏斗尝试查找其源/附加容器时调用的事件。
+ * <p>原文：
  * Event that gets called each time a Hopper attempts to find its
  * source/attached containers.
  */
@@ -23,12 +26,22 @@ public class HopperInventorySearchEvent extends BlockEvent {
     public enum ContainerType {
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 漏斗正在寻找的源容器。
+         *
+         * 这是漏斗上方的物品栏，漏斗从中提取物品。
+         * <p>原文：
          * The source container the hopper is looking for.
          *
          * This is the Inventory above the Hopper where it extracts items from.
          */
         SOURCE,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 漏斗所附加的容器。
+         *
+         * 这是漏斗将物品推入的物品栏。
+         * <p>原文：
          * The container the hopper is attached to.
          *
          * This is the Inventory the Hopper pushes items into.
@@ -45,20 +58,32 @@ public class HopperInventorySearchEvent extends BlockEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置漏斗将用于其源/附加容器的 {@link Inventory}。
+     * <p>原文：
      * Set the {@link Inventory} that the Hopper will use for its
      * source/attached Container.
      *
-     * @param inventory the inventory to use
+     * @param inventory 要使用的物品栏
+     * <p>原文：Set the {@link Inventory} that the Hopper will use for its
+     * source/attached Container.
+     * <p>原文：the inventory to use
      */
     public void setInventory(@Nullable Inventory inventory) {
         this.inventory = inventory;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取漏斗将用于其源/附加容器的 {@link Inventory}。
+     * <p>原文：
      * Gets the {@link Inventory} that the Hopper will use for its
      * source/attached Container.
      *
-     * @return the inventory which will be used
+     * @return 将被使用的物品栏
+     * <p>原文：Gets the {@link Inventory} that the Hopper will use for its
+     * source/attached Container.
+     * <p>原文：the inventory which will be used
      */
     @Nullable
     public Inventory getInventory() {
@@ -66,9 +91,14 @@ public class HopperInventorySearchEvent extends BlockEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取漏斗正在搜索的容器类型。
+     * <p>原文：
      * Gets the Container type the Hopper is searching for.
      *
-     * @return the container type being searched for
+     * @return 正在搜索的容器类型
+     * <p>原文：Gets the Container type the Hopper is searching for.
+     * <p>原文：the container type being searched for
      */
     @NotNull
     public ContainerType getContainerType() {
@@ -76,9 +106,14 @@ public class HopperInventorySearchEvent extends BlockEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取正在被搜索物品栏的方块。
+     * <p>原文：
      * Gets the Block that is being searched for an inventory.
      *
-     * @return block being searched for an inventory
+     * @return 正在被搜索物品栏的方块
+     * <p>原文：Gets the Block that is being searched for an inventory.
+     * <p>原文：block being searched for an inventory
      */
     @NotNull
     public Block getSearchBlock() {

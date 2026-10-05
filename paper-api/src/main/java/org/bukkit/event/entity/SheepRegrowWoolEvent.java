@@ -7,6 +7,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当羊身上的羊毛重新长出时触发本事件.
+ * <p>原文：
  * Called when a sheep regrows its wool
  */
 public class SheepRegrowWoolEvent extends EntityEvent implements Cancellable {

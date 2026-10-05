@@ -10,6 +10,13 @@ import org.bukkit.Registry;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 表示来自世界的结构。
+ *
+ * 列出的结构存在于默认服务器中。根据服务器的不同，
+ * 可能会有额外的结构存在（例如由数据包添加的结构），
+ * 可以通过 {@link Registry#STRUCTURE} 获取。
+ * <p>原文：
  * Represent a Structure from the world.
  * <p>
  * Listed structures are present in the default server. Depending on the server
@@ -94,6 +101,9 @@ public abstract class Structure implements Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回结构的类型。
+     * <p>原文：
      * Returns the type of the structure.
      *
      * @return the type of structure

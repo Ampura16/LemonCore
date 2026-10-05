@@ -8,6 +8,20 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 方块因为自然条件消退，融化，消失的事件.
+ * <p>
+ * 例如:
+ * <ul>
+ * <li>雪被附近的光源融化
+ * <li>冰被附近的光源融化
+ * <li>火燃烧后破坏可以作为燃料的方块
+ * <li>珊瑚因缺水而变为失活的珊瑚.</li>
+ * <li>海龟蛋正在破壳, 当海龟正在孵化海龟蛋时.</li>
+ * </ul>
+ * <p>
+ * 如果这事件被取消, 方块不会因为自然条件消退，融化，消失.
+ * <p>原文：
  * Called when a block fades, melts or disappears based on world conditions
  * <p>
  * Examples:
@@ -36,10 +50,14 @@ public class BlockFadeEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取因为世界条件消退，融化，消失的方块的状态({@link BlockState}).
+     * <p>原文：
      * Gets the state of the new block that will replace the block
      * fading, melting or disappearing.
      *
-     * @return The block state of the new block that replaces the block
+     * @return 方块的新状态({@link BlockState})
+     * <p>原文：The block state of the new block that replaces the block
      *     fading, melting or disappearing
      */
     @NotNull

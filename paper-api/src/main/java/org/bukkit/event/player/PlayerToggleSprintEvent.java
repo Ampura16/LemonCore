@@ -7,6 +7,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 玩家切换疾跑状态时调用此事件
+ * <p>原文：
  * Called when a player toggles their sprinting state
  */
 public class PlayerToggleSprintEvent extends PlayerEvent implements Cancellable {
@@ -23,9 +26,15 @@ public class PlayerToggleSprintEvent extends PlayerEvent implements Cancellable 
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获得玩家目前的疾跑状态(正在疾跑/没有疾跑).
+     * <p>
+     * Gets whether the player is now sprinting or not.
+     * <p>原文：
      * Gets whether the player is now sprinting or not.
      *
-     * @return sprinting state
+     * @return 疾跑状态
+     * <p>原文：sprinting state
      */
     public boolean isSprinting() {
         return this.isSprinting;

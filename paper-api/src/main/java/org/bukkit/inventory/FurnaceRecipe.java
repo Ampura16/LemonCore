@@ -7,6 +7,9 @@ import org.bukkit.material.MaterialData;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 熔炉冶炼配方.
+ * <p>原文：
  * Represents a furnace recipe.
  */
 public class FurnaceRecipe extends CookingRecipe<FurnaceRecipe> {
@@ -32,13 +35,21 @@ public class FurnaceRecipe extends CookingRecipe<FurnaceRecipe> {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 创建一个熔炉配方来制作指定的 ItemStack.
+     * <p>原文：
      * Create a furnace recipe to craft the specified ItemStack.
      *
-     * @param key The unique recipe key
-     * @param result The item you want the recipe to create.
-     * @param source The input material.
-     * @param experience The experience given by this recipe
-     * @param cookingTime The cooking time (in ticks)
+     * @param key 唯一的配方键
+     * <p>原文：The unique recipe key
+     * @param result 你想要配方创建的物品.
+     * <p>原文：The item you want the recipe to create.
+     * @param source 输入材料.
+     * <p>原文：The input material.
+     * @param experience 此配方给予的经验值
+     * <p>原文：The experience given by this recipe
+     * @param cookingTime 烹饪时间 (以刻为单位)
+     * <p>原文：The cooking time (in ticks)
      */
     public FurnaceRecipe(@NotNull NamespacedKey key, @NotNull ItemStack result, @NotNull Material source, float experience, int cookingTime) {
         this(key, result, source, 0, experience, cookingTime);
@@ -50,23 +61,36 @@ public class FurnaceRecipe extends CookingRecipe<FurnaceRecipe> {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 创建一个熔炉配方来制作指定的 ItemStack.
+     * <p>原文：
      * Create a furnace recipe to craft the specified ItemStack.
      *
-     * @param key The unique recipe key
-     * @param result The item you want the recipe to create.
-     * @param input The input choices.
-     * @param experience The experience given by this recipe
-     * @param cookingTime The cooking time (in ticks)
+     * @param key 唯一的配方键
+     * <p>原文：The unique recipe key
+     * @param result 你想要配方创建的物品.
+     * <p>原文：The item you want the recipe to create.
+     * @param input 输入选项.
+     * <p>原文：The input choices.
+     * @param experience 此配方给予的经验值
+     * <p>原文：The experience given by this recipe
+     * @param cookingTime 烹饪时间 (以刻为单位)
+     * <p>原文：The cooking time (in ticks)
      */
     public FurnaceRecipe(@NotNull NamespacedKey key, @NotNull ItemStack result, @NotNull RecipeChoice input, float experience, int cookingTime) {
         super(key, result, input, experience, cookingTime);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此冶炼配方的原料.
+     * <p>原文：
      * Sets the input of this furnace recipe.
      *
-     * @param input The input material.
-     * @return The changed recipe, so you can chain calls.
+     * @param input 冶炼原料.
+     * <p>原文：The input material.
+     * @return 返回新的冶炼配方.
+     * <p>原文：The changed recipe, so you can chain calls.
      * @deprecated use {@link #setInputChoice(RecipeChoice)}
      */
     @NotNull
@@ -82,12 +106,18 @@ public class FurnaceRecipe extends CookingRecipe<FurnaceRecipe> {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此冶炼配方的原料.
+     * <p>原文：
      * Sets the input of this furnace recipe.
      *
-     * @param input The input material.
-     * @param data The data value. (Note: This is currently ignored by the
+     * @param input 冶炼原料.
+     * <p>原文：The input material.
+     * @param data 数据值. (注意: 该值目前被CraftBukkit服务器忽略，也就是说没有作用)
+     * <p>原文：The data value. (Note: This is currently ignored by the
      *     CraftBukkit server.)
-     * @return The changed recipe, so you can chain calls.
+     * @return 返回新的冶炼配方.
+     * <p>原文：The changed recipe, so you can chain calls.
      * @deprecated Magic value
      */
     @Deprecated(since = "1.6.2", forRemoval = true)

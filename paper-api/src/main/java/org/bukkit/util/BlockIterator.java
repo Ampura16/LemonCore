@@ -12,6 +12,9 @@ import org.bukkit.entity.LivingEntity;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 这个类执行射线追踪并迭代一条直线上的所有单个方块.
+ * <p>原文：
  * This class performs ray tracing and iterates along blocks on a line
  */
 public class BlockIterator implements Iterator<Block> {
@@ -39,19 +42,29 @@ public class BlockIterator implements Iterator<Block> {
     private BlockFace thirdFace;
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * BlockIterator的构造函数.
+     * <p>
+     * 本方法认为所有方块的体积均为1x1x1.
+     * <p>原文：
      * Constructs the BlockIterator.
      * <p>
      * This considers all blocks as 1x1x1 in size.
      *
-     * @param world The world to use for tracing
-     * @param start A Vector giving the initial location for the trace
-     * @param direction A Vector pointing in the direction for the trace
-     * @param yOffset The trace begins vertically offset from the start vector
+     * @param world 使用此追踪的世界
+     * <p>原文：The world to use for tracing
+     * @param start 追踪的初位置向量
+     * <p>原文：A Vector giving the initial location for the trace
+     * @param direction 追踪的方向向量
+     * <p>原文：A Vector pointing in the direction for the trace
+     * @param yOffset 垂直偏移量，追踪从初向量开始垂直偏移这个值的范围
+     * <p>原文：The trace begins vertically offset from the start vector
      *     by this value
-     * @param maxDistance This is the maximum distance in blocks for the
+     * @param maxDistance 这是在方块中追踪的最大距离,
+     * 设置此值在140以上可能导致未加载区块(unloaded chunks)的问题,值0表示无限制
+     * <p>原文：This is the maximum distance in blocks for the
      *     trace. Setting this value above 140 may lead to problems with
      *     unloaded chunks. A value of 0 indicates no limit
-     *
      */
     public BlockIterator(@NotNull World world, @NotNull Vector start, @NotNull Vector direction, double yOffset, int maxDistance) {
         Preconditions.checkArgument(world != null, "world must not be null");
@@ -227,14 +240,23 @@ public class BlockIterator implements Iterator<Block> {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * BlockIterator的构造函数.
+     * <p>
+     * 本方法认为所有方块的体积均为1x1x1.
+     * <p>原文：
      * Constructs the BlockIterator.
      * <p>
      * This considers all blocks as 1x1x1 in size.
      *
-     * @param loc The location for the start of the ray trace
-     * @param yOffset The trace begins vertically offset from the start vector
+     * @param loc 射线追踪的起始位置
+     * <p>原文：The location for the start of the ray trace
+     * @param yOffset 垂直偏移量,追踪从初向量开始垂直偏移这个值的范围
+     * <p>原文：The trace begins vertically offset from the start vector
      *     by this value
-     * @param maxDistance This is the maximum distance in blocks for the
+     * @param maxDistance 这是在方块中追踪的最大距离,
+     * 设置此值在140以上可能导致未加载区块(unloaded chunks)的问题,值0表示无限制
+     * <p>原文：This is the maximum distance in blocks for the
      *     trace. Setting this value above 140 may lead to problems with
      *     unloaded chunks. A value of 0 indicates no limit
      */
@@ -243,12 +265,19 @@ public class BlockIterator implements Iterator<Block> {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * BlockIterator的构造函数.
+     * <p>
+     * 本方法认为所有方块的体积均为1x1x1.
+     * <p>原文：
      * Constructs the BlockIterator.
      * <p>
      * This considers all blocks as 1x1x1 in size.
      *
-     * @param loc The location for the start of the ray trace
-     * @param yOffset The trace begins vertically offset from the start vector
+     * @param loc 射线追踪的开始位置
+     * <p>原文：The location for the start of the ray trace
+     * @param yOffset 垂直偏移量,追踪从初向量开始垂直偏移这个值的范围
+     * <p>原文：The trace begins vertically offset from the start vector
      *     by this value
      */
 
@@ -257,11 +286,17 @@ public class BlockIterator implements Iterator<Block> {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * BlockIterator的构造函数.
+     * <p>
+     * 本方法认为所有方块的体积均为1x1x1.
+     * <p>原文：
      * Constructs the BlockIterator.
      * <p>
      * This considers all blocks as 1x1x1 in size.
      *
-     * @param loc The location for the start of the ray trace
+     * @param loc 射线追踪的开始位置
+     * <p>原文：The location for the start of the ray trace
      */
 
     public BlockIterator(@NotNull Location loc) {
@@ -269,12 +304,20 @@ public class BlockIterator implements Iterator<Block> {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * BlockIterator的构造函数.
+     * <p>
+     * 本方法认为所有方块的体积均为1x1x1.
+     * <p>原文：
      * Constructs the BlockIterator.
      * <p>
      * This considers all blocks as 1x1x1 in size.
      *
-     * @param entity Information from the entity is used to set up the trace
-     * @param maxDistance This is the maximum distance in blocks for the
+     * @param entity 被用来设置追踪的实体
+     * <p>原文：Information from the entity is used to set up the trace
+     * @param maxDistance 这是在方块中追踪的最大距离,
+     * 设置此值在140以上可能导致未加载区块(unloaded chunks)的问题,值0表示无限制
+     * <p>原文：This is the maximum distance in blocks for the
      *     trace. Setting this value above 140 may lead to problems with
      *     unloaded chunks. A value of 0 indicates no limit
      */
@@ -284,11 +327,15 @@ public class BlockIterator implements Iterator<Block> {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 创建BlockIterator.
+     * <p>原文：
      * Constructs the BlockIterator.
      * <p>
      * This considers all blocks as 1x1x1 in size.
      *
-     * @param entity Information from the entity is used to set up the trace
+     * @param entity 被用来设置追踪的实体信息
+     * <p>原文：Information from the entity is used to set up the trace
      */
 
     public BlockIterator(@NotNull LivingEntity entity) {
@@ -296,6 +343,9 @@ public class BlockIterator implements Iterator<Block> {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 如果迭代器还有更多的元素则返回true.
+     * <p>原文：
      * Returns true if the iteration has more elements
      */
 
@@ -306,9 +356,13 @@ public class BlockIterator implements Iterator<Block> {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回追踪的下一个方块.
+     * <p>原文：
      * Returns the next Block in the trace
      *
-     * @return the next Block in the trace
+     * @return 追踪的下一个方块
+     * <p>原文：the next Block in the trace
      */
     @Override
     @NotNull

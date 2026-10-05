@@ -13,6 +13,14 @@ import org.bukkit.util.Vector;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 有限区域用于世界生成中跨越区块的特性，例如树木或矿石.
+ *
+ * 使用 {@link #getBuffer()} 来了解你可以超出中心区块多少.
+ * 缓冲区可能已经填充，也可能尚未填充.
+ *
+ * 坐标是相对于世界原点的<b>绝对</b>坐标.
+ * <p>原文：
  * A limited region is used in world generation for features which are
  * going over a chunk. For example, trees or ores.
  *
@@ -24,38 +32,59 @@ import org.jetbrains.annotations.NotNull;
 public interface LimitedRegion extends RegionAccessor {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取中心区块周围可访问的缓冲区大小.
+     * 返回值采用正常的世界坐标比例.
+     * <p>原文：
      * Gets the buffer around the central chunk which is accessible.
      * The returned value is in normal world coordinate scale.
      * <p>
      * For example: If the method returns 16 you have a working area of 48x48.
      *
-     * @return The buffer in X and Z direction
+     * @return X和Z方向上的缓冲区大小
+     * <p>原文：The buffer in X and Z direction
      */
     int getBuffer();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查给定的 {@link Location} 是否在区域内.
+     * <p>原文：
      * Checks if the given {@link Location} is in the region.
      *
-     * @param location the location to check
-     * @return true if the location is in the region, otherwise false.
+     * @param location 要检查的位置
+     * <p>原文：the location to check
+     * @return 如果位置在区域内则返回true，否则返回false
+     * <p>原文：true if the location is in the region, otherwise false.
      */
     boolean isInRegion(@NotNull Location location);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查给定的坐标是否在区域内.
+     * <p>原文：
      * Checks if the given coordinates are in the region.
      *
-     * @param x X-coordinate to check
-     * @param y Y-coordinate to check
-     * @param z Z-coordinate to check
-     * @return true if the coordinates are in the region, otherwise false.
+     * @param x 要检查的X坐标
+     * <p>原文：X-coordinate to check
+     * @param y 要检查的Y坐标
+     * <p>原文：Y-coordinate to check
+     * @param z 要检查的Z坐标
+     * <p>原文：Z-coordinate to check
+     * @return 如果坐标在区域内则返回true，否则返回false
+     * <p>原文：true if the coordinates are in the region, otherwise false.
      */
     boolean isInRegion(int x, int y, int z);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取有限区域中所有方块实体的列表，包括缓冲区.
+     * <p>原文：
      * Gets a list of all tile entities in the limited region including the
      * buffer zone.
      *
-     * @return a list of tile entities.
+     * @return 方块实体的列表
+     * <p>原文：a list of tile entities.
      */
     @NotNull
     List<BlockState> getTileEntities();

@@ -29,13 +29,20 @@ public interface Permissible extends ServerOperator {
     public boolean isPermissionSet(@NotNull Permission perm);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 如果这个权限有设置在这个对象上, 就会返回这个权限的拥有状态.
+     * <p>
+     * 如果这个权限没有设置在这个对象上, 将会返回这个权限的默认拥有状态.
+     * <p>原文：
      * Gets the value of the specified permission, if set.
      * <p>
      * If a permission override is not set on this object, the default value
      * of the permission will be returned.
      *
-     * @param name Name of the permission
-     * @return Value of the permission
+     * @param name 权限的名字
+     * <p>原文：Name of the permission
+     * @return 是否拥有此权限
+     * <p>原文：Value of the permission
      */
     public boolean hasPermission(@NotNull String name);
 

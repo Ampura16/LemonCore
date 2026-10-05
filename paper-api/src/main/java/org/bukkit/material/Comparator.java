@@ -4,12 +4,16 @@ import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表一个处于开启或关闭状态、处于正常或减法模式并朝向特定方向的比较器。
+ * <p>原文：
  * Represents a comparator in the on or off state, in normal or subtraction mode and facing in a specific direction.
  *
  * @see Material#LEGACY_REDSTONE_COMPARATOR_OFF
  * @see Material#LEGACY_REDSTONE_COMPARATOR_ON
- *
- * @deprecated all usage of MaterialData is deprecated and subject to removal.
+ * @deprecated 所有 MaterialData 的用法均已弃用并可能被移除。
+ * 请使用 {@link org.bukkit.block.data.BlockData}。
+ * <p>原文：all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
  */
 @Deprecated(since = "1.13", forRemoval = true)
@@ -19,6 +23,9 @@ public class Comparator extends MaterialData implements Directional, Redstone {
     protected static final boolean DEFAULT_STATE = false;
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 构造一个关闭的比较器，使用默认模式（正常）并朝向默认方向（北）。
+     * <p>原文：
      * Constructs a comparator switched off, with the default mode (normal) and facing the default direction (north).
      */
     public Comparator() {
@@ -26,10 +33,13 @@ public class Comparator extends MaterialData implements Directional, Redstone {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 构造一个关闭的比较器，使用默认模式（正常）并朝向指定方向。
+     * <p>原文：
      * Constructs a comparator switched off, with the default mode (normal) and facing the specified direction.
      *
-     * @param facingDirection the direction the comparator is facing
-     *
+     * @param facingDirection 比较器朝向的方向
+     * <p>原文：the direction the comparator is facing
      * @see BlockFace
      */
     public Comparator(BlockFace facingDirection) {
@@ -37,11 +47,15 @@ public class Comparator extends MaterialData implements Directional, Redstone {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 构造一个关闭的比较器，使用指定模式并朝向指定方向。
+     * <p>原文：
      * Constructs a comparator switched off, with the specified mode and facing the specified direction.
      *
-     * @param facingDirection the direction the comparator is facing
-     * @param isSubtraction True if the comparator is in subtraction mode, false for normal comparator operation
-     *
+     * @param facingDirection 比较器朝向的方向
+     * <p>原文：the direction the comparator is facing
+     * @param isSubtraction 如果比较器处于减法模式则为 true，正常比较器操作则为 false
+     * <p>原文：True if the comparator is in subtraction mode, false for normal comparator operation
      * @see BlockFace
      */
     public Comparator(BlockFace facingDirection, boolean isSubtraction) {
@@ -49,12 +63,17 @@ public class Comparator extends MaterialData implements Directional, Redstone {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 构造一个开启或关闭的比较器，使用指定模式并朝向指定方向。
+     * <p>原文：
      * Constructs a comparator switched on or off, with the specified mode and facing the specified direction.
      *
-     * @param facingDirection the direction the comparator is facing
-     * @param isSubtraction True if the comparator is in subtraction mode, false for normal comparator operation
-     * @param state True if the comparator is in the on state
-     *
+     * @param facingDirection 比较器朝向的方向
+     * <p>原文：the direction the comparator is facing
+     * @param isSubtraction 如果比较器处于减法模式则为 true，正常比较器操作则为 false
+     * <p>原文：True if the comparator is in subtraction mode, false for normal comparator operation
+     * @param state 如果比较器处于开启状态则为 true
+     * <p>原文：True if the comparator is in the on state
      * @see BlockFace
      */
     public Comparator(BlockFace facingDirection, boolean isSubtraction, boolean state) {
@@ -68,9 +87,15 @@ public class Comparator extends MaterialData implements Directional, Redstone {
     }
 
     /**
-     * @param type the type
-     * @param data the raw data value
-     * @deprecated Magic value
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @param type 类型
+     * <p>原文：the type
+     * @param data 原始数据值
+     * <p>原文：the raw data value
+     * @deprecated 魔法值
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.9")
     public Comparator(Material type, byte data) {
@@ -78,28 +103,43 @@ public class Comparator extends MaterialData implements Directional, Redstone {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置比较器是否处于减法模式。
+     * <p>原文：
      * Sets whether the comparator is in subtraction mode.
      *
-     * @param isSubtraction True if the comparator is in subtraction mode, false for normal comparator operation
+     * @param isSubtraction 如果比较器处于减法模式则为 true，正常比较器操作则为 false
+     * <p>
+     * 原文：Sets whether the comparator is in subtraction mode.
+     * <p>原文：True if the comparator is in subtraction mode, false for normal comparator operation
      */
     public void setSubtractionMode(boolean isSubtraction) {
         setData((byte) (getData() & 0xB | (isSubtraction ? 0x4 : 0x0)));
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查比较器是否处于减法模式。
+     * <p>原文：
      * Checks whether the comparator is in subtraction mode
      *
-     * @return True if the comparator is in subtraction mode, false if normal comparator operation
+     * @return 如果比较器处于减法模式则返回 true，正常比较器操作则返回 false
+     * <p>
+     * 原文：Checks whether the comparator is in subtraction mode
+     * <p>原文：True if the comparator is in subtraction mode, false if normal comparator operation
      */
     public boolean isSubtractionMode() {
         return (getData() & 0x4) != 0;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此比较器的朝向。
+     * <p>原文：
      * Sets the direction this comparator is facing
      *
-     * @param face The direction to set this comparator to
-     *
+     * @param face 设置此比较器的方向
+     * <p>原文：The direction to set this comparator to
      * @see BlockFace
      */
     @Override
@@ -128,10 +168,13 @@ public class Comparator extends MaterialData implements Directional, Redstone {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此比较器的朝向。
+     * <p>原文：
      * Gets the direction this comparator is facing
      *
-     * @return The direction this comparator is facing
-     *
+     * @return 此比较器的朝向
+     * <p>原文：The direction this comparator is facing
      * @see BlockFace
      */
     @Override
@@ -165,9 +208,15 @@ public class Comparator extends MaterialData implements Directional, Redstone {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查比较器是否被激活。
+     * <p>原文：
      * Checks if the comparator is powered
      *
-     * @return true if the comparator is powered
+     * @return 如果比较器被激活则返回 true
+     * <p>
+     * 原文：Checks if the comparator is powered
+     * <p>原文：true if the comparator is powered
      */
     @Override
     public boolean isPowered() {
@@ -175,9 +224,15 @@ public class Comparator extends MaterialData implements Directional, Redstone {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查比较器是否正在被供电。
+     * <p>原文：
      * Checks if the comparator is being powered
      *
-     * @return true if the comparator is being powered
+     * @return 如果比较器正在被供电则返回 true
+     * <p>
+     * 原文：Checks if the comparator is being powered
+     * <p>原文：true if the comparator is being powered
      */
     public boolean isBeingPowered() {
         return (getData() & 0x8) != 0;

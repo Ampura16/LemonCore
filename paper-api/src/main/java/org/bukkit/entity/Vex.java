@@ -4,6 +4,9 @@ import org.bukkit.Location;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 恼鬼.
+ * <p>原文：
  * Represents a Vex.
  */
 public interface Vex extends Monster {

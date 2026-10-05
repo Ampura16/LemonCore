@@ -16,17 +16,26 @@ import org.jetbrains.annotations.NotNull;
 public interface AbstractSkeleton extends Monster, com.destroystokyo.paper.entity.RangedEntity { // Paper
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取骷髅当前的种类.
+     * <p>原文：
      * Gets the current type of this skeleton.
      *
-     * @return Current type
-     * @deprecated should check what class instance this is.
+     * @return 当前的种类
+     * <p>原文：Current type
+     * @deprecated 应检查这是什么类实例
+     * <p>原文：should check what class instance this is.
      */
     @Deprecated(since = "1.17", forRemoval = true)
     @NotNull
     public Skeleton.SkeletonType getSkeletonType();
 
     /**
-     * @param type type
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @param type 种类
+     * <p>原文：type
      * @deprecated Must spawn a new subtype variant
      */
     @Deprecated(since = "1.17", forRemoval = true)

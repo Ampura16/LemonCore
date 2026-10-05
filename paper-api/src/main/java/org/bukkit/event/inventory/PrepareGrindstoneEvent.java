@@ -8,6 +8,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当物品被放入砂轮中用于修复或解除附魔的槽位时调用。
+ * <p>原文：
  * Called when an item is put in a slot for repair or unenchanting in a grindstone.
  */
 public class PrepareGrindstoneEvent extends com.destroystokyo.paper.event.inventory.PrepareGrindstoneEvent { // Paper

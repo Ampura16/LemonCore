@@ -8,22 +8,33 @@ import org.bukkit.Keyed;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表鸡.
+ * <p>原文：
  * Represents a Chicken.
  */
 @NullMarked
 public interface Chicken extends Animals {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这只鸡的变种.
+     * <p>原文：
      * Gets the variant of this chicken.
      *
-     * @return the chicken variant
+     * @return 鸡的变种
+     * <p>原文：the chicken variant
      */
     Variant getVariant();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置这只鸡的变种.
+     * <p>原文：
      * Sets the variant of this chicken.
      *
-     * @param variant the chicken variant
+     * @param variant 鸡的变种
+     * <p>原文：the chicken variant
      */
     void setVariant(Variant variant);
 
@@ -56,6 +67,9 @@ public interface Chicken extends Animals {
     void setEggLayTime(int eggLayTime);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 代表鸡的变种.
+     * <p>原文：
      * Represents the variant of a chicken.
      */
     interface Variant extends Keyed {

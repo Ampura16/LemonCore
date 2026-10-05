@@ -6,6 +6,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 这个事件当服务器RCON收到指令时调用.{@link ServerCommandEvent 了解更多}.
+ * <p>原文：
  * This event is called when a command is received over RCON. See the javadocs
  * of {@link ServerCommandEvent} for more information.
  */

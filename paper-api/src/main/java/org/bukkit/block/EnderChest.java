@@ -1,6 +1,9 @@
 package org.bukkit.block;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表末影箱.
+ * <p>原文：
  * Represents a captured state of an ender chest.
  */
 public interface EnderChest extends Lidded, TileState {

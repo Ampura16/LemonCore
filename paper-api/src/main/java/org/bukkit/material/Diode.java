@@ -4,13 +4,17 @@ import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 表示一个处于开启或关闭状态的二极管/中继器，具有延迟并面向特定方向。
+ * <p>原文：
  * Represents a diode/repeater in the on or off state, with a delay and facing
  * in a specific direction.
  *
  * @see Material#LEGACY_DIODE_BLOCK_OFF
  * @see Material#LEGACY_DIODE_BLOCK_ON
- *
- * @deprecated all usage of MaterialData is deprecated and subject to removal.
+ * @deprecated 所有MaterialData的用法都已弃用并将被移除。
+ * 请使用{@link org.bukkit.block.data.BlockData}。
+ * <p>原文：all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
  */
 @Deprecated(since = "1.13", forRemoval = true)
@@ -21,6 +25,9 @@ public class Diode extends MaterialData implements Directional, Redstone {
     protected static final boolean DEFAULT_STATE = false;
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 构造一个开启的二极管，延迟为1且面向默认方向（北）。
+     * <p>原文：
      * Constructs a diode switched on, with a delay of 1 and facing the default
      * direction (north).
      *
@@ -32,11 +39,14 @@ public class Diode extends MaterialData implements Directional, Redstone {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 构造一个关闭的二极管，延迟为1且面向指定方向。
+     * <p>原文：
      * Constructs a diode switched off, with a delay of 1 and facing the
      * specified direction.
      *
-     * @param facingDirection the direction the diode is facing
-     *
+     * @param facingDirection 二极管面向的方向
+     * <p>原文：the direction the diode is facing
      * @see BlockFace
      */
     public Diode(BlockFace facingDirection) {
@@ -44,13 +54,17 @@ public class Diode extends MaterialData implements Directional, Redstone {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 构造一个关闭的二极管，具有指定延迟并面向指定方向。
+     * <p>原文：
      * Constructs a diode switched off, with the specified delay and facing the
      * specified direction.
      *
-     * @param facingDirection the direction the diode is facing
-     * @param delay The number of ticks (1-4) before the diode turns on after
+     * @param facingDirection 二极管面向的方向
+     * <p>原文：the direction the diode is facing
+     * @param delay 二极管被充能后开启所需的 tick 数（1-4）
+     * <p>原文：The number of ticks (1-4) before the diode turns on after
      * being powered
-     *
      * @see BlockFace
      */
     public Diode(BlockFace facingDirection, int delay) {
@@ -58,14 +72,19 @@ public class Diode extends MaterialData implements Directional, Redstone {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 构造一个开启或关闭的二极管，具有指定延迟并面向指定方向。
+     * <p>原文：
      * Constructs a diode switched on or off, with the specified delay and
      * facing the specified direction.
      *
-     * @param facingDirection the direction the diode is facing
-     * @param delay The number of ticks (1-4) before the diode turns on after
+     * @param facingDirection 二极管面向的方向
+     * <p>原文：the direction the diode is facing
+     * @param delay 二极管被充能后开启所需的 tick 数（1-4）
+     * <p>原文：The number of ticks (1-4) before the diode turns on after
      * being powered
-     * @param state True if the diode is in the on state
-     *
+     * @param state 二极管是否处于开启状态
+     * <p>原文：True if the diode is in the on state
      * @see BlockFace
      */
     public Diode(BlockFace facingDirection, int delay, boolean state) {
@@ -79,9 +98,15 @@ public class Diode extends MaterialData implements Directional, Redstone {
     }
 
     /**
-     * @param type the type
-     * @param data the raw data value
-     * @deprecated Magic value
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @param type 类型
+     * <p>原文：the type
+     * @param data 原始数据值
+     * <p>原文：the raw data value
+     * @deprecated 不安全的参数
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.6.2")
     public Diode(Material type, byte data) {
@@ -89,9 +114,13 @@ public class Diode extends MaterialData implements Directional, Redstone {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置中继器的延迟。
+     * <p>原文：
      * Sets the delay of the repeater.
      *
-     * @param delay The new delay (1-4)
+     * @param delay 新延迟（1-4）
+     * <p>原文：The new delay (1-4)
      */
     public void setDelay(int delay) {
         if (delay > 4) {
@@ -106,19 +135,26 @@ public class Diode extends MaterialData implements Directional, Redstone {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取中继器的延迟（以tick为单位）。
+     * <p>原文：
      * Gets the delay of the repeater in ticks.
      *
-     * @return The delay (1-4)
+     * @return 延迟（1-4）
+     * <p>原文：The delay (1-4)
      */
     public int getDelay() {
         return (getData() >> 2) + 1;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此二极管面向的方向。
+     * <p>原文：
      * Sets the direction this diode is facing.
      *
-     * @param face The direction to set this diode to
-     *
+     * @param face 此二极管要面向的方向
+     * <p>原文：The direction to set this diode to
      * @see BlockFace
      */
     @Override
@@ -146,10 +182,13 @@ public class Diode extends MaterialData implements Directional, Redstone {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此二极管面向的方向。
+     * <p>原文：
      * Gets the direction this diode is facing
      *
-     * @return The direction this diode is facing
-     *
+     * @return 此二极管面向的方向
+     * <p>原文：The direction this diode is facing
      * @see BlockFace
      */
     @Override
@@ -183,9 +222,13 @@ public class Diode extends MaterialData implements Directional, Redstone {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查二极管是否被充能。
+     * <p>原文：
      * Checks if the diode is powered.
      *
-     * @return true if the diode is powered
+     * @return 二极管是否被充能
+     * <p>原文：true if the diode is powered
      */
     @Override
     public boolean isPowered() {

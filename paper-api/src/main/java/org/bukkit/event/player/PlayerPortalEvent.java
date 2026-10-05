@@ -10,6 +10,11 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Set;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 玩家将要被传送门传送的事件, 传送过程中会生成一个退出传送门.
+ * <p>
+ * 其他实体被传送门传送的事件请见{@link org.bukkit.event.entity.EntityPortalEvent}
+ * <p>原文：
  * Called when a player is about to teleport because it is in contact with a
  * portal which will generate an exit portal.
  * <p>
@@ -67,9 +72,15 @@ public class PlayerPortalEvent extends PlayerTeleportEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置搜索可用传送门的方块半径.
+     * <p>原文：
      * Set the Block radius to search in for available portals.
      *
-     * @param searchRadius the radius in which to search for a portal from the
+     * @param searchRadius 从当前位置搜索传送门的半径
+     * <p>
+     * 原文：Set the Block radius to search in for available portals.
+     * <p>原文：the radius in which to search for a portal from the
      * location
      */
     public void setSearchRadius(int searchRadius) {
@@ -77,29 +88,47 @@ public class PlayerPortalEvent extends PlayerTeleportEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取搜索可用传送门的半径.
+     * <p>原文：
      * Gets the search radius value for finding an available portal.
      *
-     * @return the currently set search radius
+     * @return 当前设置的搜索半径
+     * <p>
+     * 原文：Gets the search radius value for finding an available portal.
+     * <p>原文：the currently set search radius
      */
     public int getSearchRadius() {
         return this.searchRadius;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回服务器是否将尝试创建目标传送门.
+     * <p>原文：
      * Returns whether the server will attempt to create a destination portal or
      * not.
      *
-     * @return whether there should create be a destination portal created
+     * @return 是否应创建目标传送门
+     * <p>
+     * 原文：Returns whether the server will attempt to create a destination portal or not.
+     * <p>原文：whether there should create be a destination portal created
      */
     public boolean getCanCreatePortal() {
         return this.canCreatePortal;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置服务器是否应尝试创建目标传送门.
+     * <p>原文：
      * Sets whether the server should attempt to create a destination portal or
      * not.
      *
-     * @param canCreatePortal Sets whether there should be a destination portal
+     * @param canCreatePortal 是否应创建目标传送门
+     * <p>
+     * 原文：Sets whether the server should attempt to create a destination portal or not.
+     * <p>原文：Sets whether there should be a destination portal
      * created
      */
     public void setCanCreatePortal(boolean canCreatePortal) {
@@ -107,6 +136,13 @@ public class PlayerPortalEvent extends PlayerTeleportEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置从给定位置搜索空闲空间的最大世界半径.
+     * <p>
+     * 如果找到足够的空闲空间，则传送门将创建在该处；否则将在目标位置强制以空气空间创建.
+     * <p>
+     * 不适用于末地传送门目标平台，该平台将始终出现在目标位置.
+     * <p>原文：
      * Sets the maximum radius the world is searched for a free space from the
      * given location.
      * <p>
@@ -116,7 +152,10 @@ public class PlayerPortalEvent extends PlayerTeleportEvent {
      * Does not apply to end portal target platforms which will always appear at
      * the target location.
      *
-     * @param creationRadius the radius in which to create a portal from the
+     * @param creationRadius 从当前位置创建传送门的半径
+     * <p>
+     * 原文：Sets the maximum radius the world is searched for a free space from the given location.
+     * <p>原文：the radius in which to create a portal from the
      * location
      */
     public void setCreationRadius(int creationRadius) {
@@ -124,6 +163,13 @@ public class PlayerPortalEvent extends PlayerTeleportEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取从给定位置搜索空闲空间的最大世界半径.
+     * <p>
+     * 如果找到足够的空闲空间，则传送门将创建在该处；否则将在目标位置强制以空气空间创建.
+     * <p>
+     * 不适用于末地传送门目标平台，该平台将始终出现在目标位置.
+     * <p>原文：
      * Gets the maximum radius the world is searched for a free space from the
      * given location.
      * <p>
@@ -133,7 +179,10 @@ public class PlayerPortalEvent extends PlayerTeleportEvent {
      * Does not apply to end portal target platforms which will always appear at
      * the target location.
      *
-     * @return the currently set creation radius
+     * @return 当前设置的创建半径
+     * <p>
+     * 原文：Gets the maximum radius the world is searched for a free space from the given location.
+     * <p>原文：the currently set creation radius
      */
     public int getCreationRadius() {
         return this.creationRadius;

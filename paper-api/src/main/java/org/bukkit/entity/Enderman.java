@@ -6,6 +6,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表末影人.
+ * <p>原文：
  * Represents an Enderman.
  */
 public interface Enderman extends Monster {
@@ -22,9 +25,13 @@ public interface Enderman extends Monster {
     // Paper end
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取末影人手持的方块的id和数据.
+     * <p>原文：
      * Gets the id and data of the block that the Enderman is carrying.
      *
-     * @return MaterialData containing the id and data of the block
+     * @return 包含方块的id和数据的MaterialData
+     * <p>原文：MaterialData containing the id and data of the block
      * @deprecated use {@link #getCarriedBlock()}
      */
     @NotNull
@@ -32,26 +39,38 @@ public interface Enderman extends Monster {
     public MaterialData getCarriedMaterial();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置末影人手持的方块的id和数据.
+     * <p>原文：
      * Sets the id and data of the block that the Enderman is carrying.
      *
-     * @param material data to set the carried block to
+     * @param material 要设置的手持方块的数据
+     * <p>原文：data to set the carried block to
      * @deprecated use {@link #setCarriedBlock(BlockData)}
      */
     @Deprecated(forRemoval = true, since = "1.13")
     public void setCarriedMaterial(@NotNull MaterialData material);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取末影人手持的方块的方块数据对象.
+     * <p>原文：
      * Gets the data of the block that the Enderman is carrying.
      *
-     * @return BlockData containing the carried block, or null if none
+     * @return 包含该方块数据的BlockData对象, 如果没有手持方块返回null
+     * <p>原文：BlockData containing the carried block, or null if none
      */
     @Nullable
     public BlockData getCarriedBlock();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置末影人手持的方块的方块数据对象.
+     * <p>原文：
      * Sets the data of the block that the Enderman is carrying.
      *
-     * @param blockData data to set the carried block to, or null to remove
+     * @param blockData 为该方块设置的BlockData对象, 设为null移除末影人手持的方块
+     * <p>原文：data to set the carried block to, or null to remove
      */
     public void setCarriedBlock(@Nullable BlockData blockData);
 

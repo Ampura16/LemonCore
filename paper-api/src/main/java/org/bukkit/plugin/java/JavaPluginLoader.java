@@ -45,6 +45,9 @@ import org.jetbrains.annotations.Nullable;
 import org.yaml.snakeyaml.error.YAMLException;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表 Java 插件加载器, 允许插件以 .jar 的形式存在.
+ * <p>原文：
  * Represents a Java plugin loader, allowing plugins in the form of .jar
  */
 @Deprecated(forRemoval = true) // Paper - The PluginLoader system will not function in the near future. This implementation will be moved.
@@ -55,9 +58,13 @@ public final class JavaPluginLoader implements PluginLoader {
     private final LibraryLoader libraryLoader;
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 本类不用于显式构造.
+     * <p>原文：
      * This class was not meant to be constructed explicitly
      *
-     * @param instance the server instance
+     * @param instance 服务器实例
+     * <p>原文：the server instance
      */
     @Deprecated(since = "1.4.5")
     public JavaPluginLoader(@NotNull Server instance) {

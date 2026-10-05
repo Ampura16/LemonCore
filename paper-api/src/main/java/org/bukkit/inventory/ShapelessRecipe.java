@@ -11,6 +11,9 @@ import org.bukkit.material.MaterialData;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表一个无序配方，即成分在合成网格中的排列无关紧要。
+ * <p>原文：
  * Represents a shapeless recipe, where the arrangement of the ingredients on
  * the crafting grid does not matter.
  */
@@ -24,13 +27,19 @@ public class ShapelessRecipe extends CraftingRecipe {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 创建一个合成指定物品的无序配方。构造函数仅决定结果和类型；要设置实际配方，你需要调用适当的方法。
+     * <p>原文：
      * Create a shapeless recipe to craft the specified ItemStack. The
      * constructor merely determines the result and type; to set the actual
      * recipe, you'll need to call the appropriate methods.
      *
-     * @param key the unique recipe key
-     * @param result The item you want the recipe to create.
-     * @exception IllegalArgumentException if the {@code result} is an empty item (AIR)
+     * @param key 配方的唯一键。
+     * <p>原文：the unique recipe key
+     * @param result 你希望配方创建的物品。
+     * <p>原文：The item you want the recipe to create.
+     * @exception IllegalArgumentException 如果 {@code result} 是空物品（AIR）。
+     * <p>原文：if the {@code result} is an empty item (AIR)
      * @see ShapelessRecipe#addIngredient(Material)
      * @see ShapelessRecipe#addIngredient(int,Material)
      * @see ShapelessRecipe#addIngredient(RecipeChoice)
@@ -40,10 +49,16 @@ public class ShapelessRecipe extends CraftingRecipe {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 添加指定的成分。
+     * <p>原文：
      * Adds the specified ingredient.
      *
-     * @param ingredient The ingredient to add.
-     * @return The changed recipe, so you can chain calls.
+     * @param ingredient 要添加的成分。
+     * <p>原文：The ingredient to add.
+     * @return 修改后的配方，以便链式调用。
+     * <p>原文：Adds the specified ingredient.
+     * <p>原文：The changed recipe, so you can chain calls.
      * @deprecated use {@link #addIngredient(RecipeChoice)}
      */
     @NotNull
@@ -53,10 +68,16 @@ public class ShapelessRecipe extends CraftingRecipe {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 添加指定的成分。
+     * <p>原文：
      * Adds the specified ingredient.
      *
-     * @param ingredient The ingredient to add.
-     * @return The changed recipe, so you can chain calls.
+     * @param ingredient 要添加的成分。
+     * <p>原文：The ingredient to add.
+     * @return 修改后的配方，以便链式调用。
+     * <p>原文：Adds the specified ingredient.
+     * <p>原文：The changed recipe, so you can chain calls.
      */
     @NotNull
     public ShapelessRecipe addIngredient(@NotNull Material ingredient) {
@@ -64,12 +85,20 @@ public class ShapelessRecipe extends CraftingRecipe {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 添加指定的成分。
+     * <p>原文：
      * Adds the specified ingredient.
      *
-     * @param ingredient The ingredient to add.
-     * @param rawdata The data value, or -1 to allow any data value.
-     * @return The changed recipe, so you can chain calls.
-     * @deprecated Magic value
+     * @param ingredient 要添加的成分。
+     * <p>原文：The ingredient to add.
+     * @param rawdata 数据值，或 -1 表示允许任何数据值。
+     * <p>原文：The data value, or -1 to allow any data value.
+     * @return 修改后的配方，以便链式调用。
+     * <p>原文：The changed recipe, so you can chain calls.
+     * @deprecated 魔法值。
+     * <p>原文：Adds the specified ingredient.
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.6.2")
     @NotNull
@@ -78,11 +107,18 @@ public class ShapelessRecipe extends CraftingRecipe {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 添加多个指定成分。
+     * <p>原文：
      * Adds multiples of the specified ingredient.
      *
-     * @param count How many to add (can't be more than 9!)
-     * @param ingredient The ingredient to add.
-     * @return The changed recipe, so you can chain calls.
+     * @param count 要添加的数量（不能超过9个！）。
+     * <p>原文：How many to add (can't be more than 9!)
+     * @param ingredient 要添加的成分。
+     * <p>原文：The ingredient to add.
+     * @return 修改后的配方，以便链式调用。
+     * <p>原文：Adds multiples of the specified ingredient.
+     * <p>原文：The changed recipe, so you can chain calls.
      * @deprecated use {@link #addIngredient(int, Material)}
      */
     @NotNull
@@ -92,11 +128,18 @@ public class ShapelessRecipe extends CraftingRecipe {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 添加多个指定成分。
+     * <p>原文：
      * Adds multiples of the specified ingredient.
      *
-     * @param count How many to add (can't be more than 9!)
-     * @param ingredient The ingredient to add.
-     * @return The changed recipe, so you can chain calls.
+     * @param count 要添加的数量（不能超过9个！）。
+     * <p>原文：How many to add (can't be more than 9!)
+     * @param ingredient 要添加的成分。
+     * <p>原文：The ingredient to add.
+     * @return 修改后的配方，以便链式调用。
+     * <p>原文：Adds multiples of the specified ingredient.
+     * <p>原文：The changed recipe, so you can chain calls.
      */
     @NotNull
     public ShapelessRecipe addIngredient(int count, @NotNull Material ingredient) {
@@ -104,13 +147,22 @@ public class ShapelessRecipe extends CraftingRecipe {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 添加多个指定成分。
+     * <p>原文：
      * Adds multiples of the specified ingredient.
      *
-     * @param count How many to add (can't be more than 9!)
-     * @param ingredient The ingredient to add.
-     * @param rawdata The data value, or -1 to allow any data value.
-     * @return The changed recipe, so you can chain calls.
-     * @deprecated Magic value
+     * @param count 要添加的数量（不能超过9个！）。
+     * <p>原文：How many to add (can't be more than 9!)
+     * @param ingredient 要添加的成分。
+     * <p>原文：The ingredient to add.
+     * @param rawdata 数据值，或 -1 表示允许任何数据值。
+     * <p>原文：The data value, or -1 to allow any data value.
+     * @return 修改后的配方，以便链式调用。
+     * <p>原文：The changed recipe, so you can chain calls.
+     * @deprecated 魔法值。
+     * <p>原文：Adds multiples of the specified ingredient.
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.6.2")
     @NotNull
@@ -173,10 +225,16 @@ public class ShapelessRecipe extends CraftingRecipe {
     // Paper end
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 从列表中移除一个成分。
+     * <p>原文：
      * Removes an ingredient from the list.
      *
-     * @param ingredient The ingredient to remove
-     * @return The changed recipe.
+     * @param ingredient 要移除的成分。
+     * <p>原文：The ingredient to remove
+     * @return 修改后的配方。
+     * <p>原文：Removes an ingredient from the list.
+     * <p>原文：The changed recipe.
      */
     @NotNull
     public ShapelessRecipe removeIngredient(@NotNull RecipeChoice ingredient) {
@@ -186,12 +244,20 @@ public class ShapelessRecipe extends CraftingRecipe {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 从列表中移除一个成分。如果该成分出现多次，只移除其中一个实例。仅移除数据值为 0 的精确匹配项。
+     * <p>原文：
      * Removes an ingredient from the list. If the ingredient occurs multiple
      * times, only one instance of it is removed. Only removes exact matches,
      * with a data value of 0.
      *
-     * @param ingredient The ingredient to remove
-     * @return The changed recipe.
+     * @param ingredient 要移除的成分。
+     * <p>原文：The ingredient to remove
+     * @return 修改后的配方。
+     * <p>原文：Removes an ingredient from the list. If the ingredient occurs multiple
+     * times, only one instance of it is removed. Only removes exact matches,
+     * with a data value of 0.
+     * <p>原文：The changed recipe.
      */
     @NotNull
     public ShapelessRecipe removeIngredient(@NotNull Material ingredient) {
@@ -199,12 +265,20 @@ public class ShapelessRecipe extends CraftingRecipe {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 从列表中移除一个成分。如果该成分出现多次，只移除其中一个实例。如果数据值为 -1，则只移除数据值为 -1 的成分。
+     * <p>原文：
      * Removes an ingredient from the list. If the ingredient occurs multiple
      * times, only one instance of it is removed. If the data value is -1,
      * only ingredients with a -1 data value will be removed.
      *
-     * @param ingredient The ingredient to remove
-     * @return The changed recipe.
+     * @param ingredient 要移除的成分。
+     * <p>原文：The ingredient to remove
+     * @return 修改后的配方。
+     * <p>原文：Removes an ingredient from the list. If the ingredient occurs multiple
+     * times, only one instance of it is removed. If the data value is -1,
+     * only ingredients with a -1 data value will be removed.
+     * <p>原文：The changed recipe.
      * @deprecated use {@link #removeIngredient(Material)}
      */
     @NotNull
@@ -214,13 +288,22 @@ public class ShapelessRecipe extends CraftingRecipe {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 从列表中移除多个成分实例。如果实例数量少于指定数量，将全部移除。仅移除数据值为 0 的精确匹配项。
+     * <p>原文：
      * Removes multiple instances of an ingredient from the list. If there are
      * fewer instances than specified, all will be removed. Only removes exact
      * matches, with a data value of 0.
      *
-     * @param count The number of copies to remove.
-     * @param ingredient The ingredient to remove
-     * @return The changed recipe.
+     * @param count 要移除的副本数量。
+     * <p>原文：The number of copies to remove.
+     * @param ingredient 要移除的成分。
+     * <p>原文：The ingredient to remove
+     * @return 修改后的配方。
+     * <p>原文：Removes multiple instances of an ingredient from the list. If there are
+     * less instances then specified, all will be removed. Only removes exact
+     * matches, with a data value of 0.
+     * <p>原文：The changed recipe.
      */
     @NotNull
     public ShapelessRecipe removeIngredient(int count, @NotNull Material ingredient) {
@@ -228,13 +311,22 @@ public class ShapelessRecipe extends CraftingRecipe {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 从列表中移除多个成分实例。如果实例数量少于指定数量，将全部移除。如果数据值为 -1，则只移除数据值为 -1 的成分。
+     * <p>原文：
      * Removes multiple instances of an ingredient from the list. If there are
      * fewer instances then specified, all will be removed. If the data value
      * is -1, only ingredients with a -1 data value will be removed.
      *
-     * @param count The number of copies to remove.
-     * @param ingredient The ingredient to remove.
-     * @return The changed recipe.
+     * @param count 要移除的副本数量。
+     * <p>原文：The number of copies to remove.
+     * @param ingredient 要移除的成分。
+     * <p>原文：The ingredient to remove.
+     * @return 修改后的配方。
+     * <p>原文：Removes multiple instances of an ingredient from the list. If there are
+     * less instances then specified, all will be removed. If the data value
+     * is -1, only ingredients with a -1 data value will be removed.
+     * <p>原文：The changed recipe.
      * @deprecated use {@link #removeIngredient(int, Material)}
      */
     @NotNull
@@ -244,14 +336,24 @@ public class ShapelessRecipe extends CraftingRecipe {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 从列表中移除一个成分。如果该成分出现多次，只移除其中一个实例。如果数据值为 -1，则只移除数据值为 -1 的成分。
+     * <p>原文：
      * Removes an ingredient from the list. If the ingredient occurs multiple
      * times, only one instance of it is removed. If the data value is -1,
      * only ingredients with a -1 data value will be removed.
      *
-     * @param ingredient The ingredient to remove
-     * @param rawdata The data value;
-     * @return The changed recipe.
-     * @deprecated Magic value
+     * @param ingredient 要移除的成分。
+     * <p>原文：The ingredient to remove
+     * @param rawdata 数据值。
+     * <p>原文：The data value;
+     * @return 修改后的配方。
+     * <p>原文：The changed recipe.
+     * @deprecated 魔法值。
+     * <p>原文：Removes an ingredient from the list. If the ingredient occurs multiple
+     * times, only one instance of it is removed. If the data value is -1,
+     * only ingredients with a -1 data value will be removed.
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.6.2")
     @NotNull
@@ -260,15 +362,26 @@ public class ShapelessRecipe extends CraftingRecipe {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 从列表中移除多个成分实例。如果实例数量少于指定数量，将全部移除。如果数据值为 -1，则只移除数据值为 -1 的成分。
+     * <p>原文：
      * Removes multiple instances of an ingredient from the list. If there are
      * fewer instances then specified, all will be removed. If the data value
      * is -1, only ingredients with a -1 data value will be removed.
      *
-     * @param count The number of copies to remove.
-     * @param ingredient The ingredient to remove.
-     * @param rawdata The data value.
-     * @return The changed recipe.
-     * @deprecated Magic value
+     * @param count 要移除的副本数量。
+     * <p>原文：The number of copies to remove.
+     * @param ingredient 要移除的成分。
+     * <p>原文：The ingredient to remove.
+     * @param rawdata 数据值。
+     * <p>原文：The data value.
+     * @return 修改后的配方。
+     * <p>原文：The changed recipe.
+     * @deprecated 魔法值。
+     * <p>原文：Removes multiple instances of an ingredient from the list. If there are
+     * less instances then specified, all will be removed. If the data value
+     * is -1, only ingredients with a -1 data value will be removed.
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.6.2")
     @NotNull
@@ -285,9 +398,14 @@ public class ShapelessRecipe extends CraftingRecipe {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此配方使用的成分列表。
+     * <p>原文：
      * Get the list of ingredients used for this recipe.
      *
-     * @return The input list
+     * @return 输入列表。
+     * <p>原文：Get the list of ingredients used for this recipe.
+     * <p>原文：The input list
      * @deprecated Use {@link #getChoiceList()} instead for more complete data.
      */
     @Deprecated // Paper

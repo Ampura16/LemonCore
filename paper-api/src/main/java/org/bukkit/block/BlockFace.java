@@ -4,6 +4,9 @@ import org.bukkit.util.Vector;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表方块的朝向.
+ * <p>原文：
  * Represents the face of a block
  */
 public enum BlockFace {
@@ -44,18 +47,26 @@ public enum BlockFace {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此朝向的X轴坐标偏移量, 用以获取其表示的方块.
+     * <p>原文：
      * Get the amount of X-coordinates to modify to get the represented block
      *
-     * @return Amount of X-coordinates to modify
+     * @return X轴坐标偏移量
+     * <p>原文：Amount of X-coordinates to modify
      */
     public int getModX() {
         return modX;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此朝向的Y轴坐标偏移量, 用以获取其表示的方块.
+     * <p>原文：
      * Get the amount of Y-coordinates to modify to get the represented block
      *
-     * @return Amount of Y-coordinates to modify
+     * @return Y轴坐标偏移量
+     * <p>原文：Amount of Y-coordinates to modify
      */
     public int getModY() {
         return modY;
@@ -71,9 +82,13 @@ public enum BlockFace {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取与此朝向相对应的单位向量.
+     * <p>原文：
      * Gets the normal vector corresponding to this block face.
      *
-     * @return the normal vector
+     * @return 对应的单位向量
+     * <p>原文：the normal vector
      */
     @NotNull
     public Vector getDirection() {
@@ -85,10 +100,14 @@ public enum BlockFace {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 如果此面与三维笛卡尔空间中的单位轴对齐(即NORTH、SOUTH、EAST、WEST、UP、DOWN), 则返回true.
+     * <p>原文：
      * Returns true if this face is aligned with one of the unit axes in 3D
      * Cartesian space (ie NORTH, SOUTH, EAST, WEST, UP, DOWN).
      *
-     * @return Cartesian status
+     * @return 笛卡尔状态
+     * <p>原文：Cartesian status
      */
     public boolean isCartesian() {
         switch (this) {
@@ -104,6 +123,12 @@ public enum BlockFace {
         }
     }
 
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取与此面相对的面.
+     *
+     * @return 相对的面
+     */
     @NotNull
     public BlockFace getOppositeFace() {
         switch (this) {

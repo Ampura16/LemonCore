@@ -49,10 +49,14 @@ import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 表示可以通过 {@link NamespacedKey} 检索的 Bukkit 对象注册表。
+ * <p>原文：
  * Represents a registry of Bukkit objects that may be retrieved by
  * {@link NamespacedKey}.
  *
- * @param <T> type of item in the registry
+ * @param <T> 注册表中项目的类型
+ * <p>原文：type of item in the registry
  */
 @NullMarked
 public interface Registry<T extends Keyed> extends Iterable<T> {
@@ -68,11 +72,15 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 服务器进度。
+     * <p>原文：
      * Server advancements.
      *
      * @see Bukkit#getAdvancement(NamespacedKey)
      * @see Bukkit#advancementIterator()
-     * @deprecated use {@link Bukkit#getAdvancement(NamespacedKey)} and {@link Bukkit#advancementIterator()}
+     * @deprecated Advancement 没有真正的服务端注册表。
+     * <p>原文：use {@link Bukkit#getAdvancement(NamespacedKey)} and {@link Bukkit#advancementIterator()}
      */
     @Deprecated(since = "1.21.4", forRemoval = true)
     Registry<Advancement> ADVANCEMENT = new NotARegistry<>() {
@@ -88,6 +96,9 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
         }
     };
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 服务器艺术品。
+     * <p>原文：
      * Server art.
      *
      * @see Art
@@ -96,12 +107,18 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
     @Deprecated(since = "1.21.3") // Paper
     Registry<Art> ART = legacyRegistryFor(Art.class);
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 属性。
+     * <p>原文：
      * Attribute.
      *
      * @see Attribute
      */
     Registry<Attribute> ATTRIBUTE = registryFor(RegistryKey.ATTRIBUTE);
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 服务器旗帜图案。
+     * <p>原文：
      * Server banner patterns.
      *
      * @see PatternType
@@ -110,6 +127,9 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
     @Deprecated(since = "1.21") // Paper
     Registry<PatternType> BANNER_PATTERN = legacyRegistryFor(PatternType.class);
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 服务器生物群系。
+     * <p>原文：
      * Server biomes.
      *
      * @see Biome
@@ -118,17 +138,24 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
     @Deprecated(since = "1.21.3") // Paper
     Registry<Biome> BIOME = legacyRegistryFor(Biome.class);
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 服务器方块类型。
+     * <p>原文：
      * Server block types.
      *
      * @see BlockType
      */
     Registry<BlockType> BLOCK = registryFor(RegistryKey.BLOCK);
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 自定义 Boss 血条。
+     * <p>原文：
      * Custom boss bars.
      *
      * @see Bukkit#getBossBar(org.bukkit.NamespacedKey)
      * @see Bukkit#getBossBars()
-     * @deprecated use {@link Bukkit#getBossBar(NamespacedKey)} and {@link Bukkit#getBossBars()}
+     * @deprecated BossBar 没有真正的服务端注册表。
+     * <p>原文：use {@link Bukkit#getBossBar(NamespacedKey)} and {@link Bukkit#getBossBars()}
      */
     @Deprecated(since = "1.21.4", forRemoval = true)
     Registry<KeyedBossBar> BOSS_BARS = new NotARegistry<>() {
@@ -144,6 +171,9 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
         }
     };
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 服务器猫品种。
+     * <p>原文：
      * Server cat types.
      *
      * @see Cat.Type
@@ -152,6 +182,9 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
     @Deprecated(since = "1.21.5")
     Registry<Cat.Type> CAT_VARIANT = legacyRegistryFor(Cat.Type.class);
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 服务器附魔。
+     * <p>原文：
      * Server enchantments.
      *
      * @see Enchantment
@@ -160,12 +193,18 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
     @Deprecated(since = "1.21")
     Registry<Enchantment> ENCHANTMENT = legacyRegistryFor(Enchantment.class);
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 服务器实体类型。
+     * <p>原文：
      * Server entity types.
      *
      * @see EntityType
      */
     Registry<EntityType> ENTITY_TYPE = registryFor(RegistryKey.ENTITY_TYPE);
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 服务器乐器。
+     * <p>原文：
      * Server instruments.
      *
      * @see MusicInstrument
@@ -174,24 +213,36 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
     @Deprecated(since = "1.21.2")
     Registry<MusicInstrument> INSTRUMENT = legacyRegistryFor(MusicInstrument.class);
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 服务器物品类型。
+     * <p>原文：
      * Server item types.
      *
      * @see ItemType
      */
     Registry<ItemType> ITEM = registryFor(RegistryKey.ITEM);
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 默认服务器战利品表。
+     * <p>原文：
      * Default server loot tables.
      *
      * @see LootTables
      */
     Registry<LootTables> LOOT_TABLES = new SimpleRegistry<>(LootTables.class);
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 服务器材质。
+     * <p>原文：
      * Server materials.
      *
      * @see Material
      */
     Registry<Material> MATERIAL = new SimpleRegistry<>(Material.class, (mat) -> !mat.isLegacy());
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 服务器菜单。
+     * <p>原文：
      * Server menus.
      *
      * @see MenuType
@@ -205,24 +256,36 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      */
     Registry<PotionEffectType> MOB_EFFECT = registryFor(RegistryKey.MOB_EFFECT);
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 服务器粒子。
+     * <p>原文：
      * Server particles.
      *
      * @see Particle
      */
     Registry<Particle> PARTICLE_TYPE = registryFor(RegistryKey.PARTICLE_TYPE); // Paper
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 服务器药水。
+     * <p>原文：
      * Server potions.
      *
      * @see PotionType
      */
     Registry<PotionType> POTION = registryFor(RegistryKey.POTION); // Paper
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 服务器统计。
+     * <p>原文：
      * Server statistics.
      *
      * @see Statistic
      */
     Registry<Statistic> STATISTIC = new SimpleRegistry<>(Statistic.class);
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 服务器结构。
+     * <p>原文：
      * Server structures.
      *
      * @see Structure
@@ -231,6 +294,9 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
     @Deprecated(since = "1.20.6") // Paper
     Registry<Structure> STRUCTURE = legacyRegistryFor(Structure.class);
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 服务器结构类型。
+     * <p>原文：
      * Server structure types.
      *
      * @see StructureType
@@ -243,6 +309,9 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      */
     Registry<Sound> SOUND_EVENT = registryFor(RegistryKey.SOUND_EVENT);
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 装饰材料。
+     * <p>原文：
      * Trim materials.
      *
      * @see TrimMaterial
@@ -251,6 +320,9 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
     @Deprecated(since = "1.20.6") // Paper
     Registry<TrimMaterial> TRIM_MATERIAL = legacyRegistryFor(TrimMaterial.class);
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 装饰图案。
+     * <p>原文：
      * Trim patterns.
      *
      * @see TrimPattern
@@ -259,6 +331,9 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
     @Deprecated(since = "1.20.6")
     Registry<TrimPattern> TRIM_PATTERN = legacyRegistryFor(TrimPattern.class);
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 伤害类型。
+     * <p>原文：
      * Damage types.
      *
      * @see DamageType
@@ -267,6 +342,9 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
     @Deprecated(since = "1.20.6")
     Registry<DamageType> DAMAGE_TYPE = legacyRegistryFor(DamageType.class);
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 唱片机歌曲。
+     * <p>原文：
      * Jukebox songs.
      *
      * @see JukeboxSong
@@ -275,12 +353,18 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
     @Deprecated(since = "1.21")
     Registry<JukeboxSong> JUKEBOX_SONG = legacyRegistryFor(JukeboxSong.class);
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 村民职业。
+     * <p>原文：
      * Villager profession.
      *
      * @see Villager.Profession
      */
     Registry<Villager.Profession> VILLAGER_PROFESSION = registryFor(RegistryKey.VILLAGER_PROFESSION);
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 村民类型。
+     * <p>原文：
      * Villager type.
      *
      * @see Villager.Type
@@ -309,12 +393,18 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
         }
     };
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 服务器流体。
+     * <p>原文：
      * Server fluids.
      *
      * @see Fluid
      */
     Registry<Fluid> FLUID = registryFor(RegistryKey.FLUID);
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 青蛙变种。
+     * <p>原文：
      * Frog variants.
      *
      * @see Frog.Variant
@@ -323,6 +413,9 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
     @Deprecated(since = "1.21.5")
     Registry<Frog.Variant> FROG_VARIANT = legacyRegistryFor(Frog.Variant.class);
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 狼变种。
+     * <p>原文：
      * Wolf variants.
      *
      * @see Wolf.Variant
@@ -331,12 +424,18 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
     @Deprecated(since = "1.20.6")
     Registry<Wolf.Variant> WOLF_VARIANT = legacyRegistryFor(Wolf.Variant.class);
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 地图光标类型。
+     * <p>原文：
      * Map cursor types.
      *
      * @see MapCursor.Type
      */
     Registry<MapCursor.Type> MAP_DECORATION_TYPE = registryFor(RegistryKey.MAP_DECORATION_TYPE);
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 游戏事件。
+     * <p>原文：
      * Game events.
      *
      * @see GameEvent
@@ -358,6 +457,9 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
 
     //<editor-fold desc="renames" defaultstate="collapsed">
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 服务器药水效果。
+     *
      * @apiNote use {@link #MOB_EFFECT} instead
      * @hidden
      */
@@ -370,6 +472,9 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
     @ApiStatus.Obsolete(since = "1.21.4")
     Registry<org.bukkit.potion.PotionEffectType> POTION_EFFECT_TYPE = EFFECT;
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 声音键。
+     *
      * @apiNote use {@link #SOUND_EVENT}
      * @hidden
      */
@@ -378,10 +483,18 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
     //</editor-fold>
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 通过键获取对象。
+     * <p>原文：
      * Get the object by its key.
      *
-     * @param key non-null key
-     * @return item or null if it does not exist
+     * @param key 非空键。
+     * <p>原文：non-null key
+     * @return 对象，如果不存在则返回 null。
+     *
+     * 原文：
+     * Get the object by its key.
+     * <p>原文：item or null if it does not exist
      */
     @Nullable T get(NamespacedKey key);
     // Paper start
@@ -526,12 +639,19 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
     // Paper end - RegistrySet API
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 通过键获取对象。
+     *
+     * 如果没有具有给定键的对象，将抛出异常。
+     * <p>原文：
      * Get the object by its key.
      * <p>
      * If there is no object with the given key, an exception will be thrown.
      *
-     * @param key to get the object from
-     * @return object with the given key
+     * @param key 用于获取对象的键。
+     * <p>原文：to get the object from
+     * @return 具有给定键的对象。
+     * <p>原文：object with the given key
      * @throws NoSuchElementException if there is no object with the given key
      */
     default T getOrThrow(final NamespacedKey key) {
@@ -539,9 +659,16 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回一个包含所有已注册到注册表中的注册项的新流。
+     * <p>原文：
      * Returns a new stream, which contains all registry items, which are registered to the registry.
      *
-     * @return a stream of all registry items
+     * @return 所有注册项的流。
+     *
+     * 原文：
+     * Returns a new stream, which contains all registry items, which are registered to the registry.
+     * <p>原文：a stream of all registry items
      */
     Stream<T> stream();
 
@@ -553,13 +680,26 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
     Stream<NamespacedKey> keyStream();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 尝试将注册对象与给定键匹配。
+     * <p>
+     * 将尝试根据提供的输入找到合理的匹配，可能通过未指定的方式进行。
+     * <p>原文：
      * Attempts to match the registered object with the given key.
      * <p>
      * This will attempt to find a reasonable match based on the provided input
      * and may do so through unspecified means.
      *
-     * @param input non-null input
-     * @return registered object or null if does not exist
+     * @param input 非空输入。
+     * <p>原文：non-null input
+     * @return 注册对象，如果不存在则返回 null。
+     *
+     * 原文：
+     * Attempts to match the registered object with the given key.
+     * <p>
+     * This will attempt to find a reasonable match based on the provided input
+     * and may do so through unspecified means.
+     * <p>原文：registered object or null if does not exist
      * @deprecated this method's behavior is broken and not useful. If you want to get an object
      * based on its vanilla name, or a key, wrap it in a {@link NamespacedKey} object and use {@link #get(NamespacedKey)}
      */

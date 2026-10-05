@@ -8,6 +8,9 @@ import net.kyori.adventure.text.Component;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 表示可以在唱片机中播放的歌曲。
+ * <p>原文：
  * Represents a song which may play in a Jukebox.
  */
 @NullMarked

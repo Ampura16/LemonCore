@@ -3,9 +3,13 @@ package org.bukkit.plugin;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 已注册的服务提供者.
+ * <p>原文：
  * A registered service provider.
  *
- * @param <T> Service
+ * @param <T> 服务类型
+ * <p>原文：Service
  */
 public class RegisteredServiceProvider<T> implements Comparable<RegisteredServiceProvider<?>> {
 

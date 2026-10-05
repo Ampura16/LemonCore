@@ -7,6 +7,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当实体停止骑乘另一个实体时调用。
+ * <p>原文：
  * Called when an entity stops riding another entity.
  */
 public class EntityDismountEvent extends EntityEvent implements Cancellable {
@@ -31,9 +34,13 @@ public class EntityDismountEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取将不再被骑乘的实体。
+     * <p>原文：
      * Gets the entity which will no longer be ridden.
      *
-     * @return dismounted entity
+     * @return 被骑乘的实体
+     * <p>原文：dismounted entity
      */
     @NotNull
     public Entity getDismounted() {

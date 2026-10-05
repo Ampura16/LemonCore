@@ -12,6 +12,12 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当一个实体因玩家在一个方块上"放置"一物品而创建时触发本事件.
+ * <br>
+ * 请注意此事件目前只因这四个指定的放置场景而触发:
+ * 盔甲架, 船只, 矿车和末影水晶.
+ * <p>原文：
  * Triggered when an entity is created in the world by a player "placing" an item
  * on a block.
  * <br>
@@ -45,9 +51,13 @@ public class EntityPlaceEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回放置此实体的玩家.
+     * <p>原文：
      * Returns the player placing the entity
      *
-     * @return the player placing the entity
+     * @return 放置此实体的玩家
+     * <p>原文：the player placing the entity
      */
     @Nullable
     public Player getPlayer() {
@@ -55,9 +65,13 @@ public class EntityPlaceEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回实体被放置在的方块.
+     * <p>原文：
      * Returns the block that the entity was placed on
      *
-     * @return the block that the entity was placed on
+     * @return 实体被放置在哪个方块上
+     * <p>原文：the block that the entity was placed on
      */
     @NotNull
     public Block getBlock() {
@@ -65,9 +79,13 @@ public class EntityPlaceEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回实体被放置在的方块的朝向.
+     * <p>原文：
      * Returns the face of the block that the entity was placed on
      *
-     * @return the face of the block that the entity was placed on
+     * @return 实体被放置在的方块的朝向
+     * <p>原文：the face of the block that the entity was placed on
      */
     @NotNull
     public BlockFace getBlockFace() {
@@ -75,9 +93,13 @@ public class EntityPlaceEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回放置实体时使用的手.
+     * <p>原文：
      * Get the hand used to place the entity.
      *
-     * @return the hand
+     * @return 使用的手
+     * <p>原文：the hand
      */
     @NotNull
     public EquipmentSlot getHand() {

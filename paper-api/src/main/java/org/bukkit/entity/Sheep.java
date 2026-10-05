@@ -3,6 +3,9 @@ package org.bukkit.entity;
 import org.bukkit.material.Colorable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表羊.
+ * <p>原文：
  * Represents a Sheep.
  */
 public interface Sheep extends Animals, Colorable, Shearable, io.papermc.paper.entity.Shearable { // Paper - Shear API

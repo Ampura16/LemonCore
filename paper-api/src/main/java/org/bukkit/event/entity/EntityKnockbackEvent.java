@@ -11,6 +11,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当生物实体受到击退时调用。
+ * <p>原文：
  * Called when a living entity receives knockback.
  *
  * @deprecated use {@link io.papermc.paper.event.entity.EntityKnockbackEvent}
@@ -44,9 +47,13 @@ public class EntityKnockbackEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取击退的原因。
+     * <p>原文：
      * Gets the cause of the knockback.
      *
-     * @return the cause of the knockback
+     * @return 击退的原因
+     * <p>原文：the cause of the knockback
      */
     @NotNull
     public KnockbackCause getCause() {
@@ -54,24 +61,34 @@ public class EntityKnockbackEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取击退的原始力度。<br>
+     * 此值基于攻击者的 {@link Enchantment#KNOCKBACK} 等级和实体的 {@link Attribute#KNOCKBACK_RESISTANCE} 等因素。
+     * <p>原文：
      * Gets the raw force of the knockback.
      * <p>
      * This value is based on factors such as the {@link Enchantment#KNOCKBACK}
      * level of an attacker and the
      * {@link Attribute#KNOCKBACK_RESISTANCE} of the entity.
      *
-     * @return the knockback force
+     * @return 击退力度
+     * <p>原文：the knockback force
      */
     public double getForce() {
         return this.force;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取将应用于实体的原始击退力度。<br>
+     * 此值为只读，对其进行的修改 <b>不会</b> 对最终受到的击退产生任何影响。
+     * <p>原文：
      * Gets the raw knockback force that will be applied to the entity. <br>
      * This value is read-only, changes made to it <b>will not</b> have any
      * effect on the final knockback received.
      *
-     * @return the raw knockback
+     * @return 原始击退力度
+     * <p>原文：the raw knockback
      * @see #getFinalKnockback()
      */
     @NotNull
@@ -80,6 +97,12 @@ public class EntityKnockbackEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取将应用于实体的最终击退力度。<br>
+     * 与 {@link EntityKnockbackEvent#getKnockback()} 不同，此值受实体当前速度以及是否接触地面的影响。
+     * <p>
+     * <b>注意：</b> 此方法返回副本，必须通过 {@link #setFinalKnockback(Vector)} 应用更改。
+     * <p>原文：
      * Gets the force that will be applied to the entity. <br>
      * In contrast to {@link EntityKnockbackEvent#getKnockback()} this value is
      * affected by the entities current velocity and whether they are touching
@@ -88,7 +111,8 @@ public class EntityKnockbackEvent extends EntityEvent implements Cancellable {
      * <b>Note:</b> this method returns a copy, changes must be applied with
      * {@link #setFinalKnockback(Vector)}.
      *
-     * @return the final knockback
+     * @return 最终击退力度
+     * <p>原文：the final knockback
      */
     @NotNull
     public Vector getFinalKnockback() {
@@ -96,9 +120,13 @@ public class EntityKnockbackEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置将应用于实体的击退力度。
+     * <p>原文：
      * Sets the force that will be applied to the entity.
      *
-     * @param knockback the force to apply
+     * @param knockback 要应用的击退力度
+     * <p>原文：the force to apply
      */
     @NotNull
     public void setFinalKnockback(@NotNull Vector knockback) {
@@ -129,31 +157,52 @@ public class EntityKnockbackEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 指定击退原因的枚举。
+     * <p>原文：
      * An enum to specify the cause of the knockback.
      */
     public enum KnockbackCause {
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 由非实体伤害造成的击退。
+         * <p>原文：
          * Knockback caused by non-entity damage.
          */
         DAMAGE,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 由攻击实体造成的击退。
+         * <p>原文：
          * Knockback caused by an attacking entity.
          */
         ENTITY_ATTACK,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 由爆炸造成的击退。
+         * <p>原文：
          * Knockback caused by an explosion.
          */
         EXPLOSION,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 由目标使用盾牌格挡造成的击退。
+         * <p>原文：
          * Knockback caused by the target blocking with a shield.
          */
         SHIELD_BLOCK,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 由横扫攻击造成的击退。
+         * <p>原文：
          * Knockback caused by a sweeping attack.
          */
         SWEEP_ATTACK,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 原因未知的击退。
+         * <p>原文：
          * Knockback with an unknown cause.
          */
         UNKNOWN;

@@ -9,6 +9,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 玩家被服务器踢出事件.
+ * <p>原文：
  * Called when a player gets kicked from the server
  */
 public class PlayerKickEvent extends PlayerEvent implements Cancellable {
@@ -66,9 +69,13 @@ public class PlayerKickEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取踢出的玩家的理由.
+     * <p>原文：
      * Gets the reason why the player is getting kicked
      *
-     * @return string kick reason
+     * @return 踢出玩家的理由
+     * <p>原文：string kick reason
      * @deprecated in favour of {@link #reason()}
      */
     @NotNull
@@ -78,6 +85,9 @@ public class PlayerKickEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置踢出某玩家的理由.
+     * <p>原文：
      * Sets the reason why the player is getting kicked
      *
      * @param kickReason kick reason
@@ -107,9 +117,13 @@ public class PlayerKickEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取某玩家被踢出后,发送给全体玩家的离开消息.
+     * <p>原文：
      * Gets the leave message send to all online players
      *
-     * @return string kick reason
+     * @return 离开消息
+     * <p>原文：string kick reason
      * @deprecated in favour of {@link #leaveMessage()}
      */
     @NotNull
@@ -119,9 +133,13 @@ public class PlayerKickEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置某玩家被踢出后,发送给全体玩家的离开消息.
+     * <p>原文：
      * Sets the leave message send to all online players
      *
-     * @param leaveMessage leave message
+     * @param leaveMessage 离开消息
+     * <p>原文：leave message
      * @deprecated in favour of {@link #leaveMessage(net.kyori.adventure.text.Component)}
      */
     @Deprecated

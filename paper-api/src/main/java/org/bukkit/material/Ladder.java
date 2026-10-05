@@ -4,9 +4,14 @@ import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表梯子数据。
+ * <p>原文：
  * Represents Ladder data
  *
- * @deprecated all usage of MaterialData is deprecated and subject to removal.
+ * @deprecated 所有 MaterialData 的用法均已弃用且将被移除.
+ * 请使用 {@link org.bukkit.block.data.BlockData}.
+ * <p>原文：all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
  */
 @Deprecated(since = "1.13", forRemoval = true)
@@ -20,9 +25,15 @@ public class Ladder extends SimpleAttachableMaterialData {
     }
 
     /**
-     * @param type the type
-     * @param data the raw data value
-     * @deprecated Magic value
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @param type 物品类型
+     * <p>原文：the type
+     * @param data 原始数据值
+     * <p>原文：the raw data value
+     * @deprecated 魔法值
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.6.2")
     public Ladder(final Material type, final byte data) {
@@ -30,6 +41,9 @@ public class Ladder extends SimpleAttachableMaterialData {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此方块所附着的面。
+     * <p>原文：
      * Gets the face that this block is attached on
      *
      * @return BlockFace attached to
@@ -56,6 +70,9 @@ public class Ladder extends SimpleAttachableMaterialData {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此梯子面向的方向。
+     * <p>原文：
      * Sets the direction this ladder is facing
      */
     @Override

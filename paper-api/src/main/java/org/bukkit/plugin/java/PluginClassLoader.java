@@ -30,6 +30,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 一个插件类加载器，允许跨插件共享一个加载器.
+ * <p>原文：
  * A ClassLoader for plugins, to allow shared classes across multiple plugins
  */
 @org.jetbrains.annotations.ApiStatus.Internal // Paper

@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当一个物品被合成的时候触发这个事件.
+ * <p>原文：
  * Called when the recipe of an Item is completed inside a crafting matrix.
  */
 public class CraftItemEvent extends InventoryClickEvent {
@@ -33,7 +36,11 @@ public class CraftItemEvent extends InventoryClickEvent {
     }
 
     /**
-     * @return A copy of the current recipe on the crafting matrix.
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取合成出该物品所用的合成公式.
+     *
+     * @return 被合成出来的物品所用的合成公式
+     * <p>原文：A copy of the current recipe on the crafting matrix.
      */
     @NotNull
     public Recipe getRecipe() {

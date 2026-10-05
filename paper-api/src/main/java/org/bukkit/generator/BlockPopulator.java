@@ -7,6 +7,18 @@ import org.bukkit.event.world.WorldInitEvent;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 用于生成一定小区域的方块的方块填充器。
+ * <p>
+ * 例如，在地狱中或生成的填满宝藏的地牢中生成萤石。
+ * <p>
+ * A BlockPopulator can be used in combination with a custom {@link ChunkGenerator}
+ * by returning it in the method {@link ChunkGenerator#getDefaultPopulators(World)}
+ * or by adding it manually to the worlds populator list returned by {@link World#getPopulators()}.
+ * <p>
+ * When adding a BlockPopulator manually to a world it is recommended to do so during
+ * the {@link WorldInitEvent}.
+ * <p>原文：
  * A block populator is responsible for generating a small area of blocks.
  * <p>
  * For example, generating glowstone inside the nether or generating dungeons
@@ -22,6 +34,14 @@ import org.jetbrains.annotations.NotNull;
 public abstract class BlockPopulator {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 在指定的区块附近或内部填充一定区域的方块。
+     * <p>
+     * 在指定区块四周的区块必须已经存在；就是说，指定方块的东南西北都必须有一个区块存在，
+     * 角落区块可以不存在。当准备好时填充器会记录那些区块所有的修改请求并执行修改。
+     * <p>
+     * 译注：存在的意思可能是加载。
+     * <p>原文：
      * Populates an area of blocks at or around the given chunk.
      * <p>
      * The chunks on each side of the specified chunk must already exist; that
@@ -30,10 +50,14 @@ public abstract class BlockPopulator {
      * populator should record any changes required for those chunks and
      * perform the changes when they are ready.
      *
-     * @param world The world to generate in
-     * @param random The random generator to use
-     * @param source The chunk to generate for
-     * @deprecated Use {@link #populate(WorldInfo, Random, int, int, LimitedRegion)}
+     * @param world 用于生成的世界
+     * <p>原文：The world to generate in
+     * @param random 使用的随机生成器
+     * <p>原文：The random generator to use
+     * @param source 用于生成的区块
+     * <p>原文：The chunk to generate for
+     * @deprecated 建议使用 {@link #populate(WorldInfo, Random, int, int, LimitedRegion)}
+     * <p>原文：Use {@link #populate(WorldInfo, Random, int, int, LimitedRegion)}
      */
     @Deprecated(since = "1.17.1")
     public void populate(@NotNull World world, @NotNull Random random, @NotNull Chunk source) {

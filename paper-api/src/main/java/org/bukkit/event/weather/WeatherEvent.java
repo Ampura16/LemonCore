@@ -5,6 +5,9 @@ import org.bukkit.event.Event;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 和天气有关的事件
+ * <p>原文：
  * Represents a Weather-related event
  */
 public abstract class WeatherEvent extends Event {
@@ -16,9 +19,13 @@ public abstract class WeatherEvent extends Event {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回发生此次天气事件所在的世界.
+     * <p>原文：
      * Returns the World where this event is occurring
      *
-     * @return World this event is occurring in
+     * @return 天气事件所在的世界
+     * <p>原文：World this event is occurring in
      */
     @NotNull
     public final World getWorld() {

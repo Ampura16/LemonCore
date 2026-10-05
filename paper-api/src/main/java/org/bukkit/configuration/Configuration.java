@@ -5,10 +5,21 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 配置文件的基类.
+ * <p>原文：
  * Represents a source of configurable options and settings
  */
 public interface Configuration extends ConfigurationSection {
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置指定路径的缺省值.
+     * <p>
+     * 如果没有默认的 {@link Configuration}.
+     * 那么将会建立一个新的 {@link MemoryConfiguration} 用于保存.
+     * <p>
+     * 如果值为 null ，该值将被从默认的配置源中删除.
+     * <p>原文：
      * Sets the default value of the given path as provided.
      * <p>
      * If no source {@link Configuration} was provided as a default
@@ -18,26 +29,45 @@ public interface Configuration extends ConfigurationSection {
      * If value is null, the value will be removed from the default
      * Configuration source.
      *
-     * @param path Path of the value to set.
-     * @param value Value to set the default to.
-     * @throws IllegalArgumentException Thrown if path is null.
+     * @param path 路径.
+     * <p>原文：Path of the value to set.
+     * @param value 缺省值.
+     * <p>原文：Value to set the default to.
+     * @throws IllegalArgumentException 如果路径为 null .
+     * <p>原文：Thrown if path is null.
      */
     @Override
     public void addDefault(@NotNull String path, @Nullable Object value);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 把指定map里面的键值都加入到缺省值列表.
+     * <p>
+     * 如果没有缺省值 {@link Configuration}, 那么将会建立一个新的缺省值 {@link MemoryConfiguration} 用于保存.
+     * <p>
+     * 如果值为 null , 将会删除该路径上的缺省值.
+     * <p>原文：
      * Sets the default values of the given paths as provided.
      * <p>
      * If no source {@link Configuration} was provided as a default
      * collection, then a new {@link MemoryConfiguration} will be created to
      * hold the new default values.
      *
-     * @param defaults A map of Path{@literal ->}Values to add to defaults.
-     * @throws IllegalArgumentException Thrown if defaults is null.
+     * @param defaults Map 的键是路径, 值是对应路径的值.
+     * <p>原文：A map of Path{@literal ->}Values to add to defaults.
+     * @throws IllegalArgumentException 如果defaults为null.
+     * <p>原文：Thrown if defaults is null.
      */
     public void addDefaults(@NotNull Map<String, Object> defaults);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 把指定 {@link Configuration} 全部加入到缺省值列表.
+     * <p>
+     * 如果没有缺省值 {@link Configuration}, 那么将会建立一个新的 {@link MemoryConfiguration} 用于保存.
+     * <p>
+     * 你可以使用{@link #setDefaults(org.bukkit.configuration.Configuration)}来设置缺省值列表来源.
+     * <p>原文：
      * Sets the default values of the given paths as provided.
      * <p>
      * If no source {@link Configuration} was provided as a default
@@ -49,40 +79,63 @@ public interface Configuration extends ConfigurationSection {
      * you require this, you should set the default source with {@link
      * #setDefaults(org.bukkit.configuration.Configuration)}.
      *
-     * @param defaults A configuration holding a list of defaults to copy.
-     * @throws IllegalArgumentException Thrown if defaults is null or this.
+     * @param defaults 包含要复制的默认值列表的配置.
+     * <p>原文：A configuration holding a list of defaults to copy.
+     * @throws IllegalArgumentException 如果 defaults 为 null 或等于 this.
+     * <p>原文：Thrown if defaults is null or this.
      */
     public void addDefaults(@NotNull Configuration defaults);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置新的缺省值列表.
+     * <p>
+     * 将直接替换原有的缺省值列表(如果有).
+     * <p>原文：
      * Sets the source of all default values for this {@link Configuration}.
      * <p>
      * If a previous source was set, or previous default values were defined,
      * then they will not be copied to the new source.
      *
-     * @param defaults New source of default values for this configuration.
-     * @throws IllegalArgumentException Thrown if defaults is null or this.
+     * @param defaults 新的 {@link Configuration} .
+     * <p>原文：New source of default values for this configuration.
+     * @throws IllegalArgumentException 当参数为 null 或 defaults == getDefaults() 时, 抛出此异常.
+     * <p>原文：Thrown if defaults is null or this.
      */
     public void setDefaults(@NotNull Configuration defaults);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这个 {@link Configuration} 的缺省值 {@link Configuration}.
+     * <p>
+     * 如果设置过缺省值, 即使没有设置缺省值列表, 也会返回 {@link Configuration}.
+     * <p>
+     * 如果都没有, 则返回 null.
+     * <p>原文：
      * Gets the source {@link Configuration} for this configuration.
      * <p>
      * If no configuration source was set, but default values were added, then
      * a {@link MemoryConfiguration} will be returned. If no source was set
      * and no defaults were set, then this method will return null.
      *
-     * @return Configuration source for default values, or null if none exist.
+     * @return 返回缺省值列表, 如果没有则返回 null.
+     * <p>原文：Configuration source for default values, or null if none exist.
      */
     @Nullable
     public Configuration getDefaults();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这个 {@link Configuration} 的 {@link ConfigurationOptions}.
+     * <p>
+     * 如需修改配置,直接修改返回值即可.
+     * <p>原文：
      * Gets the {@link ConfigurationOptions} for this {@link Configuration}.
      * <p>
      * All setters through this method are chainable.
      *
-     * @return Options for this configuration
+     * @return 这个配置文件的一些配置(格式之类的).
+     * <p>原文：Options for this configuration
      */
     @NotNull
     public ConfigurationOptions options();

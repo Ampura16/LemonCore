@@ -15,6 +15,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当一个 {@link CommandSender} 尝试补全命令时触发本事件.
+ * <br>
+ * 请注意由于客户端的更改, 如果命令发起者是玩家, 本事件
+ * 将只有在指定了命令参数后触发, 而不是命令本身.建议希望从tab补全列表删除命令的插件
+ * 确保客户端没有相关命令的执行权限, 或使用{@link PlayerCommandSendEvent}.
+ * <p>原文：
  * Called when a {@link CommandSender} of any description (ie: player or
  * console) attempts to tab complete.
  * <br>
@@ -54,9 +61,13 @@ public class TabCompleteEvent extends Event implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取正在补全这个命令的发送者.
+     * <p>原文：
      * Get the sender completing this command.
      *
-     * @return the {@link CommandSender} instance
+     * @return {@link CommandSender} 实例
+     * <p>原文：the {@link CommandSender} instance
      */
     @NotNull
     public CommandSender getSender() {
@@ -64,9 +75,15 @@ public class TabCompleteEvent extends Event implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回构成这个补全项的命令缓冲区.
+     * <p>
+     * 译注: 命令缓冲区是什么? 比如您对命令"/tp no"进行补全，"/tp no"即为这个buffer.
+     * <p>原文：
      * Return the entire buffer which formed the basis of this completion.
      *
-     * @return command buffer, as entered
+     * @return 命令缓冲区，即为你输入的内容
+     * <p>原文：command buffer, as entered
      */
     @NotNull
     public String getBuffer() {
@@ -74,10 +91,15 @@ public class TabCompleteEvent extends Event implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 提供给发送者的补全项的列表.
+     * 这个列表是可变的，可以编辑该列表以实现更改补全项.
+     * <p>原文：
      * The list of completions which will be offered to the sender. Completions may be ordered alphanumerically later on in the tab completion process.
      * This list is mutable and reflects what will be offered.
      *
-     * @return a list of offered completions
+     * @return 提供的补全项的列表
+     * <p>原文：a list of offered completions
      */
     @NotNull
     public List<String> getCompletions() {
@@ -85,11 +107,15 @@ public class TabCompleteEvent extends Event implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置提供的补全项, 会覆盖已设置的补全项.
+     * <p>原文：
      * Set the completions offered, overriding any already set.
      * <br>
      * The passed collection will be cloned to a new List. You must call {@link #getCompletions()} to mutate from here
      *
-     * @param completions the new completions
+     * @param completions 新的补全项
+     * <p>原文：the new completions
      */
     public void setCompletions(@NotNull List<String> completions) {
         Preconditions.checkArgument(completions != null, "completions cannot be null");

@@ -4,6 +4,9 @@ import net.kyori.adventure.sound.Sound;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 声音类别枚举.
+ * <p>原文：
  * An Enum of categories for sounds.
  */
 @NullMarked

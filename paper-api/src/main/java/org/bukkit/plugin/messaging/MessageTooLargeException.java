@@ -1,6 +1,9 @@
 package org.bukkit.plugin.messaging;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 如果要发送的插件信息(Plugin Message)过大则抛出此异常。
+ * <p>原文：
  * Thrown if a Plugin Message is sent that is too large to be sent.
  */
 @SuppressWarnings("serial")

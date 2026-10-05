@@ -12,6 +12,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当喷溅药水命中区域时调用。
+ * <p>原文：
  * Called when a splash potion hits an area
  */
 public class LingeringPotionSplashEvent extends ProjectileHitEvent implements Cancellable {
@@ -42,9 +45,13 @@ public class LingeringPotionSplashEvent extends ProjectileHitEvent implements Ca
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取生成的 AreaEffectCloud。
+     * <p>原文：
      * Gets the AreaEffectCloud spawned
      *
-     * @return The spawned AreaEffectCloud
+     * @return 生成的 AreaEffectCloud
+     * <p>原文：The spawned AreaEffectCloud
      */
     @NotNull
     public AreaEffectCloud getAreaEffectCloud() {

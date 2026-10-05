@@ -7,6 +7,14 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表 Mojang 通用游戏事件.
+ * <p>
+ * 译注:这些事件非 Bukkit 框架内提供的事件, 而是 Mojang 在原游戏引入的事件,
+ * 目前已知原版游戏用于<a href="https://zh.minecraft.wiki/w/%E5%B9%BD%E5%8C%BF%E6%84%9F%E6%B5%8B%E4%BD%93">幽匿感测体</a>中.
+ * <p>
+ * 不过 Bukkit 框架提供了一个新的事件: {@link org.bukkit.event.world.GenericGameEvent}, 使得监听 Mojang 游戏事件成为可能.
+ * <p>原文：
  * Represents a generic Mojang game event.
  */
 public abstract class GameEvent implements Keyed {
@@ -234,11 +242,17 @@ public abstract class GameEvent implements Keyed {
     public static final GameEvent WOLF_SHAKING = ENTITY_ACTION;
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 根据指定的{@link NamespacedKey}获取{@link GameEvent 游戏事件}.
+     * <p>原文：
      * Returns a {@link GameEvent} by a {@link NamespacedKey}.
      *
-     * @param namespacedKey the key
-     * @return the event or null
-     * @deprecated Use {@link Registry#get(NamespacedKey)} instead.
+     * @param namespacedKey 键
+     * <p>原文：the key
+     * @return 游戏事件, 如果 key 不存在则返回 null
+     * <p>原文：the event or null
+     * @deprecated 请使用 {@link Registry#get(NamespacedKey)}
+     * <p>原文：Use {@link Registry#get(NamespacedKey)} instead.
      */
     @Nullable
     @Deprecated(since = "1.20.1")
@@ -247,10 +261,15 @@ public abstract class GameEvent implements Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回所有游戏事件的集合.
+     * <p>原文：
      * Returns the set of all GameEvents.
      *
-     * @return the memoryKeys
-     * @deprecated use {@link Registry#stream()}.
+     * @return 游戏事件键的集合
+     * <p>原文：the memoryKeys
+     * @deprecated 请使用 {@link Registry#iterator()}
+     * <p>原文：use {@link Registry#stream()}.
      */
     @NotNull
     @Deprecated(since = "1.20.1")

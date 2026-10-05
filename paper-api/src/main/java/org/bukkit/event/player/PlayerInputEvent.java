@@ -7,6 +7,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当玩家向服务器发送更新的输入时触发.
+ * <p>原文：
  * This event is called when a player sends updated input to the server.
  *
  * @see Player#getCurrentInput()
@@ -24,9 +27,13 @@ public class PlayerInputEvent extends PlayerEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取从此玩家接收到的新输入.
+     * <p>原文：
      * Gets the new input received from this player.
      *
-     * @return the new input
+     * @return 新输入
+     * <p>原文：the new input
      */
     @NotNull
     public Input getInput() {

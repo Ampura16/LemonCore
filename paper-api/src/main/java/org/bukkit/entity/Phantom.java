@@ -5,12 +5,19 @@ import org.jetbrains.annotations.Nullable;
 import java.util.UUID;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表幻翼.
+ * <p>原文：
  * Represents a phantom.
  */
 public interface Phantom extends Flying, Enemy {
 
     /**
-     * @return The size of the phantom
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @return 幻翼大小.
+     * <p>原文：The size of the phantom
      */
     public int getSize();
 

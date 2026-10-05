@@ -10,6 +10,9 @@ import org.bukkit.Translatable;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 表示可以在 {@link ArmorTrim} 中使用的材质。
+ * <p>原文：
  * Represents a material that may be used in an {@link ArmorTrim}.
  */
 public interface TrimMaterial extends Keyed, Translatable {

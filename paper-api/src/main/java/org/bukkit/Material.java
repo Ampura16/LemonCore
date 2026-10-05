@@ -141,6 +141,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 所有物品的枚举.
+ * <p>原文：
  * An enum of all material IDs accepted by the official server and client
  */
 @SuppressWarnings({"DeprecatedIsStillUsed", "deprecation"}) // Paper
@@ -2851,9 +2854,13 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     // Paper end - isCollidable API
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 没有任何理由要使用它:) .
+     * <p>原文：
      * Do not use for any reason.
      *
-     * @return ID of this material
+     * @return 物品id
+     * <p>原文：ID of this material
      * @apiNote Internal Use Only
      */
     @ApiStatus.Internal // Paper
@@ -2863,9 +2870,13 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 没有任何理由要使用它:) .
+     * <p>原文：
      * Checks if this constant is a legacy material.
      *
-     * @return legacy status
+     * @return 是否为旧版表示方式
+     * <p>原文：legacy status
      */
     // @Deprecated(since = "1.13", forRemoval = true) // Paper - this is useful, don't deprecate
     public boolean isLegacy() {
@@ -2880,6 +2891,9 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这个物品的最大堆叠数量.
+     * <p>原文：
      * Gets the maximum amount of this material that can be held in a stack.
      * <p>
      * Note that this is the <strong>default</strong> maximum size for this Material.
@@ -2887,7 +2901,8 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * stack with {@link ItemMeta#setMaxStackSize(Integer)}. If an ItemStack instance
      * is available, {@link ItemStack#getMaxStackSize()} may be preferred.
      *
-     * @return Maximum stack size for this material
+     * @return 物品的最大堆叠数量
+     * <p>原文：Maximum stack size for this material
      */
     public int getMaxStackSize() {
         if (this == LEGACY_AIR) {
@@ -2898,9 +2913,13 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这个物品的最大耐久度.
+     * <p>原文：
      * Gets the maximum durability of this material
      *
-     * @return Maximum durability for this material
+     * @return 物品的最大耐久度
+     * <p>原文：Maximum durability for this material
      */
     public short getMaxDurability() {
         ItemType type = asItemType();
@@ -2908,10 +2927,14 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 为此Material创建一个新的{@link BlockData}实例, 所有属性初始化为未指定的默认值.
+     * <p>原文：
      * Creates a new {@link BlockData} instance for this Material, with all
      * properties initialized to unspecified defaults.
      *
-     * @return new data instance
+     * @return 新的BlockData实例
+     * <p>原文：new data instance
      */
     @NotNull
     public BlockData createBlockData() {
@@ -2919,11 +2942,16 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 为此Material创建一个新的{@link BlockData}实例, 所有属性初始化为未指定的默认值.
+     * <p>原文：
      * Creates a new {@link BlockData} instance for this Material, with
      * all properties initialized to unspecified defaults.
      *
-     * @param consumer consumer to run on new instance before returning
-     * @return new data instance
+     * @param consumer 在返回前对新实例执行的操作
+     * <p>原文：consumer to run on new instance before returning
+     * @return 新的BlockData实例
+     * <p>原文：new data instance
      */
     @NotNull
     public BlockData createBlockData(@Nullable Consumer<? super BlockData> consumer) {
@@ -2931,13 +2959,19 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 为此Material创建一个新的{@link BlockData}实例, 所有属性初始化为未指定的默认值, 但data中提供的属性除外.
+     * <p>原文：
      * Creates a new {@link BlockData} instance for this Material, with all
      * properties initialized to unspecified defaults, except for those provided
      * in data.
      *
-     * @param data data string
-     * @return new data instance
-     * @throws IllegalArgumentException if the specified data is not valid
+     * @param data 数据字符串
+     * <p>原文：data string
+     * @return 新的BlockData实例
+     * <p>原文：new data instance
+     * @throws IllegalArgumentException 如果指定的数据无效
+     * <p>原文：if the specified data is not valid
      */
     @NotNull
     public BlockData createBlockData(@Nullable String data) throws IllegalArgumentException {
@@ -2945,9 +2979,13 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这个物品相关的MaterialData类.
+     * <p>原文：
      * Gets the MaterialData class associated with this Material
      *
-     * @return MaterialData associated with this Material
+     * @return 物品相关的MaterialData类
+     * <p>原文：MaterialData associated with this Material
      * @deprecated use {@link #createBlockData()}
      */
     @NotNull
@@ -2958,12 +2996,18 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 用给定的初始数据构造一个新的与这个物品有关的MaterialData对象.
+     * <p>原文：
      * Constructs a new MaterialData relevant for this Material, with the
      * given initial data
      *
-     * @param raw Initial data to construct the MaterialData with
-     * @return New MaterialData with the given data
-     * @deprecated Magic value
+     * @param raw 用来构造MaterialData的初始数据
+     * <p>原文：Initial data to construct the MaterialData with
+     * @return 给定值的MaterialData对象
+     * <p>原文：New MaterialData with the given data
+     * @deprecated 不安全的参数
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.6.2")
     @NotNull
@@ -2986,19 +3030,27 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检测这个物品能否放置(是否为方块).
+     * <p>原文：
      * Checks if this Material is a placable block
      *
-     * @return true if this material is a block
+     * @return 物品是否为方块
+     * <p>原文：true if this material is a block
      */
     public boolean isBlock() {
         return asBlockType() != null;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检测这个物品能否食用.
+     * <p>原文：
      * Checks if this Material provides the {@link io.papermc.paper.datacomponent.DataComponentTypes#FOOD} and
      * {@link io.papermc.paper.datacomponent.DataComponentTypes#CONSUMABLE} and, thereby, is edible by a player.
      *
-     * @return true if this Material is edible.
+     * @return 如果物品能食用
+     * <p>原文：true if this Material is edible.
      */
     public boolean isEdible() {
         ItemType type = asItemType();
@@ -3006,13 +3058,20 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 尝试用给定名称获取Material对象.
+     * <p>
+     * 这是一个标准的枚举查找,名称必须是枚举中给出的准确名称.
+     * <p>原文：
      * Attempts to get the Material with the given name.
      * <p>
      * This is a normal lookup, names must be the precise name they are given
      * in the enum.
      *
-     * @param name Name of the material to get
-     * @return Material if found, or null
+     * @param name 用来获取Material对象的名称
+     * <p>原文：Name of the material to get
+     * @return 如果找不到返回null,否则返回Material对象
+     * <p>原文：Material if found, or null
      */
     @Nullable
     public static Material getMaterial(@NotNull final String name) {
@@ -3020,6 +3079,13 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 尝试用给定名称获取Material对象.
+     * <p>
+     * 这是一个标准的枚举查找,名称必须是枚举中给出的准确名称 (不过也可以包括'LEGACY_'前缀,若 legacyName 参数为true).
+     * <p>
+     * 如果参数 legacyName 为 true, 将会从旧版的物品列表中查询, 但依然返回新版的 Material 表示(即本方法对升级旧版保存的数据很有帮助).
+     * <p>原文：
      * Attempts to get the Material with the given name.
      * <p>
      * This is a normal lookup, names must be the precise name they are given in
@@ -3030,9 +3096,12 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * but the returned Material will be a modern material (ie this method is
      * useful for updating stored data).
      *
-     * @param name Name of the material to get
-     * @param legacyName whether this is a legacy name lookup
-     * @return Material if found, or null
+     * @param name 用来获取Material对象的名称
+     * <p>原文：Name of the material to get
+     * @param legacyName 传入的名称是否为旧版表示方式
+     * <p>原文：whether this is a legacy name lookup
+     * @return 如果找不到返回null,否则返回Material对象
+     * <p>原文：Material if found, or null
      */
     @Nullable
     public static Material getMaterial(@NotNull String name, boolean legacyName) {
@@ -3049,14 +3118,21 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 尝试根据给定名称匹配Material对象.
+     * <p>
+     * 这是一种模糊匹配: 名称会先去除"minecraft:"命名空间前缀, 转换为大写, 然后去除特殊字符, 以尝试将其格式化为枚举名称.
+     * <p>原文：
      * Attempts to match the Material with the given name.
      * <p>
      * This is a match lookup; names will be stripped of the "minecraft:"
      * namespace, converted to uppercase, then stripped of special characters in
      * an attempt to format it like the enum.
      *
-     * @param name Name of the material to get
-     * @return Material if found, or null
+     * @param name 用来获取Material对象的名称
+     * <p>原文：Name of the material to get
+     * @return 如果找不到返回null, 否则返回Material对象
+     * <p>原文：Material if found, or null
      */
     @Nullable
     public static Material matchMaterial(@NotNull final String name) {
@@ -3064,16 +3140,25 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 尝试根据给定名称匹配Material对象.
+     * <p>
+     * 这是一种模糊匹配: 名称会先去除"minecraft:"命名空间前缀, 转换为大写, 然后去除特殊字符, 以尝试将其格式化为枚举名称.
+     * <p>原文：
      * Attempts to match the Material with the given name.
      * <p>
      * This is a match lookup; names will be stripped of the "minecraft:"
      * namespace, converted to uppercase, then stripped of special characters in
      * an attempt to format it like the enum.
      *
-     * @param name Name of the material to get
-     * @param legacyName whether this is a legacy name (see
+     * @param name 用来获取Material对象的名称
+     * <p>原文：Name of the material to get
+     * @param legacyName 传入的名称是否为旧版表示方式 (参考
+     * {@link #getMaterial(java.lang.String, boolean)})
+     * <p>原文：whether this is a legacy name (see
      * {@link #getMaterial(java.lang.String, boolean)}
-     * @return Material if found, or null
+     * @return 如果找不到返回null, 否则返回Material对象
+     * <p>原文：Material if found, or null
      */
     @Nullable
     public static Material matchMaterial(@NotNull final String name, boolean legacyName) {
@@ -3097,7 +3182,11 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
-     * @return True if this material represents a playable music disk.
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @return 如果这个物品代表音乐唱片则为true.
+     * <p>原文：True if this material represents a playable music disk.
      */
     public boolean isRecord() {
         ItemType type = asItemType();
@@ -3105,9 +3194,13 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检测物品是否为固体方块(可被放置).
+     * <p>原文：
      * Check if the material is a block and solid (can be built upon)
      *
-     * @return True if this material is a block and solid
+     * @return 物品是否为固体方块
+     * <p>原文：True if this material is a block and solid
      */
     public boolean isSolid() {
         BlockType type = asBlockType();
@@ -3115,9 +3208,13 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检测物品是否为空气方块.
+     * <p>原文：
      * Check if the material is an air block.
      *
-     * @return True if this material is an air block.
+     * @return 物品是否为空气方块
+     * <p>原文：True if this material is an air block.
      */
     public boolean isAir() {
         BlockType type = asBlockType();
@@ -3134,10 +3231,16 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检测这个物品是否为透明的方块.
+     * <p>原文：
      * Check if the material is a block and does not block any light
      *
-     * @return True if this material is a block and does not block any light
-     * @deprecated currently does not have an implementation which is well
+     * @return 这个物品是否为透明的方块
+     * <p>原文：True if this material is a block and does not block any light
+     * @deprecated 目前还没有一个与底层服务器联系紧密的
+     * 实现。欢迎贡献.(如果你有idea，请左转Spigot Stash贡献你的代码)
+     * <p>原文：currently does not have an implementation which is well
      * linked to the underlying server. Contributions welcome.
      */
     @Deprecated(since = "1.13", forRemoval = true)
@@ -3336,9 +3439,13 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检测这个方块是否为可燃的.
+     * <p>原文：
      * Check if the material is a block and can catch fire
      *
-     * @return True if this material is a block and can catch fire
+     * @return 这个方块是否为可燃的
+     * <p>原文：True if this material is a block and can catch fire
      */
     public boolean isFlammable() {
         BlockType type = asBlockType();
@@ -3346,9 +3453,13 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检测这个方块能否被火烧掉.
+     * <p>原文：
      * Check if the material is a block and can burn away
      *
-     * @return True if this material is a block and can burn away
+     * @return 这个方块能否被火烧掉
+     * <p>原文：True if this material is a block and can burn away
      */
     public boolean isBurnable() {
         BlockType type = asBlockType();
@@ -3356,9 +3467,13 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查这个物品是否可作为燃料使用.
+     * <p>原文：
      * Checks if this Material can be used as fuel in a Furnace
      *
-     * @return true if this Material can be used as fuel.
+     * @return 这个物品是否可作为燃料使用
+     * <p>原文：true if this Material can be used as fuel.
      */
     public boolean isFuel() {
         ItemType type = asItemType();
@@ -3366,6 +3481,20 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检测此Material是否为遮光方块(在光照引擎中会阻挡光线).
+     * <p>
+     * 一般来说, 大多数完整方块都会遮光. 非完整方块(如铁砧、箱子、高草丛、楼梯等)不会遮光, 某些特殊完整方块(如屏障、刷怪笼)尽管纹理不透明但也会阻挡光线.
+     * <p>
+     * 遮光方块会产生以下效果:
+     * <ul>
+     *   <li>如果遮光方块在箱子上方, 箱子将无法打开.</li>
+     *   <li>生物无法在遮光方块内部生成.</li>
+     *   <li>只有遮光方块可以被"充能"({@link Block#isBlockPowered()}).</li>
+     * </ul>
+     * 此列表可能不完整. 有关遮光方块的完整副作用列表, 请参阅
+     * <a href="https://minecraft.wiki/w/Opacity">Minecraft Wiki</a>.
+     * <p>原文：
      * Check if the material is a block and occludes light in the lighting engine.
      * <p>
      * Generally speaking, most full blocks will occlude light. Non-full blocks are
@@ -3381,7 +3510,8 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * This list may be inconclusive. For a full list of the side effects of an occluding
      * block, see the <a href="https://minecraft.wiki/w/Opacity">Minecraft Wiki</a>.
      *
-     * @return True if this material is a block and occludes light
+     * @return 如果此Material是遮光方块则返回true
+     * <p>原文：True if this material is a block and occludes light
      */
     public boolean isOccluding() {
         BlockType type = asBlockType();
@@ -3389,7 +3519,11 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
-     * @return True if this material is affected by gravity.
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @return 如果这个物品（仅方块）受重力影响则为true.
+     * <p>原文：True if this material is affected by gravity.
      */
     public boolean hasGravity() {
         BlockType type = asBlockType();
@@ -3397,15 +3531,31 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检测这个Material是否为可获得的物品.
+     * <p>
+     * 译注:可获得的物品一般就是常规物品，但某些方块物品比如床方块、岩浆方块等
+     * 是不能直接获得的但床物品等是可以的.
+     * <p>原文：
      * Checks if this Material is an obtainable item.
      *
-     * @return true if this material is an item
+     * @return true 如果材料是一个物品
+     * <p>原文：true if this material is an item
      */
     public boolean isItem() {
         return asItemType() != null;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检测此Material是否可以被交互.
+     * <p>
+     * 可交互的Material包括那些在玩家交互时具有功能的方块, 如箱子、熔炉等.
+     * <p>
+     * 某些方块(如活塞头和楼梯)也被视为可交互的, 尽管它们可能不会执行额外的功能.
+     * <p>
+     * 请注意, 某些Material的可交互性可能取决于其状态. 如果该Material在至少一种状态下会执行额外的交互处理, 则此方法返回true.
+     * <p>原文：
      * Checks if this Material can be interacted with.
      *
      * Interactable materials include those with functionality when they are
@@ -3419,7 +3569,8 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * state in which additional interact handling is performed for the
      * material.
      *
-     * @return true if this material can be interacted with.
+     * @return 如果此Material可以被交互则返回true
+     * <p>原文：true if this material can be interacted with.
      * @deprecated This method is not comprehensive and does not accurately reflect what block types are
      * interactable. Many "interactions" are defined on the item not block, and many are conditional on some other world state
      * checks being true.
@@ -3431,13 +3582,21 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取方块的硬度等级(也称为"强度").
+     * <br>
+     * 此数值用于计算破坏每个方块所需的时间.
+     * <br>
+     * 仅当{@link #isBlock()}为true时可用.
+     * <p>原文：
      * Obtains the block's hardness level (also known as "strength").
      * <br>
      * This number is used to calculate the time required to break each block.
      * <br>
      * Only available when {@link #isBlock()} is true.
      *
-     * @return the hardness of that material.
+     * @return 此Material的硬度值
+     * <p>原文：the hardness of that material.
      */
     public float getHardness() {
         BlockType type = asBlockType();
@@ -3447,6 +3606,13 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取方块的爆炸抗性(也称为方块"耐久度").
+     * <br>
+     * 此值在爆炸计算中用于判断方块是否应该被炸毁.
+     * <br>
+     * 仅当{@link #isBlock()}为true时可用.
+     * <p>原文：
      * Obtains the blast resistance value (also known as block "durability").
      * <br>
      * This value is used in explosions to calculate whether a block should be
@@ -3454,7 +3620,8 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * <br>
      * Only available when {@link #isBlock()} is true.
      *
-     * @return the blast resistance of that material.
+     * @return 此Material的爆炸抗性
+     * <p>原文：the blast resistance of that material.
      */
     public float getBlastResistance() {
         BlockType type = asBlockType();
@@ -3463,6 +3630,15 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回表示方块"滑溜程度"的数值.
+     * <p>
+     * 滑溜程度较高的方块(如{@link Material#ICE})可以让玩家和其他实体滑行得更远.
+     * <p>
+     * 大多数方块的默认滑溜程度为{@code 0.6f}.
+     * <p>
+     * 仅当{@link #isBlock()}为true时可用.
+     * <p>原文：
      * Returns a value that represents how 'slippery' the block is.
      *
      * Blocks with higher slipperiness, like {@link Material#ICE} can be slid on
@@ -3472,7 +3648,8 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      *
      * Only available when {@link #isBlock()} is true.
      *
-     * @return the slipperiness of this block
+     * @return 此方块的滑溜程度
+     * <p>原文：the slipperiness of this block
      */
     public float getSlipperiness() {
         BlockType type = asBlockType();
@@ -3481,12 +3658,18 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 确定使用此材料在合成网格中合成后剩余的物品.
+     * <br>
+     * 仅当{@link #isItem()}为true时可用.
+     * <p>原文：
      * Determines the remaining item in a crafting grid after crafting with this
      * ingredient.
      * <br>
      * Only available when {@link #isItem()} is true.
      *
-     * @return the item left behind when crafting, or null if nothing is.
+     * @return 合成后剩余的物品, 如果没有则返回null
+     * <p>原文：the item left behind when crafting, or null if nothing is.
      */
     @Nullable
     public Material getCraftingRemainingItem() {
@@ -3496,11 +3679,17 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此Material最合适的装备槽位.
+     * <p>
+     * 对于大多数物品, 这将是{@link EquipmentSlot#HAND}.
+     * <p>原文：
      * Get the best suitable slot for this Material.
      *
      * For most items this will be {@link EquipmentSlot#HAND}.
      *
-     * @return the best EquipmentSlot for this Material
+     * @return 此Material最合适的EquipmentSlot
+     * <p>原文：the best EquipmentSlot for this Material
      */
     @NotNull
     public EquipmentSlot getEquipmentSlot() {
@@ -3531,6 +3720,13 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     // Paper end - improve default item attribute API
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回给定{@link EquipmentSlot}上所有默认{@link Attribute}及其{@link AttributeModifier}的不可变副本.
+     * <p>
+     * 默认属性是指某些物品上始终存在的属性, 如武器的攻击力或盔甲的护甲值.
+     * <p>
+     * 仅当{@link #isItem()}为true时可用.
+     * <p>原文：
      * Return an immutable copy of all default {@link Attribute}s and their
      * {@link AttributeModifier}s for a given {@link EquipmentSlot}.
      * <p>
@@ -3540,8 +3736,10 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * <p>
      * Only available when {@link #isItem()} is true.
      *
-     * @param slot the {@link EquipmentSlot} to check
-     * @return the immutable {@link Multimap} with the respective default
+     * @param slot 要检查的{@link EquipmentSlot}
+     * <p>原文：the {@link EquipmentSlot} to check
+     * @return 包含相应默认属性和修饰符的不可变{@link Multimap}, 如果没有设置属性则返回空map
+     * <p>原文：the immutable {@link Multimap} with the respective default
      * Attributes and modifiers, or an empty map if no attributes are set.
      */
     @NotNull
@@ -3552,9 +3750,13 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此Material所属的{@link CreativeCategory}.
+     * <p>原文：
      * Get the {@link CreativeCategory} to which this material belongs.
      *
-     * @return the creative category. null if does not belong to a category
+     * @return 创造模式分类, 如果不属于任何分类则返回null
+     * <p>原文：the creative category. null if does not belong to a category
      */
     @Nullable
     public CreativeCategory getCreativeCategory() {
@@ -3563,13 +3765,19 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取与此Material关联的物品或方块的翻译键.
+     * <p>
+     * 如果此Material同时具有物品和方块形式, 则使用物品形式.
+     * <p>原文：
      * Get the translation key of the item or block associated with this
      * material.
      *
      * If this material has both an item and a block form, the item form is
      * used.
      *
-     * @return the translation key of the item or block associated with this
+     * @return 与此Material关联的物品或方块的翻译键
+     * <p>原文：the translation key of the item or block associated with this
      * material
      * @see #getBlockTranslationKey()
      * @see #getItemTranslationKey()
@@ -3587,10 +3795,14 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取与此Material关联的方块的翻译键, 如果此Material没有关联的方块则返回null.
+     * <p>原文：
      * Get the translation key of the block associated with this material, or
      * null if this material does not have an associated block.
      *
-     * @return the translation key of the block associated with this material,
+     * @return 与此Material关联的方块的翻译键, 如果此Material没有关联的方块则返回null
+     * <p>原文：the translation key of the block associated with this material,
      * or null if this material does not have an associated block
      */
     @Nullable
@@ -3600,10 +3812,14 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取与此Material关联的物品的翻译键, 如果此Material没有关联的物品则返回null.
+     * <p>原文：
      * Get the translation key of the item associated with this material, or
      * null if this material does not have an associated item.
      *
-     * @return the translation key of the item associated with this material, or
+     * @return 与此Material关联的物品的翻译键, 如果此Material没有关联的物品则返回null
+     * <p>原文：the translation key of the item associated with this material, or
      * null if this material does not have an associated item.
      */
     @Nullable
@@ -3613,10 +3829,14 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检测此Material是否可堆肥(可以放入堆肥桶中).
+     * <p>原文：
      * Checks whether this material is compostable (can be inserted into a
      * composter).
      *
-     * @return true if this material is compostable
+     * @return 如果此Material可堆肥则返回true
+     * <p>原文：true if this material is compostable
      * @see #getCompostChance()
      */
     public boolean isCompostable() {
@@ -3624,6 +3844,13 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此Material成功堆肥的概率. 返回值在0到1之间(包含0和1).
+     * <p>
+     * 堆肥概率为1的材料将始终提升堆肥桶的等级, 而堆肥概率为0的材料永远不会提升.
+     * <p>
+     * 插件在调用此方法之前应检查{@link #isCompostable()}是否返回true.
+     * <p>原文：
      * Get the chance that this material will successfully compost. The returned
      * value is between 0 and 1 (inclusive).
      *
@@ -3633,8 +3860,10 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Plugins should check that {@link #isCompostable} returns true before
      * calling this method.
      *
-     * @return the chance that this material will successfully compost
-     * @throws IllegalArgumentException if the material is not compostable
+     * @return 此Material成功堆肥的概率
+     * <p>原文：the chance that this material will successfully compost
+     * @throws IllegalArgumentException 如果此Material不可堆肥
+     * <p>原文：if the material is not compostable
      * @see #isCompostable()
      */
     public float getCompostChance() {
@@ -3644,9 +3873,13 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 尝试将此Material转换为物品类型
+     * <p>原文：
      * Tries to convert this Material to an item type
      *
-     * @return the converted item type or null
+     * @return 转换后的物品类型, 如果无法转换则返回null
+     * <p>原文：the converted item type or null
      */
     @Nullable
     @org.jetbrains.annotations.Contract(pure = true) // Paper
@@ -3655,9 +3888,13 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 尝试将此Material转换为方块类型
+     * <p>原文：
      * Tries to convert this Material to a block type
      *
-     * @return the converted block type or null
+     * @return 转换后的方块类型, 如果无法转换则返回null
+     * <p>原文：the converted block type or null
      */
     @Nullable
     @org.jetbrains.annotations.Contract(pure = true) // Paper

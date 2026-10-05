@@ -7,6 +7,11 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当{@link Entity 实体}破坏门时触发本事件.
+ * <p>
+ * 取消该事件将导致该事件被延迟.
+ * <p>原文：
  * Called when an {@link Entity} breaks a door
  * <p>
  * Cancelling the event will cause the event to be delayed

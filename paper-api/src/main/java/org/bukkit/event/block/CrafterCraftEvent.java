@@ -9,6 +9,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当合成器即将合成物品时触发的事件.
+ * <p>原文：
  * Event called when a Crafter is about to craft an item.
  */
 public class CrafterCraftEvent extends BlockEvent implements Cancellable {
@@ -28,9 +31,13 @@ public class CrafterCraftEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取合成的结果.
+     * <p>原文：
      * Gets the result for the craft.
      *
-     * @return the result for the craft
+     * @return 合成的结果
+     * <p>原文：the result for the craft
      */
     @NotNull
     public ItemStack getResult() {
@@ -38,18 +45,26 @@ public class CrafterCraftEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置合成的结果.
+     * <p>原文：
      * Sets the result of the craft.
      *
-     * @param result the result of the craft
+     * @param result 合成的结果
+     * <p>原文：the result of the craft
      */
     public void setResult(@NotNull ItemStack result) {
         this.result = result.clone();
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取用于合成此物品的配方.
+     * <p>原文：
      * Gets the recipe that was used to craft this item.
      *
-     * @return the recipe that was used to craft this item
+     * @return 用于合成此物品的配方
+     * <p>原文：the recipe that was used to craft this item
      */
     @NotNull
     public CraftingRecipe getRecipe() {

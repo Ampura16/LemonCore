@@ -4,7 +4,12 @@ import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
 
 /**
- * @deprecated all usage of MaterialData is deprecated and subject to removal.
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ *
+ *
+ * @deprecated 所有 MaterialData 的用法均已弃用并可能被移除。
+ * 请使用 {@link org.bukkit.block.data.BlockData}。
+ * <p>原文：all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
  */
 @Deprecated(forRemoval = true, since = "1.13")
@@ -19,9 +24,15 @@ public class Banner extends MaterialData implements Attachable {
     }
 
     /**
-     * @param type the type
-     * @param data the raw data value
-     * @deprecated Magic value
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @param type 类型
+     * <p>原文：the type
+     * @param data 原始数据值
+     * <p>原文：the raw data value
+     * @deprecated 魔法值
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.8")
     public Banner(Material type, byte data) {

@@ -4,6 +4,9 @@ import java.util.Locale;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 表示被服务器监测的统计数据
+ * <p>原文：
  * Represents a countable statistic, which is tracked by the server.
  */
 public enum Statistic implements Keyed {
@@ -63,6 +66,10 @@ public enum Statistic implements Keyed {
     PIG_ONE_CM,
     NOTEBLOCK_PLAYED,
     RECORD_PLAYED,
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 名称具有误导性，实际上记录的是已游玩的tick数。
+     */
     PLAY_ONE_MINUTE,
     PLAYER_KILLS,
     FLOWER_POTTED,
@@ -110,9 +117,13 @@ public enum Statistic implements Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这项统计数据的种类.
+     * <p>原文：
      * Gets the type of this statistic.
      *
-     * @return the type of this statistic
+     * @return 这项统计数据的种类
+     * <p>原文：the type of this statistic
      */
     @NotNull
     public Type getType() {
@@ -120,6 +131,13 @@ public enum Statistic implements Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查该数据是否为次级统计数据.
+     * <p>
+     * 一项次级统计数据同时存在于每个方块、物品或实体(取决于{@link #getType()}).
+     * <p>
+     * 这是个多余的方法，相当于检查<code>getType() != Type.UNTYPED</code>.
+     * <p>原文：
      * Checks if this is a substatistic.
      * <p>
      * A substatistic exists en masse for each block, item, or entitytype, depending on
@@ -128,19 +146,26 @@ public enum Statistic implements Keyed {
      * This is a redundant method and equivalent to checking
      * <code>getType() != Type.UNTYPED</code>
      *
-     * @return true if this is a substatistic
+     * @return 如果为次级统计数据则返回true，否则返回false
+     * <p>原文：true if this is a substatistic
      */
     public boolean isSubstatistic() {
         return type != Type.UNTYPED;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查是否为一项用于处理方块的次级统计数据.
+     * <p>
+     * 这是个多余的方法，相当于检查<code>getType() == Type.BLOCK</code>.
+     * <p>原文：
      * Checks if this is a substatistic dealing with blocks.
      * <p>
      * This is a redundant method and equivalent to checking
      * <code>getType() == Type.BLOCK</code>
      *
-     * @return true if this deals with blocks
+     * @return 用于处理方块则返回true，否则返回false
+     * <p>原文：true if this deals with blocks
      */
     public boolean isBlock() {
         return type == Type.BLOCK;
@@ -153,26 +178,40 @@ public enum Statistic implements Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 统计数据的种类
+     * <p>原文：
      * The type of statistic.
-     *
      */
     public enum Type {
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 无类型的统计数据（通用统计数据）
+         * <p>原文：
          * Statistics of this type do not require a qualifier.
          */
         UNTYPED,
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 与物品有关的统计数据
+         * <p>原文：
          * Statistics of this type require an Item Material qualifier.
          */
         ITEM,
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 与方块有关的统计数据
+         * <p>原文：
          * Statistics of this type require a Block Material qualifier.
          */
         BLOCK,
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 与实体有关的统计数据
+         * <p>原文：
          * Statistics of this type require an EntityType qualifier.
          */
         ENTITY;

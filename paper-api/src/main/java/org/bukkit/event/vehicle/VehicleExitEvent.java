@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 实体退出载具的事件
+ * <p>原文：
  * Raised when a living entity exits a vehicle.
  */
 public class VehicleExitEvent extends VehicleEvent implements Cancellable {
@@ -32,9 +35,13 @@ public class VehicleExitEvent extends VehicleEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取退出载具事件的实体.
+     * <p>原文：
      * Get the living entity that exited the vehicle.
      *
-     * @return The entity.
+     * @return 退出载具的实体
+     * <p>原文：The entity.
      */
     @NotNull
     public LivingEntity getExited() {

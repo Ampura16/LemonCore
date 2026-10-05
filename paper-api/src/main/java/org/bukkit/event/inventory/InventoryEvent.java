@@ -11,6 +11,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表与玩家相关的物品栏事件
+ * <p>原文：
  * Represents a player related inventory event
  */
 public class InventoryEvent extends Event {
@@ -25,9 +28,13 @@ public class InventoryEvent extends Event {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此事件涉及的主要物品栏.
+     * <p>原文：
      * Gets the primary Inventory involved in this transaction
      *
-     * @return The upper inventory.
+     * @return 顶部背包
+     * <p>原文：The upper inventory.
      */
     @NotNull
     public Inventory getInventory() {
@@ -35,10 +42,14 @@ public class InventoryEvent extends Event {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取正在查看此主要/顶部物品栏的玩家列表.
+     * <p>原文：
      * Gets the list of players viewing the primary (upper) inventory involved
      * in this event
      *
-     * @return A list of people viewing.
+     * @return 正在查看此物品栏的玩家
+     * <p>原文：A list of people viewing.
      */
     @NotNull
     public List<HumanEntity> getViewers() {
@@ -46,6 +57,9 @@ public class InventoryEvent extends Event {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取物品栏本身的 InventoryView 对象。
+     * <p>原文：
      * Gets the view object itself
      *
      * @return InventoryView

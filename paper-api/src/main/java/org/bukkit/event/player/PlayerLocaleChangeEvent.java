@@ -9,6 +9,9 @@ import java.util.Locale;
 import java.util.Objects;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当玩家改变他们的语言设置时触发本事件.
+ * <p>原文：
  * Called when a player changes their locale in the client settings.
  */
 public class PlayerLocaleChangeEvent extends PlayerEvent {
@@ -26,7 +29,11 @@ public class PlayerLocaleChangeEvent extends PlayerEvent {
     }
 
     /**
-     * @return the player's new locale
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @return 玩家选择的语言
+     * <p>原文：the player's new locale
      * @see Player#getLocale()
      * @deprecated in favour of {@link #locale()}
      */

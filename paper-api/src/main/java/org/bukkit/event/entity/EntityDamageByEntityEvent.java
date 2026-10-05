@@ -9,6 +9,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当一个实体受到另外一个实体伤害时触发该事件
+ * <p>原文：
  * Called when an entity is damaged by an entity
  */
 public class EntityDamageByEntityEvent extends EntityDamageEvent {
@@ -52,9 +55,13 @@ public class EntityDamageByEntityEvent extends EntityDamageEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回造成这次伤害的实体
+     * <p>原文：
      * Returns the entity that damaged the defender.
      *
-     * @return Entity that damaged the defender.
+     * @return 造成这次伤害的实体
+     * <p>原文：Entity that damaged the defender.
      */
     @NotNull
     public Entity getDamager() {

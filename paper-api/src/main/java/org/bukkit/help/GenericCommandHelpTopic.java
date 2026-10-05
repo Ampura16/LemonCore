@@ -8,6 +8,10 @@ import org.bukkit.command.ConsoleCommandSender;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 缺少替代方案时, 帮助系统将为服务器CommandMap中的每个命令创建GenericCommandHelpTopic实例.
+ * 你可以将此类用作自定义帮助主题的基类, 或作为编写自己实现的示例.
+ * <p>原文：
  * Lacking an alternative, the help system will create instances of
  * GenericCommandHelpTopic for each command in the server's CommandMap. You
  * can use this class as a base class for custom help topics, or as an example

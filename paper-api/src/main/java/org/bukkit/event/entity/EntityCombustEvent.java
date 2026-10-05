@@ -7,6 +7,11 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当实体燃烧时触发该事件
+ * <p>
+ * 如果这个事件被取消,那么这个实体将不会燃烧.
+ * <p>原文：
  * Called when an entity combusts.
  * <p>
  * If this event is cancelled, the entity will not combust.
@@ -32,7 +37,11 @@ public class EntityCombustEvent extends EntityEvent implements Cancellable {
     }
 
     /**
-     * @return the amount of time (in seconds) the combustee should be alight
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @return 应被燃烧的时间长度(秒)
+     * <p>原文：the amount of time (in seconds) the combustee should be alight
      *     for
      */
     public float getDuration() {
@@ -40,26 +49,39 @@ public class EntityCombustEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 应被燃烧的时间(秒).
+     * <p>
+     * 这个数值仅会延长燃烧的时间,不会减少现有的燃烧时间.
+     * <p>原文：
      * The number of seconds the combustee should be alight for.
      * <p>
      * This value will only ever increase the combustion time, not decrease
      * existing combustion times.
      *
-     * @param duration the time in seconds to be alight for.
+     * @param duration 燃烧的持续时间(秒).
+     * <p>原文：the time in seconds to be alight for.
      */
     public void setDuration(float duration) {
         this.duration = duration;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 应被燃烧的时间(秒).
+     * <p>
+     * 这个数值仅会延长燃烧的时间,不会减少现有的燃烧时间.
+     * <p>原文：
      * The number of seconds the combustee should be alight for.
      * <p>
      * This value will only ever increase the combustion time, not decrease
      * existing combustion times.
      *
-     * @param duration the time in seconds to be alight for.
+     * @param duration 燃烧的持续时间(秒).
+     * <p>原文：the time in seconds to be alight for.
      * @see #setDuration(float)
-     * @deprecated duration is now a float
+     * @deprecated duration 现在为浮点数
+     * <p>原文：duration is now a float
      */
     @Deprecated(since = "1.21", forRemoval = true)
     public void setDuration(int duration) {

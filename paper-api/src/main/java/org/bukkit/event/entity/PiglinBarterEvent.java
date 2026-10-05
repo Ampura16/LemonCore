@@ -9,6 +9,11 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 储存与猪灵以物易物交互相关的所有数据。
+ *
+ * 此事件可由猪灵拾取其以物易物列表上的物品触发。
+ * <p>原文：
  * Stores all data related to the bartering interaction with a piglin.
  * <br>
  * Called when a piglin completes a barter.
@@ -37,9 +42,13 @@ public class PiglinBarterEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取以物易物的输入。
+     * <p>原文：
      * Gets the input of the barter.
      *
-     * @return The item that was used to barter with
+     * @return 用于以物易物的物品
+     * <p>原文：The item that was used to barter with
      */
     @NotNull
     public ItemStack getInput() {
@@ -47,9 +56,13 @@ public class PiglinBarterEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回表示以物易物结果的可变列表。
+     * <p>原文：
      * Returns a mutable list representing the outcome of the barter.
      *
-     * @return A mutable list of the item the player will receive
+     * @return 玩家将收到的物品的可变列表
+     * <p>原文：A mutable list of the item the player will receive
      */
     @NotNull
     public List<ItemStack> getOutcome() {

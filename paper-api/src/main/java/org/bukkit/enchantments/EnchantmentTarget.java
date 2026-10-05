@@ -6,6 +6,9 @@ import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表了{@link Enchantment}的适用目标
+ * <p>原文：
  * Represents the applicable target for a {@link Enchantment}
  *
  * @deprecated enchantment groupings are now managed by tags, not categories
@@ -13,9 +16,13 @@ import org.jetbrains.annotations.NotNull;
 @Deprecated(since = "1.20.5", forRemoval = true)
 public enum EnchantmentTarget {
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 允许将这个附魔用于所有的物品上.
+     * <p>原文：
      * Allows the Enchantment to be placed on all items
      *
-     * @deprecated this target no longer exists in Vanilla
+     * @deprecated 原版中该适用目标不复存在
+     * <p>原文：this target no longer exists in Vanilla
      */
     @Deprecated(since = "1.16.1", forRemoval = true)
     ALL {
@@ -32,6 +39,9 @@ public enum EnchantmentTarget {
     },
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 允许将该附魔用于装备上. (包括鞋子，护腿，衣服以及帽子)
+     * <p>原文：
      * Allows the Enchantment to be placed on armor
      */
     ARMOR {
@@ -42,6 +52,9 @@ public enum EnchantmentTarget {
     },
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 允许将该附魔用于鞋子上.
+     * <p>原文：
      * Allows the Enchantment to be placed on feet slot armor
      */
     ARMOR_FEET {
@@ -52,6 +65,9 @@ public enum EnchantmentTarget {
     },
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 允许将该附魔用于护腿上.
+     * <p>原文：
      * Allows the Enchantment to be placed on leg slot armor
      */
     ARMOR_LEGS {
@@ -62,6 +78,9 @@ public enum EnchantmentTarget {
     },
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 允许将该附魔用于衣服上.
+     * <p>原文：
      * Allows the Enchantment to be placed on torso slot armor
      */
     ARMOR_TORSO {
@@ -72,6 +91,9 @@ public enum EnchantmentTarget {
     },
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 允许将该附魔用于帽子上.
+     * <p>原文：
      * Allows the Enchantment to be placed on head slot armor
      */
     ARMOR_HEAD {
@@ -82,6 +104,9 @@ public enum EnchantmentTarget {
     },
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 允许将该附魔用于剑上.
+     * <p>原文：
      * Allows the Enchantment to be placed on weapons (swords, spears)
      */
     WEAPON {
@@ -92,6 +117,9 @@ public enum EnchantmentTarget {
     },
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 允许将该附魔用于工具上，如锹，稿，斧。
+     * <p>原文：
      * Allows the Enchantment to be placed on tools (spades, pickaxe, axes)
      */
     TOOL {
@@ -102,6 +130,9 @@ public enum EnchantmentTarget {
     },
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 允许将该附魔用于弓上.
+     * <p>原文：
      * Allows the Enchantment to be placed on bows.
      */
     BOW {
@@ -112,6 +143,9 @@ public enum EnchantmentTarget {
     },
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 允许将该附魔用于钓鱼竿上.
+     * <p>原文：
      * Allows the Enchantment to be placed on fishing rods.
      */
     FISHING_ROD {
@@ -122,6 +156,9 @@ public enum EnchantmentTarget {
     },
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 允许将该附魔用于带耐久度的物品上.
+     * <p>原文：
      * Allows the enchantment to be placed on items with durability.
      */
     BREAKABLE {
@@ -132,6 +169,9 @@ public enum EnchantmentTarget {
     },
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 允许将这类附魔附加于可穿戴物品.
+     * <p>原文：
      * Allows the enchantment to be placed on wearable items.
      */
     WEARABLE {
@@ -142,6 +182,9 @@ public enum EnchantmentTarget {
     },
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 允许将这类附魔附加于三叉戟.
+     * <p>原文：
      * Allow the Enchantment to be placed on tridents.
      */
     TRIDENT {
@@ -152,6 +195,9 @@ public enum EnchantmentTarget {
     },
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 允许将这类附魔附加于弩上.
+     * <p>原文：
      * Allow the Enchantment to be placed on crossbows.
      */
     CROSSBOW {
@@ -162,6 +208,9 @@ public enum EnchantmentTarget {
     },
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 允许将这类附魔附加于vanishing items.
+     * <p>原文：
      * Allow the Enchantment to be placed on vanishing items.
      */
     VANISHABLE {
@@ -172,18 +221,28 @@ public enum EnchantmentTarget {
     };
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查本适用目标是否包含该物品类型.
+     * <p>原文：
      * Check whether this target includes the specified item.
      *
-     * @param item The item to check
-     * @return True if the target includes the item
+     * @param item 物品
+     * <p>原文：The item to check
+     * @return 如果包含则返回true
+     * <p>原文：True if the target includes the item
      */
     public abstract boolean includes(@NotNull Material item);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查本适用目标是否包含该物品.
+     * <p>原文：
      * Check whether this target includes the specified item.
      *
-     * @param item The item to check
-     * @return True if the target includes the item
+     * @param item 物品
+     * <p>原文：The item to check
+     * @return 如果包含则返回true
+     * <p>原文：True if the target includes the item
      */
     public boolean includes(@NotNull ItemStack item) {
         return includes(item.getType());

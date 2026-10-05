@@ -6,6 +6,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * ConversationContext 通过让开发者访问对话主题和一个通用映射来存储在所有 {@link Prompt} 调用之间共享的值，
+ * 从而在提示图中的节点之间提供连续性。
+ * <p>原文：
  * A ConversationContext provides continuity between nodes in the prompt graph
  * by giving the developer access to the subject of the conversation and a
  * generic map for storing values that are shared between all {@link Prompt}
@@ -23,9 +27,15 @@ public class ConversationContext {
     private final Plugin plugin;
 
     /**
-     * @param plugin The owning plugin.
-     * @param forWhom The subject of the conversation.
-     * @param initialSessionData Any initial values to put in the sessionData
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @param plugin 拥有此对话的插件。
+     * <p>原文：The owning plugin.
+     * @param forWhom 对话的主题。
+     * <p>原文：The subject of the conversation.
+     * @param initialSessionData 放入 sessionData 映射中的任何初始值。
+     * <p>原文：Any initial values to put in the sessionData
      *     map.
      */
     public ConversationContext(@Nullable Plugin plugin, @NotNull Conversable forWhom, @NotNull Map<Object, Object> initialSessionData) {
@@ -35,9 +45,13 @@ public class ConversationContext {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取拥有此对话的插件。
+     * <p>原文：
      * Gets the plugin that owns this conversation.
      *
-     * @return The owning plugin.
+     * @return 拥有此对话的插件。
+     * <p>原文：The owning plugin.
      */
     @Nullable
     public Plugin getPlugin() {
@@ -45,9 +59,13 @@ public class ConversationContext {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取对话的主题。
+     * <p>原文：
      * Gets the subject of the conversation.
      *
-     * @return The subject of the conversation.
+     * @return 对话的主题。
+     * <p>原文：The subject of the conversation.
      */
     @NotNull
     public Conversable getForWhom() {
@@ -55,11 +73,15 @@ public class ConversationContext {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取底层的 sessionData 映射。可以直接修改以操作会话数据。
+     * <p>原文：
      * Gets the underlying sessionData map.
      *
      * May be directly modified to manipulate session data.
      *
-     * @return The full sessionData map.
+     * @return 完整的 sessionData 映射。
+     * <p>原文：The full sessionData map.
      */
     @NotNull
     public Map<Object, Object> getAllSessionData() {
@@ -67,12 +89,17 @@ public class ConversationContext {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取在所有 {@link Prompt} 调用之间共享的会话数据。使用此方法作为在对话发展过程中通过每个 Prompt 传递数据的方式。
+     * <p>原文：
      * Gets session data shared between all {@link Prompt} invocations. Use
      * this as a way to pass data through each Prompt as the conversation
      * develops.
      *
-     * @param key The session data key.
-     * @return The requested session data.
+     * @param key 会话数据的键。
+     * <p>原文：The session data key.
+     * @return 请求的会话数据。
+     * <p>原文：The requested session data.
      */
     @Nullable
     public Object getSessionData(@NotNull Object key) {
@@ -80,12 +107,17 @@ public class ConversationContext {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置在所有 {@link Prompt} 调用之间共享的会话数据。使用此方法作为在对话发展过程中通过每个提示传递数据的方式。
+     * <p>原文：
      * Sets session data shared between all {@link Prompt} invocations. Use
      * this as a way to pass data through each prompt as the conversation
      * develops.
      *
-     * @param key The session data key.
-     * @param value The session data value.
+     * @param key 会话数据的键。
+     * <p>原文：The session data key.
+     * @param value 会话数据的值。
+     * <p>原文：The session data value.
      */
     public void setSessionData(@NotNull Object key, @Nullable Object value) {
         sessionData.put(key, value);

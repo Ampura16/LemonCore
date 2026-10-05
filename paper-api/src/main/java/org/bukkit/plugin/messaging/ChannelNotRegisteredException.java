@@ -1,6 +1,9 @@
 package org.bukkit.plugin.messaging;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 如果插件尝试向未注册的通道发消息则抛出此异常。
+ * <p>原文：
  * Thrown if a Plugin attempts to send a message on an unregistered channel.
  */
 @SuppressWarnings("serial")

@@ -4,9 +4,14 @@ import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表楼梯。
+ * <p>原文：
  * Represents stairs.
  *
- * @deprecated all usage of MaterialData is deprecated and subject to removal.
+ * @deprecated 所有 MaterialData 的用法都已弃用并可能被移除。
+ * 请使用 {@link org.bukkit.block.data.BlockData}。
+ * <p>原文：all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
  */
 @Deprecated(since = "1.13", forRemoval = true)
@@ -17,9 +22,16 @@ public class Stairs extends MaterialData implements Directional {
     }
 
     /**
-     * @param type the type
-     * @param data the raw data value
-     * @deprecated Magic value
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @param type 物品类型
+     * <p>原文：the type
+     * @param data 原始数据值
+     * <p>原文：the raw data value
+     * @deprecated 魔法值
+     * <p>原文：Magic value
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.6.2")
     public Stairs(final Material type, final byte data) {
@@ -27,7 +39,12 @@ public class Stairs extends MaterialData implements Directional {
     }
 
     /**
-     * @return the direction the stairs ascend towards
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @return 楼梯上升朝向的方向
+     * <p>原文：the direction the stairs ascend towards
+     * <p>原文：the direction the stairs ascend towards
      */
     public BlockFace getAscendingDirection() {
         byte data = getData();
@@ -49,13 +66,21 @@ public class Stairs extends MaterialData implements Directional {
     }
 
     /**
-     * @return the direction the stairs descend towards
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @return 楼梯下降朝向的方向
+     * <p>原文：the direction the stairs descend towards
+     * <p>原文：the direction the stairs descend towards
      */
     public BlockFace getDescendingDirection() {
         return getAscendingDirection().getOppositeFace();
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置方块楼梯部分朝向的方向。
+     * <p>原文：
      * Set the direction the stair part of the block is facing
      */
     @Override
@@ -85,7 +110,12 @@ public class Stairs extends MaterialData implements Directional {
     }
 
     /**
-     * @return the direction the stair part of the block is facing
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @return 方块楼梯部分朝向的方向
+     * <p>原文：the direction the stair part of the block is facing
+     * <p>原文：the direction the stair part of the block is facing
      */
     @Override
     public BlockFace getFacing() {
@@ -93,18 +123,28 @@ public class Stairs extends MaterialData implements Directional {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 测试台阶是否倒置。
+     * <p>原文：
      * Test if step is inverted
      *
-     * @return true if inverted (top half), false if normal (bottom half)
+     * @return 如果倒置（上半部分）则返回 true，如果正常（下半部分）则返回 false
+     * <p>原文：Test if step is inverted
+     * <p>原文：true if inverted (top half), false if normal (bottom half)
      */
     public boolean isInverted() {
         return ((getData() & 0x4) != 0);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置台阶的倒置状态。
+     * <p>原文：
      * Set step inverted state
      *
-     * @param inv - true if step is inverted (top half), false if step is
+     * @param inv - 如果台阶倒置（上半部分）则为 true，如果台阶正常（下半部分）则为 false
+     * <p>原文：Set step inverted state
+     * <p>原文：- true if step is inverted (top half), false if step is
      *     normal (bottom half)
      */
     public void setInverted(boolean inv) {

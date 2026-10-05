@@ -44,16 +44,26 @@ import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 虽然此 API 位于公共接口中，但在另行通知之前不建议插件使用。
+ * 这些类型的作用是使 {@link Material} 更易于维护，
+ * 但将在适当的时候正式取代上述枚举。
+ * 可能会发生完全不兼容的更改。请勿在插件中使用此 API。
+ * <p>原文：
  * Represents an item type.
  */
 @NullMarked
 public interface ItemType extends Keyed, Translatable, net.kyori.adventure.translation.Translatable, io.papermc.paper.world.flag.FeatureDependant { // Paper - add Translatable & feature flag API
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * Typed 代表 {@link ItemType} 的一个子类型，在编译时具有已知的物品元数据类型。
+     * <p>原文：
      * Typed represents a subtype of {@link ItemType}s that have a known item meta type
      * at compile time.
      *
-     * @param <M> the generic type of the item meta that represents the item type.
+     * @param <M> 代表此物品类型的物品元数据的泛型类型。
+     * <p>原文：the generic type of the item meta that represents the item type.
      * @apiNote Do not use methods exclusive to this interface unless you are
      * fine with them being possibly removed in the future.
      */
@@ -62,31 +72,48 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
     interface Typed<M extends ItemMeta> extends ItemType {
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 获取此 ItemType 的 ItemMeta 类。
+         * <p>原文：
          * Gets the ItemMeta class of this ItemType
          *
-         * @return the ItemMeta class of this ItemType
+         * @return 此 ItemType 的 ItemMeta 类
+         * <p>原文：the ItemMeta class of this ItemType
          */
         @Override
         @ApiStatus.Experimental
         Class<M> getItemMetaClass();
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 使用此物品类型创建数量为 1 的新物品堆。
+         * <p>原文：
          * Constructs a new item stack with this item type with the amount 1.
          *
-         * @param metaConfigurator an optional consumer of the items {@link ItemMeta} that is called.
+         * @param metaConfigurator 一个可选的物品 {@link ItemMeta} 消费者，会被调用。
+         *                         如果此时无意修改物品元数据，则可以为 null。
+         * <p>原文：an optional consumer of the items {@link ItemMeta} that is called.
          *                         May be null if no intent exists to mutate the item meta at this point.
-         * @return the created and configured item stack.
+         * @return 创建并配置好的物品堆。
+         * <p>原文：the created and configured item stack.
          */
         @ApiStatus.Experimental
         ItemStack createItemStack(@Nullable Consumer<? super M> metaConfigurator);
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 使用此物品类型创建新物品堆。
+         * <p>原文：
          * Constructs a new item stack with this item type.
          *
-         * @param amount           the amount of itemstack.
-         * @param metaConfigurator an optional consumer of the items {@link ItemMeta} that is called.
+         * @param amount           物品堆的数量。
+         * <p>原文：the amount of itemstack.
+         * @param metaConfigurator 一个可选的物品 {@link ItemMeta} 消费者，会被调用。
+         *                         如果此时无意修改物品元数据，则可以为 null。
+         * <p>原文：an optional consumer of the items {@link ItemMeta} that is called.
          *                         May be null if no intent exists to mutate the item meta at this point.
-         * @return the created and configured item stack.
+         * @return 创建并配置好的物品堆。
+         * <p>原文：the created and configured item stack.
          */
         @ApiStatus.Experimental
         ItemStack createItemStack(int amount, @Nullable Consumer<? super M> metaConfigurator);
@@ -132,6 +159,10 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
 
     ItemType.Typed<ItemMeta> ACTIVATOR_RAIL = getItemType("activator_rail");
 
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * Air 没有任何 ItemMeta
+     */
     ItemType AIR = getItemType("air");
 
     ItemType.Typed<SpawnEggMeta> ALLAY_SPAWN_EGG = getItemType("allay_spawn_egg");
@@ -3113,98 +3144,150 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 以带有表示此物品类型的普通 {@link ItemMeta} 的 Typed 版本返回此物品类型。
+     * <p>原文：
      * Yields this item type as a typed version of itself with a plain {@link ItemMeta} representing it.
      *
-     * @return the typed item type.
+     * @return 类型化的物品类型。
+     * <p>原文：the typed item type.
      * @apiNote The Typed interface is experimental and may be removed in future versions.
      */
     @ApiStatus.Experimental
     Typed<ItemMeta> typed();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 以带有表示此物品类型的普通 {@link ItemMeta} 的 Typed 版本返回此物品类型。
+     * <p>原文：
      * Yields this item type as a typed version of itself with a plain {@link ItemMeta} representing it.
      *
-     * @param itemMetaType the class type of the {@link ItemMeta} to type this {@link ItemType} with.
-     * @param <M> the generic type of the item meta to type this item type with.
-     * @return the typed item type.
+     * @param itemMetaType 用于类型化此 {@link ItemType} 的 {@link ItemMeta} 的类类型。
+     * <p>原文：the class type of the {@link ItemMeta} to type this {@link ItemType} with.
+     * @param <M> 用于类型化此物品类型的物品元数据的泛型类型。
+     * <p>原文：the generic type of the item meta to type this item type with.
+     * @return 类型化的物品类型。
+     * <p>原文：the typed item type.
      * @apiNote The Typed interface is experimental and may be removed in future versions.
      */
     @ApiStatus.Experimental
     <M extends ItemMeta> Typed<M> typed(Class<M> itemMetaType);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用此物品类型创建数量为 1 的新物品堆。
+     * <p>原文：
      * Constructs a new itemstack with this item type that has the amount 1.
      *
-     * @return the constructed item stack.
+     * @return 构造的物品堆。
+     * <p>原文：the constructed item stack.
      */
     ItemStack createItemStack();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使用此物品类型创建新物品堆。
+     * <p>原文：
      * Constructs a new itemstack with this item type.
      *
-     * @param amount the amount of the item stack.
-     * @return the constructed item stack.
+     * @param amount 物品堆的数量。
+     * <p>原文：the amount of the item stack.
+     * @return 构造的物品堆。
+     * <p>原文：the constructed item stack.
      */
     ItemStack createItemStack(int amount);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 如果此 ItemType 有对应的 {@link BlockType}，则返回 true。
+     * <p>原文：
      * Returns true if this ItemType has a corresponding {@link BlockType}.
      *
-     * @return true if there is a corresponding BlockType, otherwise false
+     * @return 如果有对应的 BlockType 则返回 true，否则返回 false
+     * <p>原文：true if there is a corresponding BlockType, otherwise false
      * @see #getBlockType()
      */
     boolean hasBlockType();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回给定 ItemType 对应的 {@link BlockType}。
+     * <p>
+     * 如果没有对应的 {@link BlockType}，将抛出错误。
+     * <p>原文：
      * Returns the corresponding {@link BlockType} for the given ItemType.
      * <p>
      * If there is no corresponding {@link BlockType} an error will be thrown.
      * <p>This is <b>NOT</b> the same as the {@link BlockType} with the same key,
      * but instead is the block associated with this item if this item represents a block.</p>
      *
-     * @return the corresponding BlockType
+     * @return 对应的 BlockType
+     * <p>原文：the corresponding BlockType
      * @see #hasBlockType()
      */
     BlockType getBlockType();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此 ItemType 的 ItemMeta 类。
+     * <p>原文：
      * Gets the ItemMeta class of this ItemType
      *
-     * @return the ItemMeta class of this ItemType
+     * @return 此 ItemType 的 ItemMeta 类
+     * <p>原文：the ItemMeta class of this ItemType
      */
     Class<? extends ItemMeta> getItemMetaClass();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此物品类型在堆叠中可容纳的最大数量。
+     * <p>原文：
      * Gets the maximum amount of this item type that can be held in a stack
      *
-     * @return Maximum stack size for this item type
+     * @return 此物品类型的最大堆叠大小
+     * <p>原文：Maximum stack size for this item type
      */
     int getMaxStackSize();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此物品类型的最大耐久度。
+     * <p>原文：
      * Gets the maximum durability of this item type
      *
-     * @return Maximum durability for this item type
+     * @return 此物品类型的最大耐久度
+     * <p>原文：Maximum durability for this item type
      */
     short getMaxDurability();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查此物品类型是否可食用。
+     * <p>原文：
      * Checks if this item type provides the {@link io.papermc.paper.datacomponent.DataComponentTypes#FOOD} and
      * {@link io.papermc.paper.datacomponent.DataComponentTypes#CONSUMABLE} and, thereby, is edible by a player.
      *
-     * @return true if this item type is edible.
+     * @return 如果此物品类型可食用则返回 true。
+     * <p>原文：true if this item type is edible.
      */
     boolean isEdible();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 如果此物品类型代表可播放的音乐唱片，则返回 true。
+     *
      * @return True if this item type represents a playable music disk.
      */
     boolean isRecord();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查此物品类型是否可用作熔炉的燃料。
+     * <p>原文：
      * Checks if this item type can be used as fuel in a Furnace
      *
-     * @return true if this item type can be used as fuel.
+     * @return 如果此物品类型可用作燃料则返回 true。
+     * <p>原文：true if this item type can be used as fuel.
      * @see #getBurnDuration()
      */
     boolean isFuel();
@@ -3218,15 +3301,27 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
     int getBurnDuration();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查此物品类型是否可堆肥（可插入堆肥桶）。
+     * <p>原文：
      * Checks whether this item type is compostable (can be inserted into a
      * composter).
      *
-     * @return true if this item type is compostable
+     * @return 如果此物品类型可堆肥则返回 true
+     * <p>原文：true if this item type is compostable
      * @see #getCompostChance()
      */
     boolean isCompostable();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此物品类型成功堆肥的几率。返回值在 0 到 1 之间（含 0 和 1）。
+     *
+     * 堆肥几率为 1 的物品总是会提升堆肥桶的等级，
+     * 而堆肥几率为 0 的物品永远不会提升。
+     *
+     * 插件在调用此方法之前应检查 {@link #isCompostable} 返回 true。
+     * <p>原文：
      * Get the chance that this item type will successfully compost. The
      * returned value is between 0 and 1 (inclusive).
      *
@@ -3236,17 +3331,23 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
      * Plugins should check that {@link #isCompostable} returns true before
      * calling this method.
      *
-     * @return the chance that this item type will successfully compost
-     * @throws IllegalArgumentException if this item type is not compostable
+     * @return 此物品类型成功堆肥的几率
+     * <p>原文：the chance that this item type will successfully compost
+     * @throws IllegalArgumentException 如果此物品类型不可堆肥
+     * <p>原文：if this item type is not compostable
      * @see #isCompostable()
      */
     float getCompostChance();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 确定使用此材料合成后，合成网格中剩余的物品。
+     * <p>原文：
      * Determines the remaining item in a crafting grid after crafting with this
      * ingredient.
      *
-     * @return the item left behind when crafting, or null if nothing is.
+     * @return 合成时留下的物品，如果没有则返回 null。
+     * <p>原文：the item left behind when crafting, or null if nothing is.
      */
     @Nullable ItemType getCraftingRemainingItem();
 
@@ -3264,42 +3365,64 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
     @Unmodifiable Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回给定 {@link EquipmentSlot} 的所有默认 {@link Attribute} 及其
+     * {@link AttributeModifier} 的不可变副本。
+     *
+     * 默认属性是某些物品上始终预设的属性，例如武器的攻击伤害或盔甲的护甲值。
+     * <p>原文：
      * Return an immutable copy of all default {@link Attribute}s and their
      * {@link AttributeModifier}s for a given {@link EquipmentSlot}.
      *
      * Default attributes are those that are always preset on some items, such
      * as the attack damage on weapons or the armor value on armor.
      *
-     * @param slot the {@link EquipmentSlot} to check
-     * @return the immutable {@link Multimap} with the respective default
+     * @param slot 要检查的 {@link EquipmentSlot}
+     * <p>原文：the {@link EquipmentSlot} to check
+     * @return 包含相应默认属性和修饰符的不可变 {@link Multimap}，如果未设置属性则返回空 map。
+     * <p>原文：the immutable {@link Multimap} with the respective default
      * Attributes and modifiers, or an empty map if no attributes are set.
      */
     @Unmodifiable Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot slot);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此物品类型所属的 {@link CreativeCategory}。
+     * <p>原文：
      * Get the {@link CreativeCategory} to which this item type belongs.
      *
-     * @return the creative category. null if does not belong to a category
-     <!-- * @deprecated use #getCreativeCategories() -->
+     * @return 创造模式分类。如果不属于任何分类则返回 null
+     * <p>原文：the creative category. null if does not belong to a category
+     *      <!-- * @deprecated use #getCreativeCategories() -->
      */
     @Deprecated(since = "1.20.6", forRemoval = true)
     @Nullable CreativeCategory getCreativeCategory();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此 ItemType 是否在某个世界中被特性启用。
+     * <p>原文：
      * Gets if the ItemType is enabled by the features in a world.
      *
-     * @param world the world to check
-     * @return true if this ItemType can be used in this World.
+     * @param world 要检查的世界
+     * <p>原文：the world to check
+     * @return 如果此 ItemType 可在此世界中使用则返回 true。
+     * <p>原文：true if this ItemType can be used in this World.
      * @deprecated use {@link io.papermc.paper.world.flag.FeatureFlagSetHolder#isEnabled(io.papermc.paper.world.flag.FeatureDependant)}
      */
     @Deprecated(forRemoval = true, since = "1.21.1") // Paper
     boolean isEnabledByFeature(World world);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 尝试将此 ItemType 转换为 Material。
+     * <p>原文：
      * Tries to convert this ItemType into a Material
      *
-     * @return the converted Material or null
-     * @deprecated only for internal use
+     * @return 转换后的 Material 或 null
+     * <p>原文：the converted Material or null
+     * @deprecated 仅供内部使用
+     * <p>原文：only for internal use
      */
     @Deprecated(since = "1.20.6")
     @Nullable Material asMaterial();

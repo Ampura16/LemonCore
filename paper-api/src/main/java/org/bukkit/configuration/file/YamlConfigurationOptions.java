@@ -6,6 +6,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 用于控制 {@link YamlConfiguration} 输入和输出的各种设置.
+ * <p>原文：
  * Various settings for controlling the input and output of a {@link
  * YamlConfiguration}
  */
@@ -76,23 +79,36 @@ public class YamlConfigurationOptions extends FileConfigurationOptions {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取每行缩进使用的空格数.
+     * <p>
+     * 最小值为 2, 最大值为 9.
+     * <p>原文：
      * Gets how much spaces should be used to indent each line.
      * <p>
      * The minimum value this may be is 2, and the maximum is 9.
      *
-     * @return How much to indent by
+     * @return 缩进量.
+     * <p>原文：How much to indent by
      */
     public int indent() {
         return indent;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置每行缩进使用的空格数.
+     * <p>
+     * 最小值为 2, 最大值为 9.
+     * <p>原文：
      * Sets how much spaces should be used to indent each line.
      * <p>
      * The minimum value this may be is 2, and the maximum is 9.
      *
-     * @param value New indent
-     * @return This object, for chaining
+     * @param value 新的缩进值.
+     * <p>原文：New indent
+     * @return 此对象, 用于链式调用.
+     * <p>原文：This object, for chaining
      */
     @NotNull
     public YamlConfigurationOptions indent(int value) {
@@ -104,19 +120,28 @@ public class YamlConfigurationOptions extends FileConfigurationOptions {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取行在被拆分之前的最大长度.
+     * <p>原文：
      * Gets how long a line can be, before it gets split.
      *
-     * @return How the max line width
+     * @return 最大行宽.
+     * <p>原文：How the max line width
      */
     public int width() {
         return width;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置行在被拆分之前的最大长度.
+     * <p>原文：
      * Sets how long a line can be, before it gets split.
      *
-     * @param value New width
-     * @return This object, for chaining
+     * @param value 新的宽度.
+     * <p>原文：New width
+     * @return 此对象, 用于链式调用.
+     * <p>原文：This object, for chaining
      */
     @NotNull
     public YamlConfigurationOptions width(int value) {

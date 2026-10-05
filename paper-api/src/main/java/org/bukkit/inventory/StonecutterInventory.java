@@ -3,6 +3,9 @@ package org.bukkit.inventory;
 import org.jetbrains.annotations.Nullable; // Paper
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 切石机的物品栏接口.
+ * <p>原文：
  * Interface to the inventory of a Stonecutter.
  */
 public interface StonecutterInventory extends Inventory {

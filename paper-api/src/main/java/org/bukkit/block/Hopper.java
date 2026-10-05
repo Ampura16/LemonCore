@@ -4,6 +4,9 @@ import com.destroystokyo.paper.loottable.LootableBlockInventory;
 import org.bukkit.loot.Lootable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表漏斗.
+ * <p>原文：
  * Represents a captured state of a hopper.
  */
 public interface Hopper extends Container, LootableBlockInventory { // Paper

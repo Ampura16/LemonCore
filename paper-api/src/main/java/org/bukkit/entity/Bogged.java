@@ -1,6 +1,9 @@
 package org.bukkit.entity;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表一个骷髅射手(沼骸).
+ * <p>原文：
  * Represents a Bogged Skeleton.
  */
 public interface Bogged extends AbstractSkeleton, Shearable, io.papermc.paper.entity.Shearable { // Paper - Shear API

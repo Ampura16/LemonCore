@@ -3,6 +3,9 @@ package org.bukkit.inventory;
 import org.jetbrains.annotations.Nullable; // Paper
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 磨石的物品栏接口.
+ * <p>原文：
  * Interface to the inventory of a Grindstone.
  */
 public interface GrindstoneInventory extends Inventory {

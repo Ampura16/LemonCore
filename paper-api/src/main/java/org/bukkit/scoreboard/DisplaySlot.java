@@ -3,6 +3,9 @@ package org.bukkit.scoreboard;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 计分项显示的位置.
+ * <p>原文：
  * Locations for displaying objectives to the player
  */
 @NullMarked

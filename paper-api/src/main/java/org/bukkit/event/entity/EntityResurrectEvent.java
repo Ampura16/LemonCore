@@ -9,6 +9,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当实体死亡并且有机会复活时触发本事件.
+ * 如果实体尚未装备不死图腾, 本事件将以已取消状态触发.
+ * <p>原文：
  * Called when an entity dies and may have the opportunity to be resurrected.
  * Will be called in a cancelled state if the entity does not have a totem
  * equipped.
@@ -40,10 +44,14 @@ public class EntityResurrectEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取发现不死图腾的手, 如果实体没有不死图腾则返回null.
+     * <p>原文：
      * Get the hand in which the totem of undying was found, or {@code null} if the
      * entity did not have a totem of undying.
      *
-     * @return the hand, or {@code null}
+     * @return 持有不死图腾的手, 或null
+     * <p>原文：the hand, or {@code null}
      */
     @Nullable
     public EquipmentSlot getHand() {

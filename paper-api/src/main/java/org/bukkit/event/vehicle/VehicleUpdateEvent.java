@@ -6,6 +6,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 载具更新事件
+ * <p>原文：
  * Called when a vehicle updates
  */
 public class VehicleUpdateEvent extends VehicleEvent {

@@ -3,6 +3,10 @@ package org.bukkit.inventory;
 import org.bukkit.block.Shelf;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 书架的物品栏接口.
+ */
 public interface ShelfInventory extends Inventory {
 
     @Nullable

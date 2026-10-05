@@ -7,6 +7,11 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当树叶消失时触发此事件.
+ * <p>
+ * 如果此事件被取消则树叶就不会消失.
+ * <p>原文：
  * Called when leaves are decaying naturally.
  * <p>
  * If this event is cancelled, the leaves will not decay.

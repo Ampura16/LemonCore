@@ -9,6 +9,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Unmodifiable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当实体被卸载时调用.
+ *
+ * 事件提供的区块可能尚未加载.
+ * <p>原文：
  * Called when entities are unloaded.
  * <br>
  * The provided chunk may or may not be loaded.
@@ -26,9 +31,13 @@ public class EntitiesUnloadEvent extends ChunkEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取被卸载的实体.
+     * <p>原文：
      * Get the entities which are being unloaded.
      *
-     * @return unmodifiable list of unloaded entities.
+     * @return 被卸载的实体的不可变列表
+     * <p>原文：unmodifiable list of unloaded entities.
      */
     @NotNull
     public @Unmodifiable List<Entity> getEntities() {

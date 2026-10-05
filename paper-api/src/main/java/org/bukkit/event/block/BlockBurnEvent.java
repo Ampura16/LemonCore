@@ -8,6 +8,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当一个方块被火烧掉的时候触发此事件.
+ * <p>
+ * 若方块点燃事件被取消，此方块就不会被火烧毁.
+ * <p>原文：
  * Called when a block is destroyed as a result of being burnt by fire.
  * <p>
  * If this event is cancelled, the block will not be destroyed as a
@@ -33,9 +38,13 @@ public class BlockBurnEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取点燃这个方块的方块.
+     * <p>原文：
      * Gets the block which ignited this block.
      *
-     * @return The Block that ignited and burned this block, or {@code null} if no
+     * @return 点燃这个方块的方块，或如果源方块不存在时为null
+     * <p>原文：The Block that ignited and burned this block, or {@code null} if no
      * source block exists
      */
     @Nullable

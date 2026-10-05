@@ -11,6 +11,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 水桶装满水事件.
+ * <p>原文：
  * Called when a player fills a bucket
  */
 public class PlayerBucketFillEvent extends PlayerBucketEvent {

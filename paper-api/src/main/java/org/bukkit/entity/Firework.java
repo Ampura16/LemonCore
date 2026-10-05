@@ -4,26 +4,44 @@ import org.bukkit.inventory.meta.FireworkMeta;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 烟花火箭实体.
+ */
 public interface Firework extends Projectile {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取烟花火箭元数据的副本.
+     * <p>原文：
      * Get a copy of the fireworks meta
      *
-     * @return A copy of the current Firework meta
+     * @return 烟花火箭元数据的副本
+     * <p>原文：A copy of the current Firework meta
      */
     @NotNull
     FireworkMeta getFireworkMeta();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 为此烟花火箭应用提供的烟花火箭元数据.
+     * <p>原文：
      * Apply the provided meta to the fireworks
      * <p>
      * Adjusts detonation ticks automatically.
      *
-     * @param meta The FireworkMeta to apply
+     * @param meta 要应用的 FireworkMeta
+     * <p>原文：The FireworkMeta to apply
      */
     void setFireworkMeta(@NotNull FireworkMeta meta);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此烟花火箭附着的 {@link LivingEntity}.
+     * <p>
+     * 当附着到实体时, 烟花效果将正常作用但保持在实体位置.
+     * 如果实体 {@code LivingEntity#isGliding() 正在滑翔}, 则实体将获得朝向其视线方向的推进力.
+     * <p>原文：
      * Set the {@link LivingEntity} to which this firework is attached.
      * <p>
      * When attached to an entity, the firework effect will act as normal but
@@ -31,14 +49,22 @@ public interface Firework extends Projectile {
      * is gliding}, then the entity will receive a boost in the direction that
      * they are looking.
      *
-     * @param entity the entity to which the firework should be attached, or
+     * @param entity 烟花应附着的实体, 或 null 以移除附着的实体
+     * <p>原文：the entity to which the firework should be attached, or
      * null to remove the attached entity
-     * @return true if the entity could be attached, false if the firework was
+     * @return 如果实体可以附着则为 true, 如果烟花已经引爆则为 false
+     * <p>原文：true if the entity could be attached, false if the firework was
      * already detonated
      */
     boolean setAttachedTo(@Nullable LivingEntity entity);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此烟花火箭附着的 {@link LivingEntity}.
+     * <p>
+     * 当附着到实体时, 烟花效果将正常作用但保持在实体位置.
+     * 如果实体 {@code LivingEntity#isGliding() 正在滑翔}, 则实体将获得朝向其视线方向的推进力.
+     * <p>原文：
      * Get the {@link LivingEntity} to which this firework is attached.
      * <p>
      * When attached to an entity, the firework effect will act as normal but
@@ -46,79 +72,117 @@ public interface Firework extends Projectile {
      * is gliding}, then the entity will receive a boost in the direction that
      * they are looking.
      *
-     * @return the attached entity, or null if none
+     * @return 附着的实体, 如果没有则为 null
+     * <p>原文：the attached entity, or null if none
      */
     @Nullable
     LivingEntity getAttachedTo();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此烟花火箭已存活的 tick 数. 如果此值超过 {@link #getMaxLife()}, 烟花将引爆.
+     * <p>原文：
      * Set the ticks that this firework has been alive. If this value exceeds
      * {@link #getMaxLife()}, the firework will detonate.
      *
-     * @param ticks the ticks to set. Must be greater than or equal to 0
+     * @param ticks 要设置的 tick 数. 必须大于或等于 0
+     * <p>原文：the ticks to set. Must be greater than or equal to 0
      * @deprecated use {@link #setTicksFlown(int)}
-     * @return true if the life was set, false if this firework has already detonated
+     * @return 如果设置成功则为 true, 如果烟花已经引爆则为 false
+     * <p>原文：true if the life was set, false if this firework has already detonated
      */
     @Deprecated(forRemoval = true) // Paper
     boolean setLife(int ticks);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此烟花火箭已存活的 tick 数. 当此值达到 {@link #getMaxLife()} 时, 烟花将引爆.
+     * <p>原文：
      * Get the ticks that this firework has been alive. When this value reaches
      * {@link #getMaxLife()}, the firework will detonate.
      *
      * @deprecated use {@link #getTicksFlown()}
-     * @return the life ticks
+     * @return 存活 tick 数
+     * <p>原文：the life ticks
      */
     @Deprecated(forRemoval = true) // Paper
     int getLife();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此烟花火箭在引爆前存在的时间 (以 tick 为单位).
+     * <p>原文：
      * Set the time in ticks this firework will exist until it is detonated.
      *
-     * @param ticks the ticks to set. Must be greater than 0
+     * @param ticks 要设置的 tick 数. 必须大于 0
+     * <p>原文：the ticks to set. Must be greater than 0
      * @deprecated use {@link #setTicksToDetonate(int)}
-     * @return true if the time was set, false if this firework has already detonated
+     * @return 如果设置成功则为 true, 如果烟花已经引爆则为 false
+     * <p>原文：true if the time was set, false if this firework has already detonated
      */
     @Deprecated(forRemoval = true) // Paper
     boolean setMaxLife(int ticks);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此烟花火箭在引爆前存在的时间 (以 tick 为单位).
+     * <p>原文：
      * Get the time in ticks this firework will exist until it is detonated.
      *
      * @deprecated use {@link #getTicksToDetonate()}
-     * @return the maximum life in ticks
+     * @return 最大存活时间 (以 tick 为单位)
+     * <p>原文：the maximum life in ticks
      */
     @Deprecated(forRemoval = true) // Paper
     int getMaxLife();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 使烟花尽早爆炸, 像是它的引火线已燃烧殆尽.
+     * <p>原文：
      * Cause this firework to explode at earliest opportunity, as if it has no
      * remaining fuse.
      */
     void detonate();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查此烟花是否已经引爆.
+     * <p>原文：
      * Check whether or not this firework has detonated.
      *
-     * @return true if detonated, false if still in the world
+     * @return 如果已引爆则为 true, 如果仍在世界中则为 false
+     * <p>原文：true if detonated, false if still in the world
      */
     boolean isDetonated();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此烟花是否以一定角度发射 (比如使用弩).
+     *
+     * 若此值为false, 烟花将以垂直向上的方向飞行.
+     * <p>原文：
      * Gets if the firework was shot at an angle (i.e. from a crossbow).
      *
      * A firework which was not shot at an angle will fly straight upwards.
      *
-     * @return shot at angle status
+     * @return 此烟花是否以一定角度发射
+     * <p>原文：shot at angle status
      */
     boolean isShotAtAngle();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此烟花是否以一定角度发射 (比如使用弩).
+     *
+     * 若设置此值为false, 烟花将以垂直向上的方向飞行.
+     * <p>原文：
      * Sets if the firework was shot at an angle (i.e. from a crossbow).
      *
      * A firework which was not shot at an angle will fly straight upwards.
      *
-     * @param shotAtAngle the new shotAtAngle
+     * @param shotAtAngle 此烟花是否以一定角度发射
+     * <p>原文：the new shotAtAngle
      */
     void setShotAtAngle(boolean shotAtAngle);
 

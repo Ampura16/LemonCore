@@ -7,6 +7,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 表示权限的默认值.
+ * <p>原文：
  * Represents the possible default values for permissions
  */
 public enum PermissionDefault {
@@ -23,11 +26,16 @@ public enum PermissionDefault {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 计算此默认权限给予某op的值.
+     * <p>原文：
      * Calculates the value of this PermissionDefault for the given operator
      * value
      *
-     * @param op If the target is op
-     * @return True if the default should be true, or false
+     * @param op 如果此目标是op
+     * <p>原文：If the target is op
+     * @return 如果默认是true，返回true，如果不是true的返回false
+     * <p>原文：True if the default should be true, or false
      */
     public boolean getValue(boolean op) {
         switch (this) {
@@ -45,10 +53,15 @@ public enum PermissionDefault {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 查找一个默认权限的名称.
+     * <p>原文：
      * Looks up a PermissionDefault by name
      *
-     * @param name Name of the default
-     * @return Specified value, or null if not found
+     * @param name 默认名称
+     * <p>原文：Name of the default
+     * @return 指定的值，如果为null即未找到
+     * <p>原文：Specified value, or null if not found
      */
     @Nullable
     public static PermissionDefault getByName(@NotNull String name) {

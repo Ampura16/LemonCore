@@ -7,6 +7,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当史莱姆死亡后分裂成小史莱姆时触发本事件
+ * <p>原文：
  * Called when a Slime splits into smaller Slimes upon death
  */
 public class SlimeSplitEvent extends EntityEvent implements Cancellable {
@@ -29,18 +32,26 @@ public class SlimeSplitEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取生成的小史莱姆的数量.
+     * <p>原文：
      * Gets the amount of smaller slimes to spawn
      *
-     * @return the amount of slimes to spawn
+     * @return 生成的小史莱姆的数量
+     * <p>原文：the amount of slimes to spawn
      */
     public int getCount() {
         return this.count;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置分裂时将生成多少小史莱姆
+     * <p>原文：
      * Sets how many smaller slimes will spawn on the split
      *
-     * @param count the amount of slimes to spawn
+     * @param count 生成的小史莱姆的数量
+     * <p>原文：the amount of slimes to spawn
      */
     public void setCount(int count) {
         this.count = count;

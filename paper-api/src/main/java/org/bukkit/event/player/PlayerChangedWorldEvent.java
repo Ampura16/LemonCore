@@ -7,6 +7,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当玩家切换到另一个世界时触发此事件.
+ * <p>原文：
  * Called when a player switches to another world.
  */
 public class PlayerChangedWorldEvent extends PlayerEvent {
@@ -22,9 +25,13 @@ public class PlayerChangedWorldEvent extends PlayerEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获得玩家切换到目标世界之前所在的世界.
+     * <p>原文：
      * Gets the world the player is switching from.
      *
-     * @return player's previous world
+     * @return 玩家切换到目标世界之前所在的世界
+     * <p>原文：player's previous world
      */
     @NotNull
     public World getFrom() {

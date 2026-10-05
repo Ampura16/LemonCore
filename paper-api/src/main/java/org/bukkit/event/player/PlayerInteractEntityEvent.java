@@ -9,6 +9,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当玩家点击一个实体时调用此事件.
+ * <p>原文：
  * Represents an event that is called when a player right clicks an entity.
  */
 public class PlayerInteractEntityEvent extends PlayerEvent implements Cancellable {
@@ -33,9 +36,13 @@ public class PlayerInteractEntityEvent extends PlayerEvent implements Cancellabl
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取被玩家点击的实体.
+     * <p>原文：
      * Gets the entity that was right-clicked by the player.
      *
-     * @return entity right clicked by player
+     * @return 被玩家点击的实体
+     * <p>原文：entity right clicked by player
      */
     @NotNull
     public Entity getRightClicked() {
@@ -43,9 +50,13 @@ public class PlayerInteractEntityEvent extends PlayerEvent implements Cancellabl
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 用于执行这次交互的手.
+     * <p>原文：
      * The hand used to perform this interaction.
      *
-     * @return the hand used to interact
+     * @return 用来交互的手
+     * <p>原文：the hand used to interact
      */
     @NotNull
     public EquipmentSlot getHand() {

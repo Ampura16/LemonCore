@@ -9,6 +9,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当一个实体被玩家解开拴绳时调用.
+ * <p>原文：
  * Called prior to an entity being unleashed due to a player's action.
  */
 public class PlayerUnleashEntityEvent extends EntityUnleashEvent implements Cancellable {
@@ -38,9 +41,13 @@ public class PlayerUnleashEntityEvent extends EntityUnleashEvent implements Canc
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获得解开拴绳的玩家.
+     * <p>原文：
      * Returns the player who is unleashing the entity.
      *
-     * @return The player
+     * @return 玩家
+     * <p>原文：The player
      */
     @NotNull
     public Player getPlayer() {
@@ -48,9 +55,13 @@ public class PlayerUnleashEntityEvent extends EntityUnleashEvent implements Canc
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取玩家用来解开拴绳的手.
+     * <p>原文：
      * Get the hand used by the player to unleash the entity.
      *
-     * @return the hand
+     * @return 使用的手
+     * <p>原文：the hand
      */
     @NotNull
     public EquipmentSlot getHand() {

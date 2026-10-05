@@ -7,6 +7,15 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 实体形成方块时触发此事件
+ * <p>
+ * 举个例子:
+ * <ul>
+ * <li>雪傀儡移动时形成的雪
+ * <li>穿戴冰霜行者附魔的鞋子形成的冰霜
+ * </ul>
+ * <p>原文：
  * Called when a block is formed by entities.
  * <p>
  * Examples:
@@ -27,9 +36,13 @@ public class EntityBlockFormEvent extends BlockFormEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取被建造的实体.
+     * <p>原文：
      * Get the entity that formed the block.
      *
-     * @return Entity involved in event
+     * @return 这个事件的实体
+     * <p>原文：Entity involved in event
      */
     @NotNull
     public Entity getEntity() {

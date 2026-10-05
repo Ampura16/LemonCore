@@ -10,6 +10,12 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 此帮助主题生成其他帮助主题的列表. 此类对于添加自己的索引帮助主题很有用.
+ * 要强制特定顺序, 请使用排序集合.
+ * <p>
+ * 如果向构造函数提供了前言文本, 该文本将在索引中的第一项之前显示.
+ * <p>原文：
  * This help topic generates a list of other help topics. This class is useful
  * for adding your own index help topics. To enforce a particular order, use a
  * sorted collection.
@@ -36,9 +42,13 @@ public class IndexHelpTopic extends HelpTopic {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置内部allTopics集合的内容.
+     * <p>原文：
      * Sets the contents of the internal allTopics collection.
      *
-     * @param topics The topics to set.
+     * @param topics 要设置的主题.
+     * <p>原文：The topics to set.
      */
     protected void setTopicsCollection(@NotNull Collection<HelpTopic> topics) {
         this.allTopics = topics;
@@ -91,11 +101,16 @@ public class IndexHelpTopic extends HelpTopic {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 构建主题前言. 重写此方法可更改索引前言的外观.
+     * <p>原文：
      * Builds the topic preamble. Override this method to change how the index
      * preamble looks.
      *
-     * @param sender The command sender requesting the preamble.
-     * @return The topic preamble.
+     * @param sender 请求前言的命令发送者
+     * <p>原文：The command sender requesting the preamble.
+     * @return 主题前言
+     * <p>原文：The topic preamble.
      */
     @NotNull
     protected String buildPreamble(@NotNull CommandSender sender) {
@@ -103,12 +118,18 @@ public class IndexHelpTopic extends HelpTopic {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 构建索引主题中的每一行. 重写此方法可更改索引行的渲染方式.
+     * <p>原文：
      * Builds individual lines in the index topic. Override this method to
      * change how index lines are rendered.
      *
-     * @param sender The command sender requesting the index line.
-     * @param topic  The topic to render into an index line.
-     * @return The rendered index line.
+     * @param sender 请求索引行的命令发送者
+     * <p>原文：The command sender requesting the index line.
+     * @param topic  要渲染为索引行的主题
+     * <p>原文：The topic to render into an index line.
+     * @return 渲染后的索引行
+     * <p>原文：The rendered index line.
      */
     @NotNull
     protected String buildIndexLine(@NotNull CommandSender sender, @NotNull HelpTopic topic) {

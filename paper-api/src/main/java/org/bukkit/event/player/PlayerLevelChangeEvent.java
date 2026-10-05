@@ -6,6 +6,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 玩家等级改变事件.
+ * <p>原文：
  * Called when a players level changes
  */
 public class PlayerLevelChangeEvent extends PlayerEvent {
@@ -23,18 +26,26 @@ public class PlayerLevelChangeEvent extends PlayerEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获得此玩家的旧等级.
+     * <p>原文：
      * Gets the old level of the player
      *
-     * @return The old level of the player
+     * @return 旧等级
+     * <p>原文：The old level of the player
      */
     public int getOldLevel() {
         return this.oldLevel;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获得此玩家升级/降级后的等级.
+     * <p>原文：
      * Gets the new level of the player
      *
-     * @return The new (current) level of the player
+     * @return 升级/降级后的等级
+     * <p>原文：The new (current) level of the player
      */
     public int getNewLevel() {
         return this.newLevel;

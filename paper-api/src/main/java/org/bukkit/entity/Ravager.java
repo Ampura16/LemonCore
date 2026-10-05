@@ -1,6 +1,9 @@
 package org.bukkit.entity;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 劫掠兽实体.
+ * <p>原文：
  * Illager beast.
  */
 public interface Ravager extends Raider {

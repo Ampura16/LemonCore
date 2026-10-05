@@ -12,9 +12,13 @@ import org.jetbrains.annotations.Nullable;
 public interface CommandSender extends net.kyori.adventure.audience.Audience, Permissible { // Paper
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 向命令发送者发送消息.
+     * <p>原文：
      * Sends this sender a message
      *
-     * @param message Message to be displayed
+     * @param message 要发送的消息
+     * <p>原文：Message to be displayed
      * @see #sendMessage(net.kyori.adventure.text.Component)
      * @see #sendPlainMessage(String)
      * @see #sendRichMessage(String)
@@ -23,9 +27,13 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
     public void sendMessage(@NotNull String message);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 向命令发送者发送多条消息.
+     * <p>原文：
      * Sends this sender multiple messages
      *
-     * @param messages An array of messages to be displayed
+     * @param messages 要发送的消息
+     * <p>原文：An array of messages to be displayed
      * @see #sendMessage(net.kyori.adventure.text.Component)
      * @see #sendPlainMessage(String)
      * @see #sendRichMessage(String)
@@ -34,10 +42,15 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
     public void sendMessage(@NotNull String... messages);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 向命令发送者发送消息.
+     * <p>原文：
      * Sends this sender a message
      *
-     * @param message Message to be displayed
-     * @param sender The sender of this message
+     * @param message 要发送的消息
+     * <p>原文：Message to be displayed
+     * @param sender 消息的发送者
+     * <p>原文：The sender of this message
      * @see #sendMessage(net.kyori.adventure.identity.Identified, net.kyori.adventure.text.Component)
      * @deprecated sender UUID is ignored
      */
@@ -45,10 +58,15 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
     public void sendMessage(@Nullable UUID sender, @NotNull String message);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 向命令发送者发送多条消息.
+     * <p>原文：
      * Sends this sender multiple messages
      *
-     * @param messages An array of messages to be displayed
-     * @param sender The sender of this message
+     * @param messages 要发送的消息
+     * <p>原文：An array of messages to be displayed
+     * @param sender 消息的发送者
+     * <p>原文：The sender of this message
      * @see #sendMessage(net.kyori.adventure.identity.Identified, net.kyori.adventure.text.Component)
      * @deprecated sender UUID is ignored
      */
@@ -56,17 +74,25 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
     public void sendMessage(@Nullable UUID sender, @NotNull String... messages);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回运行此命令的服务器实例.
+     * <p>原文：
      * Returns the server instance that this command is running on
      *
-     * @return Server instance
+     * @return 服务器实例
+     * <p>原文：Server instance
      */
     @NotNull
     public Server getServer();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取命令发送者的名字.
+     * <p>原文：
      * Gets the name of this command sender
      *
-     * @return Name of the sender
+     * @return 发送者的名字
+     * <p>原文：Name of the sender
      */
     @NotNull
     public String getName();
@@ -75,9 +101,13 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
     public class Spigot {
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 向命令发送者发送一个聊天消息组件.
+         * <p>原文：
          * Sends this sender a chat component.
          *
-         * @param component the components to send
+         * @param component 要发送的聊天消息组件
+         * <p>原文：the components to send
          * @deprecated use {@code sendMessage} methods that accept {@link net.kyori.adventure.text.Component}
          */
         @Deprecated // Paper
@@ -86,9 +116,13 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 将多个聊天消息组件作为单条消息发送给命令发送者.
+         * <p>原文：
          * Sends an array of components as a single message to the sender.
          *
-         * @param components the components to send
+         * @param components 要发送的聊天消息组件
+         * <p>原文：the components to send
          * @deprecated use {@code sendMessage} methods that accept {@link net.kyori.adventure.text.Component}
          */
         @Deprecated // Paper
@@ -97,10 +131,15 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 向命令发送者发送一个聊天消息组件.
+         * <p>原文：
          * Sends this sender a chat component.
          *
-         * @param component the components to send
-         * @param sender the sender of the message
+         * @param component 要发送的聊天消息组件
+         * <p>原文：the components to send
+         * @param sender 消息的发送者
+         * <p>原文：the sender of the message
          * @deprecated use {@code sendMessage} methods that accept {@link net.kyori.adventure.text.Component}
          */
         @Deprecated // Paper
@@ -109,10 +148,15 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 将多个聊天消息组件作为单条消息发送给命令发送者.
+         * <p>原文：
          * Sends an array of components as a single message to the sender.
          *
-         * @param components the components to send
-         * @param sender the sender of the message
+         * @param components 要发送的聊天消息组件
+         * <p>原文：the components to send
+         * @param sender 消息的发送者
+         * <p>原文：the sender of the message
          * @deprecated use {@code sendMessage} methods that accept {@link net.kyori.adventure.text.Component}
          */
         @Deprecated // Paper

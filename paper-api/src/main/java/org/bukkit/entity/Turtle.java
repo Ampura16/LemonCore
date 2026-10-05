@@ -4,21 +4,32 @@ import org.bukkit.Location;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表一只海龟.
+ * <p>原文：
  * Represents a turtle.
  */
 public interface Turtle extends Animals {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取海龟是否拥有蛋.
+     * <p>原文：
      * Gets whether the turtle has an egg
      *
-     * @return Whether the turtle has an egg
+     * @return 海龟是否有蛋
+     * <p>原文：Whether the turtle has an egg
      */
     boolean hasEgg();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取海龟是否正在下蛋.
+     * <p>原文：
      * Gets whether the turtle is laying an egg
      *
-     * @return Whether the turtle is laying an egg
+     * @return 海龟是否正在下蛋
+     * <p>原文：Whether the turtle is laying an egg
      */
     boolean isLayingEgg();
 

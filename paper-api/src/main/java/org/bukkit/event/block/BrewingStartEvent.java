@@ -8,6 +8,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当酿造台开始酿造时触发.
+ * <p>原文：
  * Called when a brewing stand starts to brew.
  */
 @ApiStatus.Experimental // Paper
@@ -23,9 +26,13 @@ public class BrewingStartEvent extends InventoryBlockStartEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此事件关联的总酿造时间.
+     * <p>原文：
      * Gets the total brew time associated with this event.
      *
-     * @return the total brew time
+     * @return 总酿造时间
+     * <p>原文：the total brew time
      * @deprecated use {@link #getBrewingTime()} instead
      */
     @Deprecated(since = "1.21", forRemoval = true) // Paper
@@ -34,9 +41,13 @@ public class BrewingStartEvent extends InventoryBlockStartEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此事件的总酿造时间.
+     * <p>原文：
      * Sets the total brew time for this event.
      *
-     * @param brewTime the new total brew time
+     * @param brewTime 新的总酿造时间
+     * <p>原文：the new total brew time
      * @deprecated use {@link #setBrewingTime(int)} instead
      */
     @Deprecated(since = "1.21", forRemoval = true) // Paper

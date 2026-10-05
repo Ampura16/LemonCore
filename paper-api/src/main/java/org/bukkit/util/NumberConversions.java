@@ -4,6 +4,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 数字类型转换工具类。
+ * <p>原文：
  * Utils for casting number types to other number types
  */
 public final class NumberConversions {

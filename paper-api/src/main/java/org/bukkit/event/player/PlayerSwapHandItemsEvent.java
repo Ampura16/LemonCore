@@ -9,6 +9,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 玩家用快捷键互换主手和副手的物品时触发本事件.
+ * <p>原文：
  * Called when a player swap items between main hand and off-hand using the
  * hotkey.
  */
@@ -30,9 +33,13 @@ public class PlayerSwapHandItemsEvent extends PlayerEvent implements Cancellable
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取切换到主手的物品.
+     * <p>原文：
      * Gets the item switched to the main hand.
      *
-     * @return item in the main hand
+     * @return 主手里的物品
+     * <p>原文：item in the main hand
      */
     @NotNull
     public ItemStack getMainHandItem() {
@@ -40,18 +47,26 @@ public class PlayerSwapHandItemsEvent extends PlayerEvent implements Cancellable
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置主手里的物品.
+     * <p>原文：
      * Sets the item in the main hand.
      *
-     * @param mainHandItem new item in the main hand
+     * @param mainHandItem 主手里的物品
+     * <p>原文：new item in the main hand
      */
     public void setMainHandItem(@Nullable ItemStack mainHandItem) {
         this.mainHandItem = mainHandItem == null ? ItemStack.empty() : mainHandItem;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取切换到副手的物品.
+     * <p>原文：
      * Gets the item switched to the off-hand.
      *
-     * @return item in the off-hand
+     * @return 副手里的物品
+     * <p>原文：item in the off-hand
      */
     @NotNull // Paper
     public ItemStack getOffHandItem() {
@@ -59,9 +74,13 @@ public class PlayerSwapHandItemsEvent extends PlayerEvent implements Cancellable
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置副手里的物品.
+     * <p>原文：
      * Sets the item in the off-hand.
      *
-     * @param offHandItem new item in the off-hand
+     * @param offHandItem 副手里的物品
+     * <p>原文：new item in the off-hand
      */
     public void setOffHandItem(@Nullable ItemStack offHandItem) {
         this.offHandItem = offHandItem == null ? ItemStack.empty() : offHandItem;

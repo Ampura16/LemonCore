@@ -10,6 +10,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当钟被敲响时触发.
+ * <p>原文：
  * Called when a bell is being rung.
  */
 public class BellRingEvent extends BlockEvent implements Cancellable {
@@ -29,9 +32,13 @@ public class BellRingEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取钟被敲响的方向.
+     * <p>原文：
      * Get the direction in which the bell was rung.
      *
-     * @return the direction
+     * @return 方向
+     * <p>原文：the direction
      */
     @NotNull
     public BlockFace getDirection() {
@@ -39,9 +46,13 @@ public class BellRingEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取敲响钟的 {@link Entity}（如果有的话）.
+     * <p>原文：
      * Get the {@link Entity} that rang the bell (if there was one).
      *
-     * @return the entity
+     * @return 实体
+     * <p>原文：the entity
      */
     @Nullable
     public Entity getEntity() {

@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 载具撞击实体的事件
+ * <p>原文：
  * Raised when a vehicle collides with an entity.
  */
 public class VehicleEntityCollisionEvent extends VehicleCollisionEvent implements Cancellable {

@@ -5,6 +5,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * Conversable 接口用于表示可以进行对话的对象。
+ * <p>原文：
  * The Conversable interface is used to indicate objects that can have
  * conversations.
  *
@@ -17,58 +20,89 @@ import org.jetbrains.annotations.Nullable;
 public interface Conversable {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 测试 Conversable 对象是否积极参与对话。
+     * <p>原文：
      * Tests to see of a Conversable object is actively engaged in a
      * conversation.
      *
-     * @return True if a conversation is in progress
+     * @return 如果对话正在进行中则返回 true。
+     * <p>原文：True if a conversation is in progress
      */
     public boolean isConversing();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 接受输入到活动对话中。如果没有对话正在进行，此方法不执行任何操作。
+     * <p>原文：
      * Accepts input into the active conversation. If no conversation is in
      * progress, this method does nothing.
      *
-     * @param input The input message into the conversation
+     * @param input 输入到对话中的消息。
+     * <p>原文：The input message into the conversation
      */
     public void acceptConversationInput(@NotNull String input);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 与 Conversation 对象进行对话。
+     * <p>原文：
      * Enters into a dialog with a Conversation object.
      *
-     * @param conversation The conversation to begin
-     * @return True if the conversation should proceed, false if it has been
+     * @param conversation 要开始的对话。
+     * <p>原文：The conversation to begin
+     * @return 如果对话应继续则返回 true，如果已排队则返回 false。
+     * <p>原文：True if the conversation should proceed, false if it has been
      *     enqueued
      */
     public boolean beginConversation(@NotNull Conversation conversation);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 放弃一个活动对话。
+     * <p>原文：
      * Abandons an active conversation.
      *
-     * @param conversation The conversation to abandon
+     * @param conversation 要放弃的对话。
+     * <p>原文：The conversation to abandon
      */
     public void abandonConversation(@NotNull Conversation conversation);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 放弃一个活动对话。
+     * <p>原文：
      * Abandons an active conversation.
      *
-     * @param conversation The conversation to abandon
-     * @param details Details about why the conversation was abandoned
+     * @param conversation 要放弃的对话。
+     * <p>原文：The conversation to abandon
+     * @param details 关于对话被放弃原因的详细信息。
+     * <p>原文：Details about why the conversation was abandoned
      */
     public void abandonConversation(@NotNull Conversation conversation, @NotNull ConversationAbandonedEvent details);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 向此发送者发送原始消息。
+     * <p>原文：
      * Sends this sender a message raw
      *
-     * @param message Message to be displayed
+     * @param message 要显示的消息。
+     * <p>原文：Message to be displayed
      */
     @org.jetbrains.annotations.ApiStatus.Obsolete // Paper
     public void sendRawMessage(@NotNull String message);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 向此发送者发送原始消息。
+     * <p>原文：
      * Sends this sender a message raw
      *
-     * @param message Message to be displayed
-     * @param sender The sender of this message
+     * @param message 要显示的消息。
+     * <p>原文：Message to be displayed
+     * @param sender 此消息的发送者。
+     * <p>原文：The sender of this message
      * @deprecated sender UUID is ignored
      */
     @Deprecated // Paper

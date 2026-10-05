@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当耕地的湿润等级发生变化时触发本事件.
+ * <p>原文：
  * Called when the moisture level of a soil block changes.
  */
 public class MoistureChangeEvent extends BlockEvent implements Cancellable {
@@ -24,9 +27,13 @@ public class MoistureChangeEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取受到影响的方块的新状态.
+     * <p>原文：
      * Gets the new state of the affected block.
      *
-     * @return new block state
+     * @return 新方块状态
+     * <p>原文：new block state
      */
     @NotNull
     public BlockState getNewState() {

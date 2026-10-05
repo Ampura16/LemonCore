@@ -8,6 +8,9 @@ import org.joml.Quaternionf;
 import org.joml.Vector3f;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 表示任意仿射变换。
+ * <p>原文：
  * Represents an arbitrary affine transformation.
  */
 public class Transformation {
@@ -46,9 +49,13 @@ public class Transformation {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此变换的平移分量。
+     * <p>原文：
      * Gets the translation component of this transformation.
      *
-     * @return translation component
+     * @return 平移分量
+     * <p>原文：translation component
      */
     @NotNull
     public Vector3f getTranslation() {
@@ -56,9 +63,13 @@ public class Transformation {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此变换的左旋转分量。
+     * <p>原文：
      * Gets the left rotation component of this transformation.
      *
-     * @return left rotation component
+     * @return 左旋转分量
+     * <p>原文：left rotation component
      */
     @NotNull
     public Quaternionf getLeftRotation() {
@@ -66,9 +77,13 @@ public class Transformation {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此变换的缩放分量。
+     * <p>原文：
      * Gets the scale component of this transformation.
      *
-     * @return scale component
+     * @return 缩放分量
+     * <p>原文：scale component
      */
     @NotNull
     public Vector3f getScale() {
@@ -76,9 +91,13 @@ public class Transformation {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此变换的右旋转分量。
+     * <p>原文：
      * Gets the right rotation component of this transformation.
      *
-     * @return right rotation component
+     * @return 右旋转分量
+     * <p>原文：right rotation component
      */
     @NotNull
     public Quaternionf getRightRotation() {

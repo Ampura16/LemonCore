@@ -6,6 +6,11 @@ import org.bukkit.NamespacedKey;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 此枚举包含 Mojang 提供的所有已知 {@link LootTable} 的列表。此列表不保证在未来版本中准确。
+ * <br>
+ * 更多关于战利品表的信息，请参见 <a href="https://minecraft.wiki/w/Loot_table#List_of_loot_tables">Minecraft Wiki</a>。
+ * <p>原文：
  * This enum holds a list of all known {@link LootTable}s offered by Mojang.
  * This list is not guaranteed to be accurate in future versions.
  * <br>
@@ -266,10 +271,14 @@ public enum LootTables implements Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取与此常量对应的 {@link LootTable}。这等同于调用 {@code Bukkit.getLootTable(this.getKey());}。
+     * <p>原文：
      * Get the {@link LootTable} corresponding to this constant. This is
      * equivalent to calling {@code Bukkit.getLootTable(this.getKey());}.
      *
-     * @return the associated LootTable
+     * @return 关联的战利品表
+     * <p>原文：the associated LootTable
      */
     @NotNull
     public LootTable getLootTable() {

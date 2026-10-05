@@ -127,6 +127,13 @@ public interface DamageType extends Keyed, Translatable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * {@inheritDoc}
+     * <p>
+     * 返回的键是当此伤害类型导致实体死亡时发送的死亡消息的键.
+     * <p>
+     * <strong>注意</strong> 此翻译键仅在{@link #getDeathMessageType()}为{@link DeathMessageType#DEFAULT}时使用
+     * <p>原文：
      * {@inheritDoc}
      * <p>
      * The returned key is that of the death message sent when this damage type
@@ -140,33 +147,49 @@ public interface DamageType extends Keyed, Translatable {
     public String getTranslationKey();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此伤害类型的{@link DamageScaling}.
+     * <p>原文：
      * Get the {@link DamageScaling} for this damage type.
      *
-     * @return the damage scaling
+     * @return 伤害缩放
+     * <p>原文：the damage scaling
      */
     @NotNull
     public DamageScaling getDamageScaling();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此伤害类型的{@link DamageEffect}.
+     * <p>原文：
      * Get the {@link DamageEffect} for this damage type.
      *
-     * @return the damage effect
+     * @return 伤害效果
+     * <p>原文：the damage effect
      */
     @NotNull
     public DamageEffect getDamageEffect();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此伤害类型的{@link DeathMessageType}.
+     * <p>原文：
      * Get the {@link DeathMessageType} for this damage type.
      *
-     * @return the death message type
+     * @return 死亡消息类型
+     * <p>原文：the death message type
      */
     @NotNull
     public DeathMessageType getDeathMessageType();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此伤害类型造成的饥饿消耗量.
+     * <p>原文：
      * Get the amount of hunger exhaustion caused by this damage type.
      *
-     * @return the exhaustion
+     * @return 消耗量
+     * <p>原文：the exhaustion
      */
     public float getExhaustion();
 }

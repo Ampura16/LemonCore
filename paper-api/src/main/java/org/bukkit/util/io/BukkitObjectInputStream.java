@@ -7,6 +7,12 @@ import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 这个类旨在用于与 {@link ConfigurationSerializable} API 一起使用.
+ * 它将对象转换回被 {@link BukkitObjectInputStream} 序列化之前的原始表示.
+ * <p>
+ * 直接继承实现这个类的语法可能在未来版本被取消.
+ * <p>原文：
  * This class is designed to be used in conjunction with the {@link
  * ConfigurationSerializable} API. It translates objects back to their
  * original implementation after being serialized by {@link
@@ -14,6 +20,7 @@ import org.bukkit.configuration.serialization.ConfigurationSerialization;
  * <p>
  * Behavior of implementations extending this class is not guaranteed across
  * future versions.
+ *
  * @deprecated Object streams on their own are not safe. For safer and more consistent serialization of items,
  * use {@link org.bukkit.inventory.ItemStack#serializeAsBytes()} or
  * {@link org.bukkit.inventory.ItemStack#serializeItemsAsBytes(java.util.Collection)}.
@@ -22,10 +29,15 @@ import org.bukkit.configuration.serialization.ConfigurationSerialization;
 public class BukkitObjectInputStream extends ObjectInputStream {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 构造函数提供镜像连接父类的功能.
+     * <p>原文：
      * Constructor provided to mirror super functionality.
      *
-     * @throws IOException if an I/O error occurs while creating this stream
-     * @throws SecurityException if a security manager exists and denies
+     * @throws IOException 创建输入流时发生 I/O 错误
+     * <p>原文：if an I/O error occurs while creating this stream
+     * @throws SecurityException 如果安全管理器存在并且拒绝启用subclassing
+     * <p>原文：if a security manager exists and denies
      * enabling subclassing
      * @see ObjectInputStream#ObjectInputStream()
      */
@@ -35,10 +47,15 @@ public class BukkitObjectInputStream extends ObjectInputStream {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 输入流作为参数的构造函数.
+     * <p>原文：
      * Object input stream decoration constructor.
      *
-     * @param in the input stream to wrap
-     * @throws IOException if an I/O error occurs while reading stream header
+     * @param in InputStream对象
+     * <p>原文：the input stream to wrap
+     * @throws IOException 如果从输入流读取头数据时发生错误
+     * <p>原文：if an I/O error occurs while reading stream header
      * @see ObjectInputStream#ObjectInputStream(InputStream)
      */
     public BukkitObjectInputStream(InputStream in) throws IOException {

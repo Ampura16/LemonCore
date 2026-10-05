@@ -10,6 +10,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当玩家点击按钮从讲台上取走书时触发此事件。如果此事件被取消，书将保留在讲台上.
+ * <p>原文：
  * This event is called when a player clicks the button to take a book of a
  * Lectern. If this event is cancelled the book remains on the lectern.
  */
@@ -27,9 +30,13 @@ public class PlayerTakeLecternBookEvent extends PlayerEvent implements Cancellab
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取涉及的讲台.
+     * <p>原文：
      * Gets the lectern involved.
      *
-     * @return the Lectern
+     * @return 讲台
+     * <p>原文：the Lectern
      */
     @NotNull
     public Lectern getLectern() {
@@ -37,9 +44,13 @@ public class PlayerTakeLecternBookEvent extends PlayerEvent implements Cancellab
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取讲台上的当前 ItemStack.
+     * <p>原文：
      * Gets the current ItemStack on the lectern.
      *
-     * @return the ItemStack on the Lectern
+     * @return 讲台上的 ItemStack
+     * <p>原文：the ItemStack on the Lectern
      */
     @Nullable
     public ItemStack getBook() {

@@ -4,6 +4,9 @@ import java.util.regex.Pattern;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * RegexPrompt 是任何需要通过正则表达式验证输入的提示的基类。
+ * <p>原文：
  * RegexPrompt is the base class for any prompt that requires an input
  * validated by a regular expression.
  *

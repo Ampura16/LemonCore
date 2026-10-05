@@ -6,6 +6,9 @@ import java.util.List;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * FixedSetPrompt 是任何需要用户从固定集合中响应的提示的基类。
+ * <p>原文：
  * FixedSetPrompt is the base class for any prompt that requires a fixed set
  * response from the user.
  *
@@ -20,11 +23,17 @@ public abstract class FixedSetPrompt extends ValidatingPrompt {
     protected List<String> fixedSet;
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 从一组字符串创建一个 FixedSetPrompt。
+     * <p>
+     * foo = new FixedSetPrompt("bar", "cheese", "panda");
+     * <p>原文：
      * Creates a FixedSetPrompt from a set of strings.
      * <p>
      * foo = new FixedSetPrompt("bar", "cheese", "panda");
      *
-     * @param fixedSet A fixed set of strings, one of which the user must
+     * @param fixedSet 一组固定的字符串，用户必须输入其中之一。
+     * <p>原文：A fixed set of strings, one of which the user must
      *     type.
      */
     public FixedSetPrompt(@NotNull String... fixedSet) {
@@ -40,10 +49,14 @@ public abstract class FixedSetPrompt extends ValidatingPrompt {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 创建一个包含构造函数中声明的所有选项的格式化字符串的实用函数。
+     * <p>原文：
      * Utility function to create a formatted string containing all the
      * options declared in the constructor.
      *
-     * @return the options formatted like "[bar, cheese, panda]" if bar,
+     * @return 格式化的选项，如 "[bar, cheese, panda]"（如果 bar、cheese 和 panda 是使用的选项）。
+     * <p>原文：the options formatted like "[bar, cheese, panda]" if bar,
      *     cheese, and panda were the options used
      */
     @NotNull

@@ -1,6 +1,9 @@
 package org.bukkit.metadata;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当{@link LazyMetadataValue}尝试将元数据值转换为不适当的数据类型时, 会抛出此异常.
+ * <p>原文：
  * A MetadataConversionException is thrown any time a {@link
  * LazyMetadataValue} attempts to convert a metadata value to an inappropriate
  * data type.

@@ -7,6 +7,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当一个抛射物被发射时触发本事件.
+ * <p>原文：
  * Called when a projectile is launched.
  */
 public class ProjectileLaunchEvent extends EntitySpawnEvent implements Cancellable {

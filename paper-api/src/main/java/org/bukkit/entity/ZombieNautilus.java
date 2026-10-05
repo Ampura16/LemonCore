@@ -7,24 +7,43 @@ import net.kyori.adventure.key.KeyPattern;
 import org.bukkit.Keyed;
 import org.jspecify.annotations.NullMarked;
 
+/**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 表示僵尸鹦鹉螺。
+ */
 @NullMarked
 public interface ZombieNautilus extends AbstractNautilus {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此僵尸鹦鹉螺的变体。
+     * <p>原文：
      * Gets the variant of this zombie nautilus.
      *
-     * @return the variant
+     * @return 僵尸鹦鹉螺变体
+     * <p>
+     * 原文：Get the variant of this zombie nautilus.
+     * <p>原文：the variant
      */
     Variant getVariant();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此僵尸鹦鹉螺的变体。
+     * <p>原文：
      * Sets the variant of this zombie nautilus.
      *
-     * @param variant the variant
+     * @param variant 僵尸鹦鹉螺变体
+     * <p>
+     * 原文：Set the variant of this zombie nautilus.
+     * <p>原文：the variant
      */
     void setVariant(Variant variant);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 表示僵尸鹦鹉螺的变体。
+     * <p>原文：
      * Represents the variant of a Zombie Nautilus.
      */
     interface Variant extends Keyed {

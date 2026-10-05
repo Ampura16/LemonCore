@@ -7,6 +7,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 载具创建事件
+ * <p>原文：
  * Raised when a vehicle is created.
  */
 public class VehicleCreateEvent extends VehicleEvent implements Cancellable {

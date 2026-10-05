@@ -13,7 +13,11 @@ import org.yaml.snakeyaml.representer.Representer;
 public class YamlRepresenter extends Representer {
 
     /**
-     * @deprecated options required
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @deprecated 需要提供 options 参数
+     * <p>原文：options required
      */
     @Deprecated(since = "1.19.4")
     public YamlRepresenter() {

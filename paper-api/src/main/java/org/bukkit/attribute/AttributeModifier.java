@@ -18,6 +18,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 一个属性修饰符的具体实现.
+ * <p>原文：
  * Concrete implementation of an attribute modifier.
  */
 public class AttributeModifier implements ConfigurationSerializable, Keyed {
@@ -65,11 +68,15 @@ public class AttributeModifier implements ConfigurationSerializable, Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取该修饰符的 UUID.
+     * <p>原文：
      * Get the unique ID for this modifier.
      *
      * @return unique id
      * @see #getKey()
-     * @deprecated attributes are now identified by keys
+     * @deprecated 属性现通过 key 区分
+     * <p>原文：attributes are now identified by keys
      */
     @NotNull
     @Deprecated(since = "1.21", forRemoval = true)
@@ -93,9 +100,13 @@ public class AttributeModifier implements ConfigurationSerializable, Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取该修饰符的名称.
+     * <p>原文：
      * Get the name of this modifier.
      *
-     * @return name
+     * @return 名称
+     * <p>原文：name
      */
     @NotNull
     public String getName() {
@@ -103,18 +114,26 @@ public class AttributeModifier implements ConfigurationSerializable, Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取该修饰符在根据其 {@link Operation} 运算模式进行计算时的修饰值.
+     * <p>原文：
      * Get the amount by which this modifier will apply its {@link Operation}.
      *
-     * @return modification amount
+     * @return 修饰值
+     * <p>原文：modification amount
      */
     public double getAmount() {
         return amount;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取该修饰符的运算模式.
+     * <p>原文：
      * Get the operation this modifier will apply.
      *
-     * @return operation
+     * @return 运算模式
+     * <p>原文：operation
      */
     @NotNull
     public Operation getOperation() {
@@ -122,11 +141,18 @@ public class AttributeModifier implements ConfigurationSerializable, Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取该修饰符生效的 {@link EquipmentSlot},
+     * <p>
+     * 若该修饰符可以在任意槽位生效, 返回 null.
+     * <p>原文：
      * Get the {@link EquipmentSlot} this AttributeModifier is active on,
      * or null if this modifier is applicable for any slot.
      *
-     * @return the slot
-     * @deprecated use {@link #getSlotGroup()}
+     * @return 目标槽位
+     * <p>原文：the slot
+     * @deprecated 请使用 {@link #getSlotGroup()}
+     * <p>原文：use {@link #getSlotGroup()}
      */
     @Nullable
     @Deprecated(since = "1.20.5")
@@ -135,9 +161,15 @@ public class AttributeModifier implements ConfigurationSerializable, Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取该修饰符生效的 {@link EquipmentSlotGroup}.
+     * <p>
+     * 若该修饰符可以在任意槽位生效, 返回 {@link EquipmentSlotGroup#ANY}.
+     * <p>原文：
      * Get the {@link EquipmentSlotGroup} this AttributeModifier is active on.
      *
-     * @return the slot
+     * @return 目标槽位组
+     * <p>原文：the slot
      */
     @NotNull
     public EquipmentSlotGroup getSlotGroup() {
@@ -212,19 +244,31 @@ public class AttributeModifier implements ConfigurationSerializable, Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 可用的运算模式枚举.
+     * <p>原文：
      * Enumerable operation to be applied.
      */
     public enum Operation {
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 在基值上直接相加 (或相减) 该值
+         * <p>原文：
          * Adds (or subtracts) the specified amount to the base value.
          */
         ADD_NUMBER,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 在基值上增加该值的标量
+         * <p>原文：
          * Adds this scalar of amount to the base value.
          */
         ADD_SCALAR,
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 将该值 +1 后乘以基值.
+         * <p>原文：
          * Multiply amount by this value, after adding 1 to it.
          */
         MULTIPLY_SCALAR_1;

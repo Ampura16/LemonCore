@@ -7,6 +7,11 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当一只蝙蝠将要睡觉或醒来时触发本事件.
+ * <p>
+ * 如果本事件被取消, 那么这只蝙蝠将不会切换睡眠状态.
+ * <p>原文：
  * Called when a bat attempts to sleep or wake up from its slumber.
  * <p>
  * If this event is cancelled, the Bat will not toggle its sleep
@@ -27,9 +32,13 @@ public class BatToggleSleepEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这只蝙蝠是否准备苏醒.
+     * <p>原文：
      * Get whether the bat is attempting to awaken.
      *
-     * @return {@code true} if trying to awaken, {@code false} otherwise
+     * @return 如果准备醒来则为 true, 反之为 false
+     * <p>原文：{@code true} if trying to awaken, {@code false} otherwise
      */
     public boolean isAwake() {
         return this.awake;

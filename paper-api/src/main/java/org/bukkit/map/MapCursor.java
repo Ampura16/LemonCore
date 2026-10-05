@@ -13,6 +13,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 表示一个地图上的光标.
+ * <p>原文：
  * Represents a cursor on a map.
  */
 public final class MapCursor {
@@ -23,14 +26,23 @@ public final class MapCursor {
     private Type type;
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 初始化地图光标.
+     * <p>原文：
      * Initialize the map cursor.
      *
-     * @param x The x coordinate, from -128 to 127.
-     * @param y The y coordinate, from -128 to 127.
-     * @param direction The facing of the cursor, from 0 to 15.
-     * @param type The type (color/style) of the map cursor.
-     * @param visible Whether the cursor is visible by default.
-     * @deprecated Magic value
+     * @param x x坐标，范围为-128到127
+     * <p>原文：The x coordinate, from -128 to 127.
+     * @param y y坐标，范围为-128到127
+     * <p>原文：The y coordinate, from -128 to 127.
+     * @param direction 光标的朝向，范围为0到15
+     * <p>原文：The facing of the cursor, from 0 to 15.
+     * @param type 地图光标的类型（颜色、风格）
+     * <p>原文：The type (color/style) of the map cursor.
+     * @param visible 光标在默认情况下是否可见
+     * <p>原文：Whether the cursor is visible by default.
+     * @deprecated 不安全的参数
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.6.2")
     public MapCursor(byte x, byte y, byte direction, byte type, boolean visible) {
@@ -38,28 +50,46 @@ public final class MapCursor {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 初始化地图光标.
+     * <p>原文：
      * Initialize the map cursor.
      *
-     * @param x The x coordinate, from -128 to 127.
-     * @param y The y coordinate, from -128 to 127.
-     * @param direction The facing of the cursor, from 0 to 15.
-     * @param type The type (color/style) of the map cursor.
-     * @param visible Whether the cursor is visible by default.
+     * @param x x坐标，范围为-128到127
+     * <p>原文：The x coordinate, from -128 to 127.
+     * @param y y坐标，范围为-128到127
+     * <p>原文：The y coordinate, from -128 to 127.
+     * @param direction 光标的朝向，范围为0到15
+     * <p>原文：The facing of the cursor, from 0 to 15.
+     * @param type 地图光标的类型（颜色、风格）
+     * <p>原文：The type (color/style) of the map cursor.
+     * @param visible 光标在默认情况下是否可见
+     * <p>原文：Whether the cursor is visible by default.
      */
     public MapCursor(byte x, byte y, byte direction, @NotNull Type type, boolean visible) {
         this(x, y, direction, type, visible, (String) null); // Paper
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 初始化地图光标.
+     * <p>原文：
      * Initialize the map cursor.
      *
-     * @param x The x coordinate, from -128 to 127.
-     * @param y The y coordinate, from -128 to 127.
-     * @param direction The facing of the cursor, from 0 to 15.
-     * @param type The type (color/style) of the map cursor.
-     * @param visible Whether the cursor is visible by default.
-     * @param caption cursor caption
-     * @deprecated Magic value. Use {@link #MapCursor(byte, byte, byte, Type, boolean, net.kyori.adventure.text.Component)}
+     * @param x x坐标，范围为-128到127
+     * <p>原文：The x coordinate, from -128 to 127.
+     * @param y y坐标，范围为-128到127
+     * <p>原文：The y coordinate, from -128 to 127.
+     * @param direction 光标的朝向，范围为0到15
+     * <p>原文：The facing of the cursor, from 0 to 15.
+     * @param type 地图光标的类型（颜色、风格）
+     * <p>原文：The type (color/style) of the map cursor.
+     * @param visible 光标在默认情况下是否可见
+     * <p>原文：Whether the cursor is visible by default.
+     * @param caption 光标标题
+     * <p>原文：cursor caption
+     * @deprecated 不安全的参数，请使用 {@link #MapCursor(byte, byte, byte, Type, boolean, String)}
+     * <p>原文：Magic value. Use {@link #MapCursor(byte, byte, byte, Type, boolean, net.kyori.adventure.text.Component)}
      */
     @Deprecated(since = "1.13")
     public MapCursor(byte x, byte y, byte direction, byte type, boolean visible, @Nullable String caption) {
@@ -106,14 +136,23 @@ public final class MapCursor {
     // Paper end
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 初始化地图光标.
+     * <p>原文：
      * Initialize the map cursor.
      *
-     * @param x The x coordinate, from -128 to 127.
-     * @param y The y coordinate, from -128 to 127.
-     * @param direction The facing of the cursor, from 0 to 15.
-     * @param type The type (color/style) of the map cursor.
-     * @param visible Whether the cursor is visible by default.
-     * @param caption cursor caption
+     * @param x x坐标，范围为-128到127
+     * <p>原文：The x coordinate, from -128 to 127.
+     * @param y y坐标，范围为-128到127
+     * <p>原文：The y coordinate, from -128 to 127.
+     * @param direction 光标的朝向，范围为0到15
+     * <p>原文：The facing of the cursor, from 0 to 15.
+     * @param type 地图光标的类型（颜色、风格）
+     * <p>原文：The type (color/style) of the map cursor.
+     * @param visible 光标在默认情况下是否可见
+     * <p>原文：Whether the cursor is visible by default.
+     * @param caption 光标标题
+     * <p>原文：cursor caption
      */
     public MapCursor(byte x, byte y, byte direction, @NotNull Type type, boolean visible, @Nullable String caption) {
         this.x = x;
@@ -125,36 +164,52 @@ public final class MapCursor {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这个光标的X坐标.
+     * <p>原文：
      * Get the X position of this cursor.
      *
-     * @return The X coordinate.
+     * @return X坐标
+     * <p>原文：The X coordinate.
      */
     public byte getX() {
         return x;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这个光标的Y坐标.
+     * <p>原文：
      * Get the Y position of this cursor.
      *
-     * @return The Y coordinate.
+     * @return Y坐标
+     * <p>原文：The Y coordinate.
      */
     public byte getY() {
         return y;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这个光标的朝向.
+     * <p>原文：
      * Get the direction of this cursor.
      *
-     * @return The facing of the cursor, from 0 to 15.
+     * @return 光标的朝向，范围为0到15
+     * <p>原文：The facing of the cursor, from 0 to 15.
      */
     public byte getDirection() {
         return direction;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这个光标的类型.
+     * <p>原文：
      * Get the type of this cursor.
      *
-     * @return The type (color/style) of the map cursor.
+     * @return 地图光标的类型（颜色、风格）
+     * <p>原文：The type (color/style) of the map cursor.
      */
     @NotNull
     public Type getType() {
@@ -162,9 +217,13 @@ public final class MapCursor {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这个光标的类型.
+     * <p>原文：
      * Get the type of this cursor.
      *
-     * @return The type (color/style) of the map cursor.
+     * @return 地图光标的类型（颜色、风格）
+     * <p>原文：The type (color/style) of the map cursor.
      * @apiNote Internal Use Only
      */
     @org.jetbrains.annotations.ApiStatus.Internal // Paper
@@ -173,36 +232,52 @@ public final class MapCursor {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这个光标的可见情况.
+     * <p>原文：
      * Get the visibility status of this cursor.
      *
-     * @return True if visible, false otherwise.
+     * @return 可见则返回true，否则返回false
+     * <p>原文：True if visible, false otherwise.
      */
     public boolean isVisible() {
         return visible;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置这个光标的X坐标.
+     * <p>原文：
      * Set the X position of this cursor.
      *
-     * @param x The X coordinate.
+     * @param x X坐标
+     * <p>原文：The X coordinate.
      */
     public void setX(byte x) {
         this.x = x;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置这个光标的Y坐标.
+     * <p>原文：
      * Set the Y position of this cursor.
      *
-     * @param y The Y coordinate.
+     * @param y Y坐标
+     * <p>原文：The Y coordinate.
      */
     public void setY(byte y) {
         this.y = y;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置这个光标的方向.
+     * <p>原文：
      * Set the direction of this cursor.
      *
-     * @param direction The facing of the cursor, from 0 to 15.
+     * @param direction 这个光标的朝向，范围为0到15
+     * <p>原文：The facing of the cursor, from 0 to 15.
      */
     public void setDirection(byte direction) {
         Preconditions.checkArgument(direction >= 0 && direction <= 15, "direction must be between 0 and 15 but is %s", direction);
@@ -210,19 +285,28 @@ public final class MapCursor {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置这个光标的类型.
+     * <p>原文：
      * Set the type of this cursor.
      *
-     * @param type The type (color/style) of the map cursor.
+     * @param type 地图光标的类型（颜色、风格）
+     * <p>原文：The type (color/style) of the map cursor.
      */
     public void setType(@NotNull Type type) {
         this.type = type;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置这个光标的类型.
+     * <p>原文：
      * Set the type of this cursor.
      *
-     * @param type The type (color/style) of the map cursor.
-     * @deprecated use {@link #setType(Type)}
+     * @param type 地图光标的类型（颜色、风格）
+     * <p>原文：The type (color/style) of the map cursor.
+     * @deprecated 不安全的参数
+     * <p>原文：use {@link #setType(Type)}
      */
     @Deprecated(since = "1.6.2", forRemoval = true) // Paper
     public void setRawType(byte type) {
@@ -232,9 +316,13 @@ public final class MapCursor {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置这个光标的可见情况.
+     * <p>原文：
      * Set the visibility status of this cursor.
      *
-     * @param visible True if visible.
+     * @param visible 可见则为true
+     * <p>原文：True if visible.
      */
     public void setVisible(boolean visible) {
         this.visible = visible;
@@ -259,9 +347,13 @@ public final class MapCursor {
     }
     // Paper end
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此光标的标题。
+     * <p>原文：
      * Gets the caption on this cursor.
      *
-     * @return caption
+     * @return 标题
+     * <p>原文：caption
      * @deprecated in favour of {@link #caption()}
      */
     @Nullable
@@ -271,9 +363,13 @@ public final class MapCursor {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置此光标的标题。
+     * <p>原文：
      * Sets the caption on this cursor.
      *
-     * @param caption new caption
+     * @param caption 新标题
+     * <p>原文：new caption
      * @deprecated in favour of {@link #caption(net.kyori.adventure.text.Component)}
      */
     @Deprecated // Paper
@@ -282,6 +378,9 @@ public final class MapCursor {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 表示地图光标的标准类型。可能有更多被资源包(原材质包)提供的类型，这个数值被客户端当做minecraft.jar里的'./assets/minecraft/textures/map/map_icons.png'文件的索引或一个材质包中的索引使用.
+     * <p>原文：
      * Represents the standard types of map cursors. More may be made
      * available by resource packs - the value is used by the client as an
      * index in the file './assets/minecraft/textures/map/map_icons.png' from minecraft.jar or from a
@@ -367,19 +466,28 @@ public final class MapCursor {
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 获取光标的内部值。
+         * <p>原文：
          * Gets the internal value of the cursor.
          *
-         * @return the value
+         * @return 内部值
+         * <p>原文：the value
          * @apiNote Internal Use Only
          */
         @ApiStatus.Internal // Paper
         byte getValue();
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 通过内部值获取光标类型。
+         * <p>原文：
          * Get a cursor by its internal value.
          *
-         * @param value the value
-         * @return the matching type
+         * @param value 内部值
+         * <p>原文：the value
+         * @return 匹配的类型
+         * <p>原文：the matching type
          * @apiNote Internal Use Only
          */
         @ApiStatus.Internal // Paper
@@ -392,9 +500,15 @@ public final class MapCursor {
         }
 
         /**
-         * @param name of the type.
-         * @return the type with the given name.
-         * @deprecated only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 通过名称获取光标类型。
+         *
+         * @param name 类型的名称
+         * <p>原文：of the type.
+         * @return 具有给定名称的类型
+         * <p>原文：the type with the given name.
+         * @deprecated 仅为向后兼容，请改用 {@link Registry#get(NamespacedKey)}。
+         * <p>原文：only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
          */
         @NotNull
         @Deprecated(since = "1.21", forRemoval = true) @ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils
@@ -406,8 +520,13 @@ public final class MapCursor {
         }
 
         /**
-         * @return an array of all known map cursor types.
-         * @deprecated use {@link Registry#stream()}.
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 获取所有已知地图光标类型的数组。
+         *
+         * @return 所有已知地图光标类型的数组
+         * <p>原文：an array of all known map cursor types.
+         * @deprecated 请使用 {@link Registry#iterator()}。
+         * <p>原文：use {@link Registry#stream()}.
          */
         @NotNull
         @Deprecated(since = "1.21", forRemoval = true) @ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils

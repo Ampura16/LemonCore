@@ -4,6 +4,9 @@ import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表一个熔炉或发射器。
+ * <p>原文：
  * Represents a furnace or a dispenser.
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
@@ -17,9 +20,15 @@ public class DirectionalContainer extends MaterialData implements Directional {
     }
 
     /**
-     * @param type the type
-     * @param data the raw data value
-     * @deprecated Magic value
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @param type 方块类型
+     * <p>原文：the type
+     * @param data 原始数据值
+     * <p>原文：the raw data value
+     * @deprecated 魔法值
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.6.2")
     public DirectionalContainer(final Material type, final byte data) {

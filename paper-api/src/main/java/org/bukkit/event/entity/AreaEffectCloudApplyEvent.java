@@ -9,6 +9,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当滞留药水应用它的效果时触发本事件，期间每5 tick发生一次。
+ * <p>原文：
  * Called when a lingering potion applies its effects. Happens
  * once every 5 ticks
  */
@@ -33,6 +36,12 @@ public class AreaEffectCloudApplyEvent extends EntityEvent implements Cancellabl
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取一个受影响实体的可变列表。
+     * <p>
+     * 特别注意不是在列表里的每个实体都保证受影响。
+     * 药水效果云可能由于{@link AreaEffectCloud#getDurationOnUse()}或{@link AreaEffectCloud#getRadiusOnUse()}的消耗死在应用过程中的影响
+     * <p>原文：
      * Retrieves a mutable list of the effected entities
      * <p>
      * It is important to note that not every entity in this list
@@ -40,7 +49,8 @@ public class AreaEffectCloudApplyEvent extends EntityEvent implements Cancellabl
      * application of its effects due to the depletion of {@link AreaEffectCloud#getDurationOnUse()}
      * or {@link AreaEffectCloud#getRadiusOnUse()}
      *
-     * @return the affected entity list
+     * @return 受影响的实体列表
+     * <p>原文：the affected entity list
      */
     @NotNull
     public List<LivingEntity> getAffectedEntities() {

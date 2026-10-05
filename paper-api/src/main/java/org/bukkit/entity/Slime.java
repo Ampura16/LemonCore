@@ -1,16 +1,24 @@
 package org.bukkit.entity;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表史莱姆.
+ * <p>原文：
  * Represents a Slime.
  */
 public interface Slime extends Mob, Enemy {
 
     /**
-     * @return The size of the slime
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @return 史莱姆的大小
+     * <p>原文：The size of the slime
      */
     public int getSize();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
      * Setting the size of the slime (regardless of previous size)
      * will set the following attributes:
      * <ul>
@@ -21,7 +29,8 @@ public interface Slime extends Mob, Enemy {
      * to their per-size defaults and heal the
      * slime to its max health (assuming it's alive).
      *
-     * @param sz The new size of the slime.
+     * @param sz 史莱姆新的大小.
+     * <p>原文：The new size of the slime.
      */
     public void setSize(int sz);
 

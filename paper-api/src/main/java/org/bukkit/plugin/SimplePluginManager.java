@@ -42,6 +42,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * PluginManager的一种实现, 通常服务器使用的PluginManager实现就是本类.
+ * <p>原文：
  * Handles all plugin management from the Server
  */
 @Deprecated(forRemoval = true) // Paper - This implementation may be replaced in a future version of Paper.
@@ -72,10 +75,15 @@ public final class SimplePluginManager implements PluginManager {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 注册指定的插件加载器.
+     * <p>原文：
      * Registers the specified plugin loader
      *
-     * @param loader Class name of the PluginLoader to register
-     * @throws IllegalArgumentException Thrown when the given Class is not a
+     * @param loader 要注册的 PluginLoader 类
+     * <p>原文：Class name of the PluginLoader to register
+     * @throws IllegalArgumentException 当给定的类不是一个有效的 PluginLoader 时抛出
+     * <p>原文：Thrown when the given Class is not a
      *     valid PluginLoader
      */
     @Override
@@ -109,10 +117,15 @@ public final class SimplePluginManager implements PluginManager {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 载入指定目录内的插件.
+     * <p>原文：
      * Loads the plugins contained within the specified directory
      *
-     * @param directory Directory to check for plugins
-     * @return A list of all plugins loaded
+     * @param directory 指定目录的File对象
+     * <p>原文：Directory to check for plugins
+     * @return 返回带有已成功载入的插件Plugin对象的数组
+     * <p>原文：A list of all plugins loaded
      */
     @Override
     @NotNull
@@ -146,10 +159,15 @@ public final class SimplePluginManager implements PluginManager {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 从文件列表中加载插件.
+     * <p>原文：
      * Loads the plugins in the list of the files
      *
-     * @param files List of files containing plugins to load
-     * @return A list of all plugins loaded
+     * @param files 包含待加载插件的文件列表
+     * <p>原文：List of files containing plugins to load
+     * @return 返回所有已成功加载的插件列表
+     * <p>原文：A list of all plugins loaded
      */
     @NotNull
     public Plugin[] loadPlugins(@NotNull File[] files) {
@@ -398,15 +416,24 @@ public final class SimplePluginManager implements PluginManager {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 加载某个文件为插件.
+     * <p>
+     * 文件必须对当前的插件加载器有效才会被加载.
+     * <p>原文：
      * Loads the plugin in the specified file
      * <p>
      * File must be valid according to the current enabled Plugin interfaces
      *
-     * @param file File containing the plugin to load
-     * @return The Plugin loaded, or null if it was invalid
-     * @throws InvalidPluginException Thrown when the specified file is not a
+     * @param file 要加载的插件文件
+     * <p>原文：File containing the plugin to load
+     * @return 加载成功后的插件对象, 若插件文件无效返回null
+     * <p>原文：The Plugin loaded, or null if it was invalid
+     * @throws InvalidPluginException 若指定文件不是一个有效的插件
+     * <p>原文：Thrown when the specified file is not a
      *     valid plugin
-     * @throws UnknownDependencyException If a required dependency could not
+     * @throws UnknownDependencyException 若插件要求的依赖找不到
+     * <p>原文：If a required dependency could not
      *     be found
      */
     @Override
@@ -462,12 +489,19 @@ public final class SimplePluginManager implements PluginManager {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检测指定插件是否已加载并在合适时返回其对象.
+     * <p>
+     * 请注意插件名区分大小写.
+     * <p>原文：
      * Checks if the given plugin is loaded and returns it when applicable
      * <p>
      * Please note that the name of the plugin is case-insensitive
      *
-     * @param name Name of the plugin to check
-     * @return Plugin if it exists, otherwise null
+     * @param name 要检测的插件的名称
+     * <p>原文：Name of the plugin to check
+     * @return 如果此插件存在, 返回对应插件对象, 否则返回null
+     * <p>原文：Plugin if it exists, otherwise null
      */
     @Override
     @Nullable
@@ -484,12 +518,19 @@ public final class SimplePluginManager implements PluginManager {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检测指定插件是否已启用.
+     * <p>
+     * 请注意插件名区分大小写.
+     * <p>原文：
      * Checks if the given plugin is enabled or not
      * <p>
      * Please note that the name of the plugin is case-insensitive.
      *
-     * @param name Name of the plugin to check
-     * @return true if the plugin is enabled, otherwise false
+     * @param name 要检测的插件的名称
+     * <p>原文：Name of the plugin to check
+     * @return 如果此插件已启用, 返回true
+     * <p>原文：true if the plugin is enabled, otherwise false
      */
     @Override
     public boolean isPluginEnabled(@NotNull String name) {
@@ -500,10 +541,15 @@ public final class SimplePluginManager implements PluginManager {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检查指定插件是否启用.
+     * <p>原文：
      * Checks if the given plugin is enabled or not
      *
-     * @param plugin Plugin to check
-     * @return true if the plugin is enabled, otherwise false
+     * @param plugin 要检测的插件的对象
+     * <p>原文：Plugin to check
+     * @return 如果此插件已启用, 返回true
+     * <p>原文：true if the plugin is enabled, otherwise false
      */
     @Override
     public boolean isPluginEnabled(@Nullable Plugin plugin) {
@@ -619,9 +665,16 @@ public final class SimplePluginManager implements PluginManager {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 调用一个具有详细信息的事件.
+     * <p>
+     * 译注:本方法是线程安全的, 但不可以在同步代码块/同步线程中触发异步事件,
+     * 也不可以从异步线程中触发同步事件.
+     * <p>原文：
      * Calls an event with the given details.
      *
-     * @param event Event details
+     * @param event 事件
+     * <p>原文：Event details
      */
     @Override
     public void callEvent(@NotNull Event event) {
@@ -697,15 +750,24 @@ public final class SimplePluginManager implements PluginManager {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 将指定的执行器注册至指定的事件类.
+     * <p>原文：
      * Registers the given event to the specified listener using a directly
      * passed EventExecutor
      *
-     * @param event Event class to register
-     * @param listener PlayerListener to register
-     * @param priority Priority of this event
-     * @param executor EventExecutor to register
-     * @param plugin Plugin to register
-     * @param ignoreCancelled Do not call executor if event was already
+     * @param event 要注册的事件类型
+     * <p>原文：Event class to register
+     * @param listener 要注册的监听器
+     * <p>原文：PlayerListener to register
+     * @param priority 要注册的事件的优先级
+     * <p>原文：Priority of this event
+     * @param executor 要注册的EventExecutor
+     * <p>原文：EventExecutor to register
+     * @param plugin 注册事件的插件
+     * <p>原文：Plugin to register
+     * @param ignoreCancelled 是否忽略已取消的事件
+     * <p>原文：Do not call executor if event was already
      *     cancelled
      */
     @Override
@@ -960,9 +1022,13 @@ public final class SimplePluginManager implements PluginManager {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置服务器是否使用 Timings 监测每一个事件代码块的性能状况.
+     * <p>原文：
      * Sets whether or not per event timing code should be used
      *
-     * @param use True if per event timing code should be used
+     * @param use 是否使用 Timings
+     * <p>原文：True if per event timing code should be used
      */
     @Deprecated(forRemoval = true)
     public void useTimings(boolean use) {

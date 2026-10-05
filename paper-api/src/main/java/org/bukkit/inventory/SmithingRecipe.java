@@ -6,6 +6,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表一个锻造配方。
+ * <p>原文：
  * Represents a smithing recipe.
  */
 public class SmithingRecipe implements Recipe, Keyed {
@@ -17,13 +20,22 @@ public class SmithingRecipe implements Recipe, Keyed {
     private final boolean copyDataComponents; // Paper
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 创建一个锻造配方以产生指定的结果物品。
+     * <p>原文：
      * Create a smithing recipe to produce the specified result ItemStack.
      *
-     * @param key The unique recipe key
-     * @param result The item you want the recipe to create.
-     * @param base The base ingredient
-     * @param addition The addition ingredient
-     * @deprecated as of Minecraft 1.20, smithing recipes are now separated into two
+     * @param key 配方的唯一键。
+     * <p>原文：The unique recipe key
+     * @param result 你希望配方创建的物品。
+     * <p>原文：The item you want the recipe to create.
+     * @param base 基础成分。
+     * <p>原文：The base ingredient
+     * @param addition 附加成分。
+     * <p>原文：The addition ingredient
+     * @deprecated 从 Minecraft 1.20 开始，锻造配方现在被分为两种不同的配方类型：{@link SmithingTransformRecipe} 和 {@link SmithingTrimRecipe}。此类现在作为这两个类的基类，添加到服务器时不会产生任何效果。
+     * <p>原文：Create a smithing recipe to produce the specified result ItemStack.
+     * <p>原文：as of Minecraft 1.20, smithing recipes are now separated into two
      * distinct recipe types, {@link SmithingTransformRecipe} and {@link SmithingTrimRecipe}.
      * This class now acts as a base class to these two classes and will do nothing when
      * added to the server.
@@ -55,9 +67,14 @@ public class SmithingRecipe implements Recipe, Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取基础配方物品。
+     * <p>原文：
      * Get the base recipe item.
      *
-     * @return base choice
+     * @return 基础选择。
+     * <p>原文：Get the base recipe item.
+     * <p>原文：base choice
      */
     @NotNull // Paper - fix issues with recipe api
     public RecipeChoice getBase() {
@@ -65,9 +82,14 @@ public class SmithingRecipe implements Recipe, Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取附加配方物品。
+     * <p>原文：
      * Get the addition recipe item.
      *
-     * @return addition choice
+     * @return 附加选择。
+     * <p>原文：Get the addition recipe item.
+     * <p>原文：addition choice
      */
     @NotNull // Paper - fix issues with recipe api
     public RecipeChoice getAddition() {

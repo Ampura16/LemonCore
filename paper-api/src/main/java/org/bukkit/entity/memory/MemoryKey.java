@@ -12,10 +12,14 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 表示用于访问{@link org.bukkit.entity.LivingEntity}记忆值的键。
+ * <p>原文：
  * Represents a key used for accessing memory values of a
  * {@link org.bukkit.entity.LivingEntity}.
  *
- * @param <T> the class type of the memory value
+ * @param <T> 记忆值的类类型
+ * <p>原文：the class type of the memory value
  */
 public final class MemoryKey<T> implements Keyed {
 
@@ -35,9 +39,15 @@ public final class MemoryKey<T> implements Keyed {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取与此记忆关联的值的类。
+     * <p>原文：
      * Gets the class of values associated with this memory.
      *
-     * @return the class of value objects
+     * @return 值对象的类
+     * <p>
+     * 原文：Gets the class of values associated with this memory.
+     * <p>原文：the class of value objects
      */
     @NotNull
     public Class<T> getMemoryClass() {

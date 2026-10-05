@@ -9,6 +9,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 当液体方块的液面高度因相邻方块而发生变化时触发本事件.
+ * <p>原文：
  * Called when the fluid level of a block changes due to changes in adjacent
  * blocks.
  */
@@ -26,9 +29,13 @@ public class FluidLevelChangeEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取变化后的方块的新数据.
+     * <p>原文：
      * Gets the new data of the changed block.
      *
-     * @return new data
+     * @return 新方块数据
+     * <p>原文：new data
      */
     @NotNull
     public BlockData getNewData() {
@@ -36,10 +43,14 @@ public class FluidLevelChangeEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置变化后的方块的新数据. 必须与旧方块数据描述的物品种类相同.
+     * <p>原文：
      * Sets the new data of the changed block. Must be of the same Material as
      * the old one.
      *
-     * @param newData the new data
+     * @param newData 新方块数据
+     * <p>原文：the new data
      */
     public void setNewData(@NotNull BlockData newData) {
         Preconditions.checkArgument(newData != null, "newData null");

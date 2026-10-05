@@ -5,6 +5,15 @@ import org.bukkit.TreeSpecies;
 import org.bukkit.block.BlockFace;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表门.
+ * <p>
+ * 这个类曾被弃用，但已被重构以适用于现今的门. (然后又愉快的弃用了...)
+ * 由于Minecraft的门的内部表示，依赖于isTopHalf()的一些方法未被定义.
+ * <p>
+ * 关于朝向：这个朝向一般是玩家放置门时他面对的方向.
+ * 比如我朝西方放置一个门，它的朝向(技术上讲它的"facing"数据值就是west)是朝西，那么关门时门轴是朝东方向转.
+ * <p>原文：
  * Represents a door.
  *
  * This class was previously deprecated, but has been retrofitted to
@@ -18,8 +27,9 @@ import org.bukkit.block.BlockFace;
  * @see Material#LEGACY_JUNGLE_DOOR
  * @see Material#LEGACY_ACACIA_DOOR
  * @see Material#LEGACY_DARK_OAK_DOOR
- *
- * @deprecated all usage of MaterialData is deprecated and subject to removal.
+ * @deprecated 所有 MaterialData 的用法都已弃用并可能被移除.
+ * 请使用 {@link org.bukkit.block.data.BlockData}.
+ * <p>原文：all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
  */
 @Deprecated(since = "1.13", forRemoval = true)
@@ -29,7 +39,11 @@ public class Door extends MaterialData implements Directional, Openable {
     // of the way doors are currently implemented. Beware!
 
     /**
-     * @deprecated Artifact of old API, equivalent to new <code>Door(Material.LEGACY_WOODEN_DOOR);</code>
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @deprecated 遗留的旧API，相当于new <code>Door(Material.LEGACY_WOODEN_DOOR);</code>
+     * <p>原文：Artifact of old API, equivalent to new <code>Door(Material.LEGACY_WOODEN_DOOR);</code>
      */
     @Deprecated(since = "1.8.7")
     public Door() {
@@ -41,11 +55,15 @@ public class Door extends MaterialData implements Directional, Openable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 以指定材质和朝向构造门的下半部分(关着的门).
+     * <p>原文：
      * Constructs the bottom half of a door of the given material type, facing the specified direction and set to closed
      *
-     * @param type The type of material this door is made of. This must match the type of the block above.
-     * @param face The direction the door is facing.
-     *
+     * @param type 这个门是用什么材料做成的.必须和这个门的上半部分相同.
+     * <p>原文：The type of material this door is made of. This must match the type of the block above.
+     * @param face 门的朝向.
+     * <p>原文：The direction the door is facing.
      * @see Material#LEGACY_WOODEN_DOOR
      * @see Material#LEGACY_IRON_DOOR_BLOCK
      * @see Material#LEGACY_SPRUCE_DOOR
@@ -53,7 +71,6 @@ public class Door extends MaterialData implements Directional, Openable {
      * @see Material#LEGACY_JUNGLE_DOOR
      * @see Material#LEGACY_ACACIA_DOOR
      * @see Material#LEGACY_DARK_OAK_DOOR
-     *
      * @see BlockFace#WEST
      * @see BlockFace#NORTH
      * @see BlockFace#EAST
@@ -64,13 +81,18 @@ public class Door extends MaterialData implements Directional, Openable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 以指定材质和朝向构造门的下半部分，并设置这个门关着还是开着.
+     * <p>原文：
      * Constructs the bottom half of a door of the given material type, facing the specified direction and set to open
      * or closed
      *
-     * @param type The type of material this door is made of. This must match the type of the block above.
-     * @param face The direction the door is facing.
-     * @param isOpen Whether the door is currently opened.
-     *
+     * @param type 这个门是用什么材料做成的.必须和这个门的上半部分相同.
+     * <p>原文：The type of material this door is made of. This must match the type of the block above.
+     * @param face 门的朝向
+     * <p>原文：The direction the door is facing.
+     * @param isOpen 这个门是否开着
+     * <p>原文：Whether the door is currently opened.
      * @see Material#LEGACY_WOODEN_DOOR
      * @see Material#LEGACY_IRON_DOOR_BLOCK
      * @see Material#LEGACY_SPRUCE_DOOR
@@ -78,7 +100,6 @@ public class Door extends MaterialData implements Directional, Openable {
      * @see Material#LEGACY_JUNGLE_DOOR
      * @see Material#LEGACY_ACACIA_DOOR
      * @see Material#LEGACY_DARK_OAK_DOOR
-     *
      * @see BlockFace#WEST
      * @see BlockFace#NORTH
      * @see BlockFace#EAST
@@ -92,11 +113,15 @@ public class Door extends MaterialData implements Directional, Openable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 以指定材质和门轴的左右侧构造门的上半部分.
+     * <p>原文：
      * Constructs the top half of door of the given material type and with the hinge on the left or right
      *
-     * @param type The type of material this door is made of. This must match the type of the block below.
-     * @param isHingeRight True if the hinge is on the right hand side, false if the hinge is on the left hand side.
-     *
+     * @param type 这个门是用什么材料做成的.必须和这个门的下半部分相同.
+     * <p>原文：The type of material this door is made of. This must match the type of the block below.
+     * @param isHingeRight 门轴在右侧为true,在左侧为false
+     * <p>原文：True if the hinge is on the right hand side, false if the hinge is on the left hand side.
      * @see Material#LEGACY_WOODEN_DOOR
      * @see Material#LEGACY_IRON_DOOR_BLOCK
      * @see Material#LEGACY_SPRUCE_DOOR
@@ -112,14 +137,17 @@ public class Door extends MaterialData implements Directional, Openable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 以指定树种和朝向构造一个木门的下半部分(关着的门).
+     * <p>原文：
      * Constructs the bottom half of a wooden door of the given species, facing the specified direction and set to
      * closed
      *
-     * @param species The species this wooden door is made of. This must match the species of the block above.
-     * @param face The direction the door is facing.
-     *
+     * @param species 这个木门是用什么树种做成的.必须和这个门的上半部分相同.
+     * <p>原文：The species this wooden door is made of. This must match the species of the block above.
+     * @param face 门的朝向
+     * <p>原文：The direction the door is facing.
      * @see TreeSpecies
-     *
      * @see BlockFace#WEST
      * @see BlockFace#NORTH
      * @see BlockFace#EAST
@@ -130,15 +158,19 @@ public class Door extends MaterialData implements Directional, Openable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 以指定树种和朝向构造门的下半部分，并设置这个门关着还是开着.
+     * <p>原文：
      * Constructs the bottom half of a wooden door of the given species, facing the specified direction and set to open
      * or closed
      *
-     * @param species The species this wooden door is made of. This must match the species of the block above.
-     * @param face The direction the door is facing.
-     * @param isOpen Whether the door is currently opened.
-     *
+     * @param species 这个木门是用什么树种做成的.必须和这个门的上半部分相同.
+     * <p>原文：The species this wooden door is made of. This must match the species of the block above.
+     * @param face 门的朝向
+     * <p>原文：The direction the door is facing.
+     * @param isOpen 门是否开着
+     * <p>原文：Whether the door is currently opened.
      * @see TreeSpecies
-     *
      * @see BlockFace#WEST
      * @see BlockFace#NORTH
      * @see BlockFace#EAST
@@ -149,11 +181,15 @@ public class Door extends MaterialData implements Directional, Openable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 以指定树种和朝向构造门的上半部分，并指定门轴在左侧还是右侧.
+     * <p>原文：
      * Constructs the top half of a wooden door of the given species and with the hinge on the left or right
      *
-     * @param species The species this wooden door is made of. This must match the species of the block below.
-     * @param isHingeRight True if the hinge is on the right hand side, false if the hinge is on the left hand side.
-     *
+     * @param species 这个木门是用什么树种做成的.必须和这个门的下半部分相同.
+     * <p>原文：The species this wooden door is made of. This must match the species of the block below.
+     * @param isHingeRight 门轴在右侧为true,在左侧为false
+     * <p>原文：True if the hinge is on the right hand side, false if the hinge is on the left hand side.
      * @see TreeSpecies
      */
     public Door(final TreeSpecies species, boolean isHingeRight) {
@@ -161,9 +197,15 @@ public class Door extends MaterialData implements Directional, Openable {
     }
 
     /**
-     * @param type the type
-     * @param data the raw data value
-     * @deprecated Magic value
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @param type 材质类型
+     * <p>原文：the type
+     * @param data 原始数据值
+     * <p>原文：the raw data value
+     * @deprecated 不安全的参数
+     * <p>原文：Magic value
      */
     @Deprecated(since = "1.6.2")
     public Door(final Material type, final byte data) {
@@ -171,11 +213,15 @@ public class Door extends MaterialData implements Directional, Openable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回用你给定的树种做成的木门的物品.
+     * <p>原文：
      * Returns the item type of a wooden door for the given tree species.
      *
-     * @param species The species of wood door required.
-     * @return The item type for the given species.
-     *
+     * @param species 树的物种
+     * <p>原文：The species of wood door required.
+     * @return 用这种树做成的木门
+     * <p>原文：The item type for the given species.
      * @see Material#LEGACY_WOODEN_DOOR
      * @see Material#LEGACY_SPRUCE_DOOR
      * @see Material#LEGACY_BIRCH_DOOR
@@ -202,6 +248,9 @@ public class Door extends MaterialData implements Directional, Openable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 若<code>isTopHalf()</code>为true，则得不到结果(个人猜测总得返回false).
+     * <p>原文：
      * Result is undefined if <code>isTopHalf()</code> is true.
      */
     @Override
@@ -210,6 +259,9 @@ public class Door extends MaterialData implements Directional, Openable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置门是否开着.若<code>isTopHalf()</code>为true则此方法没有效果.
+     * <p>原文：
      * Set whether the door is open. Undefined if <code>isTopHalf()</code> is true.
      */
     @Override
@@ -218,24 +270,36 @@ public class Door extends MaterialData implements Directional, Openable {
     }
 
     /**
-     * @return whether this is the top half of the door
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @return 这个门是否属于上半部分
+     * <p>原文：whether this is the top half of the door
      */
     public boolean isTopHalf() {
         return ((getData() & 0x8) == 0x8);
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置这个门是上半部分的还是下半部分的.
+     * <p>原文：
      * Configure this part of the door to be either the top or the bottom half
      *
-     * @param isTopHalf True to make it the top half.
+     * @param isTopHalf true将设此门为上半部分的
+     * <p>原文：True to make it the top half.
      */
     public void setTopHalf(boolean isTopHalf) {
         setData((byte) (isTopHalf ? (getData() | 0x8) : (getData() & ~0x8)));
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
      * @return BlockFace.SELF
-     * @deprecated This method should not be used; use hinge and facing accessors instead.
+     * @deprecated 不应使用此方法;请使用hinge/facing对应的getter
+     * <p>原文：This method should not be used; use hinge and facing accessors instead.
      */
     @Deprecated(since = "1.4.5")
     public BlockFace getHingeCorner() {
@@ -248,11 +312,16 @@ public class Door extends MaterialData implements Directional, Openable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置门的朝向.
+     * 若<code>isTopHalf()</code>为true，则没有效果.
+     * <p>原文：
      * Set the direction that this door should is facing.
      *
      * Undefined if <code>isTopHalf()</code> is true.
      *
-     * @param face the direction
+     * @param face 朝向
+     * <p>原文：the direction
      */
     @Override
     public void setFacingDirection(BlockFace face) {
@@ -275,11 +344,16 @@ public class Door extends MaterialData implements Directional, Openable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取门的朝向.
+     * 若<code>isTopHalf()</code>为true，则没有效果.
+     * <p>原文：
      * Get the direction that this door is facing.
      *
      * Undefined if <code>isTopHalf()</code> is true.
      *
-     * @return the direction
+     * @return 朝向
+     * <p>原文：the direction
      */
     @Override
     public BlockFace getFacing() {
@@ -299,22 +373,32 @@ public class Door extends MaterialData implements Directional, Openable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 返回门轴在哪一侧.
+     * 若<code>isTopHalf()</code>为false，则没有效果.
+     * <p>原文：
      * Returns the side of the door the hinge is on.
      *
      * Undefined if <code>isTopHalf()</code> is false.
      *
-     * @return false for left hinge, true for right hinge
+     * @return 门轴在右侧为true,在左侧为false
+     * <p>原文：false for left hinge, true for right hinge
      */
     public boolean getHinge() {
         return (getData() & 0x1) == 1;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置门轴在左侧还是右侧.左侧为false,右侧为true.
+     * 若<code>isTopHalf()</code>为false，则没有效果.
+     * <p>原文：
      * Set whether the hinge is on the left or right side. Left is false, right is true.
      *
      * Undefined if <code>isTopHalf()</code> is false.
      *
-     * @param isHingeRight True if the hinge is on the right hand side, false if the hinge is on the left hand side.
+     * @param isHingeRight 门轴在右侧为true,在左侧为false
+     * <p>原文：True if the hinge is on the right hand side, false if the hinge is on the left hand side.
      */
     public void setHinge(boolean isHingeRight) {
         setData((byte) (isHingeRight ? (getData() | 0x1) : (getData() & ~0x1)));

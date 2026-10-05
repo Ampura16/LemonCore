@@ -10,32 +10,53 @@ import org.bukkit.configuration.serialization.SerializableAs;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表一个单独的烟花效果。
+ * <p>原文：
  * Represents a single firework effect.
  */
 @SerializableAs("Firework")
 public final class FireworkEffect implements ConfigurationSerializable {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 效果的类型或形状。
+     * <p>原文：
      * The type or shape of the effect.
      */
     public enum Type implements net.kyori.adventure.translation.Translatable { // Paper - Adventure translations
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 小型球状效果。
+         * <p>原文：
          * A small ball effect.
          */
         BALL("small_ball"), // Paper - add name
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 大型球状效果。
+         * <p>原文：
          * A large ball effect.
          */
         BALL_LARGE("large_ball"), // Paper - add name
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 星形效果。
+         * <p>原文：
          * A star-shaped effect.
          */
         STAR("star"), // Paper - add name
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 爆裂效果。
+         * <p>原文：
          * A burst effect.
          */
         BURST("burst"), // Paper - add name
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 苦力怕脸型效果。
+         * <p>原文：
          * A creeper-face effect.
          */
         CREEPER("creeper"), // Paper - add name
@@ -59,9 +80,13 @@ public final class FireworkEffect implements ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 构建一个烟花效果。
+     * <p>原文：
      * Construct a firework effect.
      *
-     * @return A utility object for building a firework effect
+     * @return 一个用于构建烟花效果的实用对象
+     * <p>原文：A utility object for building a firework effect
      */
     @NotNull
     public static Builder builder() {
@@ -69,6 +94,9 @@ public final class FireworkEffect implements ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 这是一个烟花效果的生成器。
+     * <p>原文：
      * This is a builder for FireworkEffects.
      *
      * @see FireworkEffect#builder()
@@ -83,11 +111,17 @@ public final class FireworkEffect implements ConfigurationSerializable {
         Builder() {}
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 指定烟花效果的类型。
+         * <p>原文：
          * Specify the type of the firework effect.
          *
-         * @param type The effect type
-         * @return This object, for chaining
-         * @throws IllegalArgumentException If type is null
+         * @param type 效果类型
+         * <p>原文：The effect type
+         * @return 用于链接的对象
+         * <p>原文：This object, for chaining
+         * @throws IllegalArgumentException 如果类型为空则抛出错误
+         * <p>原文：If type is null
          */
         @NotNull
         public Builder with(@NotNull Type type) throws IllegalArgumentException {
@@ -97,9 +131,13 @@ public final class FireworkEffect implements ConfigurationSerializable {
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 向烟花添加一个闪烁效果。
+         * <p>原文：
          * Add a flicker to the firework effect.
          *
-         * @return This object, for chaining
+         * @return 用于链接的对象
+         * <p>原文：This object, for chaining
          */
         @NotNull
         public Builder withFlicker() {
@@ -108,10 +146,15 @@ public final class FireworkEffect implements ConfigurationSerializable {
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 设置烟花是否具有闪烁效果。
+         * <p>原文：
          * Set whether the firework effect should flicker.
          *
-         * @param flicker true if it should flicker, false if not
-         * @return This object, for chaining
+         * @param flicker 具有闪烁效果为true，否则为false
+         * <p>原文：true if it should flicker, false if not
+         * @return 用于链接的对象
+         * <p>原文：This object, for chaining
          */
         @NotNull
         public Builder flicker(boolean flicker) {
@@ -120,9 +163,13 @@ public final class FireworkEffect implements ConfigurationSerializable {
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 向烟花添加一个尾迹效果。
+         * <p>原文：
          * Add a trail to the firework effect.
          *
-         * @return This object, for chaining
+         * @return 用于链接的对象
+         * <p>原文：This object, for chaining
          */
         @NotNull
         public Builder withTrail() {
@@ -131,10 +178,15 @@ public final class FireworkEffect implements ConfigurationSerializable {
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 设置烟花是否有尾迹效果。
+         * <p>原文：
          * Set whether the firework effect should have a trail.
          *
-         * @param trail true if it should have a trail, false for no trail
-         * @return This object, for chaining
+         * @param trail 如果具有尾迹效果则返回true，否则返回false
+         * <p>原文：true if it should have a trail, false for no trail
+         * @return 用于链接的对象
+         * <p>原文：This object, for chaining
          */
         @NotNull
         public Builder trail(boolean trail) {
@@ -143,11 +195,17 @@ public final class FireworkEffect implements ConfigurationSerializable {
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 向烟花效果添加一种主颜色。
+         * <p>原文：
          * Add a primary color to the firework effect.
          *
-         * @param color The color to add
-         * @return This object, for chaining
-         * @throws IllegalArgumentException If color is null
+         * @param color 添加的颜色
+         * <p>原文：The color to add
+         * @return 用于链接的对象
+         * <p>原文：This object, for chaining
+         * @throws IllegalArgumentException 如果颜色为空则抛出错误
+         * <p>原文：If color is null
          */
         @NotNull
         public Builder withColor(@NotNull Color color) throws IllegalArgumentException {
@@ -159,12 +217,19 @@ public final class FireworkEffect implements ConfigurationSerializable {
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 向烟花效果添加几种主颜色。
+         * <p>原文：
          * Add several primary colors to the firework effect.
          *
-         * @param colors The colors to add
-         * @return This object, for chaining
-         * @throws IllegalArgumentException If colors is null
-         * @throws IllegalArgumentException If any color is null (may be
+         * @param colors 添加的颜色
+         * <p>原文：The colors to add
+         * @return 用于链接的对象
+         * <p>原文：This object, for chaining
+         * @throws IllegalArgumentException 如果颜色为空则抛出错误
+         * <p>原文：If colors is null
+         * @throws IllegalArgumentException 如果颜色为空则抛出错误
+         * <p>原文：If any color is null (may be
          *     thrown after changes have occurred)
          */
         @NotNull
@@ -184,13 +249,20 @@ public final class FireworkEffect implements ConfigurationSerializable {
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 向烟花效果添加几种主颜色。
+         * <p>原文：
          * Add several primary colors to the firework effect.
          *
-         * @param colors An iterable object whose iterator yields the desired
+         * @param colors 一个可迭代的对象，其迭代器可产生所需的颜色。
+         * <p>原文：An iterable object whose iterator yields the desired
          *     colors
-         * @return This object, for chaining
-         * @throws IllegalArgumentException If colors is null
-         * @throws IllegalArgumentException If any color is null (may be
+         * @return 用于链接的对象
+         * <p>原文：This object, for chaining
+         * @throws IllegalArgumentException 如果颜色为空则抛出错误
+         * <p>原文：If colors is null
+         * @throws IllegalArgumentException 如果颜色为空则抛出错误
+         * <p>原文：If any color is null (may be
          *     thrown after changes have occurred)
          */
         @NotNull
@@ -209,12 +281,19 @@ public final class FireworkEffect implements ConfigurationSerializable {
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 向烟花效果添加一种淡出颜色。
+         * <p>原文：
          * Add a fade color to the firework effect.
          *
-         * @param color The color to add
-         * @return This object, for chaining
-         * @throws IllegalArgumentException If colors is null
-         * @throws IllegalArgumentException If any color is null (may be
+         * @param color 添加的颜色
+         * <p>原文：The color to add
+         * @return 用于链接的对象
+         * <p>原文：This object, for chaining
+         * @throws IllegalArgumentException 如果颜色为空则抛出错误
+         * <p>原文：If colors is null
+         * @throws IllegalArgumentException 如果颜色为空则抛出错误
+         * <p>原文：If any color is null (may be
          *     thrown after changes have occurred)
          */
         @NotNull
@@ -231,12 +310,19 @@ public final class FireworkEffect implements ConfigurationSerializable {
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 向烟花效果添加几种淡出颜色。
+         * <p>原文：
          * Add several fade colors to the firework effect.
          *
-         * @param colors The colors to add
-         * @return This object, for chaining
-         * @throws IllegalArgumentException If colors is null
-         * @throws IllegalArgumentException If any color is null (may be
+         * @param colors 添加的颜色
+         * <p>原文：The colors to add
+         * @return 用于链接的对象
+         * <p>原文：This object, for chaining
+         * @throws IllegalArgumentException 如果颜色为空则抛出错误
+         * <p>原文：If colors is null
+         * @throws IllegalArgumentException 如果颜色为空则抛出错误
+         * <p>原文：If any color is null (may be
          *     thrown after changes have occurred)
          */
         @NotNull
@@ -260,13 +346,20 @@ public final class FireworkEffect implements ConfigurationSerializable {
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 向烟花效果添加几种淡出颜色。
+         * <p>原文：
          * Add several fade colors to the firework effect.
          *
-         * @param colors An iterable object whose iterator yields the desired
+         * @param colors 一个可迭代的对象，其迭代器可产生所需的颜色。
+         * <p>原文：An iterable object whose iterator yields the desired
          *     colors
-         * @return This object, for chaining
-         * @throws IllegalArgumentException If colors is null
-         * @throws IllegalArgumentException If any color is null (may be
+         * @return 用于链接的对象
+         * <p>原文：This object, for chaining
+         * @throws IllegalArgumentException 如果颜色为空则抛出错误
+         * <p>原文：If colors is null
+         * @throws IllegalArgumentException 如果颜色为空则抛出错误
+         * <p>原文：If any color is null (may be
          *     thrown after changes have occurred)
          */
         @NotNull
@@ -289,12 +382,18 @@ public final class FireworkEffect implements ConfigurationSerializable {
         }
 
         /**
+         * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+         * 根据这个生成器的当前内容创建一个{@link FireworkEffect}。
+         * <p>
+         * 成功生成需要指定至少一种颜色。
+         * <p>原文：
          * Create a {@link FireworkEffect} from the current contents of this
          * builder.
          * <p>
          * To successfully build, you must have specified at least one color.
          *
-         * @return The representative firework effect
+         * @return 烟花效果模板
+         * <p>原文：The representative firework effect
          */
         @NotNull
         public FireworkEffect build() {
@@ -331,27 +430,39 @@ public final class FireworkEffect implements ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取烟花是否具有闪烁效果。
+     * <p>原文：
      * Get whether the firework effect flickers.
      *
-     * @return true if it flickers, false if not
+     * @return 如果具有闪烁效果则返回true，否则返回false
+     * <p>原文：true if it flickers, false if not
      */
     public boolean hasFlicker() {
         return flicker;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取烟花是否具有尾迹效果。
+     * <p>原文：
      * Get whether the firework effect has a trail.
      *
-     * @return true if it has a trail, false if not
+     * @return 如果具有尾迹效果则返回true，否则返回false
+     * <p>原文：true if it has a trail, false if not
      */
     public boolean hasTrail() {
         return trail;
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取烟花效果的主颜色。
+     * <p>原文：
      * Get the primary colors of the firework effect.
      *
-     * @return An immutable list of the primary colors
+     * @return 获取一个主颜色的不可变列表
+     * <p>原文：An immutable list of the primary colors
      */
     @NotNull
     public List<Color> getColors() {
@@ -359,9 +470,13 @@ public final class FireworkEffect implements ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取烟花效果的淡出颜色。
+     * <p>原文：
      * Get the fade colors of the firework effect.
      *
-     * @return An immutable list of the fade colors
+     * @return 获取一个淡出颜色的不可变列表
+     * <p>原文：An immutable list of the fade colors
      */
     @NotNull
     public List<Color> getFadeColors() {
@@ -369,9 +484,13 @@ public final class FireworkEffect implements ConfigurationSerializable {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取烟花效果的类型。
+     * <p>原文：
      * Get the type of the firework effect.
      *
-     * @return The effect type
+     * @return 效果类型
+     * <p>原文：The effect type
      */
     @NotNull
     public Type getType() {
@@ -379,8 +498,13 @@ public final class FireworkEffect implements ConfigurationSerializable {
     }
 
     /**
-     * @param map the map to deserialize
-     * @return the resulting serializable
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @param map 用于反序列化的Map
+     * <p>原文：the map to deserialize
+     * @return 序列化的结果
+     * <p>原文：the resulting serializable
      * @see ConfigurationSerializable
      */
     @NotNull

@@ -4,33 +4,51 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表僵尸.
+ * <p>原文：
  * Represents a Zombie.
  */
 public interface Zombie extends Monster, Ageable {
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这个僵尸是否为小僵尸.
+     * <p>原文：
      * Gets whether the zombie is a baby
      *
-     * @return Whether the zombie is a baby
-     * @deprecated see {@link Ageable#isAdult()}
+     * @return 这个僵尸是否为小僵尸
+     * <p>原文：Whether the zombie is a baby
+     * @deprecated 另请参阅 {@link Ageable#isAdult()}
+     * <p>原文：see {@link Ageable#isAdult()}
      */
     @Deprecated(since = "1.16.2")
     public boolean isBaby();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置这个僵尸是否为小僵尸.
+     * <p>原文：
      * Sets whether the zombie is a baby
      *
-     * @param flag Whether the zombie is a baby
-     * @deprecated see {@link Ageable#setBaby()} and {@link Ageable#setAdult()}
+     * @param flag 这个僵尸是否为小僵尸
+     * <p>原文：Whether the zombie is a baby
+     * @deprecated 另请参阅 {@link Ageable#setBaby()} 和 {@link Ageable#setAdult()}
+     * <p>原文：see {@link Ageable#setBaby()} and {@link Ageable#setAdult()}
      */
     @Deprecated(since = "1.16.2")
     public void setBaby(boolean flag);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取这个僵尸是否为村民僵尸.
+     * <p>原文：
      * Gets whether the zombie is a villager
      *
-     * @return Whether the zombie is a villager
-     * @deprecated check if instanceof {@link ZombieVillager}.
+     * @return 这个僵尸是否为村民僵尸
+     * <p>原文：Whether the zombie is a villager
+     * @deprecated 检查 instanceof {@link ZombieVillager} 的是与否.
+     * <p>原文：check if instanceof {@link ZombieVillager}.
      */
     @Deprecated(since = "1.10.2", forRemoval = true)
     public boolean isVillager();
@@ -92,13 +110,22 @@ public interface Zombie extends Monster, Ageable {
     void setConversionTime(int time);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获得这个僵尸是否能破坏门.
+     * <p>原文：
      * Gets whether this zombie can break doors
      *
-     * @return Whether this zombie can break doors
+     * @return 僵尸是否能破坏门
+     * <p>原文：Whether this zombie can break doors
      */
     boolean canBreakDoors();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置僵尸是否能破坏门.
+     *
+     * 当实体是溺尸时将被忽略.当实体破坏门时也会停止破坏.
+     * <p>原文：
      * Sets whether this zombie can break doors
      * <p>
      * Check {@link #supportsBreakingDoors()} to see

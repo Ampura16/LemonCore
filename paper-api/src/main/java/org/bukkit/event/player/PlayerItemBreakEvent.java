@@ -7,6 +7,11 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 某玩家工具耐久消耗完毕时触发(比如铲子，打火石，铁制工具).
+ * <p>
+ * 当物品耐久值为0时，将触发此事件.事件结束后，物品数量将设为 {@code item amount - 1}, 耐久值将复位至0.
+ * <p>原文：
  * Fired when a player's item breaks (such as a shovel or flint and steel).
  * <p>
  * After this event, the item's amount will be set to {@code item amount - 1}
@@ -25,9 +30,13 @@ public class PlayerItemBreakEvent extends PlayerEvent {
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获得因耐久值不足将要被销毁的物品.
+     * <p>原文：
      * Gets the item that broke
      *
-     * @return The broken item
+     * @return 这个物品
+     * <p>原文：The broken item
      */
     @NotNull
     public ItemStack getBrokenItem() {

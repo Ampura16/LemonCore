@@ -3,6 +3,9 @@ package org.bukkit;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 表明此方块、实体或其它物体(对象)可接受一个自定义名称.
+ * <p>原文：
  * Represents a block, entity, or other object that may receive a custom name.
  */
 public interface Nameable {
@@ -30,6 +33,11 @@ public interface Nameable {
     void customName(final net.kyori.adventure.text.@Nullable Component customName);
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取生物或方块的自定义名称，若无则返回null.
+     * <p>
+     * 这个方法对玩家没有作用，玩家将一直使用他们的真名.
+     * <p>原文：
      * Gets the custom name on a mob or block. If there is no name this method
      * will return null.
      * <p>
@@ -37,13 +45,21 @@ public interface Nameable {
      * name.
      *
      * @deprecated in favour of {@link #customName()}
-     * @return name of the mob/block or null
+     * @return 生物或方块的自定义名称（若无则返回null）
+     * <p>原文：name of the mob/block or null
      */
     @Deprecated // Paper
     @Nullable
     public String getCustomName();
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置生物或方块的自定义名称，该名称可被用于死亡信息，且能作为生物头顶的标签内容被发送到客户端.
+     * <p>
+     * 设置为空字符串或者null将会清除该生物或方块的自定义名称.
+     * <p>
+     * 这个方法对玩家没有作用，玩家将一直使用他们的真名.
+     * <p>原文：
      * Sets a custom name on a mob or block. This name will be used in death
      * messages and can be sent to the client as a nameplate over the mob.
      * <p>
@@ -53,7 +69,8 @@ public interface Nameable {
      * name.
      *
      * @deprecated in favour of {@link #customName(net.kyori.adventure.text.Component)}
-     * @param name the name to set
+     * @param name 自定义名称
+     * <p>原文：the name to set
      */
     @Deprecated // Paper
     public void setCustomName(@Nullable String name);

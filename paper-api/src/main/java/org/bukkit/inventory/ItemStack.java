@@ -26,6 +26,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 代表物品堆.
+ * <p>
+ * <b>重要: <i>物品</i>堆只被设计用于容纳物品.
+ * 请不要使用本类来简要描述某种不可获得的物品
+ * (可以用{@link Material#isItem()}检测, 不要用 ItemStack存储此方法返回false的物品).</b>
+ * <p>原文：
  * Represents a stack of items.
  * <p>
  * <b>IMPORTANT: An <i>Item</i>Stack is only designed to contain <i>items</i>. Do not
@@ -93,13 +100,21 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
     protected ItemStack() {}
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 构造一个堆叠数为1, 无附加数据的物品堆.
+     * <p>
+     * <b>重要: <i>物品</i>堆只被设计用于容纳物品.
+     * 请不要使用本类来简要描述某种不可获得的物品
+     * (可以用{@link Material#isItem()}检测, 不要用 ItemStack存储此方法返回false的物品). </b>
+     * <p>原文：
      * Defaults stack size to 1, with no extra data.
      * <p>
      * <b>IMPORTANT: An <i>Item</i>Stack is only designed to contain
      * <i>items</i>. Do not use this class to encapsulate Materials for which
      * {@link Material#isItem()} returns false.</b>
      *
-     * @param type item material
+     * @param type 物品种类
+     * <p>原文：item material
      * @apiNote use {@link #of(Material)}
      * @see #of(Material)
      */
@@ -109,14 +124,23 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 构造指定堆叠数, 无附加数据的物品堆.
+     * <p>
+     * <b>重要: <i>物品</i>堆只被设计用于容纳物品.
+     * 请不要使用本类来简要描述某种不可获得的物品
+     * (可以用{@link Material#isItem()}检测, 不要用 ItemStack存储此方法返回false的物品).</b>
+     * <p>原文：
      * An item stack with no extra data.
      * <p>
      * <b>IMPORTANT: An <i>Item</i>Stack is only designed to contain
      * <i>items</i>. Do not use this class to encapsulate Materials for which
      * {@link Material#isItem()} returns false.</b>
      *
-     * @param type item material
-     * @param amount stack size
+     * @param type 物品种类
+     * <p>原文：item material
+     * @param amount 堆叠数
+     * <p>原文：stack size
      * @apiNote Use {@link #of(Material, int)}
      * @see #of(Material, int)
      */
@@ -126,12 +150,19 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 构造一个具有指定损耗值(耐久度)的物品堆.
+     * <p>原文：
      * An item stack with the specified damage / durability
      *
-     * @param type item material
-     * @param amount stack size
-     * @param damage durability / damage
-     * @deprecated see {@link #setDurability(short)}
+     * @param type 物品种类
+     * <p>原文：item material
+     * @param amount 堆叠数
+     * <p>原文：stack size
+     * @param damage 损耗值
+     * <p>原文：durability / damage
+     * @deprecated 另请参阅 {@link #setDurability(short)}
+     * <p>原文：see {@link #setDurability(short)}
      */
     @Deprecated(since = "1.20.5")
     public ItemStack(@NotNull final Material type, final int amount, final short damage) {
@@ -139,11 +170,19 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
     }
 
     /**
-     * @param type the type
-     * @param amount the amount in the stack
-     * @param damage the damage value of the item
-     * @param data the data value or null
-     * @deprecated this method uses an ambiguous data byte object
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     *
+     *
+     * @param type 物品种类
+     * <p>原文：the type
+     * @param amount 堆叠数
+     * <p>原文：the amount in the stack
+     * @param damage 损耗值
+     * <p>原文：the damage value of the item
+     * @param data 数据值或null
+     * <p>原文：the data value or null
+     * @deprecated 该方法使用了意义不明确的data byte对象
+     * <p>原文：this method uses an ambiguous data byte object
      */
     @Deprecated(since = "1.4.5", forRemoval = true)
     public ItemStack(@NotNull Material type, final int amount, final short damage, @Nullable final Byte data) {
@@ -167,10 +206,16 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 构造一个指定物品堆的副本.
+     * <p>原文：
      * Creates a new item stack derived from the specified stack
      *
-     * @param stack the stack to copy
-     * @throws IllegalArgumentException if the specified stack is null or
+     * @param stack 要复制的物品堆
+     * <p>原文：the stack to copy
+     * @throws IllegalArgumentException 如果指定的 stack 为null或返回的
+     * 物品元数据不是通过ItemFactory创建的
+     * <p>原文：if the specified stack is null or
      *     returns an item meta not created by the item factory
      * @apiNote Use {@link #clone()}
      * @see #clone()
@@ -185,9 +230,13 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取该物品的种类.
+     * <p>原文：
      * Gets the type of this item
      *
-     * @return Type of the items in this stack
+     * @return 该物品的种类
+     * <p>原文：Type of the items in this stack
      */
     @NotNull
     public Material getType() {
@@ -195,6 +244,15 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置该物品的种类.
+     * <p>
+     * 注:在做这件事的同时你将清除该物品堆上的MaterialData数据.
+     * <p>
+     * <b>重要: <i>物品</i>堆只被设计用于容纳物品.
+     * 请不要使用本类来简要描述某种不可获得的物品
+     * (可以用{@link Material#isItem()}检测, 不要用 ItemStack存储此方法返回false的物品).</b>
+     * <p>原文：
      * Sets the type of this item
      * <p>
      * Note that in doing so you will reset the MaterialData for this stack.
@@ -203,7 +261,8 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
      * <i>items</i>. Do not use this class to encapsulate Materials for which
      * {@link Material#isItem()} returns false.</b>
      *
-     * @param type New type to set the items in this stack to
+     * @param type 该物品的种类
+     * <p>原文：New type to set the items in this stack to
      * @deprecated <b>Setting the material type of ItemStacks is no longer supported.</b>
      * <p>
      * This method is deprecated due to potential illegal behavior that may occur
@@ -234,27 +293,39 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
     // Paper end
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取该物品堆的物品堆叠数量.
+     * <p>原文：
      * Gets the amount of items in this stack
      *
-     * @return Amount of items in this stack
+     * @return 物品堆叠数量
+     * <p>原文：Amount of items in this stack
      */
     public int getAmount() {
         return this.craftDelegate.getAmount(); // Paper - delegate
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置该物品堆的物品堆叠数量.
+     * <p>原文：
      * Sets the amount of items in this stack
      *
-     * @param amount New amount of items in this stack
+     * @param amount 物品堆叠数量
+     * <p>原文：New amount of items in this stack
      */
     public void setAmount(int amount) {
         this.craftDelegate.setAmount(amount); // Paper - delegate
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取该物品堆的 MateralData 数据.
+     * <p>原文：
      * Gets the MaterialData for this stack of items
      *
-     * @return MaterialData for this item
+     * @return 物品堆的MaterialData数据
+     * <p>原文：MaterialData for this item
      * @deprecated cast to {@link org.bukkit.inventory.meta.BlockDataMeta} and use {@link org.bukkit.inventory.meta.BlockDataMeta#getBlockData(Material)}
      */
     @Nullable
@@ -269,9 +340,13 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置该物品堆的 MateralData 数据.
+     * <p>原文：
      * Sets the MaterialData for this stack of items
      *
-     * @param data New MaterialData for this item
+     * @param data 物品堆的MaterialData数据
+     * <p>原文：New MaterialData for this item
      * @deprecated cast to {@link org.bukkit.inventory.meta.BlockDataMeta} and use {@link org.bukkit.inventory.meta.BlockDataMeta#setBlockData(org.bukkit.block.data.BlockData)}
      */
     @Deprecated(forRemoval = true, since = "1.13")
@@ -290,10 +365,18 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 设置该物品的耐久度.
+     * <p>原文：
      * Sets the durability of this item
      *
-     * @param durability Durability of this item
-     * @deprecated durability is now part of ItemMeta. To avoid confusion and
+     * @param durability 物品耐久度
+     * <p>原文：Durability of this item
+     * @deprecated 耐久度现在是 ItemMeta 的一部分. 为避免疑虑和误用, 请使用
+     * {@link #getItemMeta()}, {@link #setItemMeta(ItemMeta)} 和
+     * {@link Damageable#setDamage(int)}. 这是因为在调用此方法之前创建的 ItemMeta
+     * 的后续变动将覆盖调用此方法设置的物品元数据.
+     * <p>原文：durability is now part of ItemMeta. To avoid confusion and
      * misuse, {@link #getItemMeta()}, {@link #setItemMeta(ItemMeta)} and
      * {@link Damageable#setDamage(int)} should be used instead. This is because
      * any call to this method will be overwritten by subsequent setting of
@@ -305,10 +388,15 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取该物品的耐久度.
+     * <p>原文：
      * Gets the durability of this item
      *
-     * @return Durability of this item
-     * @deprecated see {@link #setDurability(short)}
+     * @return 物品耐久度
+     * <p>原文：Durability of this item
+     * @deprecated 另请参阅 {@link #setDurability(short)}
+     * <p>原文：see {@link #setDurability(short)}
      */
     @Deprecated(since = "1.13")
     public short getDurability() {
@@ -316,13 +404,15 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
      * Get the maximum stack size for this item. If this item has a max stack
      * size component ({@link ItemMeta#hasMaxStackSize()}), the value of that
      * component will be returned. Otherwise, this item's Material's {@link
      * Material#getMaxStackSize() default maximum stack size} will be returned
      * instead.
      *
-     * @return The maximum you can stack this item to.
+     * @return 该物品的最大堆叠数
+     * <p>原文：The maximum you can stack this item to.
      */
     public int getMaxStackSize() {
         return this.craftDelegate.getMaxStackSize(); // Paper - delegate
@@ -348,11 +438,16 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 该方法与equals方法相同, 但不考虑堆叠数量.
+     * <p>原文：
      * This method is the same as equals, but does not consider stack size
      * (amount).
      *
-     * @param stack the item stack to compare to
-     * @return true if the two stacks are equal, ignoring the amount
+     * @param stack 与哪个物品堆作比较
+     * <p>原文：the item stack to compare to
+     * @return 若两者相同返回true (忽略其堆叠数)
+     * <p>原文：true if the two stacks are equal, ignoring the amount
      */
     public boolean isSimilar(@Nullable ItemStack stack) {
         return this.craftDelegate.isSimilar(stack); // Paper - delegate
@@ -370,29 +465,41 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检测该物品堆是否包含指定{@link Enchantment 附魔}.
+     * <p>原文：
      * Checks if this ItemStack contains the given {@link Enchantment}
      *
      * @param enchant Enchantment to test
-     * @return True if this has the given enchantment
+     * @return 若该物品含有此附魔返回true
+     * <p>原文：True if this has the given enchantment
      */
     public boolean containsEnchantment(@NotNull Enchantment enchant) {
         return this.craftDelegate.containsEnchantment(enchant); // Paper - delegate
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取该物品指定附魔的附魔等级.
+     * <p>原文：
      * Gets the level of the specified enchantment on this item stack
      *
      * @param enchant Enchantment to check
-     * @return Level of the enchantment, or 0
+     * @return 指定附魔的附魔等级, 若附魔不存在/没有附魔则为0
+     * <p>原文：Level of the enchantment, or 0
      */
     public int getEnchantmentLevel(@NotNull Enchantment enchant) {
         return this.craftDelegate.getEnchantmentLevel(enchant); // Paper - delegate
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取该物品的所有附魔以及对应的附魔等级, 用map表示.
+     * <p>原文：
      * Gets a map containing all enchantments and their levels on this item.
      *
-     * @return Map of enchantments.
+     * @return 附魔魔咒
+     * <p>原文：Map of enchantments.
      */
     @NotNull
     public Map<Enchantment, Integer> getEnchantments() {
@@ -400,15 +507,24 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 向物品堆添加附魔.
+     * <p>
+     * 该方法实质就是遍历你所给的map, 逐一调用{@link
+     * #addEnchantment(org.bukkit.enchantments.Enchantment, int)}.
+     * <p>原文：
      * Adds the specified enchantments to this item stack.
      * <p>
      * This method is the same as calling {@link
      * #addEnchantment(org.bukkit.enchantments.Enchantment, int)} for each
      * element of the map.
      *
-     * @param enchantments Enchantments to add
-     * @throws IllegalArgumentException if the specified enchantments is null
-     * @throws IllegalArgumentException if any specific enchantment or level
+     * @param enchantments 要添加的附魔
+     * <p>原文：Enchantments to add
+     * @throws IllegalArgumentException 若参数enchantments为null
+     * <p>原文：if the specified enchantments is null
+     * @throws IllegalArgumentException 若参数enchantments为null
+     * <p>原文：if any specific enchantment or level
      *     is null. <b>Warning</b>: Some enchantments may be added before this
      *     exception is thrown.
      */
@@ -421,14 +537,21 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 向物品堆添加{@link Enchantment 附魔}.
+     * <p>
+     * 若此物品堆已经含有给定的附魔(无论它们的附魔等级是什么), 将替换已有的附魔.
+     * <p>原文：
      * Adds the specified {@link Enchantment} to this item stack.
      * <p>
      * If this item stack already contained the given enchantment (at any
      * level), it will be replaced.
      *
      * @param enchant Enchantment to add
-     * @param level Level of the enchantment
-     * @throws IllegalArgumentException if enchantment null, or enchantment is
+     * @param level 附魔等级
+     * <p>原文：Level of the enchantment
+     * @throws IllegalArgumentException 若enchantment为null, 或该附魔不可应用于此物品上
+     * <p>原文：if enchantment null, or enchantment is
      *     not applicable
      */
     @Utility
@@ -444,13 +567,20 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 以不安全的方式向物品堆添加附魔.
+     * <p>
+     * 该方法实质就是遍历你所给的map, 逐一调用{@link
+     * #addUnsafeEnchantment(org.bukkit.enchantments.Enchantment, int)}.
+     * <p>原文：
      * Adds the specified enchantments to this item stack in an unsafe manner.
      * <p>
      * This method is the same as calling {@link
      * #addUnsafeEnchantment(org.bukkit.enchantments.Enchantment, int)} for
      * each element of the map.
      *
-     * @param enchantments Enchantments to add
+     * @param enchantments 附魔
+     * <p>原文：Enchantments to add
      */
     @Utility
     public void addUnsafeEnchantments(@NotNull Map<Enchantment, Integer> enchantments) {
@@ -460,6 +590,14 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 向物品堆添加{@link Enchantment 附魔}.
+     * <p>
+     * 若此物品堆已经含有给定的附魔(无论它们的附魔等级是什么), 将替换已有的附魔.
+     * <p>
+     * 该方法是个不安全操作, 忽略附魔的等级限制以及对此物品的可用性.
+     * 请慎重使用.
+     * <p>原文：
      * Adds the specified {@link Enchantment} to this item stack.
      * <p>
      * If this item stack already contained the given enchantment (at any
@@ -469,24 +607,32 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
      * Use at your own discretion.
      *
      * @param enchant Enchantment to add
-     * @param level Level of the enchantment
+     * @param level 附魔等级
+     * <p>原文：Level of the enchantment
      */
     public void addUnsafeEnchantment(@NotNull Enchantment enchant, int level) {
         this.craftDelegate.addUnsafeEnchantment(enchant, level); // Paper - delegate
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 移除指定的{@link Enchantment 附魔}.
+     * <p>原文：
      * Removes the specified {@link Enchantment} if it exists on this
      * ItemStack
      *
      * @param enchant Enchantment to remove
-     * @return Previous level, or 0
+     * @return 附魔先前的等级, 若附魔不存在为0
+     * <p>原文：Previous level, or 0
      */
     public int removeEnchantment(@NotNull Enchantment enchant) {
         return this.craftDelegate.removeEnchantment(enchant); // Paper - delegate
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 移除物品堆上的全部附魔.
+     * <p>原文：
      * Removes all enchantments on this ItemStack.
      */
     public void removeEnchantments() {
@@ -501,10 +647,15 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 实现配置序列化与反序列化需要的方法.
+     * <p>原文：
      * Required method for configuration serialization
      *
-     * @param args map to deserialize
-     * @return deserialized item stack
+     * @param args 需要反序列化的map
+     * <p>原文：map to deserialize
+     * @return 反序列化后的物品堆
+     * <p>原文：deserialized item stack
      * @see ConfigurationSerializable
      */
     @NotNull
@@ -631,9 +782,13 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
     // Paper end
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 获取此物品堆的{@link ItemMeta}的副本.
+     * <p>原文：
      * Get a copy of this ItemStack's {@link ItemMeta}.
      *
-     * @return a copy of the current ItemStack's ItemData
+     * @return 物品堆元数据副本
+     * <p>原文：a copy of the current ItemStack's ItemData
      */
     @UndefinedNullability // Paper
     public ItemMeta getItemMeta() {
@@ -641,21 +796,32 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 检测该物品堆是否含有任何物品元数据.
+     * <p>原文：
      * Checks to see if any meta data has been defined.
      *
-     * @return Returns true if some meta data has been set for this item
+     * @return 返回该物品是否被设置了任何附加元数据值
+     * <p>原文：Returns true if some meta data has been set for this item
      */
     public boolean hasItemMeta() {
         return this.craftDelegate.hasItemMeta(); // Paper - delegate
     }
 
     /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 向物品堆设置元数据.
+     * <p>原文：
      * Set the ItemMeta of this ItemStack.
      *
-     * @param itemMeta new ItemMeta, or null to indicate meta data be cleared.
-     * @return True if successfully applied ItemMeta, see {@link
+     * @param itemMeta 新物品元数据,或用null来清除此物品上的元数据
+     * <p>原文：new ItemMeta, or null to indicate meta data be cleared.
+     * @return 若成功应用物品元数据返回true, 另请参见 {@link
      *     ItemFactory#isApplicable(ItemMeta, ItemStack)}
-     * @throws IllegalArgumentException if the item meta was not created by
+     * <p>原文：True if successfully applied ItemMeta, see {@link
+     *     ItemFactory#isApplicable(ItemMeta, ItemStack)}
+     * @throws IllegalArgumentException 物品元数据不是通过{@link ItemFactory}创建的
+     * <p>原文：if the item meta was not created by
      *     the {@link ItemFactory}
      */
     public boolean setItemMeta(@Nullable ItemMeta itemMeta) {
