@@ -29,6 +29,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * {@link ServerListPingEvent} 的扩展版本，可完全控制发送给客户端的响应。
+ * <p>原文：
  * Extended version of {@link ServerListPingEvent} that allows full control
  * of the response sent to the client.
  */
@@ -67,9 +70,13 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 返回正在 ping 服务器的 {@link StatusClient}。
+     * <p>原文：
      * Returns the {@link StatusClient} pinging the server.
      *
-     * @return The client
+     * @return 客户端
+     * <p>原文：The client
      */
     @NotNull
     public StatusClient getClient() {
@@ -92,12 +99,18 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置服务器列表中显示的玩家数量。
+     * <p>
+     * 注意，如果启用了 {@link #shouldHidePlayers()}，此设置不会有任何效果。
+     * <p>原文：
      * Sets the number of players displayed in the server list.
      * <p>
      * Note that this won't have any effect if {@link #shouldHidePlayers()}
      * is enabled.
      *
-     * @param numPlayers The number of online players
+     * @param numPlayers 在线玩家数
+     * <p>原文：The number of online players
      */
     public void setNumPlayers(int numPlayers) {
         if (this.numPlayers != numPlayers) {
@@ -122,6 +135,11 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 返回是否在服务器列表中隐藏所有与玩家相关的信息。这将导致响应中跳过 {@link #getNumPlayers()}、{@link #getMaxPlayers()} 和 {@link #getPlayerSample()}。
+     * <p>
+     * 启用此选项时，原版 Minecraft 客户端会将玩家数量显示为 {@code ???}。
+     * <p>原文：
      * Returns whether all player related information is hidden in the server
      * list. This will cause {@link #getNumPlayers()}, {@link #getMaxPlayers()}
      * and {@link #getPlayerSample()} to be skipped in the response.
@@ -129,13 +147,19 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
      * The Vanilla Minecraft client will display the player count as {@code ???}
      * when this option is enabled.
      *
-     * @return {@code true} if the player count is hidden
+     * @return 如果玩家数被隐藏则为 {@code true}
+     * <p>原文：{@code true} if the player count is hidden
      */
     public boolean shouldHidePlayers() {
         return this.hidePlayers;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置是否在服务器列表中隐藏所有与玩家相关的信息。这将导致响应中跳过 {@link #getNumPlayers()}、{@link #getMaxPlayers()} 和 {@link #getPlayerSample()}。
+     * <p>
+     * 启用此选项时，原版 Minecraft 客户端会将玩家数量显示为 {@code ???}。
+     * <p>原文：
      * Sets whether all player related information is hidden in the server
      * list. This will cause {@link #getNumPlayers()}, {@link #getMaxPlayers()}
      * and {@link #getPlayerSample()} to be skipped in the response.
@@ -143,20 +167,27 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
      * The Vanilla Minecraft client will display the player count as {@code ???}
      * when this option is enabled.
      *
-     * @param hidePlayers {@code true} if the player count should be hidden
+     * @param hidePlayers 如果应隐藏玩家数则为 {@code true}
+     * <p>原文：{@code true} if the player count should be hidden
      */
     public void setHidePlayers(boolean hidePlayers) {
         this.hidePlayers = hidePlayers;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 返回将在客户端显示为在线玩家的 {@link ListedPlayerInfo} 可变列表。
+     * <p>
+     * 原版 Minecraft 客户端会在鼠标悬停于玩家数量上时显示它们。
+     * <p>原文：
      * Returns a mutable list of {@link ListedPlayerInfo} that will be displayed
      * as online players on the client.
      * <p>
      * The Vanilla Minecraft client will display them when hovering the
      * player count with the mouse.
      *
-     * @return The mutable player sample list
+     * @return 可变的玩家示例列表
+     * <p>原文：The mutable player sample list
      */
     @NotNull
     public List<ListedPlayerInfo> getListedPlayers() {
@@ -164,14 +195,21 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 返回将在客户端显示为在线玩家的 {@link PlayerProfile} 可变列表。
+     * <p>
+     * 原版 Minecraft 客户端会在鼠标悬停于玩家数量上时显示它们。
+     * <p>原文：
      * Returns a mutable list of {@link PlayerProfile} that will be displayed
      * as online players on the client.
      * <p>
      * The Vanilla Minecraft client will display them when hovering the
      * player count with the mouse.
      *
-     * @return The mutable player sample list
-     * @deprecated Use {@link #getListedPlayers()}, as this does not contain real player profiles
+     * @return 可变的玩家示例列表
+     * <p>原文：The mutable player sample list
+     * @deprecated 请使用 {@link #getListedPlayers()}，因为这里不包含真实的玩家档案
+     * <p>原文：Use {@link #getListedPlayers()}, as this does not contain real player profiles
      */
     @NotNull
     @Deprecated(forRemoval = true, since = "1.20.6")
@@ -180,9 +218,13 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 返回将作为服务器版本发送给客户端的版本。
+     * <p>原文：
      * Returns the version that will be sent as server version on the client.
      *
-     * @return The server version
+     * @return 服务器版本
+     * <p>原文：The server version
      */
     @NotNull
     public String getVersion() {
@@ -190,19 +232,27 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置将作为服务器版本发送给客户端的版本。
+     * <p>原文：
      * Sets the version that will be sent as server version to the client.
      *
-     * @param version The server version
+     * @param version 服务器版本
+     * <p>原文：The server version
      */
     public void setVersion(@NotNull String version) {
         this.version = requireNonNull(version, "version");
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 返回将作为服务器协议版本发送给客户端的协议版本。
+     * <p>原文：
      * Returns the protocol version that will be sent as the protocol version
      * of the server to the client.
      *
-     * @return The protocol version of the server, or {@code -1} if the server
+     * @return 服务器的协议版本；如果服务器尚未完成初始化则为 {@code -1}
+     * <p>原文：The protocol version of the server, or {@code -1} if the server
      * has not finished initialization yet
      */
     public int getProtocolVersion() {
@@ -210,19 +260,27 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置将作为服务器协议版本发送给客户端的协议版本。
+     * <p>原文：
      * Sets the protocol version that will be sent as the protocol version
      * of the server to the client.
      *
-     * @param protocolVersion The protocol version of the server
+     * @param protocolVersion 服务器的协议版本
+     * <p>原文：The protocol version of the server
      */
     public void setProtocolVersion(int protocolVersion) {
         this.protocolVersion = protocolVersion;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取发送给客户端的服务器图标。
+     * <p>原文：
      * Gets the server icon sent to the client.
      *
-     * @return The icon to send to the client, or {@code null} for none
+     * @return 要发送给客户端的图标；为 {@code null} 则表示没有图标
+     * <p>原文：The icon to send to the client, or {@code null} for none
      */
     @Nullable
     public CachedServerIcon getServerIcon() {
@@ -230,9 +288,13 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置发送给客户端的服务器图标。
+     * <p>原文：
      * Sets the server icon sent to the client.
      *
-     * @param icon The icon to send to the client, or {@code null} for none
+     * @param icon 发送给客户端的图标，或 {@code null} 表示无
+     * <p>原文：The icon to send to the client, or {@code null} for none
      */
     @Override
     public void setServerIcon(@Nullable CachedServerIcon icon) {
@@ -279,7 +341,8 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
      *     <li>Remove all entries from {@link #getPlayerSample()} that refer to
      *     the removed player (based on their {@link UUID}).</li>
      * </ul>
-     * @deprecated the Iterable interface will be removed at some point
+     * @deprecated Iterable 接口将在某个时候被移除
+     * <p>原文：the Iterable interface will be removed at some point
      */
     @NotNull
     @Override
@@ -354,6 +417,9 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 表示将显示在服务器列表玩家示例中的玩家。
+     * <p>原文：
      * Represents a player that will be displayed in the player sample of the server list.
      *
      * @param name name of the listed player

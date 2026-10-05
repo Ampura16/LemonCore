@@ -10,6 +10,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 在向客户端发送 {@link Suggestions} 时调用。如果插件将 {@link com.destroystokyo.paper.event.server.AsyncTabCompleteEvent} 事件标记为异步处理，则异步调用，否则同步调用。
+ * <p>原文：
  * Called when sending {@link Suggestions} to the client. Will be called asynchronously if a plugin
  * marks the {@link com.destroystokyo.paper.event.server.AsyncTabCompleteEvent} event handled asynchronously,
  * otherwise called synchronously.
@@ -32,27 +35,39 @@ public class AsyncPlayerSendSuggestionsEvent extends PlayerEvent implements Canc
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取为请求这些建议而发送的输入缓冲区。
+     * <p>原文：
      * Gets the input buffer sent to request these suggestions.
      *
-     * @return the input buffer
+     * @return 输入缓冲区
+     * <p>原文：the input buffer
      */
     public String getBuffer() {
         return this.buffer;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取将发送给客户端的建议。
+     * <p>原文：
      * Gets the suggestions to be sent to client.
      *
-     * @return the suggestions
+     * @return 建议
+     * <p>原文：the suggestions
      */
     public Suggestions getSuggestions() {
         return this.suggestions;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置将发送给客户端的建议。
+     * <p>原文：
      * Sets the suggestions to be sent to client.
      *
-     * @param suggestions suggestions
+     * @param suggestions 建议
+     * <p>原文：suggestions
      */
     public void setSuggestions(final Suggestions suggestions) {
         this.suggestions = suggestions;

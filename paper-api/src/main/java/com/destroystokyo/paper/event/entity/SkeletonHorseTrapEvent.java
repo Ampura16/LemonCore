@@ -10,6 +10,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当玩家靠近骷髅马并触发闪电陷阱时调用的事件
+ * <p>原文：
  * Event called when a player gets close to a skeleton horse and triggers the lightning trap
  */
 @NullMarked

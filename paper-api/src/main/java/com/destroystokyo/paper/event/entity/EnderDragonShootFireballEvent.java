@@ -9,6 +9,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当末影龙发射火球时触发
+ * <p>原文：
  * Fired when an EnderDragon shoots a fireball
  */
 @NullMarked
@@ -26,6 +29,9 @@ public class EnderDragonShootFireballEvent extends EntityEvent implements Cancel
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 发射火球的末影龙
+     * <p>原文：
      * The enderdragon shooting the fireball
      */
     @Override
@@ -34,7 +40,8 @@ public class EnderDragonShootFireballEvent extends EntityEvent implements Cancel
     }
 
     /**
-     * @return The fireball being shot
+     * @return 正在发射的火球
+     * <p>原文：The fireball being shot
      */
     public DragonFireball getFireball() {
         return this.fireball;

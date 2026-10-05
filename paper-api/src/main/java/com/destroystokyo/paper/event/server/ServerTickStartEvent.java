@@ -18,7 +18,8 @@ public class ServerTickStartEvent extends Event {
     }
 
     /**
-     * @return What tick this is going be since start (first tick = 1)
+     * @return 自启动以来这将是第几刻（第一刻 = 1）
+     * <p>原文：What tick this is going be since start (first tick = 1)
      */
     public int getTickNumber() {
         return this.tickNumber;

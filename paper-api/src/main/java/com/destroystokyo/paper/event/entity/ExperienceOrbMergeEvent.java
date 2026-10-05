@@ -31,6 +31,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 每当服务器即将把 2 个经验球合并为一个时触发
+ * <p>原文：
  * Fired anytime the server is about to merge 2 experience orbs into one
  */
 @NullMarked
@@ -51,14 +54,16 @@ public class ExperienceOrbMergeEvent extends EntityEvent implements Cancellable 
     }
 
     /**
-     * @return The orb that will absorb the other experience orb
+     * @return 将吸收另一个经验球的经验球
+     * <p>原文：The orb that will absorb the other experience orb
      */
     public ExperienceOrb getMergeTarget() {
         return this.mergeTarget;
     }
 
     /**
-     * @return The orb that is subject to being removed and merged into the target orb
+     * @return 将被移除并合并到目标经验球中的经验球
+     * <p>原文：The orb that is subject to being removed and merged into the target orb
      */
     public ExperienceOrb getMergeSource() {
         return this.mergeSource;
@@ -70,7 +75,8 @@ public class ExperienceOrbMergeEvent extends EntityEvent implements Cancellable 
     }
 
     /**
-     * @param cancel {@code true} if you wish to cancel this event, and prevent the orbs from merging
+     * @param cancel 如果希望取消此事件并阻止经验球合并则为 {@code true}
+     * <p>原文：{@code true} if you wish to cancel this event, and prevent the orbs from merging
      */
     @Override
     public void setCancelled(final boolean cancel) {

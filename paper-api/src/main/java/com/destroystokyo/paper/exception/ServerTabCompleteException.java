@@ -4,6 +4,9 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当 Tab 补全请求抛出异常时调用
+ * <p>原文：
  * Called when a tab-complete request throws an exception
  */
 public class ServerTabCompleteException extends ServerCommandException {

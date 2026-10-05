@@ -5,6 +5,9 @@ import org.bukkit.scheduler.BukkitTask;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当插件的调度器因异常失败时抛出
+ * <p>原文：
  * Thrown when a plugin's scheduler fails with an exception
  */
 public class ServerSchedulerException extends ServerPluginException {
@@ -27,9 +30,13 @@ public class ServerSchedulerException extends ServerPluginException {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取抛出异常的任务
+     * <p>原文：
      * Gets the task which threw the exception
      *
-     * @return exception throwing task
+     * @return 抛出异常的任务
+     * <p>原文：exception throwing task
      */
     public BukkitTask getTask() {
         return task;

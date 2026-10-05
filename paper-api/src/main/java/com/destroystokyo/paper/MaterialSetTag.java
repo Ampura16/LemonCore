@@ -24,7 +24,8 @@ import org.jetbrains.annotations.Nullable;
 public class MaterialSetTag extends BaseTag<Material, MaterialSetTag> {
 
     /**
-     * @deprecated Use NamespacedKey version of constructor
+     * @deprecated 请使用 NamespacedKey 版本的构造器
+     * <p>原文：Use NamespacedKey version of constructor
      */
     @Deprecated
     public MaterialSetTag(@NotNull Predicate<Material> filter) {
@@ -32,7 +33,8 @@ public class MaterialSetTag extends BaseTag<Material, MaterialSetTag> {
     }
 
     /**
-     * @deprecated Use NamespacedKey version of constructor
+     * @deprecated 请使用 NamespacedKey 版本的构造器
+     * <p>原文：Use NamespacedKey version of constructor
      */
     @Deprecated
     public MaterialSetTag(@NotNull Collection<Material> materials) {
@@ -40,7 +42,8 @@ public class MaterialSetTag extends BaseTag<Material, MaterialSetTag> {
     }
 
     /**
-     * @deprecated Use NamespacedKey version of constructor
+     * @deprecated 请使用 NamespacedKey 版本的构造器
+     * <p>原文：Use NamespacedKey version of constructor
      */
     @Deprecated
     public MaterialSetTag(@NotNull Material... materials) {

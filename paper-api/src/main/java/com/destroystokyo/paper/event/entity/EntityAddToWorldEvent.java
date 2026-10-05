@@ -9,6 +9,11 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 每当实体因任何原因（包括区块加载）被添加到世界时触发。
+ * <p>
+ * 不要与 {@link CreatureSpawnEvent} 混淆
+ * <p>原文：
  * Fired any time an entity is being added to the world for any reason (including a chunk loading).
  * <p>
  * Not to be confused with {@link CreatureSpawnEvent}
@@ -27,7 +32,8 @@ public class EntityAddToWorldEvent extends EntityEvent {
     }
 
     /**
-     * @return The world that the entity is being added to
+     * @return 实体被添加到的世界
+     * <p>原文：The world that the entity is being added to
      */
     public World getWorld() {
         return this.world;

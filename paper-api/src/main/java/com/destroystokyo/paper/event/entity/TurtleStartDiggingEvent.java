@@ -9,6 +9,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当海龟开始挖掘以产卵时触发
+ * <p>原文：
  * Fired when a Turtle starts digging to lay eggs
  */
 @NullMarked
@@ -26,9 +29,13 @@ public class TurtleStartDiggingEvent extends EntityEvent implements Cancellable 
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 正在挖掘的海龟
+     * <p>原文：
      * The turtle digging
      *
-     * @return The turtle
+     * @return 海龟
+     * <p>原文：The turtle
      */
     @Override
     public Turtle getEntity() {
@@ -36,9 +43,13 @@ public class TurtleStartDiggingEvent extends EntityEvent implements Cancellable 
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取海龟挖掘的位置
+     * <p>原文：
      * Get the location where the turtle is digging
      *
-     * @return Location where digging
+     * @return 挖掘的位置
+     * <p>原文：Location where digging
      */
     public Location getLocation() {
         return this.location.clone();

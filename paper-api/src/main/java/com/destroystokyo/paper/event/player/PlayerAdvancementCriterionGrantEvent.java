@@ -10,6 +10,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 在玩家获得某个进度中的准则后调用。若取消，该准则将被撤销。
+ * <p>原文：
  * Called after a player is granted a criteria in an advancement.
  * If cancelled the criteria will be revoked.
  */
@@ -33,27 +36,39 @@ public class PlayerAdvancementCriterionGrantEvent extends PlayerEvent implements
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取受影响的进度。
+     * <p>原文：
      * Get the advancement which has been affected.
      *
-     * @return affected advancement
+     * @return 受影响的进度
+     * <p>原文：affected advancement
      */
     public Advancement getAdvancement() {
         return this.advancement;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取已被授予的准则。
+     * <p>原文：
      * Get the criterion which has been granted.
      *
-     * @return granted criterion
+     * @return 被授予的准则
+     * <p>原文：granted criterion
      */
     public String getCriterion() {
         return this.criterion;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取当前的 AdvancementProgress。
+     * <p>原文：
      * Gets the current AdvancementProgress.
      *
-     * @return advancement progress
+     * @return 进度的完成情况
+     * <p>原文：advancement progress
      */
     public AdvancementProgress getAdvancementProgress() {
         return this.advancementProgress;

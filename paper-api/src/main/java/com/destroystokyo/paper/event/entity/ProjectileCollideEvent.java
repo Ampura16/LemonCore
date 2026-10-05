@@ -10,11 +10,17 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当弹射物与实体碰撞时调用
+ * <p>
+ * 该事件在 {@link EntityDamageByEntityEvent} <b>之前</b>调用，取消该事件将让弹射物继续飞行
+ * <p>原文：
  * Called when a projectile collides with an entity
  * <p>
  * This event is called <b>before</b> {@link EntityDamageByEntityEvent}, and cancelling it will allow the projectile to continue flying
  *
- * @deprecated Deprecated, use {@link org.bukkit.event.entity.ProjectileHitEvent} and check if there is a hit entity
+ * @deprecated 已弃用，请使用 {@link org.bukkit.event.entity.ProjectileHitEvent} 并检查是否有被击中的实体
+ * <p>原文：Deprecated, use {@link org.bukkit.event.entity.ProjectileHitEvent} and check if there is a hit entity
  */
 @Deprecated(since = "1.19.3")
 public class ProjectileCollideEvent extends EntityEvent implements Cancellable {
@@ -32,9 +38,13 @@ public class ProjectileCollideEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取发生碰撞的弹射物
+     * <p>原文：
      * Get the projectile that collided
      *
-     * @return the projectile that collided
+     * @return 发生碰撞的弹射物
+     * <p>原文：the projectile that collided
      */
     @NotNull
     public Projectile getEntity() {
@@ -42,9 +52,13 @@ public class ProjectileCollideEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取弹射物碰撞到的实体
+     * <p>原文：
      * Get the entity the projectile collided with
      *
-     * @return the entity collided with
+     * @return 碰撞到的实体
+     * <p>原文：the entity collided with
      */
     @NotNull
     public Entity getCollidedWith() {

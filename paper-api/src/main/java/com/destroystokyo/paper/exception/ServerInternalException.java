@@ -5,6 +5,9 @@ import org.bukkit.Bukkit;
 import com.destroystokyo.paper.event.server.ServerExceptionEvent;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当服务器内部抛出可恢复的异常时抛出。
+ * <p>原文：
  * Thrown when the internal server throws a recoverable exception.
  */
 public class ServerInternalException extends ServerException {

@@ -31,6 +31,9 @@ import org.bukkit.inventory.ItemStack;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当玩家射箭且服务器正在选择要使用的箭时调用。
+ * <p>原文：
  * Called when a player is firing a bow and the server is choosing an arrow to use.
  */
 @NullMarked
@@ -50,14 +53,16 @@ public class PlayerReadyArrowEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
-     * @return the player is using to fire the arrow
+     * @return 射出箭矢的玩家
+     * <p>原文：the player is using to fire the arrow
      */
     public ItemStack getBow() {
         return this.bow;
     }
 
     /**
-     * @return the arrow that is attempting to be used
+     * @return 尝试使用的箭
+     * <p>原文：the arrow that is attempting to be used
      */
     public ItemStack getArrow() {
         return this.arrow;
@@ -74,6 +79,9 @@ public class PlayerReadyArrowEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 取消使用此箭。取消后，服务器将尝试下一支可用的箭并触发另一个事件。
+     * <p>原文：
      * Cancel use of this arrow. On cancel, the server will try the next arrow available and fire another event.
      */
     @Override

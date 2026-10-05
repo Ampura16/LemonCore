@@ -8,9 +8,13 @@ import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 用于标识目标。由 {@link NamespacedKey} 和该目标可应用的生物类型组成
+ * <p>原文：
  * Used to identify a Goal. Consists of a {@link NamespacedKey} and the type of mob the goal can be applied to
  *
- * @param <T> the type of mob the goal can be applied to
+ * @param <T> 可应用该目标的生物类型
+ * <p>原文：the type of mob the goal can be applied to
  */
 @NullMarked
 public final class GoalKey<T extends Mob> {

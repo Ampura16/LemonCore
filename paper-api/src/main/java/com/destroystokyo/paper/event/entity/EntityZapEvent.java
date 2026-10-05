@@ -10,6 +10,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当闪电击中实体时触发
+ * <p>原文：
  * Fired when lightning strikes an entity
  */
 @NullMarked
@@ -27,18 +30,26 @@ public class EntityZapEvent extends EntityTransformEvent implements Cancellable 
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取击中实体的闪电。
+     * <p>原文：
      * Gets the lightning bolt that is striking the entity.
      *
-     * @return The lightning bolt responsible for this event
+     * @return 导致此事件的闪电
+     * <p>原文：The lightning bolt responsible for this event
      */
     public LightningStrike getBolt() {
         return this.bolt;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取将取代被击中实体的实体。
+     * <p>原文：
      * Gets the entity that will replace the struck entity.
      *
-     * @return The entity that will replace the struck entity
+     * @return 将取代被击中实体的实体
+     * <p>原文：The entity that will replace the struck entity
      */
     public Entity getReplacementEntity() {
         return super.getTransformedEntity();

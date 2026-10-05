@@ -11,6 +11,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当末影龙火球与方块/实体碰撞并生成 AreaEffectCloud 时触发
+ * <p>原文：
  * Fired when a DragonFireball collides with a block/entity and spawns an AreaEffectCloud
  */
 @NullMarked
@@ -30,6 +33,9 @@ public class EnderDragonFireballHitEvent extends EntityEvent implements Cancella
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 此事件涉及的火球
+     * <p>原文：
      * The fireball involved in this event
      */
     @Override
@@ -38,16 +44,21 @@ public class EnderDragonFireballHitEvent extends EntityEvent implements Cancella
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 被火球击中的生物实体
+     * <p>原文：
      * The living entities hit by fireball
      *
-     * @return the targets
+     * @return 目标
+     * <p>原文：the targets
      */
     public Collection<LivingEntity> getTargets() {
         return this.targets;
     }
 
     /**
-     * @return The area effect cloud spawned in this collision
+     * @return 此次碰撞中生成的区域效果云
+     * <p>原文：The area effect cloud spawned in this collision
      */
     public AreaEffectCloud getAreaEffectCloud() {
         return this.areaEffectCloud;

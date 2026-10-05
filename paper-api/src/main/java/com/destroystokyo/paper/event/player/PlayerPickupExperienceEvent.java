@@ -32,6 +32,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当玩家尝试捡起经验球时触发
+ * <p>原文：
  * Fired when a player is attempting to pick up an experience orb
  */
 @NullMarked
@@ -49,7 +52,8 @@ public class PlayerPickupExperienceEvent extends PlayerEvent implements Cancella
     }
 
     /**
-     * @return Returns the Orb that the player is picking up
+     * @return 返回玩家正在捡起的经验球
+     * <p>原文：Returns the Orb that the player is picking up
      */
     public ExperienceOrb getExperienceOrb() {
         return this.experienceOrb;

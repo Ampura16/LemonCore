@@ -9,6 +9,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 在玩家重生后触发
+ * <p>原文：
  * Fired after a player has respawned
  */
 @NullMarked
@@ -29,9 +32,13 @@ public class PlayerPostRespawnEvent extends AbstractRespawnEvent {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 返回重生玩家的位置。
+     * <p>原文：
      * Returns the location of the respawned player.
      *
-     * @return location of the respawned player
+     * @return 重生玩家的位置
+     * <p>原文：location of the respawned player
      * @see #getRespawnLocation()
      */
     @ApiStatus.Obsolete

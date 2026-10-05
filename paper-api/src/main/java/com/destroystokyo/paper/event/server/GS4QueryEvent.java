@@ -15,6 +15,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当服务器通过 GS4 Query 协议被查询时触发此事件。<br> 改编自 Velocity 的 ProxyQueryEvent
+ * <p>原文：
  * This event is fired if server is getting queried over GS4 Query protocol.
  * <br>
  * Adapted from Velocity's ProxyQueryEvent
@@ -39,36 +42,52 @@ public final class GS4QueryEvent extends Event {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取查询类型
+     * <p>原文：
      * Get query type
      *
-     * @return query type
+     * @return 查询类型
+     * <p>原文：query type
      */
     public QueryType getQueryType() {
         return this.queryType;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取查询者地址
+     * <p>原文：
      * Get querier address
      *
-     * @return querier address
+     * @return 查询者地址
+     * <p>原文：querier address
      */
     public InetAddress getQuerierAddress() {
         return this.querierAddress;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取查询响应
+     * <p>原文：
      * Get query response
      *
-     * @return query response
+     * @return 查询响应
+     * <p>原文：query response
      */
     public QueryResponse getResponse() {
         return this.response;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置查询响应
+     * <p>原文：
      * Set query response
      *
-     * @param response query response
+     * @param response 查询响应
+     * <p>原文：query response
      */
     public void setResponse(final QueryResponse response) {
         this.response = Preconditions.checkNotNull(response, "response");
@@ -84,16 +103,25 @@ public final class GS4QueryEvent extends Event {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 查询的类型
+     * <p>原文：
      * The type of query
      */
     public enum QueryType {
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 基础查询只请求部分信息，例如 motd、游戏类型（硬编码为 <pre>MINECRAFT</pre>）、地图、当前玩家数、最大玩家数、服务器端口和服务器 motd
+         * <p>原文：
          * Basic query asks only a subset of information, such as motd, game type (hardcoded to <pre>MINECRAFT</pre>), map,
          * current players, max players, server port and server motd
          */
         BASIC,
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 完整查询几乎会请求此事件中的所有内容（只有硬编码的值无法在此修改）。
+         * <p>原文：
          * Full query asks pretty much everything present on this event (only hardcoded values cannot be modified here).
          */
         FULL
@@ -126,6 +154,9 @@ public final class GS4QueryEvent extends Event {
         }
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 获取用于回复查询的 motd。默认为 {@link Server#getMotd()}。
+         * <p>原文：
          * Get motd which will be used to reply to the query. By default, it is {@link Server#getMotd()}.
          *
          * @return motd
@@ -135,90 +166,130 @@ public final class GS4QueryEvent extends Event {
         }
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 获取用于回复查询的游戏版本。默认发送所支持的 Minecraft 版本范围。
+         * <p>原文：
          * Get game version which will be used to reply to the query. By default, supported Minecraft versions range is sent.
          *
-         * @return game version
+         * @return 游戏版本
+         * <p>原文：game version
          */
         public String getGameVersion() {
             return this.gameVersion;
         }
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 获取用于回复查询的地图名称。默认发送 {@code world}。
+         * <p>原文：
          * Get map name which will be used to reply to the query. By default {@code world} is sent.
          *
-         * @return map name
+         * @return 地图名称
+         * <p>原文：map name
          */
         public String getMap() {
             return this.map;
         }
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 获取用于回复查询的当前在线玩家数。
+         * <p>原文：
          * Get current online player count which will be used to reply to the query.
          *
-         * @return online player count
+         * @return 在线玩家数
+         * <p>原文：online player count
          */
         public int getCurrentPlayers() {
             return this.currentPlayers;
         }
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 获取用于回复查询的最大玩家数。
+         * <p>原文：
          * Get max player count which will be used to reply to the query.
          *
-         * @return max player count
+         * @return 最大玩家数
+         * <p>原文：max player count
          */
         public int getMaxPlayers() {
             return this.maxPlayers;
         }
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 获取服务器（对外公开的）主机名。
+         * <p>原文：
          * Get server (public facing) hostname.
          *
-         * @return server hostname
+         * @return 服务器主机名
+         * <p>原文：server hostname
          */
         public String getHostname() {
             return this.hostname;
         }
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 获取服务器（对外公开的）端口。
+         * <p>原文：
          * Get server (public facing) port.
          *
-         * @return server port
+         * @return 服务器端口
+         * <p>原文：server port
          */
         public int getPort() {
             return this.port;
         }
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 获取用于回复查询的玩家集合。
+         * <p>原文：
          * Get collection of players which will be used to reply to the query.
          *
-         * @return collection of players
+         * @return 玩家集合
+         * <p>原文：collection of players
          */
         public Collection<String> getPlayers() {
             return this.players;
         }
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 获取用于回复查询的服务器软件（名称和版本）。
+         * <p>原文：
          * Get server software (name and version) which will be used to reply to the query.
          *
-         * @return server software
+         * @return 服务器软件
+         * <p>原文：server software
          */
         public String getServerVersion() {
             return this.serverVersion;
         }
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 获取用于回复查询的插件列表。
+         * <p>原文：
          * Get list of plugins which will be used to reply to the query.
          *
-         * @return collection of plugins
+         * @return 插件集合
+         * <p>原文：collection of plugins
          */
         public Collection<PluginInformation> getPlugins() {
             return this.plugins;
         }
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 根据此响应所表示的数据创建新的 {@link Builder} 实例。
+         * <p>原文：
          * Creates a new {@link Builder} instance from data represented by this response.
          *
-         * @return {@link QueryResponse} builder
+         * @return {@link QueryResponse} 构建器
+         * <p>原文：{@link QueryResponse} builder
          */
         public Builder toBuilder() {
             return QueryResponse.builder()
@@ -235,15 +306,22 @@ public final class GS4QueryEvent extends Event {
         }
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 创建新的 {@link Builder} 实例。
+         * <p>原文：
          * Creates a new {@link Builder} instance.
          *
-         * @return {@link QueryResponse} builder
+         * @return {@link QueryResponse} 构建器
+         * <p>原文：{@link QueryResponse} builder
          */
         public static Builder builder() {
             return new Builder();
         }
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * {@link QueryResponse} 对象的构建器。
+         * <p>原文：
          * A builder for {@link QueryResponse} objects.
          */
         public static final class Builder {
@@ -338,9 +416,13 @@ public final class GS4QueryEvent extends Event {
             }
 
             /**
+             * <!-- Paper HTML javadoc zh translation -->
+             * 使用提供的数据构建新的 {@link QueryResponse}。
+             * <p>原文：
              * Builds new {@link QueryResponse} with supplied data.
              *
-             * @return response
+             * @return 响应
+             * <p>原文：response
              */
             public QueryResponse build() {
                 return new QueryResponse(
@@ -359,6 +441,9 @@ public final class GS4QueryEvent extends Event {
         }
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 插件信息
+         * <p>原文：
          * Plugin information
          */
         public static class PluginInformation {

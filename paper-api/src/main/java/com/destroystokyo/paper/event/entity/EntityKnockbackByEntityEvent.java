@@ -9,6 +9,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当实体被另一实体击中而被击退时触发。可以修改加速度向量。如果该事件被取消，实体不会被击退。
+ * <p>原文：
  * Fired when an Entity is knocked back by the hit of another Entity. The acceleration
  * vector can be modified. If this event is cancelled, the entity is not knocked back.
  */
@@ -24,7 +27,8 @@ public class EntityKnockbackByEntityEvent extends EntityPushedByEntityAttackEven
     }
 
     /**
-     * @return the entity which was knocked back
+     * @return 被击退的实体
+     * <p>原文：the entity which was knocked back
      */
     @Override
     public LivingEntity getEntity() {
@@ -32,8 +36,10 @@ public class EntityKnockbackByEntityEvent extends EntityPushedByEntityAttackEven
     }
 
     /**
-     * @return the original knockback strength.
-     * @apiNote this value doesn't necessarily relate to {@link #getKnockback()}.
+     * @return 原始击退强度。
+     * <p>原文：the original knockback strength.
+     * @apiNote 此值不一定与 {@link #getKnockback()} 相关。
+     * <p>原文：this value doesn't necessarily relate to {@link #getKnockback()}.
      */
     @ApiStatus.Obsolete(since = "1.20.6")
     public float getKnockbackStrength() {
@@ -41,9 +47,13 @@ public class EntityKnockbackByEntityEvent extends EntityPushedByEntityAttackEven
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取造成此事件的实体。与 {@link #getPushedBy()} 相同。
+     * <p>原文：
      * Gets the causing entity. Same as {@link #getPushedBy()}.
      *
-     * @return the Entity which hit
+     * @return 击中的实体
+     * <p>原文：the Entity which hit
      */
     public Entity getHitBy() {
         return super.getPushedBy();

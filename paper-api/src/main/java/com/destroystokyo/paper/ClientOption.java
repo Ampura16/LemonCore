@@ -36,7 +36,8 @@ public final class ClientOption<T> {
         HIDDEN("options.chat.visibility.hidden"),
         // End generate - ChatVisibility
         /**
-         * @deprecated no longer used anymore since 1.15.2, the value fallback
+         * @deprecated 自 1.15.2 起不再使用，当服务器未知该值时回退为该设置的默认值。此时将返回 {@link #FULL}。
+         * <p>原文：no longer used anymore since 1.15.2, the value fallback
          * to the default value of the setting when unknown on the server.
          * In this case {@link #FULL} will be returned.
          */

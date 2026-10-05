@@ -7,6 +7,11 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 在刷怪笼将实体生成到世界之前调用。
+ * <p>
+ * 出于性能考虑，这里只包含刷怪笼的位置，而非完整的 BlockState 快照。如确有需要，请自行获取刷怪笼。
+ * <p>原文：
  * Called before an entity is spawned into a world by a spawner.
  * <p>
  * This only includes the spawner's location and not the full BlockState snapshot for performance reasons.

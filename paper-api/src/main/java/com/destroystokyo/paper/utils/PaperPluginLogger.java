@@ -8,6 +8,9 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 防止插件（例如 Essentials）更改插件日志记录器的父级。
+ * <p>原文：
  * Prevents plugins (e.g. Essentials) from changing the parent of the plugin logger.
  */
 @NullMarked

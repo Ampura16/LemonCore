@@ -8,6 +8,9 @@ import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当物品被放入含有结果槽的物品栏时调用
+ * <p>原文：
  * Called when an item is put in an inventory containing a result slot
  */
 @NullMarked
@@ -21,9 +24,13 @@ public class PrepareResultEvent extends PrepareInventoryResultEvent {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取结果物品，可能为 {@code null}。
+     * <p>原文：
      * Get result item, may be {@code null}.
      *
-     * @return result item
+     * @return 结果物品
+     * <p>原文：result item
      */
     @Override
     public @Nullable ItemStack getResult() {
@@ -31,9 +38,13 @@ public class PrepareResultEvent extends PrepareInventoryResultEvent {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置结果物品，可以为 {@code null}。
+     * <p>原文：
      * Set result item, may be {@code null}.
      *
-     * @param result result item
+     * @param result 结果物品
+     * <p>原文：result item
      */
     @Override
     public void setResult(final @Nullable ItemStack result) {

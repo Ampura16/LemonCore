@@ -34,6 +34,9 @@ import java.lang.reflect.Method;
 import java.util.logging.Level;
 
 /**
+ * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+ * 为命令"/timings merged"提供自定义的计时项目.
+ * <p>原文：
  * This is here for legacy purposes incase any plugin used it.
  *
  * If you use this, migrate ASAP as this will be removed in the future!
@@ -61,7 +64,15 @@ public final class CustomTimingsHandler {
         handler = timing;
     }
 
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 开始对某段代码的计时并持续跟踪.
+     */
     public void startTiming() { handler.startTiming(); }
+    /**
+     * <!-- Chinese_BukkitAPI copied translation; CC BY-NC 4.0 -->
+     * 停止对某段代码的计时.
+     */
     public void stopTiming() { handler.stopTiming(); }
 
 }

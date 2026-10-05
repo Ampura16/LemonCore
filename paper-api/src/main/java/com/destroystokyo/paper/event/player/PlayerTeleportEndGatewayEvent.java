@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当末地折跃门触发传送时触发
+ * <p>原文：
  * Fired when a teleport is triggered for an End Gateway
  */
 @NullMarked
@@ -22,9 +25,13 @@ public class PlayerTeleportEndGatewayEvent extends PlayerTeleportEvent {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 触发传送的折跃门
+     * <p>原文：
      * The gateway triggering the teleport
      *
-     * @return EndGateway used
+     * @return 所使用的末地折跃门
+     * <p>原文：EndGateway used
      */
     public EndGateway getGateway() {
         return this.gateway;

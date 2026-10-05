@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当海龟决定回家时触发
+ * <p>原文：
  * Fired when a Turtle decides to go home
  */
 @NullMarked
@@ -23,9 +26,13 @@ public class TurtleGoHomeEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 正在回家的海龟
+     * <p>原文：
      * The turtle going home
      *
-     * @return The turtle
+     * @return 海龟
+     * <p>原文：The turtle
      */
     @Override
     public Turtle getEntity() {

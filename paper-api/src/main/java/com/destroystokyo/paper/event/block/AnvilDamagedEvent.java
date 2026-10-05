@@ -12,6 +12,9 @@ import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当铁砧因使用而损坏时调用
+ * <p>原文：
  * Called when an anvil is damaged from being used
  */
 @NullMarked
@@ -34,36 +37,52 @@ public class AnvilDamagedEvent extends InventoryEvent implements Cancellable {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取铁砧新的损坏状态
+     * <p>原文：
      * Gets the new state of damage on the anvil
      *
-     * @return Damage state
+     * @return 损坏状态
+     * <p>原文：Damage state
      */
     public DamageState getDamageState() {
         return this.damageState;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置铁砧新的损坏状态
+     * <p>原文：
      * Sets the new state of damage on the anvil
      *
-     * @param damageState Damage state
+     * @param damageState 损坏状态
+     * <p>原文：Damage state
      */
     public void setDamageState(final DamageState damageState) {
         this.damageState = damageState;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取铁砧是否在此次使用中损坏
+     * <p>原文：
      * Gets if anvil is breaking on this use
      *
-     * @return {@code true} if breaking
+     * @return 如果正在破坏则为 {@code true}
+     * <p>原文：{@code true} if breaking
      */
     public boolean isBreaking() {
         return this.damageState == DamageState.BROKEN;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置铁砧是否在此次使用中损坏
+     * <p>原文：
      * Sets if anvil is breaking on this use
      *
-     * @param breaking {@code true} if breaking
+     * @param breaking 如果正在破坏则为 {@code true}
+     * <p>原文：{@code true} if breaking
      */
     public void setBreaking(final boolean breaking) {
         if (breaking) {
@@ -93,6 +112,9 @@ public class AnvilDamagedEvent extends InventoryEvent implements Cancellable {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 表示铁砧方块的损坏程度
+     * <p>原文：
      * Represents the amount of damage on an anvil block
      */
     public enum DamageState {
@@ -108,31 +130,45 @@ public class AnvilDamagedEvent extends InventoryEvent implements Cancellable {
         }
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 获取此状态的方块材料
+         * <p>原文：
          * Get block material of this state
          *
-         * @return Material
+         * @return 材料
+         * <p>原文：Material
          */
         public Material getMaterial() {
             return this.material;
         }
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 根据方块数据获取损坏状态
+         * <p>原文：
          * Get damaged state by block data
          *
-         * @param blockData Block data
+         * @param blockData 方块数据
+         * <p>原文：Block data
          * @return DamageState
-         * @throws IllegalArgumentException If non anvil block data is given
+         * @throws IllegalArgumentException 如果给定的方块数据不是铁砧
+         * <p>原文：If non anvil block data is given
          */
         public static DamageState getState(final @Nullable BlockData blockData) {
             return blockData == null ? BROKEN : getState(blockData.getMaterial());
         }
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 根据方块材料获取损坏状态
+         * <p>原文：
          * Get damaged state by block material
          *
-         * @param material Block material
+         * @param material 方块材料
+         * <p>原文：Block material
          * @return DamageState
-         * @throws IllegalArgumentException If non anvil material is given
+         * @throws IllegalArgumentException 如果给定的材料不是铁砧
+         * <p>原文：If non anvil material is given
          */
         public static DamageState getState(final @Nullable Material material) {
             if (material == null) {

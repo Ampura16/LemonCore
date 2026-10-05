@@ -6,6 +6,9 @@ import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 表示 {@link PlayerProfile} 上的属性
+ * <p>原文：
  * Represents a property on a {@link PlayerProfile}
  */
 @NullMarked
@@ -29,28 +32,32 @@ public final class ProfileProperty {
     }
 
     /**
-     * @return The property name, ie "textures"
+     * @return 属性名称，例如“textures”
+     * <p>原文：The property name, ie "textures"
      */
     public String getName() {
         return this.name;
     }
 
     /**
-     * @return The property value, likely to be base64 encoded
+     * @return 属性值，很可能是 base64 编码的
+     * <p>原文：The property value, likely to be base64 encoded
      */
     public String getValue() {
         return this.value;
     }
 
     /**
-     * @return A signature from Mojang for signed properties
+     * @return Mojang 为签名属性提供的签名
+     * <p>原文：A signature from Mojang for signed properties
      */
     public @Nullable String getSignature() {
         return this.signature;
     }
 
     /**
-     * @return If this property has a signature or not
+     * @return 此属性是否具有签名
+     * <p>原文：If this property has a signature or not
      */
     public boolean isSigned() {
         return this.signature != null;

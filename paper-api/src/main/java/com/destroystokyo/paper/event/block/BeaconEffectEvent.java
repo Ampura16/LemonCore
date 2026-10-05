@@ -10,6 +10,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 在信标效果施加给玩家时调用。
+ * <p>原文：
  * Called when a beacon effect is being applied to a player.
  */
 @NullMarked
@@ -32,36 +35,52 @@ public class BeaconEffectEvent extends BlockEvent implements Cancellable {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取正在施加的药水效果。
+     * <p>原文：
      * Gets the potion effect being applied.
      *
-     * @return Potion effect
+     * @return 药水效果
+     * <p>原文：Potion effect
      */
     public PotionEffect getEffect() {
         return this.effect;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置将要施加的药水效果。
+     * <p>原文：
      * Sets the potion effect that will be applied.
      *
-     * @param effect Potion effect
+     * @param effect 药水效果
+     * <p>原文：Potion effect
      */
     public void setEffect(final PotionEffect effect) {
         this.effect = effect;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取被施加药水效果的玩家。
+     * <p>原文：
      * Gets the player who the potion effect is being applied to.
      *
-     * @return Affected player
+     * @return 受影响的玩家
+     * <p>原文：Affected player
      */
     public Player getPlayer() {
         return this.player;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取该效果是否为信标的主效果。
+     * <p>原文：
      * Gets whether the effect is a primary beacon effect.
      *
-     * @return {@code true} if this event represents a primary effect
+     * @return 如果此事件代表主效果则为 {@code true}
+     * <p>原文：{@code true} if this event represents a primary effect
      */
     public boolean isPrimary() {
         return this.primary;

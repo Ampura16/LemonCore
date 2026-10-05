@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当苦力怕被打火石、{@link Creeper#ignite()} 或 {@link Creeper#setIgnited(boolean)} 点燃时调用。
+ * <p>原文：
  * Called when a Creeper is ignited either by a
  * flint and steel, {@link Creeper#ignite()} or
  * {@link Creeper#setIgnited(boolean)}.

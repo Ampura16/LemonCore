@@ -6,6 +6,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当白名单被切换时触发此事件
+ * <p>原文：
  * This event is fired when whitelist is toggled
  *
  * @author Mark Vainomaa
@@ -23,9 +26,13 @@ public class WhitelistToggleEvent extends Event {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取白名单是否将被启用
+     * <p>原文：
      * Gets whether whitelist is going to be enabled or not
      *
-     * @return Whether whitelist is going to be enabled or not
+     * @return 白名单是否将被启用
+     * <p>原文：Whether whitelist is going to be enabled or not
      */
     public boolean isEnabled() {
         return this.enabled;

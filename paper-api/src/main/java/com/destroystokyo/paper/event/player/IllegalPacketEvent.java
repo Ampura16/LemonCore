@@ -8,7 +8,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * @deprecated Not used
+ * @deprecated 未使用
+ * <p>原文：Not used
  */
 @Deprecated(since = "1.16.4", forRemoval = true)
 public class IllegalPacketEvent extends PlayerEvent {

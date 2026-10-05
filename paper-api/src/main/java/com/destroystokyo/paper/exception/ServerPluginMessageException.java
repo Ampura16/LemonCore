@@ -6,6 +6,9 @@ import org.bukkit.plugin.Plugin;
 import static com.google.common.base.Preconditions.*;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当传入的插件消息频道抛出异常时抛出
+ * <p>原文：
  * Thrown when an incoming plugin message channel throws an exception
  */
 public class ServerPluginMessageException extends ServerPluginException {
@@ -36,27 +39,39 @@ public class ServerPluginMessageException extends ServerPluginException {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取接收数据时发生错误的频道
+     * <p>原文：
      * Gets the channel to which the error occurred from receiving data from
      *
-     * @return exception channel
+     * @return 发生异常的频道
+     * <p>原文：exception channel
      */
     public String getChannel() {
         return channel;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取发生错误的数据
+     * <p>原文：
      * Gets the data to which the error occurred from
      *
-     * @return exception data
+     * @return 异常数据
+     * <p>原文：exception data
      */
     public byte[] getData() {
         return data;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取导致异常的插件消息所来自的玩家
+     * <p>原文：
      * Gets the player which the plugin message causing the exception originated from
      *
-     * @return exception player
+     * @return 发生异常的玩家
+     * <p>原文：exception player
      */
     public Player getPlayer() {
         return player;

@@ -32,6 +32,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 在档案的附加属性（例如纹理）填充完毕后触发
+ * <p>原文：
  * Fired once a profiles additional properties (such as textures) has been filled
  */
 @NullMarked
@@ -48,16 +51,21 @@ public class FillProfileEvent extends Event {
     }
 
     /**
-     * @return The Profile that had properties filled
+     * @return 已填充属性的档案
+     * <p>原文：The Profile that had properties filled
      */
     public PlayerProfile getPlayerProfile() {
         return this.profile;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 等同于 .getPlayerProfile().getProperties()
+     * <p>原文：
      * Same as .getPlayerProfile().getProperties()
      *
-     * @return The new properties on the profile.
+     * @return 档案上的新属性。
+     * <p>原文：The new properties on the profile.
      * @see PlayerProfile#getProperties()
      */
     public Set<ProfileProperty> getProperties() {

@@ -9,9 +9,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当物品被放入砂轮的研磨槽时调用
+ * <p>原文：
  * Called when an item is put in a slot for grinding in a Grindstone
  *
- * @deprecated use {@link org.bukkit.event.inventory.PrepareGrindstoneEvent}
+ * @deprecated 请使用 {@link org.bukkit.event.inventory.PrepareGrindstoneEvent}
+ * <p>原文：use {@link org.bukkit.event.inventory.PrepareGrindstoneEvent}
  */
 @Deprecated(since = "1.16.1")
 @Warning

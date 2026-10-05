@@ -14,10 +14,16 @@ import org.jspecify.annotations.Nullable;
 import static org.bukkit.Material.*;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当玩家自己更换其盔甲物品时调用
+ * <p>
+ * 目前不会因环境因素调用，但<strong>将来可能会</strong>
+ * <p>原文：
  * Called when the player themselves change their armor items
  * <p>
  * Not currently called for environmental factors though it <strong>MAY BE IN THE FUTURE</strong>
- * @apiNote Use {@link io.papermc.paper.event.entity.EntityEquipmentChangedEvent} for all entity equipment changes
+ * @apiNote 所有实体装备变化请使用 {@link io.papermc.paper.event.entity.EntityEquipmentChangedEvent}
+ * <p>原文：Use {@link io.papermc.paper.event.entity.EntityEquipmentChangedEvent} for all entity equipment changes
  */
 @NullMarked
 @ApiStatus.Obsolete(since = "1.21.4")
@@ -38,10 +44,15 @@ public class PlayerArmorChangeEvent extends PlayerEvent {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取正在被更改的槽位类型。
+     * <p>原文：
      * Gets the type of slot being altered.
      *
-     * @return type of slot being altered
-     * @deprecated {@link SlotType} does not accurately represent what item types are valid in each slot. Use {@link #getSlot()} instead.
+     * @return 被更改的槽位类型
+     * <p>原文：type of slot being altered
+     * @deprecated {@link SlotType} 无法准确表示每个槽位中哪些物品类型有效。请改用 {@link #getSlot()}。
+     * <p>原文：{@link SlotType} does not accurately represent what item types are valid in each slot. Use {@link #getSlot()} instead.
      */
     @Deprecated(since = "1.21.4")
     public SlotType getSlotType() {
@@ -49,9 +60,13 @@ public class PlayerArmorChangeEvent extends PlayerEvent {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取正在被更改的槽位。
+     * <p>原文：
      * Gets the slot being altered.
      *
-     * @return slot being altered
+     * @return 正在被更改的槽位
+     * <p>原文：slot being altered
      */
     public EquipmentSlot getSlot() {
         return switch (this.slotType) {
@@ -63,18 +78,26 @@ public class PlayerArmorChangeEvent extends PlayerEvent {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取正被替换的现有物品
+     * <p>原文：
      * Gets the existing item that's being replaced
      *
-     * @return old item
+     * @return 旧物品
+     * <p>原文：old item
      */
     public ItemStack getOldItem() {
         return this.oldItem;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取替换旧物品的新物品
+     * <p>原文：
      * Gets the new item that's replacing the old
      *
-     * @return new item
+     * @return 新物品
+     * <p>原文：new item
      */
     public ItemStack getNewItem() {
         return this.newItem;
@@ -90,7 +113,8 @@ public class PlayerArmorChangeEvent extends PlayerEvent {
     }
 
     /**
-     * @deprecated {@link SlotType} does not accurately represent what item types are valid in each slot.
+     * @deprecated {@link SlotType} 无法准确表示每个槽位中哪些物品类型有效。
+     * <p>原文：{@link SlotType} does not accurately represent what item types are valid in each slot.
      */
     @Deprecated(since = "1.21.4")
     public enum SlotType {
@@ -106,20 +130,29 @@ public class PlayerArmorChangeEvent extends PlayerEvent {
         }
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 获取所有允许放入盔甲槽位的材料类型的不可变集合。
+         * <p>原文：
          * Gets an immutable set of all allowed material types that can be placed in an
          * armor slot.
          *
-         * @return immutable set of material types
+         * @return 材料类型的不可变集合
+         * <p>原文：immutable set of material types
          */
         public Set<Material> getTypes() {
             return this.types;
         }
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 通过指定材料获取槽位类型
+         * <p>原文：
          * Gets the type of slot via the specified material
          *
-         * @param material material to get slot by
-         * @return slot type the material will go in, or {@code null} if it won't
+         * @param material 用于获取槽位的材料
+         * <p>原文：material to get slot by
+         * @return 该材料将放入的槽位类型；如果不会放入则为 {@code null}
+         * <p>原文：slot type the material will go in, or {@code null} if it won't
          */
         public static @Nullable SlotType getByMaterial(final Material material) {
             for (final SlotType slotType : values()) {
@@ -131,10 +164,15 @@ public class PlayerArmorChangeEvent extends PlayerEvent {
         }
 
         /**
+         * <!-- Paper HTML javadoc zh translation -->
+         * 获取此材料能否装备到槽位
+         * <p>原文：
          * Gets whether this material can be equipped to a slot
          *
-         * @param material material to check
-         * @return whether this material can be equipped
+         * @param material 要检查的材料
+         * <p>原文：material to check
+         * @return 此材料能否被装备
+         * <p>原文：whether this material can be equipped
          */
         public static boolean isEquipable(final Material material) {
             return getByMaterial(material) != null;

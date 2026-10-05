@@ -32,6 +32,11 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当末影人判断是否应攻击玩家时触发。
+ * <p>
+ * 按照原版规则，如果玩家戴着南瓜头或没有注视末影人，该事件初始即为取消状态。
+ * <p>原文：
  * Fired when an Enderman determines if it should attack a player or not.
  * <p>
  * Starts off cancelled if the player is wearing a pumpkin head or is not looking
@@ -52,9 +57,13 @@ public class EndermanAttackPlayerEvent extends EntityEvent implements Cancellabl
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 正在考虑攻击的末影人
+     * <p>原文：
      * The enderman considering attacking
      *
-     * @return The enderman considering attacking
+     * @return 正在考虑攻击的末影人
+     * <p>原文：The enderman considering attacking
      */
     @Override
     public Enderman getEntity() {
@@ -62,16 +71,21 @@ public class EndermanAttackPlayerEvent extends EntityEvent implements Cancellabl
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 末影人正在考虑攻击的玩家
+     * <p>原文：
      * The player the Enderman is considering attacking
      *
-     * @return The player the Enderman is considering attacking
+     * @return 末影人正在考虑攻击的玩家
+     * <p>原文：The player the Enderman is considering attacking
      */
     public Player getPlayer() {
         return this.player;
     }
 
     /**
-     * @return If cancelled, the enderman will not attack
+     * @return 如果取消，末影人将不会攻击
+     * <p>原文：If cancelled, the enderman will not attack
      */
     @Override
     public boolean isCancelled() {

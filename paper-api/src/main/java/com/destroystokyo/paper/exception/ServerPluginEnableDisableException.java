@@ -3,6 +3,9 @@ package com.destroystokyo.paper.exception;
 import org.bukkit.plugin.Plugin;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 每当启用或禁用插件时出现任何异常时抛出。
+ * <p>原文：
  * Thrown whenever there is an exception with any enabling or disabling of plugins.
  */
 public class ServerPluginEnableDisableException extends ServerPluginException {

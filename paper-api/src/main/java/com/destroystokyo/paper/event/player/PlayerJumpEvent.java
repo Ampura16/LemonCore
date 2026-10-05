@@ -11,6 +11,11 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当服务器检测到玩家正在跳跃时调用。
+ * <p>
+ * 许多插件通过 {@link PlayerMoveEvent} 检测跳跃，这会带来额外开销和特例逻辑；为避免这些问题而添加该事件，只要服务器检测到玩家跳跃就会触发。
+ * <p>原文：
  * Called when the server detects the player is jumping.
  * <p>
  * Added to avoid the overhead and special case logic that many plugins use
@@ -59,18 +64,26 @@ public class PlayerJumpEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取此玩家起跳的位置
+     * <p>原文：
      * Gets the location this player jumped from
      *
-     * @return Location the player jumped from
+     * @return 玩家起跳的位置
+     * <p>原文：Location the player jumped from
      */
     public Location getFrom() {
         return this.from;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置标记为玩家起跳点的位置
+     * <p>原文：
      * Sets the location to mark as where the player jumped from
      *
-     * @param from New location to mark as the players previous location
+     * @param from 要标记为玩家先前位置的新位置
+     * <p>原文：New location to mark as the players previous location
      */
     public void setFrom(final Location from) {
         Preconditions.checkArgument(from != null, "Cannot use null from location!");
@@ -79,12 +92,18 @@ public class PlayerJumpEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取此玩家跳到的位置
+     * <p>
+     * 该信息基于客户端发送的数据，通常与跳跃过程中任一时刻的弧线关系不大。
+     * <p>原文：
      * Gets the location this player jumped to
      * <p>
      * This information is based on what the client sends, it typically
      * has little relation to the arc of the jump at any given point.
      *
-     * @return Location the player jumped to
+     * @return 玩家跳到的位置
+     * <p>原文：Location the player jumped to
      */
     public Location getTo() {
         return this.to.clone();

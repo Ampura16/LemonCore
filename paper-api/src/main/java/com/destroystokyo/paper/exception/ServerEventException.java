@@ -7,6 +7,9 @@ import org.bukkit.plugin.Plugin;
 import static com.google.common.base.Preconditions.*;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 服务器事件监听器抛出异常时抛出的异常
+ * <p>原文：
  * Exception thrown when a server event listener throws an exception
  */
 public class ServerEventException extends ServerPluginException {
@@ -33,18 +36,26 @@ public class ServerEventException extends ServerPluginException {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取抛出异常的监听器
+     * <p>原文：
      * Gets the listener which threw the exception
      *
-     * @return event listener
+     * @return 事件监听器
+     * <p>原文：event listener
      */
     public Listener getListener() {
         return listener;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取导致异常的事件
+     * <p>原文：
      * Gets the event which caused the exception
      *
-     * @return event
+     * @return 事件
+     * <p>原文：event
      */
     public Event getEvent() {
         return event;

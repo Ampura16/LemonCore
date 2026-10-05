@@ -9,6 +9,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当玩家在旁观模式下停止旁观某个实体时触发。
+ * <p>原文：
  * Triggered when a player stops spectating an entity in spectator mode.
  */
 @NullMarked
@@ -26,9 +29,13 @@ public class PlayerStopSpectatingEntityEvent extends PlayerEvent implements Canc
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 获取玩家正在旁观的实体
+     * <p>原文：
      * Gets the entity that the player is spectating
      *
-     * @return The entity the player is currently spectating (before they will stop).
+     * @return 玩家当前正在旁观的实体（在停止旁观之前）。
+     * <p>原文：The entity the player is currently spectating (before they will stop).
      */
     public Entity getSpectatorTarget() {
         return this.spectatorTarget;

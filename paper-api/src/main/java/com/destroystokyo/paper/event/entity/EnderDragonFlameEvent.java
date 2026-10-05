@@ -9,6 +9,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 当末影龙喷射火焰生成 AreaEffectCloud 时触发
+ * <p>原文：
  * Fired when an EnderDragon spawns an AreaEffectCloud by shooting flames
  */
 @NullMarked
@@ -26,6 +29,9 @@ public class EnderDragonFlameEvent extends EntityEvent implements Cancellable {
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 此事件涉及的末影龙
+     * <p>原文：
      * The enderdragon involved in this event
      */
     @Override
@@ -34,7 +40,8 @@ public class EnderDragonFlameEvent extends EntityEvent implements Cancellable {
     }
 
     /**
-     * @return The area effect cloud spawned in this collision
+     * @return 此次碰撞中生成的区域效果云
+     * <p>原文：The area effect cloud spawned in this collision
      */
     public AreaEffectCloud getAreaEffectCloud() {
         return this.areaEffectCloud;

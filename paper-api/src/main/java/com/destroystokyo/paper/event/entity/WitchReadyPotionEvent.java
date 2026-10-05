@@ -29,16 +29,21 @@ public class WitchReadyPotionEvent extends EntityEvent implements Cancellable {
     }
 
     /**
-     * @return the potion the witch is readying to use
+     * @return 女巫准备使用的药水
+     * <p>原文：the potion the witch is readying to use
      */
     public @Nullable ItemStack getPotion() {
         return this.potion;
     }
 
     /**
+     * <!-- Paper HTML javadoc zh translation -->
+     * 设置女巫将要持有并使用的药水
+     * <p>原文：
      * Sets the potion the which is going to hold and use
      *
-     * @param potion The potion
+     * @param potion 药水
+     * <p>原文：The potion
      */
     public void setPotion(final @Nullable ItemStack potion) {
         this.potion = potion != null ? potion.clone() : null;

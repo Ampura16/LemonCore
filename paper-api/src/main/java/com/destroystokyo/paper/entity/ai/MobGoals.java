@@ -6,6 +6,9 @@ import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
+ * <!-- Paper HTML javadoc zh translation -->
+ * 表示生物“大脑”的一部分。它追踪所有任务（无论是否正在运行），并允许添加和移除目标
+ * <p>原文：
  * Represents a part of the "brain" of a mob. It tracks all tasks (running or not), allows adding and removing goals
  */
 @NullMarked
