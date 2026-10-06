@@ -356,6 +356,19 @@ tasks.registerRunTask("runReobfPaperclip") {
     mainClass.set(null as String?)
 }
 
+// LemonCore: 自定义核心 jar 名称 -> LemonCore-<mcVersion>-<build|dev>.jar
+val lemonCoreJarBaseName = providers.provider {
+    val mcVersion = rootProject.providers.gradleProperty("mcVersion").get()
+    val build = System.getenv("BUILD_NUMBER") ?: "dev"
+    "LemonCore-$mcVersion-$build"
+}
+tasks.createMojmapPaperclipJar {
+    outputZip.set(layout.buildDirectory.file(lemonCoreJarBaseName.map { "libs/$it.jar" }))
+}
+tasks.createReobfPaperclipJar {
+    outputZip.set(layout.buildDirectory.file(lemonCoreJarBaseName.map { "libs/$it-reobf.jar" }))
+}
+
 fill {
     project("paper")
     versionFamily(paperweight.minecraftVersion.map { it.split(".", "-").takeWhile { part -> part.toIntOrNull() != null }.take(2).joinToString(".") })
