@@ -19,6 +19,10 @@ tasks {
         options.release = 8
     }
 
+    withType<Javadoc>().configureEach {
+        options.encoding = "UTF-8"
+    }
+
     java {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
